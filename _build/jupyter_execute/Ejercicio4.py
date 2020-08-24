@@ -1,4 +1,6 @@
-# Átomo de Hidrógeno
+# Ejercicio 4
+
+## Átomo de Hidrógeno
 
 Sistema. Un electrón girándo en torno a un núcleo (protón) con radio no fijo.
 
@@ -430,7 +432,7 @@ ax.set_title("$\Psi^2$")
     
 plt.show()
 
-# Referencias
+## Referencias
 
 - Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005.
 - Pilar, F. L. Elementary Quantum Chemistry; 2001.

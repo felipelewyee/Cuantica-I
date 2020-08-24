@@ -1,4 +1,6 @@
-# Partícula Libre
+# Ejercicio 1
+
+## Partícula Libre
 
 Es la descripción de una partícula moviéndose en un potencial **uniforme**, **conservativo** y **sin restricciones**.
 
@@ -37,7 +39,7 @@ Por la identidad de Euler, la función de onda también puede escribirse como:
 \psi = Acos(kx) + Bsin(kx)
 \end{equation}**
 
-# Partícula en una caja
+## Partícula en una caja
 
 En este caso el potencial está definido por:
 \begin{equation}
@@ -201,7 +203,7 @@ plt.show()
 
 
 
-# Referencias
+## Referencias
 
 (1) Pilar, F. L. Elementary Quantum Chemistry, Dover ed.; Dover Publications: Mineola, N.Y, 2001.
 

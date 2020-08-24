@@ -1,4 +1,6 @@
-# Método variacional lineal
+# Ejercicio 6
+
+## Método variacional lineal
 
 **Paso 1.** Elijo funciones $\psi_i$ para $\psi_{prueba}$
 \begin{equation}
@@ -154,7 +156,7 @@ plt.plot(r1,        ,label="psi_2",linestyle=':')
 plt.legend()
 plt.show()
 
-# Con tres Gaussiana
+## Con tres Gaussianas
 
 **Paso 1.**
 
@@ -255,7 +257,7 @@ plt.plot(r1,        ,label="psi_3",linestyle=':')
 plt.legend()
 plt.show()
 
-# Graficamos
+## Graficamos
 
 from matplotlib import pyplot as plt
 
@@ -275,7 +277,7 @@ plt.plot(r1,psi_3g1,label="3g")
 plt.legend()
 plt.show()
 
-# Referencias
+## Referencias
 
 - Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005.
 - Pilar, F. L. Elementary Quantum Chemistry; 2001.

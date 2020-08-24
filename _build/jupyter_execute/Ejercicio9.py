@@ -72,7 +72,7 @@ print(no2)
 
 
 
-# Referencias
+## Referencias
 
 - Parrish, R. M.; Burns, L. A.; Smith, D. G. A.; Simmonett, A. C.; DePrince, A. E.; Hohenstein, E. G.; Bozkaya, U.; Sokolov, A. Y.; Di Remigio, R.; Richard, R. M.; et al. **Psi4 1.1: An Open-Source Electronic Structure Program Emphasizing Automation, Advanced Libraries, and Interoperability.** Journal of Chemical Theory and Computation 2017, 13 (7), 3185–3197.
 

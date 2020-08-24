@@ -1,8 +1,10 @@
-# Catenaria: Un problema de cálculo de variaciones
+# Ejercicio 10
+
+## Catenaria: Un problema de cálculo de variaciones
 
 Considere una cadena que cuelga de los puntos (-a,0) y (a,0), utilizaremos el cálculo de variaciones para obtener la función de mínima energía que describe a la cadena en un campo gravitacional constante.
 
-## Energía de la cadena
+### Energía de la cadena
 
 Si la cadena tiene una longitud de $2L$ y una masa de $M$, la masa de un segmento $ds$ de la cadena está dada por
 \begin{equation}
@@ -21,7 +23,7 @@ Por tanto, la energía está dada por
 U = \int_{-a}^a gy \frac{M}{2L} \sqrt{1 + (y_x)^2} dx
 \end{equation}
 
-## Longitud de la cadena
+### Longitud de la cadena
 
 El segmento de la cadena debe ser la longitud total
 \begin{equation}
@@ -32,7 +34,7 @@ Esto es equivalente a
 \int_{-a}^a \left( \sqrt{1 + (y_x)^2} - \frac{L}{a} \right) dx = 0
 \end{equation}
 
-## Multiplicador de Lagrange
+### Multiplicador de Lagrange
 
 A la función de energía se le puede agregar la restricción de la longitud
 \begin{equation}
@@ -50,7 +52,7 @@ f = y \sqrt{1 + (y_x)^2} + \lambda' \left( \sqrt{1 + (y_x)^2} - \frac{L}{a} \rig
 \end{equation}
 
 
-## Ecuación de Euler
+### Ecuación de Euler
 
 La ecuación de Euler junto con la identidad de Beltrami permite obtener 
 \begin{equation}
@@ -82,9 +84,9 @@ Despejamos $y$ en función de $x$
 y = k cosh \left(\frac{x-F}{k} \right) - D
 \end{equation}
 
-## Condiciones de frontera
+### Condiciones de frontera
 
-### De donde se sostiene la cadena
+#### De donde se sostiene la cadena
 
 Se debe cumplir $y(-a) = 0$
 \begin{equation}
@@ -106,7 +108,7 @@ Lo que solo se cumple si $F = 0$. Sustituyendo en $y(a)$
 D = kcosh \left(\frac{a}{k}\right)
 \end{equation}
 
-### De la longitud de la cadena
+#### De la longitud de la cadena
 
 Ya podemos sustituir la forma de $y$ para ajustarla a la longitud de la cadena
 
@@ -119,7 +121,7 @@ Finalmente
 k sinh\left(\frac{a}{k} \right) = L
 \end{equation}
 
-# Gráfica
+## Gráfica
 
 La forma de la cadena está dada por
 \begin{equation}
@@ -178,12 +180,12 @@ plt.scatter(a,0)
 plt.plot(x,y(x))
 plt.ylim(-40,10)
 
-# Referencias
+## Referencias
 
 - George, A. H. W. and F. H. Mathematical Methods for Physicist Seventh Edition; 2013, pp. 1081-1092. 
 - Equilibrium Shape of a Rope Hanging from Two Endpoints http://semmat.dmf.unicatt.it/~paolini/divulgazione/mateott/catenaria/catenary/catenary.htm?fbclid=IwAR2VWhmP33C48hPv0GgizjbyP4t94EAKuStE_gJjoKKGtYNmE6YMGhlU8ig (accessed Feb 10, 2020).    
 
-# Autores
+## Autores
 
 Hecho por Juan Felipe Huan Lew Yee y Jorge Martín del Campo Ramírez para la clase de Química Cuántica I del ciclo 2019-I. Universidad Nacional Autónoma de México.
 

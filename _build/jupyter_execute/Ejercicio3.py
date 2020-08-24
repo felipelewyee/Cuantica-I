@@ -1,4 +1,6 @@
-# Serie de Taylor
+# Ejercicio 3
+
+## Serie de Taylor
 
 Sea una función f(x) continua e infinitamente diferenciable, esta puede expresarse en torno a $a$ mediante una serie de potencias
 \begin{equation}
@@ -29,7 +31,7 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 
 
 
-# Serie de Fourier
+## Serie de Fourier
 
 Una funcion periodica se puede aproximar por
 \begin{equation}
@@ -66,7 +68,7 @@ f(x) = \left\{
 
 
 
-# Oscilador Armónico Cuántico
+## Oscilador Armónico Cuántico
 
 El sistema es una partícula en un potencial
 \begin{equation}
@@ -120,7 +122,7 @@ Compare con Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Ox
 
 
 
-# Referencias
+## Referencias
 
 - Gersting, J. L. Technical Calculus with Analytic Geometry, Dover ed.; Dover: New York, 1992.
 - Jackson, J. D. Mathematics for Quantum Mechanics: An Introductory Survey of Operators, Eigenvalues, and Linear Vector Spaces, Dover ed.; Dover books on mathematics; Dover: Mineola, N.Y, 2006.

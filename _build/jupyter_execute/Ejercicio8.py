@@ -1,4 +1,6 @@
-# Ejercicio 8. Hartree-Fock-Roothan
+# Ejercicio 8
+
+## Hartree-Fock-Roothan
 
 Tenemos que resolver:
 \begin{equation}
@@ -163,7 +165,7 @@ print("Energia nuclear: ", E_nuc)
 E_T = 
 print("Energia Total: ", E_T)
 
-# Método Simple. PSI4
+## Método Simple. PSI4
 
 Geometría del agua
 
@@ -179,7 +181,7 @@ Geometría del agua
 
 
 
-# Referencias
+## Referencias
 
 - Szabo, A.; Ostlund, N. S. Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory; Dover Publications: Mineola, N.Y, 1996.
 

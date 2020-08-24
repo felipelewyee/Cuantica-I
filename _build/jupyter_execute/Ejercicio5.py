@@ -1,4 +1,6 @@
-# Solución de ecuaciones usando Sympy - Álgebra simbólica
+# Ejercicio 5
+
+## Solución de ecuaciones usando Sympy - Álgebra simbólica
 
 Sympy es una librería de algebra simbólica. Se importa así:
 
@@ -169,7 +171,7 @@ psi=(2*alpha/sp.pi)**(sp.S(3)/4)*sp.exp(-alpha*r**2)
 
 sp.pprint(sp.integrate(4*sp.pi*r**2*psi*(-1/2*1/r**2*sp.diff(r**2*sp.diff(psi,r),r)-psi/r),(r,0,sp.oo)))
 
-# Último ejercicio
+## Último ejercicio
 
 La parte radial del Hamiltoniano del átomo de hidrógeno es
 \begin{equation}
@@ -222,7 +224,7 @@ f=r**2*psi*(A+B)
 E=
 sp.pprint(E)
 
-# Referencias
+## Referencias
 
 Página oficial de sympy
 www.sympy.org

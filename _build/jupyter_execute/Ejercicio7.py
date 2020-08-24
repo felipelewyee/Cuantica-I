@@ -1,3 +1,5 @@
+# Ejercicio 7
+
 Lista de algunos programas de química cuántica:
 - Gaussian (https://gaussian.com/)
 - Psi4 (http://www.psicode.org/)
@@ -11,7 +13,7 @@ Lista de algunos programas de química cuántica:
 - GAMESS (http://www.msg.chem.iastate.edu/gamess/)
 - Quantum Espresso (https://www.quantum-espresso.org/)
 
-# Aprendiendo a usar psi4
+## Aprendiendo a usar psi4
 
 Importamos psi4 con
 ~~~python
@@ -61,7 +63,7 @@ Calcule la energía de benceno con MP4 y 6-31G
 
 
 
-# Referencias
+## Referencias
 
 - Smith, D. G. A.; Burns, L. A.; Sirianni, D. A.; Nascimento, D. R.; Kumar, A.; James, A. M.; Schriber, J. B.; Zhang, T.; Zhang, B.; Abbott, A. S.; et al. Psi4NumPy : An Interactive Quantum Chemistry Programming Environment for Reference Implementations and Rapid Development. Journal of Chemical Theory and Computation 2018, 14 (7), 3504–3511.
 - https://github.com/psi4/psi4numpy/tree/master/Tutorials

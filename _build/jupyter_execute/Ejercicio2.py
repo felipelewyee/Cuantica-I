@@ -1,4 +1,6 @@
-# Partícula en el anillo
+# Ejercicio 2
+
+## Partícula en el anillo
 
 Es el sistema de una partícula moviéndose en una trayectoria de radio constante tal que $x^2 + y^2 = r^2$.
 
@@ -44,7 +46,7 @@ Tras normslizar y con B=0,
 
 
 
-# Particula en la esfera
+## Particula en la esfera
 
 Se tiene una partícula moviéndose sobre una superficie esférica de radio constante.
 
@@ -95,7 +97,7 @@ En la tabla se muestran los primeros armónicos esféricos.
 
 
 
-# Rotor Rígido
+## Rotor Rígido
 
 Se trata de un sistema de dos masas $m_1$ y $m_2$ moviéndose a una separación fija $r=r_1-r_2$. El Hamiltoniano consta de los términos de energía cinética:
 \begin{equation}
@@ -143,7 +145,7 @@ Separando los términos de $\psi_r$ y $\psi_{cm}$, y considrando r constante:
 - \frac{\hbar^2}{2\mu} \nabla^2_{r} \psi_r = E_r \psi_r
 \end{equation}
 
-# Referencias
+## Referencias
 
 - Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005.
 - Zettili, N. Quantum Mechanics: Concepts and Applications, 2nd ed.; Wiley: Chichester, U.K, 2009.
