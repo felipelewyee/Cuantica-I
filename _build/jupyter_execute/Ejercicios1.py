@@ -210,16 +210,3 @@ plt.show()
 Hecho por Juan Felipe Huan Lew Yee y Jorge Martín del Campo Ramírez para la clase de Química Cuántica I del ciclo 2019-I. Universidad Nacional Autónoma de México.
 
 Este archivo puede distribuise libremente y ser considerado Open Source. Si deseas modificarlo para su distribución, solo se pide conservar el nombre de los autores originales.
-
-
-```{toctree}
-:hidden:
-:titlesonly:
-
-
-notebooks
-Ejercicio1
-intro
-content
-markdown
-```

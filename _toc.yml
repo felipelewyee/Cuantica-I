@@ -1,7 +1,12 @@
-file: Ejercicios1
+file: notebooks
 sections:
-- file: notebooks
 - file: Ejercicio1
-- file: intro
-- file: content
-- file: markdown
+- file: Ejercicio2
+- file: Ejercicio3
+- file: Ejercicio4
+- file: Ejercicio5
+- file: Ejercicio6
+- file: Ejercicio7
+- file: Ejercicio8
+- file: Ejercicio9
+- file: Ejercicio10
