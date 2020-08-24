@@ -1,5 +1,3 @@
-# Ejercicio 2
-
 # Partícula en el anillo
 
 Es el sistema de una partícula moviéndose en una trayectoria de radio constante tal que $x^2 + y^2 = r^2$.

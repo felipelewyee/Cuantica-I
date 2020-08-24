@@ -1,4 +1,4 @@
-# Ejercicio 6. Método variacional lineal
+# Método variacional lineal
 
 **Paso 1.** Elijo funciones $\psi_i$ para $\psi_{prueba}$
 \begin{equation}

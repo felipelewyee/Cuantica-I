@@ -1,5 +1,3 @@
-# Ejercicio 5
-
 # Solución de ecuaciones usando Sympy - Álgebra simbólica
 
 Sympy es una librería de algebra simbólica. Se importa así:

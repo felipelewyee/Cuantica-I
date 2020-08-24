@@ -1,5 +1,3 @@
-# Ejercicio 3
-
 # Serie de Taylor
 
 Sea una función f(x) continua e infinitamente diferenciable, esta puede expresarse en torno a $a$ mediante una serie de potencias

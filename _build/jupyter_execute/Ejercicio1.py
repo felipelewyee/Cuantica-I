@@ -1,4 +1,4 @@
-# Ejercicio 1. Partícula Libre
+# Partícula Libre
 
 Es la descripción de una partícula moviéndose en un potencial **uniforme**, **conservativo** y **sin restricciones**.
 

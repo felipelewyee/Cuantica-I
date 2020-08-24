@@ -1,5 +1,3 @@
-# Ejercicio 4
-
 # Átomo de Hidrógeno
 
 Sistema. Un electrón girándo en torno a un núcleo (protón) con radio no fijo.

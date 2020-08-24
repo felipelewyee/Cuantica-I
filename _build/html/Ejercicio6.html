@@ -1,0 +1,807 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Método variacional lineal &#8212; Cuántica I</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Aprendiendo a usar psi4" href="Ejercicio7.html" />
+    <link rel="prev" title="Solución de ecuaciones usando Sympy - Álgebra simbólica" href="Ejercicio5.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Cuántica I</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio1.html">
+   Partícula Libre
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio1.html#particula-en-una-caja">
+   Partícula en una caja
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio1.html#referencias">
+   Referencias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio2.html">
+   Partícula en el anillo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio2.html#particula-en-la-esfera">
+   Particula en la esfera
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio2.html#rotor-rigido">
+   Rotor Rígido
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio2.html#referencias">
+   Referencias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio3.html">
+   Serie de Taylor
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio3.html#serie-de-fourier">
+   Serie de Fourier
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio3.html#oscilador-armonico-cuantico">
+   Oscilador Armónico Cuántico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio3.html#referencias">
+   Referencias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio4.html">
+   Átomo de Hidrógeno
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio4.html#referencias">
+   Referencias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio5.html">
+   Solución de ecuaciones usando Sympy - Álgebra simbólica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio5.html#ultimo-ejercicio">
+   Último ejercicio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio5.html#referencias">
+   Referencias
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Método variacional lineal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#con-tres-gaussiana">
+   Con tres Gaussiana
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#graficamos">
+   Graficamos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="#referencias">
+   Referencias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio7.html">
+   Aprendiendo a usar psi4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio7.html#referencias">
+   Referencias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio8.html">
+   Ejercicio 8. Hartree-Fock-Roothan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio8.html#metodo-simple-psi4">
+   Método Simple. PSI4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio8.html#referencias">
+   Referencias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio9.html">
+   Ejercicio 9.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio9.html#referencias">
+   Referencias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio10.html">
+   Catenaria: Un problema de cálculo de variaciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio10.html#grafica">
+   Gráfica
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio10.html#referencias">
+   Referencias
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio10.html#autores">
+   Autores
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Ejercicio6.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="metodo-variacional-lineal">
+<h1>Método variacional lineal<a class="headerlink" href="#metodo-variacional-lineal" title="Permalink to this headline">¶</a></h1>
+<p><strong>Paso 1.</strong> Elijo funciones <span class="math notranslate nohighlight">\(\psi_i\)</span> para <span class="math notranslate nohighlight">\(\psi_{prueba}\)</span>
+\begin{equation}
+\psi_{prueba} = \sum_{i=1} c_i \psi_i<br />
+\end{equation}</p>
+<p>Para este ejemplo tomaremos dos funciones:
+\begin{equation}
+\psi_1 = \left( \frac{2(1.309756377)}{\pi} \right)^{\frac{3}{4}} e^{-1.309756377r^2}
+\end{equation}
+\begin{equation}
+\psi_2 = \left( \frac{2(0.233135974)}{\pi} \right)^{\frac{3}{4}} e^{-0.233135974r^2}
+\end{equation}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">psi_1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">1.309756377</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">3.0</span><span class="o">/</span><span class="mf">4.0</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.309756377</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
+<span class="n">psi_2</span> <span class="o">=</span>  
+<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">psi_1</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">psi_2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-1-ae64b27e822f&gt;&quot;</span><span class="gt">, line </span><span class="mi">8</span>
+    <span class="n">psi_2</span> <span class="o">=</span>
+             <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Paso 2.</strong> Evalúo las matrices <span class="math notranslate nohighlight">\(\mathcal{H}\)</span> y <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>.</p>
+<p>En este ejemplo recordaremos que
+\begin{equation}
+\hat{H} = -\frac{1}{2} \nabla^2 - \frac{1}{r} = -\frac{1}{2} \frac{1}{r} \frac{d^2}{dr^2} r -\frac{1}{r}
+\end{equation}</p>
+<p>\begin{equation}
+\mathcal{H} = \begin{pmatrix} H_{11} &amp; H_{12}\
+H_{21} &amp; H_{22}
+\end{pmatrix} = \begin{pmatrix} 4 \pi\int_0^\infty \psi_1^* \hat{H} \psi_1 r^2dr &amp; 4 \pi\int_0^\infty \psi_1^* \hat{H} \psi_2 r^2dr\
+4 \pi\int_0^\infty \psi_2^* \hat{H} \psi_1 r^2dr &amp; 4 \pi\int_0^\infty \psi_2^* \hat{H} \psi_2 r^2dr
+\end{pmatrix}
+\end{equation}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H_1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">psi_1</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="o">*</span><span class="n">psi_1</span>
+<span class="n">H_2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">psi_2</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="o">*</span><span class="n">psi_2</span>
+
+<span class="c1">#sp.pprint(H_1)</span>
+<span class="c1">#sp.pprint(H_2)</span>
+
+<span class="n">H</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#sp.pprint(H)</span>
+<span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi_1</span><span class="o">*</span><span class="n">H_1</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+<span class="c1">#sp.pprint(H[0,0])</span>
+<span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi_1</span><span class="o">*</span><span class="n">H_2</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+<span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">H</span><span class="o">=</span><span class="n">H</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
+<span class="n">H</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Ejercicio6_6_0.png" src="_images/Ejercicio6_6_0.png" />
+</div>
+</div>
+<p>\begin{equation}
+\mathcal{S} = \begin{pmatrix} S_{11} &amp; S_{12}\
+S_{21} &amp; S_{22}
+\end{pmatrix} = \begin{pmatrix} 4 \pi\int_0^\infty \psi_1^* \psi_1 r^2dr &amp; 4 \pi\int_0^\infty \psi_1^* \psi_2 r^2dr\
+4 \pi\int_0^\infty \psi_2^* \psi_1 r^2dr &amp; 4 \pi\int_0^\infty \psi_2^* \psi_2 r^2dr
+\end{pmatrix}
+\end{equation}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">psi_1</span><span class="o">*</span><span class="n">psi_1</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+<span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">S</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">S</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">S</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Ejercicio6_8_0.png" src="_images/Ejercicio6_8_0.png" />
+</div>
+</div>
+<p><strong>Paso 3.</strong> Resuelvo <span class="math notranslate nohighlight">\(\color{red}{\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}}\)</span></p>
+<p>Propongo <span class="math notranslate nohighlight">\(\mathcal{C} = \mathcal{S}^{-1/2} \mathcal{C}'\)</span></p>
+<p>Entonces:
+\begin{equation}
+\mathcal{H}\mathcal{S}^{-1/2} \mathcal{C}’ = \mathcal{S}\mathcal{S}^{-1/2} \mathcal{C}’ \mathcal{\epsilon}
+\end{equation}</p>
+<p>Multiplico por la izquierda por <span class="math notranslate nohighlight">\(\mathcal{S}^{-1/2}\)</span>:
+\begin{equation}
+\mathcal{S}^{-1/2} \mathcal{H}\mathcal{S}^{-1/2} \mathcal{C}’ = \mathcal{S}^{-1/2} \mathcal{S}\mathcal{S}^{-1/2} \mathcal{C}’ \mathcal{\epsilon}
+\end{equation}</p>
+<p>Si <span class="math notranslate nohighlight">\(\mathcal{H}' = \mathcal{S}^{-1/2} \mathcal{H}\mathcal{S}^{-1/2}\)</span>:
+\begin{equation}
+\mathcal{H}’ \mathcal{C}’ = \mathcal{C}’ \mathcal{\epsilon}
+\end{equation}</p>
+<p>Alternativamente, la instrucción</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">E</span><span class="p">,</span><span class="n">C</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">S</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>resuelve directamente el problema <span class="math notranslate nohighlight">\(\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">LA</span>
+<span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="n">H</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">H</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span>
+<span class="n">S</span> <span class="o">=</span> 
+
+<span class="n">E</span><span class="p">,</span><span class="n">C</span> <span class="o">=</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.4831514   0.97547404]
+[[-0.2599737  -1.23024195]
+ [-0.82078782  0.95256965]]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Paso 4.</strong> Sustituyo en $<span class="math notranslate nohighlight">\(\psi_{prueba} = \sum_{i=1} c_i \psi_i\)</span>$</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_p</span> <span class="o">=</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Ejercicio6_13_0.png" src="_images/Ejercicio6_13_0.png" />
+</div>
+</div>
+<p>Se puede comprobar que se cumple la condición de normalización
+\begin{equation}
+4\pi \int_0^{\infty} r^2 |\psi_{prueba}|^2 dr= 1
+\end{equation}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi_p</span><span class="o">*</span><span class="n">psi_p</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Ejercicio6_15_0.png" src="_images/Ejercicio6_15_0.png" />
+</div>
+</div>
+<p>Separamos la función de prueba como Gaussiana, así como sus contribuciones para comparar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_2g</span> <span class="o">=</span> <span class="n">psi_p</span>
+<span class="n">psi_2g_1</span> <span class="o">=</span> <span class="n">psi_1</span>
+<span class="n">psi_2g_2</span> <span class="o">=</span> <span class="n">psi_2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Graficamos las dos funciones <span class="math notranslate nohighlight">\(\psi_1\)</span> y <span class="math notranslate nohighlight">\(\psi_2\)</span>, así como la <span class="math notranslate nohighlight">\(\psi_{prueba}\)</span> y la solución exacta para el átomo de hidrógeno (1s). Recordar que
+\begin{equation}
+1s = \pi^{-1/2} e^{-|r|}
+\end{equation}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="c1">#Volvemos expresiones evaluables las cuatro funciones</span>
+<span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+<span class="n">lam_s</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
+<span class="n">lam_psi_2g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_2g</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
+<span class="n">lam_psi_2g_1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_2g_1</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
+<span class="n">lam_psi_2g_2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_2g_2</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
+
+<span class="c1">#Evaluamos las cuatro funciones en un dominio de r</span>
+<span class="n">r1</span> <span class="o">=</span> 
+<span class="n">psi_s</span> <span class="o">=</span> <span class="n">lam_s</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+<span class="n">psi_2g1</span> <span class="o">=</span> <span class="n">lam_psi_2g</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+<span class="n">psi_2g_1</span> <span class="o">=</span> 
+<span class="n">psi_2g_2</span> <span class="o">=</span> 
+
+<span class="c1">#Graficamos</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">psi_s</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;1s&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">psi_2g1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;psi_prueba&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span>        <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;psi_1&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span>        <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;psi_2&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Ejercicio6_19_0.png" src="_images/Ejercicio6_19_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="con-tres-gaussiana">
+<h1>Con tres Gaussiana<a class="headerlink" href="#con-tres-gaussiana" title="Permalink to this headline">¶</a></h1>
+<p><strong>Paso 1.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">psi_1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">3.42525091</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">3.42525091</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">psi_2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">0.62391373</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.62391373</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">psi_3</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">0.16885540</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">0.16885540</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;psi_1&quot;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">psi_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;psi_2&quot;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">psi_2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;psi_3&quot;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">psi_3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>psi_1
+                                      2
+                  -0.75  -3.42525091⋅r 
+4.23439910835034⋅π     ⋅ℯ              
+psi_2
+                                     2
+                 -0.75  -0.62391373⋅r 
+1.1806356801173⋅π     ⋅ℯ              
+psi_3
+                                      2
+                   -0.75  -0.1688554⋅r 
+0.443005085955685⋅π     ⋅ℯ             
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Paso 2.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H_1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">psi_1</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="o">*</span><span class="n">psi_1</span>
+<span class="n">H_2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">psi_2</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="o">*</span><span class="n">psi_2</span>
+<span class="n">H_3</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">psi_3</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="o">*</span><span class="n">psi_3</span>
+<span class="c1">#</span>
+<span class="n">H</span> <span class="o">=</span> 
+<span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">H</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">H</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">H</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> 
+
+<span class="n">H</span><span class="o">=</span><span class="n">H</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
+<span class="n">H</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Ejercicio6_24_0.png" src="_images/Ejercicio6_24_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#</span>
+<span class="n">S</span> <span class="o">=</span> 
+<span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">S</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">S</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">S</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">S</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">S</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">S</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> 
+<span class="n">S</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Ejercicio6_25_0.png" src="_images/Ejercicio6_25_0.png" />
+</div>
+</div>
+<p><strong>Paso3.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">linalg</span> <span class="k">as</span> <span class="n">LA</span>
+
+<span class="n">H</span> <span class="o">=</span> 
+<span class="n">S</span> <span class="o">=</span> 
+
+<span class="n">E</span><span class="p">,</span><span class="n">C</span> <span class="o">=</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-0.4957408   0.32474441  4.70775684]
+[[ 0.09347468  0.06200336 -1.34099753]
+ [ 0.37301543  1.35732612  1.31521322]
+ [ 0.64687893 -1.33378635 -0.55358619]]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Paso 4.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_p</span> <span class="o">=</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Ejercicio6_30_0.png" src="_images/Ejercicio6_30_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">4</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">psi_p</span><span class="o">*</span><span class="n">psi_p</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">sp</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Ejercicio6_31_0.png" src="_images/Ejercicio6_31_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_3g</span> <span class="o">=</span> <span class="n">psi_p</span>
+<span class="n">psi_3g_1</span> <span class="o">=</span> <span class="n">psi_1</span>
+<span class="n">psi_3g_2</span> <span class="o">=</span> <span class="n">psi_2</span>
+<span class="n">psi_3g_3</span> <span class="o">=</span> <span class="n">psi_3</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+<span class="n">lam_s</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
+<span class="n">lam_psi_3g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_3g</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
+<span class="n">lam_psi_3g_1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_3g_1</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
+<span class="n">lam_psi_3g_2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_3g_2</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
+<span class="n">lam_psi_3g_3</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_3g_3</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
+
+<span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">psi_s</span> <span class="o">=</span> 
+<span class="n">psi_3g1</span> <span class="o">=</span> 
+<span class="n">psi_3g_1</span> <span class="o">=</span> 
+<span class="n">psi_3g_2</span> <span class="o">=</span> 
+<span class="n">psi_3g_3</span> <span class="o">=</span> 
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span>     <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;1s&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span>       <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;3g&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span>        <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;psi_1&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span>        <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;psi_2&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span>        <span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;psi_3&quot;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Ejercicio6_33_0.png" src="_images/Ejercicio6_33_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="graficamos">
+<h1>Graficamos<a class="headerlink" href="#graficamos" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">sp</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">sp</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">sp</span><span class="o">.</span><span class="n">Abs</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
+<span class="n">lam_s</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
+<span class="n">lam_psi_2g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_2g</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
+<span class="n">lam_psi_3g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_3g</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
+
+<span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">psi_s</span> <span class="o">=</span> <span class="n">lam_s</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+<span class="n">psi_2g1</span> <span class="o">=</span> <span class="n">lam_psi_2g</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+<span class="n">psi_3g1</span> <span class="o">=</span> <span class="n">lam_psi_3g</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">psi_s</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;1s&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">psi_2g1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;2g&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">psi_3g1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;3g&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Ejercicio6_35_0.png" src="_images/Ejercicio6_35_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="referencias">
+<h1>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005.</p></li>
+<li><p>Pilar, F. L. Elementary Quantum Chemistry; 2001.</p></li>
+<li><p>Zettili, N. Quantum Mechanics: Concepts and Applications, 2nd ed.; Wiley: Chichester, U.K, 2009.</p></li>
+<li><p>Levine, I. N. Quantum Chemistry, 5th ed.; Prentice Hall: Upper Saddle River, N.J, 2000.</p></li>
+<li><p>McQuarrie, D. A.; Simon, J. D. Physical Chemistry: A Molecular Approach; University Science Books: Sausalito, Calif, 1997.</p></li>
+</ul>
+<p>Hecho por Juan Felipe Huan Lew Yee y Jorge Martín del Campo Ramírez para la clase de Química Cuántica I del ciclo 2019-I. Universidad Nacional Autónoma de México.</p>
+<p>Este archivo puede distribuise libremente y ser considerado Open Source. Si deseas modificarlo para su distribución, solo se pide conservar el nombre de los autores originales.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="Ejercicio5.html" title="previous page">Solución de ecuaciones usando Sympy - Álgebra simbólica</a>
+    <a class='right-next' id="next-link" href="Ejercicio7.html" title="next page">Aprendiendo a usar psi4</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dr. Jorge Martín del Campo Ramírez, Dr. José Eduardo Barrios Vargas, M en C. Juan Felipe Huan Lew Yee<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

@@ -1,5 +1,3 @@
-# Ejercicio 7
-
 Lista de algunos programas de química cuántica:
 - Gaussian (https://gaussian.com/)
 - Psi4 (http://www.psicode.org/)
