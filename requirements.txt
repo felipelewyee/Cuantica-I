@@ -1,3 +1,6 @@
-jupyter-book
+jupyter-notbook
 matplotlib
 numpy
+scipy
+sympy
+psi4

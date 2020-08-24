@@ -63,21 +63,3 @@ ax.legend(custom_lines, ['Cold', 'Medium', 'Hot']);
 
 There is a lot more that you can do with outputs (such as including interactive outputs)
 with your book. For more information about this, see [the Jupyter Book documentation](https://executablebooks.github.io/cli/start/overview.html)
-
-
-```{toctree}
-:hidden:
-:titlesonly:
-
-
-Ejercicio1
-Ejercicio2
-Ejercicio3
-Ejercicio4
-Ejercicio5
-Ejercicio6
-Ejercicio7
-Ejercicio8
-Ejercicio9
-Ejercicio10
-```
