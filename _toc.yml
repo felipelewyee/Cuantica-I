@@ -1,12 +1,15 @@
-file: intro
-sections:
-- file: Ejercicio1
-- file: Ejercicio2
-- file: Ejercicio3
-- file: Ejercicio4
-- file: Ejercicio5
-- file: Ejercicio6
-- file: Ejercicio7
-- file: Ejercicio8
-- file: Ejercicio9
-- file: Ejercicio10
+- file: intro
+  numbered: true
+
+- part: Cuantica
+  chapters:
+  - file: Ejercicio1
+  - file: Ejercicio2
+  - file: Ejercicio3
+  - file: Ejercicio4
+  - file: Ejercicio5
+  - file: Ejercicio6
+  - file: Ejercicio7
+  - file: Ejercicio8
+  - file: Ejercicio9
+  - file: Ejercicio10
