@@ -1,6 +1,10 @@
 - file: intro
   numbered: true
 
+- part: Python
+  chapters:
+  - file: Tutorial-Resuelto
+
 - part: Cuantica
   chapters:
   - file: Ejercicio1

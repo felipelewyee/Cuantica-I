@@ -1,7 +1,7 @@
 # Book settings
 title: Cuántica I
 author: Dr. Jorge Martín del Campo Ramírez, Dr. José Eduardo Barrios Vargas, M en C. Juan Felipe Huan Lew Yee
-logo: logo.png
+logo: logo.jpeg
 
 launch_buttons:
   colab_url                 : https://colab.research.google.com # The URL of Google Colab (e.g., https://colab.research.google.com)
