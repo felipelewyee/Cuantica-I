@@ -23,6 +23,8 @@ Imprimiría 5.0. **Prueba imprimir el valor de la variable que hiciste arriba**
 
 print(x)
 
+## Operacions Básicas
+
 También aplican las operaciones conocidas del álgebra, por ejemplo
 
 
@@ -72,8 +74,10 @@ print("multiplicación",z_mult)
 print("división",z_div)
 print("potencia",z_pot)
 
-La funcionalidad de python se puede extender utilizando **módulos**. Existen 2 importantes para el curso, **numpy** y **matplotlib**.
-**Para activar un módulo utilizamos la palabra import**, por ejemplo
+## Librerías
+
+La funcionalidad de python se puede extender utilizando **librerías**. Existen 2 importantes para el curso, **numpy** y **matplotlib**.
+**Para activar una librería utilizamos la palabra import**, por ejemplo
 ~~~python
 import numpy as np
 ~~~
@@ -100,6 +104,8 @@ print(raiz)
 x=5.0
 raiz=np.sqrt(x)
 print(raiz)
+
+## Vectores y Matrices
 
 Podemos hacer vectores poniéndolos entre corchetes cuadrados, por ejemplo
 ~~~python
@@ -204,6 +210,8 @@ print(val)
 print("Eigenvectores")
 print(vec)
 
+## Gráficas
+
 Vamos a graficar la función y=sin(x) de -3 a 3.
 Primero crearemos el dominio de la función (los valores de x), en nuestro ejemplo le daremos 50 puntos. Utilizaremos linspace(a,b,n) que crea un conjunto de n números distribuidos desde a hasta b.
 ~~~python
@@ -236,6 +244,8 @@ y2=np.exp(-np.abs(x)**2.0)
 plt.scatter(x,y1)
 plt.scatter(x,y2)
 plt.show()
+
+## Integrales
 
 También podemos hacer integrales con python. Por ejemplo, vamos a integrar y=x^2 en el dominio $-3 \leq x \leq3$. Para ello importaremos scipy.integrate.quad con
 ~~~python
@@ -294,7 +304,7 @@ print(gaussian_norm)
 gaussian_norm=integrate.tplquad(lambda theta,phi,r: (3.0/4.0*(np.pi/2.0)**(3/2))**(-1.0)*r**4.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)
 print(gaussian_norm)
 
-# Autores
+## Autores
 
 Hecho por Juan Felipe Huan Lew Yee y Jorge Martín del Campo Ramírez para la clase de Química Cuántica I del ciclo 2019-I. Universidad Nacional Autónoma de México.
 

@@ -91,11 +91,6 @@
    1. Tutorial.
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="#autores">
-   2. Autores
-  </a>
- </li>
 </ul>
 <p class="caption">
  <span class="caption-text">
@@ -238,7 +233,39 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operacions-basicas">
+   1.1. Operacions Básicas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#librerias">
+   1.2. Librerías
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vectores-y-matrices">
+   1.3. Vectores y Matrices
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#graficas">
+   1.4. Gráficas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrales">
+   1.5. Integrales
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autores">
+   1.6. Autores
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -283,6 +310,8 @@
 </div>
 </div>
 </div>
+<div class="section" id="operacions-basicas">
+<h2><span class="section-number">1.1. </span>Operacions Básicas<a class="headerlink" href="#operacions-basicas" title="Permalink to this headline">¶</a></h2>
 <p>También aplican las operaciones conocidas del álgebra, por ejemplo</p>
 <table class="colwidths-auto table">
 <thead>
@@ -366,8 +395,11 @@ potencia 25.0
 </div>
 </div>
 </div>
-<p>La funcionalidad de python se puede extender utilizando <strong>módulos</strong>. Existen 2 importantes para el curso, <strong>numpy</strong> y <strong>matplotlib</strong>.
-<strong>Para activar un módulo utilizamos la palabra import</strong>, por ejemplo</p>
+</div>
+<div class="section" id="librerias">
+<h2><span class="section-number">1.2. </span>Librerías<a class="headerlink" href="#librerias" title="Permalink to this headline">¶</a></h2>
+<p>La funcionalidad de python se puede extender utilizando <strong>librerías</strong>. Existen 2 importantes para el curso, <strong>numpy</strong> y <strong>matplotlib</strong>.
+<strong>Para activar una librería utilizamos la palabra import</strong>, por ejemplo</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
@@ -405,6 +437,9 @@ potencia 25.0
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="vectores-y-matrices">
+<h2><span class="section-number">1.3. </span>Vectores y Matrices<a class="headerlink" href="#vectores-y-matrices" title="Permalink to this headline">¶</a></h2>
 <p>Podemos hacer vectores poniéndolos entre corchetes cuadrados, por ejemplo</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </pre></div>
@@ -589,6 +624,9 @@ Eigenvectores
 </div>
 </div>
 </div>
+</div>
+<div class="section" id="graficas">
+<h2><span class="section-number">1.4. </span>Gráficas<a class="headerlink" href="#graficas" title="Permalink to this headline">¶</a></h2>
 <p>Vamos a graficar la función y=sin(x) de -3 a 3.
 Primero crearemos el dominio de la función (los valores de x), en nuestro ejemplo le daremos 50 puntos. Utilizaremos linspace(a,b,n) que crea un conjunto de n números distribuidos desde a hasta b.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
@@ -616,7 +654,7 @@ Primero crearemos el dominio de la función (los valores de x), en nuestro ejemp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial-Resuelto_26_0.png" src="_images/Tutorial-Resuelto_26_0.png" />
+<img alt="_images/Tutorial-Resuelto_30_0.png" src="_images/Tutorial-Resuelto_30_0.png" />
 </div>
 </div>
 <p><strong>En el siguiente recuadro haga la gráfica de las funciones <span class="math notranslate nohighlight">\(y=e^{-|x|}\)</span> y de <span class="math notranslate nohighlight">\(y=e^{-|x|^2}\)</span> con 100 puntos desde -3 hasta 3.</strong></p>
@@ -632,9 +670,12 @@ Primero crearemos el dominio de la función (los valores de x), en nuestro ejemp
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Tutorial-Resuelto_28_0.png" src="_images/Tutorial-Resuelto_28_0.png" />
+<img alt="_images/Tutorial-Resuelto_32_0.png" src="_images/Tutorial-Resuelto_32_0.png" />
 </div>
 </div>
+</div>
+<div class="section" id="integrales">
+<h2><span class="section-number">1.5. </span>Integrales<a class="headerlink" href="#integrales" title="Permalink to this headline">¶</a></h2>
 <p>También podemos hacer integrales con python. Por ejemplo, vamos a integrar y=x^2 en el dominio <span class="math notranslate nohighlight">\(-3 \leq x \leq3\)</span>. Para ello importaremos scipy.integrate.quad con</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.integrate</span> <span class="k">as</span> <span class="nn">integrate</span>
 </pre></div>
@@ -745,9 +786,10 @@ Su integral de normalización será
 </div>
 </div>
 <div class="section" id="autores">
-<h1><span class="section-number">2. </span>Autores<a class="headerlink" href="#autores" title="Permalink to this headline">¶</a></h1>
+<h2><span class="section-number">1.6. </span>Autores<a class="headerlink" href="#autores" title="Permalink to this headline">¶</a></h2>
 <p>Hecho por Juan Felipe Huan Lew Yee y Jorge Martín del Campo Ramírez para la clase de Química Cuántica I del ciclo 2019-I. Universidad Nacional Autónoma de México.</p>
 <p>Este archivo puede distribuise libremente y ser considerado Open Source. Si deseas modificarlo para su distribución, solo se pide conservar el nombre de los autores originales.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
