@@ -1,8 +1,8 @@
 # Tutorial Avanzado.
 
-En esta parte aprenderá a utilizar Python para manejar vectores y matrices, crear gráficas y resolver integrales. Estas funciones nos serán trascendentales para el curso de **Química Cuántica I**. **Recuerde escribir en los cuadros vacíos y presionar el botón Run o las teclas "Shift" + "Enter".**
+En esta parte del tutorial aprenderá a utilizar Python para manejar vectores y matrices, crear gráficas y resolver integrales. Estas funciones serán trascendentales para el curso de **Química Cuántica I**. **Recuerde escribir en los cuadros vacíos y presionar el botón Run o las teclas "Shift" + "Enter".**
 
-Utilizaremos las librerías numpy, matplotlib y scipy que aprendió a utilizar en el Tutorial Básico, impórtelas utilizando las líneas
+Utilizaremos las librerías numpy, matplotlib y scipy que aprendió a utilizar en el Tutorial Básico, impórtelas con las líneas
 ~~~python
 import numpy as np
 from matplotlib import pyplot as plt

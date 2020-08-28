@@ -24,7 +24,7 @@ print(x)
 ~~~
 imprimiría el valor 5.0. 
 
-**Pruebe imprimir el valor de la variable que declaró anteriormente**
+**Imprima el valor de la variable que declaró anteriormente**
 
 #Imprima el valor de la variable x
 
@@ -54,6 +54,7 @@ z_resta = x-y
 z_mult  = x*y
 z_div   = x/y
 z_pot   = x**y
+
 #Imprimimos los resultados
 print("x",x,"y",y)
 print("suma",z_suma)
@@ -67,13 +68,13 @@ Los resultados se almacenan en las variables z_suma, z_resta, z_mult y z_div. Es
 
 **Declare una variable llamada "y", asígnele el valor 10.0, calcule las 5 operaciones utilizando su variable ¨ "x" previamente definida, e imprima el resultado.**
 
-
+#Declare variable
 
 ## Librerías
 
 La funcionalidad de python se puede extender utilizando **librerías**. Existen 4 importantes para el curso, **numpy**, **matplotlib**, **scipy** y **sympy**.
 
-**Para activar una librería utilizamos la palabra import**, seguida del nombre de la librería, por ejemplo
+Para activar una librería utilizamos la palabra **import**, seguida del nombre de la librería, por ejemplo
 ~~~python
 import scipy
 ~~~
@@ -89,7 +90,7 @@ También podemos tomar partes específicas de una librería, para ello utilizamo
 from matplotlib import pyplot as plt
 ~~~
 
-**Copia y pega las instrucciones anteriores en el recuadro para importar las librerías **numpy**, **matplotlib**, **scipy** y **sympy**.
+**Copie y pegue las instrucciones anteriores en el recuadro para importar las librerías** numpy, matplotlib, scipy y sympy.
 
 #Importe librerías
 
