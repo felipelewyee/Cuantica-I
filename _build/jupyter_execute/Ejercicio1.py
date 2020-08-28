@@ -1,14 +1,22 @@
-# Ejercicio 1
+# Partícula Libre y Partícula en la caja
+
+A continuación estudiaremos sistemas sencillos que nos permiten entender como surge la cuantización. Además, nos permitirán familiarizarnos con los pasos para resolver los problemas de química cuántica. Podemos resumir estos como:
+1. Identificar las interacciones y restricciones del sistema.
+2. Escrbir el Hamiltoniano ($\mathcal{H}$) y la ecuación de Schrodinger ($\mathcal{H}\psi = \varepsilon \psi$).
+3. Encontrar la función de onda ($\psi$).
+4. Estudiar las condiciones de cuantización.
 
 ## Partícula Libre
 
-Es la descripción de una partícula moviéndose en un potencial **uniforme**, **conservativo** y **sin restricciones**.
+La partícula libre es el sistema más sencillo posible, consiste en una partícula que se mueve en un potencial **uniforme**, **conservativo** y **sin restricciones**. 
 
-En 1D el Hamiltoniano es
+El primer paso consiste en escribir el Hamiltoniano, el cuál contiene las interacciones del sistema. En 1D el Hamiltoniano es
 
 $$
 \mathcal{H} = - \frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V(x)
 $$
+
+donde el primer término es la energía cinética y el segundo el potencial.
 
 La ecuación de Schrodinger a resolver se obtiene de susituir el Hamiltoniano en $\mathcal{H}\psi=\varepsilon\psi$:
 
@@ -22,19 +30,19 @@ $$
 -\frac{d^2 \psi(x)}{dx^2} = \frac{2m(\varepsilon-V)}{\hbar^2}\psi(x) = \frac{2mE}{\hbar^2}\psi(x)
 $$
 
-Se necesita una función cuya segunda derivada sea la misma función multiplicada por alguna constante. Esta característica la cumplen las exponenciales, por tanto:
+La solución a la ecuación anterior es una función cuya segunda derivada es la misma función multiplicada por alguna constante. Esta característica la cumplen las exponenciales, por tanto se propone que la solución tenga la forma:
 
 $$
 \psi = A'e^{ikx} + B'e^{-ikx}
 $$
 
-Al sustituir
+Al sustituir en la ecuación diferencial
 
 $$
 -\frac{d^2 \psi(x)}{dx^2} = k^2(A'e^{ikx} + B'e^{-ikx}) = k^2\psi
 $$
 
-Por comparación:
+Podemos encontrar la forma de $k$ por simple comparación:
 
 $$
 k^2 = \frac{2mE}{\hbar^2}
@@ -46,9 +54,11 @@ $$
 \psi = Acos(kx) + Bsin(kx)
 $$
 
+Los pasos anteriores nos han permitido encontrar una forma para la función de onda, sin embargo, no ha surgido cuantización.
+
 ## Partícula en una caja
 
-En este caso el potencial está definido por:
+La versión 1D de este sistema consiste en una partícula que se mueve en el espacio con un potencial definido en tres regiones, tal que:
 
 $$
 V(x) = \left\{
@@ -60,21 +70,24 @@ V(x) = \left\{
   \right.
 $$
 
-Esto significa que la partícula está confinada a un intervalo en $x \epsilon [0,L]$. La función de onda se puede dividir por regiones, tal que
+Esto significa que la partícula está confinada a un intervalo en $x \epsilon [0,L]$. La función de onda se puede dividir por regiones. Es imposible que la partícula se encuentre en la región I y en la región III, ya que el potencial es infinito, por lo tanto:
 
 $$
-  \begin{array}{ll}
-  \psi(x) = 0      & \mathrm{si\ } x < 0 \mathrm{\ o\ } x>L\\
+\psi(x) = 0 \left\{
+  \begin{array}{lll}
+  \mathrm{si\ } x < 0 & I\\
+  \mathrm{si\ } x > L & III
   \end{array}
+  \right.
 $$
 
-La región II tiene una función de onda dada por el Hamiltoniano
+Para encontrar la función de onda en la región II hay que escribir la de Schrodinger
 
 $$
 \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} +V(x)\right)\psi(x)=\varepsilon\psi(x)
 $$
 
-cuya solución conocida es
+cuya solución, como se vio anteriormente, es
 
 $$
   \begin{array}{lll}
@@ -82,19 +95,19 @@ $$
   \end{array}
 $$
 
-Por la continuidad con la región I, se cumple $A=0$ ya que
+La función de onda debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, $\psi_{I}(0) = \psi_{II}(0) = 0$. Esto implica que $A=0$, ya que
 
 $$
-\psi(0) = 0 = Acos(0) + Bsin(0) = A
+\psi_{II}(0) = 0 = Acos(0) + Bsin(0) = A
 $$
 
-Por la continuidad con la región III se tiene
+Por la continuidad con la región III también se cumple $\psi_{II}(L) = \psi_{III}(L) = 0$, es decir
 
 $$
-\psi(L) = 0 = Bsin(kL)
+\psi_{II}(L) = 0 = Bsin(kL)
 $$
 
-$B \neq 0$ porque $\psi$ se anularía, entonces $kL$ debe ser un múltiplo de $n\pi$, es decir
+Ya obtuvimos que $A$ vale cero, sin embargo, $B$ no puede ser cero porque $\psi_{II}$ se anularía. La única forma de que se cumpla la ecuación anterior es que $kL$ sea un múltiplo de $\pi$, es decir $kL = n \pi$, o lo que es lo mismo
 
 $$
   \begin{array}{ll}
@@ -102,13 +115,19 @@ $$
   \end{array}
 $$
 
-Al normalizar la función de onda:
+Hemos obtenido que
+
+$$
+\psi = B sin \left( \frac{n \pi x}{L}\right)
+$$
+
+Para encontrar el valor de B hay que normalizar la función de onda, resultando que:
 
 $$
 \psi_n(x)=\left(\frac{2}{L}\right)^{1/2}sin\left(\frac{n\pi x}{L}\right)
 $$
 
-La energía será
+Al sustituir la función de onda se obtiene la expresión de la energía, que es
 
 $$
   \begin{array}{ll}
@@ -121,29 +140,111 @@ $$
 
 Sugerencias
 1. Importe numpy y matplotlib.pyplot
-2. Defina la variable L
-3. Cree el dominio de 0 a L con numpy.linspace
-4. Calcule la función de onda en el dominio
+2. Declare la variable L y asígnele un valor, por ejemplo $L=1$
+3. Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 50.
+4. Evalúe la función de onda en el dominio
 5. Calcule el cuadrado de la función de onda en el dominio
 6. Grafique la función de onda y su cuadrado usando matplotlib y pyplot.
 
+# Gráfica de psi_1 y su cuadrado
 
+import numpy as np
+from matplotlib import pyplot as plt
 
+L=4.0
+n=1.0
+
+x=np.linspace(0,L,100)
+
+psi=np.sqrt(2.0/L)*np.sin(n*np.pi*x/L)
+psi2=psi*psi
+
+plt.plot(x,psi,label="psi")
+plt.plot(x,psi2,label="psi^2")
+
+plt.legend()
+plt.axhline(y=0, color='k')
+plt.show()
 
 **Grafique la función de onda y el cuadrado de la función de onda para n=1,2,3,4 para L=4.0 A**
 Sugerencias:
 1. Importe numpy y matplotlib.pyplot
-2. Defina la variable L
-3. Cree el dominio de 0 a L con numpy.linspace
-4. Calcule las 4 funciones de onda en el dominio
+2. Declare la variable L y asígnele un valor, por ejemplo $L=1$
+3. Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 50.
+4. Evalúe las 4 funciones de onda en el dominio
 5. Calcule el cuadrado de las 4 funciones de onda en el dominio
 6. Grafique las funciones y su cuadrado usando matplotlib y pyplot.
 
+# Gráfica de psi_1, psi_2, psi_3, psi_4 y su cuadrado
 
+import numpy as np
+from matplotlib import pyplot as plt
 
-Como estamos haciendo una secuencia de gráficas donde aumentamos n de uno en uno, podemos hacerlo con un ciclo for
+L=4.0
+x=np.linspace(0,L,100)
 
+n=1.0
 
+psi=np.sqrt(2.0/L)*np.sin(n*np.pi*x/L)
+psi2=psi*psi
+plt.plot(x,psi,label="psi")
+plt.plot(x,psi2,label="psi^2")
+
+plt.legend()
+plt.axhline(y=0, color='k')
+plt.show()
+
+n=2.0
+
+psi=np.sqrt(2.0/L)*np.sin(n*np.pi*x/L)
+psi2=psi*psi
+plt.plot(x,psi,label="psi")
+plt.plot(x,psi2,label="psi^2")
+
+plt.legend()
+plt.axhline(y=0, color='k')
+plt.show()
+
+n=3.0
+
+psi=np.sqrt(2.0/L)*np.sin(n*np.pi*x/L)
+psi2=psi*psi
+plt.plot(x,psi,label="psi")
+plt.plot(x,psi2,label="psi^2")
+
+plt.legend()
+plt.axhline(y=0, color='k')
+plt.show()
+
+n=4.0
+
+psi=np.sqrt(2.0/L)*np.sin(n*np.pi*x/L)
+psi2=psi*psi
+plt.plot(x,psi,label="psi")
+plt.plot(x,psi2,label="psi^2")
+
+plt.legend()
+plt.axhline(y=0, color='k')
+plt.show()
+
+Como estamos haciendo una secuencia de gráficas donde aumentamos n de uno en uno, podemos hacerlo con un ciclo for. **Repita la gráfica de la función de onda con $n=1,2,3,4$ utilizando un ciclo for**.
+
+# Gráfica de psi_1, psi_2, psi_3, psi_4 y su cuadrado con for
+
+import numpy as np
+from matplotlib import pyplot as plt
+
+L=4.0
+x=np.linspace(0,L,100)
+
+for n in range(1,5):
+    psi=np.sqrt(2.0/L)*np.sin(n*np.pi*x/L)
+    psi2=psi*psi
+    plt.plot(x,psi,label="psi")
+    plt.plot(x,psi2,label="$psi^2$")
+    plt.legend()
+    plt.axhline(y=0, color='k')
+    plt.show()
 
 **Haga la gráfica de E en función de n para los primeros 10 niveles energéticos de un electrón en una caja.**
 
@@ -157,13 +258,24 @@ Con $n=1,2,3,...$
 
 Considere h=1 y m=1. Esto se llama unidades atómicas. Tome L=1 A
 
+from matplotlib import pyplot as plt
 
+for n in range(1,11):
+    plt.hlines(n**2.0/(8.0*(1.0**2.0)),0,1)
+
+plt.xlim(0,4)
+plt.show()
 
 **Muestre que $\psi_1$ y $\psi_3$ son ortonormales (Tome $L=2.0$).**
 
 Ayuda. Haga la integral
 
+import numpy as np
+import scipy.integrate as integrate
 
+L=2.0
+
+integrate.quad(lambda x: np.sqrt(2.0/L)*np.sin(np.pi*1.0*x/L)*np.sqrt(2.0/L)*np.sin(np.pi*3.0*x/L),0,L)
 
 También existe la partícula en una caja para 2-Dimensiones. Se confina la partícula en $x\varepsilon[0,L_x]$ y $y\varepsilon[0,L_y]$.
 
@@ -225,7 +337,35 @@ plt.show()
 
 **Obtenga las gráfica de $\psi_{3,3}$ y $|\psi_{3,3}|^2$ con $L_x = L_y = 4.0$**
 
+from mpl_toolkits import mplot3d
+import numpy as np
+import matplotlib.pyplot as plt
 
+Lx=4.0
+Ly=4.0
+
+nx=3.0
+ny=3.0
+
+x = np.linspace(0, Lx, 70)
+y = np.linspace(0, Ly, 70)
+X, Y = np.meshgrid(x, y)
+
+psi = np.sqrt(2.0/Lx)*np.sqrt(2.0/Ly)*np.sin(nx*np.pi*X/Lx)*np.sin(ny*np.pi*Y/Ly)
+
+ax = plt.axes(projection='3d')
+ax.plot_surface(X, Y, psi, rstride=1, cstride=1,
+                cmap='YlGnBu', edgecolor='none')
+ax.set_title("$\Psi$")
+plt.show()
+
+psi = np.sqrt(2.0/Lx)*np.sqrt(2.0/Ly)*np.sin(nx*np.pi*X/Lx)*np.sin(ny*np.pi*Y/Ly)
+
+ax = plt.axes(projection='3d')
+ax.plot_surface(X, Y, psi**2.0, rstride=1, cstride=1,
+                cmap='YlGnBu', edgecolor='none')
+ax.set_title("$|\Psi|^2$")
+plt.show()
 
 ## Referencias
 
