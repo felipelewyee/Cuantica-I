@@ -3,17 +3,9 @@
 
 - part: Python
   chapters:
-  - file: Tutorial-Resuelto
+  - file: Tutorial-Basico
+  - file: Tutorial-Avanzado
 
 - part: Cuantica
   chapters:
   - file: Ejercicio1
-  - file: Ejercicio2
-  - file: Ejercicio3
-  - file: Ejercicio4
-  - file: Ejercicio5
-  - file: Ejercicio6
-  - file: Ejercicio7
-  - file: Ejercicio8
-  - file: Ejercicio9
-  - file: Ejercicio10
