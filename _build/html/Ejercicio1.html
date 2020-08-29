@@ -39,6 +39,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Parícula en el anillo, Partícula en la esfera y Rotor Rígido" href="Ejercicio2.html" />
     <link rel="prev" title="2. Tutorial Avanzado." href="Tutorial-Avanzado.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -105,6 +106,11 @@
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    1. Partícula Libre y Partícula en la caja
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Ejercicio2.html">
+   2. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
   </a>
  </li>
 </ul>
@@ -230,47 +236,40 @@
 <div class="section" id="particula-libre">
 <h2><span class="section-number">1.1. </span>Partícula Libre<a class="headerlink" href="#particula-libre" title="Permalink to this headline">¶</a></h2>
 <p>La partícula libre es el sistema más sencillo posible, consiste en una partícula que se mueve en un potencial <strong>uniforme</strong>, <strong>conservativo</strong> y <strong>sin restricciones</strong>.</p>
-<p>El primer paso consiste en escribir el Hamiltoniano, el cuál contiene las interacciones del sistema. En 1D el Hamiltoniano es</p>
-<div class="math notranslate nohighlight">
-\[
+<p>El primer paso consiste en escribir el Hamiltoniano, el cuál contiene las interacciones del sistema. En 1D el Hamiltoniano es
+\begin{equation}
 \mathcal{H} = - \frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V(x)
-\]</div>
-<p>donde el primer término es la energía cinética y el segundo el potencial.</p>
-<p>La ecuación de Schrodinger a resolver se obtiene de susituir el Hamiltoniano en <span class="math notranslate nohighlight">\(\mathcal{H}\psi=\varepsilon\psi\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
+\end{equation}
+donde el primer término es la energía cinética y el segundo el potencial.</p>
+<p>La ecuación de Schrodinger a resolver se obtiene de susituir el Hamiltoniano en <span class="math notranslate nohighlight">\(\mathcal{H}\psi=\varepsilon\psi\)</span>:
+\begin{equation}
 \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} +V(x)\right)\psi(x)=\varepsilon\psi(x)
-\]</div>
-<p>Esta se puede reescribir como una ecuación diferencial homogénea de segundo orden</p>
-<div class="math notranslate nohighlight">
-\[
+\end{eqaution}</p>
+<p>Esta se puede reescribir como una ecuación diferencial homogénea de segundo orden
+\begin{equation}
 -\frac{d^2 \psi(x)}{dx^2} = \frac{2m(\varepsilon-V)}{\hbar^2}\psi(x) = \frac{2mE}{\hbar^2}\psi(x)
-\]</div>
-<p>La solución a la ecuación anterior es una función cuya segunda derivada es la misma función multiplicada por alguna constante. Esta característica la cumplen las exponenciales, por tanto se propone que la solución tenga la forma:</p>
-<div class="math notranslate nohighlight">
-\[
-\psi = A'e^{ikx} + B'e^{-ikx}
-\]</div>
-<p>Al sustituir en la ecuación diferencial</p>
-<div class="math notranslate nohighlight">
-\[
--\frac{d^2 \psi(x)}{dx^2} = k^2(A'e^{ikx} + B'e^{-ikx}) = k^2\psi
-\]</div>
-<p>Podemos encontrar la forma de <span class="math notranslate nohighlight">\(k\)</span> por simple comparación:</p>
-<div class="math notranslate nohighlight">
-\[
+\end{equation}</p>
+<p>La solución a la ecuación anterior es una función cuya segunda derivada es la misma función multiplicada por alguna constante. Esta característica la cumplen las exponenciales, por tanto se propone que la solución tenga la forma:
+\begin{equation}
+\psi = A’e^{ikx} + B’e^{-ikx}
+\end{equation}</p>
+<p>Al sustituir en la ecuación diferencial
+\begin{equation}
+-\frac{d^2 \psi(x)}{dx^2} = k^2(A’e^{ikx} + B’e^{-ikx}) = k^2\psi
+\end{equation}</p>
+<p>Podemos encontrar la forma de <span class="math notranslate nohighlight">\(k\)</span> por simple comparación:
+\begin{equation}
 k^2 = \frac{2mE}{\hbar^2}
-\]</div>
-<p>Por la identidad de Euler, la función de onda también puede escribirse como:</p>
-<div class="math notranslate nohighlight">
-\[
+\end{equation}</p>
+<p>Por la identidad de Euler, la función de onda también puede escribirse como:
+\begin{equation}
 \psi = Acos(kx) + Bsin(kx)
-\]</div>
+\end{equation}</p>
 <p>Los pasos anteriores nos han permitido encontrar una forma para la función de onda, sin embargo, no ha surgido cuantización.</p>
 </div>
 <div class="section" id="particula-en-una-caja">
 <h2><span class="section-number">1.2. </span>Partícula en una caja<a class="headerlink" href="#particula-en-una-caja" title="Permalink to this headline">¶</a></h2>
-<p>La versión 1D de este sistema consiste en una partícula que se mueve en el espacio con un potencial definido en tres regiones, tal que:</p>
+<p>La versión 1D de este sistema consiste en una partícula que se mueve en el espacio con un potencial definido en tres regiones, tal que</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 V(x) = \left\{
@@ -291,52 +290,44 @@ V(x) = \left\{
   \end{array}
   \right.
 \end{split}\]</div>
-<p>Para encontrar la función de onda en la región II hay que escribir la de Schrodinger</p>
-<div class="math notranslate nohighlight">
-\[
+<p>Para encontrar la función de onda en la región II hay que escribir la de Schrodinger
+\begin{equation}
 \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} +V(x)\right)\psi(x)=\varepsilon\psi(x)
-\]</div>
-<p>cuya solución, como se vio anteriormente, es</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-  \begin{array}{lll}
-  \psi(x) = Acos(kx) + Bsin(kx)      &amp; \mathrm{si\ } 0 \leq x \leq L; &amp; k^2 = \frac{2mE}{\hbar^2}\\
-  \end{array}
-\end{split}\]</div>
-<p>La función de onda debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, <span class="math notranslate nohighlight">\(\psi_{I}(0) = \psi_{II}(0) = 0\)</span>. Esto implica que <span class="math notranslate nohighlight">\(A=0\)</span>, ya que</p>
-<div class="math notranslate nohighlight">
-\[
+\end{equation}</p>
+<p>cuya solución, como se vio anteriormente, es
+\begin{equation}
+\begin{array}{lll}
+\psi(x) = Acos(kx) + Bsin(kx)      &amp; \mathrm{si\ } 0 \leq x \leq L; &amp; k^2 = \frac{2mE}{\hbar^2}\
+\end{array}
+\end{equation}</p>
+<p>La función de onda debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, <span class="math notranslate nohighlight">\(\psi_{I}(0) = \psi_{II}(0) = 0\)</span>. Esto implica que <span class="math notranslate nohighlight">\(A=0\)</span>, ya que
+\begin{equation}
 \psi_{II}(0) = 0 = Acos(0) + Bsin(0) = A
-\]</div>
-<p>Por la continuidad con la región III también se cumple <span class="math notranslate nohighlight">\(\psi_{II}(L) = \psi_{III}(L) = 0\)</span>, es decir</p>
-<div class="math notranslate nohighlight">
-\[
+\end{equation}</p>
+<p>Por la continuidad con la región III también se cumple <span class="math notranslate nohighlight">\(\psi_{II}(L) = \psi_{III}(L) = 0\)</span>, es decir
+\begin{equation}
 \psi_{II}(L) = 0 = Bsin(kL)
-\]</div>
-<p>Ya obtuvimos que <span class="math notranslate nohighlight">\(A\)</span> vale cero, sin embargo, <span class="math notranslate nohighlight">\(B\)</span> no puede ser cero porque <span class="math notranslate nohighlight">\(\psi_{II}\)</span> se anularía. La única forma de que se cumpla la ecuación anterior es que <span class="math notranslate nohighlight">\(kL\)</span> sea un múltiplo de <span class="math notranslate nohighlight">\(\pi\)</span>, es decir <span class="math notranslate nohighlight">\(kL = n \pi\)</span>, o lo que es lo mismo</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-  \begin{array}{ll}
-  k=\frac{n\pi}{L};      &amp; n=1,2,3,...\\
-  \end{array}
-\end{split}\]</div>
-<p>Hemos obtenido que</p>
-<div class="math notranslate nohighlight">
-\[
+\end{equation}</p>
+<p>Ya obtuvimos que <span class="math notranslate nohighlight">\(A\)</span> vale cero, sin embargo, <span class="math notranslate nohighlight">\(B\)</span> no puede ser cero porque <span class="math notranslate nohighlight">\(\psi_{II}\)</span> se anularía. La única forma de que se cumpla la ecuación anterior es que <span class="math notranslate nohighlight">\(kL\)</span> sea un múltiplo de <span class="math notranslate nohighlight">\(\pi\)</span>, es decir <span class="math notranslate nohighlight">\(kL = n \pi\)</span>, o lo que es lo mismo
+\begin{equation}
+\begin{array}{ll}
+k=\frac{n\pi}{L};      &amp; n=1,2,3,…\
+\end{array}
+\end{equation}</p>
+<p>Hemos obtenido que
+\begin{equation}
 \psi = B sin \left( \frac{n \pi x}{L}\right)
-\]</div>
-<p>Para encontrar el valor de B hay que normalizar la función de onda, resultando que:</p>
-<div class="math notranslate nohighlight">
-\[
+\end{equation}</p>
+<p>Para encontrar el valor de B hay que normalizar la función de onda, resultando que:
+\begin{equation}
 \psi_n(x)=\left(\frac{2}{L}\right)^{1/2}sin\left(\frac{n\pi x}{L}\right)
-\]</div>
-<p>Al sustituir la función de onda se obtiene la expresión de la energía, que es</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-  \begin{array}{ll}
-  E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      &amp; n=1,2,3,...\\
-  \end{array}
-\end{split}\]</div>
+\end{equation}</p>
+<p>Al sustituir la función de onda se obtiene la expresión de la energía, que es
+\begin{equation}
+\begin{array}{ll}
+E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      &amp; n=1,2,3,…\
+\end{array}
+\end{equation}</p>
 <p><strong>Grafique la función de onda y el cuadrado de la función de onda para n=1 para L=4.0 A</strong></p>
 <p>Sugerencias</p>
 <ol class="simple">
@@ -479,10 +470,9 @@ Sugerencias:</p>
 </div>
 <p><strong>Haga la gráfica de E en función de n para los primeros 10 niveles energéticos de un electrón en una caja.</strong></p>
 <p>Recuerde que</p>
-<div class="math notranslate nohighlight">
-\[
-  E = \frac{h^2 n^2}{8mL^2}
-\]</div>
+<p>\begin{equation}
+E = \frac{h^2 n^2}{8mL^2}
+\end{equation}</p>
 <p>Con <span class="math notranslate nohighlight">\(n=1,2,3,...\)</span></p>
 <p>Considere h=1 y m=1. Esto se llama unidades atómicas. Tome L=1 A</p>
 <div class="cell docutils container">
@@ -506,42 +496,49 @@ Sugerencias:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">scipy.integrate</span> <span class="k">as</span> <span class="nn">integrate</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
 
 <span class="n">L</span><span class="o">=</span><span class="mf">2.0</span>
 
-<span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">3.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+<span class="n">psi_1psi_1</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+<span class="n">psi_3psi_3</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">3.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">3.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+
+<span class="n">psi_1psi_3</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">3.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Integrales&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;psi_1psi_1&quot;</span><span class="p">,</span><span class="n">psi_1psi_1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;psi_3psi_3&quot;</span><span class="p">,</span><span class="n">psi_3psi_3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;psi_1psi_3&quot;</span><span class="p">,</span><span class="n">psi_1psi_3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(4.163336342344337e-17, 6.473948889086305e-10)
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Integrales
+psi_1psi_1 (1.0, 1.1102230246251565e-14)
+psi_3psi_3 (1.0000000000000002, 1.1102230246251565e-14)
+psi_1psi_3 (4.163336342344337e-17, 6.473948889086305e-10)
 </pre></div>
 </div>
 </div>
 </div>
 <p>También existe la partícula en una caja para 2-Dimensiones. Se confina la partícula en <span class="math notranslate nohighlight">\(x\varepsilon[0,L_x]\)</span> y <span class="math notranslate nohighlight">\(y\varepsilon[0,L_y]\)</span>.</p>
-<p>La ecuación de Schrodinger a resolver es</p>
-<div class="math notranslate nohighlight">
-\[
-- \frac{\hbar^2}{2m} \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right)\psi(x,y)=E\psi(x,y)
-\]</div>
-<p>Que se resuelve por el método de separación de variables y se obtiene:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-  \begin{array}{ll}
-  k_x=\frac{n_x\pi}{L_x};      &amp; n_x=1,2,3,...\\
-  k_y=\frac{n_y\pi}{L_y};      &amp; n_y=1,2,3,...\\
-  \end{array}
-\end{split}\]</div>
-<div class="math notranslate nohighlight">
-\[
+<p>La ecuación de Schrodinger a resolver es
+\begin{equation}
+-\frac{\hbar^2}{2m} \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right)\psi(x,y)=E\psi(x,y)
+\end{equation}</p>
+<p>Que se resuelve por el método de separación de variables y se obtiene:
+\begin{equation}
+\begin{array}{ll}
+k_x=\frac{n_x\pi}{L_x};      &amp; n_x=1,2,3,…\
+k_y=\frac{n_y\pi}{L_y};      &amp; n_y=1,2,3,…\
+\end{array}
+\end{equation}</p>
+<p>\begin{equation}
 \psi_{n_x,n_y}(x)=\left(\frac{2}{L_x}\right)^{1/2} \left(\frac{2}{L_y}\right)^{1/2}sin\left(\frac{n_x\pi x}{L_x}\right)sin\left(\frac{n_y\pi y}{L_y}\right)
-\]</div>
-<div class="math notranslate nohighlight">
-\[
+\end{equation}</p>
+<p>\begin{equation}
 E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
-\]</div>
+\end{equation}</p>
 <p><strong>Obtenga la gráfica de <span class="math notranslate nohighlight">\(\psi_{1,1}\)</span>, es decir <span class="math notranslate nohighlight">\(n_x=1\)</span> y <span class="math notranslate nohighlight">\(n_y=1\)</span>, y de <span class="math notranslate nohighlight">\(|\psi_{1,1}|^2\)</span> con <span class="math notranslate nohighlight">\(L_x = L_y = 4.0\)</span></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -661,6 +658,7 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="Tutorial-Avanzado.html" title="previous page"><span class="section-number">2. </span>Tutorial Avanzado.</a>
+    <a class='right-next' id="next-link" href="Ejercicio2.html" title="next page"><span class="section-number">2. </span>Parícula en el anillo, Partícula en la esfera y Rotor Rígido</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

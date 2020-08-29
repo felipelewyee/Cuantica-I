@@ -11,54 +11,47 @@ A continuación estudiaremos sistemas sencillos que nos permiten entender como s
 La partícula libre es el sistema más sencillo posible, consiste en una partícula que se mueve en un potencial **uniforme**, **conservativo** y **sin restricciones**. 
 
 El primer paso consiste en escribir el Hamiltoniano, el cuál contiene las interacciones del sistema. En 1D el Hamiltoniano es
-
-$$
+\begin{equation}
 \mathcal{H} = - \frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V(x)
-$$
-
+\end{equation}
 donde el primer término es la energía cinética y el segundo el potencial.
 
 La ecuación de Schrodinger a resolver se obtiene de susituir el Hamiltoniano en $\mathcal{H}\psi=\varepsilon\psi$:
-
-$$
+\begin{equation}
 \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} +V(x)\right)\psi(x)=\varepsilon\psi(x)
-$$
+\end{eqaution}
 
 Esta se puede reescribir como una ecuación diferencial homogénea de segundo orden
-
-$$
+\begin{equation}
 -\frac{d^2 \psi(x)}{dx^2} = \frac{2m(\varepsilon-V)}{\hbar^2}\psi(x) = \frac{2mE}{\hbar^2}\psi(x)
-$$
+\end{equation}
 
 La solución a la ecuación anterior es una función cuya segunda derivada es la misma función multiplicada por alguna constante. Esta característica la cumplen las exponenciales, por tanto se propone que la solución tenga la forma:
-
-$$
+\begin{equation}
 \psi = A'e^{ikx} + B'e^{-ikx}
-$$
+\end{equation}
 
 Al sustituir en la ecuación diferencial
-
-$$
+\begin{equation}
 -\frac{d^2 \psi(x)}{dx^2} = k^2(A'e^{ikx} + B'e^{-ikx}) = k^2\psi
-$$
+\end{equation}
 
 Podemos encontrar la forma de $k$ por simple comparación:
-
-$$
+\begin{equation}
 k^2 = \frac{2mE}{\hbar^2}
-$$
+\end{equation}
+
 
 Por la identidad de Euler, la función de onda también puede escribirse como:
-
-$$
+\begin{equation}
 \psi = Acos(kx) + Bsin(kx)
-$$
+\end{equation}
 
 Los pasos anteriores nos han permitido encontrar una forma para la función de onda, sin embargo, no ha surgido cuantización.
 
 ## Partícula en una caja
 
-La versión 1D de este sistema consiste en una partícula que se mueve en el espacio con un potencial definido en tres regiones, tal que:
+La versión 1D de este sistema consiste en una partícula que se mueve en el espacio con un potencial definido en tres regiones, tal que
 
 $$
 V(x) = \left\{
@@ -82,59 +75,57 @@ $$
 $$
 
 Para encontrar la función de onda en la región II hay que escribir la de Schrodinger
-
-$$
+\begin{equation}
 \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} +V(x)\right)\psi(x)=\varepsilon\psi(x)
-$$
+\end{equation}
+
 
 cuya solución, como se vio anteriormente, es
-
-$$
+\begin{equation}
   \begin{array}{lll}
   \psi(x) = Acos(kx) + Bsin(kx)      & \mathrm{si\ } 0 \leq x \leq L; & k^2 = \frac{2mE}{\hbar^2}\\
   \end{array}
-$$
+\end{equation}
+
 
 La función de onda debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, $\psi_{I}(0) = \psi_{II}(0) = 0$. Esto implica que $A=0$, ya que
-
-$$
+\begin{equation}
 \psi_{II}(0) = 0 = Acos(0) + Bsin(0) = A
-$$
+\end{equation}
+
 
 Por la continuidad con la región III también se cumple $\psi_{II}(L) = \psi_{III}(L) = 0$, es decir
-
-$$
+\begin{equation}
 \psi_{II}(L) = 0 = Bsin(kL)
-$$
+\end{equation}
+
 
 Ya obtuvimos que $A$ vale cero, sin embargo, $B$ no puede ser cero porque $\psi_{II}$ se anularía. La única forma de que se cumpla la ecuación anterior es que $kL$ sea un múltiplo de $\pi$, es decir $kL = n \pi$, o lo que es lo mismo
-
-$$
+\begin{equation}
   \begin{array}{ll}
   k=\frac{n\pi}{L};      & n=1,2,3,...\\
   \end{array}
-$$
+\end{equation}
+
 
 Hemos obtenido que
-
-$$
+\begin{equation}
 \psi = B sin \left( \frac{n \pi x}{L}\right)
-$$
+\end{equation}
+
 
 Para encontrar el valor de B hay que normalizar la función de onda, resultando que:
-
-$$
+\begin{equation}
 \psi_n(x)=\left(\frac{2}{L}\right)^{1/2}sin\left(\frac{n\pi x}{L}\right)
-$$
+\end{equation}
+
 
 Al sustituir la función de onda se obtiene la expresión de la energía, que es
-
-$$
+\begin{equation}
   \begin{array}{ll}
   E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      & n=1,2,3,...\\
   \end{array}
-$$
-
+\end{equation}
 
 **Grafique la función de onda y el cuadrado de la función de onda para n=1 para L=4.0 A**
 
@@ -250,9 +241,9 @@ for n in range(1,5):
 
 Recuerde que
 
-$$
+\begin{equation}
   E = \frac{h^2 n^2}{8mL^2}
-$$
+\end{equation}
 
 Con $n=1,2,3,...$
 
@@ -271,37 +262,42 @@ plt.show()
 Ayuda. Haga la integral
 
 import numpy as np
-import scipy.integrate as integrate
+from scipy import integrate
 
 L=2.0
 
-integrate.quad(lambda x: np.sqrt(2.0/L)*np.sin(np.pi*1.0*x/L)*np.sqrt(2.0/L)*np.sin(np.pi*3.0*x/L),0,L)
+psi_1psi_1 = integrate.quad(lambda x: np.sqrt(2.0/L)*np.sin(np.pi*1.0*x/L)*np.sqrt(2.0/L)*np.sin(np.pi*1.0*x/L),0,L)
+psi_3psi_3 = integrate.quad(lambda x: np.sqrt(2.0/L)*np.sin(np.pi*3.0*x/L)*np.sqrt(2.0/L)*np.sin(np.pi*3.0*x/L),0,L)
+
+psi_1psi_3 = integrate.quad(lambda x: np.sqrt(2.0/L)*np.sin(np.pi*1.0*x/L)*np.sqrt(2.0/L)*np.sin(np.pi*3.0*x/L),0,L)
+
+print("Integrales")
+print("psi_1psi_1",psi_1psi_1)
+print("psi_3psi_3",psi_3psi_3)
+print("psi_1psi_3",psi_1psi_3)
 
 También existe la partícula en una caja para 2-Dimensiones. Se confina la partícula en $x\varepsilon[0,L_x]$ y $y\varepsilon[0,L_y]$.
 
 La ecuación de Schrodinger a resolver es
-
-$$
-- \frac{\hbar^2}{2m} \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right)\psi(x,y)=E\psi(x,y)
-$$
+\begin{equation}
+-\frac{\hbar^2}{2m} \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right)\psi(x,y)=E\psi(x,y)
+\end{equation}
 
 Que se resuelve por el método de separación de variables y se obtiene:
-
-$$
+\begin{equation}
   \begin{array}{ll}
   k_x=\frac{n_x\pi}{L_x};      & n_x=1,2,3,...\\
   k_y=\frac{n_y\pi}{L_y};      & n_y=1,2,3,...\\
   \end{array}
-$$
+\end{equation}
 
-$$
+\begin{equation}
 \psi_{n_x,n_y}(x)=\left(\frac{2}{L_x}\right)^{1/2} \left(\frac{2}{L_y}\right)^{1/2}sin\left(\frac{n_x\pi x}{L_x}\right)sin\left(\frac{n_y\pi y}{L_y}\right)
-$$
+\end{equation}
 
-$$
+\begin{equation}
 E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
-$$
-
+\end{equation}
 
 **Obtenga la gráfica de $\psi_{1,1}$, es decir $n_x=1$ y $n_y=1$, y de $|\psi_{1,1}|^2$ con $L_x = L_y = 4.0$**
 
