@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Cuántica I &#8212; Cuántica I</title>
+    <title>1. Software &#8212; Cuántica I</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -39,7 +39,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Tutorial Básico." href="Tutorial-Basico.html" />
+    <link rel="prev" title="1. Método variacional lineal" href="Ejercicio6.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -74,7 +74,7 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="#">
+  <a class="reference internal" href="intro.html">
    Cuántica I
   </a>
  </li>
@@ -152,9 +152,9 @@
   Sistemas de Muchos Electrones
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="Ejercicio7.html">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    1. Software
   </a>
  </li>
@@ -200,9 +200,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/Ejercicio7.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -219,6 +219,22 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Ejercicio7.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -229,28 +245,14 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#navegacion">
-   Navegación
+  <a class="reference internal nav-link" href="#aprendiendo-a-usar-psi4">
+   1.1. Aprendiendo a usar psi4
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejecucion-de-los-notebooks">
-   Ejecución de los notebooks
+  <a class="reference internal nav-link" href="#referencias">
+   1.2. Referencias
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#en-linea-recomendada">
-     En línea (recomendada)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#en-computadora">
-     En computadora
-    </a>
-    <ul class="nav section-nav flex-column">
-    </ul>
-   </li>
-  </ul>
  </li>
 </ul>
 
@@ -262,45 +264,118 @@
         
               <div>
                 
-  <div class="section" id="cuantica-i">
-<h1>Cuántica I<a class="headerlink" href="#cuantica-i" title="Permalink to this headline">¶</a></h1>
-<p>Este es un manual de ejercicios para la asignatura de <strong>Química Cuántica I</strong>, particularmente contiene <strong>jupyter notebooks</strong> acorde al temario del curso (1404) impartido en la <strong>Facultad de Química</strong> de la <strong>Universidad Nacional Autónoma de México</strong>.</p>
-<div class="section" id="navegacion">
-<h2>Navegación<a class="headerlink" href="#navegacion" title="Permalink to this headline">¶</a></h2>
-<p>Puede navegar a través de los capítulos de este libro mediane la barra vertical izquierda, y a través de las secciones mediante la barra vertical derecha.</p>
-</div>
-<div class="section" id="ejecucion-de-los-notebooks">
-<h2>Ejecución de los notebooks<a class="headerlink" href="#ejecucion-de-los-notebooks" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="en-linea-recomendada">
-<h3>En línea (recomendada)<a class="headerlink" href="#en-linea-recomendada" title="Permalink to this headline">¶</a></h3>
-<p>Los ejercicios de este libro requieren un conocimiento muy básico de Python, mismo que puede adquirirse en el primer capítulo del libro. Los notebooks pueden ejecutarse en línea desde <strong>Google Colab</strong> al presionar el ícono de la nave y dar clic sobre Colab, este ícono aparece en la parte superior de cada notebook. Los archivos generados en Google Colab se guardan automáticamente en su Google Drive.</p>
-<p><img alt="Google Colab example button" src="_images/google_colab.png" /></p>
-</div>
-<div class="section" id="en-computadora">
-<h3>En computadora<a class="headerlink" href="#en-computadora" title="Permalink to this headline">¶</a></h3>
-<p>También puede descargar los .ipynb y ejecutarlos directamente en su computadora dando clic sobre el botón con la flecha apuntando hacia abajo. Esto requiere una instalación previa de Python, en caso de no tenerla puede instalar <strong>Anaconda</strong>. Las librerías necesarias para ejecutar los notebooks se pueden instalar con la siguiente línea:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">matplotlib</span> <span class="n">numpy</span> <span class="n">scipy</span> <span class="n">sympy</span> 
+  <div class="section" id="software">
+<h1><span class="section-number">1. </span>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h1>
+<p>Lista de algunos programas de química cuántica:</p>
+<ul class="simple">
+<li><p>Gaussian (https://gaussian.com/)</p></li>
+<li><p>Psi4 (http://www.psicode.org/)</p></li>
+<li><p>NWChem (http://www.nwchem-sw.org)</p></li>
+<li><p>QChem (http://www.q-chem.com/)</p></li>
+<li><p>TeraChem (http://www.petachem.com)</p></li>
+<li><p>deMon (http://www.demon-software.com)</p></li>
+<li><p>Orca (https://orcaforum.cec.mpg.de/)</p></li>
+<li><p>Molcas (http://www.molcas.org/)</p></li>
+<li><p>ADF (https://www.scm.com/)</p></li>
+<li><p>GAMESS (http://www.msg.chem.iastate.edu/gamess/)</p></li>
+<li><p>Quantum Espresso (https://www.quantum-espresso.org/)</p></li>
+</ul>
+<div class="section" id="aprendiendo-a-usar-psi4">
+<h2><span class="section-number">1.1. </span>Aprendiendo a usar psi4<a class="headerlink" href="#aprendiendo-a-usar-psi4" title="Permalink to this headline">¶</a></h2>
+<p>Importamos psi4 con</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
 </pre></div>
 </div>
-<p>Puede ejecutar un notebook con</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span> <span class="n">Ejercicio_n</span><span class="o">.</span><span class="n">ipynb</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># importe psi4</span>
+<span class="kn">import</span> <span class="nn">psi4</span>
 </pre></div>
 </div>
-<p>Algunos ejercicios utilizan el software psi4, este se puede instalar desde anaconda con</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">psi4</span> <span class="n">psi4</span><span class="o">-</span><span class="n">rt</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.7</span> <span class="o">-</span><span class="n">c</span> <span class="n">psi4</span>
+</div>
+</div>
+<p>Asignamos una cantidad de memoria, por ejemplo 2 gb, con</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s2">&quot;2 gb&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Establezca memoria</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s2">&quot;2 gb&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2000000000
+</pre></div>
+</div>
+</div>
+</div>
+<p>Declaramos las coordenadas de la molécula. Para ello usamos visualizadores como Avogadro. También podemos obtener valores experimentales de https://cccbdb.nist.gov/ . En este caso utilizaremos los resultados experimentales de benceno.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">benzene</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">0 1</span>
+<span class="s2">C 0.0000 1.3970 0.0000</span>
+<span class="s2">C 1.2098 0.6985 0.0000</span>
+<span class="s2">C 1.2098 -0.6985 0.0000</span>
+<span class="s2">C 0.0000 -1.3970 0.0000</span>
+<span class="s2">C -1.2098 -0.6985 0.0000</span>
+<span class="s2">C -1.2098 0.6985 0.0000</span>
+<span class="s2">H 0.0000 2.4810 0.0000</span>
+<span class="s2">H 2.1486 1.2405 0.0000</span>
+<span class="s2">H 2.1486 -1.2405 0.0000</span>
+<span class="s2">H 0.0000 -2.4810 0.0000</span>
+<span class="s2">H -2.1486 -1.2405 0.0000</span>
+<span class="s2">H -2.1486 1.2405 0.0000</span>
+<span class="s2">units angstrom</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Realizamos el cálculo de energía con un <strong>método</strong> y una <strong>base</strong>. Por ejemplo, un cálculo de MP2 con base 6-31G sería</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;mp2/6-31G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno mp2/6-31G</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;mp2/6-31G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-231.1469747676175
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calcule la energía de benceno con MP3 y 6-31G</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno mp3/6-31G</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calcule la energía de benceno con MP4 y 6-31G</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno mp4/6-31G</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="referencias">
+<h2><span class="section-number">1.2. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Smith, D. G. A.; Burns, L. A.; Sirianni, D. A.; Nascimento, D. R.; Kumar, A.; James, A. M.; Schriber, J. B.; Zhang, T.; Zhang, B.; Abbott, A. S.; et al. Psi4NumPy : An Interactive Quantum Chemistry Programming Environment for Reference Implementations and Rapid Development. Journal of Chemical Theory and Computation 2018, 14 (7), 3504–3511.</p></li>
+<li><p>https://github.com/psi4/psi4numpy/tree/master/Tutorials</p></li>
+</ul>
+<p>Hecho por Juan Felipe Huan Lew Yee y Jorge Martín del Campo Ramírez para la clase de Química Cuántica I del ciclo 2019-I. Universidad Nacional Autónoma de México.</p>
+<p>Este archivo puede distribuise libremente y ser considerado Open Source. Si deseas modificarlo para su distribución, solo se pide conservar el nombre de los autores originales.</p>
 </div>
 </div>
 
@@ -332,7 +407,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='right-next' id="next-link" href="Tutorial-Basico.html" title="next page"><span class="section-number">1. </span>Tutorial Básico.</a>
+    <a class='left-prev' id="prev-link" href="Ejercicio6.html" title="previous page"><span class="section-number">1. </span>Método variacional lineal</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

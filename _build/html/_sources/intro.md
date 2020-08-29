@@ -26,3 +26,8 @@ Puede ejecutar un notebook con
 ```
 jupyter notebook Ejercicio_n.ipynb
 ```
+
+Algunos ejercicios utilizan el software psi4, este se puede instalar desde anaconda con
+```
+conda install psi4 psi4-rt python=3.7 -c psi4
+```

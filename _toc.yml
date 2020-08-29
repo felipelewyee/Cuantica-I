@@ -20,3 +20,7 @@
 - part: Métodos Aproximados
   chapters:
   - file: Ejercicio6
+
+- part: Sistemas de Muchos Electrones
+  chapters:
+  - file: Ejercicio7
