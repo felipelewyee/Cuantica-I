@@ -12,7 +12,11 @@
   - file: Ejercicio2
   - file: Ejercicio3
 
-- part: átomo de Hidrógeno
+- part: Átomo de Hidrógeno
   chapters:
   - file: Ejercicio4
   - file: Ejercicio5
+
+- part: Métodos Aproximados
+  chapters:
+  - file: Ejercicio6
