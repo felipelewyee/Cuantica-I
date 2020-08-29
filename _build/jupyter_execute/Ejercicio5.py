@@ -140,7 +140,7 @@ A continuación se dan las expresiones de algunos orbitales
 |$2p_z$|$N_2 r cos\theta e^{-r/2}$|
 
 
-# Referencias
+## Referencias
 
 - Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005.
 - Pilar, F. L. Elementary Quantum Chemistry; 2001.
