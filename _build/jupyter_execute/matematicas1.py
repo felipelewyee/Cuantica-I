@@ -1,4 +1,6 @@
-# Serie de Taylor
+# Expansión en series
+
+## Serie de Taylor
 
 Sea una función f(x) continua e infinitamente diferenciable, esta puede expresarse en torno a $a$ mediante una serie de potencias
 \begin{equation}
