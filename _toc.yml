@@ -26,3 +26,8 @@
   - file: Ejercicio7
   - file: Ejercicio8
   - file: Ejercicio9
+
+- part: Matemáticas
+  chapters:
+  - file: matematicas1
+  - file: matematicas2
