@@ -132,7 +132,3 @@ plt.show()
 - Gersting, J. L. Technical Calculus with Analytic Geometry, Dover ed.; Dover: New York, 1992.
 - Jackson, J. D. Mathematics for Quantum Mechanics: An Introductory Survey of Operators, Eigenvalues, and Linear Vector Spaces, Dover ed.; Dover books on mathematics; Dover: Mineola, N.Y, 2006.
 - Tolstov, G. P. Fourier Series, Nachdr.; Dover books on mathematics; Dover: New York, 2009.
-
-Hecho por Juan Felipe Huan Lew Yee y Jorge Martín del Campo Ramírez para la clase de Química Cuántica I del ciclo 2019-I. Universidad Nacional Autónoma de México.
-
-Este archivo puede distribuise libremente y ser considerado Open Source. Si deseas modificarlo para su distribución, solo se pide conservar el nombre de los autores originales.
