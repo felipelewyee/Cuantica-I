@@ -8,24 +8,26 @@
 
 - part: Sistemas Sencillos
   chapters:
-  - file: Ejercicio1
-  - file: Ejercicio2
-  - file: Ejercicio3
+  - file: Libre_y_Caja
+  - file: CajaConTope
+  - file: Anillo_Esfera_Rotor
+  - file: Oscilador
 
 - part: Átomo de Hidrógeno
   chapters:
-  - file: Ejercicio4
-  - file: Ejercicio5
+  - file: Radial
+  - file: Orbitales
 
 - part: Métodos Aproximados
   chapters:
-  - file: Ejercicio6
+  - file: Variacional_Lineal
+  - file: Moller-Plesset
 
 - part: Sistemas de Muchos Electrones
   chapters:
-  - file: Ejercicio7
-  - file: Ejercicio8
-  - file: Ejercicio9
+  - file: Software
+  - file: Hartree-Fock
+  - file: Dimerizacion
 
 - part: Matemáticas
   chapters:

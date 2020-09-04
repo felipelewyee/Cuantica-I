@@ -1,0 +1,477 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>1. Software &#8212; Cuántica I</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Hartree-Fock-Roothan" href="Hartree-Fock.html" />
+    <link rel="prev" title="2. Moller-Plesset" href="Moller-Plesset.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Cuántica I</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Cuántica I
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Basico.html">
+   1. Tutorial Básico.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Avanzado.html">
+   2. Tutorial Avanzado.
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas Sencillos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Libre_y_Caja.html">
+   1. Partícula Libre y Partícula en la caja
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CajaConTope.html">
+   2. La caja de potencial con un tope en el medio.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Anillo_Esfera_Rotor.html">
+   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Oscilador.html">
+   4. Oscilador Armónico Cuántico
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Átomo de Hidrógeno
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Radial.html">
+   1. Solución Radial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Orbitales.html">
+   2. Orbitales Atómicos
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Métodos Aproximados
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Variacional_Lineal.html">
+   1. Método variacional lineal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Moller-Plesset.html">
+   2. Moller-Plesset
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas de Muchos Electrones
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Hartree-Fock.html">
+   2. Hartree-Fock-Roothan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Hartree-Fock.html#metodo-simple-psi4">
+   3. Método Simple. PSI4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Dimerizacion.html">
+   4. Dimerización de
+   <span class="math notranslate nohighlight">
+    \(NO_2\)
+   </span>
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Matemáticas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas1.html">
+   1. Expansión en series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas2.html">
+   2. Álgebra simbólica
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Software.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Software.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aprendiendo-a-usar-psi4">
+   1.1. Aprendiendo a usar psi4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   1.2. Referencias
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="software">
+<h1><span class="section-number">1. </span>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h1>
+<p>Lista de algunos programas de química cuántica:</p>
+<ul class="simple">
+<li><p>Gaussian (https://gaussian.com/)</p></li>
+<li><p>Psi4 (http://www.psicode.org/)</p></li>
+<li><p>NWChem (http://www.nwchem-sw.org)</p></li>
+<li><p>QChem (http://www.q-chem.com/)</p></li>
+<li><p>TeraChem (http://www.petachem.com)</p></li>
+<li><p>deMon (http://www.demon-software.com)</p></li>
+<li><p>Orca (https://orcaforum.cec.mpg.de/)</p></li>
+<li><p>Molcas (http://www.molcas.org/)</p></li>
+<li><p>ADF (https://www.scm.com/)</p></li>
+<li><p>GAMESS (http://www.msg.chem.iastate.edu/gamess/)</p></li>
+<li><p>Quantum Espresso (https://www.quantum-espresso.org/)</p></li>
+</ul>
+<div class="section" id="aprendiendo-a-usar-psi4">
+<h2><span class="section-number">1.1. </span>Aprendiendo a usar psi4<a class="headerlink" href="#aprendiendo-a-usar-psi4" title="Permalink to this headline">¶</a></h2>
+<p>Importamos psi4 con</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># importe psi4</span>
+<span class="kn">import</span> <span class="nn">psi4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Asignamos una cantidad de memoria, por ejemplo 2 gb, con</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s2">&quot;2 gb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Establezca memoria</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s2">&quot;2 gb&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2000000000
+</pre></div>
+</div>
+</div>
+</div>
+<p>Declaramos las coordenadas de la molécula. Para ello usamos visualizadores como Avogadro. También podemos obtener valores experimentales de https://cccbdb.nist.gov/ . En este caso utilizaremos los resultados experimentales de benceno.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">benzene</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">0 1</span>
+<span class="s2">C 0.0000 1.3970 0.0000</span>
+<span class="s2">C 1.2098 0.6985 0.0000</span>
+<span class="s2">C 1.2098 -0.6985 0.0000</span>
+<span class="s2">C 0.0000 -1.3970 0.0000</span>
+<span class="s2">C -1.2098 -0.6985 0.0000</span>
+<span class="s2">C -1.2098 0.6985 0.0000</span>
+<span class="s2">H 0.0000 2.4810 0.0000</span>
+<span class="s2">H 2.1486 1.2405 0.0000</span>
+<span class="s2">H 2.1486 -1.2405 0.0000</span>
+<span class="s2">H 0.0000 -2.4810 0.0000</span>
+<span class="s2">H -2.1486 -1.2405 0.0000</span>
+<span class="s2">H -2.1486 1.2405 0.0000</span>
+<span class="s2">units angstrom</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Realizamos el cálculo de energía con un <strong>método</strong> y una <strong>base</strong>. Por ejemplo, un cálculo de MP2 con base 6-31G sería</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;mp2/6-31G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno mp2/6-31G</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;mp2/6-31G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>-231.1469747676175
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calcule la energía de benceno con MP3 y 6-31G</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno mp3/6-31G</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calcule la energía de benceno con MP4 y 6-31G</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno mp4/6-31G</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="referencias">
+<h2><span class="section-number">1.2. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Smith, D. G. A.; Burns, L. A.; Sirianni, D. A.; Nascimento, D. R.; Kumar, A.; James, A. M.; Schriber, J. B.; Zhang, T.; Zhang, B.; Abbott, A. S.; et al. Psi4NumPy : An Interactive Quantum Chemistry Programming Environment for Reference Implementations and Rapid Development. Journal of Chemical Theory and Computation 2018, 14 (7), 3504–3511.</p></li>
+<li><p>https://github.com/psi4/psi4numpy/tree/master/Tutorials</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="Moller-Plesset.html" title="previous page"><span class="section-number">2. </span>Moller-Plesset</a>
+    <a class='right-next' id="next-link" href="Hartree-Fock.html" title="next page"><span class="section-number">2. </span>Hartree-Fock-Roothan</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By M en C. Juan Felipe Huan Lew Yee, Dr. Jorge Martín del Campo Ramírez, Dr. José Eduardo Barrios Vargas<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
