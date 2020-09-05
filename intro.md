@@ -1,7 +1,7 @@
 # La Química Cuántica a tu alcance
 
 
-El objetivo del presente libro digtal es ser un manual de prácticas de la asignatura de **Química Cuántica I (clave 1404)** de la Facultad de Química (UNAM). Algunas prácticas podrían ser de ayuda para cursos más avanzados de Química Cuántica. El libro digital es un esfuerzo compartido de Juan Felipe Huan Lew Yeen y de los profesores del Departamento de Física y Química Teórica. Toda retoralimentación es bienvenida, y la invitamos a compartir a los correos:
+El objetivo del presente libro digtal es ser un manual de prácticas de la asignatura de **Química Cuántica I (clave 1404)** de la Facultad de Química (UNAM). Algunas prácticas podrían ser de ayuda para cursos más avanzados de Química Cuántica. El libro digital es un esfuerzo compartido de Juan Felipe Huan Lew Yee y de los profesores del Departamento de Física y Química Teórica. Toda retoralimentación es bienvenida, y la invitamos a compartir a los correos:
 
 Juan Felipe Huan Lew Yee: [felipe.lew.yee@gmail.com](mailto:felipe.lew.yee@gmail.com)
 
