@@ -1,6 +1,7 @@
-# La caja de potencial con un tope en el medio.
+# Caja de potencial con un tope en el medio
 
-## Problema de química cuántica, va breve explicación
+
+
 Las cajas de potencial unidimensionales se usan para enseñar y aprender cuántica porque, a pesar de que no existen, son fáciles de resolver y ayudan a irle agarrando la onda al asunto. Esta caja de potencial tiene un "tope" en el centro. Es decir, el potencial vale infinito fuera de la caja, vale cero en las zonas de la izquierda y la derecha (de $-L$ a $-a$ y de $+a$ a $+L$) y vale $U$ en el centro (de $-a$ a $+a$), como se ve en la figura.
 <img src="Caja.png" width="500">
 La función de onda se obtiene resolviendo la ecuación de Schrödinger
@@ -141,3 +142,6 @@ axs[1].plot(x_set,Psi2/I)
 plt.show()
 
 
+## Autor
+
+Este notebook es una contribución del Dr. Carlos Amador Bedolla
