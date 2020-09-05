@@ -1,0 +1,510 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>1. Tutorial Básico. &#8212; Cuántica I</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Tutorial Avanzado." href="Tutorial-Avanzado.html" />
+    <link rel="prev" title="La Química Cuántica a tu alcance" href="intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Cuántica I</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   La Química Cuántica a tu alcance
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   1. Tutorial Básico.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Avanzado.html">
+   2. Tutorial Avanzado.
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas Sencillos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Caja.html">
+   1. Partícula en la caja
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CajaConTope.html">
+   2. Caja de potencial con un tope en el medio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Anillo_Esfera_Rotor.html">
+   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Oscilador.html">
+   4. Oscilador Armónico Cuántico
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Átomo de Hidrógeno
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Radial.html">
+   1. Solución Radial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Orbitales.html">
+   2. Orbitales Atómicos
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Métodos Aproximados
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Variacional_Lineal.html">
+   1. Método variacional lineal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="PerturbacionesSinDegeneracion.html">
+   2. Teoría de perturbaciones (niveles de energía no degenerados)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas de Muchos Electrones
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software.html">
+   1. Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Hartree-Fock.html">
+   2. Hartree-Fock-Roothan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Moller-Plesset.html">
+   3. Moller-Plesset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Dimerizacion.html">
+   4. Dimerización de
+   <span class="math notranslate nohighlight">
+    \(NO_2\)
+   </span>
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Matemáticas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas1.html">
+   1. Expansión en series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas2.html">
+   2. Álgebra simbólica
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Tutorial-Basico.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Tutorial-Basico.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#declarando-variables">
+   1.1. Declarando variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operacions-basicas">
+   1.2. Operacions Básicas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#librerias">
+   1.3. Librerías
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="tutorial-basico">
+<h1><span class="section-number">1. </span>Tutorial Básico.<a class="headerlink" href="#tutorial-basico" title="Permalink to this headline">¶</a></h1>
+<p>A continuación aprenderá las funciones básicas de Python como declarar una variable, hacer operaciones básicas y utilizar librerías, así como lo necesario para seguir el manual del curso de <strong>Química Cuántica I</strong>. <strong>Para usarlo es necesario escribir en los cuadros vacíos y presionar el botón Run o las teclas “Shift” + “Enter”.</strong></p>
+<div class="section" id="declarando-variables">
+<h2><span class="section-number">1.1. </span>Declarando variables<a class="headerlink" href="#declarando-variables" title="Permalink to this headline">¶</a></h2>
+<p>Al igual que en álgebra, en Python se pueden usar variables para <strong>almacenar valores numéricos</strong>, Por ejemplo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">5.0</span>
+</pre></div>
+</div>
+<p><strong>En el siguiente recuadro declare una variable llamada “x” y asígnele el valor que desee, recuerde dar “shift”+”enter” o Run.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declare una variable x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es posible <strong>ver (o imprimir) el valor de cualquier variable escribiendo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>En nuestro ejemplo</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>imprimiría el valor 5.0.</p>
+<p><strong>Imprima el valor de la variable que declaró anteriormente</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Imprima el valor de la variable x</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="operacions-basicas">
+<h2><span class="section-number">1.2. </span>Operacions Básicas<a class="headerlink" href="#operacions-basicas" title="Permalink to this headline">¶</a></h2>
+<p>Las operaciones comunes del álgebra también pueden usare en Python con una sintaxis muy similar.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Operación</p></th>
+<th class="text-align:center head"><p>Álgebra</p></th>
+<th class="text-align:center head"><p>Python</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>Suma</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(z=x+y\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(z=x+y\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>Resta</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(z=x-y\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(z=x-y\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Multiplicación</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(z=(x)(y)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(x=x*y\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>División</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(z=\frac{x}{y}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(z=x/y\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>Potencia</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(z=x^{y}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(z=x**y\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>En nuestro ejemplo, podemos declarar una nueva variable, hacer las operaciones anteriores, guardar el resultado e imprimirlo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#Declaramos la variable x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="c1">#Declaramos la variable y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mf">2.0</span>
+
+<span class="c1">#Hacemos algunas operaciones con nuestras variables x, y; y guardamos el resultado</span>
+<span class="n">z_suma</span>  <span class="o">=</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span>
+<span class="n">z_resta</span> <span class="o">=</span> <span class="n">x</span><span class="o">-</span><span class="n">y</span>
+<span class="n">z_mult</span>  <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
+<span class="n">z_div</span>   <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="n">y</span>
+<span class="n">z_pot</span>   <span class="o">=</span> <span class="n">x</span><span class="o">**</span><span class="n">y</span>
+
+<span class="c1">#Imprimimos los resultados</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="s2">&quot;y&quot;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;suma&quot;</span><span class="p">,</span><span class="n">z_suma</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;resta&quot;</span><span class="p">,</span><span class="n">z_resta</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;multiplicación&quot;</span><span class="p">,</span><span class="n">z_mult</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;división&quot;</span><span class="p">,</span><span class="n">z_div</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;potencia&quot;</span><span class="p">,</span><span class="n">z_pot</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Los resultados se almacenan en las variables z_suma, z_resta, z_mult y z_div. Es importante notar que una variable puede tener un nombre más largo que una sola letra; y que también podemos imprimir texto.</p>
+<p><strong>Declare una variable llamada “y”, asígnele el valor 10.0, calcule las 5 operaciones utilizando su variable ¨ “x” previamente definida, e imprima el resultado.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Declare variable</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="librerias">
+<h2><span class="section-number">1.3. </span>Librerías<a class="headerlink" href="#librerias" title="Permalink to this headline">¶</a></h2>
+<p>La funcionalidad de python se puede extender utilizando <strong>librerías</strong>. Existen 4 importantes para el curso, <strong>numpy</strong>, <strong>matplotlib</strong>, <strong>scipy</strong> y <strong>sympy</strong>.</p>
+<p>Para activar una librería utilizamos la palabra <strong>import</strong>, seguida del nombre de la librería, por ejemplo</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy</span>
+</pre></div>
+</div>
+<p>Frecuentemente utilizamos un alias para asignarle un nombre más corto a la librería. Esto se realiza con la palabra <strong>as</strong> seguida del <strong>alias</strong>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+</pre></div>
+</div>
+<p>También podemos tomar partes específicas de una librería, para ello utilizamos la palabra <strong>from</strong>. Por ejemplo, importaremos el subpaquete pyplot de la librería matplotlib, la cual nos sirve para graficar, y lo renombraremos como plt.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+<p><strong>Copie y pegue las instrucciones anteriores en el recuadro para importar las librerías</strong> numpy, matplotlib, scipy y sympy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Importe librerías</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Utilizaremos numpy para obtener la raíz cuadrada de la variable variable x. Para ello llamaremos a la función sqrt de la librería numpy, esto se realiza escribiendo el nombre de la librería, seguido por un punto, seguido del nombre de la función a usar.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">raiz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">raiz</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Defina una variable x, obtenga e imprima su raiz cuadrada.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#Raiz cuadrada de x</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">La Química Cuántica a tu alcance</a>
+    <a class='right-next' id="next-link" href="Tutorial-Avanzado.html" title="next page"><span class="section-number">2. </span>Tutorial Avanzado.</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

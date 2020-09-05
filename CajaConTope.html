@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>2. Caja de potencial con un tope en el medio &#8212; Cuántica I</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido" href="Anillo_Esfera_Rotor.html" />
+    <link rel="prev" title="1. Partícula en la caja" href="Caja.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Cuántica I</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   La Química Cuántica a tu alcance
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Basico.html">
+   1. Tutorial Básico.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Avanzado.html">
+   2. Tutorial Avanzado.
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas Sencillos
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Caja.html">
+   1. Partícula en la caja
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Caja de potencial con un tope en el medio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Anillo_Esfera_Rotor.html">
+   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Oscilador.html">
+   4. Oscilador Armónico Cuántico
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Átomo de Hidrógeno
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Radial.html">
+   1. Solución Radial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Orbitales.html">
+   2. Orbitales Atómicos
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Métodos Aproximados
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Variacional_Lineal.html">
+   1. Método variacional lineal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="PerturbacionesSinDegeneracion.html">
+   2. Teoría de perturbaciones (niveles de energía no degenerados)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas de Muchos Electrones
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software.html">
+   1. Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Hartree-Fock.html">
+   2. Hartree-Fock-Roothan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Moller-Plesset.html">
+   3. Moller-Plesset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Dimerizacion.html">
+   4. Dimerización de
+   <span class="math notranslate nohighlight">
+    \(NO_2\)
+   </span>
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Matemáticas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas1.html">
+   1. Expansión en series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas2.html">
+   2. Álgebra simbólica
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/CajaConTope.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/CajaConTope.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#la-condicion-de-continuidad-para-este-problema-lleva-a-la-siguiente-ecuacion">
+   2.1. La condición de continuidad para este problema lleva a la siguiente ecuación
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autor">
+   2.2. Autor
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="caja-de-potencial-con-un-tope-en-el-medio">
+<h1><span class="section-number">2. </span>Caja de potencial con un tope en el medio<a class="headerlink" href="#caja-de-potencial-con-un-tope-en-el-medio" title="Permalink to this headline">¶</a></h1>
+<p>Las cajas de potencial unidimensionales se usan para enseñar y aprender cuántica porque, a pesar de que no existen, son fáciles de resolver y ayudan a irle agarrando la onda al asunto. Esta caja de potencial tiene un “tope” en el centro. Es decir, el potencial vale infinito fuera de la caja, vale cero en las zonas de la izquierda y la derecha (de <span class="math notranslate nohighlight">\(-L\)</span> a <span class="math notranslate nohighlight">\(-a\)</span> y de <span class="math notranslate nohighlight">\(+a\)</span> a <span class="math notranslate nohighlight">\(+L\)</span>) y vale <span class="math notranslate nohighlight">\(U\)</span> en el centro (de <span class="math notranslate nohighlight">\(-a\)</span> a <span class="math notranslate nohighlight">\(+a\)</span>), como se ve en la figura.
+<img src="Caja.png" width="500">
+La función de onda se obtiene resolviendo la ecuación de Schrödinger
+<span class="math notranslate nohighlight">\($-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\Psi(x)+V(x)\Psi(x)=E\Psi(x)\)</span>$
+con la condición a la frontera de que la solución, <span class="math notranslate nohighlight">\(Psi(x)\)</span>, debe ser continua y de derivada continua.</p>
+<div class="section" id="la-condicion-de-continuidad-para-este-problema-lleva-a-la-siguiente-ecuacion">
+<h2><span class="section-number">2.1. </span>La condición de continuidad para este problema lleva a la siguiente ecuación<a class="headerlink" href="#la-condicion-de-continuidad-para-este-problema-lleva-a-la-siguiente-ecuacion" title="Permalink to this headline">¶</a></h2>
+<p>La caja va de <span class="math notranslate nohighlight">\(-L\)</span> a <span class="math notranslate nohighlight">\(+L\)</span>, el tope de <span class="math notranslate nohighlight">\(-a\)</span> a <span class="math notranslate nohighlight">\(+a\)</span>.</p>
+<p>La altura del tope es <span class="math notranslate nohighlight">\(U\)</span></p>
+<p>La solución de la ecuación de Schrödinger lleva a las siguientes ecuaciones, en las que se busca el valor de la energía que las resuelve; la primera es para el caso de una solución par</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{{E\over U-E}}=\tanh{\bigg[\sqrt{{2m(U-E)\over \hbar^2}}a\bigg]} \tan{\bigg[\sqrt{{2mE\over \hbar^2}}(a-L)\bigg]};\]</div>
+<p>y la segunda es para el caso de una solución impar,</p>
+<div class="math notranslate nohighlight">
+\[\sqrt{{E\over U-E}}={ \tan{\bigg[\sqrt{{2mE\over \hbar^2}}(a-L)\bigg]} \over \tanh{\bigg[\sqrt{{2m(U-E)\over \hbar^2}}a\bigg]}}.\]</div>
+<p>La solución de estas ecuaciones trascendentales se va a buscar con el método de Newton-Raphson, en el que se busca el valor de la variable, <span class="math notranslate nohighlight">\(x_s\)</span>, que satisface que una función sea igual a cero:</p>
+<div class="math notranslate nohighlight">
+\[f(x_{sol})=0,\]</div>
+<p>y que está dada aproximadamente por</p>
+<div class="math notranslate nohighlight">
+\[x_s \approx x_0 - {f(x_0)\over f^\prime(x_0)}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">simps</span>
+<span class="c1"># fijamos el valor de los parámetros, masa, L, a y U</span>
+<span class="n">me</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">hbar</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">L</span><span class="o">=</span><span class="mf">3.</span>
+<span class="n">a</span><span class="o">=</span><span class="mf">1.</span>
+<span class="n">U</span><span class="o">=</span><span class="mf">60.</span>
+<span class="n">coef</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">me</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">npo</span> <span class="o">=</span> <span class="mi">1000</span>
+
+<span class="c1">#Definimos la función par que queremos optimizar</span>
+<span class="k">def</span> <span class="nf">paraNR</span><span class="p">(</span><span class="n">E</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">coef</span><span class="p">,</span> <span class="n">U</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">arg1</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">arg2</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="p">(</span><span class="n">U</span><span class="o">-</span><span class="n">E</span><span class="p">))</span>
+    <span class="n">fp</span> <span class="o">=</span> <span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">arg1</span><span class="p">))</span><span class="o">*</span><span class="n">coef</span><span class="o">*</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*.</span><span class="mi">5</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">arg2</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">-</span> 
+         <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">arg2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">1.</span><span class="o">-</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">arg1</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">coef</span><span class="o">*</span><span class="n">a</span><span class="o">*.</span><span class="mi">5</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">U</span><span class="o">-</span><span class="n">E</span><span class="p">)</span> <span class="o">-</span> 
+         <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="n">U</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">U</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">U</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">E</span><span class="o">-</span><span class="n">f</span><span class="o">/</span><span class="n">fp</span>
+
+<span class="c1">#Definimos la función impar que queremos optimizar</span>
+<span class="k">def</span> <span class="nf">imparaNR</span><span class="p">(</span><span class="n">E</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="n">coef</span><span class="p">,</span> <span class="n">U</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">arg2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">arg1</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="p">(</span><span class="n">U</span><span class="o">-</span><span class="n">E</span><span class="p">))</span>   
+    <span class="n">fp</span> <span class="o">=</span> <span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">arg1</span><span class="p">))</span><span class="o">*</span><span class="n">coef</span><span class="o">*</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">*.</span><span class="mi">5</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">arg2</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">-</span> 
+         <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">arg2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mf">1.</span><span class="o">-</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">arg1</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">coef</span><span class="o">*</span><span class="n">a</span><span class="o">*.</span><span class="mi">5</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">U</span><span class="o">-</span><span class="n">E</span><span class="p">)</span> <span class="o">-</span> 
+         <span class="o">.</span><span class="mi">5</span><span class="o">*</span><span class="n">U</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">U</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">U</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">E</span><span class="o">-</span><span class="n">f</span><span class="o">/</span><span class="n">fp</span>
+
+<span class="c1"># Buscamos soluciones para E&lt;U</span>
+<span class="c1">#empezamos con el estado basal de la caja sin tope</span>
+<span class="c1">#E0 = 4.*(hbar*np.pi)**2*(1./(2.*me*(L-a)**2)+1./(2.*me*(2*L)**2))/2.</span>
+<span class="n">energiasinf</span> <span class="o">=</span> <span class="p">(</span><span class="n">hbar</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mf">1.</span><span class="o">/</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">me</span><span class="o">*</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">nn</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">E_inf</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">energiasinf</span> <span class="o">&lt;=</span> <span class="mf">1.5</span><span class="o">*</span><span class="n">U</span><span class="p">:</span>   
+    <span class="n">E_inf</span><span class="p">[</span><span class="n">nn</span><span class="p">]</span><span class="o">=</span> <span class="n">energiasinf</span>
+    <span class="n">energiasinf</span> <span class="o">=</span> <span class="p">(</span><span class="n">nn</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">2.</span> <span class="o">*</span> <span class="n">energiasinf</span> <span class="o">/</span> <span class="p">(</span><span class="n">nn</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mf">2.</span>
+    <span class="n">nn</span> <span class="o">=</span> <span class="n">nn</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Energias de la caja infinita similar&quot;</span><span class="p">,</span> <span class="n">E_inf</span><span class="p">)</span>
+
+<span class="c1"># E0 es la primera aproximación a la energía</span>
+<span class="n">E0</span> <span class="o">=</span> <span class="n">E_inf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*.</span><span class="mi">5</span>
+<span class="c1">#E0 = .5</span>
+<span class="c1">#E = 4,8,20</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mf">54.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+    <span class="n">arg1</span> <span class="o">=</span> <span class="p">((</span><span class="mf">2.</span><span class="o">*</span><span class="n">me</span><span class="o">*</span><span class="p">(</span><span class="n">U</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">))</span><span class="o">*</span><span class="n">a</span>
+    <span class="n">arg2</span> <span class="o">=</span> <span class="p">((</span><span class="mf">2.</span><span class="o">*</span><span class="n">me</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">.</span><span class="mi">5</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">L</span><span class="o">-</span><span class="n">a</span><span class="p">)</span>
+    <span class="n">f</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">En</span> <span class="o">=</span> <span class="n">paraNR</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+    <span class="c1">#print f, fp, E, En, np.abs(E-En)</span>
+    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">E</span><span class="o">-</span><span class="n">En</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="o">.</span><span class="mi">0001</span><span class="p">:</span>
+        <span class="n">E</span> <span class="o">=</span> <span class="n">En</span>
+        <span class="n">conv</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">break</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">E</span><span class="o">=.</span><span class="mi">8</span><span class="o">*</span><span class="n">E</span><span class="o">+</span> <span class="o">.</span><span class="mi">2</span><span class="o">*</span><span class="n">En</span>
+        <span class="n">conv</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">if</span> <span class="n">conv</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">:</span> 
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;No obtuve solucion en 50 vueltas a NR, me detengo!&quot;</span><span class="p">)</span>
+    
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Energia: &quot;</span><span class="p">,</span> <span class="n">E</span><span class="p">)</span>
+<span class="n">x_set</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="n">npo</span><span class="p">)</span>
+<span class="n">Psi</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">npo</span>
+<span class="n">Psi2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">npo</span>
+<span class="n">k1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">me</span><span class="o">*</span><span class="n">E</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">k2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="o">*</span><span class="n">me</span><span class="o">*</span><span class="p">(</span><span class="n">U</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">A</span><span class="o">=</span><span class="mf">1.</span>
+<span class="n">C</span><span class="o">=</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">a</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="n">npo</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x_set</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="o">-</span><span class="n">a</span><span class="p">:</span>
+        <span class="n">Psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">x_set</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">x_set</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="n">x_set</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="o">-</span><span class="n">a</span> <span class="ow">and</span> <span class="n">x_set</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">:</span>
+        <span class="c1">#PP[i]</span>
+        <span class="n">Psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">C</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">x_set</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">x_set</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="k">if</span> <span class="n">x_set</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">a</span><span class="p">:</span>
+        <span class="n">Psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">x_set</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">x_set</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+    <span class="n">Psi2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">Psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">Psi</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="n">I</span> <span class="o">=</span> <span class="n">simps</span><span class="p">(</span><span class="n">Psi2</span><span class="p">,</span> <span class="n">x_set</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">I</span><span class="p">)</span>
+<span class="n">I1</span> <span class="o">=</span> <span class="n">simps</span><span class="p">(</span><span class="n">Psi2</span><span class="o">/</span><span class="n">I</span><span class="p">,</span> <span class="n">x_set</span><span class="p">)</span>
+<span class="c1">#PP = simps(Psi2/I, x_set,-1.,1.)</span>
+<span class="n">PP</span> <span class="o">=</span> <span class="n">simps</span><span class="p">(</span><span class="n">Psi2</span><span class="o">/</span><span class="n">I</span><span class="p">,</span> <span class="n">x_set</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">I1</span><span class="p">,</span> <span class="n">PP</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#fig.suptitle(&#39;Vertically stacked subplots&#39;)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_set</span><span class="p">,</span><span class="n">Psi2</span><span class="o">/</span><span class="n">I</span><span class="p">)</span>
+
+<span class="c1">#lines = plt.plot(x1, y1, x2, y2)</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">3.</span><span class="p">,</span><span class="o">-</span><span class="mf">3.</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">,</span><span class="mf">3.</span><span class="p">,</span><span class="mf">3.</span><span class="p">],[</span><span class="mf">1.6</span><span class="o">*</span><span class="n">U</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.6</span><span class="o">*</span><span class="n">U</span><span class="p">,</span><span class="mf">1.6</span><span class="o">*</span><span class="n">U</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.6</span><span class="o">*</span><span class="n">U</span><span class="p">])</span>
+<span class="n">lines2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">3.</span><span class="p">,</span><span class="mf">3.</span><span class="p">],[</span><span class="n">E</span><span class="p">,</span><span class="n">E</span><span class="p">])</span>
+
+<span class="c1"># use keyword args</span>
+<span class="n">dif</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">E</span><span class="o">-</span><span class="n">E_inf</span><span class="p">))</span>
+<span class="n">index_min</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">E</span><span class="o">-</span><span class="n">E_inf</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">dif</span><span class="p">,</span><span class="n">E_inf</span><span class="p">[</span><span class="n">index_min</span><span class="p">])</span>
+<span class="n">lines3</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">3.</span><span class="p">,</span><span class="mf">3.</span><span class="p">],[</span><span class="n">E_inf</span><span class="p">[</span><span class="n">index_min</span><span class="p">],</span><span class="n">E_inf</span><span class="p">[</span><span class="n">index_min</span><span class="p">]])</span>
+<span class="n">lines4</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span><span class="mf">1.</span><span class="p">],[</span><span class="n">U</span><span class="p">,</span><span class="n">U</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">lines</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">lines2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">lines3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">lines4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">2.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-.</span><span class="mi">1</span><span class="o">*</span><span class="n">U</span><span class="p">,</span><span class="mf">1.5</span><span class="o">*</span><span class="n">U</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_set</span><span class="p">,</span><span class="n">Psi2</span><span class="o">/</span><span class="n">I</span><span class="p">)</span>
+<span class="c1">#plt.plot(x_set,Psi2/I)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Energias de la caja infinita similar [2.4674011002723395, 9.869604401089358, 22.206609902451056, 39.47841760435743, 61.68502750680849, 88.82643960980423, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+Energia:  52.526800596529036
+2.5313470548085157
+0.9999999999999999 0.9999999999999999
+9.158226910279453 61.68502750680849
+</pre></div>
+</div>
+<img alt="_images/CajaConTope_2_1.png" src="_images/CajaConTope_2_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="autor">
+<h2><span class="section-number">2.2. </span>Autor<a class="headerlink" href="#autor" title="Permalink to this headline">¶</a></h2>
+<p>Este notebook es una contribución del Dr. Carlos Amador Bedolla</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="Caja.html" title="previous page"><span class="section-number">1. </span>Partícula en la caja</a>
+    <a class='right-next' id="next-link" href="Anillo_Esfera_Rotor.html" title="next page"><span class="section-number">3. </span>Parícula en el anillo, Partícula en la esfera y Rotor Rígido</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>

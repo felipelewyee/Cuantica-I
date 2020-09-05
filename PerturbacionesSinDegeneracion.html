@@ -1,0 +1,753 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>2. Teoría de perturbaciones (niveles de energía no degenerados) &#8212; Cuántica I</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/mystnb.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="1. Software" href="Software.html" />
+    <link rel="prev" title="1. Método variacional lineal" href="Variacional_Lineal.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Cuántica I</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   La Química Cuántica a tu alcance
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Basico.html">
+   1. Tutorial Básico.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Avanzado.html">
+   2. Tutorial Avanzado.
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas Sencillos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Caja.html">
+   1. Partícula en la caja
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CajaConTope.html">
+   2. Caja de potencial con un tope en el medio
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Anillo_Esfera_Rotor.html">
+   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Oscilador.html">
+   4. Oscilador Armónico Cuántico
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Átomo de Hidrógeno
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Radial.html">
+   1. Solución Radial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Orbitales.html">
+   2. Orbitales Atómicos
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Métodos Aproximados
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Variacional_Lineal.html">
+   1. Método variacional lineal
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Teoría de perturbaciones (niveles de energía no degenerados)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas de Muchos Electrones
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software.html">
+   1. Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Hartree-Fock.html">
+   2. Hartree-Fock-Roothan
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Moller-Plesset.html">
+   3. Moller-Plesset
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Dimerizacion.html">
+   4. Dimerización de
+   <span class="math notranslate nohighlight">
+    \(NO_2\)
+   </span>
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Matemáticas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas1.html">
+   1. Expansión en series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas2.html">
+   2. Álgebra simbólica
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/PerturbacionesSinDegeneracion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/PerturbacionesSinDegeneracion.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejemplo-oscilador-anarmonico">
+   2.1. Ejemplo-Oscilador anarmónico
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-1">
+     2.1.1. Ejercicio 1.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-2">
+     2.1.2. Ejercicio 2.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-3">
+     2.1.3. Ejercicio 3.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#correccion-a-segundo-orden">
+     2.1.4. Corrección a segundo orden
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-4">
+     2.1.5. Ejercicio 4.
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="teoria-de-perturbaciones-niveles-de-energia-no-degenerados">
+<h1><span class="section-number">2. </span>Teoría de perturbaciones (niveles de energía no degenerados)<a class="headerlink" href="#teoria-de-perturbaciones-niveles-de-energia-no-degenerados" title="Permalink to this headline">¶</a></h1>
+<p>La teoría de perturbaciones es el segundo método de aproximacón más utilizado en la Química Cuántica, después del método variacional.</p>
+<p>El objetivo es determinar una solución aproximada a la ecuación de Schrödinger para un Hamiltoniano <span class="math notranslate nohighlight">\(\hat{H}\)</span>. La suposición importante en la teoría de perturbaciones es que <span class="math notranslate nohighlight">\(\hat{H}\)</span> es un poco diferente de un Hamiltoniano <span class="math notranslate nohighlight">\(\hat{H}^{(0)}\)</span> del cual conocemos su solución; es decir, conocemos sus eigenfunciones y eigenvalores. Esto es</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}^{(0)} \Psi_n^{(0)} = E_n^{(0)}  \Psi_n^{(0)}
+\]</div>
+<p>donde tanto <span class="math notranslate nohighlight">\(E_n^{(0)}\)</span> y <span class="math notranslate nohighlight">\(\Psi_n^{(0)}\)</span> son conocidos. La diferencia entre <span class="math notranslate nohighlight">\(\hat{H}\)</span> y <span class="math notranslate nohighlight">\(\hat{H}^{(0)}\)</span> se llama la perturbación y la denotamos por <span class="math notranslate nohighlight">\(\hat{H}'\)</span>, esto es</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}' = \hat{H}-\hat{H}^{(0)}
+\]</div>
+<p>El método presentado en este notebook tiene la suposición los niveles de energía <span class="math notranslate nohighlight">\(\big\{ E_n^{(0)}\big\}\)</span> no están degenerados.</p>
+<p>Proponemos una solución en serie aproximada a los eigenvalores (<span class="math notranslate nohighlight">\(E_n\)</span>) y eigenfunciones (<span class="math notranslate nohighlight">\(\Psi_n\)</span>) de <span class="math notranslate nohighlight">\(\hat{H}\)</span> en términos de <span class="math notranslate nohighlight">\(E_n^{(0)}\)</span> y <span class="math notranslate nohighlight">\(\Psi_n^{(0)}\)</span> y correcciones a dichos valores. De tal foma que tenemos,</p>
+<p>\begin{eqnarray}
+E_n &amp;=E_n^{(0)}+ E_n^{(1)} + E_n^{(2)} +\ldots \
+\Psi_n&amp; = \Psi_n^{(0)}+\Psi^{(1)}+\Psi^{(2)}+\ldots
+\end{eqnarray}</p>
+<p>Con el fin de escribir las expresiones para las diferentes correcciones introducimos la notación para los elementos de matriz de la perturbación, (<span class="math notranslate nohighlight">\(\hat{H}'\)</span>),</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H}'_{m,n} = \langle \Psi_m^{(0)} | \hat{H}' | \Psi_n^{(0)} \rangle = \int \big( \Psi_m^{(0)} \big)^* \hat{H}' \Psi_n ^{(0)} \,dq
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\Psi_n^{(0)}(q)\)</span> son la eigenfunciones que conocemos de <span class="math notranslate nohighlight">\(\hat{H}^{(0)}\)</span> y hemos denoatdo por <span class="math notranslate nohighlight">\(q\)</span> a las coordenadas de las que dependen.</p>
+<p>En términos de los elementos de matriz de <span class="math notranslate nohighlight">\(\hat{H}'\)</span> tenemos,</p>
+<div class="math notranslate nohighlight">
+\[
+E_n \approx E_n^{(0)} +H'_{n,n} + \sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
+\]</div>
+<p>y</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi_n \approx \Psi_n^{(0)} + \sum_{m\neq n} \frac{\hat{H}'_{m,n}}{E_n^{(0)}-E_m^{(0)}} \Psi_m^{(0)}
+\]</div>
+<hr class="docutils" />
+<div class="section" id="ejemplo-oscilador-anarmonico">
+<h2><span class="section-number">2.1. </span>Ejemplo-Oscilador anarmónico<a class="headerlink" href="#ejemplo-oscilador-anarmonico" title="Permalink to this headline">¶</a></h2>
+<p>En Hamiltoniano del oscilador anarmónico de una partícula en una dimensión es:</p>
+<p>\begin{eqnarray}
+\hat{H} = \underbrace{-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2} k x^2 }<em>{\hat{H}^{(0)}} + \underbrace{cx^3 + dx^4}</em>{\hat{H}’}
+\end{eqnarray}</p>
+<p>Los eigenvalores y eigenfunciones del oscilador armónico son:</p>
+<p>\begin{align}
+E_n^{(0)} = \bigg(n+\frac{1}{2}\bigg) h\nu
+\end{align}</p>
+<p>\begin{align}
+\Psi_n^{(0)} (x) = \frac{1}{\sqrt{2^n n !}} \bigg( \frac{\alpha}{\pi} \bigg)^{1/4} e^{-\alpha x^2/2 } H_n\bigg( \alpha^{1/2},x \bigg)
+\end{align}</p>
+<p>donde  <span class="math notranslate nohighlight">\(\alpha = 2\pi\nu m /\hbar\)</span> y</p>
+<p>\begin{align}
+\nu = \frac{1}{2\pi }\bigg( \frac{k}{m}  \bigg)^{1/2}
+\end{align}</p>
+<p>Realicemos numéricamente el cáculo de los elementos de matriz.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">factorial</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">eval_hermite</span> <span class="k">as</span> <span class="n">Hn</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">π</span> <span class="o">=</span> <span class="n">pi</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mf">1902.5</span>             <span class="c1"># [ N·m^{-1}]  constante de fuerza del CO</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mf">1.1391e-26</span>         <span class="c1"># [kg] masa reducida de C-O</span>
+<span class="n">ħ</span> <span class="o">=</span> <span class="mf">1.0545718e-34</span>      <span class="c1"># [J·s] </span>
+<span class="n">h</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">ħ</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mf">1.602e-19</span>
+<span class="n">ν</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">k</span><span class="o">/</span><span class="n">m</span> <span class="p">)</span><span class="o">/</span><span class="n">π</span>
+<span class="n">α</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">ν</span><span class="o">*</span><span class="n">m</span><span class="o">/</span><span class="n">ħ</span>          <span class="c1"># [m^{-2}]</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;    ν  = </span><span class="si">{0:.3e}</span><span class="s2"> [Hz]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ν</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;√(1/α) = </span><span class="si">{0:.3e}</span><span class="s2"> [m]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">α</span><span class="p">)))</span>
+
+<span class="c1"># n -&gt; nivel de energía</span>
+<span class="n">n</span>   <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1"># Definimos una función que nos de la eigenenergía del </span>
+<span class="c1"># oscilado armónico</span>
+<span class="k">def</span> <span class="nf">eigenEn0</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">ν</span>
+
+<span class="n">E00</span> <span class="o">=</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;E0^(0) = </span><span class="si">{0:.3f}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E00</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
+<span class="c1"># Notemos que al imprimir el valor de E00 dividimos</span>
+<span class="c1"># por la carga elemental para obtener las unidades de eV.</span>
+
+
+<span class="c1"># La longitud (1/α)^{1/2} es característica de las eigenfunciones </span>
+<span class="c1"># por lo que es un buen parámetro para determinar el intervalo de </span>
+<span class="c1"># los valores de x.</span>
+
+<span class="n">x</span>   <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">α</span><span class="p">),</span><span class="mi">10</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">α</span><span class="p">),</span><span class="mi">10000</span><span class="p">)</span>
+
+<span class="c1"># Definimos la función que nos devuelva la eigenfunción </span>
+<span class="c1"># del oscilador armónico</span>
+<span class="k">def</span> <span class="nf">funcΨ0n</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">(</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">)</span><span class="o">*</span><span class="p">(</span> <span class="p">(</span><span class="n">α</span><span class="o">/</span><span class="n">π</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">α</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">Hn</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">sqrt</span><span class="p">(</span><span class="n">α</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">Ψ0n</span> <span class="o">=</span> <span class="n">funcΨ0n</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>    ν  = 6.504e+13 [Hz]
+√(1/α) = 4.760e-12 [m]
+E0^(0) = 0.135 [eV]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podemos verificar que las eigenfunciones están normalizadas utilizando la regla del trapecio</span>
+<span class="c1"># Notemos que las eigenfunciones son reales por lo que Ψ*(x) = Ψ(x)</span>
+<span class="n">Ψ2</span>       <span class="o">=</span> <span class="n">Ψ0n</span><span class="o">*</span><span class="n">Ψ0n</span>
+<span class="n">Integral</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span><span class="n">Ψ2</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Integral: </span><span class="si">{0:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Integral</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Integral: 1.000
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Procedemos a evaluar los elementos de matriz</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definimos la perturbación H&#39;</span>
+<span class="n">c</span>  <span class="o">=</span> <span class="mi">600</span><span class="p">;</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">1e-4</span><span class="o">*</span><span class="p">(</span><span class="n">α</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
+
+<span class="n">Hp</span> <span class="o">=</span> <span class="n">c</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">d</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span>
+
+<span class="c1"># Construimos los elementos de matriz de H&#39;_{m,n}</span>
+<span class="c1"># Notemos que numericamente la matriz numericamente</span>
+<span class="c1"># tiene un tamaño finito</span>
+<span class="n">m_max</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="c1"># Definimos la función que evalúa</span>
+<span class="k">def</span> <span class="nf">ElementoMatriz</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">Ψm0</span> <span class="o">=</span> <span class="n">funcΨ0n</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">Ψn0</span> <span class="o">=</span> <span class="n">funcΨ0n</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">Int</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span> <span class="n">Ψm0</span><span class="o">*</span><span class="n">Hp</span><span class="o">*</span><span class="n">Ψn0</span><span class="p">,</span><span class="n">x</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="n">Int</span>
+
+<span class="n">matrizHp</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">m_max</span><span class="p">,</span><span class="n">m_max</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_max</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">mm</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_max</span><span class="p">):</span>
+        <span class="n">matrizHp</span><span class="p">[(</span><span class="n">m</span><span class="p">,</span><span class="n">mm</span><span class="p">)]</span> <span class="o">=</span> <span class="n">ElementoMatriz</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">mm</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Las matrices se pueden visulizar utilizando un mapa de colores</span>
+<span class="n">plotM</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">matrizHp</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greys&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$H&#39;_</span><span class="si">{mn}</span><span class="s2"> [eV]$&quot;</span><span class="p">);</span>
+<span class="c1"># Notamos como los valores distinto de cero están cerca de la diagonal</span>
+<span class="c1"># lo cual es típico en la teoría de perturbaciones</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/PerturbacionesSinDegeneracion_8_0.png" src="_images/PerturbacionesSinDegeneracion_8_0.png" />
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="ejercicio-1">
+<h3><span class="section-number">2.1.1. </span>Ejercicio 1.<a class="headerlink" href="#ejercicio-1" title="Permalink to this headline">¶</a></h3>
+<p>La corrección a primer orden de la energía de la energía del estado base es,
+\begin{align}
+E_0^{(1)} = \frac{3d}{4\alpha²} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
+\end{align}
+¿Podría verificarla numéricamente?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
+
+<span class="c1"># De acuerdo con la expresión analítica</span>
+<span class="n">E01analitico</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">d</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="n">α</span><span class="o">/</span><span class="n">α</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;E0^(1) = </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E01analitico</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
+
+<span class="c1"># De la teoría de perturbaciones tenemos que</span>
+<span class="c1"># E0^(1) = H&#39;_{0,0}</span>
+<span class="n">E01numerico</span> <span class="o">=</span> <span class="n">matrizHp</span><span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;E0^(1) = </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E01numerico</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
+
+<span class="n">E00</span> <span class="o">=</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;E0^(0) = </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E00</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
+
+<span class="c1"># Por tanto la aproximación a primer orden en la energía es:</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;    En ≈ </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E00</span><span class="o">/</span><span class="n">e</span> <span class="o">+</span> <span class="n">E01numerico</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
+<span class="c1"># ¿La energía es mayor o menor a la del oscilador armónico?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>E0^(1) = 9.597e-03 [eV]
+E0^(1) = 9.597e-03 [eV]
+E0^(0) = 1.345e-01 [eV]
+    En ≈ 1.441e-01 [eV]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-2">
+<h3><span class="section-number">2.1.2. </span>Ejercicio 2.<a class="headerlink" href="#ejercicio-2" title="Permalink to this headline">¶</a></h3>
+<p>Podría calcular la corrección a primer orden del primer nivel excitado del oscilador armónico.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
+
+<span class="c1"># De la teoría de perturbaciones tenemos que</span>
+<span class="c1"># E1^(1) = H&#39;_{1,1}</span>
+<span class="n">E11numerico</span> <span class="o">=</span> <span class="n">matrizHp</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;E1^(1) = </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E11numerico</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
+
+<span class="n">E10</span> <span class="o">=</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;E1^(0) = </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E10</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
+
+<span class="c1"># Por tanto la aproximación a primer orden en la energía es:</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;    En ≈ </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E10</span><span class="o">/</span><span class="n">e</span> <span class="o">+</span> <span class="n">E11numerico</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
+<span class="c1"># ¿La energía es mayor o menor a la del oscilador armónico?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>E1^(1) = 4.798e-02 [eV]
+E1^(0) = 4.035e-01 [eV]
+    En ≈ 4.515e-01 [eV]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-3">
+<h3><span class="section-number">2.1.3. </span>Ejercicio 3.<a class="headerlink" href="#ejercicio-3" title="Permalink to this headline">¶</a></h3>
+<p>Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la primera corrección a la energía.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
+
+<span class="n">En1numerico</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="n">matrizHp</span><span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+
+<span class="n">En0</span>         <span class="o">=</span> <span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+
+<span class="n">Enapprox</span>    <span class="o">=</span> <span class="n">En0</span> <span class="o">+</span> <span class="n">En1numerico</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+    <span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="n">En0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">En0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span> <span class="p">)</span>
+    <span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="n">Enapprox</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">Enapprox</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span> <span class="p">)</span>
+    <span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="n">En0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;n=</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+    <span class="n">text</span><span class="p">(</span> <span class="mf">1.1</span><span class="p">,</span><span class="n">Enapprox</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;n=</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">xticks</span><span class="p">([])</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$E [eV]$&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$E [eV]$&#39;)
+</pre></div>
+</div>
+<img alt="_images/PerturbacionesSinDegeneracion_16_1.png" src="_images/PerturbacionesSinDegeneracion_16_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="correccion-a-segundo-orden">
+<h3><span class="section-number">2.1.4. </span>Corrección a segundo orden<a class="headerlink" href="#correccion-a-segundo-orden" title="Permalink to this headline">¶</a></h3>
+<p>De la teoría de perturbaciones tenemos que
+\begin{align}
+E_n ^{(2)}=\sum_{m \neq n } \frac{|H’_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
+\end{align}</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Previamente realizamos el gráfico de los elementos de matriz</span>
+
+<span class="c1"># Las matrices se pueden visulizar utilizando un mapa de colores</span>
+<span class="n">plotM</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">matrizHp</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greys&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$H&#39;_</span><span class="si">{mn}</span><span class="s2"> [eV]$&quot;</span><span class="p">);</span>
+<span class="c1"># Notamos como los valores distinto de cero están cerca de la diagonal</span>
+<span class="c1"># lo cual es típico en la teoría de perturbaciones</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/PerturbacionesSinDegeneracion_18_0.png" src="_images/PerturbacionesSinDegeneracion_18_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sin embargo, los términos a sumar son los elementos de matriz </span>
+<span class="c1"># al cuadrado dividos por la diferencia de energía del nivel a corregir.</span>
+
+<span class="c1"># Analicemos los términos de la suma cuando n = 0, es decir el estado base</span>
+<span class="n">n</span>   <span class="o">=</span> <span class="mi">0</span>
+<span class="n">E00</span> <span class="o">=</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
+<span class="c1"># Dado que las eigenfunciones son reales no tenemos que tomar el conjugado</span>
+<span class="n">Sumandos</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="n">matrizHp</span><span class="p">[(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)]</span><span class="o">*</span><span class="n">matrizHp</span><span class="p">[(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)]</span><span class="o">/</span><span class="p">(</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">-</span><span class="n">eigenEn0</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="p">)</span> \
+                    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_max</span><span class="p">)</span> <span class="k">if</span> <span class="n">m</span> <span class="o">!=</span> <span class="n">n</span> <span class="p">]</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafiquemos los sumandos</span>
+<span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">m_max</span><span class="p">),</span><span class="n">Sumandos</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s1">&#39;o-&#39;</span><span class="p">);</span>
+<span class="n">xticks</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]);</span>
+<span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$E$ [eV]&quot;</span><span class="p">)</span>
+<span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;m&quot;</span><span class="p">)</span>
+
+<span class="c1">#Podemos notar en este caso que la mayor corrección al estado base proviene del nivel n = 2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;m&#39;)
+</pre></div>
+</div>
+<img alt="_images/PerturbacionesSinDegeneracion_20_1.png" src="_images/PerturbacionesSinDegeneracion_20_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Notamos que los sumandos siempre son negativos para el estado base</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot; Máximo valor de los sumandos: </span><span class="si">{0:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="nb">max</span><span class="p">(</span><span class="n">Sumandos</span><span class="p">)</span><span class="o">/</span><span class="n">e</span> <span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span> Máximo valor de los sumandos: -3.143e-41
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="ejercicio-4">
+<h3><span class="section-number">2.1.5. </span>Ejercicio 4.<a class="headerlink" href="#ejercicio-4" title="Permalink to this headline">¶</a></h3>
+<p>Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la segunda corrección a la energía. ¿Es muy diferente al resultado de la corrección a primer orden?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="Variacional_Lineal.html" title="previous page"><span class="section-number">1. </span>Método variacional lineal</a>
+    <a class='right-next' id="next-link" href="Software.html" title="next page"><span class="section-number">1. </span>Software</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
