@@ -6,7 +6,7 @@ A continuación estudiaremos sistemas sencillos que nos permiten entender como s
 3. Encontrar la función de onda ($\psi$).
 4. Estudiar las condiciones de cuantización.
 
-## Partícula en una caja
+## Caja 1D
 
 La versión 1D de este sistema consiste en una partícula que se mueve en el espacio con un potencial definido en tres regiones, tal que
 
@@ -245,6 +245,8 @@ print("Integrales")
 print("psi_1psi_1",psi_1psi_1)
 print("psi_3psi_3",psi_3psi_3)
 print("psi_1psi_3",psi_1psi_3)
+
+## Caja 2D
 
 También existe la partícula en una caja para 2-Dimensiones. Se confina la partícula en $x\varepsilon[0,L_x]$ y $y\varepsilon[0,L_y]$.
 
