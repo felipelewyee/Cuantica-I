@@ -10,7 +10,7 @@ Para comenzar, importe las librerías numpy y psi4.
 import numpy as np
 import psi4
 
-Defina una molécula de su interés. A continuación se proporciona la geometría de la molécula de hidrógeno, aunque puede usar cualquier otro sistema.
+Defina una molécula de su interés. A continuación se proporciona la geometría de la molécula de hidrógeno, aunque puede usar cualquier otro sistema. Se recomienda que sea pequeño por tiempo de ejecución.
 ```
 H 0.0000  0.0000 0.0000
 H 0.0000  0.0000 0.7414 
@@ -38,7 +38,7 @@ Obtenga los coeficientes de los orbitales moleculares a partir de la función de
 
 C = np.asarray(wfn.Ca())
 
-Obtenga el número de funciones de base, de orbitales moleculares y de electrones
+Obtenga el número de funciones de base ($N_{bf}$), de orbitales moleculares ($N_{mo})$ y de electrones ($N_{e}$)
 
 nbf = len(C)
 nmo = wfn.nmo()
@@ -60,6 +60,10 @@ I_AO = np.asarray(mints.ao_eri())
 mints = psi4.core.MintsHelper(wfn.basisset())
 I_AO = np.asarray(mints.ao_eri())
 
+```{Note}
+Los software de estructura electrónica usan formas optimizados de las ecuaciones aquí mostradas. Este notebook ha sido creado sólo con fines didácticos.
+```
+
 La teoría de Moller-Plesset requiere que estas integrales sean transformadas a orbital molecular. Recuerde que un orbital molecular es una combinación lineal de orbitales atómicos
 \begin{equation}
 p(r) = \sum_\mu C_{\mu p} \mu (r)
@@ -71,17 +75,28 @@ En el siguiente recuadro declare una variable I_MO de dimensión ($N_{MO}$,$N_{M
 [pq|rt] = \sum_{\mu\nu\sigma\lambda}^N C_{\mu p} C_{\nu q} C_{\sigma r} C_{\lambda s} [\mu \nu | \sigma \lambda]
 \end{equation}
 
+```{tip}
+Utilice 4 for para recorrer los orbitales moleculares, y 4 for para recorrer las funciones de base.
+```
+
+`````{margin}
+Alternativamente puede usar la instrucción
+~~~
 I_MO = np.einsum('mp,nq,sr,lt,mnsl->pqrt',C,C,C,C,I_AO,optimize=True)
-#I_MO = np.zeros((nmo,nmo,nmo,nmo))
-#for p in range(nmo):
-#    for q in range(nmo):
-#        for r in range(nmo):
-#            for t in range(nmo):
-#                for m in range(nbf):
-#                    for n in range(nbf):
-#                        for s in range(nbf):
-#                            for l in range(nbf):
-#                                I_MO[p][q][r][t] = I_MO[p][q][r][t] + C[m][p]*C[n][q]*C[s][r]*C[l][t]*I_AO[m][n][s][l]
+~~~
+La cual es sustancialmente más rápida que los 8 for. Esto puede hacer su programa más rápido si su sistema no es tan pequeño.
+`````
+
+I_MO = np.zeros((nmo,nmo,nmo,nmo))
+for p in range(nmo):
+    for q in range(nmo):
+        for r in range(nmo):
+            for t in range(nmo):
+                for m in range(nbf):
+                    for n in range(nbf):
+                        for s in range(nbf):
+                            for l in range(nbf):
+                                I_MO[p][q][r][t] = I_MO[p][q][r][t] + C[m][p]*C[n][q]*C[s][r]*C[l][t]*I_AO[m][n][s][l]
 
 También necesitamos las energías de los orbitales moleculares ($\varepsilon_a$), utilice las siguientes líneas para obtenerlas
 ```
@@ -99,14 +114,18 @@ dependiendo del n-orden hasta el que se haga la corrección sobre la energía al
 
 En Moller-Plesset estos términos son:
 \begin{equation}
-E_0^{(0)} = 2\sum_a^{N/2} {\varepsilon_a}
+E_0^{(0)} = 2\sum_{a}^{N_e/2} {\varepsilon_a}
 \end{equation}
 \begin{equation}
-E_0^{(1)} = -2 \sum_{ab}^{N/2} [aa|bb] - [ab|ba]
+E_0^{(1)} = -2 \sum_{a}^{N_e/2}\sum_{b}^{N_e/2} [aa|bb] - [ab|ba]
 \end{equation}
 donde los índices $a$, $b$ refieren a orbitales moleculares ocupados, y los términos $\varepsilon_a$, $\varepsilon_b$, a sus energías.
 
 Calcule $E_0^{(0)}$ y $E_0^{(1)}$.
+
+```{Caution}
+Aunque las sumas empiezan en el primer orbital molecular ocupado, recuerde que en Python los índices empiezan en cero.
+```
 
 E_0 = 0
 for a in range(int(ne/2)):
@@ -132,12 +151,12 @@ Calcule la diferencia entre $E_{MP1}$ y la energía de Hartree-Fock que calculó
 
 La energía de Hartree-Fock se calcula como
 \begin{equation}
-E_{HF} = E_{nuc} + 2\sum_a^{N/2} {\varepsilon_a} -2 \sum_{ab}^{N/2} [aa|bb] - [ab|ba]
+E_{HF} = E_{nuc} + 2\sum_a^{N_e/2} {\varepsilon_a} -2 \sum_{a}^{N/2}\sum_{b}^{N/2} [aa|bb] - [ab|ba]
 \end{equation}
 
 esta es exactamente la misma expresion que $E_{MP1}$. La primera corrección a la energía aparece en $E_{MP2}$. La corrección a segundo orden es
 \begin{equation}
-E_0^{(2)} = 2 \sum_{abrs}^{N/2} \frac{[ar|bs][ra|sb]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}} - \sum_{abrs}^{N/2} \frac{[ar|bs][rb|sa]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}}
+E_0^{(2)} = 2 \sum_{a}^{N_e/2}\sum_{b}^{N_e/2}\sum_{r=N_e+1}^{N_{bf}}\sum_{s=N_e+1}^{N_{bf}} \frac{[ar|bs][ra|sb]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}} - \sum_{abrs}^{N_e/2} \frac{[ar|bs][rb|sa]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}}
 \end{equation}
 
 donde $r$, $s$ son los orbitales moleculares desocupados.
@@ -181,11 +200,13 @@ E_MPn = psi4.energy('MPn/Base')
 print("E_MPn =",E_MPn)
 ```
 
+`````{margin}
 Ejemplo.
-```
+~~~
 E_MP2 = psi4.energy('MP2/6-31G')
 print("E_MP2 =",E_MP2)
-```
+~~~
+`````
 
 E_MP2 = psi4.energy('MP2/6-31G')
 print("E_MP2 =",E_MP2)

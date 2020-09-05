@@ -313,7 +313,7 @@
 </div>
 </div>
 </div>
-<p>Defina una molécula de su interés. A continuación se proporciona la geometría de la molécula de hidrógeno, aunque puede usar cualquier otro sistema.</p>
+<p>Defina una molécula de su interés. A continuación se proporciona la geometría de la molécula de hidrógeno, aunque puede usar cualquier otro sistema. Se recomienda que sea pequeño por tiempo de ejecución.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="mf">0.0000</span>  <span class="mf">0.0000</span> <span class="mf">0.0000</span>
 <span class="n">H</span> <span class="mf">0.0000</span>  <span class="mf">0.0000</span> <span class="mf">0.7414</span> 
 </pre></div>
@@ -367,7 +367,7 @@
 </div>
 </div>
 </div>
-<p>Obtenga el número de funciones de base, de orbitales moleculares y de electrones</p>
+<p>Obtenga el número de funciones de base (<span class="math notranslate nohighlight">\(N_{bf}\)</span>), de orbitales moleculares (<span class="math notranslate nohighlight">\(N_{mo})\)</span> y de electrones (<span class="math notranslate nohighlight">\(N_{e}\)</span>)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nbf</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
@@ -401,6 +401,10 @@ donde <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="ma
 </div>
 </div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Los software de estructura electrónica usan formas optimizados de las ecuaciones aquí mostradas. Este notebook ha sido creado sólo con fines didácticos.</p>
+</div>
 <p>La teoría de Moller-Plesset requiere que estas integrales sean transformadas a orbital molecular. Recuerde que un orbital molecular es una combinación lineal de orbitales atómicos
 \begin{equation}
 p(r) = \sum_\mu C_{\mu p} \mu (r)
@@ -409,19 +413,30 @@ p(r) = \sum_\mu C_{\mu p} \mu (r)
 <p>\begin{equation}
 [pq|rt] = \sum_{\mu\nu\sigma\lambda}^N C_{\mu p} C_{\nu q} C_{\sigma r} C_{\lambda s} [\mu \nu | \sigma \lambda]
 \end{equation}</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Utilice 4 for para recorrer los orbitales moleculares, y 4 for para recorrer las funciones de base.</p>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Alternativamente puede usar la instrucción</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I_MO</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;mp,nq,sr,lt,mnsl-&gt;pqrt&#39;</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">I_AO</span><span class="p">,</span><span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>La cual es sustancialmente más rápida que los 8 for. Esto puede hacer su programa más rápido si su sistema no es tan pequeño.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I_MO</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">einsum</span><span class="p">(</span><span class="s1">&#39;mp,nq,sr,lt,mnsl-&gt;pqrt&#39;</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">C</span><span class="p">,</span><span class="n">I_AO</span><span class="p">,</span><span class="n">optimize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="c1">#I_MO = np.zeros((nmo,nmo,nmo,nmo))</span>
-<span class="c1">#for p in range(nmo):</span>
-<span class="c1">#    for q in range(nmo):</span>
-<span class="c1">#        for r in range(nmo):</span>
-<span class="c1">#            for t in range(nmo):</span>
-<span class="c1">#                for m in range(nbf):</span>
-<span class="c1">#                    for n in range(nbf):</span>
-<span class="c1">#                        for s in range(nbf):</span>
-<span class="c1">#                            for l in range(nbf):</span>
-<span class="c1">#                                I_MO[p][q][r][t] = I_MO[p][q][r][t] + C[m][p]*C[n][q]*C[s][r]*C[l][t]*I_AO[m][n][s][l]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">I_MO</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nmo</span><span class="p">,</span><span class="n">nmo</span><span class="p">,</span><span class="n">nmo</span><span class="p">,</span><span class="n">nmo</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nmo</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nmo</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nmo</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nmo</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+                    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+                        <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+                            <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+                                <span class="n">I_MO</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">q</span><span class="p">][</span><span class="n">r</span><span class="p">][</span><span class="n">t</span><span class="p">]</span> <span class="o">=</span> <span class="n">I_MO</span><span class="p">[</span><span class="n">p</span><span class="p">][</span><span class="n">q</span><span class="p">][</span><span class="n">r</span><span class="p">][</span><span class="n">t</span><span class="p">]</span> <span class="o">+</span> <span class="n">C</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">p</span><span class="p">]</span><span class="o">*</span><span class="n">C</span><span class="p">[</span><span class="n">n</span><span class="p">][</span><span class="n">q</span><span class="p">]</span><span class="o">*</span><span class="n">C</span><span class="p">[</span><span class="n">s</span><span class="p">][</span><span class="n">r</span><span class="p">]</span><span class="o">*</span><span class="n">C</span><span class="p">[</span><span class="n">l</span><span class="p">][</span><span class="n">t</span><span class="p">]</span><span class="o">*</span><span class="n">I_AO</span><span class="p">[</span><span class="n">m</span><span class="p">][</span><span class="n">n</span><span class="p">][</span><span class="n">s</span><span class="p">][</span><span class="n">l</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -444,13 +459,17 @@ E = E_0^{(0)} + E_0^{(1)} + E_0^{(2)} + E_0^{(3)} + E_0^{(4)} …
 <p>dependiendo del n-orden hasta el que se haga la corrección sobre la energía al cálculo se le denomina MPn, siendo los más comunes son MP2, MP3 y MP4.</p>
 <p>En Moller-Plesset estos términos son:
 \begin{equation}
-E_0^{(0)} = 2\sum_a^{N/2} {\varepsilon_a}
+E_0^{(0)} = 2\sum_{a}^{N_e/2} {\varepsilon_a}
 \end{equation}
 \begin{equation}
-E_0^{(1)} = -2 \sum_{ab}^{N/2} [aa|bb] - [ab|ba]
+E_0^{(1)} = -2 \sum_{a}^{N_e/2}\sum_{b}^{N_e/2} [aa|bb] - [ab|ba]
 \end{equation}
 donde los índices <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> refieren a orbitales moleculares ocupados, y los términos <span class="math notranslate nohighlight">\(\varepsilon_a\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_b\)</span>, a sus energías.</p>
 <p>Calcule <span class="math notranslate nohighlight">\(E_0^{(0)}\)</span> y <span class="math notranslate nohighlight">\(E_0^{(1)}\)</span>.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>Aunque las sumas empiezan en el primer orbital molecular ocupado, recuerde que en Python los índices empiezan en cero.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E_0</span> <span class="o">=</span> <span class="mi">0</span>
@@ -492,11 +511,11 @@ E_{MP1} = E_{nuc} + E_0^{(0)} + E_0^{(1)}
 </div>
 <p>La energía de Hartree-Fock se calcula como
 \begin{equation}
-E_{HF} = E_{nuc} + 2\sum_a^{N/2} {\varepsilon_a} -2 \sum_{ab}^{N/2} [aa|bb] - [ab|ba]
+E_{HF} = E_{nuc} + 2\sum_a^{N_e/2} {\varepsilon_a} -2 \sum_{a}^{N/2}\sum_{b}^{N/2} [aa|bb] - [ab|ba]
 \end{equation}</p>
 <p>esta es exactamente la misma expresion que <span class="math notranslate nohighlight">\(E_{MP1}\)</span>. La primera corrección a la energía aparece en <span class="math notranslate nohighlight">\(E_{MP2}\)</span>. La corrección a segundo orden es
 \begin{equation}
-E_0^{(2)} = 2 \sum_{abrs}^{N/2} \frac{[ar|bs][ra|sb]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}} - \sum_{abrs}^{N/2} \frac{[ar|bs][rb|sa]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}}
+E_0^{(2)} = 2 \sum_{a}^{N_e/2}\sum_{b}^{N_e/2}\sum_{r=N_e+1}^{N_{bf}}\sum_{s=N_e+1}^{N_{bf}} \frac{[ar|bs][ra|sb]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}} - \sum_{abrs}^{N_e/2} \frac{[ar|bs][rb|sa]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}}
 \end{equation}</p>
 <p>donde <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(s\)</span> son los orbitales moleculares desocupados.</p>
 <p>Calcule <span class="math notranslate nohighlight">\(E_0^{(2)}\)</span>, la energía de <span class="math notranslate nohighlight">\(MP2\)</span> dada por
@@ -544,10 +563,13 @@ E_{corr} = E_{MPn} - E_{HF} = E_0^{(2)} + … + E_0^{(n)}
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E_MPn =&quot;</span><span class="p">,</span><span class="n">E_MPn</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
 <p>Ejemplo.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E_MP2</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;MP2/6-31G&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E_MP2 =&quot;</span><span class="p">,</span><span class="n">E_MP2</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -600,7 +622,7 @@ E_{corr} = E_{MPn} - E_{HF} = E_0^{(2)} + … + E_0^{(n)}
     <div class="container">
       <p>
         
-          By M en C. Juan Felipe Huan Lew Yee, Dr. Jorge Martín del Campo Ramírez, Dr. José Eduardo Barrios Vargas<br/>
+          By M en C. Juan Felipe Huan Lew Yee, Dr. Jorge Martín del Campo Ramírez, Dr. José Eduardo Barrios Vargas, Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
         
             &copy; Copyright 2020.<br/>
       </p>
