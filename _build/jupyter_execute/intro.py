@@ -1,6 +1,6 @@
 # La Química Cuántica a tu alcance
 
-El objetivo del presente libro digtal es ser un manual de prácticas de la asignatura de **Química Cuántica I (clave 1404)** de la Facultad de Química (UNAM). Algunas prácticas podrían ser de ayuda para cursos más avanzados de Química Cuántica. El libro digital es un esfuerzo compartido de Juan Felipe Huan Lew Yee y de los profesores del Departamento de Física y Química Teórica. Toda retoralimentación es bienvenida, y la invitamos a compartir a los correos:
+El presente libro digital tiene como objetivo ser un manual de prácticas para la asignatura de `Química Cuántica I (clave 1404)` de la Facultad de Química (UNAM). El libro digital es un esfuerzo compartido de Juan Felipe Huan Lew Yee, Eduardo Barrios Vargas y Jorge Marín del Campo Ramírez, en conjunto con los profesores del Departamento de Física y Química Teórica. Toda retroalimentación es bienvenida, y se le invita a compartirla a los correos:
 
 M. en C. Juan Felipe Huan Lew Yee: [felipe.lew.yee@gmail.com](mailto:felipe.lew.yee@gmail.com)
 
@@ -8,9 +8,7 @@ Dr. Jorge Martín del Campo Ramirez: [jormacara@gmail.com](mailto:jormacara@gmai
 
 Dr. José Eduardo Barrios Vargas: [j.e.barrios@gmail.com](mailto:j.e.barrios@gmail.com)
 
-
-La lectura recomenda es en orden para los alumnos del curso de **Química Cuántica I**. Pueden seguir el orden de los capítulos utilizando la barra de navegación del lado izquierdo o el menú emergente, si están utilizando un dispositivo móvil. Dentro de los objetivos del libro es que ustedes interactuén con el contenido, para lo cual les recomendamos alguna de las dos opciones siguientes:
-
+Para los alumnos del curso de `Química Cuántca I` se recomienda la lectura en el orden de los capítulos, el cual puede seguirse utilizando la barra de navegación que aparece del lado izquierdo en computadoras, o con el menú emergente en dispositivos móviles. Este libro permite interactuar con el contenido, para lo cual se recomienda alguna de las dos opciones siguientes:
 
 ````{admonition} Ejecución de los notebooks (en línea)
 :class: tip
