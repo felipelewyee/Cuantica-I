@@ -305,7 +305,37 @@
                 
   <div class="section" id="moller-plesset">
 <h1><span class="section-number">4. </span>Moller-Plesset<a class="headerlink" href="#moller-plesset" title="Permalink to this headline">¶</a></h1>
-<p>Notebook en construcción</p>
+<p>Las ecuaciones de Moller-Plesset surgen de tomar un sistema representado por Hartree-Fock como sistema conocido (<span class="math notranslate nohighlight">\(\mathcal{H}_0\)</span>) y aplicarle una perturbación (<span class="math notranslate nohighlight">\(\mathcal{V}\)</span>) para convertirlo en el sistema con correlación (<span class="math notranslate nohighlight">\(\mathcal{H}\)</span>).
+\begin{equation}
+\mathcal{H} = \mathcal{H}_0 + \mathcal{V}
+\end{equation}</p>
+<p>Recordando de teoría de perturbaciones, es posible realizar correcciones de n-orden a la energía <span class="math notranslate nohighlight">\(E_i^{(n)}\)</span> y a la función de onda <span class="math notranslate nohighlight">\(\psi_i^{(n)}\)</span>. La corrección a la energía del estado basal (<span class="math notranslate nohighlight">\(i=0\)</span>) toma la forma</p>
+<p>\begin{equation}
+E_0 = E_0^{(0)} + E_0^{(1)} + E_0^{(2)} + E_0^{(3)} + …
+\end{equation}</p>
+<p>y en Moller-Plesset estos términos son:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E_0^{(0)} = \sum_a {\varepsilon_a}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_0^{(1)} = -\frac{1}{2} \sum_{ab} [aa|bb] - [ab|ba]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(E_0^{(2)} = 2 \sum_{abrs}^{N/2} \frac{[ar|bs][ra|sb]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}} - \sum_{abrs}^{N/2} \frac{[ar|bs][rb|sa]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}}\)</span></p></li>
+</ul>
+<p>donde los índices <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> refieren a orbitales moleculares ocupados, y <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(s\)</span> a orbitales moleculares desocupados, los términos <span class="math notranslate nohighlight">\(\varepsilon_a\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_b\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_r\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_s\)</span> refieren a sus energías orbitales, y los términos entre paréntesis son integrales de repulsión electrónica moleculares, que se calculan mediante
+\begin{equation}
+[pq|rs] = \sum_{\mu\nu\sigma\lambda}^N C_{\mu p} C_{\nu q} C_{\sigma r} C_{\lambda s} [\mu \nu | \sigma \lambda]
+\end{equation}</p>
+<p>donde <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(\nu\)</span>, <span class="math notranslate nohighlight">\(\sigma\)</span> y <span class="math notranslate nohighlight">\(\lambda\)</span> se refieren a orbitales atómicos, y
+\begin{equation}
+[\mu \nu | \sigma \lambda] = \int \int \frac{\mu(r_1) \nu(r_1) \sigma(r_2) \lambda(r_2)}{ |r_1 - r_2| } dr_1 dr_2
+\end{equation}</p>
+<p>En química cuántica es de especial interés la corrección a la energía, por lo que dependiendo de su orden de corrección la metodología se denomina MPn.</p>
+<p>La energía de Hartree-Fock está dada por
+\begin{equation}
+E_{HF} = E_0^{(0)} + E_0^{(1)}
+\end{equation}</p>
+<p>por lo que la correlación electrónica es
+\begin{equation}
+E_{corr} = E_0^{(2)} + E_0^{(3)} + …
+\end{equation}</p>
 </div>
 
     <script type="text/x-thebe-config">
