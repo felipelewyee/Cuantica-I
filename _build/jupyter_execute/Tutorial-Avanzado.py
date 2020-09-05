@@ -1,16 +1,14 @@
 # Tutorial Avanzado.
 
-En esta parte del tutorial aprenderá a utilizar Python para manejar vectores y matrices, crear gráficas y resolver integrales. Estas funciones serán trascendentales para el curso de **Química Cuántica I**. **Recuerde escribir en los cuadros vacíos y presionar el botón Run o las teclas "Shift" + "Enter".**
+En esta parte del tutorial aprenderá a utilizar Python para manejar vectores y matrices, crear gráficas y resolver integrales. Estas funciones serán trascendentales para el curso de `Química Cuántica I`. **Recuerde escribir en los cuadros vacíos y presionar el botón Run o las teclas "Shift" + "Enter".**
 
-Utilizaremos las librerías numpy, matplotlib y scipy que aprendió a utilizar en el Tutorial Básico, impórtelas con las líneas
-~~~python
-import numpy as np
-from matplotlib import pyplot as plt
-import scipy
-~~~
+Utilizaremos las librerías numpy, matplotlib y scipy que aprendió a utilizar en el Tutorial Básico, **impórtelas en el siguiente recuadro**.
 
 # Importe librerías
 
+import numpy as np
+from matplotlib import pyplot as plt
+import scipy
 
 ## Vectores y Matrices
 
@@ -25,13 +23,16 @@ print(lista)
 ~~~
 También podemos imprimir un elemento específico indicando el número del elemento entre paréntesis cuadrados. En Python los elementos se cuentan desde "cero". Para imprimir el número 9 en la lista anterior ejecutaríamos:
 ~~~python
-print(vector[1])
+print(lista[1])
 ~~~
 
 **Cree la siguiente lista [8,25,32,41] y guárdela en la variable "lista". Imprima la lista completa, así como el primer elemento del vector.**
 
 #Cree una lista
 
+lista = [8,25,32,41]
+print(lista)
+print(lista[0])
 
 La lista puede convertirse en un arreglo de numpy, esto facilita el manejo de cantidades vectoriales. Para declarar la lista anterior como un arreglo de numpy escribiremos
 ~~~python
@@ -54,6 +55,10 @@ print(v1+v2)
 
 #Suma de dos vectores
 
+v1 = np.array([1,8,6])
+v2 = np.array([5,2,7])
+
+print(v1+v2)
 
 También podemos crear matrices como una "lista de listas", donde cada lista representa un renglón de la matriz. A continuación generemos una matriz de 3x3 que contenga ceros en todos su elementos
 ~~~python
@@ -62,7 +67,6 @@ matriz = [[0.0, 0.0, 0.0],[0.0, 0.0, 0.0],[0.0, 0.0, 0.0]]
 **Genere la matriz de ceros anterior, e imprímala.**
 
 #Cree matriz
-
 
 Podemos usar numpy para hacer nuestra matriz de ceros de forma más fácil
 ~~~python
@@ -73,7 +77,10 @@ print(matriz)
 
 #Cree matriz de ceros con numpy
 
-**A continuación genere una matriz de 3x3, guárdela en la variable "matriz1", y asígnele los valores del 1 al 9, tal que **
+matriz = np.zeros((5,5))
+print(matriz)
+
+**A continuación genere una matriz de 3x3, guárdela en la variable "matriz1", y asígnele los valores del 1 al 9, tal que**
 
 $$
 matriz1 = \begin{pmatrix}
@@ -95,6 +102,17 @@ matriz1[1][2]=5.0
 ~~~
 
 #Llene una matriz de 3x3
+
+matriz1 = np.zeros((3,3))
+matriz1[0][0]=1.0
+matriz1[0][1]=2.0
+matriz1[0][2]=3.0
+matriz1[1][0]=4.0
+matriz1[1][1]=5.0
+matriz1[1][2]=6.0
+matriz1[2][0]=7.0
+matriz1[2][1]=8.0
+matriz1[2][2]=9.0
 
 Hacer esto puede tomar mucho tiempo con matrices grandes. Existe una instrucción llamada **for** que nos permite hacer cosas repetitivas. Por ejemplo:
 ~~~python
@@ -130,7 +148,9 @@ val,vec=np.linalg.eig(matriz)
 
 **Encuentre los valores propios y vectores propios de la matriz 1, e imprímalos.**
 
+# Valores y vectores propios
 
+val,vec=np.linalg.eig(matriz)
 
 ## Gráficas
 
@@ -171,6 +191,15 @@ Las instrucciones anteriores son los pasos básicos para generar una gráfica. *
 
 # Gráfica
 
+x  = np.linspace(-3,3,100)
+y1 = np.exp(-np.abs(x))
+y2 = np.exp(-np.abs(x)**2)
+
+plt.scatter(x,y1)
+plt.scatter(x,y2)
+
+plt.show
+
 ## Integrales
 
 También podemos hacer integrales con Python. Por ejemplo, vamos a integrar $y=x^2$ en el dominio $-3 \leq x \leq3$. Para ello importaremos el subpaquete integrate de la librería scipy.
@@ -185,23 +214,43 @@ Aquí "lambda" indica las variables de la ecuación, seguido de la ecuación y l
 
 # Integre y = x**2 de -3 a 3
 
+import scipy.integrate as integrate
+integrate.quad(lambda x: x**2,-3,3)
+
 Considere la funión de onda $\psi = x$, con $x \epsilon [-3,3]$, **proponga una función de onda normalizada y evalúe la integral con integrate.quad para comprobar que la norma es 1.**
 
+```{tip}
 Recuerde que para normalizar:
 1. Integre el cuadrado de la función de onda en el dominio.
+
+$$
+N^2 = \int \psi^2 dr
+$$
+
 2. Calcule la constante de normalización
 
 $$
-N = \frac{1}{\sqrt{norm}} = \frac{1}{\sqrt{\int_{x_1}^{x_2} |\psi_{original}|^2 dx}}
+C = \frac{1}{\sqrt{N^2}} = \frac{1}{\sqrt{\int_{x_1}^{x_2} |\psi_{original}|^2 dx}}
 $$
 
 3. Evalúe la integral del cuadrado de la función de onda normalizada para comprobar que es igual a 1. Recuerde que la función de onda normalizada es:
 
 $$
-\psi_{normalizada} = N \psi_{original}
+\psi_{normalizada} = C \psi_{original}
 $$
+```
 
 #Normalice función de onda
+
+import numpy as np
+norm2 = integrate.quad(lambda x: x*x,-3,3)[0]
+print("N**2 =",norm2)
+
+#Constante de normalizacion
+C = 1/np.sqrt(norm2)
+print("C =",C)
+
+integrate.quad(lambda x: (C*x)*(C*x),-3,3)
 
 **OPCIONAL**
 
@@ -214,19 +263,32 @@ Sea la función de onda
 
 La integral de su cuadrado será
 \begin{equation}
-\int \psi^* \psi d\textbf{r} = \int\limits_{0}^\infty \int\limits_{0}^{2\pi} \int\limits_{0}^\pi\psi^* \psi r^2 sin\theta dr d\phi d\theta = \int\limits_{0}^{\pi} sin \theta d\theta \int\limits_{0}^{2\pi} d\phi \int\limits_{0}^\infty e^{-2r^2} r^2 dr = \left(2\pi\right)\left(2\right)\left(\frac{1}{8}\sqrt{\frac{\pi}{2}}\right) = \left(\frac{\pi}{2}\right)^{3/2}
+N^2 = \int \psi^* \psi d\textbf{r} = \int\limits_{0}^\infty \int\limits_{0}^{2\pi} \int\limits_{0}^\pi\psi^* \psi r^2 sin\theta dr d\phi d\theta = \int\limits_{0}^{\pi} sin \theta d\theta \int\limits_{0}^{2\pi} d\phi \int\limits_{0}^\infty e^{-2r^2} r^2 dr = \left(2\pi\right)\left(2\right)\left(\frac{1}{8}\sqrt{\frac{\pi}{2}}\right) = \left(\frac{\pi}{2}\right)^{3/2}
 \end{equation}
 
-El siguiente código evalúa la integral y la guarda en la variable "norm".
+El siguiente código evalúa la integral y la guarda en la variable "norm2".
 ~~~python
-norm=integrate.tplquad(lambda theta,phi,r: r**2.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)
+norm2 = integrate.tplquad(lambda theta,phi,r: r**2.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)[0]
 ~~~
 
-#Encuentre norma de la funión de onda
+#Encuentre el cuadrado de la norma de la funión de onda
+
+norm2 = integrate.tplquad(lambda theta,phi,r: r**2.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)[0]
+
+print("N**2 =",norm2)
 
 **Compruebe que numéricamente esto es $\left(\frac{\pi}{2}\right)^{3/2}$.**
 
 #Evalúe (pi/2)^(3/2)
+
+print((np.pi/2)**(3/2))
+
+Evalúe la constante de normalización
+
+# Constante de normalización
+
+C = 1/np.sqrt(norm2)
+print("C =",C)
 
 **OPCIONAL**
 
@@ -244,6 +306,9 @@ $$
 
 #Comprobación
 
+norm = integrate.tplquad(lambda theta,phi,r: C**2*r**2.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)
+print(norm)
+
 **OPCIONAL**
 
 **Repita el proceso de normalización para $\psi=re^{-r^2}$.** La integral sin normalizar será
@@ -253,3 +318,12 @@ $$
 $$
 
 #Normalice
+
+norm2=integrate.tplquad(lambda theta,phi,r: r**4.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)[0]
+print("N**2 =",norm2)
+
+C = 1/np.sqrt(norm2)
+print("C =",C)
+
+norm=integrate.tplquad(lambda theta,phi,r: C**2*r**4.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)
+print(norm)
