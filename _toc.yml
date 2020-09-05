@@ -21,7 +21,7 @@
 - part: Métodos Aproximados
   chapters:
   - file: Variacional_Lineal
-  - file: Perturbativos
+  - file: PerturbacionesSinDegeneracion
 
 - part: Sistemas de Muchos Electrones
   chapters:

@@ -171,7 +171,7 @@ print("Energia nuclear: ", E_nuc)
 E_T = E_elec + E_nuc
 print("Energia Total: ", E_T)
 
-# Método Simple. PSI4
+## Método Simple. PSI4
 
 Geometría del agua
 
