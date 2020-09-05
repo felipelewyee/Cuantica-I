@@ -312,9 +312,20 @@
                 
   <div class="section" id="caja-de-potencial-con-un-tope-en-el-medio">
 <h1><span class="section-number">2. </span>Caja de potencial con un tope en el medio<a class="headerlink" href="#caja-de-potencial-con-un-tope-en-el-medio" title="Permalink to this headline">¶</a></h1>
-<p>Las cajas de potencial unidimensionales se usan para enseñar y aprender cuántica porque, a pesar de que no existen, son fáciles de resolver y ayudan a irle agarrando la onda al asunto. Esta caja de potencial tiene un “tope” en el centro. Es decir, el potencial vale infinito fuera de la caja, vale cero en las zonas de la izquierda y la derecha (de <span class="math notranslate nohighlight">\(-L\)</span> a <span class="math notranslate nohighlight">\(-a\)</span> y de <span class="math notranslate nohighlight">\(+a\)</span> a <span class="math notranslate nohighlight">\(+L\)</span>) y vale <span class="math notranslate nohighlight">\(U\)</span> en el centro (de <span class="math notranslate nohighlight">\(-a\)</span> a <span class="math notranslate nohighlight">\(+a\)</span>), como se ve en la figura.
-<img src="Caja.png" width="500">
-La función de onda se obtiene resolviendo la ecuación de Schrödinger
+<p>Este problema es continuación de la partícula en la caja. Para ello, planteemos una caja de <span class="math notranslate nohighlight">\(-L\)</span> a <span class="math notranslate nohighlight">\(L\)</span>, con el potencial definido por</p>
+<p>\begin{equation}
+V(x) = \left{
+\begin{array}{lll}
+\infty      &amp; \mathrm{si\ } x &lt; -L &amp; I\
+0      &amp; \mathrm{si\ } -L \le x &lt; a &amp; II\
+U &amp; \mathrm{si\ } -a \le x \le a &amp; III \
+\infty      &amp; \mathrm{si\ } a &lt; x \le L &amp; IV\
+0     &amp; \mathrm{si\ } x &gt; L &amp; V
+\end{array}
+\right.
+\end{equation}</p>
+<p>Es decir, el potencial vale infinito fuera de la caja, cero en las zonas de la izquierda y la derecha (de <span class="math notranslate nohighlight">\(-L\)</span> a <span class="math notranslate nohighlight">\(-a\)</span> y de <span class="math notranslate nohighlight">\(+a\)</span> a <span class="math notranslate nohighlight">\(+L\)</span>) y vale <span class="math notranslate nohighlight">\(U\)</span> en el centro (de <span class="math notranslate nohighlight">\(-a\)</span> a <span class="math notranslate nohighlight">\(+a\)</span>).</p>
+<p>La función de onda se obtiene resolviendo la ecuación de Schrödinger
 <span class="math notranslate nohighlight">\($-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\Psi(x)+V(x)\Psi(x)=E\Psi(x)\)</span>$
 con la condición a la frontera de que la solución, <span class="math notranslate nohighlight">\(Psi(x)\)</span>, debe ser continua y de derivada continua.</p>
 <div class="section" id="la-condicion-de-continuidad-para-este-problema-lleva-a-la-siguiente-ecuacion">
@@ -455,7 +466,7 @@ Energia:  52.526800596529036
 9.158226910279453 61.68502750680849
 </pre></div>
 </div>
-<img alt="_images/CajaConTope_2_1.png" src="_images/CajaConTope_2_1.png" />
+<img alt="_images/CajaConTope_3_1.png" src="_images/CajaConTope_3_1.png" />
 </div>
 </div>
 </div>
