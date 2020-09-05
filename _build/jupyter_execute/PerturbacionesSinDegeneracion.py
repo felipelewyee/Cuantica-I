@@ -45,14 +45,14 @@ $$
 
 ---
 
-## Ejemplo-Oscilador anharmonico
-En Hamiltoniano del oscilador anharmónico de una partícula en una dimensión es:
+## Ejemplo-Oscilador anarmónico
+En Hamiltoniano del oscilador anarmónico de una partícula en una dimensión es:
 
 \begin{eqnarray}
 \hat{H} = \underbrace{-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2} k x^2 }_{\hat{H}^{(0)}} + \underbrace{cx^3 + dx^4}_{\hat{H}'}
 \end{eqnarray}
 
-Los eigenvalores y eigenfunciones del oscilador harmónico son:
+Los eigenvalores y eigenfunciones del oscilador armónico son:
 
 \begin{align}
 E_n^{(0)} = \bigg(n+\frac{1}{2}\bigg) h\nu
