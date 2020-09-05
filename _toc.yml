@@ -21,12 +21,13 @@
 - part: Métodos Aproximados
   chapters:
   - file: Variacional_Lineal
-  - file: Moller-Plesset
+  - file: Perturbativos
 
 - part: Sistemas de Muchos Electrones
   chapters:
   - file: Software
   - file: Hartree-Fock
+  - file: Moller-Plesset
   - file: Dimerizacion
 
 - part: Matemáticas

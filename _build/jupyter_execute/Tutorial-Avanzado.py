@@ -128,7 +128,7 @@ se pueden encontrar con
 val,vec=np.linalg.eig(matriz)
 ~~~
 
-**Encuentre los valores propios y vectores propios de la matriz 1, e imprimalos.**
+**Encuentre los valores propios y vectores propios de la matriz 1, e imprímalos.**
 
 
 

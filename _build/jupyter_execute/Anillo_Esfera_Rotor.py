@@ -79,7 +79,7 @@ ax.plot(x, y, ((psi_r+1J*psi_i)*(psi_r-1J*psi_i)).real, label='$psi^2$')
 ax.legend()
 plt.show()
 
-## Particula en la esfera
+## Partícula en la esfera
 
 Se tiene una partícula moviéndose sobre una superficie esférica de radio constante.
 
