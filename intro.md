@@ -5,7 +5,7 @@ El objetivo del presente libro digtal es ser un manual de prácticas de la asign
 
 Juan Felipe Huan Lew Yee: [felipe.lew.yee@gmail.com](mailto:felipe.lew.yee@gmail.com)
 
-Jorge Martín del Campo Ramirez: [jormacara@gmail.com](mailto:jormacara@gmail.com)
+Jorge Martín del Campo Ramírez: [jormacara@gmail.com](mailto:jormacara@gmail.com)
 
 José Eduardo Barrios Vargas: [j.e.barrios@gmail.com](mailto:j.e.barrios@gmail.com)
 
