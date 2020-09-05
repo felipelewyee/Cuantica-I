@@ -5,12 +5,14 @@ Las ecuaciones de Moller-Plesset surgen de aplicar la teoría de perturbaciones 
 \mathcal{H} = \mathcal{H}_0 + \mathcal{V}
 \end{equation}
 
-Para comenzar, importe las librerías numpy y psi4.
+Para comenzar, **importe las librerías numpy y psi4**.
 
 import numpy as np
 import psi4
 
-Defina una molécula de su interés. A continuación se proporciona la geometría de la molécula de hidrógeno, aunque puede usar cualquier otro sistema. Se recomienda que sea pequeño por tiempo de ejecución.
+# Importe librerías
+
+**Defina una molécula de su interés.** A continuación se proporciona la geometría de la molécula de hidrógeno, aunque puede usar cualquier otro sistema. Se recomienda que sea pequeño por tiempo de ejecución.
 ```
 H 0.0000  0.0000 0.0000
 H 0.0000  0.0000 0.7414 
@@ -24,26 +26,36 @@ units angstrom
 symmetry C1
 """)
 
-Ya que la teoría de Moller-Plesset corrige el Hamiltoniano de Hartree-Fock, realice un cálculo de Hartree-Fock y recupere la función de onda. Recuerde que la energía resultante contiene tanto energía electrónica como nuclear. Seleccione la base que desee, por ejemplo, 6-31G
+# Defina molécula
+
+Ya que la teoría de Moller-Plesset corrige el Hamiltoniano de Hartree-Fock, **realice un cálculo de Hartree-Fock y recupere la energía y la función de onda**. La energía resultante contiene tanto energía electrónica como nuclear. Seleccione la base que desee, por ejemplo, 6-31G
 
 E_HF, wfn = psi4.energy('HF/6-31G',return_wfn=True)
 print("E_HF =",E_HF)
 
-Obtenga la energía nuclear
+# Calcule E_HF y wfn
+
+**Obtenga la energía nuclear**
 
 E_nuc = mol.nuclear_repulsion_energy() 
 print("E_nuc =",E_nuc)
 
-Obtenga los coeficientes de los orbitales moleculares a partir de la función de onda
+# E_nuc
+
+**Obtenga los coeficientes de los orbitales moleculares a partir de la función de onda**
 
 C = np.asarray(wfn.Ca())
 
-Obtenga el número de funciones de base ($N_{bf}$), de orbitales moleculares ($N_{mo})$ y de electrones ($N_{e}$)
+# Coeficientes
+
+**Obtenga el número de funciones de base ($N_{bf}$), de orbitales moleculares ($N_{mo})$ y de electrones ($N_{e}$)**
 
 nbf = len(C)
 nmo = wfn.nmo()
 ne = wfn.nalpha() + wfn.nbeta()
 print("nbf =",nbf," nmo =",nmo," ne =",ne)
+
+# nbf, nmo y ne
 
 Vamos a necesitar integrales de repulsión electónica
 \begin{equation}
@@ -51,14 +63,19 @@ Vamos a necesitar integrales de repulsión electónica
 \end{equation}
 donde $\mu$, $\nu$, $\sigma$ y $\lambda$ se refieren a orbitales atómicos.
 
-Utilice las siguientes líneas para calcular las integrales $[\mu\nu|\sigma\lambda]$ y guardarlas en la variable I_AO
-```
+**Obtenga las las integrales $[\mu\nu|\sigma\lambda]$ y guardarlas en la variable I_AO**
+`````{tip}
+Puede usar las siguientes líneas
+~~~
 mints = psi4.core.MintsHelper(wfn.basisset())
 I_AO = np.asarray(mints.ao_eri())
-```
+~~~
+`````
 
 mints = psi4.core.MintsHelper(wfn.basisset())
 I_AO = np.asarray(mints.ao_eri())
+
+# ERIs I_AO
 
 ```{Note}
 Los software de estructura electrónica usan formas optimizados de las ecuaciones aquí mostradas. Este notebook ha sido creado sólo con fines didácticos.
@@ -69,7 +86,7 @@ La teoría de Moller-Plesset requiere que estas integrales sean transformadas a 
 p(r) = \sum_\mu C_{\mu p} \mu (r)
 \end{equation}
 
-En el siguiente recuadro declare una variable I_MO de dimensión ($N_{MO}$,$N_{MO}$,$N_{MO}$,$N_{MO}$), y lleve a cabo la transformación
+En el siguiente recuadro **declare una variable I_MO de dimensión ($N_{MO}$,$N_{MO}$,$N_{MO}$,$N_{MO}$), y lleve a cabo la transformación**
 
 \begin{equation}
 [pq|rt] = \sum_{\mu\nu\sigma\lambda}^N C_{\mu p} C_{\nu q} C_{\sigma r} C_{\lambda s} [\mu \nu | \sigma \lambda]
@@ -98,12 +115,19 @@ for p in range(nmo):
                             for l in range(nbf):
                                 I_MO[p][q][r][t] = I_MO[p][q][r][t] + C[m][p]*C[n][q]*C[s][r]*C[l][t]*I_AO[m][n][s][l]
 
-También necesitamos las energías de los orbitales moleculares ($\varepsilon_a$), utilice las siguientes líneas para obtenerlas
-```
+# ERIs I_MO
+
+**Obtenga las energías de los orbitales moleculares ($\varepsilon_a$)**
+`````{tip}
+Puede usar el siguiente código
+~~~
 epsilon = wfn.epsilon_a()
-```
+~~~
+`````
 
 epsilon = np.array(wfn.epsilon_a())
+
+# epsilon
 
 Recordando teoría de perturbaciones, es posible realizar correcciones de n-orden a la energía $E_i^{(n)}$, tal que la energía electrónica total del estado basal ($i=0$) es
 \begin{equation}
@@ -121,7 +145,7 @@ E_0^{(1)} = -2 \sum_{a}^{N_e/2}\sum_{b}^{N_e/2} [aa|bb] - [ab|ba]
 \end{equation}
 donde los índices $a$, $b$ refieren a orbitales moleculares ocupados, y los términos $\varepsilon_a$, $\varepsilon_b$, a sus energías.
 
-Calcule $E_0^{(0)}$ y $E_0^{(1)}$.
+**Calcule $E_0^{(0)}$ y $E_0^{(1)}$**.
 
 ```{Caution}
 Aunque las sumas empiezan en el primer orbital molecular ocupado, recuerde que en Python los índices empiezan en cero.
@@ -136,7 +160,9 @@ for a in range(int(ne/2)):
     for b in range(int(ne/2)):
         E_1 = E_1 - 2 * I_MO[a][a][b][b] + I_MO[a][b][b][a]
 
-Calcule la energía total de MP1, recuerde sumar la energía nuclear, es decir
+# E_0 y E_1
+
+**Calcule la energía total de MP1**, recuerde sumar la energía nuclear, es decir
 
 \begin{equation}
 E_{MP1} = E_{nuc} + E_0^{(0)} + E_0^{(1)}
@@ -145,9 +171,11 @@ E_{MP1} = E_{nuc} + E_0^{(0)} + E_0^{(1)}
 E_MP1 = E_nuc + E_0 + E_1
 print("E_MP1 =",E_MP1)
 
-Calcule la diferencia entre $E_{MP1}$ y la energía de Hartree-Fock que calculó al inicio, ¿Cuál es la energía de correlación? ¿Cómo se relaciona $E_{MP1}$ con $E_{HF}$?
+# E_MP1
 
-# Respuesta
+Calcule la diferencia entre $E_{MP1}$ y la energía de Hartree-Fock que calculó al inicio, **¿Cuál es la energía de correlación? ¿Cómo se relaciona $E_{MP1}$ con $E_{HF}$?**
+
+**Respuesta:**
 
 La energía de Hartree-Fock se calcula como
 \begin{equation}
@@ -161,12 +189,12 @@ E_0^{(2)} = 2 \sum_{a}^{N_e/2}\sum_{b}^{N_e/2}\sum_{r=N_e+1}^{N_{bf}}\sum_{s=N_e
 
 donde $r$, $s$ son los orbitales moleculares desocupados.
 
-Calcule $E_0^{(2)}$, la energía de $MP2$ dada por
+**Calcule $E_0^{(2)}$, la energía de $MP2$** dada por
 \begin{equation}
 E_{MP2} = E_{nuc} + E_0^{(0)} + E_0^{(1)} + E_0^{(2)}
 \end{equation}
 
-y la energía de correlación
+**y la energía de correlación**
 \begin{equation}
 E_{corr} = E_{MP2} - E_{HF}
 \end{equation}
@@ -184,6 +212,9 @@ print("E_MP2 =",E_MP2)
 
 print("E_corr =",E_MP2-E_HF)
 
+# E_2, E_MP2 y E_corr
+
+```{important}
 Generalizando, la energía total de MPn es
 \begin{equation}
 E_{MPn} = E_{nuc} + E_0^{(0)} + E_0^{(1)} + E_0^{(2)} + ... + E_0^{(n)}
@@ -193,20 +224,15 @@ Al restarle la energía de Hartree-Fock se obtiene
 \begin{equation}
 E_{corr} = E_{MPn} - E_{HF} = E_0^{(2)} + ... + E_0^{(n)}
 \end{equation}
+```
 
-Adapte la instrucción a MP2 junto con la base que usó para comprobar sus resultados.
+**Adapte la instrucción a MP2 junto con la base que usó para comprobar sus resultados**.
 ```
 E_MPn = psi4.energy('MPn/Base')
 print("E_MPn =",E_MPn)
 ```
 
-`````{margin}
-Ejemplo.
-~~~
 E_MP2 = psi4.energy('MP2/6-31G')
 print("E_MP2 =",E_MP2)
-~~~
-`````
 
-E_MP2 = psi4.energy('MP2/6-31G')
-print("E_MP2 =",E_MP2)
+# E_MP2 psi4

@@ -304,7 +304,7 @@
 \begin{equation}
 \mathcal{H} = \mathcal{H}_0 + \mathcal{V}
 \end{equation}</p>
-<p>Para comenzar, importe las librerías numpy y psi4.</p>
+<p>Para comenzar, <strong>importe las librerías numpy y psi4</strong>.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -313,7 +313,14 @@
 </div>
 </div>
 </div>
-<p>Defina una molécula de su interés. A continuación se proporciona la geometría de la molécula de hidrógeno, aunque puede usar cualquier otro sistema. Se recomienda que sea pequeño por tiempo de ejecución.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importe librerías</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Defina una molécula de su interés.</strong> A continuación se proporciona la geometría de la molécula de hidrógeno, aunque puede usar cualquier otro sistema. Se recomienda que sea pequeño por tiempo de ejecución.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="mf">0.0000</span>  <span class="mf">0.0000</span> <span class="mf">0.0000</span>
 <span class="n">H</span> <span class="mf">0.0000</span>  <span class="mf">0.0000</span> <span class="mf">0.7414</span> 
 </pre></div>
@@ -331,7 +338,14 @@
 </div>
 </div>
 </div>
-<p>Ya que la teoría de Moller-Plesset corrige el Hamiltoniano de Hartree-Fock, realice un cálculo de Hartree-Fock y recupere la función de onda. Recuerde que la energía resultante contiene tanto energía electrónica como nuclear. Seleccione la base que desee, por ejemplo, 6-31G</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defina molécula</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ya que la teoría de Moller-Plesset corrige el Hamiltoniano de Hartree-Fock, <strong>realice un cálculo de Hartree-Fock y recupere la energía y la función de onda</strong>. La energía resultante contiene tanto energía electrónica como nuclear. Seleccione la base que desee, por ejemplo, 6-31G</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E_HF</span><span class="p">,</span> <span class="n">wfn</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;HF/6-31G&#39;</span><span class="p">,</span><span class="n">return_wfn</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -345,7 +359,14 @@
 </div>
 </div>
 </div>
-<p>Obtenga la energía nuclear</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcule E_HF y wfn</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Obtenga la energía nuclear</strong></p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E_nuc</span> <span class="o">=</span> <span class="n">mol</span><span class="o">.</span><span class="n">nuclear_repulsion_energy</span><span class="p">()</span> 
@@ -359,15 +380,29 @@
 </div>
 </div>
 </div>
-<p>Obtenga los coeficientes de los orbitales moleculares a partir de la función de onda</p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># E_nuc</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Obtenga los coeficientes de los orbitales moleculares a partir de la función de onda</strong></p>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">wfn</span><span class="o">.</span><span class="n">Ca</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Obtenga el número de funciones de base (<span class="math notranslate nohighlight">\(N_{bf}\)</span>), de orbitales moleculares (<span class="math notranslate nohighlight">\(N_{mo})\)</span> y de electrones (<span class="math notranslate nohighlight">\(N_{e}\)</span>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Coeficientes</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Obtenga el número de funciones de base (<span class="math notranslate nohighlight">\(N_{bf}\)</span>), de orbitales moleculares (<span class="math notranslate nohighlight">\(N_{mo})\)</span> y de electrones (<span class="math notranslate nohighlight">\(N_{e}\)</span>)</strong></p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nbf</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
@@ -383,20 +418,38 @@
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># nbf, nmo y ne</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Vamos a necesitar integrales de repulsión electónica
 \begin{equation}
 [\mu \nu | \sigma \lambda] = \int \int \frac{\mu(r_1) \nu(r_1) \sigma(r_2) \lambda(r_2)}{ |r_1 - r_2| } dr_1 dr_2
 \end{equation}
 donde <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(\nu\)</span>, <span class="math notranslate nohighlight">\(\sigma\)</span> y <span class="math notranslate nohighlight">\(\lambda\)</span> se refieren a orbitales atómicos.</p>
-<p>Utilice las siguientes líneas para calcular las integrales <span class="math notranslate nohighlight">\([\mu\nu|\sigma\lambda]\)</span> y guardarlas en la variable I_AO</p>
+<p><strong>Obtenga las las integrales <span class="math notranslate nohighlight">\([\mu\nu|\sigma\lambda]\)</span> y guardarlas en la variable I_AO</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Puede usar las siguientes líneas</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mints</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">MintsHelper</span><span class="p">(</span><span class="n">wfn</span><span class="o">.</span><span class="n">basisset</span><span class="p">())</span>
 <span class="n">I_AO</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mints</span><span class="o">.</span><span class="n">ao_eri</span><span class="p">())</span>
 </pre></div>
+</div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mints</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">MintsHelper</span><span class="p">(</span><span class="n">wfn</span><span class="o">.</span><span class="n">basisset</span><span class="p">())</span>
 <span class="n">I_AO</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">mints</span><span class="o">.</span><span class="n">ao_eri</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERIs I_AO</span>
 </pre></div>
 </div>
 </div>
@@ -409,7 +462,7 @@ donde <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="ma
 \begin{equation}
 p(r) = \sum_\mu C_{\mu p} \mu (r)
 \end{equation}</p>
-<p>En el siguiente recuadro declare una variable I_MO de dimensión (<span class="math notranslate nohighlight">\(N_{MO}\)</span>,<span class="math notranslate nohighlight">\(N_{MO}\)</span>,<span class="math notranslate nohighlight">\(N_{MO}\)</span>,<span class="math notranslate nohighlight">\(N_{MO}\)</span>), y lleve a cabo la transformación</p>
+<p>En el siguiente recuadro <strong>declare una variable I_MO de dimensión (<span class="math notranslate nohighlight">\(N_{MO}\)</span>,<span class="math notranslate nohighlight">\(N_{MO}\)</span>,<span class="math notranslate nohighlight">\(N_{MO}\)</span>,<span class="math notranslate nohighlight">\(N_{MO}\)</span>), y lleve a cabo la transformación</strong></p>
 <p>\begin{equation}
 [pq|rt] = \sum_{\mu\nu\sigma\lambda}^N C_{\mu p} C_{\nu q} C_{\sigma r} C_{\lambda s} [\mu \nu | \sigma \lambda]
 \end{equation}</p>
@@ -441,13 +494,31 @@ p(r) = \sum_\mu C_{\mu p} \mu (r)
 </div>
 </div>
 </div>
-<p>También necesitamos las energías de los orbitales moleculares (<span class="math notranslate nohighlight">\(\varepsilon_a\)</span>), utilice las siguientes líneas para obtenerlas</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># ERIs I_MO</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Obtenga las energías de los orbitales moleculares (<span class="math notranslate nohighlight">\(\varepsilon_a\)</span>)</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Puede usar el siguiente código</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epsilon</span> <span class="o">=</span> <span class="n">wfn</span><span class="o">.</span><span class="n">epsilon_a</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epsilon</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">wfn</span><span class="o">.</span><span class="n">epsilon_a</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># epsilon</span>
 </pre></div>
 </div>
 </div>
@@ -465,7 +536,7 @@ E_0^{(0)} = 2\sum_{a}^{N_e/2} {\varepsilon_a}
 E_0^{(1)} = -2 \sum_{a}^{N_e/2}\sum_{b}^{N_e/2} [aa|bb] - [ab|ba]
 \end{equation}
 donde los índices <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> refieren a orbitales moleculares ocupados, y los términos <span class="math notranslate nohighlight">\(\varepsilon_a\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_b\)</span>, a sus energías.</p>
-<p>Calcule <span class="math notranslate nohighlight">\(E_0^{(0)}\)</span> y <span class="math notranslate nohighlight">\(E_0^{(1)}\)</span>.</p>
+<p><strong>Calcule <span class="math notranslate nohighlight">\(E_0^{(0)}\)</span> y <span class="math notranslate nohighlight">\(E_0^{(1)}\)</span></strong>.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
 <p>Aunque las sumas empiezan en el primer orbital molecular ocupado, recuerde que en Python los índices empiezan en cero.</p>
@@ -484,7 +555,14 @@ donde los índices <span class="math notranslate nohighlight">\(a\)</span>, <spa
 </div>
 </div>
 </div>
-<p>Calcule la energía total de MP1, recuerde sumar la energía nuclear, es decir</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># E_0 y E_1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Calcule la energía total de MP1</strong>, recuerde sumar la energía nuclear, es decir</p>
 <p>\begin{equation}
 E_{MP1} = E_{nuc} + E_0^{(0)} + E_0^{(1)}
 \end{equation}</p>
@@ -501,14 +579,15 @@ E_{MP1} = E_{nuc} + E_0^{(0)} + E_0^{(1)}
 </div>
 </div>
 </div>
-<p>Calcule la diferencia entre <span class="math notranslate nohighlight">\(E_{MP1}\)</span> y la energía de Hartree-Fock que calculó al inicio, ¿Cuál es la energía de correlación? ¿Cómo se relaciona <span class="math notranslate nohighlight">\(E_{MP1}\)</span> con <span class="math notranslate nohighlight">\(E_{HF}\)</span>?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Respuesta</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># E_MP1</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Calcule la diferencia entre <span class="math notranslate nohighlight">\(E_{MP1}\)</span> y la energía de Hartree-Fock que calculó al inicio, <strong>¿Cuál es la energía de correlación? ¿Cómo se relaciona <span class="math notranslate nohighlight">\(E_{MP1}\)</span> con <span class="math notranslate nohighlight">\(E_{HF}\)</span>?</strong></p>
+<p><strong>Respuesta:</strong></p>
 <p>La energía de Hartree-Fock se calcula como
 \begin{equation}
 E_{HF} = E_{nuc} + 2\sum_a^{N_e/2} {\varepsilon_a} -2 \sum_{a}^{N/2}\sum_{b}^{N/2} [aa|bb] - [ab|ba]
@@ -518,11 +597,11 @@ E_{HF} = E_{nuc} + 2\sum_a^{N_e/2} {\varepsilon_a} -2 \sum_{a}^{N/2}\sum_{b}^{N/
 E_0^{(2)} = 2 \sum_{a}^{N_e/2}\sum_{b}^{N_e/2}\sum_{r=N_e+1}^{N_{bf}}\sum_{s=N_e+1}^{N_{bf}} \frac{[ar|bs][ra|sb]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}} - \sum_{abrs}^{N_e/2} \frac{[ar|bs][rb|sa]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}}
 \end{equation}</p>
 <p>donde <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(s\)</span> son los orbitales moleculares desocupados.</p>
-<p>Calcule <span class="math notranslate nohighlight">\(E_0^{(2)}\)</span>, la energía de <span class="math notranslate nohighlight">\(MP2\)</span> dada por
+<p><strong>Calcule <span class="math notranslate nohighlight">\(E_0^{(2)}\)</span>, la energía de <span class="math notranslate nohighlight">\(MP2\)</span></strong> dada por
 \begin{equation}
 E_{MP2} = E_{nuc} + E_0^{(0)} + E_0^{(1)} + E_0^{(2)}
 \end{equation}</p>
-<p>y la energía de correlación
+<p><strong>y la energía de correlación</strong>
 \begin{equation}
 E_{corr} = E_{MP2} - E_{HF}
 \end{equation}</p>
@@ -550,6 +629,15 @@ E_corr = -0.017397572327191746
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># E_2, E_MP2 y E_corr</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
 <p>Generalizando, la energía total de MPn es
 \begin{equation}
 E_{MPn} = E_{nuc} + E_0^{(0)} + E_0^{(1)} + E_0^{(2)} + … + E_0^{(n)}
@@ -558,18 +646,11 @@ E_{MPn} = E_{nuc} + E_0^{(0)} + E_0^{(1)} + E_0^{(2)} + … + E_0^{(n)}
 \begin{equation}
 E_{corr} = E_{MPn} - E_{HF} = E_0^{(2)} + … + E_0^{(n)}
 \end{equation}</p>
-<p>Adapte la instrucción a MP2 junto con la base que usó para comprobar sus resultados.</p>
+</div>
+<p><strong>Adapte la instrucción a MP2 junto con la base que usó para comprobar sus resultados</strong>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E_MPn</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;MPn/Base&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E_MPn =&quot;</span><span class="p">,</span><span class="n">E_MPn</span><span class="p">)</span>
 </pre></div>
-</div>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>Ejemplo.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E_MP2</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;MP2/6-31G&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E_MP2 =&quot;</span><span class="p">,</span><span class="n">E_MP2</span><span class="p">)</span>
-</pre></div>
-</div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -580,6 +661,13 @@ E_{corr} = E_{MPn} - E_{HF} = E_0^{(2)} + … + E_0^{(n)}
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>E_MP2 = -1.144114422972474
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># E_MP2 psi4</span>
 </pre></div>
 </div>
 </div>
