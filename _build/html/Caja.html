@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>1. Partícula Libre y Partícula en la caja &#8212; Cuántica I</title>
+    <title>1. Partícula en la caja &#8212; Cuántica I</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -105,7 +105,7 @@
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   1. Partícula Libre y Partícula en la caja
+   1. Partícula en la caja
   </a>
  </li>
  <li class="toctree-l1">
@@ -246,7 +246,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Libre_y_Caja.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/Caja.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -272,7 +272,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Libre_y_Caja.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Caja.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -291,18 +291,13 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#particula-libre">
-   1.1. Partícula Libre
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#particula-en-una-caja">
-   1.2. Partícula en una caja
+   1.1. Partícula en una caja
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   1.3. Referencias
+   1.2. Referencias
   </a>
  </li>
 </ul>
@@ -315,8 +310,8 @@
         
               <div>
                 
-  <div class="section" id="particula-libre-y-particula-en-la-caja">
-<h1><span class="section-number">1. </span>Partícula Libre y Partícula en la caja<a class="headerlink" href="#particula-libre-y-particula-en-la-caja" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="particula-en-la-caja">
+<h1><span class="section-number">1. </span>Partícula en la caja<a class="headerlink" href="#particula-en-la-caja" title="Permalink to this headline">¶</a></h1>
 <p>A continuación estudiaremos sistemas sencillos que nos permiten entender como surge la cuantización. Además, nos permitirán familiarizarnos con los pasos para resolver los problemas de química cuántica. Podemos resumir estos como:</p>
 <ol class="simple">
 <li><p>Identificar las interacciones y restricciones del sistema.</p></li>
@@ -324,42 +319,8 @@
 <li><p>Encontrar la función de onda (<span class="math notranslate nohighlight">\(\psi\)</span>).</p></li>
 <li><p>Estudiar las condiciones de cuantización.</p></li>
 </ol>
-<div class="section" id="particula-libre">
-<h2><span class="section-number">1.1. </span>Partícula Libre<a class="headerlink" href="#particula-libre" title="Permalink to this headline">¶</a></h2>
-<p>La partícula libre es el sistema más sencillo posible, consiste en una partícula que se mueve en un potencial <strong>uniforme</strong>, <strong>conservativo</strong> y <strong>sin restricciones</strong>.</p>
-<p>El primer paso consiste en escribir el Hamiltoniano, el cuál contiene las interacciones del sistema. En 1D el Hamiltoniano es
-\begin{equation}
-\mathcal{H} = - \frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V(x)
-\end{equation}
-donde el primer término es la energía cinética y el segundo el potencial.</p>
-<p>La ecuación de Schrodinger a resolver se obtiene de susituir el Hamiltoniano en <span class="math notranslate nohighlight">\(\mathcal{H}\psi=\varepsilon\psi\)</span>:
-\begin{equation}
-\left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} +V(x)\right)\psi(x)=\varepsilon\psi(x)
-\end{eqaution}</p>
-<p>Esta se puede reescribir como una ecuación diferencial homogénea de segundo orden
-\begin{equation}
--\frac{d^2 \psi(x)}{dx^2} = \frac{2m(\varepsilon-V)}{\hbar^2}\psi(x) = \frac{2mE}{\hbar^2}\psi(x)
-\end{equation}</p>
-<p>La solución a la ecuación anterior es una función cuya segunda derivada es la misma función multiplicada por alguna constante. Esta característica la cumplen las exponenciales, por tanto se propone que la solución tenga la forma:
-\begin{equation}
-\psi = A’e^{ikx} + B’e^{-ikx}
-\end{equation}</p>
-<p>Al sustituir en la ecuación diferencial
-\begin{equation}
--\frac{d^2 \psi(x)}{dx^2} = k^2(A’e^{ikx} + B’e^{-ikx}) = k^2\psi
-\end{equation}</p>
-<p>Podemos encontrar la forma de <span class="math notranslate nohighlight">\(k\)</span> por simple comparación:
-\begin{equation}
-k^2 = \frac{2mE}{\hbar^2}
-\end{equation}</p>
-<p>Por la identidad de Euler, la función de onda también puede escribirse como:
-\begin{equation}
-\psi = Acos(kx) + Bsin(kx)
-\end{equation}</p>
-<p>Los pasos anteriores nos han permitido encontrar una forma para la función de onda, sin embargo, no ha surgido cuantización.</p>
-</div>
 <div class="section" id="particula-en-una-caja">
-<h2><span class="section-number">1.2. </span>Partícula en una caja<a class="headerlink" href="#particula-en-una-caja" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.1. </span>Partícula en una caja<a class="headerlink" href="#particula-en-una-caja" title="Permalink to this headline">¶</a></h2>
 <p>La versión 1D de este sistema consiste en una partícula que se mueve en el espacio con un potencial definido en tres regiones, tal que</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -420,7 +381,8 @@ E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      &amp; n=1,2,3,…\
 \end{array}
 \end{equation}</p>
 <p><strong>Grafique la función de onda y el cuadrado de la función de onda para n=1 para L=4.0 A</strong></p>
-<p>Sugerencias</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <ol class="simple">
 <li><p>Importe numpy y matplotlib.pyplot</p></li>
 <li><p>Declare la variable L y asígnele un valor, por ejemplo <span class="math notranslate nohighlight">\(L=1\)</span></p></li>
@@ -429,7 +391,15 @@ E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      &amp; n=1,2,3,…\
 <li><p>Calcule el cuadrado de la función de onda en el dominio</p></li>
 <li><p>Grafique la función de onda y su cuadrado usando matplotlib y pyplot.</p></li>
 </ol>
+</div>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica de psi_1 y su cuadrado</span>
 
@@ -454,11 +424,12 @@ E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      &amp; n=1,2,3,…\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Libre_y_Caja_7_0.png" src="_images/Libre_y_Caja_7_0.png" />
+<img alt="_images/Caja_6_0.png" src="_images/Caja_6_0.png" />
 </div>
 </div>
-<p><strong>Grafique la función de onda y el cuadrado de la función de onda para n=1,2,3,4 para L=4.0 A</strong>
-Sugerencias:</p>
+<p><strong>Grafique la función de onda y el cuadrado de la función de onda para n=1,2,3,4 para L=4.0 A</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <ol class="simple">
 <li><p>Importe numpy y matplotlib.pyplot</p></li>
 <li><p>Declare la variable L y asígnele un valor, por ejemplo <span class="math notranslate nohighlight">\(L=1\)</span></p></li>
@@ -467,7 +438,15 @@ Sugerencias:</p>
 <li><p>Calcule el cuadrado de las 4 funciones de onda en el dominio</p></li>
 <li><p>Grafique las funciones y su cuadrado usando matplotlib y pyplot.</p></li>
 </ol>
+</div>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica de psi_1, psi_2, psi_3, psi_4 y su cuadrado</span>
 
@@ -524,14 +503,21 @@ Sugerencias:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Libre_y_Caja_9_0.png" src="_images/Libre_y_Caja_9_0.png" />
-<img alt="_images/Libre_y_Caja_9_1.png" src="_images/Libre_y_Caja_9_1.png" />
-<img alt="_images/Libre_y_Caja_9_2.png" src="_images/Libre_y_Caja_9_2.png" />
-<img alt="_images/Libre_y_Caja_9_3.png" src="_images/Libre_y_Caja_9_3.png" />
+<img alt="_images/Caja_9_0.png" src="_images/Caja_9_0.png" />
+<img alt="_images/Caja_9_1.png" src="_images/Caja_9_1.png" />
+<img alt="_images/Caja_9_2.png" src="_images/Caja_9_2.png" />
+<img alt="_images/Caja_9_3.png" src="_images/Caja_9_3.png" />
 </div>
 </div>
 <p>Como estamos haciendo una secuencia de gráficas donde aumentamos n de uno en uno, podemos hacerlo con un ciclo for. <strong>Repita la gráfica de la función de onda con <span class="math notranslate nohighlight">\(n=1,2,3,4\)</span> utilizando un ciclo for</strong>.</p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para 4 gráficas en las que solo cambia el valor de n, use un for</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica de psi_1, psi_2, psi_3, psi_4 y su cuadrado con for</span>
 
@@ -553,20 +539,29 @@ Sugerencias:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Libre_y_Caja_11_0.png" src="_images/Libre_y_Caja_11_0.png" />
-<img alt="_images/Libre_y_Caja_11_1.png" src="_images/Libre_y_Caja_11_1.png" />
-<img alt="_images/Libre_y_Caja_11_2.png" src="_images/Libre_y_Caja_11_2.png" />
-<img alt="_images/Libre_y_Caja_11_3.png" src="_images/Libre_y_Caja_11_3.png" />
+<img alt="_images/Caja_12_0.png" src="_images/Caja_12_0.png" />
+<img alt="_images/Caja_12_1.png" src="_images/Caja_12_1.png" />
+<img alt="_images/Caja_12_2.png" src="_images/Caja_12_2.png" />
+<img alt="_images/Caja_12_3.png" src="_images/Caja_12_3.png" />
 </div>
 </div>
 <p><strong>Haga la gráfica de E en función de n para los primeros 10 niveles energéticos de un electrón en una caja.</strong></p>
-<p>Recuerde que</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <p>\begin{equation}
 E = \frac{h^2 n^2}{8mL^2}
-\end{equation}</p>
-<p>Con <span class="math notranslate nohighlight">\(n=1,2,3,...\)</span></p>
+\end{equation}
+Con <span class="math notranslate nohighlight">\(n=1,2,3,...\)</span></p>
+</div>
 <p>Considere h=1 y m=1. Esto se llama unidades atómicas. Tome L=1 A</p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
@@ -579,12 +574,22 @@ E = \frac{h^2 n^2}{8mL^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Libre_y_Caja_13_0.png" src="_images/Libre_y_Caja_13_0.png" />
+<img alt="_images/Caja_15_0.png" src="_images/Caja_15_0.png" />
 </div>
 </div>
 <p><strong>Muestre que <span class="math notranslate nohighlight">\(\psi_1\)</span> y <span class="math notranslate nohighlight">\(\psi_3\)</span> son ortonormales (Tome <span class="math notranslate nohighlight">\(L=2.0\)</span>).</strong></p>
-<p>Ayuda. Haga la integral</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Haga la integral</p>
+</div>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Integral</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
@@ -633,6 +638,13 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 <p><strong>Obtenga la gráfica de <span class="math notranslate nohighlight">\(\psi_{1,1}\)</span>, es decir <span class="math notranslate nohighlight">\(n_x=1\)</span> y <span class="math notranslate nohighlight">\(n_y=1\)</span>, y de <span class="math notranslate nohighlight">\(|\psi_{1,1}|^2\)</span> con <span class="math notranslate nohighlight">\(L_x = L_y = 4.0\)</span></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -666,12 +678,19 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Libre_y_Caja_18_0.png" src="_images/Libre_y_Caja_18_0.png" />
-<img alt="_images/Libre_y_Caja_18_1.png" src="_images/Libre_y_Caja_18_1.png" />
+<img alt="_images/Caja_22_0.png" src="_images/Caja_22_0.png" />
+<img alt="_images/Caja_22_1.png" src="_images/Caja_22_1.png" />
 </div>
 </div>
 <p><strong>Obtenga las gráfica de <span class="math notranslate nohighlight">\(\psi_{3,3}\)</span> y <span class="math notranslate nohighlight">\(|\psi_{3,3}|^2\)</span> con <span class="math notranslate nohighlight">\(L_x = L_y = 4.0\)</span></strong></p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -706,13 +725,13 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Libre_y_Caja_20_0.png" src="_images/Libre_y_Caja_20_0.png" />
-<img alt="_images/Libre_y_Caja_20_1.png" src="_images/Libre_y_Caja_20_1.png" />
+<img alt="_images/Caja_25_0.png" src="_images/Caja_25_0.png" />
+<img alt="_images/Caja_25_1.png" src="_images/Caja_25_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="referencias">
-<h2><span class="section-number">1.3. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">1.2. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
 <p>(1) Pilar, F. L. Elementary Quantum Chemistry, Dover ed.; Dover Publications: Mineola, N.Y, 2001.</p>
 <p>(2) Breneman, G. L. The Two-Dimensional Particle in a Box. Journal of Chemical Education 1990, 67 (10), 866.</p>
 </div>

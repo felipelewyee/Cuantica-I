@@ -8,7 +8,7 @@
 
 - part: Sistemas Sencillos
   chapters:
-  - file: Libre_y_Caja
+  - file: Caja
   - file: CajaConTope
   - file: Anillo_Esfera_Rotor
   - file: Oscilador

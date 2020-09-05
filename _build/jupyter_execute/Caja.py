@@ -1,53 +1,10 @@
-# Partícula Libre y Partícula en la caja
+# Partícula en la caja
 
 A continuación estudiaremos sistemas sencillos que nos permiten entender como surge la cuantización. Además, nos permitirán familiarizarnos con los pasos para resolver los problemas de química cuántica. Podemos resumir estos como:
 1. Identificar las interacciones y restricciones del sistema.
 2. Escrbir el Hamiltoniano ($\mathcal{H}$) y la ecuación de Schrodinger ($\mathcal{H}\psi = \varepsilon \psi$).
 3. Encontrar la función de onda ($\psi$).
 4. Estudiar las condiciones de cuantización.
-
-## Partícula Libre
-
-La partícula libre es el sistema más sencillo posible, consiste en una partícula que se mueve en un potencial **uniforme**, **conservativo** y **sin restricciones**. 
-
-El primer paso consiste en escribir el Hamiltoniano, el cuál contiene las interacciones del sistema. En 1D el Hamiltoniano es
-\begin{equation}
-\mathcal{H} = - \frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V(x)
-\end{equation}
-donde el primer término es la energía cinética y el segundo el potencial.
-
-La ecuación de Schrodinger a resolver se obtiene de susituir el Hamiltoniano en $\mathcal{H}\psi=\varepsilon\psi$:
-\begin{equation}
-\left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} +V(x)\right)\psi(x)=\varepsilon\psi(x)
-\end{eqaution}
-
-Esta se puede reescribir como una ecuación diferencial homogénea de segundo orden
-\begin{equation}
--\frac{d^2 \psi(x)}{dx^2} = \frac{2m(\varepsilon-V)}{\hbar^2}\psi(x) = \frac{2mE}{\hbar^2}\psi(x)
-\end{equation}
-
-La solución a la ecuación anterior es una función cuya segunda derivada es la misma función multiplicada por alguna constante. Esta característica la cumplen las exponenciales, por tanto se propone que la solución tenga la forma:
-\begin{equation}
-\psi = A'e^{ikx} + B'e^{-ikx}
-\end{equation}
-
-Al sustituir en la ecuación diferencial
-\begin{equation}
--\frac{d^2 \psi(x)}{dx^2} = k^2(A'e^{ikx} + B'e^{-ikx}) = k^2\psi
-\end{equation}
-
-Podemos encontrar la forma de $k$ por simple comparación:
-\begin{equation}
-k^2 = \frac{2mE}{\hbar^2}
-\end{equation}
-
-
-Por la identidad de Euler, la función de onda también puede escribirse como:
-\begin{equation}
-\psi = Acos(kx) + Bsin(kx)
-\end{equation}
-
-Los pasos anteriores nos han permitido encontrar una forma para la función de onda, sin embargo, no ha surgido cuantización.
 
 ## Partícula en una caja
 
@@ -129,13 +86,16 @@ Al sustituir la función de onda se obtiene la expresión de la energía, que es
 
 **Grafique la función de onda y el cuadrado de la función de onda para n=1 para L=4.0 A**
 
-Sugerencias
+```{tip}
 1. Importe numpy y matplotlib.pyplot
 2. Declare la variable L y asígnele un valor, por ejemplo $L=1$
 3. Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 50.
 4. Evalúe la función de onda en el dominio
 5. Calcule el cuadrado de la función de onda en el dominio
 6. Grafique la función de onda y su cuadrado usando matplotlib y pyplot.
+```
+
+# Inserte código para gráfica
 
 # Gráfica de psi_1 y su cuadrado
 
@@ -158,13 +118,16 @@ plt.axhline(y=0, color='k')
 plt.show()
 
 **Grafique la función de onda y el cuadrado de la función de onda para n=1,2,3,4 para L=4.0 A**
-Sugerencias:
+```{tip}
 1. Importe numpy y matplotlib.pyplot
 2. Declare la variable L y asígnele un valor, por ejemplo $L=1$
 3. Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 50.
 4. Evalúe las 4 funciones de onda en el dominio
 5. Calcule el cuadrado de las 4 funciones de onda en el dominio
 6. Grafique las funciones y su cuadrado usando matplotlib y pyplot.
+```
+
+# Inserte código para gráfica
 
 # Gráfica de psi_1, psi_2, psi_3, psi_4 y su cuadrado
 
@@ -220,6 +183,8 @@ plt.show()
 
 Como estamos haciendo una secuencia de gráficas donde aumentamos n de uno en uno, podemos hacerlo con un ciclo for. **Repita la gráfica de la función de onda con $n=1,2,3,4$ utilizando un ciclo for**.
 
+# Inserte código para 4 gráficas en las que solo cambia el valor de n, use un for
+
 # Gráfica de psi_1, psi_2, psi_3, psi_4 y su cuadrado con for
 
 import numpy as np
@@ -239,15 +204,16 @@ for n in range(1,5):
 
 **Haga la gráfica de E en función de n para los primeros 10 niveles energéticos de un electrón en una caja.**
 
-Recuerde que
-
+```{tip}
 \begin{equation}
   E = \frac{h^2 n^2}{8mL^2}
 \end{equation}
-
 Con $n=1,2,3,...$
+```
 
 Considere h=1 y m=1. Esto se llama unidades atómicas. Tome L=1 A
+
+# Inserte código para gráfica
 
 from matplotlib import pyplot as plt
 
@@ -259,7 +225,11 @@ plt.show()
 
 **Muestre que $\psi_1$ y $\psi_3$ son ortonormales (Tome $L=2.0$).**
 
-Ayuda. Haga la integral
+```{tip}
+Haga la integral
+```
+
+# Integral
 
 import numpy as np
 from scipy import integrate
@@ -301,6 +271,8 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 
 **Obtenga la gráfica de $\psi_{1,1}$, es decir $n_x=1$ y $n_y=1$, y de $|\psi_{1,1}|^2$ con $L_x = L_y = 4.0$**
 
+# Inserte código para gráfica
+
 from mpl_toolkits import mplot3d
 import numpy as np
 import matplotlib.pyplot as plt
@@ -332,6 +304,8 @@ ax.set_title("$|\Psi|^2$")
 plt.show()
 
 **Obtenga las gráfica de $\psi_{3,3}$ y $|\psi_{3,3}|^2$ con $L_x = L_y = 4.0$**
+
+# Inserte código para gráfica
 
 from mpl_toolkits import mplot3d
 import numpy as np
