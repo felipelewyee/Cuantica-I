@@ -1,4 +1,4 @@
-jupyter-notbook
+jupyter-notebook
 matplotlib
 numpy
 scipy
