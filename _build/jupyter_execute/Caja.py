@@ -100,7 +100,7 @@ $$
 import numpy as np
 from matplotlib import pyplot as plt
 
-Considere un electrón dentro de una caa de longitud 4 angstroms. Defina las siguientes constantes
+Considere un electrón dentro de una caja de longitud 4 angstroms. Defina las siguientes constantes
 ```
 hbar = 1
 m = 1
@@ -226,7 +226,7 @@ $$
 Con $n=1,2,3,...$
 ```
 
-Considere h=1 y m=1. Esto se llama unidades atómicas. Tome L=1 A
+Considerar hbar=1 y m=1 se llama unidades atómicas. Tome L=1 A
 
 # Inserte código para gráfica
 
@@ -245,7 +245,13 @@ Haga las integrales
 
 $$
 \int_0^L \psi_1 \psi_1 dx = 1
+$$
+
+$$
 \int_0^L \psi_3 \psi_3 dx = 1
+$$
+
+$$
 \int_0^L \psi_1 \psi_3 dx = 0
 $$
 
@@ -295,6 +301,8 @@ $$
 E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 $$
 
+A continuación realizará una serie de pasos ue le permitirán generar **la gráfica de $\psi_{1,1}$, es decir $n_x=1$ y $n_y=1$, y de $|\psi_{1,1}|^2$ con $L_x = L_y = 4.0$**
+
 Para hacer gráficas 3D, importe la siguiente librería
 ```
 from mpl_toolkits import mplot3d
@@ -304,9 +312,9 @@ from mpl_toolkits import mplot3d
 
 from mpl_toolkits import mplot3d
 
-**Obtenga la gráfica de $\psi_{1,1}$, es decir $n_x=1$ y $n_y=1$, y de $|\psi_{1,1}|^2$ con $L_x = L_y = 4.0$**
+**Declare los valores de Lx=4, Ly=4, nx=1 y ny=1** 
 
-# Inserte código para gráfica
+#valores
 
 Lx=4.0
 Ly=4.0
@@ -314,9 +322,51 @@ Ly=4.0
 nx=1.0
 ny=1.0
 
+Es muy frecuente que las gráficas de superficies requieran un mallado.
+`````{tip}
+Genere un mallado con las siguientes instrucciones
+
+1. Declare un dominio de sus ejes, en este caso $x\in[0,L_x]$ y $y\in[0,L_y]$
+```
+x = np.linspace(0, Lx, 30x = np.linspace(0, Lx, 30)
+y = np.linspace(0, Ly, 30)
+```
+                
+```
+2. Genere el mallado con la instrucción meshgrid
+X, Y = np.meshgrid(x, y)
+`````
+
+# Mallado
+
 x = np.linspace(0, Lx, 30)
 y = np.linspace(0, Ly, 30)
 X, Y = np.meshgrid(x, y)
+
+**Genere la gráfica de $\psi_{1,1}$, es decir $n_x=1$ y $n_y=1$, y de $|\psi_{1,1}|^2$ con $L_x = L_y = 4.0$**. 
+
+`````{tip}
+Use el siguiente código. Note el uso de plt.axes para crear un eje 3D, y de ax.plot_surface
+```
+psi = np.sqrt(2.0/Lx)*np.sqrt(2.0/Ly)*np.sin(nx*np.pi*X/Lx)*np.sin(ny*np.pi*Y/Ly)
+
+ax = plt.axes(projection='3d')
+ax.plot_surface(X, Y, psi, rstride=1, cstride=1,
+                cmap='YlGnBu', edgecolor='none')
+ax.set_title("$\Psi$")
+plt.show()
+
+psi = np.sqrt(2.0/Lx)*np.sqrt(2.0/Ly)*np.sin(nx*np.pi*X/Lx)*np.sin(ny*np.pi*Y/Ly)
+
+ax = plt.axes(projection='3d')
+ax.plot_surface(X, Y, psi**2.0, rstride=1, cstride=1,
+                cmap='YlGnBu', edgecolor='none')
+ax.set_title("$|\Psi|^2$")
+plt.show()
+```
+`````
+
+# Inserte código para gráfica
 
 psi = np.sqrt(2.0/Lx)*np.sqrt(2.0/Ly)*np.sin(nx*np.pi*X/Lx)*np.sin(ny*np.pi*Y/Ly)
 
@@ -335,6 +385,12 @@ ax.set_title("$|\Psi|^2$")
 plt.show()
 
 **Obtenga las gráfica de $\psi_{3,3}$ y $|\psi_{3,3}|^2$ con $L_x = L_y = 4.0$**
+
+```{tip}
+1. Declare los valores de $L_x$, $L_y$, $n_x$ y $n_y$.
+2. Genere el mallado
+3. Genere la gráfica de $\psi$ y $\psi^2$.
+```
 
 # Inserte código para gráfica
 
