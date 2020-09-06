@@ -342,7 +342,6 @@
                 
   <div class="section" id="teoria-de-perturbaciones-niveles-de-energia-no-degenerados">
 <h1><span class="section-number">2. </span>Teoría de perturbaciones (niveles de energía no degenerados)<a class="headerlink" href="#teoria-de-perturbaciones-niveles-de-energia-no-degenerados" title="Permalink to this headline">¶</a></h1>
-<p>La teoría de perturbaciones es el segundo método de aproximacón más utilizado en la Química Cuántica, después del método variacional.</p>
 <p>El objetivo es determinar una solución aproximada a la ecuación de Schrödinger para un Hamiltoniano <span class="math notranslate nohighlight">\(\hat{H}\)</span>. La suposición importante en la teoría de perturbaciones es que <span class="math notranslate nohighlight">\(\hat{H}\)</span> es un poco diferente de un Hamiltoniano <span class="math notranslate nohighlight">\(\hat{H}^{(0)}\)</span> del cual conocemos su solución; es decir, conocemos sus eigenfunciones y eigenvalores. Esto es</p>
 <div class="math notranslate nohighlight">
 \[
@@ -355,10 +354,13 @@
 \]</div>
 <p>El método presentado en este notebook tiene la suposición los niveles de energía <span class="math notranslate nohighlight">\(\big\{ E_n^{(0)}\big\}\)</span> no están degenerados.</p>
 <p>Proponemos una solución en serie aproximada a los eigenvalores (<span class="math notranslate nohighlight">\(E_n\)</span>) y eigenfunciones (<span class="math notranslate nohighlight">\(\Psi_n\)</span>) de <span class="math notranslate nohighlight">\(\hat{H}\)</span> en términos de <span class="math notranslate nohighlight">\(E_n^{(0)}\)</span> y <span class="math notranslate nohighlight">\(\Psi_n^{(0)}\)</span> y correcciones a dichos valores. De tal foma que tenemos,</p>
-<p>\begin{eqnarray}
-E_n &amp;=E_n^{(0)}+ E_n^{(1)} + E_n^{(2)} +\ldots \
-\Psi_n&amp; = \Psi_n^{(0)}+\Psi^{(1)}+\Psi^{(2)}+\ldots
-\end{eqnarray}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+E_n &amp;=&amp; E_n^{(0)}+ E_n^{(1)} + E_n^{(2)} +\ldots \\
+\Psi_n &amp;=&amp; \Psi_n^{(0)}+\Psi^{(1)}+\Psi^{(2)}+\ldots
+\end{split}\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Correcciones</p>
 <p>Con el fin de escribir las expresiones para las diferentes correcciones introducimos la notación para los elementos de matriz de la perturbación, (<span class="math notranslate nohighlight">\(\hat{H}'\)</span>),</p>
 <div class="math notranslate nohighlight">
 \[
@@ -375,24 +377,29 @@ E_n \approx E_n^{(0)} +H'_{n,n} + \sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}
 \[
 \Psi_n \approx \Psi_n^{(0)} + \sum_{m\neq n} \frac{\hat{H}'_{m,n}}{E_n^{(0)}-E_m^{(0)}} \Psi_m^{(0)}
 \]</div>
+</div>
 <hr class="docutils" />
 <div class="section" id="ejemplo-oscilador-anarmonico">
 <h2><span class="section-number">2.1. </span>Ejemplo-Oscilador anarmónico<a class="headerlink" href="#ejemplo-oscilador-anarmonico" title="Permalink to this headline">¶</a></h2>
 <p>En Hamiltoniano del oscilador anarmónico de una partícula en una dimensión es:</p>
-<p>\begin{eqnarray}
-\hat{H} = \underbrace{-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2} k x^2 }<em>{\hat{H}^{(0)}} + \underbrace{cx^3 + dx^4}</em>{\hat{H}’}
-\end{eqnarray}</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{H} = \underbrace{-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2} k x^2 }_{\hat{H}^{(0)}} + \underbrace{cx^3 + dx^4}_{\hat{H}'}
+\]</div>
 <p>Los eigenvalores y eigenfunciones del oscilador armónico son:</p>
-<p>\begin{align}
+<div class="math notranslate nohighlight">
+\[
 E_n^{(0)} = \bigg(n+\frac{1}{2}\bigg) h\nu
-\end{align}</p>
-<p>\begin{align}
-\Psi_n^{(0)} (x) = \frac{1}{\sqrt{2^n n !}} \bigg( \frac{\alpha}{\pi} \bigg)^{1/4} e^{-\alpha x^2/2 } H_n\bigg( \alpha^{1/2},x \bigg)
-\end{align}</p>
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Psi_n^{(0)} (x) = \frac{1}{\sqrt{2^n n !}} \bigg( \frac{\alpha}{\pi} \bigg)^{1/4} e^{-\alpha x^2/2 } H_n\bigg( \alpha^{1/2}\,x \bigg)
+\]</div>
 <p>donde  <span class="math notranslate nohighlight">\(\alpha = 2\pi\nu m /\hbar\)</span> y</p>
-<p>\begin{align}
+<div class="math notranslate nohighlight">
+\[
 \nu = \frac{1}{2\pi }\bigg( \frac{k}{m}  \bigg)^{1/2}
-\end{align}</p>
+\]</div>
 <p>Realicemos numéricamente el cáculo de los elementos de matriz.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -517,11 +524,12 @@ E0^(0) = 0.135 [eV]
 <hr class="docutils" />
 <div class="section" id="ejercicio-1">
 <h3><span class="section-number">2.1.1. </span>Ejercicio 1.<a class="headerlink" href="#ejercicio-1" title="Permalink to this headline">¶</a></h3>
-<p>La corrección a primer orden de la energía de la energía del estado base es,
-\begin{align}
+<p>La corrección a primer orden de la energía de la energía del estado base es,</p>
+<div class="math notranslate nohighlight">
+\[
 E_0^{(1)} = \frac{3d}{4\alpha²} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
-\end{align}
-¿Podría verificarla numéricamente?</p>
+\]</div>
+<p>¿Podría verificarla numéricamente?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
@@ -625,10 +633,11 @@ E1^(0) = 4.035e-01 [eV]
 </div>
 <div class="section" id="correccion-a-segundo-orden">
 <h3><span class="section-number">2.1.4. </span>Corrección a segundo orden<a class="headerlink" href="#correccion-a-segundo-orden" title="Permalink to this headline">¶</a></h3>
-<p>De la teoría de perturbaciones tenemos que
-\begin{align}
-E_n ^{(2)}=\sum_{m \neq n } \frac{|H’_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
-\end{align}</p>
+<p>De la teoría de perturbaciones tenemos que</p>
+<div class="math notranslate nohighlight">
+\[
+E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Previamente realizamos el gráfico de los elementos de matriz</span>
