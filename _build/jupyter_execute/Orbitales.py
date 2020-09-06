@@ -12,18 +12,28 @@ donde $\Lambda^2$ es el legendriano.
 :class: dropdown
 
 El legendriano $\Lambda^2$ se define por
-\begin{equation}
+
+$$
 \Lambda^2 = \frac{1}{sin^2 \theta} \frac{\partial^2}{\partial \phi^2} + \frac{1}{sin \theta} \frac{\partial}{\partial \theta} sin \theta \frac{\partial}{\partial \theta} 
-\end{equation}
+$$
 ```
 
 **La solución a la parte angular son los armónios esféricos $Y_l^{m_l}(\theta,\phi)$.**
 
 Note que $l$ y $m_l$ son números cuánticos que deben cumplir:
 
+```{margin}
+$l$ es el `número cuántico azimutal` o `momento angular`.
+```
 $$
-l&=& 0,1,2,3,...\\
-m_l &=& -l,-l+1,...,0,...,l-1,l
+l = 0,1,2,3,...
+$$
+
+```{margin}
+$m_l$ es el `número cuántico magnético`.
+```
+$$
+m_l = -l,-l+1,...,0,...,l-1,l
 $$
 
 En la tabla se muestran los primeros armónicos esféricos.

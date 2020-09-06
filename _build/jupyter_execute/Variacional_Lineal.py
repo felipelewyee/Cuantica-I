@@ -12,6 +12,7 @@ $$
 \psi_{prueba} = \sum_{i=1} c_i \psi_i  
 $$
 
+```{important}
 Al sustituir la expansión de la función de onda en la ecuación de Schrodinger, se obtiene la ecuación
 
 $$
@@ -24,10 +25,11 @@ En general uno raliza los siguientes pasos:
 2. Se evalúan las matrices $\mathcal{H}$, y $\mathcal{S}$.
 3. Se resuelve el problema de valores propios $\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}$.
 4. Se construye la función de onda utilizando los coeficientes obtenidos.
+```
 
 Una consecuencia de este método es que sin importar las funciones $\psi_i$ que se usen, siempre que cumplan con las restricciones del problema, la solución de prueba siempre tiene una energía mayor o igual a la solución exacta. Por lo tanto, podemos construir varias funciones de prueba y tomar la que de la energía más baja.
 
-Para ejemplificar este procedimiento, resolveremos el átomo de hidrógeno utilizando el método variacional lineal. Ya que sí conocemos las soluciones exactas del átomo de hidrógeno, podremos comparar las funciones de onda aproximadas con las funciones de onda exactas.
+Para ejemplificar este procedimiento, resolveremos el `átomo de hidrógeno` utilizando el método variacional lineal.
 
 **Importe las siguientes librerías**
 
@@ -145,7 +147,7 @@ E,C = LA.eigh(H,S)
 print(E)
 print(C)
 
-**Paso 4.** Susituir los coeficientes en $\psi_{prueba} = \sum_{i=1} c_i \psi_i$ para construir la función de onda.
+**Paso 4.** Sustituir los coeficientes en $\psi_{prueba} = \sum_{i=1} c_i \psi_i$ para construir la función de onda.
 
 # Genere función de prueba
 

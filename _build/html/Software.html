@@ -320,7 +320,10 @@
                 
   <div class="section" id="software">
 <h1><span class="section-number">1. </span>Software<a class="headerlink" href="#software" title="Permalink to this headline">¶</a></h1>
-<p>Lista de algunos programas de química cuántica:</p>
+<p>Los <code class="docutils literal notranslate"><span class="pre">software</span> <span class="pre">de</span> <span class="pre">estructura</span> <span class="pre">electrónica</span></code> se dedican a calcular diversas propiedades de las moléculas utilizando la teoría que se ve en <code class="docutils literal notranslate"><span class="pre">química</span> <span class="pre">cuántica</span></code>. En general, esto nos sirve para <code class="docutils literal notranslate"><span class="pre">predecir</span> <span class="pre">la</span> <span class="pre">reactividad</span> <span class="pre">química</span></code>, desde poder predecir si una reacción procederá o no, hasta cosas más avanzadas como cinéticas de reacción y pKas o potenciales redox. En este notebook estaremos usando el software <code class="docutils literal notranslate"><span class="pre">psi4</span></code>, sin embargo, existe una gran cantidad de software, desde los libres y gratuitos hasta los privados y de pago.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Algunos programas de estructura elecrónica son:</p>
 <ul class="simple">
 <li><p>Gaussian (https://gaussian.com/)</p></li>
 <li><p>Psi4 (http://www.psicode.org/)</p></li>
@@ -334,13 +337,22 @@
 <li><p>GAMESS (http://www.msg.chem.iastate.edu/gamess/)</p></li>
 <li><p>Quantum Espresso (https://www.quantum-espresso.org/)</p></li>
 </ul>
+</div>
 <div class="section" id="aprendiendo-a-usar-psi4">
 <h2><span class="section-number">1.1. </span>Aprendiendo a usar psi4<a class="headerlink" href="#aprendiendo-a-usar-psi4" title="Permalink to this headline">¶</a></h2>
-<p>Importamos psi4 con</p>
+<p>Para usar psi4, puede importarlo como si de una librería se tratase, es decir</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
 </pre></div>
 </div>
+<p><strong>Importe psi4 en la siguiente celda</strong></p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importe psi4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># importe psi4</span>
 <span class="kn">import</span> <span class="nn">psi4</span>
@@ -348,11 +360,20 @@
 </div>
 </div>
 </div>
-<p>Asignamos una cantidad de memoria, por ejemplo 2 gb, con</p>
+<p>En la mayoría de los software es común (pero no obligatorio) que antes de mandar el cálculo de una molécula se asigne una cantidad de memoria RAM, por ejemplo 2 gb.</p>
+<p>En psi4 esto se hace mediante la instrucción</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s2">&quot;2 gb&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>Asigne memoria a su cálculo</strong></p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Establezca memoria</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Establezca memoria</span>
 <span class="n">psi4</span><span class="o">.</span><span class="n">set_memory</span><span class="p">(</span><span class="s2">&quot;2 gb&quot;</span><span class="p">)</span>
@@ -365,8 +386,46 @@
 </div>
 </div>
 </div>
-<p>Declaramos las coordenadas de la molécula. Para ello usamos visualizadores como Avogadro. También podemos obtener valores experimentales de https://cccbdb.nist.gov/ . En este caso utilizaremos los resultados experimentales de benceno.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Los software usan la RAM asignada para guardar vectores y matrices como lo ha hecho en las prácticas anteriores. Si la memoria es suficiente, el programa guardará todo y el cálculo será más rápido, si no la hay, el cálculo será más lento. <code class="docutils literal notranslate"><span class="pre">A</span> <span class="pre">más</span> <span class="pre">memoria</span> <span class="pre">los</span> <span class="pre">cálculos</span> <span class="pre">tienden</span> <span class="pre">a</span> <span class="pre">ser</span> <span class="pre">igual</span> <span class="pre">o</span> <span class="pre">más</span> <span class="pre">rápidos</span></code></p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>La cantidad de memoria que puede asignar al cálculo depende de la cantidad de RAM que tenga su computadora. Recomendamos asignar menos memoria del total disponible ya que la memoria se reparte con los demás programas de su computadora.</p>
+</div>
+<p>El siguiente paso es <strong>declarar las coordenadas de los átomos que forman la molécula</strong>. Para ello se pueden usar visualizadores como <code class="docutils literal notranslate"><span class="pre">Avogadro</span></code> o <code class="docutils literal notranslate"><span class="pre">IQmol</span></code>. También es posible obtener valores experimentales o calculados de https://cccbdb.nist.gov/ . En este caso utilizaremos los resultados experimentales de benceno.</p>
+<p>Use las siguientes líneas para declarar la geometría</p>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>En este caso el 0 y el 1 indican la <code class="docutils literal notranslate"><span class="pre">carga</span></code> y <code class="docutils literal notranslate"><span class="pre">multiplicidad</span></code>, posteriormente viene el <code class="docutils literal notranslate"><span class="pre">X</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code>, <code class="docutils literal notranslate"><span class="pre">Z</span></code> y las unidades en las que se expresan las coordenadas.</p>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">benzene</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">0 1</span>
+<span class="s2">C 0.0000 1.3970 0.0000</span>
+<span class="s2">C 1.2098 0.6985 0.0000</span>
+<span class="s2">C 1.2098 -0.6985 0.0000</span>
+<span class="s2">C 0.0000 -1.3970 0.0000</span>
+<span class="s2">C -1.2098 -0.6985 0.0000</span>
+<span class="s2">C -1.2098 0.6985 0.0000</span>
+<span class="s2">H 0.0000 2.4810 0.0000</span>
+<span class="s2">H 2.1486 1.2405 0.0000</span>
+<span class="s2">H 2.1486 -1.2405 0.0000</span>
+<span class="s2">H 0.0000 -2.4810 0.0000</span>
+<span class="s2">H -2.1486 -1.2405 0.0000</span>
+<span class="s2">H -2.1486 1.2405 0.0000</span>
+<span class="s2">units angstrom</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Geometría</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">benzene</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">0 1</span>
@@ -388,35 +447,93 @@
 </div>
 </div>
 </div>
-<p>Realizamos el cálculo de energía con un <strong>método</strong> y una <strong>base</strong>. Por ejemplo, un cálculo de MP2 con base 6-31G sería</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;mp2/6-31G&#39;</span><span class="p">)</span>
+<p>Para realizar un cálculo de <code class="docutils literal notranslate"><span class="pre">energía</span></code> de una molécula <code class="docutils literal notranslate"><span class="pre">con</span> <span class="pre">la</span> <span class="pre">geometría</span></code> especificada arriba, es necesario especificar  un <code class="docutils literal notranslate"><span class="pre">método</span></code> y una <code class="docutils literal notranslate"><span class="pre">base</span></code> en la siguiente instrucción</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;método/base&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>Realice un cálculo con el método HF y la base 6-31G</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno mp2/6-31G</span>
-<span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;mp2/6-31G&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno HF/6-31G</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno HF/6-31G</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;HF/6-31G&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-231.14697476761754
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-230.62318235386027
 </pre></div>
 </div>
 </div>
 </div>
-<p>Calcule la energía de benceno con MP3 y 6-31G</p>
+<p><strong>Calcule la energía de benceno con MP2 y 6-31G</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno mp3/6-31G</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno MP2/6-31G</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Calcule la energía de benceno con MP4 y 6-31G</p>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno MP2/6-31G</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;MP2/6-31G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-231.14697476761586
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Calcule la energía de benceno con el funcional M062X y la base 6-31G</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno mp4/6-31G</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno M062X/6-31G</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Benzeno M062X/6-31G</span>
+<span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;M062X/6-31G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-232.09147480666206
+</pre></div>
+</div>
+</div>
+</div>
+<p>Usualmente la geometría especificada no es necesariamente la geometría real. Es posible pedir al software que mueva los átomos hasta encontrar las coordenadas que representen un mínimo de energía con el método y base usados. Esto se llama <code class="docutils literal notranslate"><span class="pre">optimización</span> <span class="pre">de</span> <span class="pre">geometrías</span></code> y se hace con la línea</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">opt</span><span class="p">(</span><span class="s1">&#39;método/base&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Optimice la geometría de benceno con el método M062X y base 6-31G e imprima su energía</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Este cálculo puede tardar entre 1 y 10 minutos dependiendo del procesador de cada computadora.</p>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">opt</span><span class="p">(</span><span class="s1">&#39;M062X/6-31G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-232.0914786670685
 </pre></div>
 </div>
 </div>

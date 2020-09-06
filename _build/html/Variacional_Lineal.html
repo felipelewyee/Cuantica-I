@@ -340,6 +340,8 @@ H\psi = E \psi
 \[
 \psi_{prueba} = \sum_{i=1} c_i \psi_i  
 \]</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
 <p>Al sustituir la expansión de la función de onda en la ecuación de Schrodinger, se obtiene la ecuación</p>
 <div class="math notranslate nohighlight">
 \[
@@ -352,8 +354,9 @@ H\psi = E \psi
 <li><p>Se resuelve el problema de valores propios <span class="math notranslate nohighlight">\(\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}\)</span>.</p></li>
 <li><p>Se construye la función de onda utilizando los coeficientes obtenidos.</p></li>
 </ol>
+</div>
 <p>Una consecuencia de este método es que sin importar las funciones <span class="math notranslate nohighlight">\(\psi_i\)</span> que se usen, siempre que cumplan con las restricciones del problema, la solución de prueba siempre tiene una energía mayor o igual a la solución exacta. Por lo tanto, podemos construir varias funciones de prueba y tomar la que de la energía más baja.</p>
-<p>Para ejemplificar este procedimiento, resolveremos el átomo de hidrógeno utilizando el método variacional lineal. Ya que sí conocemos las soluciones exactas del átomo de hidrógeno, podremos comparar las funciones de onda aproximadas con las funciones de onda exactas.</p>
+<p>Para ejemplificar este procedimiento, resolveremos el <code class="docutils literal notranslate"><span class="pre">átomo</span> <span class="pre">de</span> <span class="pre">hidrógeno</span></code> utilizando el método variacional lineal.</p>
 <p><strong>Importe las siguientes librerías</strong></p>
 <ul class="simple">
 <li><p>numpy</p></li>
@@ -536,7 +539,7 @@ S_{21} &amp; S_{22}
 </div>
 </div>
 </div>
-<p><strong>Paso 4.</strong> Susituir los coeficientes en <span class="math notranslate nohighlight">\(\psi_{prueba} = \sum_{i=1} c_i \psi_i\)</span> para construir la función de onda.</p>
+<p><strong>Paso 4.</strong> Sustituir los coeficientes en <span class="math notranslate nohighlight">\(\psi_{prueba} = \sum_{i=1} c_i \psi_i\)</span> para construir la función de onda.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Genere función de prueba</span>
@@ -612,7 +615,7 @@ S_{21} &amp; S_{22}
 </div>
 </div>
 </div>
-<div class="cell tag_hide-cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
@@ -889,7 +892,7 @@ S_{31} &amp; S_{32} &amp; S_{33} \\
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
@@ -925,7 +928,7 @@ S_{31} &amp; S_{32} &amp; S_{33} \\
 <div class="section" id="atomo-de-hidrogeno-dos-gaussianas-vs-tres-gaussianas">
 <h2><span class="section-number">1.3. </span>Átomo de hidrógeno dos gaussianas vs tres gaussianas<a class="headerlink" href="#atomo-de-hidrogeno-dos-gaussianas-vs-tres-gaussianas" title="Permalink to this headline">¶</a></h2>
 <p>En la gráfica se compara la función de onda aproximada por el método variacional lineal con dos gausianas y con tres gausianas contra la solución exacta del átomo de hidrógeno del orbital 1s.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 

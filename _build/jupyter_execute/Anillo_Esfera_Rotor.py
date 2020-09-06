@@ -26,11 +26,13 @@ $$
 ```
 
 La solución a la ecuación diferencial tiene la forma
+
 $$
 \psi = Ae^{im_l\phi} + Be^{-im_l\phi}
 $$
 
 con $m_l = ( 2mr^2 E/\hbar^2 )^{1/2}$. Despejando se obtiene que 
+
 $$
 E = \frac{\hbar^2 m_l^2}{2mr^2}
 $$
@@ -223,16 +225,19 @@ m_T = m_1 + m_2
 $$
 
 La masa reducida de la nueva partícula está dada por
+
 $$
 \frac{1}{\mu} = \frac{1}{m_1} + \frac{1}{m_2}
 $$
 
 El centro de masa del sistema se calcula mediante
+
 $$
 R_{cm} = \left( \frac{m_1}{m_T} \right) r_1 + \left( \frac{m_2}{m_T} \right) r_2
 $$
 
 y el Hamiltoniano se calcula con la energía cinética de la masa reducida y del centro de masa, es decir
+
 $$
 H = -\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}
 $$
@@ -250,6 +255,7 @@ $$
 $$
 
 Al sustituir en la ecuación de Schrodinger se obtiene
+
 $$
 \left(-\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}\right) \psi_{cm}\psi_r = E \psi_{cm}\psi_r
 $$
@@ -271,7 +277,7 @@ ya que el lado izquierdo solo depende de las coordenadas del centro de masa, y e
 
 Despues de cambiar a un sistema de masa reducida se obtienen dos ecuaciones.
 
-La primera ecuación corresponde al movimiento del centro de masa del sistema y la hemos estudiado previamene en el movimiento de la partícula libre
+La primera ecuación corresponde al movimiento del `centro de masa del sistema` y la hemos estudiado previamene en el movimiento de la `partícula libre`
 
 $$
 -\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} \psi_{cm} = E_{cm} \psi_{cm}
@@ -285,7 +291,7 @@ $$
 
 con $k^2=2m_TE/\hbar^2$, y simplemente nos dice que el sistema en conjunto se mueve libremente por el espacio.
 
-La segunda ecuación corresponde a la masa reducida, y la hemos estudiado en la partícula en la esfera
+La segunda ecuación corresponde a la `masa reducida`, y la hemos estudiado en la `partícula en la esfera`
 
 $$
 -\frac{\hbar^2}{2\mu} \nabla^2_{r} \psi_r = E_r \psi_r

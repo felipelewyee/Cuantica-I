@@ -1,7 +1,5 @@
 # Teoría de perturbaciones (niveles de energía no degenerados)
 
-La teoría de perturbaciones es el segundo método de aproximacón más utilizado en la Química Cuántica, después del método variacional.
-
 El objetivo es determinar una solución aproximada a la ecuación de Schrödinger para un Hamiltoniano $\hat{H}$. La suposición importante en la teoría de perturbaciones es que $\hat{H}$ es un poco diferente de un Hamiltoniano $\hat{H}^{(0)}$ del cual conocemos su solución; es decir, conocemos sus eigenfunciones y eigenvalores. Esto es 
 
 $$
@@ -18,10 +16,13 @@ El método presentado en este notebook tiene la suposición los niveles de energ
 
 Proponemos una solución en serie aproximada a los eigenvalores ($E_n$) y eigenfunciones ($\Psi_n$) de $\hat{H}$ en términos de $E_n^{(0)}$ y $\Psi_n^{(0)}$ y correcciones a dichos valores. De tal foma que tenemos,
 
-\begin{eqnarray}
-E_n &=E_n^{(0)}+ E_n^{(1)} + E_n^{(2)} +\ldots \\
-\Psi_n& = \Psi_n^{(0)}+\Psi^{(1)}+\Psi^{(2)}+\ldots
-\end{eqnarray}
+$$
+E_n &=& E_n^{(0)}+ E_n^{(1)} + E_n^{(2)} +\ldots \\
+\Psi_n &=& \Psi_n^{(0)}+\Psi^{(1)}+\Psi^{(2)}+\ldots
+$$
+
+```{admonition} Inserto matemático: Correcciones
+:class: dropdown
 
 Con el fin de escribir las expresiones para las diferentes correcciones introducimos la notación para los elementos de matriz de la perturbación, ($\hat{H}'$),
 
@@ -42,31 +43,32 @@ y
 $$
 \Psi_n \approx \Psi_n^{(0)} + \sum_{m\neq n} \frac{\hat{H}'_{m,n}}{E_n^{(0)}-E_m^{(0)}} \Psi_m^{(0)}
 $$
+```
 
 ---
 
 ## Ejemplo-Oscilador anarmónico
 En Hamiltoniano del oscilador anarmónico de una partícula en una dimensión es:
 
-\begin{eqnarray}
+$$
 \hat{H} = \underbrace{-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2} k x^2 }_{\hat{H}^{(0)}} + \underbrace{cx^3 + dx^4}_{\hat{H}'}
-\end{eqnarray}
+$$
 
 Los eigenvalores y eigenfunciones del oscilador armónico son:
 
-\begin{align}
+$$
 E_n^{(0)} = \bigg(n+\frac{1}{2}\bigg) h\nu
-\end{align}
+$$
 
-\begin{align}
+$$
 \Psi_n^{(0)} (x) = \frac{1}{\sqrt{2^n n !}} \bigg( \frac{\alpha}{\pi} \bigg)^{1/4} e^{-\alpha x^2/2 } H_n\bigg( \alpha^{1/2}\,x \bigg)
-\end{align}
+$$
 
 donde  $\alpha = 2\pi\nu m /\hbar$ y 
 
-\begin{align}
+$$
 \nu = \frac{1}{2\pi }\bigg( \frac{k}{m}  \bigg)^{1/2}
-\end{align}
+$$
 
 Realicemos numéricamente el cáculo de los elementos de matriz. 
 
@@ -155,9 +157,11 @@ plt.colorbar(label="$H'_{mn} [eV]$");
 
 ### Ejercicio 1.
 La corrección a primer orden de la energía de la energía del estado base es,
-\begin{align}
+
+$$
 E_0^{(1)} = \frac{3d}{4\alpha²} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
-\end{align}
+$$
+
 ¿Podría verificarla numéricamente?
 
 # Solución
@@ -220,9 +224,10 @@ ylabel("$E [eV]$")
 ### Corrección a segundo orden
 
 De la teoría de perturbaciones tenemos que 
-\begin{align}
+
+$$
 E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
-\end{align}
+$$
 
 # Previamente realizamos el gráfico de los elementos de matriz
 

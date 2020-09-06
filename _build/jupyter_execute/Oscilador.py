@@ -6,7 +6,11 @@ $$
 V = \frac{1}{2} kx^2
 $$
 
-donde $k$ es una constante. En mecánica clásica podemos encontrar sistemas con este potencial como los resortes, mientras que en química cúantica esto sirve para modelar la vibración de los enlaces.
+donde $k$ es una constante. 
+
+```{note}
+En mecánica clásica podemos encontrar sistemas con este potencial como los resortes, mientras que en química cúantica esto sirve para modelar la vibración de los enlaces.
+```
 
 En este caso, el Hamiltoniano contiene la energía cinética y el potencial
 

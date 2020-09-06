@@ -6,7 +6,7 @@ $$
 V(x) = \left\{
   \begin{array}{lll}
   \infty      & \mathrm{si\ } x < -L & \\
-  0      & \mathrm{si\ } -L \le x < a & II\\
+  0      & \mathrm{si\ } -L \le x < -a & II\\
   V & \mathrm{si\ } -a \le x \le a & III \\
   0      & \mathrm{si\ } a < x \le L & IV\\
   \infty     & \mathrm{si\ } x > L & 
@@ -14,7 +14,12 @@ V(x) = \left\{
   \right.
 $$
 
-Es decir, el potencial vale infinito fuera de la caja, cero en las zonas de la izquierda y la derecha (de $-L$ a $-a$ y de $+a$ a $+L$) y vale $U$ en el centro (de $-a$ a $+a$).
+Es decir, el potencial vale infinito fuera de la caja, cero en las zonas de la izquierda y la derecha (de $-L$ a $-a$ y de $+a$ a $+L$) y vale $V$ en el centro (de $-a$ a $+a$).
+
+```{admonition} Para pensar
+:class: tip
+Considere que tiene una partícula moviéndose dentro de la caja con una energía menor que V. De manera clásica, la partícula no podría pasar de un lado de la caja al otro porque no tiene suficiente energía para atravesar el potencial. ¿Qué pasará cuánticamente?
+```
 
 La función de onda se obtiene resolviendo la ecuación de Schrödinger
 
@@ -50,7 +55,6 @@ from matplotlib import pyplot as plt
 from scipy import optimize
 from scipy import integrate
 
-
 **Establezca valores para las constantes** $\hbar$, $m$, $V$, $a$, $L$.
 
 # De valor a las constantes
@@ -74,24 +78,23 @@ La función de onda debe ser contínua, por lo que podemos igualar la función d
 | III y Final | $\psi_{III}(L) = 0$ | $B' = -A' tan(k_1 L)$|
 ```
 
-
-A partir de aquí podemos ayudarnos de la simetría del problema. Empezaremos asumiendo que lo que esta del lado izquierdo del potencial es simétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par.
+A partir de aquí podemos ayudarnos de la simetría del problema.
 
 ## Simetría Par
 
-Estamos buscando los valores de E que resuelvan la ecuación
+Empezaremos asumiendo que lo que esta del lado izquierdo del potencial es simétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par ($\psi_{II}(x) = \psi_{II}(-x)$ y $C = D$). Al considerar esta condición en las ecuaciones de continuidad, se obtiene las siguiente ecuación
 
 $$
-tanh \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{U-E}}
+tanh \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
 $$
 
-Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos $f(E)$
+En esta ecuación no es trivial despejar E, sin embargo, la igualdad sólo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos $f(E)$
 
 $$
-f(E) = tanh^2 \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{U-E}
+f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{V-E}
 $$
 
-Cuando se tenga el $E$ correcto se cumplirá $f(E) = 0$, así que solo tenemos que buscar los ceros (o raíces) de la función.
+Cuando se tenga el $E$ correcto se cumplirá $f(E) = 0$, así que sólo tenemos que buscar los ceros (o raíces) de la función.
 
 **Defina la función $f(E)$**
 
@@ -113,7 +116,7 @@ E_dominio = np.linspace(0,V,10000)
 
 E_dominio = np.linspace(0,V,10000)
 
-Para cada uno de estos puntos evalúe si f(E) es menos a $10^{-2}$, en este caso el valor de E es un buen candidato para ser una raíz de f(E). Haga una lista con los valores de E que cumplieron el criterio, este será su primer guess.
+**Para cada uno de estos puntos evalúe si f(E) es menos a $10^{-2}$**, si la condición se cumple el valor de E es un buen candidato para ser una raíz de f(E). Haga una lista con los valores de E que cumplieron el criterio, este será su `primer guess`.
 
 E_primerguess = []
 for E_i in E_dominio:
@@ -125,7 +128,7 @@ Python tiene funciones especiales para buscar raíces partiendo de cierto punto.
 E = newton(f,x0=E_i)
 ```
 
-Para cada valor de energía de su primer guess, utilice el método de Newton para encontrar la raíz más cercana y guárdela en una lista si la diferencia con la última raíz es mayor a 0.1. Este será su segundo guess.
+Para cada valor de energía de su primer guess, utilice el método de Newton para encontrar la raíz más cercana y guárdela en una lista si la diferencia con la última raíz es mayor a 0.1. Este será su `segundo guess`.
 
 E_segundoguess = [0]
 for E_i in E_primerguess:
@@ -221,17 +224,21 @@ for E in E_segundoguess:
 
 ## Simetría impar
 
-Estamos buscando los valores de E que resuelvan la ecuación
-\begin{equation}
-tanh^{-1} \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{U-E}}
-\end{equation}
+Ahora asumirémos que lo que esta del lado izquierdo del potencial es antisimétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par ($\psi_{II}(x) = -\psi_{II}(-x)$ y $C = -D$). Al considerar esta condición en las ecuaciones de continuidad, se obtienen las siguiente ecuación
 
-Una forma más simple es elevar al cuadrado, pasar todo a la derecha y definir $f(E)$
-\begin{equation}
-f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) \right)^2 tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{U-E}
-\end{equation}
+$$
+tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
+$$
 
-Cuando se tenga el $E$ correcto se cumplirá $f(E) = 0$, así que solo tenemos que buscar los ceros (o raíces) de la función.
+En esta ecuación no es trivial despear E, pero la igualdad sólo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos $f(E)$
+
+$$
+f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2 tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{V-E}
+$$
+
+Cuando se tenga el $E$ correcto se cumplirá $f(E) = 0$, así que sólo tenemos que buscar los ceros (o raíces) de la función.
+
+**Defina la función $f(E)$**
 
 def f(E): 
     arg1 = np.sqrt(2*m*(V-E)/hbar**2)*a
@@ -239,9 +246,13 @@ def f(E):
     
     return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
 
+Obtenga su guess de valores de energía
+
+```{tip}
 - Genere un conunto de 1000 puntos de E de 0 a V
-- Seleccione auellos para los que f(E) es menor que $10^{-2}$
+- Seleccione aquellos para los que f(E) es menor que $10^{-2}$
 - Utilice el método de Newton para obtener valores únicos de energía
+```
 
 E_dominio = np.linspace(0,V,10000)
 

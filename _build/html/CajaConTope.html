@@ -331,14 +331,18 @@
 V(x) = \left\{
   \begin{array}{lll}
   \infty      &amp; \mathrm{si\ } x &lt; -L &amp; \\
-  0      &amp; \mathrm{si\ } -L \le x &lt; a &amp; II\\
+  0      &amp; \mathrm{si\ } -L \le x &lt; -a &amp; II\\
   V &amp; \mathrm{si\ } -a \le x \le a &amp; III \\
   0      &amp; \mathrm{si\ } a &lt; x \le L &amp; IV\\
   \infty     &amp; \mathrm{si\ } x &gt; L &amp; 
   \end{array}
   \right.
 \end{split}\]</div>
-<p>Es decir, el potencial vale infinito fuera de la caja, cero en las zonas de la izquierda y la derecha (de <span class="math notranslate nohighlight">\(-L\)</span> a <span class="math notranslate nohighlight">\(-a\)</span> y de <span class="math notranslate nohighlight">\(+a\)</span> a <span class="math notranslate nohighlight">\(+L\)</span>) y vale <span class="math notranslate nohighlight">\(U\)</span> en el centro (de <span class="math notranslate nohighlight">\(-a\)</span> a <span class="math notranslate nohighlight">\(+a\)</span>).</p>
+<p>Es decir, el potencial vale infinito fuera de la caja, cero en las zonas de la izquierda y la derecha (de <span class="math notranslate nohighlight">\(-L\)</span> a <span class="math notranslate nohighlight">\(-a\)</span> y de <span class="math notranslate nohighlight">\(+a\)</span> a <span class="math notranslate nohighlight">\(+L\)</span>) y vale <span class="math notranslate nohighlight">\(V\)</span> en el centro (de <span class="math notranslate nohighlight">\(-a\)</span> a <span class="math notranslate nohighlight">\(+a\)</span>).</p>
+<div class="tip admonition">
+<p class="admonition-title">Para pensar</p>
+<p>Considere que tiene una partícula moviéndose dentro de la caja con una energía menor que V. De manera clásica, la partícula no podría pasar de un lado de la caja al otro porque no tiene suficiente energía para atravesar el potencial. ¿Qué pasará cuánticamente?</p>
+</div>
 <p>La función de onda se obtiene resolviendo la ecuación de Schrödinger</p>
 <div class="math notranslate nohighlight">
 \[
@@ -452,20 +456,20 @@ V(x) = \left\{
 </tbody>
 </table>
 </div>
-<p>A partir de aquí podemos ayudarnos de la simetría del problema. Empezaremos asumiendo que lo que esta del lado izquierdo del potencial es simétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par.</p>
+<p>A partir de aquí podemos ayudarnos de la simetría del problema.</p>
 <div class="section" id="simetria-par">
 <h2><span class="section-number">2.1. </span>Simetría Par<a class="headerlink" href="#simetria-par" title="Permalink to this headline">¶</a></h2>
-<p>Estamos buscando los valores de E que resuelvan la ecuación</p>
+<p>Empezaremos asumiendo que lo que esta del lado izquierdo del potencial es simétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par (<span class="math notranslate nohighlight">\(\psi_{II}(x) = \psi_{II}(-x)\)</span> y <span class="math notranslate nohighlight">\(C = D\)</span>). Al considerar esta condición en las ecuaciones de continuidad, se obtiene las siguiente ecuación</p>
 <div class="math notranslate nohighlight">
 \[
-tanh \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{U-E}}
+tanh \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
 \]</div>
-<p>Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos <span class="math notranslate nohighlight">\(f(E)\)</span></p>
+<p>En esta ecuación no es trivial despejar E, sin embargo, la igualdad sólo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos <span class="math notranslate nohighlight">\(f(E)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-f(E) = tanh^2 \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{U-E}
+f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{V-E}
 \]</div>
-<p>Cuando se tenga el <span class="math notranslate nohighlight">\(E\)</span> correcto se cumplirá <span class="math notranslate nohighlight">\(f(E) = 0\)</span>, así que solo tenemos que buscar los ceros (o raíces) de la función.</p>
+<p>Cuando se tenga el <span class="math notranslate nohighlight">\(E\)</span> correcto se cumplirá <span class="math notranslate nohighlight">\(f(E) = 0\)</span>, así que sólo tenemos que buscar los ceros (o raíces) de la función.</p>
 <p><strong>Defina la función <span class="math notranslate nohighlight">\(f(E)\)</span></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -504,7 +508,7 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 </div>
 </div>
 </div>
-<p>Para cada uno de estos puntos evalúe si f(E) es menos a <span class="math notranslate nohighlight">\(10^{-2}\)</span>, en este caso el valor de E es un buen candidato para ser una raíz de f(E). Haga una lista con los valores de E que cumplieron el criterio, este será su primer guess.</p>
+<p><strong>Para cada uno de estos puntos evalúe si f(E) es menos a <span class="math notranslate nohighlight">\(10^{-2}\)</span></strong>, si la condición se cumple el valor de E es un buen candidato para ser una raíz de f(E). Haga una lista con los valores de E que cumplieron el criterio, este será su <code class="docutils literal notranslate"><span class="pre">primer</span> <span class="pre">guess</span></code>.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_primerguess</span> <span class="o">=</span> <span class="p">[]</span>
@@ -525,7 +529,7 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="n">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x0</span><span class="o">=</span><span class="n">E_i</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Para cada valor de energía de su primer guess, utilice el método de Newton para encontrar la raíz más cercana y guárdela en una lista si la diferencia con la última raíz es mayor a 0.1. Este será su segundo guess.</p>
+<p>Para cada valor de energía de su primer guess, utilice el método de Newton para encontrar la raíz más cercana y guárdela en una lista si la diferencia con la última raíz es mayor a 0.1. Este será su <code class="docutils literal notranslate"><span class="pre">segundo</span> <span class="pre">guess</span></code>.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_segundoguess</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -694,15 +698,18 @@ E: 4.03702980948585 Probabilidad de [-a,a]: 0.009171376328832647
 </div>
 <div class="section" id="simetria-impar">
 <h2><span class="section-number">2.2. </span>Simetría impar<a class="headerlink" href="#simetria-impar" title="Permalink to this headline">¶</a></h2>
-<p>Estamos buscando los valores de E que resuelvan la ecuación
-\begin{equation}
-tanh^{-1} \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{U-E}}
-\end{equation}</p>
-<p>Una forma más simple es elevar al cuadrado, pasar todo a la derecha y definir <span class="math notranslate nohighlight">\(f(E)\)</span>
-\begin{equation}
-f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) \right)^2 tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{U-E}
-\end{equation}</p>
-<p>Cuando se tenga el <span class="math notranslate nohighlight">\(E\)</span> correcto se cumplirá <span class="math notranslate nohighlight">\(f(E) = 0\)</span>, así que solo tenemos que buscar los ceros (o raíces) de la función.</p>
+<p>Ahora asumirémos que lo que esta del lado izquierdo del potencial es antisimétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par (<span class="math notranslate nohighlight">\(\psi_{II}(x) = -\psi_{II}(-x)\)</span> y <span class="math notranslate nohighlight">\(C = -D\)</span>). Al considerar esta condición en las ecuaciones de continuidad, se obtienen las siguiente ecuación</p>
+<div class="math notranslate nohighlight">
+\[
+tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
+\]</div>
+<p>En esta ecuación no es trivial despear E, pero la igualdad sólo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos <span class="math notranslate nohighlight">\(f(E)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2 tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{V-E}
+\]</div>
+<p>Cuando se tenga el <span class="math notranslate nohighlight">\(E\)</span> correcto se cumplirá <span class="math notranslate nohighlight">\(f(E) = 0\)</span>, así que sólo tenemos que buscar los ceros (o raíces) de la función.</p>
+<p><strong>Defina la función <span class="math notranslate nohighlight">\(f(E)\)</span></strong></p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">E</span><span class="p">):</span> 
@@ -714,11 +721,15 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) \right)^2
 </div>
 </div>
 </div>
+<p>Obtenga su guess de valores de energía</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
 <ul class="simple">
 <li><p>Genere un conunto de 1000 puntos de E de 0 a V</p></li>
-<li><p>Seleccione auellos para los que f(E) es menor que <span class="math notranslate nohighlight">\(10^{-2}\)</span></p></li>
+<li><p>Seleccione aquellos para los que f(E) es menor que <span class="math notranslate nohighlight">\(10^{-2}\)</span></p></li>
 <li><p>Utilice el método de Newton para obtener valores únicos de energía</p></li>
 </ul>
+</div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_dominio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>

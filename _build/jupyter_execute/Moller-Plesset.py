@@ -1,4 +1,4 @@
-# Moller-Plesset
+# Moller-Plesset (MPn)
 
 Las ecuaciones de Moller-Plesset surgen de aplicar la teoría de perturbaciones a Hartree-Fock. Para ello se toma como sistema conocido el Hamiltoniano de Hartree-Fock ($\mathcal{H}_0$) y se le aplica  una perturbación ($\mathcal{V}$) para convertirlo en el Hamiltoniano del sistema con correlación electrónica ($\mathcal{H}$).
 

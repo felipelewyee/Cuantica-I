@@ -52,7 +52,13 @@ $$
 ```{admonition} Inserto matemático: Separación de variables
 :class: dropdown
 
-Se propone que la función de onda $\psi$ puede ser separada en una parte radial y una parte angular, es decir $\psi=R(r)Y(\theta,\phi)$. Esto genera una ecuación a resolver para la parte radial (y una para la parte angular que trataremos posteriormente)
+Se propone que la función de onda $\psi$ puede ser separada en una parte radial y una parte angular, es decir
+
+$$
+\psi=R(r)Y(\theta,\phi)
+$$
+
+Esto genera una ecuación a resolver para la parte radial (y una para la parte angular que trataremos posteriormente)
 
 $$
 -\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{d(rR)}{dr} -\frac{\hbar^2}{2\mu} \left[ \frac{e^2}{r} -\frac{l(l+1)}{r^2} \right] R = ER 
@@ -65,7 +71,23 @@ $$
 R_{n,l}(r) = N_{n,l} \left( \frac{2r}{na_0} \right)^l e^{-r/na_0} L_{n+l}^{2l+1} \left( \frac{2r}{n a_0} \right)
 $$
 
-donde $n=1,2,3,...$ y $l=0,...,n-1$ son números cuánticos, y $N_{n,l}$ toma la forma
+aquí han surgido los números cuánticos
+
+```{margin}
+$n$ es el `número cuántico principal`.
+```
+$$
+n=1,2,3,...
+$$
+
+```{margin}
+$l$ es el `número cuántico azimutal` o `momento angular`.
+```
+$$
+l=0,...,n-1
+$$
+
+$N_{n,l}$ toma la forma
 
 $$
 N_{n,l} = \left( \frac{2}{na_0} \right)^{3/2} \sqrt{\frac{(n-l-1)!}{2n[(n+l)!]^3}}
@@ -139,6 +161,22 @@ plt.ylabel("$4\pi r^2R^2$")
 plt.title("$4\pi r^2R^2(r)$ 1s, 2s ,3s y 4s")
 plt.show()
 
+**Responda las siguientes preguntas**
+
+¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 1s?
+
+**Respuesta**
+
+¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 2s?
+
+**Respuesta**
+
+¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 3s?
+
+**Respuesta**
+
+¿Encuentra algún patrón respecto al número de máximos?
+
 **Realice la gráfica de la parte radial de la función de onda para los orbitales 3s (n=3, l=0),3p (n=3, l=1) y 3d (n=3, l=2), y de $4\pi r^2R^2$.**
 
 # Gráfica
@@ -192,6 +230,10 @@ plt.xlabel("$r$")
 plt.ylabel("$4\pi r^2R^2$")
 plt.title("$4\pi r^2R^2$ 3s, 3p ,3d")
 plt.show()
+
+¿Cuál de los orbitales (3s/3p/3d) tiene el máximo del cuadrado de la parte radial más cerca del origen? Es decir, ¿Cuál de estos orbitales (3s/3p/3d) es más penetrante?
+
+**Respuesta**
 
 ## Referencias
 

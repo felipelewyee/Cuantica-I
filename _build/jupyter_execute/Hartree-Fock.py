@@ -1,4 +1,4 @@
-# Hartree-Fock-Roothan
+# Hartree-Fock-Roothan (HF)
 
 Tenemos que resolver:
 

@@ -331,9 +331,9 @@ Genere un mallado con las siguientes instrucciones
 x = np.linspace(0, Lx, 30x = np.linspace(0, Lx, 30)
 y = np.linspace(0, Ly, 30)
 ```
-                
+
+2. Genere el mallado con la instrucción meshgrid                
 ```
-2. Genere el mallado con la instrucción meshgrid
 X, Y = np.meshgrid(x, y)
 `````
 
