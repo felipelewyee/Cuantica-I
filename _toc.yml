@@ -28,6 +28,7 @@
   - file: Software
   - file: Hartree-Fock
   - file: Moller-Plesset
+  - file: DFT
   - file: Dimerizacion
 
 - part: Matemáticas

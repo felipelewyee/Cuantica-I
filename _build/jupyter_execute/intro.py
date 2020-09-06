@@ -128,6 +128,7 @@ PerturbacionesSinDegeneracion
 Software
 Hartree-Fock
 Moller-Plesset
+DFT
 Dimerizacion
 ```
 
