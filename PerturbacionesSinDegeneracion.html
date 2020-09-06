@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2. Teoría de perturbaciones (niveles de energía no degenerados) &#8212; Cuántica I</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
@@ -24,12 +25,10 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -115,7 +114,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo_Esfera_Rotor.html">
-   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+   3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
   </a>
  </li>
  <li class="toctree-l1">
@@ -270,6 +269,12 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
+        <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/PerturbacionesSinDegeneracion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
         
         
         <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/PerturbacionesSinDegeneracion.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
@@ -388,7 +393,7 @@ E_n^{(0)} = \bigg(n+\frac{1}{2}\bigg) h\nu
 <p>Realicemos numéricamente el cáculo de los elementos de matriz.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">factorial</span>
 <span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">eval_hermite</span> <span class="k">as</span> <span class="n">Hn</span>
 </pre></div>
@@ -397,7 +402,7 @@ E_n^{(0)} = \bigg(n+\frac{1}{2}\bigg) h\nu
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">π</span> <span class="o">=</span> <span class="n">pi</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">π</span> <span class="o">=</span> <span class="n">pi</span>
 <span class="n">k</span> <span class="o">=</span> <span class="mf">1902.5</span>             <span class="c1"># [ N·m^{-1}]  constante de fuerza del CO</span>
 <span class="n">m</span> <span class="o">=</span> <span class="mf">1.1391e-26</span>         <span class="c1"># [kg] masa reducida de C-O</span>
 <span class="n">ħ</span> <span class="o">=</span> <span class="mf">1.0545718e-34</span>      <span class="c1"># [J·s] </span>
@@ -440,7 +445,7 @@ E_n^{(0)} = \bigg(n+\frac{1}{2}\bigg) h\nu
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>    ν  = 6.504e+13 [Hz]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    ν  = 6.504e+13 [Hz]
 √(1/α) = 4.760e-12 [m]
 E0^(0) = 0.135 [eV]
 </pre></div>
@@ -449,7 +454,7 @@ E0^(0) = 0.135 [eV]
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podemos verificar que las eigenfunciones están normalizadas utilizando la regla del trapecio</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Podemos verificar que las eigenfunciones están normalizadas utilizando la regla del trapecio</span>
 <span class="c1"># Notemos que las eigenfunciones son reales por lo que Ψ*(x) = Ψ(x)</span>
 <span class="n">Ψ2</span>       <span class="o">=</span> <span class="n">Ψ0n</span><span class="o">*</span><span class="n">Ψ0n</span>
 <span class="n">Integral</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span><span class="n">Ψ2</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
@@ -458,7 +463,7 @@ E0^(0) = 0.135 [eV]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Integral: 1.000
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integral: 1.000
 </pre></div>
 </div>
 </div>
@@ -466,7 +471,7 @@ E0^(0) = 0.135 [eV]
 <p><strong>Procedemos a evaluar los elementos de matriz</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definimos la perturbación H&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definimos la perturbación H&#39;</span>
 <span class="n">c</span>  <span class="o">=</span> <span class="mi">600</span><span class="p">;</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">1e-4</span><span class="o">*</span><span class="p">(</span><span class="n">α</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
 
 <span class="n">Hp</span> <span class="o">=</span> <span class="n">c</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">d</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span>
@@ -494,7 +499,7 @@ E0^(0) = 0.135 [eV]
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Las matrices se pueden visulizar utilizando un mapa de colores</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Las matrices se pueden visulizar utilizando un mapa de colores</span>
 <span class="n">plotM</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">matrizHp</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greys&quot;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$H&#39;_</span><span class="si">{mn}</span><span class="s2"> [eV]$&quot;</span><span class="p">);</span>
 <span class="c1"># Notamos como los valores distinto de cero están cerca de la diagonal</span>
@@ -516,7 +521,7 @@ E_0^{(1)} = \frac{3d}{4\alpha²} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
 ¿Podría verificarla numéricamente?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
 
 <span class="c1"># De acuerdo con la expresión analítica</span>
 <span class="n">E01analitico</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">d</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="n">α</span><span class="o">/</span><span class="n">α</span>
@@ -538,7 +543,7 @@ E_0^{(1)} = \frac{3d}{4\alpha²} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>E0^(1) = 9.597e-03 [eV]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E0^(1) = 9.597e-03 [eV]
 E0^(1) = 9.597e-03 [eV]
 E0^(0) = 1.345e-01 [eV]
     En ≈ 1.441e-01 [eV]
@@ -552,7 +557,7 @@ E0^(0) = 1.345e-01 [eV]
 <p>Podría calcular la corrección a primer orden del primer nivel excitado del oscilador armónico.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
 
 <span class="c1"># De la teoría de perturbaciones tenemos que</span>
 <span class="c1"># E1^(1) = H&#39;_{1,1}</span>
@@ -570,7 +575,7 @@ E0^(0) = 1.345e-01 [eV]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>E1^(1) = 4.798e-02 [eV]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E1^(1) = 4.798e-02 [eV]
 E1^(0) = 4.035e-01 [eV]
     En ≈ 4.515e-01 [eV]
 </pre></div>
@@ -583,7 +588,7 @@ E1^(0) = 4.035e-01 [eV]
 <p>Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la primera corrección a la energía.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
 
 <span class="n">En1numerico</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="n">matrizHp</span><span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
 
@@ -596,7 +601,7 @@ E1^(0) = 4.035e-01 [eV]
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="n">En0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">En0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span> <span class="p">)</span>
     <span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="n">Enapprox</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">Enapprox</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span> <span class="p">)</span>
     <span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="n">En0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;n=</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
@@ -608,7 +613,7 @@ E1^(0) = 4.035e-01 [eV]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$E [eV]$&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$E [eV]$&#39;)
 </pre></div>
 </div>
 <img alt="_images/PerturbacionesSinDegeneracion_16_1.png" src="_images/PerturbacionesSinDegeneracion_16_1.png" />
@@ -623,7 +628,7 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H’_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 \end{align}</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Previamente realizamos el gráfico de los elementos de matriz</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Previamente realizamos el gráfico de los elementos de matriz</span>
 
 <span class="c1"># Las matrices se pueden visulizar utilizando un mapa de colores</span>
 <span class="n">plotM</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">matrizHp</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greys&quot;</span><span class="p">);</span>
@@ -639,7 +644,7 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H’_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sin embargo, los términos a sumar son los elementos de matriz </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sin embargo, los términos a sumar son los elementos de matriz </span>
 <span class="c1"># al cuadrado dividos por la diferencia de energía del nivel a corregir.</span>
 
 <span class="c1"># Analicemos los términos de la suma cuando n = 0, es decir el estado base</span>
@@ -654,7 +659,7 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H’_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafiquemos los sumandos</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafiquemos los sumandos</span>
 <span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">m_max</span><span class="p">),</span><span class="n">Sumandos</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s1">&#39;o-&#39;</span><span class="p">);</span>
 <span class="n">xticks</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]);</span>
 <span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$E$ [eV]&quot;</span><span class="p">)</span>
@@ -665,7 +670,7 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H’_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;m&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;m&#39;)
 </pre></div>
 </div>
 <img alt="_images/PerturbacionesSinDegeneracion_20_1.png" src="_images/PerturbacionesSinDegeneracion_20_1.png" />
@@ -673,13 +678,13 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H’_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Notamos que los sumandos siempre son negativos para el estado base</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Notamos que los sumandos siempre son negativos para el estado base</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot; Máximo valor de los sumandos: </span><span class="si">{0:.3e}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="nb">max</span><span class="p">(</span><span class="n">Sumandos</span><span class="p">)</span><span class="o">/</span><span class="n">e</span> <span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span> Máximo valor de los sumandos: -3.143e-41
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Máximo valor de los sumandos: -3.143e-41
 </pre></div>
 </div>
 </div>
@@ -690,7 +695,7 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H’_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 <p>Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la segunda corrección a la energía. ¿Es muy diferente al resultado de la corrección a primer orden?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
 </pre></div>
 </div>
 </div>

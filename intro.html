@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La Química Cuántica a tu alcance &#8212; Cuántica I</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
@@ -24,12 +25,10 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -114,7 +113,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo_Esfera_Rotor.html">
-   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+   3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
   </a>
  </li>
  <li class="toctree-l1">
@@ -269,6 +268,12 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
+        <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/intro.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
         
         
         <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
@@ -312,6 +317,23 @@
 <p>M. en C. Juan Felipe Huan Lew Yee: <a class="reference external" href="mailto:felipe&#46;lew&#46;yee&#37;&#52;&#48;gmail&#46;com">felipe<span>&#46;</span>lew<span>&#46;</span>yee<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
 <p>Dr. Jorge Martín del Campo Ramirez: <a class="reference external" href="mailto:jormacara&#37;&#52;&#48;gmail&#46;com">jormacara<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
 <p>Dr. José Eduardo Barrios Vargas: <a class="reference external" href="mailto:j&#46;e&#46;barrios&#37;&#52;&#48;gmail&#46;com">j<span>&#46;</span>e<span>&#46;</span>barrios<span>&#64;</span>gmail<span>&#46;</span>com</a></p>
+<p>Se ha buscado reducir lo más posible los antecedentes matemáticos requeridos, por lo que en la mayoría de los ejercicios se plantea el problema y se pasa directamente a la solución sin realizar el desarrollo. Se asume que las ecuaciones han sido previamente revisadas en clase, sin embargo, en muchos notebooks pueden encontrarse partes clave del desarrollo matemático ocultas en una celda como la siguiente</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Celda con contenido matemático oculto</p>
+<p>La lectura de este apartado matemático oculto es opcional si ya se conoce la deducción previa de las ecuaciones, pero aquí está por si alguien lo necesita. Aquí van algunas funciones trigonométricas</p>
+<div class="math notranslate nohighlight">
+\[
+y = sin(x)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y = cos(x)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y = tan(x) = \frac{sin(x)}{cos(x)}
+\]</div>
+</div>
 <p>Para los alumnos del curso de <code class="docutils literal notranslate"><span class="pre">Química</span> <span class="pre">Cuántca</span> <span class="pre">I</span></code> se recomienda la lectura en el orden de los capítulos, el cual puede seguirse utilizando la barra de navegación que aparece del lado izquierdo en computadoras, o con el menú emergente en dispositivos móviles. Este libro permite interactuar con el contenido, para lo cual se recomienda alguna de las dos opciones siguientes:</p>
 <div class="tip admonition">
 <p class="admonition-title">Ejecución de los notebooks (en línea)</p>
@@ -340,7 +362,7 @@
 <p>A lo largo de los ejercicios encontrará celdas con el código correspondiente, y celdas vacías con una nota para indicar que debe ser llenada siguiendo alguna instrucción, <strong>como la siguiente</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Llene la siguiente celda con su código</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Llene la siguiente celda con su código</span>
 </pre></div>
 </div>
 </div>
@@ -352,12 +374,12 @@
 <p>Posteriormente, cuando se solicite realizar algo usando código ya presentado, se mostrará la respuesta oculta para permitir que se intente resolver el ejercicio en la celda vacía por cuenta propia. Para revelar la respuesta hay que presionar en el botón con el símbolo + como en la siguiente celda</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bienvenidos al manual de Química Cuántica I&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bienvenidos al manual de Química Cuántica I&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Bienvenidos al manual de Química Cuántica I
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bienvenidos al manual de Química Cuántica I
 </pre></div>
 </div>
 </div>

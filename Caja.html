@@ -2,9 +2,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1. Partícula en la caja &#8212; Cuántica I</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
@@ -14,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
@@ -24,12 +25,10 @@
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/mystnb.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -115,7 +114,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo_Esfera_Rotor.html">
-   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+   3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
   </a>
  </li>
  <li class="toctree-l1">
@@ -270,6 +269,12 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
+        <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/Caja.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
         
         
         <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Caja.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
@@ -347,44 +352,55 @@ V(x) = \left\{
   \end{array}
   \right.
 \end{split}\]</div>
-<p>Para encontrar la función de onda en la región II hay que escribir la de Schrodinger
-\begin{equation}
+<p>Para encontrar la función de onda en la región II hay que escribir la de Schrodinger</p>
+<div class="math notranslate nohighlight">
+\[
 \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} +V(x)\right)\psi(x)=\varepsilon\psi(x)
-\end{equation}</p>
-<p>cuya solución, como se vio anteriormente, es
-\begin{equation}
+\]</div>
+<p>cuya solución es
+$<span class="math notranslate nohighlight">\(
 \begin{array}{lll}
-\psi(x) = Acos(kx) + Bsin(kx)      &amp; \mathrm{si\ } 0 \leq x \leq L; &amp; k^2 = \frac{2mE}{\hbar^2}\
-\end{array}
-\end{equation}</p>
-<p>La función de onda debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, <span class="math notranslate nohighlight">\(\psi_{I}(0) = \psi_{II}(0) = 0\)</span>. Esto implica que <span class="math notranslate nohighlight">\(A=0\)</span>, ya que
-\begin{equation}
+  \psi(x) = Acos(kx) + Bsin(kx)      &amp; \mathrm{si\ } 0 \leq x \leq L; &amp; k^2 = \frac{2mE}{\hbar^2}\\
+  \end{array}
+\)</span>$</p>
+<p>posteriormente hay que recurrir a las condiciones a la frontera.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Condiciones a la frontera</p>
+<p>La función de onda debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, <span class="math notranslate nohighlight">\(\psi_{I}(0) = \psi_{II}(0) = 0\)</span>. Esto implica que <span class="math notranslate nohighlight">\(A=0\)</span>, ya que</p>
+<div class="math notranslate nohighlight">
+\[
 \psi_{II}(0) = 0 = Acos(0) + Bsin(0) = A
-\end{equation}</p>
-<p>Por la continuidad con la región III también se cumple <span class="math notranslate nohighlight">\(\psi_{II}(L) = \psi_{III}(L) = 0\)</span>, es decir
-\begin{equation}
+\]</div>
+<p>Por la continuidad con la región III también se cumple <span class="math notranslate nohighlight">\(\psi_{II}(L) = \psi_{III}(L) = 0\)</span>, es decir</p>
+<div class="math notranslate nohighlight">
+\[
 \psi_{II}(L) = 0 = Bsin(kL)
-\end{equation}</p>
-<p>Ya obtuvimos que <span class="math notranslate nohighlight">\(A\)</span> vale cero, sin embargo, <span class="math notranslate nohighlight">\(B\)</span> no puede ser cero porque <span class="math notranslate nohighlight">\(\psi_{II}\)</span> se anularía. La única forma de que se cumpla la ecuación anterior es que <span class="math notranslate nohighlight">\(kL\)</span> sea un múltiplo de <span class="math notranslate nohighlight">\(\pi\)</span>, es decir <span class="math notranslate nohighlight">\(kL = n \pi\)</span>, o lo que es lo mismo
-\begin{equation}
+\]</div>
+<p>Ya obtuvimos que <span class="math notranslate nohighlight">\(A\)</span> vale cero, sin embargo, <span class="math notranslate nohighlight">\(B\)</span> no puede ser cero porque <span class="math notranslate nohighlight">\(\psi_{II}\)</span> se anularía. La única forma de que se cumpla la ecuación anterior es que <span class="math notranslate nohighlight">\(kL\)</span> sea un múltiplo de <span class="math notranslate nohighlight">\(\pi\)</span>, es decir <span class="math notranslate nohighlight">\(kL = n \pi\)</span>, o lo que es lo mismo</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{array}{ll}
-k=\frac{n\pi}{L};      &amp; n=1,2,3,…\
-\end{array}
-\end{equation}</p>
-<p>Hemos obtenido que
-\begin{equation}
+  k=\frac{n\pi}{L};      &amp; n=1,2,3,...\\
+  \end{array}
+\end{split}\]</div>
+<p>Hemos obtenido que</p>
+<div class="math notranslate nohighlight">
+\[
 \psi = B sin \left( \frac{n \pi x}{L}\right)
-\end{equation}</p>
-<p>Para encontrar el valor de B hay que normalizar la función de onda, resultando que:
-\begin{equation}
+\]</div>
+</div>
+<p>Para encontrar el valor de B hay que normalizar la función de onda, resultando que:</p>
+<div class="math notranslate nohighlight">
+\[
 \psi_n(x)=\left(\frac{2}{L}\right)^{1/2}sin\left(\frac{n\pi x}{L}\right)
-\end{equation}</p>
-<p>Al sustituir la función de onda se obtiene la expresión de la energía, que es
-\begin{equation}
-\begin{array}{ll}
-E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      &amp; n=1,2,3,…\
-\end{array}
-\end{equation}</p>
+\]</div>
+<p>Al sustituir la función de onda se obtiene la expresión de la energía, que es</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  \begin{array}{ll}
+  E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      &amp; n=1,2,3,...\\
+  \end{array}
+\end{split}\]</div>
 <p><strong>Grafique la función de onda y el cuadrado de la función de onda para n=1 para L=4.0 A</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -399,14 +415,14 @@ E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      &amp; n=1,2,3,…\
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica de psi_1 y su cuadrado</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica de psi_1 y su cuadrado</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -446,14 +462,14 @@ E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      &amp; n=1,2,3,…\
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica de psi_1, psi_2, psi_3, psi_4 y su cuadrado</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica de psi_1, psi_2, psi_3, psi_4 y su cuadrado</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -517,14 +533,14 @@ E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      &amp; n=1,2,3,…\
 <p>Como estamos haciendo una secuencia de gráficas donde aumentamos n de uno en uno, podemos hacerlo con un ciclo for. <strong>Repita la gráfica de la función de onda con <span class="math notranslate nohighlight">\(n=1,2,3,4\)</span> utilizando un ciclo for</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para 4 gráficas en las que solo cambia el valor de n, use un for</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para 4 gráficas en las que solo cambia el valor de n, use un for</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica de psi_1, psi_2, psi_3, psi_4 y su cuadrado con for</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica de psi_1, psi_2, psi_3, psi_4 y su cuadrado con for</span>
 
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -553,22 +569,23 @@ E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      &amp; n=1,2,3,…\
 <p><strong>Haga la gráfica de E en función de n para los primeros 10 niveles energéticos de un electrón en una caja.</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>\begin{equation}
-E = \frac{h^2 n^2}{8mL^2}
-\end{equation}
-Con <span class="math notranslate nohighlight">\(n=1,2,3,...\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+E = \frac{\hbar^2 \pi^2 n^2}{2mL^2}
+\]</div>
+<p>Con <span class="math notranslate nohighlight">\(n=1,2,3,...\)</span></p>
 </div>
 <p>Considere h=1 y m=1. Esto se llama unidades atómicas. Tome L=1 A</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">2.0</span><span class="o">/</span><span class="p">(</span><span class="mf">8.0</span><span class="o">*</span><span class="p">(</span><span class="mf">1.0</span><span class="o">**</span><span class="mf">2.0</span><span class="p">)),</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -586,17 +603,21 @@ Con <span class="math notranslate nohighlight">\(n=1,2,3,...\)</span></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Haga la integral</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^L \psi_1 \psi_3 dx
+\]</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Integral</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Integral</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
 
 <span class="n">L</span><span class="o">=</span><span class="mf">2.0</span>
@@ -614,7 +635,7 @@ Con <span class="math notranslate nohighlight">\(n=1,2,3,...\)</span></p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Integrales
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integrales
 psi_1psi_1 (1.0, 1.1102230246251565e-14)
 psi_3psi_3 (1.0000000000000002, 1.1102230246251565e-14)
 psi_1psi_3 (4.163336342344337e-17, 6.473948889086305e-10)
@@ -626,34 +647,38 @@ psi_1psi_3 (4.163336342344337e-17, 6.473948889086305e-10)
 <div class="section" id="caja-2d">
 <h2><span class="section-number">1.2. </span>Caja 2D<a class="headerlink" href="#caja-2d" title="Permalink to this headline">¶</a></h2>
 <p>También existe la partícula en una caja para 2-Dimensiones. Se confina la partícula en <span class="math notranslate nohighlight">\(x\varepsilon[0,L_x]\)</span> y <span class="math notranslate nohighlight">\(y\varepsilon[0,L_y]\)</span>.</p>
-<p>La ecuación de Schrodinger a resolver es
-\begin{equation}
+<p>La ecuación de Schrodinger a resolver es</p>
+<div class="math notranslate nohighlight">
+\[
 -\frac{\hbar^2}{2m} \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right)\psi(x,y)=E\psi(x,y)
-\end{equation}</p>
-<p>Que se resuelve por el método de separación de variables y se obtiene:
-\begin{equation}
+\]</div>
+<p>Que se resuelve por el método de separación de variables y se obtiene:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{array}{ll}
-k_x=\frac{n_x\pi}{L_x};      &amp; n_x=1,2,3,…\
-k_y=\frac{n_y\pi}{L_y};      &amp; n_y=1,2,3,…\
-\end{array}
-\end{equation}</p>
-<p>\begin{equation}
+  k_x=\frac{n_x\pi}{L_x};      &amp; n_x=1,2,3,...\\
+  k_y=\frac{n_y\pi}{L_y};      &amp; n_y=1,2,3,...\\
+  \end{array}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
 \psi_{n_x,n_y}(x)=\left(\frac{2}{L_x}\right)^{1/2} \left(\frac{2}{L_y}\right)^{1/2}sin\left(\frac{n_x\pi x}{L_x}\right)sin\left(\frac{n_y\pi y}{L_y}\right)
-\end{equation}</p>
-<p>\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
-\end{equation}</p>
+\]</div>
 <p><strong>Obtenga la gráfica de <span class="math notranslate nohighlight">\(\psi_{1,1}\)</span>, es decir <span class="math notranslate nohighlight">\(n_x=1\)</span> y <span class="math notranslate nohighlight">\(n_y=1\)</span>, y de <span class="math notranslate nohighlight">\(|\psi_{1,1}|^2\)</span> con <span class="math notranslate nohighlight">\(L_x = L_y = 4.0\)</span></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
@@ -693,14 +718,14 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 <p><strong>Obtenga las gráfica de <span class="math notranslate nohighlight">\(\psi_{3,3}\)</span> y <span class="math notranslate nohighlight">\(|\psi_{3,3}|^2\)</span> con <span class="math notranslate nohighlight">\(L_x = L_y = 4.0\)</span></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
