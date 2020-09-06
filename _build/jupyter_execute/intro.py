@@ -8,6 +8,25 @@ Dr. Jorge Martín del Campo Ramirez: [jormacara@gmail.com](mailto:jormacara@gmai
 
 Dr. José Eduardo Barrios Vargas: [j.e.barrios@gmail.com](mailto:j.e.barrios@gmail.com)
 
+Se ha buscado reducir lo más posible los antecedentes matemáticos requeridos, por lo que en la mayoría de los ejercicios se plantea el problema y se pasa directamente a la solución sin realizar el desarrollo. Se asume que las ecuaciones han sido previamente revisadas en clase, sin embargo, en muchos notebooks pueden encontrarse partes clave del desarrollo matemático ocultas en una celda como la siguiente
+```{admonition} Inserto matemático: Celda con contenido matemático oculto
+:class: dropdown
+
+La lectura de este apartado matemático oculto es opcional si ya se conoce la deducción previa de las ecuaciones, pero aquí está por si alguien lo necesita. Aquí van algunas funciones trigonométricas
+
+$$
+y = sin(x)
+$$
+
+$$
+y = cos(x)
+$$
+
+$$
+y = tan(x) = \frac{sin(x)}{cos(x)}
+$$
+```
+
 Para los alumnos del curso de `Química Cuántca I` se recomienda la lectura en el orden de los capítulos, el cual puede seguirse utilizando la barra de navegación que aparece del lado izquierdo en computadoras, o con el menú emergente en dispositivos móviles. Este libro permite interactuar con el contenido, para lo cual se recomienda alguna de las dos opciones siguientes:
 
 ````{admonition} Ejecución de los notebooks (en línea)

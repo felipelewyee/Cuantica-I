@@ -24,7 +24,7 @@ $$
 
 Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por secciones.
 
-```{admonition} Hamiltoniano por secciones
+```{admonition} Inserto matemático: Hamiltoniano por secciones
 :class: dropdown
 
 Si analizamos la ecuación de Schrodiger por zonas se tiene:
@@ -63,7 +63,7 @@ L = 1.2
 
 La función de onda debe ser contínua, por lo que podemos igualar la función de onda en el punto donde se unen las zonas, y obtener nuevas ecuaciones.
 
-```{admonition} Condiciones de Frontera
+```{admonition} Inserto matemático: Condiciones de Frontera
 :class: dropdown
 | Zonas | Condición | Ecuación |
 |:---: |:---: | :---:    |
@@ -80,14 +80,16 @@ A partir de aquí podemos ayudarnos de la simetría del problema. Empezaremos as
 ## Simetría Par
 
 Estamos buscando los valores de E que resuelvan la ecuación
-\begin{equation}
+
+$$
 tanh \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{U-E}}
-\end{equation}
+$$
 
 Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos $f(E)$
-\begin{equation}
+
+$$
 f(E) = tanh^2 \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{U-E}
-\end{equation}
+$$
 
 Cuando se tenga el $E$ correcto se cumplirá $f(E) = 0$, así que solo tenemos que buscar los ceros (o raíces) de la función.
 
@@ -140,11 +142,11 @@ print(E_segundoguess)
 Defina funciones para
 
 $$
-k_1 = \frac{2mE}{hbar^2}
+k_1 = \frac{2mE}{\hbar^2}
 $$
 
 $$
-k_2 = \frac{2m(V-E)}{hbar**2}
+k_2 = \frac{2m(V-E)}{\hbar^2}
 $$
 
 # Defina funciones

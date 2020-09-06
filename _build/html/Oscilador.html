@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="1. Solución Radial" href="Radial.html" />
-    <link rel="prev" title="3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido" href="Anillo_Esfera_Rotor.html" />
+    <link rel="prev" title="3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido" href="Anillo_Esfera_Rotor.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -114,7 +114,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo_Esfera_Rotor.html">
-   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+   3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -312,33 +312,40 @@
                 
   <div class="section" id="oscilador-armonico-cuantico">
 <h1><span class="section-number">4. </span>Oscilador Armónico Cuántico<a class="headerlink" href="#oscilador-armonico-cuantico" title="Permalink to this headline">¶</a></h1>
-<p>El sistema es una partícula que se mueve en un potencial dado por
-\begin{equation}
+<p>El sistema es una partícula que se mueve en un potencial dado por</p>
+<div class="math notranslate nohighlight">
+\[
 V = \frac{1}{2} kx^2
-\end{equation}
-donde <span class="math notranslate nohighlight">\(k\)</span> es una constante. En mecánica clásica podemos encontrar sistemas con este potencial como los resortes, mientras que en química cúantica esto sirve para modelar la vibración de los enlaces.</p>
-<p>En este caso, el Hamiltoniano contiene la energía cinética y el potencial
-\begin{equation}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(k\)</span> es una constante. En mecánica clásica podemos encontrar sistemas con este potencial como los resortes, mientras que en química cúantica esto sirve para modelar la vibración de los enlaces.</p>
+<p>En este caso, el Hamiltoniano contiene la energía cinética y el potencial</p>
+<div class="math notranslate nohighlight">
+\[
 H = -\frac{\hbar^2}{2m} \frac{d}{dx} + \frac{1}{2} kx^2
-\end{equation}</p>
-<p>y la ecuación de Schrodinger a resolver es
-\begin{equation}
+\]</div>
+<p>y la ecuación de Schrodinger a resolver es</p>
+<div class="math notranslate nohighlight">
+\[
 -\frac{\hbar^2}{2m} \frac{d}{dx}\psi + \frac{1}{2} kx^2 \psi = E \psi
-\end{equation}</p>
-<p>esta es una ecuación cuyas soluciones a la energía y la función de onda son
-\begin{equation}
+\]</div>
+<p>esta es una ecuación cuyas soluciones a la energía y la función de onda son</p>
+<div class="math notranslate nohighlight">
+\[
 E_\nu = \left(\nu + \frac{1}{2} \right) \hbar \omega
-\end{equation}</p>
-<p>\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \psi_\nu = N_\nu H_\nu(\alpha x) e^{-\alpha^2x^2/2}
-\end{equation}</p>
-<p>aquí <span class="math notranslate nohighlight">\(\nu\)</span> es un número cuántico tal que <span class="math notranslate nohighlight">\(\nu = 0,1,2,3,...\)</span>, y los términos <span class="math notranslate nohighlight">\(N_\nu\)</span> y <span class="math notranslate nohighlight">\(\alpha\)</span> están dados por
-\begin{equation}
+\]</div>
+<p>aquí <span class="math notranslate nohighlight">\(\nu\)</span> es un número cuántico tal que <span class="math notranslate nohighlight">\(\nu = 0,1,2,3,...\)</span>, y los términos <span class="math notranslate nohighlight">\(N_\nu\)</span> y <span class="math notranslate nohighlight">\(\alpha\)</span> están dados por</p>
+<div class="math notranslate nohighlight">
+\[
 N_\nu = \left(\frac{\alpha}{2^\nu \nu! \pi^{1/2}} \right)^{1/2}
-\end{equation}</p>
-<p>\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \alpha = \left( \frac{mk}{\hbar^2} \right)^{1/4}
-\end{equation}</p>
+\]</div>
 <p><span class="math notranslate nohighlight">\(H_\nu(x)\)</span> son los polinomios de Hermite</p>
 <table class="colwidths-auto table">
 <thead>
@@ -368,6 +375,13 @@ N_\nu = \left(\frac{\alpha}{2^\nu \nu! \pi^{1/2}} \right)^{1/2}
 <p>Compare con Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005, p.62.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">hermite</span> <span class="k">as</span> <span class="n">hermite</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -403,13 +417,20 @@ N_\nu = \left(\frac{\alpha}{2^\nu \nu! \pi^{1/2}} \right)^{1/2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Oscilador_3_0.png" src="_images/Oscilador_3_0.png" />
-<img alt="_images/Oscilador_3_1.png" src="_images/Oscilador_3_1.png" />
+<img alt="_images/Oscilador_4_0.png" src="_images/Oscilador_4_0.png" />
+<img alt="_images/Oscilador_4_1.png" src="_images/Oscilador_4_1.png" />
 </div>
 </div>
 <p><strong>Grafique la función de onda del oscilador Harmónico cuántico para <span class="math notranslate nohighlight">\(\nu=1,3,5\)</span>. Considere <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(k=1\)</span>, <span class="math notranslate nohighlight">\(\hbar=1\)</span>.</strong></p>
 <p>Compare con Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005, p.62.</p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">hermite</span> <span class="k">as</span> <span class="n">hermite</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -446,8 +467,8 @@ N_\nu = \left(\frac{\alpha}{2^\nu \nu! \pi^{1/2}} \right)^{1/2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Oscilador_5_0.png" src="_images/Oscilador_5_0.png" />
-<img alt="_images/Oscilador_5_1.png" src="_images/Oscilador_5_1.png" />
+<img alt="_images/Oscilador_7_0.png" src="_images/Oscilador_7_0.png" />
+<img alt="_images/Oscilador_7_1.png" src="_images/Oscilador_7_1.png" />
 </div>
 </div>
 <div class="section" id="referencias">
@@ -486,7 +507,7 @@ N_\nu = \left(\frac{\alpha}{2^\nu \nu! \pi^{1/2}} \right)^{1/2}
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="Anillo_Esfera_Rotor.html" title="previous page"><span class="section-number">3. </span>Parícula en el anillo, Partícula en la esfera y Rotor Rígido</a>
+    <a class='left-prev' id="prev-link" href="Anillo_Esfera_Rotor.html" title="previous page"><span class="section-number">3. </span>Partícula en el anillo, Partícula en la esfera y Rotor Rígido</a>
     <a class='right-next' id="next-link" href="Radial.html" title="next page"><span class="section-number">1. </span>Solución Radial</a>
 
     </div>

@@ -1,9 +1,10 @@
 # Moller-Plesset
 
 Las ecuaciones de Moller-Plesset surgen de aplicar la teoría de perturbaciones a Hartree-Fock. Para ello se toma como sistema conocido el Hamiltoniano de Hartree-Fock ($\mathcal{H}_0$) y se le aplica  una perturbación ($\mathcal{V}$) para convertirlo en el Hamiltoniano del sistema con correlación electrónica ($\mathcal{H}$).
-\begin{equation}
+
+$$
 \mathcal{H} = \mathcal{H}_0 + \mathcal{V}
-\end{equation}
+$$
 
 Para comenzar, **importe las librerías numpy y psi4**.
 
@@ -58,9 +59,10 @@ print("nbf =",nbf," nmo =",nmo," ne =",ne)
 # nbf, nmo y ne
 
 Vamos a necesitar integrales de repulsión electónica
-\begin{equation}
+
+$$
 [\mu \nu | \sigma \lambda] = \int \int \frac{\mu(r_1) \nu(r_1) \sigma(r_2) \lambda(r_2)}{ |r_1 - r_2| } dr_1 dr_2
-\end{equation}
+$$
 donde $\mu$, $\nu$, $\sigma$ y $\lambda$ se refieren a orbitales atómicos.
 
 **Obtenga las las integrales $[\mu\nu|\sigma\lambda]$ y guardarlas en la variable I_AO**
@@ -82,15 +84,16 @@ Los software de estructura electrónica usan formas optimizados de las ecuacione
 ```
 
 La teoría de Moller-Plesset requiere que estas integrales sean transformadas a orbital molecular. Recuerde que un orbital molecular es una combinación lineal de orbitales atómicos
-\begin{equation}
+
+$$
 p(r) = \sum_\mu C_{\mu p} \mu (r)
-\end{equation}
+$$
 
 En el siguiente recuadro **declare una variable I_MO de dimensión ($N_{MO}$,$N_{MO}$,$N_{MO}$,$N_{MO}$), y lleve a cabo la transformación**
 
-\begin{equation}
+$$
 [pq|rt] = \sum_{\mu\nu\sigma\lambda}^N C_{\mu p} C_{\nu q} C_{\sigma r} C_{\lambda s} [\mu \nu | \sigma \lambda]
-\end{equation}
+$$
 
 ```{tip}
 Utilice 4 for para recorrer los orbitales moleculares, y 4 for para recorrer las funciones de base.
@@ -130,19 +133,23 @@ epsilon = np.array(wfn.epsilon_a())
 # epsilon
 
 Recordando teoría de perturbaciones, es posible realizar correcciones de n-orden a la energía $E_i^{(n)}$, tal que la energía electrónica total del estado basal ($i=0$) es
-\begin{equation}
+
+$$
 E = E_0^{(0)} + E_0^{(1)} + E_0^{(2)} + E_0^{(3)} + E_0^{(4)} ...
-\end{equation}
+$$
 
 dependiendo del n-orden hasta el que se haga la corrección sobre la energía al cálculo se le denomina MPn, siendo los más comunes son MP2, MP3 y MP4.
 
 En Moller-Plesset estos términos son:
-\begin{equation}
+
+$$
 E_0^{(0)} = 2\sum_{a}^{N_e/2} {\varepsilon_a}
-\end{equation}
-\begin{equation}
+$$
+
+$$
 E_0^{(1)} = -2 \sum_{a}^{N_e/2}\sum_{b}^{N_e/2} [aa|bb] - [ab|ba]
-\end{equation}
+$$
+
 donde los índices $a$, $b$ refieren a orbitales moleculares ocupados, y los términos $\varepsilon_a$, $\varepsilon_b$, a sus energías.
 
 **Calcule $E_0^{(0)}$ y $E_0^{(1)}$**.
@@ -164,9 +171,9 @@ for a in range(int(ne/2)):
 
 **Calcule la energía total de MP1**, recuerde sumar la energía nuclear, es decir
 
-\begin{equation}
+$$
 E_{MP1} = E_{nuc} + E_0^{(0)} + E_0^{(1)}
-\end{equation}
+$$
 
 E_MP1 = E_nuc + E_0 + E_1
 print("E_MP1 =",E_MP1)
@@ -178,26 +185,30 @@ Calcule la diferencia entre $E_{MP1}$ y la energía de Hartree-Fock que calculó
 **Respuesta:**
 
 La energía de Hartree-Fock se calcula como
-\begin{equation}
+
+$$
 E_{HF} = E_{nuc} + 2\sum_a^{N_e/2} {\varepsilon_a} -2 \sum_{a}^{N/2}\sum_{b}^{N/2} [aa|bb] - [ab|ba]
-\end{equation}
+$$
 
 esta es exactamente la misma expresion que $E_{MP1}$. La primera corrección a la energía aparece en $E_{MP2}$. La corrección a segundo orden es
-\begin{equation}
+
+$$
 E_0^{(2)} = 2 \sum_{a}^{N_e/2}\sum_{b}^{N_e/2}\sum_{r=N_e+1}^{N_{bf}}\sum_{s=N_e+1}^{N_{bf}} \frac{[ar|bs][ra|sb]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}} - \sum_{abrs}^{N_e/2} \frac{[ar|bs][rb|sa]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}}
-\end{equation}
+$$
 
 donde $r$, $s$ son los orbitales moleculares desocupados.
 
 **Calcule $E_0^{(2)}$, la energía de $MP2$** dada por
-\begin{equation}
+
+$$
 E_{MP2} = E_{nuc} + E_0^{(0)} + E_0^{(1)} + E_0^{(2)}
-\end{equation}
+$$
 
 **y la energía de correlación**
-\begin{equation}
+
+$$
 E_{corr} = E_{MP2} - E_{HF}
-\end{equation}
+$$
 
 E_2 = 0
 for a in range(int(ne/2)):
@@ -216,14 +227,16 @@ print("E_corr =",E_MP2-E_HF)
 
 ```{important}
 Generalizando, la energía total de MPn es
-\begin{equation}
+
+$$
 E_{MPn} = E_{nuc} + E_0^{(0)} + E_0^{(1)} + E_0^{(2)} + ... + E_0^{(n)}
-\end{equation}
+$$
 
 Al restarle la energía de Hartree-Fock se obtiene
-\begin{equation}
+
+$$
 E_{corr} = E_{MPn} - E_{HF} = E_0^{(2)} + ... + E_0^{(n)}
-\end{equation}
+$$
 ```
 
 **Adapte la instrucción a MP2 junto con la base que usó para comprobar sus resultados**.

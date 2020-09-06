@@ -114,7 +114,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo_Esfera_Rotor.html">
-   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+   3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
   </a>
  </li>
  <li class="toctree-l1">
@@ -317,10 +317,11 @@
                 
   <div class="section" id="hartree-fock-roothan">
 <h1><span class="section-number">2. </span>Hartree-Fock-Roothan<a class="headerlink" href="#hartree-fock-roothan" title="Permalink to this headline">¶</a></h1>
-<p>Tenemos que resolver:
-\begin{equation}
+<p>Tenemos que resolver:</p>
+<div class="math notranslate nohighlight">
+\[
 \textbf{F} \textbf{C} = \textbf{S}\textbf{C}\varepsilon
-\end{equation}</p>
+\]</div>
 <ul class="simple">
 <li><p><span style="color:green"> <strong>Paso 1.</strong> Especificar molécula: Coordenadas de los núcleos <span class="math notranslate nohighlight">\(\{R_A\}\)</span>, Carga de los núcleos <span class="math notranslate nohighlight">\(\{Z_A\}\)</span>, Número de electrones <span class="math notranslate nohighlight">\((N)\)</span>, y funciones base <span class="math notranslate nohighlight">\(\{\phi_i\}\)</span></span></p></li>
 <li><p><span style="color:green"> <strong>Paso 2.</strong> Calcular <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(H\)</span>, <span class="math notranslate nohighlight">\((ij|kl)\)</span>.</span></p></li>
@@ -364,25 +365,27 @@
 </div>
 </div>
 <p><strong>Paso 2.</strong> Calcular <span class="math notranslate nohighlight">\(S\)</span>, <span class="math notranslate nohighlight">\(H\)</span>, <span class="math notranslate nohighlight">\((ij|kl)\)</span>.</p>
-<span style="color:red">
-\begin{equation}
+<div class="math notranslate nohighlight">
+\[
 S_{ij} = \int \psi_i^*(r) \psi_j(r) dr
-\end{equation}
-</span>
-\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 H_{ij} = \int \psi_i^*(r) \hat{H} \psi_j(r) dr
-\end{equation}
-<span style="color:red">
-\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 H_{ij} = T_{ij} + V_{ij}
-\end{equation}
-</span>
-\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \psi_i(r) = \sum_\mu a_\mu \phi_\mu(r)
-\end{equation}
-\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 (\mu \nu|\sigma \lambda) = \int \int \phi_\mu^*(r_1) \phi_\nu(r_1) \frac{1}{r_{12}} \phi_\sigma^*(r_2) \phi_\lambda(r_2) dr_1 dr_2
-\end{equation}<div class="cell docutils container">
+\]</div>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wfn</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">Wavefunction</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">H2</span><span class="p">)</span>
 <span class="n">mints</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">core</span><span class="o">.</span><span class="n">MintsHelper</span><span class="p">(</span><span class="n">wfn</span><span class="o">.</span><span class="n">basisset</span><span class="p">())</span>
@@ -437,16 +440,21 @@ H_{ij} = T_{ij} + V_{ij}
 </div>
 </div>
 <ul class="simple">
-<li><p><strong>Paso 4.</strong> Calcular <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(J\)</span> y <span class="math notranslate nohighlight">\(K\)</span>.
-\begin{equation}
+<li><p><strong>Paso 4.</strong> Calcular <span class="math notranslate nohighlight">\(P\)</span>, <span class="math notranslate nohighlight">\(J\)</span> y <span class="math notranslate nohighlight">\(K\)</span>.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
 P_{\mu \nu} = \sum_a^{N/2} C_{\mu a} C_{\nu a}^*
-\end{equation}
-\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 J_{\mu \nu} = \sum_{\lambda \sigma} P_{\lambda \sigma} (\mu \nu | \sigma \lambda)
-\end{equation}
-\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 K_{\mu \nu} = \sum_{\lambda \sigma} P_{\lambda \sigma} (\mu \lambda | \sigma \nu)
-\end{equation}</p></li>
+\]</div>
+<ul class="simple">
 <li><p><strong>Paso 5.</strong> Calcular <span class="math notranslate nohighlight">\(F=H+2J-K\)</span></p></li>
 <li><p><strong>Paso 6.</strong> Resolver <span class="math notranslate nohighlight">\(FC=SC\varepsilon\)</span></p></li>
 <li><p><strong>Paso 7.</strong> <span class="math notranslate nohighlight">\(E_{elec} = \sum_\mu \sum_\nu P_{\nu \mu}(H_{\mu \nu} + F_{\mu \nu})\)</span></p></li>
@@ -601,13 +609,15 @@ Energia Electronica:  -1.8304383804166122
 </div>
 </div>
 </div>
-<p><strong>Paso 9.</strong> Calcular energía nuclear y sumarla a la energía electrónica.
-\begin{equation}
+<p><strong>Paso 9.</strong> Calcular energía nuclear y sumarla a la energía electrónica.</p>
+<div class="math notranslate nohighlight">
+\[
 E_{\rm nuc} = \sum_{A&gt;B}\frac{Z_AZ_B}{r_{AB}}
-\end{equation}
-\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 E_{Tot} = E_{elec} + E_{nuc}
-\end{equation}</p>
+\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_nuc</span> <span class="o">=</span> <span class="n">H2</span><span class="o">.</span><span class="n">nuclear_repulsion_energy</span><span class="p">()</span> 

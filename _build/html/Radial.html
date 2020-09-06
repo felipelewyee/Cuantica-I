@@ -114,7 +114,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo_Esfera_Rotor.html">
-   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+   3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
   </a>
  </li>
  <li class="toctree-l1">
@@ -313,54 +313,83 @@
   <div class="section" id="solucion-radial">
 <h1><span class="section-number">1. </span>Solución Radial<a class="headerlink" href="#solucion-radial" title="Permalink to this headline">¶</a></h1>
 <p>El sistema consta de un electrón girándo en torno a un núcleo (protón) con radio no fijo.</p>
-<p>El Hamiltoniano de este sistema contiene la energía cinética del electrón, la energía cinética del núcleo y la interacción coulómbica núcleo-electrón.
-\begin{equation}
+<p>El Hamiltoniano de este sistema contiene la energía cinética del electrón, la energía cinética del núcleo y la interacción coulómbica núcleo-electrón.</p>
+<div class="math notranslate nohighlight">
+\[
 H=-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{e^2}{|\vec{r}_p-\vec{r}_e|}
-\end{equation}</p>
-<p>La ecuación de Schrodinger a resolver es
-\begin{equation}
+\]</div>
+<p>La ecuación de Schrodinger a resolver es</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{e^2}{|\vec{r}_p-\vec{r}_e|}\right) \Psi = E \Psi
-\end{equation}</p>
-<p>El problema se puede simplificar al utilizar coordenadas de masa reducida, la nueva ecuación de Schrodinger es
-\begin{equation}
+\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Cambio a sistema de masa reducida</p>
+<p>El problema se puede simplificar al utilizar coordenadas de masa reducida, la nueva ecuación de Schrodinger es</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2M_T}\nabla^2_{R_{cm}}-\frac{\hbar^2}{2\mu}\nabla^2_r-\frac{e^2}{|\vec{r}|}\right) \Psi = E \Psi
-\end{equation}</p>
-<p>La función de onda <span class="math notranslate nohighlight">\(\Psi\)</span> de la ecuación anterior depende de las coordenadas del centro de masa, <span class="math notranslate nohighlight">\(R\)</span> y de las coordenadas de la masa reducida, <span class="math notranslate nohighlight">\(r\)</span>. Se propone una solución por separación de variables, tal que <span class="math notranslate nohighlight">\(\Psi(R,r) = \Phi(R) \psi(r)\)</span>. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones
-\begin{equation}
+\]</div>
+<p>La función de onda <span class="math notranslate nohighlight">\(\Psi\)</span> de la ecuación anterior depende de las coordenadas del centro de masa, <span class="math notranslate nohighlight">\(R\)</span> y de las coordenadas de la masa reducida, <span class="math notranslate nohighlight">\(r\)</span>. Se propone una solución por separación de variables, tal que <span class="math notranslate nohighlight">\(\Psi(R,r) = \Phi(R) \psi(r)\)</span>. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2M}\nabla^2_{R_{cm}}\right) \Phi = E_R \Phi
-\end{equation}
-\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2\mu}\nabla^2_r-\frac{e^2}{|\vec{r}|}\right) \psi = E \psi
-\end{equation}</p>
-<p>La primera ecuación corresponde al movimiento de una partícula libre. Para resolver la segunda ecuación cambiamos a coordenadas polares, recordando que
-\begin{equation}
-\nabla^2_r=\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) = \left( \frac{1}{r} \frac{\partial}{\partial r^2} r + \frac{1}{r^2} \Lambda^2 \right)
-\end{equation}</p>
-<p>Entonces
-\begin{equation}
+\]</div>
+<p>La primera ecuación corresponde al movimiento de una partícula libre.</p>
+<p>Para resolver la segunda ecuación cambiamos a coordenadas polares, recordando que</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla^2_r=\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) = \left( \frac{1}{r} \frac{\partial}{\partial r^2} r + \frac{1}{r^2} \Lambda^2 \right) 
+\]</div>
+<p>Entonces</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\partial}{\partial r^2} r -\frac{\hbar^2}{2\mu} \frac{1}{r^2} \Lambda^2 -\frac{e^2}{|\vec{r}|}\right) \psi = E \psi
-\end{equation}</p>
-<p>Se propone que la función de onda <span class="math notranslate nohighlight">\(\psi\)</span> puede ser separada en una parte radial y una parte angular, es decir <span class="math notranslate nohighlight">\(\psi=R(r)Y(\theta,\phi)\)</span>. Esto genera una ecuación a resolver para la parte radial (y una para la parte angular que trataremos posteriormente)
-\begin{equation}
--\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{d(rR)}{dr} -\frac{\hbar^2}{2\mu} \left[ \frac{e^2}{r} -\frac{l(l+1)}{r^2} \right] R = ER
-\end{equation}</p>
-<p>Las soluciones a esta ecuación son
-\begin{equation}
+\]</div>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Separación de variables</p>
+<p>Se propone que la función de onda <span class="math notranslate nohighlight">\(\psi\)</span> puede ser separada en una parte radial y una parte angular, es decir <span class="math notranslate nohighlight">\(\psi=R(r)Y(\theta,\phi)\)</span>. Esto genera una ecuación a resolver para la parte radial (y una para la parte angular que trataremos posteriormente)</p>
+<div class="math notranslate nohighlight">
+\[
+-\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{d(rR)}{dr} -\frac{\hbar^2}{2\mu} \left[ \frac{e^2}{r} -\frac{l(l+1)}{r^2} \right] R = ER 
+\]</div>
+</div>
+<p>Las soluciones a la ecuación radial son</p>
+<div class="math notranslate nohighlight">
+\[
 R_{n,l}(r) = N_{n,l} \left( \frac{2r}{na_0} \right)^l e^{-r/na_0} L_{n+l}^{2l+1} \left( \frac{2r}{n a_0} \right)
-\end{equation}</p>
-<p>donde <span class="math notranslate nohighlight">\(n=1,2,3,...\)</span> y <span class="math notranslate nohighlight">\(l=0,...,n-1\)</span> son números cuánticos, y <span class="math notranslate nohighlight">\(N_{n,l}\)</span> toma la forma
-\begin{equation}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(n=1,2,3,...\)</span> y <span class="math notranslate nohighlight">\(l=0,...,n-1\)</span> son números cuánticos, y <span class="math notranslate nohighlight">\(N_{n,l}\)</span> toma la forma</p>
+<div class="math notranslate nohighlight">
+\[
 N_{n,l} = \left( \frac{2}{na_0} \right)^{3/2} \sqrt{\frac{(n-l-1)!}{2n[(n+l)!]^3}}
-\end{equation}</p>
-<p><span class="math notranslate nohighlight">\(L_{n+l}^{2l+1}\)</span> son los polinomios asociados de Laguerre
-\begin{equation}
+\]</div>
+<p><span class="math notranslate nohighlight">\(L_{n+l}^{2l+1}\)</span> son los polinomios asociados de Laguerre</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Polinomios de Laguerre</p>
+<div class="math notranslate nohighlight">
+\[
 L_{k}^N (r) = \frac{d^N}{dr^N} L_k(r)
-\end{equation}
-\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
-\end{equation}</p>
+\]</div>
+</div>
 <p><strong>Realice la gráfica de R(r) (la parte radial de la función de onda) para los orbitales 1s (n=1, l=0),2s (n=2, l=0),3s (n=3, l=0) y 4s (n=4, l=0), y de <span class="math notranslate nohighlight">\(4\pi r^2R^2\)</span>.</strong></p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -415,12 +444,19 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Radial_3_0.png" src="_images/Radial_3_0.png" />
-<img alt="_images/Radial_3_1.png" src="_images/Radial_3_1.png" />
+<img alt="_images/Radial_4_0.png" src="_images/Radial_4_0.png" />
+<img alt="_images/Radial_4_1.png" src="_images/Radial_4_1.png" />
 </div>
 </div>
 <p><strong>Realice la gráfica de la parte radial de la función de onda para los orbitales 3s (n=3, l=0),3p (n=3, l=1) y 3d (n=3, l=2), y de <span class="math notranslate nohighlight">\(4\pi r^2R^2\)</span>.</strong></p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -475,8 +511,8 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Radial_5_0.png" src="_images/Radial_5_0.png" />
-<img alt="_images/Radial_5_1.png" src="_images/Radial_5_1.png" />
+<img alt="_images/Radial_7_0.png" src="_images/Radial_7_0.png" />
+<img alt="_images/Radial_7_1.png" src="_images/Radial_7_1.png" />
 </div>
 </div>
 <div class="section" id="referencias">

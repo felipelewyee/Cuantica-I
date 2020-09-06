@@ -114,7 +114,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo_Esfera_Rotor.html">
-   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+   3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
   </a>
  </li>
  <li class="toctree-l1">
@@ -312,20 +312,26 @@
                 
   <div class="section" id="orbitales-atomicos">
 <h1><span class="section-number">2. </span>Orbitales Atómicos<a class="headerlink" href="#orbitales-atomicos" title="Permalink to this headline">¶</a></h1>
-<p>Para la parte angular se tiene la ecuación de valores propios
-\begin{equation}
+<p>Para la parte angular se tiene la ecuación de valores propios</p>
+<div class="math notranslate nohighlight">
+\[
 \Lambda^2 Y_l^{m_l} = -l(l+1)\hbar^2 Y_l^{m_l}
-\end{equation}</p>
-<p>Donde <span class="math notranslate nohighlight">\(\Lambda^2\)</span> es el legendriano
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\Lambda^2\)</span> es el legendriano.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Legendirano</p>
+<p>El legendriano <span class="math notranslate nohighlight">\(\Lambda^2\)</span> se define por
 \begin{equation}
 \Lambda^2 = \frac{1}{sin^2 \theta} \frac{\partial^2}{\partial \phi^2} + \frac{1}{sin \theta} \frac{\partial}{\partial \theta} sin \theta \frac{\partial}{\partial \theta}
 \end{equation}</p>
+</div>
 <p><strong>La solución a la parte angular son los armónios esféricos <span class="math notranslate nohighlight">\(Y_l^{m_l}(\theta,\phi)\)</span>.</strong></p>
-<p>Note que <span class="math notranslate nohighlight">\(l\)</span> y <span class="math notranslate nohighlight">\(m_l\)</span> son números cuánticos que deben cumplir:
-\begin{eqnarray}
-l&amp;=&amp; 0,1,2,3,…\
-m_l &amp;=&amp; -l,-l+1,…,0,…,l-1,l
-\end{eqnarray}</p>
+<p>Note que <span class="math notranslate nohighlight">\(l\)</span> y <span class="math notranslate nohighlight">\(m_l\)</span> son números cuánticos que deben cumplir:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+l&amp;=&amp; 0,1,2,3,...\\
+m_l &amp;=&amp; -l,-l+1,...,0,...,l-1,l
+\end{split}\]</div>
 <p>En la tabla se muestran los primeros armónicos esféricos.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -373,8 +379,21 @@ m_l &amp;=&amp; -l,-l+1,…,0,…,l-1,l
 </tr>
 </tbody>
 </table>
-<p>Importamos librerias</p>
+<p><strong>Importe las siguientes librerías</strong></p>
+<ul class="simple">
+<li><p>numpy</p></li>
+<li><p>pyplot de matplotlib</p></li>
+<li><p>Axes3D de mpl_toolkits.mplot3d</p></li>
+<li><p>special de scipy</p></li>
+</ul>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Librerías</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%matplotlib notebook</span>
 <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">special</span>
@@ -390,7 +409,20 @@ m_l &amp;=&amp; -l,-l+1,…,0,…,l-1,l
 <img src="https://fotos.subefotos.com/c3fdbd7a7bdcdf59a0ba48e8d85191b5o.jpg" alt="Figura 3D" width="200"/>
 y que necesitaremos todas las combinaciones de todos los valores de <span class="math notranslate nohighlight">\(\theta\)</span> y <span class="math notranslate nohighlight">\(\phi\)</span>
 <img src="https://fotos.subefotos.com/c89ac08947348992ec8fb7765039accfo.jpg" alt="Representación de mallado" width="200"/></p>
+<p>Utilice las siguientes instrucciones</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">THETA</span><span class="p">,</span><span class="n">PHI</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mallado</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
 <span class="n">phi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
@@ -399,8 +431,19 @@ y que necesitaremos todas las combinaciones de todos los valores de <span class=
 </div>
 </div>
 </div>
-<p>Seleccionaremos un valor de <span class="math notranslate nohighlight">\(l\)</span> y <span class="math notranslate nohighlight">\(m_l\)</span></p>
+<p>Seleccione un valor de <span class="math notranslate nohighlight">\(l\)</span> y <span class="math notranslate nohighlight">\(m_l\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>se recomienda <span class="math notranslate nohighlight">\(l=1\)</span> y <span class="math notranslate nohighlight">\(ml=1\)</span> para empezar, pero puede probar con otros</p>
+</div>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seleccione l y ml</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">ml</span> <span class="o">=</span> <span class="mi">1</span>
@@ -408,8 +451,35 @@ y que necesitaremos todas las combinaciones de todos los valores de <span class=
 </div>
 </div>
 </div>
-<p>A continuación graficaremos armónicos esféricos y su cuadrado.</p>
+<p>A continuación graficaremos armónicos esféricos y su cuadrado. Copie y pegue el siguiente código</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">special</span><span class="o">.</span><span class="n">sph_harm</span><span class="p">(</span><span class="n">ml</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">PHI</span><span class="p">,</span><span class="n">THETA</span><span class="p">))</span>
+<span class="n">R</span> <span class="o">=</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span>
+
+<span class="n">X</span> <span class="o">=</span> <span class="n">R</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">THETA</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">PHI</span><span class="p">)</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">R</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">THETA</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">PHI</span><span class="p">)</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">R</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">THETA</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;cividis&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="n">R</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="n">R</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="n">R</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="n">R</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_zlim</span><span class="p">(</span><span class="o">-</span><span class="n">R</span><span class="o">.</span><span class="n">max</span><span class="p">(),</span><span class="n">R</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;$Y^2$&quot;</span><span class="o">+</span><span class="s2">&quot; l=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot; ml=&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">ml</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">special</span><span class="o">.</span><span class="n">sph_harm</span><span class="p">(</span><span class="n">ml</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">PHI</span><span class="p">,</span><span class="n">THETA</span><span class="p">))</span>
 <span class="n">R</span> <span class="o">=</span> <span class="n">R</span><span class="o">**</span><span class="mi">2</span>
@@ -433,28 +503,38 @@ y que necesitaremos todas las combinaciones de todos los valores de <span class=
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Orbitales_9_0.png" src="_images/Orbitales_9_0.png" />
+<img alt="_images/Orbitales_13_0.png" src="_images/Orbitales_13_0.png" />
 </div>
 </div>
 <p>Recordemos que la función de onda es el producto de una parte radial y una parte angular <span class="math notranslate nohighlight">\(\psi_{n,l,m_l}=R_{n,l}(r)Y_l^{m_l}(\theta,\phi)\)</span></p>
-<p>Nombraremos a los orbitales p como:
-\begin{eqnarray}
-\color{green}{p_z} &amp;=&amp; R_{n1} \color{blue}{Y_{1}^{0}} = R_{n1} \left(\frac{3}{4 \pi}\right)^{1/2} cos \theta \
-\color{green}{p_-} &amp;=&amp; R_{n1} \color{blue}{Y_{1}^{-1}} = R_{n1} \left(\frac{3}{8 \pi}\right)^{1/2} sin \theta \color{red}{e^{-i\phi}}\
+<p>Nombraremos a los orbitales p como:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\color{green}{p_z} &amp;=&amp; R_{n1} \color{blue}{Y_{1}^{0}} = R_{n1} \left(\frac{3}{4 \pi}\right)^{1/2} cos \theta \\
+\color{green}{p_-} &amp;=&amp; R_{n1} \color{blue}{Y_{1}^{-1}} = R_{n1} \left(\frac{3}{8 \pi}\right)^{1/2} sin \theta \color{red}{e^{-i\phi}}\\
 \color{green}{p_+} &amp;=&amp; R_{n1} \color{blue}{Y_{1}^{+1}} = -R_{n1} \left(\frac{3}{8 \pi}\right)^{1/2} sin \theta \color{red}{e^{i\phi}}
-\end{eqnarray}</p>
-<p>El orbital <span class="math notranslate nohighlight">\(p_z\)</span> es real, pero <span class="math notranslate nohighlight">\(p_-\)</span> y <span class="math notranslate nohighlight">\(p_+\)</span> son complejos. Recordando la fórmula de Euler:
-\begin{eqnarray}
-e^{-i\phi} &amp;=&amp; cos(\phi) - i sin(\phi)\
+\end{split}\]</div>
+<p>El orbital <span class="math notranslate nohighlight">\(p_z\)</span> es real, pero <span class="math notranslate nohighlight">\(p_-\)</span> y <span class="math notranslate nohighlight">\(p_+\)</span> son complejos. Recordando la fórmula de Euler:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+e^{-i\phi} &amp;=&amp; cos(\phi) - i sin(\phi)\\
 -e^{i\phi} &amp;=&amp; -cos(\phi) - i sin(\phi)
-\end{eqnarray}</p>
-<p>Hacemos la combinación lineal:
-\begin{eqnarray}
-\color{purple}{p_x} &amp;=&amp; \frac{1}{\sqrt{2}}(\color{green}{p_-} - \color{green}{p_+}) = R_{n1} \left(\frac{3}{4 \pi}\right)^{1/2} sin \theta cos \phi \
-\color{purple}{p_y} &amp;=&amp; \frac{i}{\sqrt{2}}(\color{green}{p_-} + \color{green}{p_+}) = R_{n1} \left(\frac{3}{4 \pi}\right)^{1/2} sin \theta sin \phi
-\end{eqnarray}</p>
+\end{split}\]</div>
+<p>Hacemos la combinación lineal:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\color{purple}{p_x} &amp;=&amp; \frac{1}{\sqrt{2}}(\color{green}{p_-} - \color{green}{p_+}) = R_{n1} \left(\frac{3}{4 \pi}\right)^{1/2} sin \theta cos \phi \\
+\color{purple}{p_y} &amp;=&amp; \frac{i}{\sqrt{2}}(\color{green}{p_-} + \color{green}{p_+}) = R_{n1} \left(\frac{3}{4 \pi}\right)^{1/2} sin \theta sin \phi 
+\end{split}\]</div>
 <p>Represente la parte angular de las combinaciones lineales de <span class="math notranslate nohighlight">\(p_-\)</span> y <span class="math notranslate nohighlight">\(p_+\)</span> para formar <span class="math notranslate nohighlight">\(p_x\)</span> y <span class="math notranslate nohighlight">\(p_y\)</span>.</p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># px y py</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Rz</span> <span class="o">=</span> <span class="n">special</span><span class="o">.</span><span class="n">sph_harm</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">PHI</span><span class="p">,</span><span class="n">THETA</span><span class="p">)</span>
 <span class="n">R_m</span> <span class="o">=</span> <span class="n">special</span><span class="o">.</span><span class="n">sph_harm</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">PHI</span><span class="p">,</span><span class="n">THETA</span><span class="p">)</span>
@@ -485,7 +565,7 @@ e^{-i\phi} &amp;=&amp; cos(\phi) - i sin(\phi)\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Orbitales_12_0.png" src="_images/Orbitales_12_0.png" />
+<img alt="_images/Orbitales_17_0.png" src="_images/Orbitales_17_0.png" />
 </div>
 </div>
 <p>A continuación se dan las expresiones de algunos orbitales</p>

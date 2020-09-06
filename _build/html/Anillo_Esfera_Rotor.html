@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido &#8212; Cuántica I</title>
+    <title>3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido &#8212; Cuántica I</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -114,7 +114,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+   3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
   </a>
  </li>
  <li class="toctree-l1">
@@ -325,41 +325,58 @@
         
               <div>
                 
-  <div class="section" id="paricula-en-el-anillo-particula-en-la-esfera-y-rotor-rigido">
-<h1><span class="section-number">3. </span>Parícula en el anillo, Partícula en la esfera y Rotor Rígido<a class="headerlink" href="#paricula-en-el-anillo-particula-en-la-esfera-y-rotor-rigido" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="particula-en-el-anillo-particula-en-la-esfera-y-rotor-rigido">
+<h1><span class="section-number">3. </span>Partícula en el anillo, Partícula en la esfera y Rotor Rígido<a class="headerlink" href="#particula-en-el-anillo-particula-en-la-esfera-y-rotor-rigido" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="particula-en-el-anillo">
 <h2><span class="section-number">3.1. </span>Partícula en el anillo<a class="headerlink" href="#particula-en-el-anillo" title="Permalink to this headline">¶</a></h2>
 <p>Es el sistema de una partícula moviéndose en una trayectoria de radio constante tal que <span class="math notranslate nohighlight">\(x^2 + y^2 = r^2\)</span>.</p>
-<p>El Hamiltoniano para una partícula en dos dimensiones, tanto en coordenadas cartesianas como en coordenadas polares es
-\begin{equation}
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Hamiltoniano del sistema</p>
+<p>El Hamiltoniano para una partícula en dos dimensiones, tanto en coordenadas cartesianas como en coordenadas polares es</p>
+<div class="math notranslate nohighlight">
+\[
 H = -\frac{\hbar^2}{2m} \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right) = -\frac{\hbar^2}{2mr^2} \left( \frac{\partial^2}{\partial r^2} + \frac{1}{r} \frac{\partial}{\partial r} + \frac{1}{r^2} \frac{\partial^2}{\partial \phi^2} \right)
-\end{equation}</p>
-<p>Como r es constante en el anillo, entonces se eliminan las derivadas respecto a r, y el Hamiltoniano se vuelve más simple
-\begin{equation}
+\]</div>
+<p>Como r es constante en el anillo, entonces se eliminan las derivadas respecto a r, y el Hamiltoniano se vuelve más simple</p>
+<div class="math notranslate nohighlight">
+\[
 H = -\frac{\hbar^2}{2mr^2} \frac{d^2}{d\phi^2}
-\end{equation}</p>
+\]</div>
 <p>Al sustituir el Hamiltoniano en la ecuación de Schrodinger, se obtiene
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 -\frac{\hbar^2}{2mr^2} \frac{d^2}{d\phi^2} \psi = E \psi
-\end{equation}</p>
+\)</span>$</p>
+</div>
 <p>La solución a la ecuación diferencial tiene la forma
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 \psi = Ae^{im_l\phi} + Be^{-im_l\phi}
-\end{equation}</p>
+\)</span>$</p>
 <p>con <span class="math notranslate nohighlight">\(m_l = ( 2mr^2 E/\hbar^2 )^{1/2}\)</span>. Despejando se obtiene que
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 E = \frac{\hbar^2 m_l^2}{2mr^2}
-\end{equation}</p>
-<p>Debido a que la función de onda debe ser contínua, y a que la partícula se mueve en un anillo, debe de cumplirse la condición cíclica <span class="math notranslate nohighlight">\(\psi(\phi) = \psi(\phi+2\pi)\)</span>, es decir que al dar una vuelta, la función de onda debe terminar en el mismo punto donde comenzó. Sustituyendo la función de onda en la condición cíclica se obtiene
-\begin{equation}
+\)</span>$</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Condiciones a la frontera</p>
+<p>Debido a que la función de onda debe ser contínua, y a que la partícula se mueve en un anillo, debe de cumplirse la condición cíclica <span class="math notranslate nohighlight">\(\psi(\phi) = \psi(\phi+2\pi)\)</span>, es decir que al dar una vuelta, la función de onda debe terminar en el mismo punto donde comenzó. Sustituyendo la función de onda en la condición cíclica se obtiene</p>
+<div class="math notranslate nohighlight">
+\[
 Ae^{im_l\phi} + Be^{-im_l\phi} = Ae^{im_l\phi}e^{im_l2\pi} + Be^{-im_l\phi}e^{-im_l2\pi}
-\end{equation}</p>
+\]</div>
 <p>Para que la igualdad anterior pueda cumplirse, <span class="math notranslate nohighlight">\(m_l\)</span> debe ser un número entero, tal que se cumpla <span class="math notranslate nohighlight">\(e^{im_l2\pi}=e^{-im_l2\pi}=1\)</span>. Esto origina la cuantización <span class="math notranslate nohighlight">\(m_l = {0, \pm 1, \pm 2, \cdots}\)</span>.</p>
-<p>Tras normalizar y con B=0,
-\begin{equation}
+</div>
+<p>Tras aplicar las condiciones a la frontera, normalizar y con B=0,</p>
+<div class="math notranslate nohighlight">
+\[
 \psi = \left( \frac{1}{2\pi} \right)^{1/2} e^{i m_l \phi} = \left( \frac{1}{2\pi} \right)^{1/2} cos(m_l \phi) + i \left( \frac{1}{2\pi} \right)^{1/2} sin(m_l \phi)
-\end{equation}</p>
+\]</div>
 <p><strong>Grafique la función de onda y su cuadrado para <span class="math notranslate nohighlight">\(m_l=1\)</span></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafica</span>
@@ -401,34 +418,43 @@ Ae^{im_l\phi} + Be^{-im_l\phi} = Ae^{im_l\phi}e^{im_l2\pi} + Be^{-im_l\phi}e^{-i
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Anillo_Esfera_Rotor_4_0.png" src="_images/Anillo_Esfera_Rotor_4_0.png" />
-<img alt="_images/Anillo_Esfera_Rotor_4_1.png" src="_images/Anillo_Esfera_Rotor_4_1.png" />
+<img alt="_images/Anillo_Esfera_Rotor_5_0.png" src="_images/Anillo_Esfera_Rotor_5_0.png" />
+<img alt="_images/Anillo_Esfera_Rotor_5_1.png" src="_images/Anillo_Esfera_Rotor_5_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="particula-en-la-esfera">
 <h2><span class="section-number">3.2. </span>Partícula en la esfera<a class="headerlink" href="#particula-en-la-esfera" title="Permalink to this headline">¶</a></h2>
 <p>Se tiene una partícula moviéndose sobre una superficie esférica de radio constante.</p>
-<p>La ecuación de Schrodinger a resolver es
-\begin{equation}
+<p>La ecuación de Schrodinger a resolver es</p>
+<div class="math notranslate nohighlight">
+\[
 -\frac{\hbar^2}{2m} \nabla^2 \psi(\theta,\phi) = E \psi(\theta,\phi)
-\end{equation}</p>
+\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Hamiltoniano</p>
 <p>Donde
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 \nabla^2 = \frac{1}{r} \frac{\partial^2}{\partial r^2}r + \frac{1}{r^2} \Lambda^2 = \frac{1}{r} \frac{\partial^2}{\partial r^2} r + \frac{1}{r^2} \left( \frac{1}{sin^2 \theta} \frac{\partial^2}{\partial \phi^2} + \frac{1}{sin \theta} \frac{\partial}{\partial \theta} sin \theta \frac{\partial}{\partial \theta} \right)
-\end{equation}</p>
+\)</span>$</p>
 <p>Si r es constante, entonces
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 -\frac{\hbar^2}{2mr^2} \Lambda^2 \psi(\theta,\phi) = E \psi(\theta,\phi)
-\end{equation}</p>
-<p>Las soluciones de esta ecuación son los armónicos esféricos, dados por</p>
-<p>\begin{equation}
+\)</span>$</p>
+</div>
+<p>Las soluciones de esta ecuación son los armónicos esféricos.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Armónicos esféricos</p>
+<p>Los armónicos esféricos se definen por</p>
+<div class="math notranslate nohighlight">
+\[
 Y_l^{m_l}(\theta,\phi) = \sqrt{\frac{2l+1}{4\pi} \frac{(l-|m_l|)!}{(l+|m_l|)!}} e^{i m_l \phi} P_l^{m_l}(cos(\theta))
-\end{equation}</p>
+\]</div>
 <p>donde <span class="math notranslate nohighlight">\(P_l^{m_l}(cos(\phi))\)</span> son los polinomios asociados de Legendre, dados por
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 P_l^{m_l}(x) = \frac{l}{2^l l!}(1-x^2)^{|m_l|/2} \frac{d^{l+|m_l|}}{dx^{l+|m_l|}} (x^2-1)^l
-\end{equation}</p>
+\)</span>$</p>
+</div>
 <p>En la tabla se muestra la forma de los primeros armónicos esféricos. En este punto han aparecido dos números cuánticos, tal que <span class="math notranslate nohighlight">\(l = 0,1,2,3,...\)</span> y <span class="math notranslate nohighlight">\(m_l = -l, -l+1, 0, l-1, l\)</span></p>
 <table class="colwidths-auto table">
 <thead>
@@ -476,11 +502,19 @@ P_l^{m_l}(x) = \frac{l}{2^l l!}(1-x^2)^{|m_l|/2} \frac{d^{l+|m_l|}}{dx^{l+|m_l|}
 </tr>
 </tbody>
 </table>
-<p>La energía del sistema está dada por
-\begin{equation}
+<p>La energía del sistema está dada por</p>
+<div class="math notranslate nohighlight">
+\[
 E = -l(l+1)
-\end{equation}</p>
+\]</div>
 <p><strong>Grafique el armónico esférico <span class="math notranslate nohighlight">\(|Y_1^{0}|\)</span> y su cuadrado.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafica</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Grafica</span>
@@ -531,68 +565,82 @@ E = -l(l+1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Anillo_Esfera_Rotor_8_0.png" src="_images/Anillo_Esfera_Rotor_8_0.png" />
-<img alt="_images/Anillo_Esfera_Rotor_8_1.png" src="_images/Anillo_Esfera_Rotor_8_1.png" />
+<img alt="_images/Anillo_Esfera_Rotor_10_0.png" src="_images/Anillo_Esfera_Rotor_10_0.png" />
+<img alt="_images/Anillo_Esfera_Rotor_10_1.png" src="_images/Anillo_Esfera_Rotor_10_1.png" />
 </div>
 </div>
 </div>
 <div class="section" id="rotor-rigido">
 <h2><span class="section-number">3.3. </span>Rotor Rígido<a class="headerlink" href="#rotor-rigido" title="Permalink to this headline">¶</a></h2>
 <p>Este sistema consiste en dos partículas de masa <span class="math notranslate nohighlight">\(m_1\)</span> y <span class="math notranslate nohighlight">\(m_2\)</span> moviéndose con una separación constante <span class="math notranslate nohighlight">\(r=r_2-r_1\)</span>.</p>
-<p>El Hamiltoniano consta de los términos de energía cinética de ambas partículas
-\begin{equation}
+<p>El Hamiltoniano consta de los términos de energía cinética de ambas partículas</p>
+<div class="math notranslate nohighlight">
+\[
 H = -\frac{\hbar^2}{2m_1} \nabla^2_1 -\frac{\hbar^2}{2m_2} \nabla^2_2
-\end{equation}</p>
-<p>Este sistema es equivalente al de una partícula de masa reducida girando en torno al centro de masa de ambas partículas. La masa total del sistema está dada por la suma de las masas de las partículas
-\begin{equation}
+\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Sistema de masa reducida</p>
+<p>Este sistema es equivalente al de una partícula de masa reducida girando en torno al centro de masa de ambas partículas. La masa total del sistema está dada por la suma de las masas de las partículas</p>
+<div class="math notranslate nohighlight">
+\[
 m_T = m_1 + m_2
-\end{equation}</p>
+\]</div>
 <p>La masa reducida de la nueva partícula está dada por
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 \frac{1}{\mu} = \frac{1}{m_1} + \frac{1}{m_2}
-\end{equation}</p>
+\)</span>$</p>
 <p>El centro de masa del sistema se calcula mediante
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 R_{cm} = \left( \frac{m_1}{m_T} \right) r_1 + \left( \frac{m_2}{m_T} \right) r_2
-\end{equation}</p>
+\)</span>$</p>
 <p>y el Hamiltoniano se calcula con la energía cinética de la masa reducida y del centro de masa, es decir
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 H = -\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}
-\end{equation}</p>
-<p>La ecuación de Schrodinger a resolver es
-\begin{equation}
+\)</span>$</p>
+<p>La ecuación de Schrodinger a resolver es</p>
+<div class="math notranslate nohighlight">
+\[
 \left(-\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}\right) \psi = E \psi
-\end{equation}</p>
-<p>Se propone que la función de onda se puede separar en el producto de una función de onda del centro de masa y una función de onda de la partícula de masa reducida
-\begin{equation}
+\]</div>
+<p>Se propone que la función de onda se puede separar en el producto de una función de onda del centro de masa y una función de onda de la partícula de masa reducida</p>
+<div class="math notranslate nohighlight">
+\[
 \psi=\psi_{cm}\psi_r
-\end{equation}</p>
+\]</div>
 <p>Al sustituir en la ecuación de Schrodinger se obtiene
-\begin{equation}
+$<span class="math notranslate nohighlight">\(
 \left(-\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}\right) \psi_{cm}\psi_r = E \psi_{cm}\psi_r
-\end{equation}</p>
+\)</span>$</p>
 <p>Si consideramos que la energía está dada por <span class="math notranslate nohighlight">\(E_T = E_{cm} + E_{r}\)</span> y distribuímos, resulta</p>
-<p>\begin{equation}
+<div class="math notranslate nohighlight">
+\[
 -\psi_{r} \frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} \psi_{cm} - \psi_{cm}\frac{\hbar^2}{2\mu} \nabla^2_{r} \psi_r = \psi_r E_{cm} \psi_{cm} +  \psi_{cm} E_r \psi_r
-\end{equation}</p>
+\]</div>
 <p>Si multiplicamos ambos lados de la ecuación anterior por <span class="math notranslate nohighlight">\(\frac{1}{\psi_{r}\psi_{cm}}\)</span>, resulta</p>
-<p>\begin{equation}
+<div class="math notranslate nohighlight">
+\[
 -\frac{1}{\psi_{cm}} \left( \frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} \psi_{cm} - E_{cm} \psi_{cm} \right) = \frac{1}{\psi_{r}} \left( \frac{\hbar^2}{2\mu} \nabla^2_{r} \psi_r + E_r \psi_r \right)
-\end{equation}</p>
-<p>ya que el lado izquierdo solo depende de las coordenadas del centro de masa, y el lado derecho solo depende de las coordenadas de la masa reducida, ambos lados deben ser igual a una constante. Si elegimos esta constante como cero, y despejamos lo que está dentro de cada paréntesis se obtienen dos ecuaciones independientes. La primera ecuación corresponde al movimiento del centro de masa del sistema y la hemos estudiado previamene en el movimiento de la partícula libre
-\begin{equation}
+\]</div>
+<p>ya que el lado izquierdo solo depende de las coordenadas del centro de masa, y el lado derecho solo depende de las coordenadas de la masa reducida, ambos lados deben ser igual a una constante. Si elegimos esta constante como cero, y despejamos lo que está dentro de cada paréntesis se obtienen dos ecuaciones independientes.</p>
+</div>
+<p>Despues de cambiar a un sistema de masa reducida se obtienen dos ecuaciones.</p>
+<p>La primera ecuación corresponde al movimiento del centro de masa del sistema y la hemos estudiado previamene en el movimiento de la partícula libre</p>
+<div class="math notranslate nohighlight">
+\[
 -\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} \psi_{cm} = E_{cm} \psi_{cm}
-\end{equation}
-esta ecuación tiene como soluciones
-\begin{equation}
+\]</div>
+<p>esta ecuación tiene como soluciones</p>
+<div class="math notranslate nohighlight">
+\[
 \psi_{cm} = A e^{ikx} + B e^{-ikx}
-\end{equation}
-con <span class="math notranslate nohighlight">\(k^2=2m_TE/\hbar^2\)</span>, y simplemente nos dice que el sistema en conjunto se mueve libremente por el espacio.</p>
-<p>La segunda ecuación corresponde a la masa reducida, y la hemos estudiado en la partícula en la esfera
-\begin{equation}
+\]</div>
+<p>con <span class="math notranslate nohighlight">\(k^2=2m_TE/\hbar^2\)</span>, y simplemente nos dice que el sistema en conjunto se mueve libremente por el espacio.</p>
+<p>La segunda ecuación corresponde a la masa reducida, y la hemos estudiado en la partícula en la esfera</p>
+<div class="math notranslate nohighlight">
+\[
 -\frac{\hbar^2}{2\mu} \nabla^2_{r} \psi_r = E_r \psi_r
-\end{equation}
-sabemos por tanto que su solución son los armónico esféricos <span class="math notranslate nohighlight">\(Y_l^{m_l}(\theta,\phi)\)</span> con <span class="math notranslate nohighlight">\(E = -l(l+1)\)</span>.</p>
+\]</div>
+<p>sabemos por tanto que su solución son los armónico esféricos <span class="math notranslate nohighlight">\(Y_l^{m_l}(\theta,\phi)\)</span> con <span class="math notranslate nohighlight">\(E = -l(l+1)\)</span>.</p>
 </div>
 <div class="section" id="referencias">
 <h2><span class="section-number">3.4. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>

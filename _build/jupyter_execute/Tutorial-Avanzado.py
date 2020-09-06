@@ -257,14 +257,16 @@ integrate.quad(lambda x: (C*x)*(C*x),-3,3)
 También es posible realizar integrales triples, el siguiente ejemplo solo es demostrativo, **simplemente copie y pegue para realizar la integral.**
 
 Sea la función de onda
-\begin{equation}
+
+$$
 \psi = e^{-(x^2+y^2+z^2)}=e^{-r^2}
-\end{equation}
+$$
 
 La integral de su cuadrado será
-\begin{equation}
+
+$$
 N^2 = \int \psi^* \psi d\textbf{r} = \int\limits_{0}^\infty \int\limits_{0}^{2\pi} \int\limits_{0}^\pi\psi^* \psi r^2 sin\theta dr d\phi d\theta = \int\limits_{0}^{\pi} sin \theta d\theta \int\limits_{0}^{2\pi} d\phi \int\limits_{0}^\infty e^{-2r^2} r^2 dr = \left(2\pi\right)\left(2\right)\left(\frac{1}{8}\sqrt{\frac{\pi}{2}}\right) = \left(\frac{\pi}{2}\right)^{3/2}
-\end{equation}
+$$
 
 El siguiente código evalúa la integral y la guarda en la variable "norm2".
 ~~~python

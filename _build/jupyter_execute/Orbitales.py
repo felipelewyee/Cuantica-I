@@ -1,22 +1,30 @@
 # Orbitales Atómicos
 
 Para la parte angular se tiene la ecuación de valores propios
-\begin{equation}
-\Lambda^2 Y_l^{m_l} = -l(l+1)\hbar^2 Y_l^{m_l}
-\end{equation}
 
-Donde $\Lambda^2$ es el legendriano
+$$
+\Lambda^2 Y_l^{m_l} = -l(l+1)\hbar^2 Y_l^{m_l}
+$$
+
+donde $\Lambda^2$ es el legendriano.
+
+```{admonition} Inserto matemático: Legendirano
+:class: dropdown
+
+El legendriano $\Lambda^2$ se define por
 \begin{equation}
 \Lambda^2 = \frac{1}{sin^2 \theta} \frac{\partial^2}{\partial \phi^2} + \frac{1}{sin \theta} \frac{\partial}{\partial \theta} sin \theta \frac{\partial}{\partial \theta} 
 \end{equation}
+```
 
 **La solución a la parte angular son los armónios esféricos $Y_l^{m_l}(\theta,\phi)$.**
 
 Note que $l$ y $m_l$ son números cuánticos que deben cumplir:
-\begin{eqnarray}
+
+$$
 l&=& 0,1,2,3,...\\
 m_l &=& -l,-l+1,...,0,...,l-1,l
-\end{eqnarray}
+$$
 
 En la tabla se muestran los primeros armónicos esféricos.
 
@@ -33,9 +41,13 @@ En la tabla se muestran los primeros armónicos esféricos.
 |2|1|$-\frac{15}{(8\pi)^{1/2}} sin \theta cos \theta e^{i\phi}$|
 |2|2|$\frac{15}{(32\pi)^{1/2}} sin^2 \theta e^{2i\phi}$|
 
+**Importe las siguientes librerías**
+- numpy
+- pyplot de matplotlib
+- Axes3D de mpl_toolkits.mplot3d
+- special de scipy
 
-
-Importamos librerias
+# Librerías
 
 #%matplotlib notebook
 from scipy import special
@@ -50,16 +62,53 @@ La idea es pensar en graficar una figura en tres dimensiones
 y que necesitaremos todas las combinaciones de todos los valores de $\theta$ y $\phi$
 <img src="https://fotos.subefotos.com/c89ac08947348992ec8fb7765039accfo.jpg" alt="Representación de mallado" width="200"/>
 
+Utilice las siguientes instrucciones
+```
+theta = np.linspace(0,np.pi,200)
+phi = np.linspace(0,2*np.pi,200)
+THETA,PHI = np.meshgrid(theta,phi)
+```
+
+# Mallado
+
 theta = np.linspace(0,np.pi,200)
 phi = np.linspace(0,2*np.pi,200)
 THETA,PHI = np.meshgrid(theta,phi)
 
-Seleccionaremos un valor de $l$ y $m_l$
+Seleccione un valor de $l$ y $m_l$ 
+```{note}
+se recomienda $l=1$ y $ml=1$ para empezar, pero puede probar con otros
+```
+
+# Seleccione l y ml
 
 l = 1
 ml = 1
 
-A continuación graficaremos armónicos esféricos y su cuadrado.
+A continuación graficaremos armónicos esféricos y su cuadrado. Copie y pegue el siguiente código
+
+```
+R = abs(special.sph_harm(ml,l,PHI,THETA))
+R = R**2
+
+X = R * np.sin(THETA) * np.cos(PHI)
+Y = R * np.sin(THETA) * np.sin(PHI)
+Z = R * np.cos(THETA)
+
+fig = plt.figure()
+
+ax = plt.axes(projection='3d')
+ax.plot_surface(X, Y, Z,cmap='cividis')
+ax.set_xlim(-R.max(),R.max())
+ax.set_ylim(-R.max(),R.max())
+ax.set_zlim(-R.max(),R.max())
+
+ax.set_title("$Y^2$"+" l="+str(l)+" ml="+str(ml))
+
+plt.show()
+```
+
+# Gráfica
 
 R = abs(special.sph_harm(ml,l,PHI,THETA))
 R = R**2
@@ -83,25 +132,30 @@ plt.show()
 Recordemos que la función de onda es el producto de una parte radial y una parte angular $\psi_{n,l,m_l}=R_{n,l}(r)Y_l^{m_l}(\theta,\phi)$
 
 Nombraremos a los orbitales p como:
-\begin{eqnarray}
+
+$$
 \color{green}{p_z} &=& R_{n1} \color{blue}{Y_{1}^{0}} = R_{n1} \left(\frac{3}{4 \pi}\right)^{1/2} cos \theta \\
 \color{green}{p_-} &=& R_{n1} \color{blue}{Y_{1}^{-1}} = R_{n1} \left(\frac{3}{8 \pi}\right)^{1/2} sin \theta \color{red}{e^{-i\phi}}\\
 \color{green}{p_+} &=& R_{n1} \color{blue}{Y_{1}^{+1}} = -R_{n1} \left(\frac{3}{8 \pi}\right)^{1/2} sin \theta \color{red}{e^{i\phi}}
-\end{eqnarray}
+$$
 
 El orbital $p_z$ es real, pero $p_-$ y $p_+$ son complejos. Recordando la fórmula de Euler:
-\begin{eqnarray}
+
+$$
 e^{-i\phi} &=& cos(\phi) - i sin(\phi)\\
 -e^{i\phi} &=& -cos(\phi) - i sin(\phi)
-\end{eqnarray}
+$$
 
 Hacemos la combinación lineal:
-\begin{eqnarray}
+
+$$
 \color{purple}{p_x} &=& \frac{1}{\sqrt{2}}(\color{green}{p_-} - \color{green}{p_+}) = R_{n1} \left(\frac{3}{4 \pi}\right)^{1/2} sin \theta cos \phi \\
 \color{purple}{p_y} &=& \frac{i}{\sqrt{2}}(\color{green}{p_-} + \color{green}{p_+}) = R_{n1} \left(\frac{3}{4 \pi}\right)^{1/2} sin \theta sin \phi 
-\end{eqnarray}
+$$
 
 Represente la parte angular de las combinaciones lineales de $p_-$ y $p_+$ para formar $p_x$ y $p_y$.
+
+# px y py
 
 Rz = special.sph_harm(0,1,PHI,THETA)
 R_m = special.sph_harm(-1,1,PHI,THETA)

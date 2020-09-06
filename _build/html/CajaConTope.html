@@ -38,7 +38,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido" href="Anillo_Esfera_Rotor.html" />
+    <link rel="next" title="3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido" href="Anillo_Esfera_Rotor.html" />
     <link rel="prev" title="1. Partícula en la caja" href="Caja.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -114,7 +114,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo_Esfera_Rotor.html">
-   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+   3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
   </a>
  </li>
  <li class="toctree-l1">
@@ -343,7 +343,7 @@ V(x) = \left\{
 \]</div>
 <p>Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por secciones.</p>
 <div class="dropdown admonition">
-<p class="admonition-title">Hamiltoniano por secciones</p>
+<p class="admonition-title">Inserto matemático: Hamiltoniano por secciones</p>
 <p>Si analizamos la ecuación de Schrodiger por zonas se tiene:</p>
 <table class="colwidths-auto table">
 <thead>
@@ -417,7 +417,7 @@ V(x) = \left\{
 </div>
 <p>La función de onda debe ser contínua, por lo que podemos igualar la función de onda en el punto donde se unen las zonas, y obtener nuevas ecuaciones.</p>
 <div class="dropdown admonition">
-<p class="admonition-title">Condiciones de Frontera</p>
+<p class="admonition-title">Inserto matemático: Condiciones de Frontera</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>Zonas</p></th>
@@ -452,14 +452,16 @@ V(x) = \left\{
 <p>A partir de aquí podemos ayudarnos de la simetría del problema. Empezaremos asumiendo que lo que esta del lado izquierdo del potencial es simétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par.</p>
 <div class="section" id="simetria-par">
 <h2><span class="section-number">2.1. </span>Simetría Par<a class="headerlink" href="#simetria-par" title="Permalink to this headline">¶</a></h2>
-<p>Estamos buscando los valores de E que resuelvan la ecuación
-\begin{equation}
+<p>Estamos buscando los valores de E que resuelvan la ecuación</p>
+<div class="math notranslate nohighlight">
+\[
 tanh \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{U-E}}
-\end{equation}</p>
-<p>Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos <span class="math notranslate nohighlight">\(f(E)\)</span>
-\begin{equation}
+\]</div>
+<p>Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos <span class="math notranslate nohighlight">\(f(E)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
 f(E) = tanh^2 \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{U-E}
-\end{equation}</p>
+\]</div>
 <p>Cuando se tenga el <span class="math notranslate nohighlight">\(E\)</span> correcto se cumplirá <span class="math notranslate nohighlight">\(f(E) = 0\)</span>, así que solo tenemos que buscar los ceros (o raíces) de la función.</p>
 <p><strong>Defina la función <span class="math notranslate nohighlight">\(f(E)\)</span></strong></p>
 <div class="cell docutils container">
@@ -555,11 +557,11 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 <p>Defina funciones para</p>
 <div class="math notranslate nohighlight">
 \[
-k_1 = \frac{2mE}{hbar^2}
+k_1 = \frac{2mE}{\hbar^2}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-k_2 = \frac{2m(V-E)}{hbar**2}
+k_2 = \frac{2m(V-E)}{\hbar^2}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -635,7 +637,7 @@ x_3 \in [a,L]
 </div>
 </div>
 <p>Utilice las energías del segundo guess para graficar las funciones de onda.</p>
-<div class="cell tag_hide-cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">E</span> <span class="ow">in</span> <span class="n">E_segundoguess</span><span class="p">:</span>
     <span class="k">if</span><span class="p">(</span><span class="n">E</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">):</span>
@@ -777,7 +779,7 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) \right)^2
 </div>
 </div>
 </div>
-<div class="cell tag_hide-cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">E</span> <span class="ow">in</span> <span class="n">E_segundoguess</span><span class="p">:</span>
     <span class="k">if</span><span class="p">(</span><span class="n">E</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">):</span>
@@ -867,7 +869,7 @@ E: 4.098118934645123 Probabilidad de [-a,a]: 0.006257095779805033
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="Caja.html" title="previous page"><span class="section-number">1. </span>Partícula en la caja</a>
-    <a class='right-next' id="next-link" href="Anillo_Esfera_Rotor.html" title="next page"><span class="section-number">3. </span>Parícula en el anillo, Partícula en la esfera y Rotor Rígido</a>
+    <a class='right-next' id="next-link" href="Anillo_Esfera_Rotor.html" title="next page"><span class="section-number">3. </span>Partícula en el anillo, Partícula en la esfera y Rotor Rígido</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

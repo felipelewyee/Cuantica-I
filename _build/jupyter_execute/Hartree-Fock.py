@@ -1,9 +1,10 @@
 # Hartree-Fock-Roothan
 
 Tenemos que resolver:
-\begin{equation}
+
+$$
 \textbf{F} \textbf{C} = \textbf{S}\textbf{C}\varepsilon
-\end{equation}
+$$
 
 - <span style="color:green"> **Paso 1.** Especificar molécula: Coordenadas de los núcleos $\{R_A\}$, Carga de los núcleos $\{Z_A\}$, Número de electrones $(N)$, y funciones base $\{\phi_i\}$</span>
 - <span style="color:green"> **Paso 2.** Calcular $S$, $H$, $(ij|kl)$.</span>
@@ -34,25 +35,25 @@ psi4.set_options({'basis':'STO-3G'})
 
 **Paso 2.** Calcular $S$, $H$, $(ij|kl)$.
 
-<span style="color:red">
-\begin{equation}
+$$
 S_{ij} = \int \psi_i^*(r) \psi_j(r) dr
-\end{equation}
-</span>
-\begin{equation}
+$$
+
+$$
 H_{ij} = \int \psi_i^*(r) \hat{H} \psi_j(r) dr
-\end{equation}
-<span style="color:red">
-\begin{equation}
+$$
+
+$$
 H_{ij} = T_{ij} + V_{ij}
-\end{equation}
-</span>
-\begin{equation}
+$$
+
+$$
 \psi_i(r) = \sum_\mu a_\mu \phi_\mu(r)
-\end{equation}
-\begin{equation}
+$$
+
+$$
 (\mu \nu|\sigma \lambda) = \int \int \phi_\mu^*(r_1) \phi_\nu(r_1) \frac{1}{r_{12}} \phi_\sigma^*(r_2) \phi_\lambda(r_2) dr_1 dr_2
-\end{equation}
+$$
 
 wfn = psi4.core.Wavefunction.build(H2)
 mints = psi4.core.MintsHelper(wfn.basisset())
@@ -82,15 +83,19 @@ C = np.zeros((nbf,nbf))
 print(C)
 
 - **Paso 4.** Calcular $P$, $J$ y $K$.
-\begin{equation}
+
+$$
 P_{\mu \nu} = \sum_a^{N/2} C_{\mu a} C_{\nu a}^*
-\end{equation}
-\begin{equation}
+$$
+
+$$
 J_{\mu \nu} = \sum_{\lambda \sigma} P_{\lambda \sigma} (\mu \nu | \sigma \lambda)
-\end{equation}
-\begin{equation}
+$$
+
+$$
 K_{\mu \nu} = \sum_{\lambda \sigma} P_{\lambda \sigma} (\mu \lambda | \sigma \nu)
-\end{equation}
+$$
+
 - **Paso 5.** Calcular $F=H+2J-K$
 - **Paso 6.** Resolver $FC=SC\varepsilon$
 - **Paso 7.** $E_{elec} = \sum_\mu \sum_\nu P_{\nu \mu}(H_{\mu \nu} + F_{\mu \nu})$
@@ -159,12 +164,14 @@ while(not converged):
         
 
 **Paso 9.** Calcular energía nuclear y sumarla a la energía electrónica.
-\begin{equation}
+
+$$
 E_{\rm nuc} = \sum_{A>B}\frac{Z_AZ_B}{r_{AB}}
-\end{equation}
-\begin{equation}
+$$
+
+$$
 E_{Tot} = E_{elec} + E_{nuc}
-\end{equation}
+$$
 
 E_nuc = H2.nuclear_repulsion_energy() 
 print("Energia nuclear: ", E_nuc)

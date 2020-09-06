@@ -114,7 +114,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo_Esfera_Rotor.html">
-   3. Parícula en el anillo, Partícula en la esfera y Rotor Rígido
+   3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
   </a>
  </li>
  <li class="toctree-l1">
@@ -305,10 +305,11 @@
                 
   <div class="section" id="moller-plesset">
 <h1><span class="section-number">3. </span>Moller-Plesset<a class="headerlink" href="#moller-plesset" title="Permalink to this headline">¶</a></h1>
-<p>Las ecuaciones de Moller-Plesset surgen de aplicar la teoría de perturbaciones a Hartree-Fock. Para ello se toma como sistema conocido el Hamiltoniano de Hartree-Fock (<span class="math notranslate nohighlight">\(\mathcal{H}_0\)</span>) y se le aplica  una perturbación (<span class="math notranslate nohighlight">\(\mathcal{V}\)</span>) para convertirlo en el Hamiltoniano del sistema con correlación electrónica (<span class="math notranslate nohighlight">\(\mathcal{H}\)</span>).
-\begin{equation}
+<p>Las ecuaciones de Moller-Plesset surgen de aplicar la teoría de perturbaciones a Hartree-Fock. Para ello se toma como sistema conocido el Hamiltoniano de Hartree-Fock (<span class="math notranslate nohighlight">\(\mathcal{H}_0\)</span>) y se le aplica  una perturbación (<span class="math notranslate nohighlight">\(\mathcal{V}\)</span>) para convertirlo en el Hamiltoniano del sistema con correlación electrónica (<span class="math notranslate nohighlight">\(\mathcal{H}\)</span>).</p>
+<div class="math notranslate nohighlight">
+\[
 \mathcal{H} = \mathcal{H}_0 + \mathcal{V}
-\end{equation}</p>
+\]</div>
 <p>Para comenzar, <strong>importe las librerías numpy y psi4</strong>.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -430,11 +431,12 @@
 </div>
 </div>
 </div>
-<p>Vamos a necesitar integrales de repulsión electónica
-\begin{equation}
+<p>Vamos a necesitar integrales de repulsión electónica</p>
+<div class="math notranslate nohighlight">
+\[
 [\mu \nu | \sigma \lambda] = \int \int \frac{\mu(r_1) \nu(r_1) \sigma(r_2) \lambda(r_2)}{ |r_1 - r_2| } dr_1 dr_2
-\end{equation}
-donde <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(\nu\)</span>, <span class="math notranslate nohighlight">\(\sigma\)</span> y <span class="math notranslate nohighlight">\(\lambda\)</span> se refieren a orbitales atómicos.</p>
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(\nu\)</span>, <span class="math notranslate nohighlight">\(\sigma\)</span> y <span class="math notranslate nohighlight">\(\lambda\)</span> se refieren a orbitales atómicos.</p>
 <p><strong>Obtenga las las integrales <span class="math notranslate nohighlight">\([\mu\nu|\sigma\lambda]\)</span> y guardarlas en la variable I_AO</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -463,14 +465,16 @@ donde <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="ma
 <p class="admonition-title">Note</p>
 <p>Los software de estructura electrónica usan formas optimizados de las ecuaciones aquí mostradas. Este notebook ha sido creado sólo con fines didácticos.</p>
 </div>
-<p>La teoría de Moller-Plesset requiere que estas integrales sean transformadas a orbital molecular. Recuerde que un orbital molecular es una combinación lineal de orbitales atómicos
-\begin{equation}
+<p>La teoría de Moller-Plesset requiere que estas integrales sean transformadas a orbital molecular. Recuerde que un orbital molecular es una combinación lineal de orbitales atómicos</p>
+<div class="math notranslate nohighlight">
+\[
 p(r) = \sum_\mu C_{\mu p} \mu (r)
-\end{equation}</p>
+\]</div>
 <p>En el siguiente recuadro <strong>declare una variable I_MO de dimensión (<span class="math notranslate nohighlight">\(N_{MO}\)</span>,<span class="math notranslate nohighlight">\(N_{MO}\)</span>,<span class="math notranslate nohighlight">\(N_{MO}\)</span>,<span class="math notranslate nohighlight">\(N_{MO}\)</span>), y lleve a cabo la transformación</strong></p>
-<p>\begin{equation}
+<div class="math notranslate nohighlight">
+\[
 [pq|rt] = \sum_{\mu\nu\sigma\lambda}^N C_{\mu p} C_{\nu q} C_{\sigma r} C_{\lambda s} [\mu \nu | \sigma \lambda]
-\end{equation}</p>
+\]</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Utilice 4 for para recorrer los orbitales moleculares, y 4 for para recorrer las funciones de base.</p>
@@ -528,19 +532,22 @@ p(r) = \sum_\mu C_{\mu p} \mu (r)
 </div>
 </div>
 </div>
-<p>Recordando teoría de perturbaciones, es posible realizar correcciones de n-orden a la energía <span class="math notranslate nohighlight">\(E_i^{(n)}\)</span>, tal que la energía electrónica total del estado basal (<span class="math notranslate nohighlight">\(i=0\)</span>) es
-\begin{equation}
-E = E_0^{(0)} + E_0^{(1)} + E_0^{(2)} + E_0^{(3)} + E_0^{(4)} …
-\end{equation}</p>
+<p>Recordando teoría de perturbaciones, es posible realizar correcciones de n-orden a la energía <span class="math notranslate nohighlight">\(E_i^{(n)}\)</span>, tal que la energía electrónica total del estado basal (<span class="math notranslate nohighlight">\(i=0\)</span>) es</p>
+<div class="math notranslate nohighlight">
+\[
+E = E_0^{(0)} + E_0^{(1)} + E_0^{(2)} + E_0^{(3)} + E_0^{(4)} ...
+\]</div>
 <p>dependiendo del n-orden hasta el que se haga la corrección sobre la energía al cálculo se le denomina MPn, siendo los más comunes son MP2, MP3 y MP4.</p>
-<p>En Moller-Plesset estos términos son:
-\begin{equation}
+<p>En Moller-Plesset estos términos son:</p>
+<div class="math notranslate nohighlight">
+\[
 E_0^{(0)} = 2\sum_{a}^{N_e/2} {\varepsilon_a}
-\end{equation}
-\begin{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 E_0^{(1)} = -2 \sum_{a}^{N_e/2}\sum_{b}^{N_e/2} [aa|bb] - [ab|ba]
-\end{equation}
-donde los índices <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> refieren a orbitales moleculares ocupados, y los términos <span class="math notranslate nohighlight">\(\varepsilon_a\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_b\)</span>, a sus energías.</p>
+\]</div>
+<p>donde los índices <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> refieren a orbitales moleculares ocupados, y los términos <span class="math notranslate nohighlight">\(\varepsilon_a\)</span>, <span class="math notranslate nohighlight">\(\varepsilon_b\)</span>, a sus energías.</p>
 <p><strong>Calcule <span class="math notranslate nohighlight">\(E_0^{(0)}\)</span> y <span class="math notranslate nohighlight">\(E_0^{(1)}\)</span></strong>.</p>
 <div class="admonition caution">
 <p class="admonition-title">Caution</p>
@@ -568,9 +575,10 @@ donde los índices <span class="math notranslate nohighlight">\(a\)</span>, <spa
 </div>
 </div>
 <p><strong>Calcule la energía total de MP1</strong>, recuerde sumar la energía nuclear, es decir</p>
-<p>\begin{equation}
+<div class="math notranslate nohighlight">
+\[
 E_{MP1} = E_{nuc} + E_0^{(0)} + E_0^{(1)}
-\end{equation}</p>
+\]</div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_MP1</span> <span class="o">=</span> <span class="n">E_nuc</span> <span class="o">+</span> <span class="n">E_0</span> <span class="o">+</span> <span class="n">E_1</span>
@@ -593,23 +601,27 @@ E_{MP1} = E_{nuc} + E_0^{(0)} + E_0^{(1)}
 </div>
 <p>Calcule la diferencia entre <span class="math notranslate nohighlight">\(E_{MP1}\)</span> y la energía de Hartree-Fock que calculó al inicio, <strong>¿Cuál es la energía de correlación? ¿Cómo se relaciona <span class="math notranslate nohighlight">\(E_{MP1}\)</span> con <span class="math notranslate nohighlight">\(E_{HF}\)</span>?</strong></p>
 <p><strong>Respuesta:</strong></p>
-<p>La energía de Hartree-Fock se calcula como
-\begin{equation}
+<p>La energía de Hartree-Fock se calcula como</p>
+<div class="math notranslate nohighlight">
+\[
 E_{HF} = E_{nuc} + 2\sum_a^{N_e/2} {\varepsilon_a} -2 \sum_{a}^{N/2}\sum_{b}^{N/2} [aa|bb] - [ab|ba]
-\end{equation}</p>
-<p>esta es exactamente la misma expresion que <span class="math notranslate nohighlight">\(E_{MP1}\)</span>. La primera corrección a la energía aparece en <span class="math notranslate nohighlight">\(E_{MP2}\)</span>. La corrección a segundo orden es
-\begin{equation}
+\]</div>
+<p>esta es exactamente la misma expresion que <span class="math notranslate nohighlight">\(E_{MP1}\)</span>. La primera corrección a la energía aparece en <span class="math notranslate nohighlight">\(E_{MP2}\)</span>. La corrección a segundo orden es</p>
+<div class="math notranslate nohighlight">
+\[
 E_0^{(2)} = 2 \sum_{a}^{N_e/2}\sum_{b}^{N_e/2}\sum_{r=N_e+1}^{N_{bf}}\sum_{s=N_e+1}^{N_{bf}} \frac{[ar|bs][ra|sb]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}} - \sum_{abrs}^{N_e/2} \frac{[ar|bs][rb|sa]}{\varepsilon_{a}+\varepsilon_{b}-\varepsilon_{r}-\varepsilon_{s}}
-\end{equation}</p>
+\]</div>
 <p>donde <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(s\)</span> son los orbitales moleculares desocupados.</p>
-<p><strong>Calcule <span class="math notranslate nohighlight">\(E_0^{(2)}\)</span>, la energía de <span class="math notranslate nohighlight">\(MP2\)</span></strong> dada por
-\begin{equation}
+<p><strong>Calcule <span class="math notranslate nohighlight">\(E_0^{(2)}\)</span>, la energía de <span class="math notranslate nohighlight">\(MP2\)</span></strong> dada por</p>
+<div class="math notranslate nohighlight">
+\[
 E_{MP2} = E_{nuc} + E_0^{(0)} + E_0^{(1)} + E_0^{(2)}
-\end{equation}</p>
-<p><strong>y la energía de correlación</strong>
-\begin{equation}
+\]</div>
+<p><strong>y la energía de correlación</strong></p>
+<div class="math notranslate nohighlight">
+\[
 E_{corr} = E_{MP2} - E_{HF}
-\end{equation}</p>
+\]</div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_2</span> <span class="o">=</span> <span class="mi">0</span>
@@ -643,14 +655,16 @@ E_corr = -0.017397572327191746
 </div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Generalizando, la energía total de MPn es
-\begin{equation}
-E_{MPn} = E_{nuc} + E_0^{(0)} + E_0^{(1)} + E_0^{(2)} + … + E_0^{(n)}
-\end{equation}</p>
-<p>Al restarle la energía de Hartree-Fock se obtiene
-\begin{equation}
-E_{corr} = E_{MPn} - E_{HF} = E_0^{(2)} + … + E_0^{(n)}
-\end{equation}</p>
+<p>Generalizando, la energía total de MPn es</p>
+<div class="math notranslate nohighlight">
+\[
+E_{MPn} = E_{nuc} + E_0^{(0)} + E_0^{(1)} + E_0^{(2)} + ... + E_0^{(n)}
+\]</div>
+<p>Al restarle la energía de Hartree-Fock se obtiene</p>
+<div class="math notranslate nohighlight">
+\[
+E_{corr} = E_{MPn} - E_{HF} = E_0^{(2)} + ... + E_0^{(n)}
+\]</div>
 </div>
 <p><strong>Adapte la instrucción a MP2 junto con la base que usó para comprobar sus resultados</strong>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E_MPn</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;MPn/Base&#39;</span><span class="p">)</span>

@@ -32,57 +32,63 @@ $$
 $$
 
 Para encontrar la función de onda en la región II hay que escribir la de Schrodinger
-\begin{equation}
+
+$$
 \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} +V(x)\right)\psi(x)=\varepsilon\psi(x)
-\end{equation}
+$$
 
-
-cuya solución, como se vio anteriormente, es
-\begin{equation}
-  \begin{array}{lll}
+cuya solución es
+$$
+\begin{array}{lll}
   \psi(x) = Acos(kx) + Bsin(kx)      & \mathrm{si\ } 0 \leq x \leq L; & k^2 = \frac{2mE}{\hbar^2}\\
   \end{array}
-\end{equation}
+$$
 
+posteriormente hay que recurrir a las condiciones a la frontera.
+
+```{admonition} Inserto matemático: Condiciones a la frontera
+:class: dropdown
 
 La función de onda debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, $\psi_{I}(0) = \psi_{II}(0) = 0$. Esto implica que $A=0$, ya que
-\begin{equation}
-\psi_{II}(0) = 0 = Acos(0) + Bsin(0) = A
-\end{equation}
 
+$$
+\psi_{II}(0) = 0 = Acos(0) + Bsin(0) = A
+$$
 
 Por la continuidad con la región III también se cumple $\psi_{II}(L) = \psi_{III}(L) = 0$, es decir
-\begin{equation}
-\psi_{II}(L) = 0 = Bsin(kL)
-\end{equation}
 
+$$
+\psi_{II}(L) = 0 = Bsin(kL)
+$$
 
 Ya obtuvimos que $A$ vale cero, sin embargo, $B$ no puede ser cero porque $\psi_{II}$ se anularía. La única forma de que se cumpla la ecuación anterior es que $kL$ sea un múltiplo de $\pi$, es decir $kL = n \pi$, o lo que es lo mismo
-\begin{equation}
-  \begin{array}{ll}
+
+$$
+\begin{array}{ll}
   k=\frac{n\pi}{L};      & n=1,2,3,...\\
   \end{array}
-\end{equation}
-
+$$
 
 Hemos obtenido que
-\begin{equation}
-\psi = B sin \left( \frac{n \pi x}{L}\right)
-\end{equation}
 
+$$
+\psi = B sin \left( \frac{n \pi x}{L}\right)
+$$
+```
 
 Para encontrar el valor de B hay que normalizar la función de onda, resultando que:
-\begin{equation}
-\psi_n(x)=\left(\frac{2}{L}\right)^{1/2}sin\left(\frac{n\pi x}{L}\right)
-\end{equation}
 
+$$
+\psi_n(x)=\left(\frac{2}{L}\right)^{1/2}sin\left(\frac{n\pi x}{L}\right)
+$$
 
 Al sustituir la función de onda se obtiene la expresión de la energía, que es
-\begin{equation}
+
+$$
   \begin{array}{ll}
   E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      & n=1,2,3,...\\
   \end{array}
-\end{equation}
+$$
 
 **Grafique la función de onda y el cuadrado de la función de onda para n=1 para L=4.0 A**
 
@@ -205,9 +211,10 @@ for n in range(1,5):
 **Haga la gráfica de E en función de n para los primeros 10 niveles energéticos de un electrón en una caja.**
 
 ```{tip}
-\begin{equation}
-  E = \frac{h^2 n^2}{8mL^2}
-\end{equation}
+$$
+E = \frac{\hbar^2 \pi^2 n^2}{2mL^2}
+$$
+
 Con $n=1,2,3,...$
 ```
 
@@ -227,6 +234,11 @@ plt.show()
 
 ```{tip}
 Haga la integral
+
+$$
+\int_0^L \psi_1 \psi_3 dx
+$$
+
 ```
 
 # Integral
@@ -251,25 +263,27 @@ print("psi_1psi_3",psi_1psi_3)
 También existe la partícula en una caja para 2-Dimensiones. Se confina la partícula en $x\varepsilon[0,L_x]$ y $y\varepsilon[0,L_y]$.
 
 La ecuación de Schrodinger a resolver es
-\begin{equation}
+
+$$
 -\frac{\hbar^2}{2m} \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right)\psi(x,y)=E\psi(x,y)
-\end{equation}
+$$
 
 Que se resuelve por el método de separación de variables y se obtiene:
-\begin{equation}
-  \begin{array}{ll}
+
+$$
+\begin{array}{ll}
   k_x=\frac{n_x\pi}{L_x};      & n_x=1,2,3,...\\
   k_y=\frac{n_y\pi}{L_y};      & n_y=1,2,3,...\\
   \end{array}
-\end{equation}
+$$
 
-\begin{equation}
+$$
 \psi_{n_x,n_y}(x)=\left(\frac{2}{L_x}\right)^{1/2} \left(\frac{2}{L_y}\right)^{1/2}sin\left(\frac{n_x\pi x}{L_x}\right)sin\left(\frac{n_y\pi y}{L_y}\right)
-\end{equation}
+$$
 
-\begin{equation}
+$$
 E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
-\end{equation}
+$$
 
 **Obtenga la gráfica de $\psi_{1,1}$, es decir $n_x=1$ y $n_y=1$, y de $|\psi_{1,1}|^2$ con $L_x = L_y = 4.0$**
 
