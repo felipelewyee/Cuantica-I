@@ -38,6 +38,7 @@ $$
 $$
 
 cuya solución es
+
 $$
 \begin{array}{lll}
   \psi(x) = Acos(kx) + Bsin(kx)      & \mathrm{si\ } 0 \leq x \leq L; & k^2 = \frac{2mE}{\hbar^2}\\
@@ -90,26 +91,43 @@ $$
   \end{array}
 $$
 
-**Grafique la función de onda y el cuadrado de la función de onda para n=1 para L=4.0 A**
+**Importe las siguientes librerías**
+- numpy
+- pyplot de matplotlib
+
+#librerias
+
+import numpy as np
+from matplotlib import pyplot as plt
+
+Considere un electrón dentro de una caa de longitud 4 angstroms. Defina las siguientes constantes
+```
+hbar = 1
+m = 1
+L = 4
+```
+
+# Constantes
+
+hbar = 1
+m = 1
+L = 4
+
+**Grafique la función de onda ($\psi$) y su cuadrado ($\psi^2$) para n=1 y L=4.0 A**
 
 ```{tip}
-1. Importe numpy y matplotlib.pyplot
-2. Declare la variable L y asígnele un valor, por ejemplo $L=1$
-3. Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 50.
-4. Evalúe la función de onda en el dominio
-5. Calcule el cuadrado de la función de onda en el dominio
-6. Grafique la función de onda y su cuadrado usando matplotlib y pyplot.
+1. Declare la variable n asígnele su valor.
+2. Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 100.
+3. Evalúe la función de onda en el dominio
+4. Calcule el cuadrado de la función de onda en el dominio
+5. Grafique la función de onda y su cuadrado usando matplotlib y pyplot.
 ```
 
 # Inserte código para gráfica
 
 # Gráfica de psi_1 y su cuadrado
 
-import numpy as np
-from matplotlib import pyplot as plt
-
-L=4.0
-n=1.0
+n=1
 
 x=np.linspace(0,L,100)
 
@@ -123,27 +141,21 @@ plt.legend()
 plt.axhline(y=0, color='k')
 plt.show()
 
-**Grafique la función de onda y el cuadrado de la función de onda para n=1,2,3,4 para L=4.0 A**
+**Grafique la función de onda ($\psi$) y su cuadrado ($\psi^2$) para n=1,2,3,4 para L=4.0 A**
 ```{tip}
-1. Importe numpy y matplotlib.pyplot
-2. Declare la variable L y asígnele un valor, por ejemplo $L=1$
-3. Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 50.
-4. Evalúe las 4 funciones de onda en el dominio
-5. Calcule el cuadrado de las 4 funciones de onda en el dominio
-6. Grafique las funciones y su cuadrado usando matplotlib y pyplot.
+1. Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 100.
+2. Evalúe las 4 funciones de onda en el dominio
+3. Calcule el cuadrado de las 4 funciones de onda en el dominio
+4. Grafique las funciones y su cuadrado usando matplotlib y pyplot.
 ```
 
 # Inserte código para gráfica
 
 # Gráfica de psi_1, psi_2, psi_3, psi_4 y su cuadrado
 
-import numpy as np
-from matplotlib import pyplot as plt
-
-L=4.0
 x=np.linspace(0,L,100)
 
-n=1.0
+n=1
 
 psi=np.sqrt(2.0/L)*np.sin(n*np.pi*x/L)
 psi2=psi*psi
@@ -154,7 +166,7 @@ plt.legend()
 plt.axhline(y=0, color='k')
 plt.show()
 
-n=2.0
+n=2
 
 psi=np.sqrt(2.0/L)*np.sin(n*np.pi*x/L)
 psi2=psi*psi
@@ -165,7 +177,7 @@ plt.legend()
 plt.axhline(y=0, color='k')
 plt.show()
 
-n=3.0
+n=3
 
 psi=np.sqrt(2.0/L)*np.sin(n*np.pi*x/L)
 psi2=psi*psi
@@ -176,7 +188,7 @@ plt.legend()
 plt.axhline(y=0, color='k')
 plt.show()
 
-n=4.0
+n=4
 
 psi=np.sqrt(2.0/L)*np.sin(n*np.pi*x/L)
 psi2=psi*psi
@@ -193,10 +205,6 @@ Como estamos haciendo una secuencia de gráficas donde aumentamos n de uno en un
 
 # Gráfica de psi_1, psi_2, psi_3, psi_4 y su cuadrado con for
 
-import numpy as np
-from matplotlib import pyplot as plt
-
-L=4.0
 x=np.linspace(0,L,100)
 
 for n in range(1,5):
@@ -222,10 +230,10 @@ Considere h=1 y m=1. Esto se llama unidades atómicas. Tome L=1 A
 
 # Inserte código para gráfica
 
-from matplotlib import pyplot as plt
+L = 1
 
 for n in range(1,11):
-    plt.hlines(n**2.0/(8.0*(1.0**2.0)),0,1)
+    plt.hlines(hbar**2*np.pi**2*n**2/(2*m*L**2),0,1)
 
 plt.xlim(0,4)
 plt.show()
@@ -233,10 +241,12 @@ plt.show()
 **Muestre que $\psi_1$ y $\psi_3$ son ortonormales (Tome $L=2.0$).**
 
 ```{tip}
-Haga la integral
+Haga las integrales
 
 $$
-\int_0^L \psi_1 \psi_3 dx
+\int_0^L \psi_1 \psi_1 dx = 1
+\int_0^L \psi_3 \psi_3 dx = 1
+\int_0^L \psi_1 \psi_3 dx = 0
 $$
 
 ```
@@ -285,13 +295,18 @@ $$
 E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 $$
 
+Para hacer gráficas 3D, importe la siguiente librería
+```
+from mpl_toolkits import mplot3d
+```
+
+# librería
+
+from mpl_toolkits import mplot3d
+
 **Obtenga la gráfica de $\psi_{1,1}$, es decir $n_x=1$ y $n_y=1$, y de $|\psi_{1,1}|^2$ con $L_x = L_y = 4.0$**
 
 # Inserte código para gráfica
-
-from mpl_toolkits import mplot3d
-import numpy as np
-import matplotlib.pyplot as plt
 
 Lx=4.0
 Ly=4.0
@@ -322,10 +337,6 @@ plt.show()
 **Obtenga las gráfica de $\psi_{3,3}$ y $|\psi_{3,3}|^2$ con $L_x = L_y = 4.0$**
 
 # Inserte código para gráfica
-
-from mpl_toolkits import mplot3d
-import numpy as np
-import matplotlib.pyplot as plt
 
 Lx=4.0
 Ly=4.0
