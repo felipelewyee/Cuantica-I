@@ -5,6 +5,7 @@ logo: logo.jpeg
 
 launch_buttons:
   colab_url                 : https://colab.research.google.com # The URL of Google Colab (e.g., https://colab.research.google.com)
+  binderhub_url             : https://mybinder.org
 
 repository:
   url                       : https://github.com/felipelewyee/Cuantica-I  # The URL to your book's repository
