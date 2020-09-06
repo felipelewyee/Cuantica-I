@@ -150,7 +150,7 @@ val,vec=np.linalg.eig(matriz)
 
 # Valores y vectores propios
 
-val,vec=np.linalg.eig(matriz)
+val,vec=np.linalg.eig(matriz1)
 
 ## Gráficas
 

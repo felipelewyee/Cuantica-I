@@ -12,7 +12,7 @@ Para los alumnos del curso de `Química Cuántca I` se recomienda la lectura en 
 
 ````{admonition} Ejecución de los notebooks (en línea)
 :class: tip
-Los ejercicios de este libro requieren un conocimiento básico de Python, mismo que puede adquirirse en el primer capítulo del libro. Los notebooks pueden ejecutarse en línea desde **Google Colab** al presionar el ícono de la nave y dar clic sobre Colab, este ícono aparece en la parte superior de cada notebook. Los archivos generados en Google Colab se guardan automáticamente en su Google Drive. El único requisito este tener una cuenta asociada a **Google**.
+Los notebooks pueden ejecutarse en línea desde **Google Colab** al presionar el ícono de la nave y dar clic sobre Colab, este ícono aparece en la parte superior de cada notebook. Los archivos generados en Google Colab se guardan automáticamente en su Google Drive. El único requisito este tener una cuenta asociada a **Google**.
 
 ![Google Colab example button](images/google_colab.png)
 ````
@@ -27,7 +27,7 @@ conda install matplotlib numpy scipy sympy
 ```
 Después, puede ejecutar un notebook con Jupyter
 ```
-jupyter-notebook NOMBRE.ipynb
+jupyter notebook NOMBRE.ipynb
 ```
 
 Algunos ejercicios utilizan el software psi4, este se puede instalar desde Anaconda con
@@ -35,6 +35,8 @@ Algunos ejercicios utilizan el software psi4, este se puede instalar desde Anaco
 conda install psi4 psi4-rt python=3.7 -c psi4
 ```
 ````
+
+Los ejercicios de este libro requieren un conocimiento básico de Python, mismo que puede adquirirse en el primer capítulo del libro. 
 
 ## Uso del manual
 

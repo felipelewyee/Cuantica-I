@@ -1,147 +1,312 @@
 # Caja de potencial con un tope en el medio
 
+Este problema es continuación de la partícula en la caja. Para ello, planteemos una caja de $-L$ a $L$, con el potencial definido por
 
+$$
+V(x) = \left\{
+  \begin{array}{lll}
+  \infty      & \mathrm{si\ } x < -L & \\
+  0      & \mathrm{si\ } -L \le x < a & II\\
+  V & \mathrm{si\ } -a \le x \le a & III \\
+  0      & \mathrm{si\ } a < x \le L & IV\\
+  \infty     & \mathrm{si\ } x > L & 
+  \end{array}
+  \right.
+$$
 
-Las cajas de potencial unidimensionales se usan para enseñar y aprender cuántica porque, a pesar de que no existen, son fáciles de resolver y ayudan a irle agarrando la onda al asunto. Esta caja de potencial tiene un "tope" en el centro. Es decir, el potencial vale infinito fuera de la caja, vale cero en las zonas de la izquierda y la derecha (de $-L$ a $-a$ y de $+a$ a $+L$) y vale $U$ en el centro (de $-a$ a $+a$), como se ve en la figura.
-<img src="Caja.png" width="500">
+Es decir, el potencial vale infinito fuera de la caja, cero en las zonas de la izquierda y la derecha (de $-L$ a $-a$ y de $+a$ a $+L$) y vale $U$ en el centro (de $-a$ a $+a$).
+
 La función de onda se obtiene resolviendo la ecuación de Schrödinger
-$$-\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\Psi(x)+V(x)\Psi(x)=E\Psi(x)$$
-con la condición a la frontera de que la solución, $Psi(x)$, debe ser continua y de derivada continua. 
 
-## La condición de continuidad para este problema lleva a la siguiente ecuación
-La caja va de $-L$ a $+L$, el tope de $-a$ a $+a$.
+$$
+\left( -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x) \right) \psi(x) = E \psi(x)
+$$
 
-La altura del tope es $U$
+Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por secciones.
 
-La solución de la ecuación de Schrödinger lleva a las siguientes ecuaciones, en las que se busca el valor de la energía que las resuelve; la primera es para el caso de una solución par
+```{admonition} Hamiltoniano por secciones
+:class: dropdown
 
-$$\sqrt{{E\over U-E}}=\tanh{\bigg[\sqrt{{2m(U-E)\over \hbar^2}}a\bigg]} \tan{\bigg[\sqrt{{2mE\over \hbar^2}}(a-L)\bigg]};$$
+Si analizamos la ecuación de Schrodiger por zonas se tiene:
 
-y la segunda es para el caso de una solución impar,
+| Zona      | Hamiltoniano | Función de onda | Constantes |
+|:----------------:|:---------:|:--------:|:--------:|
+| I | $-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_I(x) = E \psi_I(x)$ | $\psi_I(x) = A sin(k_1 x) + Bcos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
+| II | $-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{II}(x) + U\psi_{II}(x)= E \psi_{II}(x)$ | $\psi_{II}(x) = C e^{k_2 x} + De^{-k_2x}$ | $k_2^2 = -\frac{2m(E-U)}{\hbar^2} = \frac{2m(U-E)}{\hbar^2}$ |
+| III | $-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{III}(x) = E \psi_{III}(x)$ | $\psi_{III}(x) = A' sin(k_1 x) + B' cos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
 
-$$\sqrt{{E\over U-E}}={ \tan{\bigg[\sqrt{{2mE\over \hbar^2}}(a-L)\bigg]} \over \tanh{\bigg[\sqrt{{2m(U-E)\over \hbar^2}}a\bigg]}}.$$
+```
 
-La solución de estas ecuaciones trascendentales se va a buscar con el método de Newton-Raphson, en el que se busca el valor de la variable, $x_s$, que satisface que una función sea igual a cero:
+**Importe las siguientes librerías**
+- numpy
+- pyplot de matplotlib
+- optimize de scipy
+- integrate de scipy
 
-$$f(x_{sol})=0,$$
- 
-y que está dada aproximadamente por 
-
-$$x_s \approx x_0 - {f(x_0)\over f^\prime(x_0)}$$
-
-
+# Importe librerías
 
 import numpy as np
 from matplotlib import pyplot as plt
-from scipy.integrate import simps
-# fijamos el valor de los parámetros, masa, L, a y U
-me = 0.5
-hbar = 1.
-L=3.
-a=1.
-U=60.
-coef = np.sqrt(2.*me/hbar**2)
-npo = 1000
+from scipy import optimize
+from scipy import integrate
 
-#Definimos la función par que queremos optimizar
-def paraNR(E):
-    global arg1, arg2, coef, U
-    f = np.tanh(arg1)*np.tan(arg2)+np.sqrt(E/(U-E))
-    fp = ((np.tanh(arg1))*coef*(L-a)*.5/(np.sqrt(E)*((np.cos(arg2))**2)) - 
-         np.tan(arg2)*(1.-(np.tanh(arg1))**2)*coef*a*.5/np.sqrt(U-E) - 
-         .5*U*np.sqrt((U-E)/E)/(U-E)**2)
-    return f, fp, E-f/fp
 
-#Definimos la función impar que queremos optimizar
-def imparaNR(E):
-    global arg1, arg2, coef, U
-    f = np.tan(arg2)/np.tanh(arg1)+np.sqrt(E/(U-E))   
-    fp = ((np.tanh(arg1))*coef*(L-a)*.5/(np.sqrt(E)*((np.cos(arg2))**2)) - 
-         np.tan(arg2)*(1.-(np.tanh(arg1))**2)*coef*a*.5/np.sqrt(U-E) - 
-         .5*U*np.sqrt((U-E)/E)/(U-E)**2)
-    return f, fp, E-f/fp
+**Establezca valores para las constantes** $\hbar$, $m$, $V$, $a$, $L$.
 
-# Buscamos soluciones para E<U
-#empezamos con el estado basal de la caja sin tope
-#E0 = 4.*(hbar*np.pi)**2*(1./(2.*me*(L-a)**2)+1./(2.*me*(2*L)**2))/2.
-energiasinf = (hbar*np.pi)**2*(1./(2.*me*(L-a)**2))
-nn = 0
-E_inf = [0.]*(20)
-while energiasinf <= 1.5*U:   
-    E_inf[nn]= energiasinf
-    energiasinf = (nn+2)**2. * energiasinf / (nn+1)**2.
-    nn = nn + 1
-print ("Energias de la caja infinita similar", E_inf)
+# De valor a las constantes
 
-# E0 es la primera aproximación a la energía
-E0 = E_inf[0]*.5
-#E0 = .5
-#E = 4,8,20
-E = 54.
-for i in range (50):
-    arg1 = ((2.*me*(U-E)/hbar**2)**(.5))*a
-    arg2 = ((2.*me*(E)/hbar**2)**(.5))*(L-a)
-    f, fp, En = paraNR(E)
-    #print f, fp, E, En, np.abs(E-En)
-    if np.abs(E-En) <= .0001:
-        E = En
-        conv = 1
-        break
-    else:
-        E=.8*E+ .2*En
-        conv = 0
-if conv == 0 : 
-    print ("No obtuve solucion en 50 vueltas a NR, me detengo!")
+hbar = 1
+m = 1.0
+V = 50.0
+a = 0.2
+L = 1.2
+
+La función de onda debe ser contínua, por lo que podemos igualar la función de onda en el punto donde se unen las zonas, y obtener nuevas ecuaciones.
+
+```{admonition} Condiciones de Frontera
+:class: dropdown
+| Zonas | Condición | Ecuación |
+|:---: |:---: | :---:    |
+| Inicio y I | $\psi_I(-L) = 0$ | $B = A tan(k_1 L)$ |
+| I y II | $\psi_{I}(-a) = \psi_{II}(-a)$ | $-A sin(k_1 a) + Bcos(k_1 a) = C e^{-k_2a} + D e^{k_2a}$ |
+|I y II | $\psi'_{I}(-a) = \psi'_{II}(-a)$ | $k_1(A cos(k_1 a) + Bsin(k_1 a)) = k_2 (C e^{-k_2a} - D e^{k_2a})$|
+| II y III | $\psi_{II}(a) = \psi_{III}(a)$ | $C e^{-k_2a} + D e^{k_2a} = A' sin(k_1 a) + B'cos(k_1 a)$|
+| III y Final | $\psi_{III}(L) = 0$ | $B' = -A' tan(k_1 L)$|
+```
+
+
+A partir de aquí podemos ayudarnos de la simetría del problema. Empezaremos asumiendo que lo que esta del lado izquierdo del potencial es simétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par.
+
+## Simetría Par
+
+Estamos buscando los valores de E que resuelvan la ecuación
+\begin{equation}
+tanh \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{U-E}}
+\end{equation}
+
+Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos $f(E)$
+\begin{equation}
+f(E) = tanh^2 \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{U-E}
+\end{equation}
+
+Cuando se tenga el $E$ correcto se cumplirá $f(E) = 0$, así que solo tenemos que buscar los ceros (o raíces) de la función.
+
+**Defina la función $f(E)$**
+
+# f(E)
+
+def f(E): 
     
-print ("Energia: ", E)
-x_set=np.linspace(-L,L,npo)
-Psi = [0]*npo
-Psi2 = [0]*npo
-k1=np.sqrt(2.*me*E/hbar**2)
-k2=np.sqrt(2.*me*(U-E)/hbar**2)
-A=1.
-C=A*(-np.sin(k1*a)+np.tan(k1*L)*np.cos(k1*a))/(np.exp(k2*a)+np.exp(-k2*a))
+    arg1 = np.sqrt(2*m*(V-E)/hbar**2)*a
+    arg2 = np.sqrt(2*m*E/hbar**2)*(a-L)
+    
+    return np.tanh(arg1)**2*np.tan(arg2)**2 - E/(V-E)
 
-for i in range (npo):
-    if x_set[i] <= -a:
-        Psi[i]=A*(np.sin(k1*x_set[i])+np.tan(k1*L)*np.cos(k1*x_set[i]))
-    if x_set[i] > -a and x_set[i] < a:
-        #PP[i]
-        Psi[i]=C*(np.exp(k2*x_set[i])+np.exp(-k2*x_set[i]))
-    if x_set[i] >= a:
-        Psi[i]=A*(-np.sin(k1*x_set[i])+np.tan(k1*L)*np.cos(k1*x_set[i]))
-    Psi2[i] = Psi[i]*Psi[i]
-I = simps(Psi2, x_set)
-print (I)
-I1 = simps(Psi2/I, x_set)
-#PP = simps(Psi2/I, x_set,-1.,1.)
-PP = simps(Psi2/I, x_set)
-print (I1, PP)
-fig, axs = plt.subplots(2)
-#fig.suptitle('Vertically stacked subplots')
-axs[0].plot(x_set,Psi2/I)
+Para encontrar los valores de E que hacen que f(E) se vuelva cero, cree un conjunto de puntos de E con muchos puntos entre 0 y V, puede usar la instrucción
+```
+E_dominio = np.linspace(0,V,10000)
+```
 
-#lines = plt.plot(x1, y1, x2, y2)
+# E_dominio
 
-lines = plt.plot([-3.,-3.,-1,-1.,1.,1.,3.,3.],[1.6*U,0.,0.,1.6*U,1.6*U,0.,0.,1.6*U])
-lines2 = plt.plot([-3.,3.],[E,E])
+E_dominio = np.linspace(0,V,10000)
 
-# use keyword args
-dif= np.min(np.abs(E-E_inf))
-index_min = np.argmin(np.abs(E-E_inf))
-print (dif,E_inf[index_min])
-lines3 = plt.plot([-3.,3.],[E_inf[index_min],E_inf[index_min]])
-lines4 = plt.plot([-1.,1.],[U,U])
-plt.setp(lines, color='r', linewidth=2.0)
-plt.setp(lines2, color='b', linewidth=2.0)
-plt.setp(lines3, color='r', linewidth=2.0)
-plt.setp(lines4, color='b', linewidth=2.0)
-plt.ylim(-.1*U,1.5*U)
-axs[1].plot(x_set,Psi2/I)
-#plt.plot(x_set,Psi2/I)
-plt.show()
+Para cada uno de estos puntos evalúe si f(E) es menos a $10^{-2}$, en este caso el valor de E es un buen candidato para ser una raíz de f(E). Haga una lista con los valores de E que cumplieron el criterio, este será su primer guess.
 
+E_primerguess = []
+for E_i in E_dominio:
+    if (abs(f(E_i))<1e-2):
+        E_primerguess.append(E_i)
 
-## Autor
+Python tiene funciones especiales para buscar raíces partiendo de cierto punto. La siguiente línea busca la raíz de f(E) más cercana a un punto E_i
+```
+E = newton(f,x0=E_i)
+```
 
-Este notebook es una contribución del Dr. Carlos Amador Bedolla
+Para cada valor de energía de su primer guess, utilice el método de Newton para encontrar la raíz más cercana y guárdela en una lista si la diferencia con la última raíz es mayor a 0.1. Este será su segundo guess.
+
+E_segundoguess = [0]
+for E_i in E_primerguess:
+    E = optimize.newton(f,x0=E_i)
+    if (abs(E_segundoguess[-1] - E) > 0.1 ):
+        E_segundoguess.append(E)
+
+Imprima su segundo guess
+
+# Impresión
+
+print(E_segundoguess)
+
+Defina funciones para
+
+$$
+k_1 = \frac{2mE}{hbar^2}
+$$
+
+$$
+k_2 = \frac{2m(V-E)}{hbar**2}
+$$
+
+# Defina funciones
+
+def k1(E): return np.sqrt(2*m*E/hbar**2)
+def k2(E): return np.sqrt(2*m*(V-E)/hbar**2)
+
+Defina funciones para
+
+$$
+\psi_{I}(x) = \frac{e^{-k_2Ea}+e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)} sin(k_1Ex)+tan(k_1EL)cos(k_1Ex)
+$$
+
+$$
+\psi_{II}(x) = e^{k_2Ex}+e^{-k_2Ex}
+$$
+
+$$
+\psi_{III}(x) = \frac{e^{k_2Ea}+e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
+$$
+
+# Defina funciones
+
+def psi_I(x): return (np.exp(-k2(E)*a)+np.exp(k2(E)*a))/(-np.sin(k1(E)*a)+np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)+np.tan(k1(E)*L)*np.cos(k1(E)*x))
+def psi_II(x): return np.exp(k2(E)*x)+np.exp(-k2(E)*x)
+def psi_III(x): return (np.exp(k2(E)*a)+np.exp(-k2(E)*a))/(np.sin(k1(E)*a)-np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)-np.tan(k1(E)*L)*np.cos(k1(E)*x))
+
+Cree tres dominios de 1000 puntos para la función de onda, tal que
+
+$$
+x_1 \in [-L,-a]
+$$
+
+$$
+x_2 \in [-a,a]
+$$
+
+$$
+x_3 \in [a,L]
+$$
+
+# x_1, x_2 y x_3
+
+x1 = np.linspace(-L,-a,10000)
+x2 = np.linspace(-a,a,10000)
+x3 = np.linspace(a,L,10000)
+
+Utilice las energías del segundo guess para graficar las funciones de onda.
+
+for E in E_segundoguess:
+    if(E>0):
+        norm = 0.0
+        
+        norm = norm + integrate.quad(lambda x: psi_I(x)*psi_I(x), -L, -a)[0]
+        norm = norm + integrate.quad(lambda x: psi_II(x)*psi_II(x), -a, a)[0]
+        norm = norm + integrate.quad(lambda x: psi_III(x)*psi_III(x), a, L)[0]
+                
+        plt.plot(x1,psi_I(x1)/np.sqrt(norm))
+        plt.plot(x2,psi_II(x2)/np.sqrt(norm))
+        plt.plot(x3,psi_III(x3)/np.sqrt(norm)) 
+        
+        prob = integrate.quad(lambda x: psi_II(x)*psi_II(x), -a, a)[0]/norm
+        print("E: " + str(E) + " Probabilidad de [-a,a]: " + str(prob))
+        
+        plt.plot(x1,psi_I(x1)*psi_I(x1)/norm)
+        plt.plot(x2,psi_II(x2)*psi_II(x2)/norm)
+        plt.plot(x3,psi_III(x3)*psi_III(x3)/norm)
+
+        plt.show()
+    else:
+        print("Zero")
+
+## Simetría impar
+
+Estamos buscando los valores de E que resuelvan la ecuación
+\begin{equation}
+tanh^{-1} \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{U-E}}
+\end{equation}
+
+Una forma más simple es elevar al cuadrado, pasar todo a la derecha y definir $f(E)$
+\begin{equation}
+f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(U-E)}{\hbar^2}} a \right) \right)^2 tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{U-E}
+\end{equation}
+
+Cuando se tenga el $E$ correcto se cumplirá $f(E) = 0$, así que solo tenemos que buscar los ceros (o raíces) de la función.
+
+def f(E): 
+    arg1 = np.sqrt(2*m*(V-E)/hbar**2)*a
+    arg2 = np.sqrt(2*m*(E)/hbar**2)*(a-L)
+    
+    return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
+
+- Genere un conunto de 1000 puntos de E de 0 a V
+- Seleccione auellos para los que f(E) es menor que $10^{-2}$
+- Utilice el método de Newton para obtener valores únicos de energía
+
+E_dominio = np.linspace(0,V,10000)
+
+E_primerguess = []
+for E in E_dominio:
+    if (abs(f(E))<1e-2):
+        E_primerguess.append(E)
+    
+E_segundoguess = [0]
+for E in E_primerguess:
+    E_i = optimize.newton(f,x0=E)
+    if (abs(E_segundoguess[-1] - E_i) > 0.1 ):
+        E_segundoguess.append(E_i)
+
+Defina funciones para:
+
+$$
+\psi_{I}(x) = \frac{e^{-k_2E*a}-e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)+tan(k_1EL)np.cos(k_1Ex))
+$$
+
+$$
+\psi_{II}(x) = e^{k_2Ex}-e^{-k_2Ex}
+$$
+
+$$
+\psi_{III}(x) = \frac{e^{k_2Ea}-e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
+$$
+
+# Funciones
+
+def psi_I(x): return (np.exp(-k2(E)*a)-np.exp(k2(E)*a))/(-np.sin(k1(E)*a)+np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)+np.tan(k1(E)*L)*np.cos(k1(E)*x))
+def psi_II(x): return np.exp(k2(E)*x)-np.exp(-k2(E)*x)
+def psi_III(x): return (np.exp(k2(E)*a)-np.exp(-k2(E)*a))/(np.sin(k1(E)*a)-np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)-np.tan(k1(E)*L)*np.cos(k1(E)*x))
+
+Realice las gráficas de la función de onda
+
+# Graficas
+
+for E in E_segundoguess:
+    if(E>0):
+        norm = 0.0
+        
+        norm = norm + integrate.quad(lambda x: psi_I(x)*psi_I(x), -L, -a)[0]
+        norm = norm + integrate.quad(lambda x: psi_II(x)*psi_II(x), -a, a)[0]
+        norm = norm + integrate.quad(lambda x: psi_III(x)*psi_III(x), a, L)[0]
+                
+        plt.plot(x1,psi_I(x1)/np.sqrt(norm))
+        plt.plot(x2,psi_II(x2)/np.sqrt(norm))
+        plt.plot(x3,psi_III(x3)/np.sqrt(norm)) 
+        
+        prob = integrate.quad(lambda x: psi_II(x)*psi_II(x), -a, a)[0]/norm
+        print("E: " + str(E) + " Probabilidad de [-a,a]: " + str(prob))
+        
+        plt.plot(x1,psi_I(x1)*psi_I(x1)/norm)
+        plt.plot(x2,psi_II(x2)*psi_II(x2)/norm)
+        plt.plot(x3,psi_III(x3)*psi_III(x3)/norm)
+
+        plt.show()
+    else:
+        print("Zero")
+
+Con base en lo anteriormente visto, responda a la siguiente frase con verdadero o falso.
+
+**Si la partícula tiene energía menor que V, es imposible encontrarla en el intevalo [-a,a] (Cierto/Falso)**
+
+**Respuesta**
+
+## Autoría
+
+Esta es una contribución del Dr. Carlos Amador Bedolla.
