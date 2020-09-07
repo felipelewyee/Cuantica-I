@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Teoría de los funcionales de la densidad (DFT) &#8212; Cuántica I</title>
+    <title>4. Teoría de funcionales de la densidad (DFT) &#8212; Cuántica I</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -180,7 +180,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   4. Teoría de los funcionales de la densidad (DFT)
+   4. Teoría de funcionales de la densidad (DFT)
   </a>
  </li>
  <li class="toctree-l1">
@@ -338,22 +338,39 @@
         
               <div>
                 
-  <div class="section" id="teoria-de-los-funcionales-de-la-densidad-dft">
-<h1><span class="section-number">4. </span>Teoría de los funcionales de la densidad (DFT)<a class="headerlink" href="#teoria-de-los-funcionales-de-la-densidad-dft" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="teoria-de-funcionales-de-la-densidad-dft">
+<h1><span class="section-number">4. </span>Teoría de funcionales de la densidad (DFT)<a class="headerlink" href="#teoria-de-funcionales-de-la-densidad-dft" title="Permalink to this headline">¶</a></h1>
 <p>La teoría de los funcionales de la densidad se basa en que la densidad electrónica contiene toda la información del sistema, por lo que se puede extraer de ella la energía mediante un funcional</p>
 <div class="math notranslate nohighlight">
 \[
-E[\rho] = T_s[\rho] + V_{ext}[\rho] + J[\rho] + E_{xc}[\rho]
+E[\rho] = T_s[\rho] + U[\rho] + V_{nuc}[\rho] + E_{xc}[\rho]
+\]</div>
+<p>Donde</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E[\rho]\)</span> es la energía del sistema</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_s[\rho]\)</span> es la energía cinética de Kohn-Sham</p></li>
+<li><p><span class="math notranslate nohighlight">\(U[\rho]\)</span> es la energía de Hartree</p></li>
+<li><p><span class="math notranslate nohighlight">\(V[\rho]\)</span> es la interacción núcleo electrón</p></li>
+<li><p><span class="math notranslate nohighlight">\(E_{xc} [\rho]\)</span> es la energía de intercambio correlación</p></li>
+</ul>
+<p>En la formulación de Kohn y Sham, la densidad electrónica (<span class="math notranslate nohighlight">\(\rho(r)\)</span>) se calcula a partir de los orbitales de Kohn-Sham (<span class="math notranslate nohighlight">\(\psi^{KS}_i(r)\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[
+\rho(r) = \sum_i^{N} |\psi^{KS}_i(r)|^2
 \]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Los teoremas de Hohenberg y Kohn, y Kohn y Sham prueban que existe un funcional universal que conecta a la densidad electrónica con la energía del sistema, pero este funcional no se conoce. Se realizan diversas propuestas de como construir este funcional, por lo que en la práctica existen cientos de funcionales de DFT.</p>
+<p>Los teoremas de Hohenberg y Kohn, y Kohn y Sham prueban que existe un funcional universal que conecta a la densidad electrónica con la energía del sistema, pero este funcional no se conoce, particularmente por la parte de <span class="math notranslate nohighlight">\(E_{xc}[\rho]\)</span>. Se realizan diversas propuestas de como construir este funcional, por lo que en la práctica existen cientos de funcionales de DFT.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>En la práctica, ciertos funcionales son mejores que otros para analizar ciertos tipos de moléculas, mientras que la tendencia se invierte al cambiar a otro tipo de moléculas. <code class="docutils literal notranslate"><span class="pre">No</span> <span class="pre">existe</span> <span class="pre">el</span> <span class="pre">mejor</span> <span class="pre">funcional,</span> <span class="pre">sino</span> <span class="pre">que</span> <span class="pre">depende</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">molécula</span> <span class="pre">que</span> <span class="pre">se</span> <span class="pre">esté</span> <span class="pre">estudiando.</span></code></p>
+<p>No existe el mejor funcional, sino que depende del sistema químico que se esté estudiando.</p>
 </div>
 <p>En general los funcionales aproximan de diferente manera el intercambio y la correlación, dependiendo de como se aproxime el funcional, estos se pueden clasificar en diferentes categorías. La clasificación fue propuesta por Perdew y se conoce como la <code class="docutils literal notranslate"><span class="pre">escalera</span> <span class="pre">de</span> <span class="pre">Jacob</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>La contribución del funcional de intercambio-correlación requiere de integración numérica, lo que se hace con un mallado entorno a la molécula. Existen diversos esquemas para colocar los puntos en el mallado, y para seleccionar cuantos puntos poner, estos puede cambiar de un software a otro, e incluso entre diferentes versiones de un mismo software.</p>
+</div>
 <p><strong>Importe psi4</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -408,7 +425,7 @@ E_x^{LDA} = -\frac{3}{4} \left( \frac{3}{\pi} \right)^{1/3} \int \rho^{4/3} (r) 
 \]</div>
 <p>y la correlación se calcula mediante el funcional de Vosko, Wilk y Nusair
 $<span class="math notranslate nohighlight">\(
-E_c^{LDA} = E_c^{VWN}
+E_c^{LDA} = \int \varepsilon_c^{VWN} dr
 \)</span>$</p>
 <p>Haga un cálculo de energía con SVWN y la base 6-311G con la siguiente instrucción</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;SVWN/6-311G&#39;</span><span class="p">)</span>
@@ -439,9 +456,13 @@ E_c^{LDA} = E_c^{VWN}
 <p>Esto calcula la energía con base en la densidad electrónica y su gradiente</p>
 <div class="math notranslate nohighlight">
 \[
-E_{xc}^{GGA} = -\int f(\rho,\nabla \rho) dr
+E_{xc}^{GGA} = -\int \varepsilon_{xc}^{GGA} (\rho,\nabla \rho) dr
 \]</div>
 <p>Para ello separa los funcionales en intercambio y correlación.</p>
+<div class="math notranslate nohighlight">
+\[
+\varepsilon_{xc}^{GGA} = \varepsilon_{x}^{GGA} + \varepsilon_{c}^{GGA}
+\]</div>
 <p>Algunos funcionales de intercambio GGA son</p>
 <ul class="simple">
 <li><p>PWx86: Perdew-Wang 1986</p></li>
@@ -449,7 +470,7 @@ E_{xc}^{GGA} = -\int f(\rho,\nabla \rho) dr
 <li><p>PWx91: Perdew-Wang 1991</p></li>
 <li><p>PBE: Perdew-Burke-Ernzerhof</p></li>
 </ul>
-<p>Algunos funcionales de correlación son</p>
+<p>Algunos funcionales de correlación GGA son</p>
 <ul class="simple">
 <li><p>LYP: Lee-Yang-Parr</p></li>
 <li><p>Pc86: Perdew 1986</p></li>
@@ -478,7 +499,7 @@ E_{xc}^{GGA} = -\int f(\rho,\nabla \rho) dr
 <p>Los funcionales meta-GGA usan la densidad electrónica, el gradiente de la densidad electrónica, y el laplaciano de la densidad electrónica.</p>
 <div class="math notranslate nohighlight">
 \[
-E_{xc}^{meta-GGA} = -\int f(\rho,\nabla \rho,\nabla^2 \rho) dr
+E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2 \rho) dr
 \]</div>
 <p>Algunos ejemplos son:</p>
 <ul class="simple">
@@ -511,7 +532,8 @@ E_{xc}^{meta-GGA} = -\int f(\rho,\nabla \rho,\nabla^2 \rho) dr
 </div>
 <div class="section" id="funcionales-hibridos">
 <h2><span class="section-number">4.4. </span>Funcionales Híbridos<a class="headerlink" href="#funcionales-hibridos" title="Permalink to this headline">¶</a></h2>
-<p>Mezclan el funcional de intercambio con el <code class="docutils literal notranslate"><span class="pre">intercambio</span> <span class="pre">de</span> <span class="pre">Hartree-Fock</span></code> en alguna proporción. Algunos ejemplos de estos funcionales son:</p>
+<p>Mezclan un funcional de intercambio con el <code class="docutils literal notranslate"><span class="pre">intercambio</span> <span class="pre">de</span> <span class="pre">Hartree-Fock</span></code> en alguna proporción.</p>
+<p>Algunos ejemplos de estos funcionales son:</p>
 <ul class="simple">
 <li><p>B3LYP</p></li>
 <li><p>PBE0</p></li>
@@ -545,9 +567,12 @@ E_{xc}^{meta-GGA} = -\int f(\rho,\nabla \rho,\nabla^2 \rho) dr
 <div class="section" id="referencias">
 <h2><span class="section-number">4.5. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005.</p></li>
-<li><p>Rappoport, D.; Crawford, N. R. M.; Furche, F.; y Burke, K. Which functional should I choose?, 2008.</p></li>
-<li><p>W. Koch y M.C. Holthausen, A Chemist’s Guide to Density Functional Theory, 2001.</p></li>
+<li><p>P. Hohenberg and W. Kohn, Phys. Rev. 136, B864 (1964).</p></li>
+<li><p>P. Atkins, Molecular Quantum Mechanics (Oxford University Press, 2005).</p></li>
+<li><p>D. Rappoport, N. R. M. Crawford, F. Furche, y K. Burke, Which functional should I choose?, (2008).</p></li>
+<li><p>W. Koch y M.C. Holthausen, A Chemist’s Guide to Density Functional Theory, (2001).</p></li>
+<li><p>K. Burke y L.O. Wagner, Int. J. Quantum Chem. 113, 96 (2013).</p></li>
+<li><p>K. Burke, J. Chem. Phys. 136, (2012).</p></li>
 </ul>
 </div>
 </div>
