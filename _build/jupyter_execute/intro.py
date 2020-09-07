@@ -27,7 +27,7 @@ y = tan(x) = \frac{sin(x)}{cos(x)}
 $$
 ```
 
-Para los alumnos del curso de `Química Cuántca I` se recomienda la lectura en el orden de los capítulos, el cual puede seguirse utilizando la barra de navegación que aparece del lado izquierdo en computadoras, o con el menú emergente en dispositivos móviles. Este libro permite interactuar con el contenido, para lo cual se recomienda alguna de las dos opciones siguientes:
+Para los alumnos del curso de `Química Cuántca I` se recomienda la lectura en el orden de los capítulos, el cual puede seguirse utilizando la barra de navegación que aparece del lado izquierdo en computadoras, o con el menú emergente en dispositivos móviles. Este libro permite interactuar con el contenido, para lo cual se recomienda alguna de las opciones siguientes:
 
 ````{admonition} Ejecución de los notebooks (en línea)
 :class: tip
@@ -35,6 +35,13 @@ Los notebooks pueden ejecutarse en línea desde **Google Colab** al presionar el
 
 ![Google Colab example button](images/google_colab.png)
 ````
+
+````{admonition} Ejecución de los notebooks (live code)
+:class: tip
+Puede ejecutar los notebooks directamente en el libro haciendo clic sobre el botón.
+
+![Live Code](images/live_code.png)
+`````
 
 ````{admonition} Ejecución de los notebooks (en computadora)
 :class: tip
@@ -53,7 +60,12 @@ Algunos ejercicios utilizan el software psi4, este se puede instalar desde Anaco
 ```
 conda install psi4 psi4-rt python=3.7 -c psi4
 ```
+
 ````
+
+```{warning}
+Los códigos que usen psi4 solo funcionan en ejecución directa desde computadora y no en Google Colab ni en live code.
+```
 
 Los ejercicios de este libro requieren un conocimiento básico de Python, mismo que puede adquirirse en el primer capítulo del libro. 
 
