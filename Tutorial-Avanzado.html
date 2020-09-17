@@ -180,7 +180,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="DFT.html">
-   4. Teoría de los funcionales de la densidad (DFT)
+   4. Teoría de funcionales de la densidad (DFT)
   </a>
  </li>
  <li class="toctree-l1">
@@ -534,7 +534,7 @@ matriz1 = \begin{pmatrix}
 </div>
 </div>
 </div>
-<p>Los valores propios (<span class="math notranslate nohighlight">\(\lambda\)</span>) y vectores propios (<span class="math notranslate nohighlight">\(v\)</span>) de una matriz (<span class="math notranslate nohighlight">\(M\)</span>) son muy importantes en química cuántica. Cumplen la propiedad de que al multipicar la matriz por el vector propio resulta el mismo vector multiplciado por una constante, es decir:</p>
+<p>Los valores propios (<span class="math notranslate nohighlight">\(\lambda\)</span>) y vectores propios (<span class="math notranslate nohighlight">\(v\)</span>) de una matriz (<span class="math notranslate nohighlight">\(M\)</span>) son muy importantes en química cuántica. Cumplen la propiedad de que al multiplicar la matriz por el vector propio resulta el mismo vector multiplicado por una constante, es decir:</p>
 <div class="math notranslate nohighlight">
 \[
 M v = \lambda v
@@ -574,7 +574,7 @@ M v = \lambda v
 </div>
 </div>
 </div>
-<p>Obtendremos el valor de “y” usando numpy, al escribir la siguiente instrucción Python toma cada valor de x, le aplica la función y lo guarda en la ariable “y”.</p>
+<p>Obtendremos el valor de “y” usando numpy, al escribir la siguiente instrucción Python toma cada valor de x, le aplica la función y lo guarda en la variable “y”.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -637,7 +637,7 @@ y = sin(x)
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
 </pre></div>
 </div>
-<p>y luego realizaremos la ingeral con la función quad</p>
+<p>y luego realizaremos la integral con la función quad</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -662,7 +662,7 @@ y = sin(x)
 </div>
 </div>
 </div>
-<p>Considere la funión de onda <span class="math notranslate nohighlight">\(\psi = x\)</span>, con <span class="math notranslate nohighlight">\(x \epsilon [-3,3]\)</span>, <strong>proponga una función de onda normalizada y evalúe la integral con integrate.quad para comprobar que la norma es 1.</strong></p>
+<p>Considere la función de onda <span class="math notranslate nohighlight">\(\psi = x\)</span>, con <span class="math notranslate nohighlight">\(x \epsilon [-3,3]\)</span>, <strong>proponga una función de onda normalizada y evalúe la integral con integrate.quad para comprobar que la norma es 1.</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Recuerde que para normalizar:</p>

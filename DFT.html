@@ -360,7 +360,7 @@ E[\rho] = T_s[\rho] + U[\rho] + V_{nuc}[\rho] + E_{xc}[\rho]
 \]</div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Los teoremas de Hohenberg y Kohn, y Kohn y Sham prueban que existe un funcional universal que conecta a la densidad electrónica con la energía del sistema, pero este funcional no se conoce, particularmente por la parte de <span class="math notranslate nohighlight">\(E_{xc}[\rho]\)</span>. Se realizan diversas propuestas de como construir este funcional, por lo que en la práctica existen cientos de funcionales de DFT.</p>
+<p>Los teoremas de Hohenberg y Kohn, y Kohn y Sham prueban que existe un funcional universal que conecta a la densidad electrónica con la energía del sistema, pero este funcional no se conoce, particularmente por la parte de <span class="math notranslate nohighlight">\(E_{xc}[\rho]\)</span>. Se han realizan diversas propuestas de como construir este funcional, por lo que en la práctica existen cientos de funcionales de DFT.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -369,7 +369,7 @@ E[\rho] = T_s[\rho] + U[\rho] + V_{nuc}[\rho] + E_{xc}[\rho]
 <p>En general los funcionales aproximan de diferente manera el intercambio y la correlación, dependiendo de como se aproxime el funcional, estos se pueden clasificar en diferentes categorías. La clasificación fue propuesta por Perdew y se conoce como la <code class="docutils literal notranslate"><span class="pre">escalera</span> <span class="pre">de</span> <span class="pre">Jacob</span></code>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>La contribución del funcional de intercambio-correlación requiere de integración numérica, lo que se hace con un mallado entorno a la molécula. Existen diversos esquemas para colocar los puntos en el mallado, y para seleccionar cuantos puntos poner, estos puede cambiar de un software a otro, e incluso entre diferentes versiones de un mismo software.</p>
+<p>Evaluar la contribución del funcional de intercambio-correlación requiere de realizar integración numérica. Esto se hace con un mallado entorno a la molécula. Existen diversos esquemas para colocar los puntos en el mallado, y para seleccionar cuantos puntos poner, estos puede cambiar de un software a otro, e incluso entre diferentes versiones de un mismo software.</p>
 </div>
 <p><strong>Importe psi4</strong></p>
 <div class="cell docutils container">
@@ -418,7 +418,7 @@ E[\rho] = T_s[\rho] + U[\rho] + V_{nuc}[\rho] + E_{xc}[\rho]
 </div>
 <div class="section" id="aproximacion-local-de-la-densidad-lda">
 <h2><span class="section-number">4.1. </span>Aproximación Local de la Densidad (LDA)<a class="headerlink" href="#aproximacion-local-de-la-densidad-lda" title="Permalink to this headline">¶</a></h2>
-<p>Fue una de las primeros aproximaciones y ha sido superada hoy en día. En este caso, el intercambio se calcula mediante</p>
+<p>Fue una de las primeros aproximaciones y ya ha sido superada. En este caso, el intercambio se calcula mediante</p>
 <div class="math notranslate nohighlight">
 \[
 E_x^{LDA} = -\frac{3}{4} \left( \frac{3}{\pi} \right)^{1/3} \int \rho^{4/3} (r) dr 
