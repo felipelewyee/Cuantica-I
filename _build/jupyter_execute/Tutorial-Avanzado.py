@@ -135,7 +135,7 @@ matriz3=np.matmul(matriz1,matriz2)
 
 #Matriz3 = Matriz1 x Matriz2
 
-Los valores propios ($\lambda$) y vectores propios ($v$) de una matriz ($M$) son muy importantes en química cuántica. Cumplen la propiedad de que al multipicar la matriz por el vector propio resulta el mismo vector multiplciado por una constante, es decir:
+Los valores propios ($\lambda$) y vectores propios ($v$) de una matriz ($M$) son muy importantes en química cuántica. Cumplen la propiedad de que al multiplicar la matriz por el vector propio resulta el mismo vector multiplicado por una constante, es decir:
 
 $$
 M v = \lambda v
@@ -165,7 +165,7 @@ x=np.linspace(-3,3,50)
 
 # Cree dominio de x
 
-Obtendremos el valor de "y" usando numpy, al escribir la siguiente instrucción Python toma cada valor de x, le aplica la función y lo guarda en la ariable "y".
+Obtendremos el valor de "y" usando numpy, al escribir la siguiente instrucción Python toma cada valor de x, le aplica la función y lo guarda en la variable "y".
 ~~~python
 y=np.sin(x)
 ~~~
@@ -206,7 +206,7 @@ También podemos hacer integrales con Python. Por ejemplo, vamos a integrar $y=x
 ~~~python
 from scipy import integrate
 ~~~
-y luego realizaremos la ingeral con la función quad
+y luego realizaremos la integral con la función quad
 ~~~python
 integrate.quad(lambda x: x**2,-3,3)
 ~~~
@@ -217,7 +217,7 @@ Aquí "lambda" indica las variables de la ecuación, seguido de la ecuación y l
 import scipy.integrate as integrate
 integrate.quad(lambda x: x**2,-3,3)
 
-Considere la funión de onda $\psi = x$, con $x \epsilon [-3,3]$, **proponga una función de onda normalizada y evalúe la integral con integrate.quad para comprobar que la norma es 1.**
+Considere la función de onda $\psi = x$, con $x \epsilon [-3,3]$, **proponga una función de onda normalizada y evalúe la integral con integrate.quad para comprobar que la norma es 1.**
 
 ```{tip}
 Recuerde que para normalizar:

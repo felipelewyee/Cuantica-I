@@ -1,6 +1,6 @@
 # Caja de potencial con un tope en el medio
 
-Este problema es continuación de la partícula en la caja. Para ello, planteemos una caja de $-L$ a $L$, con el potencial definido por
+Este problema es continuación de la partícula en la caja y nos permite ejemplificar el efecto túnel. Para ello, planteemos una caja de $-L$ a $L$, con el potencial definido por
 
 $$
 V(x) = \left\{
@@ -32,7 +32,7 @@ Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que s
 ```{admonition} Inserto matemático: Hamiltoniano por secciones
 :class: dropdown
 
-Si analizamos la ecuación de Schrodiger por zonas se tiene:
+Si analizamos la ecuación de Schrödiger por zonas se tiene:
 
 | Zona      | Hamiltoniano | Función de onda | Constantes |
 |:----------------:|:---------:|:--------:|:--------:|
@@ -249,7 +249,7 @@ def f(E):
 Obtenga su guess de valores de energía
 
 ```{tip}
-- Genere un conunto de 1000 puntos de E de 0 a V
+- Genere un conjunto de 1000 puntos de E de 0 a V
 - Seleccione aquellos para los que f(E) es menor que $10^{-2}$
 - Utilice el método de Newton para obtener valores únicos de energía
 ```
@@ -316,7 +316,7 @@ for E in E_segundoguess:
 
 Con base en lo anteriormente visto, responda a la siguiente frase con verdadero o falso.
 
-**Si la partícula tiene energía menor que V, es imposible encontrarla en el intevalo [-a,a] (Cierto/Falso)**
+**Si la partícula tiene energía menor que V, es imposible encontrarla en el intervalo [-a,a] (Cierto/Falso)**
 
 **Respuesta**
 

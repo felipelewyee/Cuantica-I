@@ -9,7 +9,7 @@ $$
 donde $k$ es una constante. 
 
 ```{note}
-En mecánica clásica podemos encontrar sistemas con este potencial como los resortes, mientras que en química cúantica esto sirve para modelar la vibración de los enlaces.
+En mecánica clásica podemos encontrar sistemas con este potencial como los resortes, mientras que en química cuántica esto sirve para modelar la vibración de los enlaces.
 ```
 
 En este caso, el Hamiltoniano contiene la energía cinética y el potencial
@@ -18,7 +18,7 @@ $$
 H = -\frac{\hbar^2}{2m} \frac{d}{dx} + \frac{1}{2} kx^2
 $$
 
-y la ecuación de Schrodinger a resolver es
+y la ecuación de Schrödinger a resolver es
 
 $$
 -\frac{\hbar^2}{2m} \frac{d}{dx}\psi + \frac{1}{2} kx^2 \psi = E \psi

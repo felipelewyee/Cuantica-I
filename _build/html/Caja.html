@@ -180,7 +180,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="DFT.html">
-   4. Teoría de los funcionales de la densidad (DFT)
+   4. Teoría de funcionales de la densidad (DFT)
   </a>
  </li>
  <li class="toctree-l1">
@@ -333,7 +333,7 @@
 <p>A continuación estudiaremos sistemas sencillos que nos permiten entender como surge la cuantización. Además, nos permitirán familiarizarnos con los pasos para resolver los problemas de química cuántica. Podemos resumir estos como:</p>
 <ol class="simple">
 <li><p>Identificar las interacciones y restricciones del sistema.</p></li>
-<li><p>Escrbir el Hamiltoniano (<span class="math notranslate nohighlight">\(\mathcal{H}\)</span>) y la ecuación de Schrodinger (<span class="math notranslate nohighlight">\(\mathcal{H}\psi = \varepsilon \psi\)</span>).</p></li>
+<li><p>Escribir el Hamiltoniano (<span class="math notranslate nohighlight">\(\mathcal{H}\)</span>) y la ecuación de Schrödinger (<span class="math notranslate nohighlight">\(\mathcal{H}\psi = \varepsilon \psi\)</span>).</p></li>
 <li><p>Encontrar la función de onda (<span class="math notranslate nohighlight">\(\psi\)</span>).</p></li>
 <li><p>Estudiar las condiciones de cuantización.</p></li>
 </ol>
@@ -360,7 +360,7 @@ V(x) = \left\{
   \end{array}
   \right.
 \end{split}\]</div>
-<p>Para encontrar la función de onda en la región II hay que escribir la de Schrodinger</p>
+<p>Para encontrar la función de onda en la región II hay que escribir la de Schrödinger</p>
 <div class="math notranslate nohighlight">
 \[
 \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} +V(x)\right)\psi(x)=\varepsilon\psi(x)
@@ -691,7 +691,7 @@ psi_1psi_3 (4.163336342344337e-17, 6.473948889086305e-10)
 <div class="section" id="caja-2d">
 <h2><span class="section-number">1.2. </span>Caja 2D<a class="headerlink" href="#caja-2d" title="Permalink to this headline">¶</a></h2>
 <p>También existe la partícula en una caja para 2-Dimensiones. Se confina la partícula en <span class="math notranslate nohighlight">\(x\varepsilon[0,L_x]\)</span> y <span class="math notranslate nohighlight">\(y\varepsilon[0,L_y]\)</span>.</p>
-<p>La ecuación de Schrodinger a resolver es</p>
+<p>La ecuación de Schrödinger a resolver es</p>
 <div class="math notranslate nohighlight">
 \[
 -\frac{\hbar^2}{2m} \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right)\psi(x,y)=E\psi(x,y)
@@ -712,7 +712,7 @@ psi_1psi_3 (4.163336342344337e-17, 6.473948889086305e-10)
 \[
 E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 \]</div>
-<p>A continuación realizará una serie de pasos ue le permitirán generar <strong>la gráfica de <span class="math notranslate nohighlight">\(\psi_{1,1}\)</span>, es decir <span class="math notranslate nohighlight">\(n_x=1\)</span> y <span class="math notranslate nohighlight">\(n_y=1\)</span>, y de <span class="math notranslate nohighlight">\(|\psi_{1,1}|^2\)</span> con <span class="math notranslate nohighlight">\(L_x = L_y = 4.0\)</span></strong></p>
+<p>A continuación realizará una serie de pasos que le permitirán generar <strong>la gráfica de <span class="math notranslate nohighlight">\(\psi_{1,1}\)</span>, es decir <span class="math notranslate nohighlight">\(n_x=1\)</span> y <span class="math notranslate nohighlight">\(n_y=1\)</span>, y de <span class="math notranslate nohighlight">\(|\psi_{1,1}|^2\)</span> con <span class="math notranslate nohighlight">\(L_x = L_y = 4.0\)</span></strong></p>
 <p>Para hacer gráficas 3D, importe la siguiente librería</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
 </pre></div>
@@ -838,7 +838,7 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 <img alt="_images/Caja_38_1.png" src="_images/Caja_38_1.png" />
 </div>
 </div>
-<p><strong>Obtenga las gráfica de <span class="math notranslate nohighlight">\(\psi_{3,3}\)</span> y <span class="math notranslate nohighlight">\(|\psi_{3,3}|^2\)</span> con <span class="math notranslate nohighlight">\(L_x = L_y = 4.0\)</span></strong></p>
+<p><strong>Obtenga la gráfica de <span class="math notranslate nohighlight">\(\psi_{3,3}\)</span> y <span class="math notranslate nohighlight">\(|\psi_{3,3}|^2\)</span> con <span class="math notranslate nohighlight">\(L_x = L_y = 4.0\)</span></strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ol class="simple">

@@ -19,7 +19,7 @@ $$
 H = -\frac{\hbar^2}{2mr^2} \frac{d^2}{d\phi^2}
 $$
 
-Al sustituir el Hamiltoniano en la ecuación de Schrodinger, se obtiene
+Al sustituir el Hamiltoniano en la ecuación de Schrödinger, se obtiene
 $$
 -\frac{\hbar^2}{2mr^2} \frac{d^2}{d\phi^2} \psi = E \psi
 $$
@@ -99,7 +99,7 @@ plt.show()
 
 Se tiene una partícula moviéndose sobre una superficie esférica de radio constante.
 
-La ecuación de Schrodinger a resolver es
+La ecuación de Schrödinger a resolver es
 
 $$
 -\frac{\hbar^2}{2m} \nabla^2 \psi(\theta,\phi) = E \psi(\theta,\phi)
@@ -242,7 +242,7 @@ $$
 H = -\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}
 $$
 
-La ecuación de Schrodinger a resolver es
+La ecuación de Schrödinger a resolver es
 
 $$
 \left(-\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}\right) \psi = E \psi
@@ -254,13 +254,13 @@ $$
 \psi=\psi_{cm}\psi_r
 $$
 
-Al sustituir en la ecuación de Schrodinger se obtiene
+Al sustituir en la ecuación de Schrödinger se obtiene
 
 $$
 \left(-\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}\right) \psi_{cm}\psi_r = E \psi_{cm}\psi_r
 $$
 
-Si consideramos que la energía está dada por $E_T = E_{cm} + E_{r}$ y distribuímos, resulta
+Si consideramos que la energía está dada por $E_T = E_{cm} + E_{r}$ y distribuimos, resulta
 
 $$
 -\psi_{r} \frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} \psi_{cm} - \psi_{cm}\frac{\hbar^2}{2\mu} \nabla^2_{r} \psi_r = \psi_r E_{cm} \psi_{cm} +  \psi_{cm} E_r \psi_r
@@ -275,9 +275,9 @@ $$
 ya que el lado izquierdo solo depende de las coordenadas del centro de masa, y el lado derecho solo depende de las coordenadas de la masa reducida, ambos lados deben ser igual a una constante. Si elegimos esta constante como cero, y despejamos lo que está dentro de cada paréntesis se obtienen dos ecuaciones independientes.
 ```
 
-Despues de cambiar a un sistema de masa reducida se obtienen dos ecuaciones.
+Después de cambiar a un sistema de masa reducida se obtienen dos ecuaciones.
 
-La primera ecuación corresponde al movimiento del `centro de masa del sistema` y la hemos estudiado previamene en el movimiento de la `partícula libre`
+La primera ecuación corresponde al movimiento del `centro de masa del sistema` y la hemos estudiado previamente en el movimiento de la `partícula libre`
 
 $$
 -\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} \psi_{cm} = E_{cm} \psi_{cm}

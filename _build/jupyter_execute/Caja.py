@@ -2,7 +2,7 @@
 
 A continuación estudiaremos sistemas sencillos que nos permiten entender como surge la cuantización. Además, nos permitirán familiarizarnos con los pasos para resolver los problemas de química cuántica. Podemos resumir estos como:
 1. Identificar las interacciones y restricciones del sistema.
-2. Escrbir el Hamiltoniano ($\mathcal{H}$) y la ecuación de Schrodinger ($\mathcal{H}\psi = \varepsilon \psi$).
+2. Escribir el Hamiltoniano ($\mathcal{H}$) y la ecuación de Schrödinger ($\mathcal{H}\psi = \varepsilon \psi$).
 3. Encontrar la función de onda ($\psi$).
 4. Estudiar las condiciones de cuantización.
 
@@ -31,7 +31,7 @@ $$
   \right.
 $$
 
-Para encontrar la función de onda en la región II hay que escribir la de Schrodinger
+Para encontrar la función de onda en la región II hay que escribir la de Schrödinger
 
 $$
 \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} +V(x)\right)\psi(x)=\varepsilon\psi(x)
@@ -278,7 +278,7 @@ print("psi_1psi_3",psi_1psi_3)
 
 También existe la partícula en una caja para 2-Dimensiones. Se confina la partícula en $x\varepsilon[0,L_x]$ y $y\varepsilon[0,L_y]$.
 
-La ecuación de Schrodinger a resolver es
+La ecuación de Schrödinger a resolver es
 
 $$
 -\frac{\hbar^2}{2m} \left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} \right)\psi(x,y)=E\psi(x,y)
@@ -301,7 +301,7 @@ $$
 E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 $$
 
-A continuación realizará una serie de pasos ue le permitirán generar **la gráfica de $\psi_{1,1}$, es decir $n_x=1$ y $n_y=1$, y de $|\psi_{1,1}|^2$ con $L_x = L_y = 4.0$**
+A continuación realizará una serie de pasos que le permitirán generar **la gráfica de $\psi_{1,1}$, es decir $n_x=1$ y $n_y=1$, y de $|\psi_{1,1}|^2$ con $L_x = L_y = 4.0$**
 
 Para hacer gráficas 3D, importe la siguiente librería
 ```
@@ -384,7 +384,7 @@ ax.plot_surface(X, Y, psi**2.0, rstride=1, cstride=1,
 ax.set_title("$|\Psi|^2$")
 plt.show()
 
-**Obtenga las gráfica de $\psi_{3,3}$ y $|\psi_{3,3}|^2$ con $L_x = L_y = 4.0$**
+**Obtenga la gráfica de $\psi_{3,3}$ y $|\psi_{3,3}|^2$ con $L_x = L_y = 4.0$**
 
 ```{tip}
 1. Declare los valores de $L_x$, $L_y$, $n_x$ y $n_y$.

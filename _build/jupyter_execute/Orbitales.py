@@ -8,7 +8,7 @@ $$
 
 donde $\Lambda^2$ es el legendriano.
 
-```{admonition} Inserto matemático: Legendirano
+```{admonition} Inserto matemático: Legendriano
 :class: dropdown
 
 El legendriano $\Lambda^2$ se define por
@@ -211,4 +211,3 @@ A continuación se dan las expresiones de algunos orbitales
 - Zettili, N. Quantum Mechanics: Concepts and Applications, 2nd ed.; Wiley: Chichester, U.K, 2009.
 - Levine, I. N. Quantum Chemistry, 5th ed.; Prentice Hall: Upper Saddle River, N.J, 2000.
 - McQuarrie, D. A.; Simon, J. D. Physical Chemistry: A Molecular Approach; University Science Books: Sausalito, Calif, 1997.
-

@@ -8,10 +8,10 @@ $$
 
 Para comenzar, **importe las librerías numpy y psi4**.
 
+# Importe librerías
+
 import numpy as np
 import psi4
-
-# Importe librerías
 
 **Defina una molécula de su interés.** A continuación se proporciona la geometría de la molécula de hidrógeno, aunque puede usar cualquier otro sistema. Se recomienda que sea pequeño por tiempo de ejecución.
 ```

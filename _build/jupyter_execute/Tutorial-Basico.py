@@ -72,7 +72,7 @@ Los resultados se almacenan en las variables z_suma, z_resta, z_mult y z_div. Es
 
 ## Librerías
 
-La funcionalidad de python se puede extender utilizando **librerías**. Existen 4 importantes para el curso, **numpy**, **matplotlib**, **scipy** y **sympy**.
+La funcionalidad de Python se puede extender utilizando **librerías**. Existen 4 importantes para el curso, **numpy**, **matplotlib**, **scipy** y **sympy**.
 
 Para activar una librería utilizamos la palabra **import**, seguida del nombre de la librería, por ejemplo
 ~~~python
@@ -101,6 +101,6 @@ raiz = np.sqrt(x)
 print(raiz)
 ~~~
 
-**Defina una variable x, obtenga e imprima su raiz cuadrada.**
+**Defina una variable x, obtenga e imprima su raíz cuadrada.**
 
 #Raiz cuadrada de x

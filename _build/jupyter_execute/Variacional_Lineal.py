@@ -13,13 +13,13 @@ $$
 $$
 
 ```{important}
-Al sustituir la expansión de la función de onda en la ecuación de Schrodinger, se obtiene la ecuación
+Al sustituir la expansión de la función de onda en la ecuación de Schrödinger, se obtiene la ecuación
 
 $$
 \mathcal{H} \mathcal{C} = \mathcal{S} \mathcal{C} \mathcal{\varepsilon}
 $$
 
-En general uno raliza los siguientes pasos:
+En general se realizan los siguientes pasos:
 
 1. Se seleccionan las funciones $\psi_i$ que se usarán para expandir la función de onda, es común elegir funciones exponenciales o gaussianas.
 2. Se evalúan las matrices $\mathcal{H}$, y $\mathcal{S}$.
