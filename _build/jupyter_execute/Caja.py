@@ -8,19 +8,29 @@ A continuación estudiaremos sistemas sencillos que nos permiten entender como s
 
 ## Caja 1D
 
-La versión 1D de este sistema consiste en una partícula que se mueve en el espacio con un potencial definido en tres regiones, tal que
+La versión 1D de este sistema consiste en una partícula que se mueve en el espacio con un potencial definido en tres regiones
+
+```{margin}
+Note que la caja 1D es de hecho una `recta`.
+```
+
+<img src="images/caja1d.png" alt="Figura de la caja 1D" width="300"/>
+
+es decir
 
 $$
 V(x) = \left\{
   \begin{array}{lll}
   \infty      & \mathrm{si\ } x < 0 & I\\
-  V & \mathrm{si\ } 0 \le x \le L & II \\
+  0 & \mathrm{si\ } 0 \le x \le L & II \\
   \infty     & \mathrm{si\ } x > L & III
   \end{array}
   \right.
 $$
 
-Esto significa que la partícula está confinada a un intervalo en $x \epsilon [0,L]$. La función de onda se puede dividir por regiones. Es imposible que la partícula se encuentre en la región I y en la región III, ya que el potencial es infinito, por lo tanto:
+Esto significa que la partícula está confinada a un intervalo en $x \epsilon [0,L]$.
+
+La función de onda se puede dividir por regiones. Es imposible que la partícula se encuentre en la región I y en la región III, ya que el potencial es infinito, por lo tanto:
 
 $$
 \psi(x) = 0 \left\{
@@ -34,7 +44,7 @@ $$
 Para encontrar la función de onda en la región II hay que escribir la de Schrödinger
 
 $$
-\left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} +V(x)\right)\psi(x)=\varepsilon\psi(x)
+\left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} \right)\psi(x)=\varepsilon\psi(x)
 $$
 
 cuya solución es
@@ -62,13 +72,15 @@ $$
 \psi_{II}(L) = 0 = Bsin(kL)
 $$
 
-Ya obtuvimos que $A$ vale cero, sin embargo, $B$ no puede ser cero porque $\psi_{II}$ se anularía. La única forma de que se cumpla la ecuación anterior es que $kL$ sea un múltiplo de $\pi$, es decir $kL = n \pi$, o lo que es lo mismo
+Ya obtuvimos que $A$ vale cero, sin embargo, $B$ no puede ser cero porque $\psi_{II}$ se anularía. La única forma de que se cumpla la `condición a la frontera` expresada en la ecuación anterior es que $kL$ sea un `múltiplo` de $\pi$, es decir $kL = n \pi$, o lo que es lo mismo
 
 $$
 \begin{array}{ll}
   k=\frac{n\pi}{L};      & n=1,2,3,...\\
-  \end{array}
+\end{array}
 $$
+
+Note que en este punto, $k$, y por tanto la energía, ya no pueden tomar cualquier valor, ¡se han `cuantizado`!.
 
 Hemos obtenido que
 
@@ -83,11 +95,11 @@ $$
 \psi_n(x)=\left(\frac{2}{L}\right)^{1/2}sin\left(\frac{n\pi x}{L}\right)
 $$
 
-Al sustituir la función de onda se obtiene la expresión de la energía, que es
+Finalmente, la energía toma la forma
 
 $$
   \begin{array}{ll}
-  E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2};      & n=1,2,3,...\\
+  E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2} = \frac{\hbar^2 \pi^2 n^2}{2mL^2};      & n=1,2,3,...\\
   \end{array}
 $$
 
@@ -101,6 +113,9 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 Considere un electrón dentro de una caja de longitud 4 angstroms. Defina las siguientes constantes
+```{margin}
+Considerar $\hbar=1$, y $m_e=1$ se llama `unidades atómicas`.
+```
 ```
 hbar = 1
 m = 1
@@ -199,6 +214,12 @@ plt.legend()
 plt.axhline(y=0, color='k')
 plt.show()
 
+```{admonition} Pregunta
+:class: warning
+
+Encuentre un patrón entre el número cuántico $n$, el número de nodos de la función de onda, y el número de máximos del cuadrado de la función de onda
+```
+
 Como estamos haciendo una secuencia de gráficas donde aumentamos n de uno en uno, podemos hacerlo con un ciclo for. **Repita la gráfica de la función de onda con $n=1,2,3,4$ utilizando un ciclo for**.
 
 # Inserte código para 4 gráficas en las que solo cambia el valor de n, use un for
@@ -218,15 +239,19 @@ for n in range(1,5):
 
 **Haga la gráfica de E en función de n para los primeros 10 niveles energéticos de un electrón en una caja.**
 
-```{tip}
+`````{tip}
 $$
 E = \frac{\hbar^2 \pi^2 n^2}{2mL^2}
 $$
 
 Con $n=1,2,3,...$
-```
 
-Considerar hbar=1 y m=1 se llama unidades atómicas. Tome L=1 A
+Utilice la instrucción
+```
+plt.hlines(valor,inicio,fin)
+```
+Para trazar líneas horizontales desde `inicio` hasta `fin` del eje X en `valor` del eje Y.
+`````
 
 # Inserte código para gráfica
 
@@ -237,6 +262,12 @@ for n in range(1,11):
 
 plt.xlim(0,4)
 plt.show()
+
+```{admonition} Pregunta
+:class: warning
+
+¿Qué causó la cuantización de la energía de la partícula en la caja?
+```
 
 **Muestre que $\psi_1$ y $\psi_3$ son ortonormales (Tome $L=2.0$).**
 
@@ -276,7 +307,13 @@ print("psi_1psi_3",psi_1psi_3)
 
 ## Caja 2D
 
-También existe la partícula en una caja para 2-Dimensiones. Se confina la partícula en $x\varepsilon[0,L_x]$ y $y\varepsilon[0,L_y]$.
+El problema se  puede plantear como una partícula en una caja de 2-Dimensiones. En este caso, la partícula se confina en $x\varepsilon[0,L_x]$ y $y\varepsilon[0,L_y]$.
+
+```{margin}
+Note que la caja 2D es de hecho un `rectángulo` ¿Cómo será la caja 3D?.
+```
+
+<img src="images/caja2d.png" alt="Figura de la caja 2D" width="300"/>
 
 La ecuación de Schrödinger a resolver es
 
@@ -322,17 +359,17 @@ Ly=4.0
 nx=1.0
 ny=1.0
 
-Es muy frecuente que las gráficas de superficies requieran un mallado.
+Es muy frecuente que las gráficas de superficies requieran de un mallado.
 `````{tip}
 Genere un mallado con las siguientes instrucciones
 
-1. Declare un dominio de sus ejes, en este caso $x\in[0,L_x]$ y $y\in[0,L_y]$
+1 Declare un dominio para sus ejes, en este caso $x\in[0,L_x]$ y $y\in[0,L_y]$
 ```
 x = np.linspace(0, Lx, 30x = np.linspace(0, Lx, 30)
 y = np.linspace(0, Ly, 30)
 ```
 
-2. Genere el mallado con la instrucción meshgrid                
+2 Genere el mallado con la instrucción meshgrid                
 ```
 X, Y = np.meshgrid(x, y)
 `````

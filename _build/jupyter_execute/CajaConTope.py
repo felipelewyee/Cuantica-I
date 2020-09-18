@@ -1,24 +1,28 @@
-# Caja de potencial con un tope en el medio
+# Efecto Túnel en la Caja
 
-Este problema es continuación de la partícula en la caja y nos permite ejemplificar el efecto túnel. Para ello, planteemos una caja de $-L$ a $L$, con el potencial definido por
+Este problema es continuación de la partícula en la caja y nos permite ejemplificar el efecto túnel. Para ello, planteemos una caja de $-L$ a $L$, con potencial infinito afuera de la caja, pero esta vez hay un tope de potencial en el centro de la caja
+
+<img src="images/caja1d-tope.png" alt="Figura de la caja 1D con topr" width="300"/>
 
 $$
 V(x) = \left\{
   \begin{array}{lll}
-  \infty      & \mathrm{si\ } x < -L & \\
+  \infty      & \mathrm{si\ } x < -L & I \\
   0      & \mathrm{si\ } -L \le x < -a & II\\
   V & \mathrm{si\ } -a \le x \le a & III \\
   0      & \mathrm{si\ } a < x \le L & IV\\
-  \infty     & \mathrm{si\ } x > L & 
+  \infty     & \mathrm{si\ } x > L & V
   \end{array}
   \right.
 $$
 
-Es decir, el potencial vale infinito fuera de la caja, cero en las zonas de la izquierda y la derecha (de $-L$ a $-a$ y de $+a$ a $+L$) y vale $V$ en el centro (de $-a$ a $+a$).
+Es decir, el potencial vale infinito en las zonas I y V, cero en las zonas II y IV (de $-L$ a $-a$ y de $+a$ a $+L$) y vale $V$ en la zona III al centro de la caja (de $-a$ a $+a$).
+
+Particularmente estudiaremos el caso en el que la partícula tiene una energía menor al tope de potencial, $E<V$.
 
 ```{admonition} Para pensar
 :class: tip
-Considere que tiene una partícula moviéndose dentro de la caja con una energía menor que V. De manera clásica, la partícula no podría pasar de un lado de la caja al otro porque no tiene suficiente energía para atravesar el potencial. ¿Qué pasará cuánticamente?
+De manera clásica, la partícula no podría pasar del lado izquierdo (región II) al lado derecho (región IV) de la caja y viceversa porque no tiene suficiente energía para atravesar la región III. Por la misma razón, la probabilidad de encontrar a la partícula en la región III es cero. ¿Qué pasará cuánticamente?
 ```
 
 La función de onda se obtiene resolviendo la ecuación de Schrödinger
@@ -27,18 +31,18 @@ $$
 \left( -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x) \right) \psi(x) = E \psi(x)
 $$
 
-Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por secciones.
+Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por regiones.
 
-```{admonition} Inserto matemático: Hamiltoniano por secciones
+```{admonition} Inserto matemático: Hamiltoniano por regiones
 :class: dropdown
 
-Si analizamos la ecuación de Schrödiger por zonas se tiene:
+Si analizamos la ecuación de Schrödiger por regiones se tiene:
 
-| Zona      | Hamiltoniano | Función de onda | Constantes |
+| Región      | Hamiltoniano | Función de onda | Constantes |
 |:----------------:|:---------:|:--------:|:--------:|
-| I | $-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_I(x) = E \psi_I(x)$ | $\psi_I(x) = A sin(k_1 x) + Bcos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
-| II | $-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{II}(x) + U\psi_{II}(x)= E \psi_{II}(x)$ | $\psi_{II}(x) = C e^{k_2 x} + De^{-k_2x}$ | $k_2^2 = -\frac{2m(E-U)}{\hbar^2} = \frac{2m(U-E)}{\hbar^2}$ |
-| III | $-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{III}(x) = E \psi_{III}(x)$ | $\psi_{III}(x) = A' sin(k_1 x) + B' cos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
+| II | $-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{II}(x) = E \psi_{II}(x)$ | $\psi_{II}(x) = A sin(k_1 x) + Bcos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
+| III | $-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{III}(x) + V\psi_{III}(x)= E \psi_{III}(x)$ | $\psi_{III}(x) = C e^{k_2 x} + De^{-k_2x}$ | $k_2^2 = \frac{2m(V-E)}{\hbar^2}$ |
+| IV | $-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{IV}(x) = E \psi_{IV}(x)$ | $\psi_{IV}(x) = A' sin(k_1 x) + B' cos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
 
 ```
 
@@ -65,24 +69,24 @@ V = 50.0
 a = 0.2
 L = 1.2
 
-La función de onda debe ser contínua, por lo que podemos igualar la función de onda en el punto donde se unen las zonas, y obtener nuevas ecuaciones.
+La función de onda debe ser contínua, por lo que podemos igualar la función de onda en el punto donde se unen las regiones, y obtener nuevas ecuaciones.
 
 ```{admonition} Inserto matemático: Condiciones de Frontera
 :class: dropdown
-| Zonas | Condición | Ecuación |
+| Regiones | Condición | Ecuación |
 |:---: |:---: | :---:    |
-| Inicio y I | $\psi_I(-L) = 0$ | $B = A tan(k_1 L)$ |
-| I y II | $\psi_{I}(-a) = \psi_{II}(-a)$ | $-A sin(k_1 a) + Bcos(k_1 a) = C e^{-k_2a} + D e^{k_2a}$ |
-|I y II | $\psi'_{I}(-a) = \psi'_{II}(-a)$ | $k_1(A cos(k_1 a) + Bsin(k_1 a)) = k_2 (C e^{-k_2a} - D e^{k_2a})$|
-| II y III | $\psi_{II}(a) = \psi_{III}(a)$ | $C e^{-k_2a} + D e^{k_2a} = A' sin(k_1 a) + B'cos(k_1 a)$|
-| III y Final | $\psi_{III}(L) = 0$ | $B' = -A' tan(k_1 L)$|
+| I y II | $\psi_{II}(-L) = 0$ | $B = A tan(k_1 L)$ |
+| II y III | $\psi_{II}(-a) = \psi_{III}(-a)$ | $-A sin(k_1 a) + Bcos(k_1 a) = C e^{-k_2a} + D e^{k_2a}$ |
+|II y III | $\psi'_{II}(-a) = \psi'_{III}(-a)$ | $k_1(A cos(k_1 a) + Bsin(k_1 a)) = k_2 (C e^{-k_2a} - D e^{k_2a})$|
+| III y IV | $\psi_{III}(a) = \psi_{IV}(a)$ | $C e^{-k_2a} + D e^{k_2a} = A' sin(k_1 a) + B'cos(k_1 a)$|
+| IV y V | $\psi_{V}(L) = 0$ | $B' = -A' tan(k_1 L)$|
 ```
 
 A partir de aquí podemos ayudarnos de la simetría del problema.
 
 ## Simetría Par
 
-Empezaremos asumiendo que lo que esta del lado izquierdo del potencial es simétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par ($\psi_{II}(x) = \psi_{II}(-x)$ y $C = D$). Al considerar esta condición en las ecuaciones de continuidad, se obtiene las siguiente ecuación
+Empezaremos asumiendo que lo que esta del lado izquierdo del potencial es simétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par ($\psi_{III}(x) = \psi_{III}(-x)$ y $C = D$). Al considerar esta condición en las ecuaciones de continuidad, se obtiene
 
 $$
 tanh \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
@@ -160,42 +164,42 @@ def k2(E): return np.sqrt(2*m*(V-E)/hbar**2)
 Defina funciones para
 
 $$
-\psi_{I}(x) = \frac{e^{-k_2Ea}+e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)} sin(k_1Ex)+tan(k_1EL)cos(k_1Ex)
+\psi_{II}(x) = \frac{e^{-k_2Ea}+e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)} sin(k_1Ex)+tan(k_1EL)cos(k_1Ex)
 $$
 
 $$
-\psi_{II}(x) = e^{k_2Ex}+e^{-k_2Ex}
+\psi_{III}(x) = e^{k_2Ex}+e^{-k_2Ex}
 $$
 
 $$
-\psi_{III}(x) = \frac{e^{k_2Ea}+e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
+\psi_{IV}(x) = \frac{e^{k_2Ea}+e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
 $$
 
 # Defina funciones
 
-def psi_I(x): return (np.exp(-k2(E)*a)+np.exp(k2(E)*a))/(-np.sin(k1(E)*a)+np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)+np.tan(k1(E)*L)*np.cos(k1(E)*x))
-def psi_II(x): return np.exp(k2(E)*x)+np.exp(-k2(E)*x)
-def psi_III(x): return (np.exp(k2(E)*a)+np.exp(-k2(E)*a))/(np.sin(k1(E)*a)-np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)-np.tan(k1(E)*L)*np.cos(k1(E)*x))
+def psi_II(x): return (np.exp(-k2(E)*a)+np.exp(k2(E)*a))/(-np.sin(k1(E)*a)+np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)+np.tan(k1(E)*L)*np.cos(k1(E)*x))
+def psi_III(x): return np.exp(k2(E)*x)+np.exp(-k2(E)*x)
+def psi_IV(x): return (np.exp(k2(E)*a)+np.exp(-k2(E)*a))/(np.sin(k1(E)*a)-np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)-np.tan(k1(E)*L)*np.cos(k1(E)*x))
 
 Cree tres dominios de 1000 puntos para la función de onda, tal que
 
 $$
-x_1 \in [-L,-a]
+x_{II} \in [-L,-a]
 $$
 
 $$
-x_2 \in [-a,a]
+x_{III} \in [-a,a]
 $$
 
 $$
-x_3 \in [a,L]
+x_{IV} \in [a,L]
 $$
 
-# x_1, x_2 y x_3
+# x_II, x_III y x_IV
 
-x1 = np.linspace(-L,-a,10000)
-x2 = np.linspace(-a,a,10000)
-x3 = np.linspace(a,L,10000)
+x_II = np.linspace(-L,-a,10000)
+x_III = np.linspace(-a,a,10000)
+x_IV = np.linspace(a,L,10000)
 
 Utilice las energías del segundo guess para graficar las funciones de onda.
 
@@ -203,20 +207,20 @@ for E in E_segundoguess:
     if(E>0):
         norm = 0.0
         
-        norm = norm + integrate.quad(lambda x: psi_I(x)*psi_I(x), -L, -a)[0]
-        norm = norm + integrate.quad(lambda x: psi_II(x)*psi_II(x), -a, a)[0]
-        norm = norm + integrate.quad(lambda x: psi_III(x)*psi_III(x), a, L)[0]
+        norm = norm + integrate.quad(lambda x: psi_II(x)*psi_II(x), -L, -a)[0]
+        norm = norm + integrate.quad(lambda x: psi_III(x)*psi_III(x), -a, a)[0]
+        norm = norm + integrate.quad(lambda x: psi_IV(x)*psi_IV(x), a, L)[0]
                 
-        plt.plot(x1,psi_I(x1)/np.sqrt(norm))
-        plt.plot(x2,psi_II(x2)/np.sqrt(norm))
-        plt.plot(x3,psi_III(x3)/np.sqrt(norm)) 
+        plt.plot(x_II,psi_II(x_II)/np.sqrt(norm))
+        plt.plot(x_III,psi_III(x_III)/np.sqrt(norm))
+        plt.plot(x_IV,psi_IV(x_IV)/np.sqrt(norm)) 
         
-        prob = integrate.quad(lambda x: psi_II(x)*psi_II(x), -a, a)[0]/norm
+        prob = integrate.quad(lambda x: psi_III(x)*psi_III(x), -a, a)[0]/norm
         print("E: " + str(E) + " Probabilidad de [-a,a]: " + str(prob))
         
-        plt.plot(x1,psi_I(x1)*psi_I(x1)/norm)
-        plt.plot(x2,psi_II(x2)*psi_II(x2)/norm)
-        plt.plot(x3,psi_III(x3)*psi_III(x3)/norm)
+        plt.plot(x_II,psi_II(x_II)*psi_II(x_II)/norm)
+        plt.plot(x_III,psi_III(x_III)*psi_III(x_III)/norm)
+        plt.plot(x_IV,psi_IV(x_IV)*psi_IV(x_IV)/norm)
 
         plt.show()
     else:
@@ -224,7 +228,7 @@ for E in E_segundoguess:
 
 ## Simetría impar
 
-Ahora asumirémos que lo que esta del lado izquierdo del potencial es antisimétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par ($\psi_{II}(x) = -\psi_{II}(-x)$ y $C = -D$). Al considerar esta condición en las ecuaciones de continuidad, se obtienen las siguiente ecuación
+Ahora asumirémos que lo que esta del lado izquierdo del potencial es antisimétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par ($\psi_{III}(x) = -\psi_{III}(-x)$ y $C = -D$). Al considerar esta condición en las ecuaciones de continuidad, se obtienen las siguiente ecuación
 
 $$
 tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
@@ -270,22 +274,22 @@ for E in E_primerguess:
 Defina funciones para:
 
 $$
-\psi_{I}(x) = \frac{e^{-k_2E*a}-e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)+tan(k_1EL)np.cos(k_1Ex))
+\psi_{II}(x) = \frac{e^{-k_2E*a}-e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)+tan(k_1EL)np.cos(k_1Ex))
 $$
 
 $$
-\psi_{II}(x) = e^{k_2Ex}-e^{-k_2Ex}
+\psi_{III}(x) = e^{k_2Ex}-e^{-k_2Ex}
 $$
 
 $$
-\psi_{III}(x) = \frac{e^{k_2Ea}-e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
+\psi_{IV}(x) = \frac{e^{k_2Ea}-e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
 $$
 
 # Funciones
 
-def psi_I(x): return (np.exp(-k2(E)*a)-np.exp(k2(E)*a))/(-np.sin(k1(E)*a)+np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)+np.tan(k1(E)*L)*np.cos(k1(E)*x))
-def psi_II(x): return np.exp(k2(E)*x)-np.exp(-k2(E)*x)
-def psi_III(x): return (np.exp(k2(E)*a)-np.exp(-k2(E)*a))/(np.sin(k1(E)*a)-np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)-np.tan(k1(E)*L)*np.cos(k1(E)*x))
+def psi_II(x): return (np.exp(-k2(E)*a)-np.exp(k2(E)*a))/(-np.sin(k1(E)*a)+np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)+np.tan(k1(E)*L)*np.cos(k1(E)*x))
+def psi_III(x): return np.exp(k2(E)*x)-np.exp(-k2(E)*x)
+def psi_IV(x): return (np.exp(k2(E)*a)-np.exp(-k2(E)*a))/(np.sin(k1(E)*a)-np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)-np.tan(k1(E)*L)*np.cos(k1(E)*x))
 
 Realice las gráficas de la función de onda
 
@@ -295,30 +299,33 @@ for E in E_segundoguess:
     if(E>0):
         norm = 0.0
         
-        norm = norm + integrate.quad(lambda x: psi_I(x)*psi_I(x), -L, -a)[0]
-        norm = norm + integrate.quad(lambda x: psi_II(x)*psi_II(x), -a, a)[0]
-        norm = norm + integrate.quad(lambda x: psi_III(x)*psi_III(x), a, L)[0]
+        norm = norm + integrate.quad(lambda x: psi_II(x)*psi_II(x), -L, -a)[0]
+        norm = norm + integrate.quad(lambda x: psi_III(x)*psi_III(x), -a, a)[0]
+        norm = norm + integrate.quad(lambda x: psi_IV(x)*psi_IV(x), a, L)[0]
                 
-        plt.plot(x1,psi_I(x1)/np.sqrt(norm))
-        plt.plot(x2,psi_II(x2)/np.sqrt(norm))
-        plt.plot(x3,psi_III(x3)/np.sqrt(norm)) 
+        plt.plot(x_II,psi_II(x_II)/np.sqrt(norm))
+        plt.plot(x_III,psi_III(x_III)/np.sqrt(norm))
+        plt.plot(x_IV,psi_IV(x_IV)/np.sqrt(norm)) 
         
         prob = integrate.quad(lambda x: psi_II(x)*psi_II(x), -a, a)[0]/norm
         print("E: " + str(E) + " Probabilidad de [-a,a]: " + str(prob))
         
-        plt.plot(x1,psi_I(x1)*psi_I(x1)/norm)
-        plt.plot(x2,psi_II(x2)*psi_II(x2)/norm)
-        plt.plot(x3,psi_III(x3)*psi_III(x3)/norm)
+        plt.plot(x_II,psi_II(x_II)*psi_II(x_II)/norm)
+        plt.plot(x_III,psi_III(x_III)*psi_III(x_III)/norm)
+        plt.plot(x_IV,psi_IV(x_IV)*psi_IV(x_IV)/norm)
 
         plt.show()
     else:
         print("Zero")
 
-Con base en lo anteriormente visto, responda a la siguiente frase con verdadero o falso.
+```{admonition} Pregunta
+:class: warning
 
-**Si la partícula tiene energía menor que V, es imposible encontrarla en el intervalo [-a,a] (Cierto/Falso)**
+Con base en lo visto, responda con verdadero o falso respecto al sistema cuántico.
 
-**Respuesta**
+1. Si la partícula tiene energía menor que V, la probabilidad de encontrarla en el intervalo [-a,a]. (Cierto/Falso)
+2. Si la partícula tiene energía menor que V, es imposible que pase de un lado al otro lado de la caja. (Cierto/Falso)  
+```
 
 ## Autoría
 

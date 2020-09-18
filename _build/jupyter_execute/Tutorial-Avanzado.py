@@ -221,36 +221,34 @@ Considere la función de onda $\psi = x$, con $x \epsilon [-3,3]$, **proponga un
 
 ```{tip}
 Recuerde que para normalizar:
-1. Integre el cuadrado de la función de onda en el dominio.
+1 Integre el cuadrado de la función de onda en el dominio.
 
 $$
-N^2 = \int \psi^2 dr
+N^2 = \int_{x_1}^{x_2} \psi_original^2 dr
 $$
 
-2. Calcule la constante de normalización
+2 Obtenga la norma.
 
 $$
-C = \frac{1}{\sqrt{N^2}} = \frac{1}{\sqrt{\int_{x_1}^{x_2} |\psi_{original}|^2 dx}}
+N = \sqrt{N^2} = \sqrt{\int_{x_1}^{x_2} |\psi_{original}|^2 dx}
 $$
 
-3. Evalúe la integral del cuadrado de la función de onda normalizada para comprobar que es igual a 1. Recuerde que la función de onda normalizada es:
+3 Multiplique la función de onda original por el inverso de su norma.
 
 $$
-\psi_{normalizada} = C \psi_{original}
+\psi_{normalizada} = \frac{1}{N} \psi_{original}
 $$
 ```
 
 #Normalice función de onda
 
-import numpy as np
 norm2 = integrate.quad(lambda x: x*x,-3,3)[0]
 print("N**2 =",norm2)
 
-#Constante de normalizacion
-C = 1/np.sqrt(norm2)
-print("C =",C)
+norm = np.sqrt(norm2)
+print("N =",norm)
 
-integrate.quad(lambda x: (C*x)*(C*x),-3,3)
+integrate.quad(lambda x: (x/norm)*(x/norm),-3,3)
 
 **OPCIONAL**
 
@@ -285,19 +283,19 @@ print("N**2 =",norm2)
 
 print((np.pi/2)**(3/2))
 
-Evalúe la constante de normalización
+Evalúe la norma
 
 # Constante de normalización
 
-C = 1/np.sqrt(norm2)
-print("C =",C)
+norm = np.sqrt(norm2)
+print("N =",norm)
 
 **OPCIONAL**
 
 Proponga una $\psi$ normalizada, y compruebe que la integral de su cuadrado da 1. Recuerde la siguiente relación
 
 $$
-\psi_{normalizada} = \frac{1}{\sqrt{norm}} \psi_{original}
+\psi_{normalizada} = \frac{1}{\sqrt{N}} \psi_{original}
 $$
 
 y que para este ejercicio
@@ -308,7 +306,7 @@ $$
 
 #Comprobación
 
-norm = integrate.tplquad(lambda theta,phi,r: C**2*r**2.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)
+norm = integrate.tplquad(lambda theta,phi,r: 1/norm**2*r**2.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)
 print(norm)
 
 **OPCIONAL**
@@ -324,8 +322,8 @@ $$
 norm2=integrate.tplquad(lambda theta,phi,r: r**4.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)[0]
 print("N**2 =",norm2)
 
-C = 1/np.sqrt(norm2)
-print("C =",C)
+norm = np.sqrt(norm2)
+print("N =",norm)
 
-norm=integrate.tplquad(lambda theta,phi,r: C**2*r**4.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)
+norm=integrate.tplquad(lambda theta,phi,r: 1/norm**2*r**4.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)
 print(norm)

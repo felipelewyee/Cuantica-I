@@ -180,9 +180,11 @@ $$
 E_MP1 = E_nuc + E_0 + E_1
 print("E_MP1 =",E_MP1)
 
-Calcule la diferencia entre $E_{MP1}$ y la energía de Hartree-Fock que calculó al inicio, **¿Cuál es la energía de correlación? ¿Cómo se relaciona $E_{MP1}$ con $E_{HF}$?**
+```{admonition} Pregunta
+:class: warning
 
-**Respuesta:**
+Calcule la diferencia entre $E_{MP1}$ y la energía de Hartree-Fock que calculó al inicio, **¿Cuál es la energía de correlación? ¿Cómo se relaciona $E_{MP1}$ con $E_{HF}$?
+```
 
 La energía de Hartree-Fock se calcula como
 
