@@ -332,26 +332,31 @@
 <h1><span class="section-number">1. </span>Expansión en series<a class="headerlink" href="#expansion-en-series" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="serie-de-taylor">
 <h2><span class="section-number">1.1. </span>Serie de Taylor<a class="headerlink" href="#serie-de-taylor" title="Permalink to this headline">¶</a></h2>
-<p>Sea una función f(x) continua e infinitamente diferenciable, esta puede expresarse en torno a <span class="math notranslate nohighlight">\(a\)</span> mediante una serie de potencias
-\begin{equation}
+<p>Sea una función f(x) continua e infinitamente diferenciable, esta puede expresarse en torno a <span class="math notranslate nohighlight">\(a\)</span> mediante una serie de potencias</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d41dfb46-da22-4281-a4fa-a146420500ef">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-d41dfb46-da22-4281-a4fa-a146420500ef" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x) = \sum_{n=0}^\infty c_n (x-a)^n
-\end{equation}</p>
-<p>La m-ésima derivada de <span class="math notranslate nohighlight">\(f(x)\)</span> es:
-\begin{equation}
+\end{equation}\]</div>
+<p>La m-ésima derivada de <span class="math notranslate nohighlight">\(f(x)\)</span> es:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-440df931-698b-415c-b783-2c75013d2043">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-440df931-698b-415c-b783-2c75013d2043" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f^{(m)}(x) = \sum_{n=m}^\infty c_n (m!)(x-a)^{n-m} = \sum_{p=0}^\infty c_{p+m} (m!)(x-a)^{p}
-\end{equation}</p>
-<p>donde se ha hecho el cambio de índice <span class="math notranslate nohighlight">\(p=n-m\)</span>. Al evaluar en x=a se obtiene
-\begin{equation}
+\end{equation}\]</div>
+<p>donde se ha hecho el cambio de índice <span class="math notranslate nohighlight">\(p=n-m\)</span>. Al evaluar en x=a se obtiene</p>
+<div class="amsmath math notranslate nohighlight" id="equation-da74882f-07c5-43dd-b16e-a1ca117b5242">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-da74882f-07c5-43dd-b16e-a1ca117b5242" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f^{(m)}(a) = \sum_{p=0}^\infty c_{p+m} (m!)(a-a)^{p} = c_p (m!)
-\end{equation}</p>
-<p>El único término que sobrevive es el que tiene potencia cero, despejando <span class="math notranslate nohighlight">\(c_p\)</span>:
-\begin{equation}
+\end{equation}\]</div>
+<p>El único término que sobrevive es el que tiene potencia cero, despejando <span class="math notranslate nohighlight">\(c_p\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-efcd9533-3b83-4283-ac17-e80f6e0f2daa">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-efcd9533-3b83-4283-ac17-e80f6e0f2daa" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 c_m = \frac{f^{(m)}(a)}{m!}
-\end{equation}</p>
-<p>Sustituyendo en la serie
-\begin{equation}
+\end{equation}\]</div>
+<p>Sustituyendo en la serie</p>
+<div class="amsmath math notranslate nohighlight" id="equation-014fa538-5ccd-4fcd-8f3d-30bfe992f9d9">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-014fa538-5ccd-4fcd-8f3d-30bfe992f9d9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
-\end{equation}</p>
+\end{equation}\]</div>
 <p><strong>Haga la expansión en series de Taylor en torno a <span class="math notranslate nohighlight">\(x=0\)</span> de <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [0,10]\)</span> hasta potencias de grado 10.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -383,20 +388,24 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 </div>
 <div class="section" id="serie-de-fourier">
 <h2><span class="section-number">1.2. </span>Serie de Fourier<a class="headerlink" href="#serie-de-fourier" title="Permalink to this headline">¶</a></h2>
-<p>Una funcion periodica se puede aproximar por
-\begin{equation}
+<p>Una funcion periodica se puede aproximar por</p>
+<div class="amsmath math notranslate nohighlight" id="equation-460f6557-b0ec-4ff3-acdf-5b0c94b367a9">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-460f6557-b0ec-4ff3-acdf-5b0c94b367a9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x)=\frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n cos \left( \frac{2n\pi}{T}x \right) + b_n sin \left( \frac{2n\pi}{T}x \right) \right]
-\end{equation}</p>
-<p>donde
-\begin{equation}
+\end{equation}\]</div>
+<p>donde</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2ceebe27-902a-45fa-8eb4-9d5a6b10d60a">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-2ceebe27-902a-45fa-8eb4-9d5a6b10d60a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 a_0 = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) dx
-\end{equation}
-\begin{equation}
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-30a757cc-c028-43c7-80fa-206a7768db9e">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-30a757cc-c028-43c7-80fa-206a7768db9e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 a_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) cos \left( \frac{2n\pi}{T}x \right) dx
-\end{equation}
-\begin{equation}
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-fdbd5ddc-eac9-444f-91cc-56acf2549c2c">
+<span class="eqno">(1.9)<a class="headerlink" href="#equation-fdbd5ddc-eac9-444f-91cc-56acf2549c2c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) sin \left( \frac{2n\pi}{T}x \right) dx
-\end{equation}</p>
+\end{equation}\]</div>
 <p><strong>Haga la expansión en series de Fourier de la <span class="math notranslate nohighlight">\(f(x)=x\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -430,14 +439,15 @@ b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) sin \left( \frac{2n\pi}{T}x \rig
 </div>
 </div>
 <p><strong>Haga la expansión en series de Fourier de la fución escalón en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
-<p>\begin{equation}
-f(x) = \left{
-\begin{array}{ll}
-0      &amp; \mathrm{si\ } x &lt; 0\
-1 &amp; \mathrm{si\ } x&gt;0 \
-\end{array}
-\right.
-\end{equation}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d55cde48-4fd8-4e61-ac6e-691c8c4c5b69">
+<span class="eqno">(1.10)<a class="headerlink" href="#equation-d55cde48-4fd8-4e61-ac6e-691c8c4c5b69" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+f(x) = \left\{
+  \begin{array}{ll}
+  0      &amp; \mathrm{si\ } x &lt; 0\\
+  1 &amp; \mathrm{si\ } x&gt;0 \\
+  \end{array}
+  \right.
+\end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>

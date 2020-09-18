@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Caja de potencial con un tope en el medio &#8212; Cuántica I</title>
+    <title>2. Efecto Túnel en la Caja &#8212; Cuántica I</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -109,7 +109,7 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Caja de potencial con un tope en el medio
+   2. Efecto Túnel en la Caja
   </a>
  </li>
  <li class="toctree-l1">
@@ -328,57 +328,59 @@
         
               <div>
                 
-  <div class="section" id="caja-de-potencial-con-un-tope-en-el-medio">
-<h1><span class="section-number">2. </span>Caja de potencial con un tope en el medio<a class="headerlink" href="#caja-de-potencial-con-un-tope-en-el-medio" title="Permalink to this headline">¶</a></h1>
-<p>Este problema es continuación de la partícula en la caja y nos permite ejemplificar el efecto túnel. Para ello, planteemos una caja de <span class="math notranslate nohighlight">\(-L\)</span> a <span class="math notranslate nohighlight">\(L\)</span>, con el potencial definido por</p>
+  <div class="section" id="efecto-tunel-en-la-caja">
+<h1><span class="section-number">2. </span>Efecto Túnel en la Caja<a class="headerlink" href="#efecto-tunel-en-la-caja" title="Permalink to this headline">¶</a></h1>
+<p>Este problema es continuación de la partícula en la caja y nos permite ejemplificar el efecto túnel. Para ello, planteemos una caja de <span class="math notranslate nohighlight">\(-L\)</span> a <span class="math notranslate nohighlight">\(L\)</span>, con potencial infinito afuera de la caja, pero esta vez hay un tope de potencial en el centro de la caja</p>
+<a class="reference internal image-reference" href="_images/caja1d-tope.png"><img alt="Figura de la caja 1D con topr" src="_images/caja1d-tope.png" style="width: 300px;" /></a>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 V(x) = \left\{
   \begin{array}{lll}
-  \infty      &amp; \mathrm{si\ } x &lt; -L &amp; \\
+  \infty      &amp; \mathrm{si\ } x &lt; -L &amp; I \\
   0      &amp; \mathrm{si\ } -L \le x &lt; -a &amp; II\\
   V &amp; \mathrm{si\ } -a \le x \le a &amp; III \\
   0      &amp; \mathrm{si\ } a &lt; x \le L &amp; IV\\
-  \infty     &amp; \mathrm{si\ } x &gt; L &amp; 
+  \infty     &amp; \mathrm{si\ } x &gt; L &amp; V
   \end{array}
   \right.
 \end{split}\]</div>
-<p>Es decir, el potencial vale infinito fuera de la caja, cero en las zonas de la izquierda y la derecha (de <span class="math notranslate nohighlight">\(-L\)</span> a <span class="math notranslate nohighlight">\(-a\)</span> y de <span class="math notranslate nohighlight">\(+a\)</span> a <span class="math notranslate nohighlight">\(+L\)</span>) y vale <span class="math notranslate nohighlight">\(V\)</span> en el centro (de <span class="math notranslate nohighlight">\(-a\)</span> a <span class="math notranslate nohighlight">\(+a\)</span>).</p>
+<p>Es decir, el potencial vale infinito en las zonas I y V, cero en las zonas II y IV (de <span class="math notranslate nohighlight">\(-L\)</span> a <span class="math notranslate nohighlight">\(-a\)</span> y de <span class="math notranslate nohighlight">\(+a\)</span> a <span class="math notranslate nohighlight">\(+L\)</span>) y vale <span class="math notranslate nohighlight">\(V\)</span> en la zona III al centro de la caja (de <span class="math notranslate nohighlight">\(-a\)</span> a <span class="math notranslate nohighlight">\(+a\)</span>).</p>
+<p>Particularmente estudiaremos el caso en el que la partícula tiene una energía menor al tope de potencial, <span class="math notranslate nohighlight">\(E&lt;V\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Para pensar</p>
-<p>Considere que tiene una partícula moviéndose dentro de la caja con una energía menor que V. De manera clásica, la partícula no podría pasar de un lado de la caja al otro porque no tiene suficiente energía para atravesar el potencial. ¿Qué pasará cuánticamente?</p>
+<p>De manera clásica, la partícula no podría pasar del lado izquierdo (región II) al lado derecho (región IV) de la caja y viceversa porque no tiene suficiente energía para atravesar la región III. Por la misma razón, la probabilidad de encontrar a la partícula en la región III es cero. ¿Qué pasará cuánticamente?</p>
 </div>
 <p>La función de onda se obtiene resolviendo la ecuación de Schrödinger</p>
 <div class="math notranslate nohighlight">
 \[
 \left( -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x) \right) \psi(x) = E \psi(x)
 \]</div>
-<p>Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por secciones.</p>
+<p>Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por regiones.</p>
 <div class="dropdown admonition">
-<p class="admonition-title">Inserto matemático: Hamiltoniano por secciones</p>
-<p>Si analizamos la ecuación de Schrödiger por zonas se tiene:</p>
+<p class="admonition-title">Inserto matemático: Hamiltoniano por regiones</p>
+<p>Si analizamos la ecuación de Schrödiger por regiones se tiene:</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Zona</p></th>
+<tr class="row-odd"><th class="text-align:center head"><p>Región</p></th>
 <th class="text-align:center head"><p>Hamiltoniano</p></th>
 <th class="text-align:center head"><p>Función de onda</p></th>
 <th class="text-align:center head"><p>Constantes</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>I</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_I(x) = E \psi_I(x)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_I(x) = A sin(k_1 x) + Bcos(k_1x)\)</span></p></td>
+<tr class="row-even"><td class="text-align:center"><p>II</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{II}(x) = E \psi_{II}(x)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(x) = A sin(k_1 x) + Bcos(k_1x)\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>II</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{II}(x) + U\psi_{II}(x)= E \psi_{II}(x)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(x) = C e^{k_2 x} + De^{-k_2x}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_2^2 = -\frac{2m(E-U)}{\hbar^2} = \frac{2m(U-E)}{\hbar^2}\)</span></p></td>
+<tr class="row-odd"><td class="text-align:center"><p>III</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{III}(x) + V\psi_{III}(x)= E \psi_{III}(x)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{III}(x) = C e^{k_2 x} + De^{-k_2x}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_2^2 = \frac{2m(V-E)}{\hbar^2}\)</span></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>III</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{III}(x) = E \psi_{III}(x)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{III}(x) = A' sin(k_1 x) + B' cos(k_1x)\)</span></p></td>
+<tr class="row-even"><td class="text-align:center"><p>IV</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{IV}(x) = E \psi_{IV}(x)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{IV}(x) = A' sin(k_1 x) + B' cos(k_1x)\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
 </tr>
 </tbody>
@@ -427,35 +429,35 @@ V(x) = \left\{
 </div>
 </div>
 </div>
-<p>La función de onda debe ser contínua, por lo que podemos igualar la función de onda en el punto donde se unen las zonas, y obtener nuevas ecuaciones.</p>
+<p>La función de onda debe ser contínua, por lo que podemos igualar la función de onda en el punto donde se unen las regiones, y obtener nuevas ecuaciones.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Condiciones de Frontera</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Zonas</p></th>
+<tr class="row-odd"><th class="text-align:center head"><p>Regiones</p></th>
 <th class="text-align:center head"><p>Condición</p></th>
 <th class="text-align:center head"><p>Ecuación</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>Inicio y I</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_I(-L) = 0\)</span></p></td>
+<tr class="row-even"><td class="text-align:center"><p>I y II</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(-L) = 0\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(B = A tan(k_1 L)\)</span></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>I y II</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{I}(-a) = \psi_{II}(-a)\)</span></p></td>
+<tr class="row-odd"><td class="text-align:center"><p>II y III</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(-a) = \psi_{III}(-a)\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(-A sin(k_1 a) + Bcos(k_1 a) = C e^{-k_2a} + D e^{k_2a}\)</span></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>I y II</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi'_{I}(-a) = \psi'_{II}(-a)\)</span></p></td>
+<tr class="row-even"><td class="text-align:center"><p>II y III</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi'_{II}(-a) = \psi'_{III}(-a)\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1(A cos(k_1 a) + Bsin(k_1 a)) = k_2 (C e^{-k_2a} - D e^{k_2a})\)</span></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:center"><p>II y III</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(a) = \psi_{III}(a)\)</span></p></td>
+<tr class="row-odd"><td class="text-align:center"><p>III y IV</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{III}(a) = \psi_{IV}(a)\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(C e^{-k_2a} + D e^{k_2a} = A' sin(k_1 a) + B'cos(k_1 a)\)</span></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:center"><p>III y Final</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{III}(L) = 0\)</span></p></td>
+<tr class="row-even"><td class="text-align:center"><p>IV y V</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{V}(L) = 0\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(B' = -A' tan(k_1 L)\)</span></p></td>
 </tr>
 </tbody>
@@ -464,7 +466,7 @@ V(x) = \left\{
 <p>A partir de aquí podemos ayudarnos de la simetría del problema.</p>
 <div class="section" id="simetria-par">
 <h2><span class="section-number">2.1. </span>Simetría Par<a class="headerlink" href="#simetria-par" title="Permalink to this headline">¶</a></h2>
-<p>Empezaremos asumiendo que lo que esta del lado izquierdo del potencial es simétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par (<span class="math notranslate nohighlight">\(\psi_{II}(x) = \psi_{II}(-x)\)</span> y <span class="math notranslate nohighlight">\(C = D\)</span>). Al considerar esta condición en las ecuaciones de continuidad, se obtiene las siguiente ecuación</p>
+<p>Empezaremos asumiendo que lo que esta del lado izquierdo del potencial es simétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par (<span class="math notranslate nohighlight">\(\psi_{III}(x) = \psi_{III}(-x)\)</span> y <span class="math notranslate nohighlight">\(C = D\)</span>). Al considerar esta condición en las ecuaciones de continuidad, se obtiene</p>
 <div class="math notranslate nohighlight">
 \[
 tanh \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
@@ -593,15 +595,15 @@ k_2 = \frac{2m(V-E)}{\hbar^2}
 <p>Defina funciones para</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{I}(x) = \frac{e^{-k_2Ea}+e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)} sin(k_1Ex)+tan(k_1EL)cos(k_1Ex)
+\psi_{II}(x) = \frac{e^{-k_2Ea}+e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)} sin(k_1Ex)+tan(k_1EL)cos(k_1Ex)
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\psi_{II}(x) = e^{k_2Ex}+e^{-k_2Ex}
+\psi_{III}(x) = e^{k_2Ex}+e^{-k_2Ex}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\psi_{III}(x) = \frac{e^{k_2Ea}+e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
+\psi_{IV}(x) = \frac{e^{k_2Ea}+e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -612,9 +614,9 @@ k_2 = \frac{2m(V-E)}{\hbar^2}
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">psi_I</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">psi_IV</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -622,28 +624,28 @@ k_2 = \frac{2m(V-E)}{\hbar^2}
 <p>Cree tres dominios de 1000 puntos para la función de onda, tal que</p>
 <div class="math notranslate nohighlight">
 \[
-x_1 \in [-L,-a]
+x_{II} \in [-L,-a]
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-x_2 \in [-a,a]
+x_{III} \in [-a,a]
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-x_3 \in [a,L]
+x_{IV} \in [a,L]
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># x_1, x_2 y x_3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># x_II, x_III y x_IV</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
-<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
-<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_II</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">L</span><span class="p">,</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">x_III</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
+<span class="n">x_IV</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -655,20 +657,20 @@ x_3 \in [a,L]
     <span class="k">if</span><span class="p">(</span><span class="n">E</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">):</span>
         <span class="n">norm</span> <span class="o">=</span> <span class="mf">0.0</span>
         
-        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_I</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_I</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="o">-</span><span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="o">-</span><span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_IV</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
                 
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">psi_I</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span> 
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_II</span><span class="p">,</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x_II</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_III</span><span class="p">,</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x_III</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_IV</span><span class="p">,</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span> 
         
-        <span class="n">prob</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">norm</span>
+        <span class="n">prob</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">norm</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">E</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Probabilidad de [-a,a]: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">prob</span><span class="p">))</span>
         
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">psi_I</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="o">*</span><span class="n">psi_I</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_II</span><span class="p">,</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x_II</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x_II</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_III</span><span class="p">,</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x_III</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x_III</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_IV</span><span class="p">,</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">*</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
 
         <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
@@ -703,7 +705,7 @@ E: 4.03702980948585 Probabilidad de [-a,a]: 0.009171376328832647
 </div>
 <div class="section" id="simetria-impar">
 <h2><span class="section-number">2.2. </span>Simetría impar<a class="headerlink" href="#simetria-impar" title="Permalink to this headline">¶</a></h2>
-<p>Ahora asumirémos que lo que esta del lado izquierdo del potencial es antisimétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par (<span class="math notranslate nohighlight">\(\psi_{II}(x) = -\psi_{II}(-x)\)</span> y <span class="math notranslate nohighlight">\(C = -D\)</span>). Al considerar esta condición en las ecuaciones de continuidad, se obtienen las siguiente ecuación</p>
+<p>Ahora asumirémos que lo que esta del lado izquierdo del potencial es antisimétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par (<span class="math notranslate nohighlight">\(\psi_{III}(x) = -\psi_{III}(-x)\)</span> y <span class="math notranslate nohighlight">\(C = -D\)</span>). Al considerar esta condición en las ecuaciones de continuidad, se obtienen las siguiente ecuación</p>
 <div class="math notranslate nohighlight">
 \[
 tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
@@ -764,15 +766,15 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2
 <p>Defina funciones para:</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{I}(x) = \frac{e^{-k_2E*a}-e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)+tan(k_1EL)np.cos(k_1Ex))
+\psi_{II}(x) = \frac{e^{-k_2E*a}-e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)+tan(k_1EL)np.cos(k_1Ex))
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\psi_{II}(x) = e^{k_2Ex}-e^{-k_2Ex}
+\psi_{III}(x) = e^{k_2Ex}-e^{-k_2Ex}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\psi_{III}(x) = \frac{e^{k_2Ea}-e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
+\psi_{IV}(x) = \frac{e^{k_2Ea}-e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -783,9 +785,9 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">psi_I</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
-<span class="k">def</span> <span class="nf">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">psi_IV</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="p">(</span><span class="n">E</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -804,20 +806,20 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2
     <span class="k">if</span><span class="p">(</span><span class="n">E</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">):</span>
         <span class="n">norm</span> <span class="o">=</span> <span class="mf">0.0</span>
         
-        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_I</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_I</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="o">-</span><span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="o">-</span><span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_IV</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
                 
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">psi_I</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span> 
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_II</span><span class="p">,</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x_II</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_III</span><span class="p">,</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x_III</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_IV</span><span class="p">,</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span> 
         
         <span class="n">prob</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">norm</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">E</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Probabilidad de [-a,a]: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">prob</span><span class="p">))</span>
         
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">psi_I</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="o">*</span><span class="n">psi_I</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x2</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x3</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_II</span><span class="p">,</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x_II</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x_II</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_III</span><span class="p">,</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x_III</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x_III</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_IV</span><span class="p">,</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">*</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
 
         <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
@@ -827,31 +829,36 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zero
-E: 4.098118934645123 Probabilidad de [-a,a]: 0.006257095779805033
+E: 4.098118934645123 Probabilidad de [-a,a]: 0.06152438345572405
 </pre></div>
 </div>
 <img alt="_images/CajaConTope_45_1.png" src="_images/CajaConTope_45_1.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 6.062762952515444 Probabilidad de [-a,a]: 0.011169077919164577
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 6.062762952515444 Probabilidad de [-a,a]: 0.29151676557600037
 </pre></div>
 </div>
 <img alt="_images/CajaConTope_45_3.png" src="_images/CajaConTope_45_3.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 16.302766510025553 Probabilidad de [-a,a]: 0.026228302244574214
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 16.302766510025553 Probabilidad de [-a,a]: 0.1553139426950121
 </pre></div>
 </div>
 <img alt="_images/CajaConTope_45_5.png" src="_images/CajaConTope_45_5.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 24.50996443721989 Probabilidad de [-a,a]: 0.046803033967743254
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 24.50996443721989 Probabilidad de [-a,a]: 0.21637118642172976
 </pre></div>
 </div>
 <img alt="_images/CajaConTope_45_7.png" src="_images/CajaConTope_45_7.png" />
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 36.30141253472844 Probabilidad de [-a,a]: 0.06372928169383804
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 36.30141253472844 Probabilidad de [-a,a]: 0.1767475720645189
 </pre></div>
 </div>
 <img alt="_images/CajaConTope_45_9.png" src="_images/CajaConTope_45_9.png" />
 </div>
 </div>
-<p>Con base en lo anteriormente visto, responda a la siguiente frase con verdadero o falso.</p>
-<p><strong>Si la partícula tiene energía menor que V, es imposible encontrarla en el intervalo [-a,a] (Cierto/Falso)</strong></p>
-<p><strong>Respuesta</strong></p>
+<div class="warning admonition">
+<p class="admonition-title">Pregunta</p>
+<p>Con base en lo visto, responda con verdadero o falso respecto al sistema cuántico.</p>
+<ol class="simple">
+<li><p>Si la partícula tiene energía menor que V, la probabilidad de encontrarla en el intervalo [-a,a]. (Cierto/Falso)</p></li>
+<li><p>Si la partícula tiene energía menor que V, es imposible que pase de un lado al otro lado de la caja. (Cierto/Falso)</p></li>
+</ol>
+</div>
 </div>
 <div class="section" id="autoria">
 <h2><span class="section-number">2.3. </span>Autoría<a class="headerlink" href="#autoria" title="Permalink to this headline">¶</a></h2>
