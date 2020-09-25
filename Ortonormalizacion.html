@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Tutorial Avanzado. &#8212; Cuántica I</title>
+    <title>Normalización y Ortogonalidad &#8212; Cuántica I</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -38,8 +38,6 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Partícula en la caja" href="Caja.html" />
-    <link rel="prev" title="1. Tutorial Básico." href="Tutorial-Basico.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
@@ -84,14 +82,14 @@
   Python
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Tutorial-Basico.html">
    1. Tutorial Básico.
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Avanzado.html">
    2. Tutorial Avanzado.
   </a>
  </li>
@@ -250,7 +248,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/Tutorial-Avanzado.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/Ortonormalizacion.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -274,7 +272,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/Tutorial-Avanzado.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/Ortonormalizacion.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -282,7 +280,7 @@
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Tutorial-Avanzado.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Ortonormalizacion.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -304,18 +302,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vectores-y-matrices">
-   2.1. Vectores y Matrices
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#graficas">
-   2.2. Gráficas
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#integrales">
-   2.3. Integrales
+  <a class="reference internal nav-link" href="#normalizacion">
+   Normalización
   </a>
  </li>
 </ul>
@@ -328,311 +316,42 @@
         
               <div>
                 
-  <div class="section" id="tutorial-avanzado">
-<h1><span class="section-number">2. </span>Tutorial Avanzado.<a class="headerlink" href="#tutorial-avanzado" title="Permalink to this headline">¶</a></h1>
-<p>En esta parte del tutorial aprenderá a utilizar Python para manejar vectores y matrices, crear gráficas y resolver integrales. Estas funciones serán trascendentales para el curso de <code class="docutils literal notranslate"><span class="pre">Química</span> <span class="pre">Cuántica</span> <span class="pre">I</span></code>. <strong>Recuerde escribir en los cuadros vacíos y presionar el botón Run o las teclas “Shift” + “Enter”.</strong></p>
-<p>Utilizaremos las librerías numpy, matplotlib y scipy que aprendió a utilizar en el Tutorial Básico, <strong>impórtelas en el siguiente recuadro</strong>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importe librerías</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">scipy</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="vectores-y-matrices">
-<h2><span class="section-number">2.1. </span>Vectores y Matrices<a class="headerlink" href="#vectores-y-matrices" title="Permalink to this headline">¶</a></h2>
-<p>Python permite manejar fácilmente objetos multidimensionales, como vectores y matrices. Empezaremos creando una lista, la cual es un conjunto de cosas. Las listas se crean poniendo elementos entre corchetes cuadrados, por ejemplo</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-</pre></div>
-</div>
-<p>Podemos imprimir todos los elementos de la lista con</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>También podemos imprimir un elemento específico indicando el número del elemento entre paréntesis cuadrados. En Python los elementos se cuentan desde “cero”. Para imprimir el número 9 en la lista anterior ejecutaríamos:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-<p><strong>Cree la siguiente lista [8,25,32,41] y guárdela en la variable “lista”. Imprima la lista completa, así como el primer elemento del vector.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Cree una lista</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">41</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[8, 25, 32, 41]
-8
-</pre></div>
-</div>
-</div>
-</div>
-<p>La lista puede convertirse en un arreglo de numpy, esto facilita el manejo de cantidades vectoriales. Para declarar la lista anterior como un arreglo de numpy escribiremos</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
-</pre></div>
-</div>
-<p>Una ventaja es que podemos declarar dos arreglos, por ejemplo</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
-<span class="n">v2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">])</span>
-</pre></div>
-</div>
-<p>y sumarlos, de una forma muy parecida a como se haría en física.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">+</span><span class="n">v2</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Cree dos vectores como arreglos de numpy, uno que contenga los elementos “1,8,6”, y otro que contenga “5,2,7”, e imprima su suma</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Suma de dos vectores</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
-<span class="n">v2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">+</span><span class="n">v2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 6 10 13]
-</pre></div>
-</div>
-</div>
-</div>
-<p>También podemos crear matrices como una “lista de listas”, donde cada lista representa un renglón de la matriz. A continuación generemos una matriz de 3x3 que contenga ceros en todos su elementos</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]]</span>
-</pre></div>
-</div>
-<p><strong>Genere la matriz de ceros anterior, e imprímala.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Cree matriz</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Podemos usar numpy para hacer nuestra matriz de ceros de forma más fácil</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">matriz</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Prueba usar numpy para definir una matriz de ceros de 5x5, e imprímala.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Cree matriz de ceros con numpy</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">matriz</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0.]
- [0. 0. 0. 0. 0.]]
-</pre></div>
-</div>
-</div>
-</div>
-<p><strong>A continuación genere una matriz de 3x3, guárdela en la variable “matriz1”, y asígnele los valores del 1 al 9, tal que</strong></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-matriz1 = \begin{pmatrix}
-1 &amp; 2 &amp; 3\\
-4 &amp; 5 &amp; 6\\
-7 &amp; 8 &amp; 9\\
-\end{pmatrix}
-\end{split}\]</div>
-<p>Puede ayudarse del siguiente código.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">1.0</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mf">2.0</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mf">3.0</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">4.0</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mf">5.0</span>
-<span class="o">...</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Llene una matriz de 3x3</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">1.0</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mf">2.0</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mf">3.0</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">4.0</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mf">5.0</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mf">6.0</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">7.0</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mf">8.0</span>
-<span class="n">matriz1</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mf">9.0</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Hacer esto puede tomar mucho tiempo con matrices grandes. Existe una instrucción llamada <strong>for</strong> que nos permite hacer cosas repetitivas. Por ejemplo:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">val</span><span class="o">=</span><span class="mf">0.0</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
-        <span class="n">val</span><span class="o">=</span><span class="n">val</span><span class="o">+</span><span class="mf">1.0</span>
-        <span class="n">matriz2</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">val</span>
-</pre></div>
-</div>
-<p><strong>Prueba la instrucción anterior e imprime las dos matrices (matriz1 y matriz2) en el siguiente recuadro.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Matriz de 3x3 con for</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Se pueden multiplicar dos matrices con</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">matriz1</span><span class="p">,</span><span class="n">matriz2</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Multiplique las dos matrices anteriores e imprima el resultado.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Matriz3 = Matriz1 x Matriz2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Los valores propios (<span class="math notranslate nohighlight">\(\lambda\)</span>) y vectores propios (<span class="math notranslate nohighlight">\(v\)</span>) de una matriz (<span class="math notranslate nohighlight">\(M\)</span>) son muy importantes en química cuántica. Cumplen la propiedad de que al multiplicar la matriz por el vector propio resulta el mismo vector multiplicado por una constante, es decir:</p>
+  <div class="section" id="normalizacion-y-ortogonalidad">
+<h1>Normalización y Ortogonalidad<a class="headerlink" href="#normalizacion-y-ortogonalidad" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="normalizacion">
+<h2>Normalización<a class="headerlink" href="#normalizacion" title="Permalink to this headline">¶</a></h2>
+<p>Frecuentemente se busca que la función de onda esté normalizada, es decir, que se cumpla la siguiente integral</p>
 <div class="math notranslate nohighlight">
 \[
-M v = \lambda v
+\int \psi_{normalizada} \psi_{normalizada}* = \int |\psi_{normalizada}|^2 = 1
 \]</div>
-<p>se pueden encontrar con</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">val</span><span class="p">,</span><span class="n">vec</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">matriz</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Encuentre los valores propios y vectores propios de la matriz 1, e imprímalos.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Valores y vectores propios</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val</span><span class="p">,</span><span class="n">vec</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">matriz1</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="graficas">
-<h2><span class="section-number">2.2. </span>Gráficas<a class="headerlink" href="#graficas" title="Permalink to this headline">¶</a></h2>
-<p>Vamos a graficar la función y=sin(x) de -3 a 3.</p>
-<p>Primero crearemos el dominio de la función (los valores de x), en nuestro ejemplo le daremos 50 puntos. Utilizaremos la función linspace(a,b,n) de numpy, esta crea un conjunto de n números distribuidos en el intervalo de a hasta b.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Genere el dominio tal que <span class="math notranslate nohighlight">\(x\in[-3,3]\)</span>, utilice 50 puntos, guárdelo en la variable x e imprímalo.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cree dominio de x</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Obtendremos el valor de “y” usando numpy, al escribir la siguiente instrucción Python toma cada valor de x, le aplica la función y lo guarda en la variable “y”.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-</div>
-<p><strong>Evalúe la función</strong></p>
+<p>Las funciones de onda no siempre están normalizadas, pero podemos realizar los siguientes pasos para construir una <code class="docutils literal notranslate"><span class="pre">función</span> <span class="pre">de</span> <span class="pre">onda</span> <span class="pre">normalizada</span></code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>1 Integrar el cuadrado de la función de onda original en el dominio.</p>
 <div class="math notranslate nohighlight">
 \[
-y = sin(x)
+N^2 = \int_{x_1}^{x_2} \psi_{original}^2 dr
 \]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evalúe función</span>
-</pre></div>
+<p>2 Obtener la norma de la función de onda.</p>
+<div class="math notranslate nohighlight">
+\[
+N = \sqrt{N^2} = \sqrt{\int_{x_1}^{x_2} |\psi_{original}|^2 dx}
+\]</div>
+<p>3 Multiplicar la función de onda original por el inverso de su norma.</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_{normalizada} = \frac{1}{N} \psi_{original}
+\]</div>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>El inverso de la norma también recibe el nombre de constante de normalización, <span class="math notranslate nohighlight">\(C\)</span>, es decir, <span class="math notranslate nohighlight">\(C = \frac{1}{N}\)</span>. En este caso, la función de onda normalizada se obtiene mediante <span class="math notranslate nohighlight">\(\psi_{normalizada} = C \psi_{original}\)</span>.</p>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Si <span class="math notranslate nohighlight">\(N=1\)</span>, la función de onda original ya está normalizada.</p>
 </div>
-<p>Finalmente, <strong>realice la gráfica con</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Genere gráfica</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Las instrucciones anteriores son los pasos básicos para generar una gráfica. <strong>En el siguiente recuadro genere la gráfica de las funciones <span class="math notranslate nohighlight">\(y_1=e^{-|x|}\)</span> y <span class="math notranslate nohighlight">\(y_2=e^{-|x|^2}\)</span> con 100 puntos desde -3 hasta 3.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function matplotlib.pyplot.show(close=None, block=None)&gt;
-</pre></div>
-</div>
-<img alt="_images/Tutorial-Avanzado_35_1.png" src="_images/Tutorial-Avanzado_35_1.png" />
-</div>
-</div>
-</div>
-<div class="section" id="integrales">
-<h2><span class="section-number">2.3. </span>Integrales<a class="headerlink" href="#integrales" title="Permalink to this headline">¶</a></h2>
 <p>También podemos hacer integrales con Python. Por ejemplo, vamos a integrar <span class="math notranslate nohighlight">\(y=x^2\)</span> en el dominio <span class="math notranslate nohighlight">\(-3 \leq x \leq3\)</span>. Para ello importaremos el subpaquete integrate de la librería scipy.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
 </pre></div>
@@ -703,10 +422,18 @@ N = \sqrt{N^2} = \sqrt{\int_{x_1}^{x_2} |\psi_{original}|^2 dx}
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N**2 = 18.0
-N = 4.242640687119285
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.0, 1.1102230246251565e-14)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">b2df9a5841ba</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N**2 =&quot;</span><span class="p">,</span><span class="n">norm2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N =&quot;</span><span class="p">,</span><span class="n">norm</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -849,9 +576,7 @@ N^2 = \int \psi^* \psi d\textbf{r} = \int\limits_{0}^\infty \int\limits_{0}^{2\p
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>N**2 = 1.4765259324114768
 N = 1.2151238341878892
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.0, 5.088497375982098e-09)
+(1.0, 5.088497375982098e-09)
 </pre></div>
 </div>
 </div>
@@ -887,8 +612,6 @@ N = 1.2151238341878892
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="Tutorial-Basico.html" title="previous page"><span class="section-number">1. </span>Tutorial Básico.</a>
-    <a class='right-next' id="next-link" href="Caja.html" title="next page"><span class="section-number">1. </span>Partícula en la caja</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

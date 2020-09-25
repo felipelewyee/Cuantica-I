@@ -357,15 +357,15 @@ y = tan(x) = \frac{sin(x)}{cos(x)}
 <p class="admonition-title">Ejecución de los notebooks (en computadora)</p>
 <p>Puede descargar los *.ipynb y ejecutarlos directamente en su computadora dando click sobre el botón con la flecha apuntando hacia abajo. Para ejecutarlos localmente es su computadora se requiere una instalación previa de Python. En caso de no tenerla puede instalar <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a>. Una vez descargado puede interactuar con el notebook utilizando Jupyter Notebook.</p>
 <p>En caso de tener una instalación local de Anaconda en Linux verifique que tenga instaladas las librerías utilizadas en los notebooks. Dichas librerías las puede instalar desde la terminal utilizando las siguientes líneas:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">matplotlib</span> <span class="n">numpy</span> <span class="n">scipy</span> <span class="n">sympy</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">QCI</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">QCI</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">psi4</span> <span class="n">psi4</span><span class="o">-</span><span class="n">rt</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.7</span> <span class="o">-</span><span class="n">c</span> <span class="n">psi4</span>
+<span class="n">conda</span> <span class="n">install</span> <span class="n">jupyter</span> <span class="n">notebook</span> <span class="n">matplotlib</span> <span class="n">numpy</span> <span class="n">scipy</span> <span class="n">sympy</span> 
 </pre></div>
 </div>
 <p>Después, puede ejecutar un notebook con Jupyter</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">jupyter</span> <span class="n">notebook</span> <span class="n">NOMBRE</span><span class="o">.</span><span class="n">ipynb</span>
-</pre></div>
-</div>
-<p>Algunos ejercicios utilizan el software psi4, este se puede instalar desde Anaconda con</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">psi4</span> <span class="n">psi4</span><span class="o">-</span><span class="n">rt</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.7</span> <span class="o">-</span><span class="n">c</span> <span class="n">psi4</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">activate</span> <span class="n">QCI</span>
+<span class="n">jupyter</span> <span class="n">notebook</span> <span class="n">NOMBRE</span><span class="o">.</span><span class="n">ipynb</span>
 </pre></div>
 </div>
 </div>
