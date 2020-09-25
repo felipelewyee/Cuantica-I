@@ -49,16 +49,16 @@ Puede descargar los *.ipynb y ejecutarlos directamente en su computadora dando c
 
 En caso de tener una instalación local de Anaconda en Linux verifique que tenga instaladas las librerías utilizadas en los notebooks. Dichas librerías las puede instalar desde la terminal utilizando las siguientes líneas:
 ```
-conda install matplotlib numpy scipy sympy 
-```
-Después, puede ejecutar un notebook con Jupyter
-```
-jupyter notebook NOMBRE.ipynb
+conda create -n QCI
+conda activate QCI
+conda install psi4 psi4-rt python=3.7 -c psi4
+conda install jupyter notebook matplotlib numpy scipy sympy 
 ```
 
-Algunos ejercicios utilizan el software psi4, este se puede instalar desde Anaconda con
+Después, puede ejecutar un notebook con Jupyter
 ```
-conda install psi4 psi4-rt python=3.7 -c psi4
+conda activate QCI
+jupyter notebook NOMBRE.ipynb
 ```
 
 ````
