@@ -1,0 +1,631 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4. Teoría de funcionales de la densidad (DFT) &#8212; Cuántica I</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Dimerización de \(NO_2\)" href="Dimerizacion.html" />
+    <link rel="prev" title="3. Moller-Plesset (MPn)" href="Moller-Plesset.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Cuántica I</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   La Química Cuántica a tu alcance
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Basico.html">
+   1. Tutorial Básico.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Avanzado.html">
+   2. Tutorial Avanzado.
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas Sencillos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Caja.html">
+   1. Partícula en la caja
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="CajaConTope.html">
+   2. Efecto Túnel en la Caja
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Anillo_Esfera_Rotor.html">
+   3. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Oscilador.html">
+   4. Oscilador Armónico Cuántico
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Átomo de Hidrógeno
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Radial.html">
+   1. Solución Radial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Orbitales.html">
+   2. Orbitales Atómicos
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Métodos Aproximados
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Variacional_Lineal.html">
+   1. Método variacional lineal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="PerturbacionesSinDegeneracion.html">
+   2. Teoría de perturbaciones (niveles de energía no degenerados)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas de Muchos Electrones
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software.html">
+   1. Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Hartree-Fock.html">
+   2. Hartree-Fock-Roothan (HF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Moller-Plesset.html">
+   3. Moller-Plesset (MPn)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   4. Teoría de funcionales de la densidad (DFT)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Dimerizacion.html">
+   5. Dimerización de
+   <span class="math notranslate nohighlight">
+    \(NO_2\)
+   </span>
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Matemáticas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas1.html">
+   1. Expansión en series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas2.html">
+   2. Álgebra simbólica
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/DFT.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/DFT.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/DFT.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aproximacion-local-de-la-densidad-lda">
+   4.1. Aproximación Local de la Densidad (LDA)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aproximacion-de-gradientes-generalizados-gga">
+   4.2. Aproximación de Gradientes Generalizados (GGA)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aproximacion-meta-gga">
+   4.3. Aproximación meta-GGA
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#funcionales-hibridos">
+   4.4. Funcionales Híbridos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   4.5. Referencias
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="teoria-de-funcionales-de-la-densidad-dft">
+<h1><span class="section-number">4. </span>Teoría de funcionales de la densidad (DFT)<a class="headerlink" href="#teoria-de-funcionales-de-la-densidad-dft" title="Permalink to this headline">¶</a></h1>
+<p>La teoría de los funcionales de la densidad se basa en que la densidad electrónica contiene toda la información del sistema, por lo que se puede extraer de ella la energía mediante un funcional</p>
+<div class="math notranslate nohighlight">
+\[
+E[\rho] = T_s[\rho] + U[\rho] + V_{nuc}[\rho] + E_{xc}[\rho]
+\]</div>
+<p>Donde</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E[\rho]\)</span> es la energía del sistema</p></li>
+<li><p><span class="math notranslate nohighlight">\(T_s[\rho]\)</span> es la energía cinética de Kohn-Sham</p></li>
+<li><p><span class="math notranslate nohighlight">\(U[\rho]\)</span> es la energía de Hartree</p></li>
+<li><p><span class="math notranslate nohighlight">\(V[\rho]\)</span> es la interacción núcleo electrón</p></li>
+<li><p><span class="math notranslate nohighlight">\(E_{xc} [\rho]\)</span> es la energía de intercambio correlación</p></li>
+</ul>
+<p>En la formulación de Kohn y Sham, la densidad electrónica (<span class="math notranslate nohighlight">\(\rho(r)\)</span>) se calcula a partir de los orbitales de Kohn-Sham (<span class="math notranslate nohighlight">\(\psi^{KS}_i(r)\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[
+\rho(r) = \sum_i^{N} |\psi^{KS}_i(r)|^2
+\]</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Los teoremas de Hohenberg y Kohn, y Kohn y Sham prueban que existe un funcional universal que conecta a la densidad electrónica con la energía del sistema, pero este funcional no se conoce, particularmente por la parte de <span class="math notranslate nohighlight">\(E_{xc}[\rho]\)</span>. Se han realizan diversas propuestas de como construir este funcional, por lo que en la práctica existen cientos de funcionales de DFT.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>No existe el mejor funcional, sino que depende del sistema químico que se esté estudiando.</p>
+</div>
+<p>En general los funcionales aproximan de diferente manera el intercambio y la correlación, dependiendo de como se aproxime el funcional, estos se pueden clasificar en diferentes categorías. La clasificación fue propuesta por Perdew y se conoce como la <code class="docutils literal notranslate"><span class="pre">escalera</span> <span class="pre">de</span> <span class="pre">Jacob</span></code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Evaluar la contribución del funcional de intercambio-correlación requiere de realizar integración numérica. Esto se hace con un mallado entorno a la molécula. Existen diversos esquemas para colocar los puntos en el mallado, y para seleccionar cuantos puntos poner, estos puede cambiar de un software a otro, e incluso entre diferentes versiones de un mismo software.</p>
+</div>
+<p><strong>Importe psi4</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Importe psi4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">psi4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para ejemplificar el uso de estos funcionales, declare la molécula de agua.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">h2o</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">0 1</span>
+<span class="s2">O    0.0000    0.0000    0.1173</span>
+<span class="s2">H    0.0000    0.7572   -0.4692</span>
+<span class="s2">H    0.0000   -0.7572   -0.4692 </span>
+<span class="s2">units angstrom</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># h2o</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h2o</span> <span class="o">=</span> <span class="n">psi4</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">0 1</span>
+<span class="s2">O    0.0000    0.0000    0.1173</span>
+<span class="s2">H    0.0000    0.7572   -0.4692</span>
+<span class="s2">H    0.0000   -0.7572   -0.4692 </span>
+<span class="s2">units angstrom</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="aproximacion-local-de-la-densidad-lda">
+<h2><span class="section-number">4.1. </span>Aproximación Local de la Densidad (LDA)<a class="headerlink" href="#aproximacion-local-de-la-densidad-lda" title="Permalink to this headline">¶</a></h2>
+<p>Fue una de las primeros aproximaciones y ya ha sido superada. En este caso, el intercambio se calcula mediante</p>
+<div class="math notranslate nohighlight">
+\[
+E_x^{LDA} = -\frac{3}{4} \left( \frac{3}{\pi} \right)^{1/3} \int \rho^{4/3} (r) dr 
+\]</div>
+<p>y la correlación se calcula mediante el funcional de Vosko, Wilk y Nusair
+$<span class="math notranslate nohighlight">\(
+E_c^{LDA} = \int \varepsilon_c^{VWN} dr
+\)</span>$</p>
+<p>Haga un cálculo de energía con SVWN y la base 6-311G con la siguiente instrucción</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;SVWN/6-311G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SVWN</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;SVWN/6-311G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.04571335890917
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="aproximacion-de-gradientes-generalizados-gga">
+<h2><span class="section-number">4.2. </span>Aproximación de Gradientes Generalizados (GGA)<a class="headerlink" href="#aproximacion-de-gradientes-generalizados-gga" title="Permalink to this headline">¶</a></h2>
+<p>Esto calcula la energía con base en la densidad electrónica y su gradiente</p>
+<div class="math notranslate nohighlight">
+\[
+E_{xc}^{GGA} = -\int \varepsilon_{xc}^{GGA} (\rho,\nabla \rho) dr
+\]</div>
+<p>Para ello separa los funcionales en intercambio y correlación.</p>
+<div class="math notranslate nohighlight">
+\[
+\varepsilon_{xc}^{GGA} = \varepsilon_{x}^{GGA} + \varepsilon_{c}^{GGA}
+\]</div>
+<p>Algunos funcionales de intercambio GGA son</p>
+<ul class="simple">
+<li><p>PWx86: Perdew-Wang 1986</p></li>
+<li><p>B88: Becke 1988</p></li>
+<li><p>PWx91: Perdew-Wang 1991</p></li>
+<li><p>PBE: Perdew-Burke-Ernzerhof</p></li>
+</ul>
+<p>Algunos funcionales de correlación GGA son</p>
+<ul class="simple">
+<li><p>LYP: Lee-Yang-Parr</p></li>
+<li><p>Pc86: Perdew 1986</p></li>
+<li><p>PWc91: Perdew-Wang 1991</p></li>
+<li><p>PBE: Perdew-Burke-Ernzerhof</p></li>
+</ul>
+<p>La combinación de estos funcionales genera los funcionales GGA. <strong>Haga un cálculo de energía con PBE y la base 6-311G con la siguiente instrucción</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;PBE/6-311G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;pbe/6-311G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.32774681964372
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="aproximacion-meta-gga">
+<h2><span class="section-number">4.3. </span>Aproximación meta-GGA<a class="headerlink" href="#aproximacion-meta-gga" title="Permalink to this headline">¶</a></h2>
+<p>Los funcionales meta-GGA usan la densidad electrónica, el gradiente de la densidad electrónica, y el laplaciano de la densidad electrónica.</p>
+<div class="math notranslate nohighlight">
+\[
+E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2 \rho) dr
+\]</div>
+<p>Algunos ejemplos son:</p>
+<ul class="simple">
+<li><p>B95: Becke 1995</p></li>
+<li><p>TPSS: Tau-Perdew-Staroverov-Scuseria</p></li>
+</ul>
+<p><strong>Haga un cálculo de energía con TPSS y la base 6-311G con la siguiente instrucción</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;TPSS/6-311G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TPSS</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;TPSS/6-311G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.41723477103014
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="funcionales-hibridos">
+<h2><span class="section-number">4.4. </span>Funcionales Híbridos<a class="headerlink" href="#funcionales-hibridos" title="Permalink to this headline">¶</a></h2>
+<p>Mezclan un funcional de intercambio con el <code class="docutils literal notranslate"><span class="pre">intercambio</span> <span class="pre">de</span> <span class="pre">Hartree-Fock</span></code> en alguna proporción.</p>
+<p>Algunos ejemplos de estos funcionales son:</p>
+<ul class="simple">
+<li><p>B3LYP</p></li>
+<li><p>PBE0</p></li>
+<li><p>M05-2X y M06-2X</p></li>
+<li><p>TPSSh</p></li>
+</ul>
+<p><strong>Haga un cálculo de energía con M06-2X y la base 6-311G con la siguiente instrucción</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;M062X/6-311G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#M062X</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">energy</span><span class="p">(</span><span class="s1">&#39;M062X/6-311G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.37840759939165
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="referencias">
+<h2><span class="section-number">4.5. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>P. Hohenberg and W. Kohn, Phys. Rev. 136, B864 (1964).</p></li>
+<li><p>P. Atkins, Molecular Quantum Mechanics (Oxford University Press, 2005).</p></li>
+<li><p>D. Rappoport, N. R. M. Crawford, F. Furche, y K. Burke, Which functional should I choose?, (2008).</p></li>
+<li><p>W. Koch y M.C. Holthausen, A Chemist’s Guide to Density Functional Theory, (2001).</p></li>
+<li><p>K. Burke y L.O. Wagner, Int. J. Quantum Chem. 113, 96 (2013).</p></li>
+<li><p>K. Burke, J. Chem. Phys. 136, (2012).</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "felipelewyee/Cuantica-I",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="Moller-Plesset.html" title="previous page"><span class="section-number">3. </span>Moller-Plesset (MPn)</a>
+    <a class='right-next' id="next-link" href="Dimerizacion.html" title="next page"><span class="section-number">5. </span>Dimerización de <span class="math notranslate nohighlight">\(NO_2\)</span></a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
