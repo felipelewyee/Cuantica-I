@@ -185,7 +185,21 @@ plt.scatter(x,y)
 plt.show()
 ~~~
 
+```{margin}
+Pruebe cambiar `plt.scatter(x,y)` por `plt.plot(x,y)` para tener una gráfica continua.
+```
+
 # Genere gráfica
+
+from matplotlib import pyplot as plt
+import numpy as np
+
+x=np.linspace(-3,3,50)
+y=np.sin(x)
+
+plt.scatter(x,y)
+#plt.plot(x,y)
+plt.show()
 
 Las instrucciones anteriores son los pasos básicos para generar una gráfica. **En el siguiente recuadro genere la gráfica de las funciones $y_1=e^{-|x|}$ y $y_2=e^{-|x|^2}$ con 100 puntos desde -3 hasta 3.**
 
@@ -221,10 +235,11 @@ Considere la función de onda $\psi = x$, con $x \epsilon [-3,3]$, **proponga un
 
 ```{tip}
 Recuerde que para normalizar:
+
 1 Integre el cuadrado de la función de onda en el dominio.
 
 $$
-N^2 = \int_{x_1}^{x_2} \psi_original^2 dr
+N^2 = \int_{x_1}^{x_2} |\psi_ {original}|^2 dr
 $$
 
 2 Obtenga la norma.

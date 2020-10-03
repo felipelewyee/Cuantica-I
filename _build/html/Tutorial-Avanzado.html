@@ -595,11 +595,33 @@ y = sin(x)
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Pruebe cambiar <code class="docutils literal notranslate"><span class="pre">plt.scatter(x,y)</span></code> por <code class="docutils literal notranslate"><span class="pre">plt.plot(x,y)</span></code> para tener una gráfica continua.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Genere gráfica</span>
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="c1">#plt.plot(x,y)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Tutorial-Avanzado_33_0.png" src="_images/Tutorial-Avanzado_33_0.png" />
 </div>
 </div>
 <p>Las instrucciones anteriores son los pasos básicos para generar una gráfica. <strong>En el siguiente recuadro genere la gráfica de las funciones <span class="math notranslate nohighlight">\(y_1=e^{-|x|}\)</span> y <span class="math notranslate nohighlight">\(y_2=e^{-|x|^2}\)</span> con 100 puntos desde -3 hasta 3.</strong></p>
@@ -627,7 +649,7 @@ y = sin(x)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;function matplotlib.pyplot.show(close=None, block=None)&gt;
 </pre></div>
 </div>
-<img alt="_images/Tutorial-Avanzado_35_1.png" src="_images/Tutorial-Avanzado_35_1.png" />
+<img alt="_images/Tutorial-Avanzado_36_1.png" src="_images/Tutorial-Avanzado_36_1.png" />
 </div>
 </div>
 </div>
@@ -665,11 +687,11 @@ y = sin(x)
 <p>Considere la función de onda <span class="math notranslate nohighlight">\(\psi = x\)</span>, con <span class="math notranslate nohighlight">\(x \epsilon [-3,3]\)</span>, <strong>proponga una función de onda normalizada y evalúe la integral con integrate.quad para comprobar que la norma es 1.</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Recuerde que para normalizar:
-1 Integre el cuadrado de la función de onda en el dominio.</p>
+<p>Recuerde que para normalizar:</p>
+<p>1 Integre el cuadrado de la función de onda en el dominio.</p>
 <div class="math notranslate nohighlight">
 \[
-N^2 = \int_{x_1}^{x_2} \psi_original^2 dr
+N^2 = \int_{x_1}^{x_2} |\psi_ {original}|^2 dr
 \]</div>
 <p>2 Obtenga la norma.</p>
 <div class="math notranslate nohighlight">
