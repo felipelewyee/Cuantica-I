@@ -36,13 +36,15 @@ Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que s
 ```{admonition} Inserto matemático: Hamiltoniano por regiones
 :class: dropdown
 
-Si analizamos la ecuación de Schrödiger por regiones se tiene:
+Si analizamos la ecuación de Schrödiger por regiones se tiene los siguientes Hamiltonianos y sus respectivas funciones de onda solución:
 
 | Región      | Hamiltoniano | Función de onda | Constantes |
 |:----------------:|:---------:|:--------:|:--------:|
-| II | $-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{II}(x) = E \psi_{II}(x)$ | $\psi_{II}(x) = A sin(k_1 x) + Bcos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
-| III | $-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{III}(x) + V\psi_{III}(x)= E \psi_{III}(x)$ | $\psi_{III}(x) = C e^{k_2 x} + De^{-k_2x}$ | $k_2^2 = \frac{2m(V-E)}{\hbar^2}$ |
-| IV | $-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{IV}(x) = E \psi_{IV}(x)$ | $\psi_{IV}(x) = A' sin(k_1 x) + B' cos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
+| II | $\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\right) \psi_{II}(x) = E \psi_{II}(x)$ | $\psi_{II}(x) = A sin(k_1 x) + Bcos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
+| III | $\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V \right) \psi_{III}(x)= E \psi_{III}(x)$ | $\psi_{III}(x) = C e^{k_2 x} + De^{-k_2x}$ | $k_2^2 = \frac{2m(V-E)}{\hbar^2}$ |
+| IV | $\left( -\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\right) \psi_{IV}(x) = E \psi_{IV}(x)$ | $\psi_{IV}(x) = F sin(k_1 x) + G cos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
+
+Note que en la región I y V el potencial es infinito, por lo que $\psi_I = \psi_V = 0$.
 
 ```
 
@@ -69,7 +71,7 @@ V = 50.0
 a = 0.2
 L = 1.2
 
-La función de onda debe ser contínua, por lo que podemos igualar la función de onda en el punto donde se unen las regiones, y obtener nuevas ecuaciones.
+La función de onda y su derivada deben de ser contínuas, por lo que podemos igualar la función de onda en el punto donde se unen las regiones, y obtener nuevas ecuaciones.
 
 ```{admonition} Inserto matemático: Condiciones de Frontera
 :class: dropdown
@@ -77,22 +79,69 @@ La función de onda debe ser contínua, por lo que podemos igualar la función d
 |:---: |:---: | :---:    |
 | I y II | $\psi_{II}(-L) = 0$ | $B = A tan(k_1 L)$ |
 | II y III | $\psi_{II}(-a) = \psi_{III}(-a)$ | $-A sin(k_1 a) + Bcos(k_1 a) = C e^{-k_2a} + D e^{k_2a}$ |
-|II y III | $\psi'_{II}(-a) = \psi'_{III}(-a)$ | $k_1(A cos(k_1 a) + Bsin(k_1 a)) = k_2 (C e^{-k_2a} - D e^{k_2a})$|
-| III y IV | $\psi_{III}(a) = \psi_{IV}(a)$ | $C e^{-k_2a} + D e^{k_2a} = A' sin(k_1 a) + B'cos(k_1 a)$|
-| IV y V | $\psi_{V}(L) = 0$ | $B' = -A' tan(k_1 L)$|
+|II y III | $\frac{d\psi_{II}}{dx}(-a) = \frac{d\psi_{III}}{dx}(-a)$ | $k_1(A cos(k_1 a) + Bsin(k_1 a)) = k_2 (C e^{-k_2a} - D e^{k_2a})$|
+| III y IV | $\psi_{III}(a) = \psi_{IV}(a)$ | $C e^{k_2a} + D e^{-k_2a} = F sin(k_1 a) + G cos(k_1 a)$|
+| IV y V | $\psi_{V}(L) = 0$ | $G = -F tan(k_1 L)$|
 ```
 
 A partir de aquí podemos ayudarnos de la simetría del problema.
 
 ## Simetría Par
 
-Empezaremos asumiendo que lo que esta del lado izquierdo del potencial es simétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par ($\psi_{III}(x) = \psi_{III}(-x)$ y $C = D$). Al considerar esta condición en las ecuaciones de continuidad, se obtiene
+Empezaremos asumiendo que lo que esta del lado izquierdo respecto a $x=0$ tiene simetría par respecto a lo que está del lado derecho.
+
+```{admonition} Inserto matemático: Simetría par
+:class: dropdown
+
+Al imponer la simetría en la región III
 
 $$
-tanh \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
+\begin{align}
+\psi_{III}(-x) &= \psi_{III}(x)\\
+C e^{-k_2 x} + De^{k_2x} &= C e^{k_2 x} + De^{-k_2x}\\
+\end{align}
 $$
 
-En esta ecuación no es trivial despejar E, sin embargo, la igualdad sólo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos $f(E)$
+La ecuación se cumple si $C = D$, por tanto
+
+$$
+\psi_{III}(x) = C \left(e^{k_2 x} + e^{-k_2x} \right)
+$$
+
+Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la función de onda entre las zonas II y III se obtiene
+
+$$
+k_1\frac{A cos(k_1 a) + Bsin(k_1 a)}{-A sin(k_1 a) + Bcos(k_1 a)} = k_2 \frac{C e^{-k_2a} - D e^{k_2a}}{C e^{-k_2a} + D e^{k_2a}}
+$$
+
+Sustituyendo la condición de simetría par ($C=D$) y la continuidad entre las zonas I y II ($B = A tan(k_1L)$)
+
+$$
+k_1\frac{cos(k_1 a) + sin(k_1 a)tan(k_1 L)}{- sin(k_1 a) + cos(k_1 a)tan(k_1 L)} = - k_2 tanh(k_2a)
+$$
+
+Simplificando
+
+$$
+k_1\frac{1 + tan(k_1 a)tan(k_1 L)}{tan(k_1 a) - tan(k_1 L)} = k_2 tanh(k_2a)
+$$
+
+Aplicamos la identidad trigonométrica $\frac{tan(\theta) - tan(\phi)}{1 + tan(\theta)tan(\phi)} = tan(\theta - \phi)$
+
+$$
+\frac{k_1}{k_2} = tanh(k_2a) tan(k_1(a-L))
+$$
+
+El siguiente paso es sustituir los valores de $k_1$ y $k_2$.
+```
+
+Las energías permitidas se obtienen al resolver la ecuación
+
+$$
+\sqrt{\frac{E}{V-E}} = tanh \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right)
+$$
+
+En esta ecuación no es trivial despear E, pero la igualdad sólo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos $f(E)$
 
 $$
 f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{V-E}
@@ -161,18 +210,58 @@ $$
 def k1(E): return np.sqrt(2*m*E/hbar**2)
 def k2(E): return np.sqrt(2*m*(V-E)/hbar**2)
 
+Hasta aquí ya somos capaces de encontrar las energías permitidas. Falta normalizar la función de onda y graficarla.
+
+```{admonition} Inserto matemático: Análisis de las constantes $A$, $B$, $C$, $D$, $F$ y $G$
+:class: dropdown
+
+Por la continuidad de la zona II y III, con $B=Atan(k_1 L)$ y $C=D$, se tiene
+
+$$
+\begin{align}
+\psi_{I}(-a) &= \psi_{III}(-a)\\
+-A sin(k_1 a) + Bcos(k_1a) &= C e^{-k_2a} + De^{k_2a}\\
+A \left( -sin(k_1 a) + tan(k_1L)cos(k_1a) \right) &= C \left( e^{-k_2a} + e^{k_2a} \right) \\
+A &= C \left(\frac{e^{-k_2a} + e^{k_2a}}{-sin(k_1 a) + tan(k_1L)cos(k_1a)}\right)
+\end{align}
+$$
+
+De la misma manera, la continuidad de la zona III y IV con $G=-F tan(k_1 L)$ y $C=D$ nos dice
+
+$$
+\begin{align}
+\psi_{III}(a) &= \psi_{IV}(a)\\
+C e^{k_2a} + De^{-k_2a} &= F sin(k_1 a) + Gcos(k_1a)\\
+C \left( e^{k_2a} + e^{-k_2a} \right) &= F \left( sin(k_1 a) - tan(k_1L) cos(k_1a) \right)\\
+F &= C \left(\frac{ e^{k_2a} + e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}\right)
+\end{align}
+$$
+
+En este punto tenemos las siguientes relaciones entre los coeficientes
+
+| Coeficientes Relacionados | Relación |
+|:---: |:---: | 
+| $A$ y $B$ | $B = A tan(k_1 L)$ |
+| $A$ y $C$ | $A = C \left(\frac{e^{k_2a} + e^{-k_2a}}{-sin(k_1 a) + tan(k_1L)cos(k_1a)}\right)$ |
+| $C$ y $D$ | $C = D$|
+| $F$ y $G$ | $G = -F tan(k_1 L)$ |
+| $F$ y $C$ | $F = C \left(\frac{ e^{k_2a} + e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}\right)$|
+
+Note que es posible poner todo en función de $C$. Además note que $A = -F$ y $B = G$. El valor de $C$ debe ser aquel que haga que la función de onda este normalizada. Aunque es posible obtener una función analítica, aquí tomaremos un camino numérico.
+```
+
 Defina funciones para
 
 $$
-\psi_{II}(x) = \frac{e^{-k_2Ea}+e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)} sin(k_1Ex)+tan(k_1EL)cos(k_1Ex)
+\psi_{II}(x) = \frac{e^{-k_2a}+e^{k_2a}}{-sin(k_1a)+tan(k_1L)cos(k_1a)} sin(k_1x)+tan(k_1L)cos(k_1x)
 $$
 
 $$
-\psi_{III}(x) = e^{k_2Ex}+e^{-k_2Ex}
+\psi_{III}(x) = e^{k_2x}+e^{-k_2x}
 $$
 
 $$
-\psi_{IV}(x) = \frac{e^{k_2Ea}+e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
+\psi_{IV}(x) = \frac{e^{k_2a}+e^{-k_2a}}{sin(k_1a)-tan(k_1L)cos(k_1a)}(sin(k_1x)-tan(k_1L)cos(k_1x))
 $$
 
 # Defina funciones
@@ -201,26 +290,26 @@ x_II = np.linspace(-L,-a,10000)
 x_III = np.linspace(-a,a,10000)
 x_IV = np.linspace(a,L,10000)
 
-Utilice las energías del segundo guess para graficar las funciones de onda.
+Utilice las energías del segundo guess para graficar las funciones de onda. Recuerde respetar la normalización.
 
 for E in E_segundoguess:
     if(E>0):
-        norm = 0.0
+        norm2 = 0.0
         
-        norm = norm + integrate.quad(lambda x: psi_II(x)*psi_II(x), -L, -a)[0]
-        norm = norm + integrate.quad(lambda x: psi_III(x)*psi_III(x), -a, a)[0]
-        norm = norm + integrate.quad(lambda x: psi_IV(x)*psi_IV(x), a, L)[0]
+        norm2 = norm2 + integrate.quad(lambda x: psi_II(x)*psi_II(x), -L, -a)[0]
+        norm2 = norm2 + integrate.quad(lambda x: psi_III(x)*psi_III(x), -a, a)[0]
+        norm2 = norm2 + integrate.quad(lambda x: psi_IV(x)*psi_IV(x), a, L)[0]
                 
-        plt.plot(x_II,psi_II(x_II)/np.sqrt(norm))
-        plt.plot(x_III,psi_III(x_III)/np.sqrt(norm))
-        plt.plot(x_IV,psi_IV(x_IV)/np.sqrt(norm)) 
+        plt.plot(x_II,psi_II(x_II)/np.sqrt(norm2))
+        plt.plot(x_III,psi_III(x_III)/np.sqrt(norm2))
+        plt.plot(x_IV,psi_IV(x_IV)/np.sqrt(norm2)) 
         
-        prob = integrate.quad(lambda x: psi_III(x)*psi_III(x), -a, a)[0]/norm
+        prob = integrate.quad(lambda x: psi_III(x)*psi_III(x), -a, a)[0]/norm2
         print("E: " + str(E) + " Probabilidad de [-a,a]: " + str(prob))
         
-        plt.plot(x_II,psi_II(x_II)*psi_II(x_II)/norm)
-        plt.plot(x_III,psi_III(x_III)*psi_III(x_III)/norm)
-        plt.plot(x_IV,psi_IV(x_IV)*psi_IV(x_IV)/norm)
+        plt.plot(x_II,psi_II(x_II)*psi_II(x_II)/norm2)
+        plt.plot(x_III,psi_III(x_III)*psi_III(x_III)/norm2)
+        plt.plot(x_IV,psi_IV(x_IV)*psi_IV(x_IV)/norm2)
 
         plt.show()
     else:
@@ -228,7 +317,55 @@ for E in E_segundoguess:
 
 ## Simetría impar
 
-Ahora asumirémos que lo que esta del lado izquierdo del potencial es antisimétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par ($\psi_{III}(x) = -\psi_{III}(-x)$ y $C = -D$). Al considerar esta condición en las ecuaciones de continuidad, se obtienen las siguiente ecuación
+Empezaremos asumiendo que lo que esta del lado izquierdo de $x=0$ tiene simetría impar respecto a lo que está del lado derecho.
+
+```{admonition} Inserto matemático: Simetría impar
+:class: dropdown
+
+Al imponer la simetría en la región III
+
+$$
+\begin{align}
+\psi_{III}(-x) &= -\psi_{III}(x)\\
+C e^{-k_2 x} + De^{k_2x} &= -C e^{k_2 x} - De^{-k_2x}\\
+\end{align}
+$$
+
+La ecuación se cumple si $C = -D$, por tanto
+
+$$
+\psi_{III}(x) = C \left(e^{k_2 x} - e^{-k_2x} \right)
+$$
+
+Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la función de onda entre las zonas II y III se obtiene
+
+$$
+k_1\frac{A cos(k_1 a) + Bsin(k_1 a)}{-A sin(k_1 a) + Bcos(k_1 a)} = k_2 \frac{C e^{-k_2a} - D e^{k_2a}}{C e^{-k_2a} + D e^{k_2a}}
+$$
+
+Sustituyendo la condición de simetría par ($C=-D$) y la continuidad entre las zonas I y II ($B = A tan(k_1L)$)
+
+$$
+k_1\frac{cos(k_1 a) + sin(k_1 a)tan(k_1 L)}{- sin(k_1 a) + cos(k_1 a)tan(k_1 L)} = - k_2 tanh^{-1}(k_2a)
+$$
+
+Simplificando
+
+$$
+k_1\frac{1 + tan(k_1 a)tan(k_1 L)}{tan(k_1 a) - tan(k_1 L)} = k_2 tanh^{-1}(k_2a)
+$$
+
+Aplicamos la identidad trigonométrica $\frac{tan(\theta) - tan(\phi)}{1 + tan(\theta)tan(\phi)} = tan(\theta - \phi)$
+
+$$
+\frac{k_1}{k_2} = tanh^{-1}(k_2a) tan(k_1(a-L))
+$$
+
+El siguiente paso es sustituir los valores de $k_1$ y $k_2$.
+```
+
+
+Al considerar esta condición en las ecuaciones de continuidad, se obtienen las siguiente ecuación
 
 $$
 tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
@@ -271,18 +408,58 @@ for E in E_primerguess:
     if (abs(E_segundoguess[-1] - E_i) > 0.1 ):
         E_segundoguess.append(E_i)
 
+Hasta aquí ya somos capaces de encontrar las energías permitidas. Falta normalizar la función de onda y graficarla.
+
+```{admonition} Inserto matemático: Análisis de las constantes $A$, $B$, $C$, $D$, $F$ y $G$
+:class: dropdown
+
+Por la continuidad de la zona II y III, con $B=Atan(k_1 L)$ y $C=-D$, se tiene
+
+$$
+\begin{align}
+\psi_{I}(-a) &= \psi_{III}(-a)\\
+-A sin(k_1 a) + Bcos(k_1a) &= C e^{-k_2a} + De^{k_2a}\\
+A \left( -sin(k_1 a) + tan(k_1L)cos(k_1a) \right) &= C \left( e^{-k_2a} - e^{k_2a} \right) \\
+A &= C \left(\frac{e^{-k_2a} - e^{k_2a}}{-sin(k_1 a) + tan(k_1L)cos(k_1a)}\right)
+\end{align}
+$$
+
+De la misma manera, la continuidad de la zona III y IV con $G=-F tan(k_1 L)$ y $C=-D$ nos dice
+
+$$
+\begin{align}
+\psi_{III}(a) &= \psi_{IV}(a)\\
+C e^{k_2a} + De^{-k_2a} &= F sin(k_1 a) + Gcos(k_1a)\\
+C \left( e^{k_2a} - e^{-k_2a} \right) &= F \left( sin(k_1 a) - tan(k_1L) cos(k_1a) \right)\\
+F &= C \left(\frac{ e^{k_2a} - e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}\right)
+\end{align}
+$$
+
+En este punto tenemos las siguientes relaciones entre los coeficientes
+
+| Coeficientes Relacionados | Relación |
+|:---: |:---: | 
+| $A$ y $B$ | $B = A tan(k_1 L)$ |
+| $A$ y $C$ | $A = C \left(\frac{e^{k_2a} - e^{-k_2a}}{-sin(k_1 a) + tan(k_1L)cos(k_1a)}\right)$ |
+| $C$ y $D$ | $C = - D$|
+| $F$ y $G$ | $G = -F tan(k_1 L)$ |
+| $F$ y $C$ | $F = C \left(\frac{ e^{k_2a} - e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}\right)$|
+
+Note que es posible poner todo en función de $C$. Además note que $A = E$ y $B = -F$. El valor de $C$ debe ser aquel que haga que la función de onda este normalizada. Aunque es posible obtener una función analítica, aquí tomaremos un camino numérico.
+```
+
 Defina funciones para:
 
 $$
-\psi_{II}(x) = \frac{e^{-k_2E*a}-e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)+tan(k_1EL)np.cos(k_1Ex))
+\psi_{II}(x) = \frac{e^{-k_2a}-e^{k_2a}}{-sin(k_1a)+tan(k_1L)cos(k_1a)}(sin(k_1x)+tan(k_1L)np.cos(k_1x))
 $$
 
 $$
-\psi_{III}(x) = e^{k_2Ex}-e^{-k_2Ex}
+\psi_{III}(x) = e^{k_2x}-e^{-k_2x}
 $$
 
 $$
-\psi_{IV}(x) = \frac{e^{k_2Ea}-e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
+\psi_{IV}(x) = \frac{e^{k_2a}-e^{-k_2a}}{sin(k_1a)-tan(k_1L)cos(k_1a)}(sin(k_1x)-tan(k_1L)cos(k_1x))
 $$
 
 # Funciones

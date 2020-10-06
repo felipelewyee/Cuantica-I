@@ -358,7 +358,7 @@ V(x) = \left\{
 <p>Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por regiones.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Hamiltoniano por regiones</p>
-<p>Si analizamos la ecuación de Schrödiger por regiones se tiene:</p>
+<p>Si analizamos la ecuación de Schrödiger por regiones se tiene los siguientes Hamiltonianos y sus respectivas funciones de onda solución:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:center head"><p>Región</p></th>
@@ -369,22 +369,23 @@ V(x) = \left\{
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-align:center"><p>II</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{II}(x) = E \psi_{II}(x)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\right) \psi_{II}(x) = E \psi_{II}(x)\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(x) = A sin(k_1 x) + Bcos(k_1x)\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>III</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{III}(x) + V\psi_{III}(x)= E \psi_{III}(x)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V \right) \psi_{III}(x)= E \psi_{III}(x)\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{III}(x) = C e^{k_2 x} + De^{-k_2x}\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_2^2 = \frac{2m(V-E)}{\hbar^2}\)</span></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>IV</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi_{IV}(x) = E \psi_{IV}(x)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{IV}(x) = A' sin(k_1 x) + B' cos(k_1x)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\left( -\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\right) \psi_{IV}(x) = E \psi_{IV}(x)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{IV}(x) = F sin(k_1 x) + G cos(k_1x)\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
 </tr>
 </tbody>
 </table>
+<p>Note que en la región I y V el potencial es infinito, por lo que <span class="math notranslate nohighlight">\(\psi_I = \psi_V = 0\)</span>.</p>
 </div>
 <p><strong>Importe las siguientes librerías</strong></p>
 <ul class="simple">
@@ -429,7 +430,7 @@ V(x) = \left\{
 </div>
 </div>
 </div>
-<p>La función de onda debe ser contínua, por lo que podemos igualar la función de onda en el punto donde se unen las regiones, y obtener nuevas ecuaciones.</p>
+<p>La función de onda y su derivada deben de ser contínuas, por lo que podemos igualar la función de onda en el punto donde se unen las regiones, y obtener nuevas ecuaciones.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Condiciones de Frontera</p>
 <table class="colwidths-auto table">
@@ -449,16 +450,16 @@ V(x) = \left\{
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(-A sin(k_1 a) + Bcos(k_1 a) = C e^{-k_2a} + D e^{k_2a}\)</span></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>II y III</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi'_{II}(-a) = \psi'_{III}(-a)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frac{d\psi_{II}}{dx}(-a) = \frac{d\psi_{III}}{dx}(-a)\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1(A cos(k_1 a) + Bsin(k_1 a)) = k_2 (C e^{-k_2a} - D e^{k_2a})\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>III y IV</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{III}(a) = \psi_{IV}(a)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(C e^{-k_2a} + D e^{k_2a} = A' sin(k_1 a) + B'cos(k_1 a)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(C e^{k_2a} + D e^{-k_2a} = F sin(k_1 a) + G cos(k_1 a)\)</span></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>IV y V</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{V}(L) = 0\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(B' = -A' tan(k_1 L)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G = -F tan(k_1 L)\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -466,12 +467,50 @@ V(x) = \left\{
 <p>A partir de aquí podemos ayudarnos de la simetría del problema.</p>
 <div class="section" id="simetria-par">
 <h2><span class="section-number">2.1. </span>Simetría Par<a class="headerlink" href="#simetria-par" title="Permalink to this headline">¶</a></h2>
-<p>Empezaremos asumiendo que lo que esta del lado izquierdo del potencial es simétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par (<span class="math notranslate nohighlight">\(\psi_{III}(x) = \psi_{III}(-x)\)</span> y <span class="math notranslate nohighlight">\(C = D\)</span>). Al considerar esta condición en las ecuaciones de continuidad, se obtiene</p>
+<p>Empezaremos asumiendo que lo que esta del lado izquierdo respecto a <span class="math notranslate nohighlight">\(x=0\)</span> tiene simetría par respecto a lo que está del lado derecho.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Simetría par</p>
+<p>Al imponer la simetría en la región III</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\psi_{III}(-x) &amp;= \psi_{III}(x)\\
+C e^{-k_2 x} + De^{k_2x} &amp;= C e^{k_2 x} + De^{-k_2x}\\
+\end{align}
+\end{split}\]</div>
+<p>La ecuación se cumple si <span class="math notranslate nohighlight">\(C = D\)</span>, por tanto</p>
 <div class="math notranslate nohighlight">
 \[
-tanh \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
+\psi_{III}(x) = C \left(e^{k_2 x} + e^{-k_2x} \right)
 \]</div>
-<p>En esta ecuación no es trivial despejar E, sin embargo, la igualdad sólo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos <span class="math notranslate nohighlight">\(f(E)\)</span></p>
+<p>Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la función de onda entre las zonas II y III se obtiene</p>
+<div class="math notranslate nohighlight">
+\[
+k_1\frac{A cos(k_1 a) + Bsin(k_1 a)}{-A sin(k_1 a) + Bcos(k_1 a)} = k_2 \frac{C e^{-k_2a} - D e^{k_2a}}{C e^{-k_2a} + D e^{k_2a}}
+\]</div>
+<p>Sustituyendo la condición de simetría par (<span class="math notranslate nohighlight">\(C=D\)</span>) y la continuidad entre las zonas I y II (<span class="math notranslate nohighlight">\(B = A tan(k_1L)\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[
+k_1\frac{cos(k_1 a) + sin(k_1 a)tan(k_1 L)}{- sin(k_1 a) + cos(k_1 a)tan(k_1 L)} = - k_2 tanh(k_2a)
+\]</div>
+<p>Simplificando</p>
+<div class="math notranslate nohighlight">
+\[
+k_1\frac{1 + tan(k_1 a)tan(k_1 L)}{tan(k_1 a) - tan(k_1 L)} = k_2 tanh(k_2a)
+\]</div>
+<p>Aplicamos la identidad trigonométrica <span class="math notranslate nohighlight">\(\frac{tan(\theta) - tan(\phi)}{1 + tan(\theta)tan(\phi)} = tan(\theta - \phi)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{k_1}{k_2} = tanh(k_2a) tan(k_1(a-L))
+\]</div>
+<p>El siguiente paso es sustituir los valores de <span class="math notranslate nohighlight">\(k_1\)</span> y <span class="math notranslate nohighlight">\(k_2\)</span>.</p>
+</div>
+<p>Las energías permitidas se obtienen al resolver la ecuación</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{\frac{E}{V-E}} = tanh \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right)
+\]</div>
+<p>En esta ecuación no es trivial despear E, pero la igualdad sólo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos <span class="math notranslate nohighlight">\(f(E)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{V-E}
@@ -592,18 +631,68 @@ k_2 = \frac{2m(V-E)}{\hbar^2}
 </div>
 </div>
 </div>
+<p>Hasta aquí ya somos capaces de encontrar las energías permitidas. Falta normalizar la función de onda y graficarla.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Análisis de las constantes <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span></p>
+<p>Por la continuidad de la zona II y III, con <span class="math notranslate nohighlight">\(B=Atan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=D\)</span>, se tiene</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\psi_{I}(-a) &amp;= \psi_{III}(-a)\\
+-A sin(k_1 a) + Bcos(k_1a) &amp;= C e^{-k_2a} + De^{k_2a}\\
+A \left( -sin(k_1 a) + tan(k_1L)cos(k_1a) \right) &amp;= C \left( e^{-k_2a} + e^{k_2a} \right) \\
+A &amp;= C \left(\frac{e^{-k_2a} + e^{k_2a}}{-sin(k_1 a) + tan(k_1L)cos(k_1a)}\right)
+\end{align}
+\end{split}\]</div>
+<p>De la misma manera, la continuidad de la zona III y IV con <span class="math notranslate nohighlight">\(G=-F tan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=D\)</span> nos dice</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\psi_{III}(a) &amp;= \psi_{IV}(a)\\
+C e^{k_2a} + De^{-k_2a} &amp;= F sin(k_1 a) + Gcos(k_1a)\\
+C \left( e^{k_2a} + e^{-k_2a} \right) &amp;= F \left( sin(k_1 a) - tan(k_1L) cos(k_1a) \right)\\
+F &amp;= C \left(\frac{ e^{k_2a} + e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}\right)
+\end{align}
+\end{split}\]</div>
+<p>En este punto tenemos las siguientes relaciones entre los coeficientes</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Coeficientes Relacionados</p></th>
+<th class="text-align:center head"><p>Relación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(B = A tan(k_1 L)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(C\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(A = C \left(\frac{e^{k_2a} + e^{-k_2a}}{-sin(k_1 a) + tan(k_1L)cos(k_1a)}\right)\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(C\)</span> y <span class="math notranslate nohighlight">\(D\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(C = D\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G = -F tan(k_1 L)\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(C\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(F = C \left(\frac{ e^{k_2a} + e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}\right)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Note que es posible poner todo en función de <span class="math notranslate nohighlight">\(C\)</span>. Además note que <span class="math notranslate nohighlight">\(A = -F\)</span> y <span class="math notranslate nohighlight">\(B = G\)</span>. El valor de <span class="math notranslate nohighlight">\(C\)</span> debe ser aquel que haga que la función de onda este normalizada. Aunque es posible obtener una función analítica, aquí tomaremos un camino numérico.</p>
+</div>
 <p>Defina funciones para</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{II}(x) = \frac{e^{-k_2Ea}+e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)} sin(k_1Ex)+tan(k_1EL)cos(k_1Ex)
+\psi_{II}(x) = \frac{e^{-k_2a}+e^{k_2a}}{-sin(k_1a)+tan(k_1L)cos(k_1a)} sin(k_1x)+tan(k_1L)cos(k_1x)
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\psi_{III}(x) = e^{k_2Ex}+e^{-k_2Ex}
+\psi_{III}(x) = e^{k_2x}+e^{-k_2x}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\psi_{IV}(x) = \frac{e^{k_2Ea}+e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
+\psi_{IV}(x) = \frac{e^{k_2a}+e^{-k_2a}}{sin(k_1a)-tan(k_1L)cos(k_1a)}(sin(k_1x)-tan(k_1L)cos(k_1x))
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -650,27 +739,27 @@ x_{IV} \in [a,L]
 </div>
 </div>
 </div>
-<p>Utilice las energías del segundo guess para graficar las funciones de onda.</p>
+<p>Utilice las energías del segundo guess para graficar las funciones de onda. Recuerde respetar la normalización.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">E</span> <span class="ow">in</span> <span class="n">E_segundoguess</span><span class="p">:</span>
     <span class="k">if</span><span class="p">(</span><span class="n">E</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">):</span>
-        <span class="n">norm</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">norm2</span> <span class="o">=</span> <span class="mf">0.0</span>
         
-        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="o">-</span><span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">norm</span> <span class="o">=</span> <span class="n">norm</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_IV</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">norm2</span> <span class="o">=</span> <span class="n">norm2</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">L</span><span class="p">,</span> <span class="o">-</span><span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">norm2</span> <span class="o">=</span> <span class="n">norm2</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">norm2</span> <span class="o">=</span> <span class="n">norm2</span> <span class="o">+</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_IV</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">a</span><span class="p">,</span> <span class="n">L</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
                 
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_II</span><span class="p">,</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x_II</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_III</span><span class="p">,</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x_III</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_IV</span><span class="p">,</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm</span><span class="p">))</span> 
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_II</span><span class="p">,</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x_II</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm2</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_III</span><span class="p">,</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x_III</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm2</span><span class="p">))</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_IV</span><span class="p">,</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm2</span><span class="p">))</span> 
         
-        <span class="n">prob</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">norm</span>
+        <span class="n">prob</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="o">-</span><span class="n">a</span><span class="p">,</span> <span class="n">a</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">norm2</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;E: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">E</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; Probabilidad de [-a,a]: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">prob</span><span class="p">))</span>
         
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_II</span><span class="p">,</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x_II</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x_II</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_III</span><span class="p">,</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x_III</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x_III</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
-        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_IV</span><span class="p">,</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">*</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_II</span><span class="p">,</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x_II</span><span class="p">)</span><span class="o">*</span><span class="n">psi_II</span><span class="p">(</span><span class="n">x_II</span><span class="p">)</span><span class="o">/</span><span class="n">norm2</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_III</span><span class="p">,</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x_III</span><span class="p">)</span><span class="o">*</span><span class="n">psi_III</span><span class="p">(</span><span class="n">x_III</span><span class="p">)</span><span class="o">/</span><span class="n">norm2</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_IV</span><span class="p">,</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">*</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">/</span><span class="n">norm2</span><span class="p">)</span>
 
         <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
     <span class="k">else</span><span class="p">:</span>
@@ -705,7 +794,45 @@ E: 4.03702980948585 Probabilidad de [-a,a]: 0.009171376328832647
 </div>
 <div class="section" id="simetria-impar">
 <h2><span class="section-number">2.2. </span>Simetría impar<a class="headerlink" href="#simetria-impar" title="Permalink to this headline">¶</a></h2>
-<p>Ahora asumirémos que lo que esta del lado izquierdo del potencial es antisimétrico respecto a lo que esta del lado derecho, es decir el problema tiene simetría par (<span class="math notranslate nohighlight">\(\psi_{III}(x) = -\psi_{III}(-x)\)</span> y <span class="math notranslate nohighlight">\(C = -D\)</span>). Al considerar esta condición en las ecuaciones de continuidad, se obtienen las siguiente ecuación</p>
+<p>Empezaremos asumiendo que lo que esta del lado izquierdo de <span class="math notranslate nohighlight">\(x=0\)</span> tiene simetría impar respecto a lo que está del lado derecho.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Simetría impar</p>
+<p>Al imponer la simetría en la región III</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\psi_{III}(-x) &amp;= -\psi_{III}(x)\\
+C e^{-k_2 x} + De^{k_2x} &amp;= -C e^{k_2 x} - De^{-k_2x}\\
+\end{align}
+\end{split}\]</div>
+<p>La ecuación se cumple si <span class="math notranslate nohighlight">\(C = -D\)</span>, por tanto</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_{III}(x) = C \left(e^{k_2 x} - e^{-k_2x} \right)
+\]</div>
+<p>Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la función de onda entre las zonas II y III se obtiene</p>
+<div class="math notranslate nohighlight">
+\[
+k_1\frac{A cos(k_1 a) + Bsin(k_1 a)}{-A sin(k_1 a) + Bcos(k_1 a)} = k_2 \frac{C e^{-k_2a} - D e^{k_2a}}{C e^{-k_2a} + D e^{k_2a}}
+\]</div>
+<p>Sustituyendo la condición de simetría par (<span class="math notranslate nohighlight">\(C=-D\)</span>) y la continuidad entre las zonas I y II (<span class="math notranslate nohighlight">\(B = A tan(k_1L)\)</span>)</p>
+<div class="math notranslate nohighlight">
+\[
+k_1\frac{cos(k_1 a) + sin(k_1 a)tan(k_1 L)}{- sin(k_1 a) + cos(k_1 a)tan(k_1 L)} = - k_2 tanh^{-1}(k_2a)
+\]</div>
+<p>Simplificando</p>
+<div class="math notranslate nohighlight">
+\[
+k_1\frac{1 + tan(k_1 a)tan(k_1 L)}{tan(k_1 a) - tan(k_1 L)} = k_2 tanh^{-1}(k_2a)
+\]</div>
+<p>Aplicamos la identidad trigonométrica <span class="math notranslate nohighlight">\(\frac{tan(\theta) - tan(\phi)}{1 + tan(\theta)tan(\phi)} = tan(\theta - \phi)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\frac{k_1}{k_2} = tanh^{-1}(k_2a) tan(k_1(a-L))
+\]</div>
+<p>El siguiente paso es sustituir los valores de <span class="math notranslate nohighlight">\(k_1\)</span> y <span class="math notranslate nohighlight">\(k_2\)</span>.</p>
+</div>
+<p>Al considerar esta condición en las ecuaciones de continuidad, se obtienen las siguiente ecuación</p>
 <div class="math notranslate nohighlight">
 \[
 tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
@@ -763,18 +890,68 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2
 </div>
 </div>
 </div>
+<p>Hasta aquí ya somos capaces de encontrar las energías permitidas. Falta normalizar la función de onda y graficarla.</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Análisis de las constantes <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span></p>
+<p>Por la continuidad de la zona II y III, con <span class="math notranslate nohighlight">\(B=Atan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=-D\)</span>, se tiene</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\psi_{I}(-a) &amp;= \psi_{III}(-a)\\
+-A sin(k_1 a) + Bcos(k_1a) &amp;= C e^{-k_2a} + De^{k_2a}\\
+A \left( -sin(k_1 a) + tan(k_1L)cos(k_1a) \right) &amp;= C \left( e^{-k_2a} - e^{k_2a} \right) \\
+A &amp;= C \left(\frac{e^{-k_2a} - e^{k_2a}}{-sin(k_1 a) + tan(k_1L)cos(k_1a)}\right)
+\end{align}
+\end{split}\]</div>
+<p>De la misma manera, la continuidad de la zona III y IV con <span class="math notranslate nohighlight">\(G=-F tan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=-D\)</span> nos dice</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\psi_{III}(a) &amp;= \psi_{IV}(a)\\
+C e^{k_2a} + De^{-k_2a} &amp;= F sin(k_1 a) + Gcos(k_1a)\\
+C \left( e^{k_2a} - e^{-k_2a} \right) &amp;= F \left( sin(k_1 a) - tan(k_1L) cos(k_1a) \right)\\
+F &amp;= C \left(\frac{ e^{k_2a} - e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}\right)
+\end{align}
+\end{split}\]</div>
+<p>En este punto tenemos las siguientes relaciones entre los coeficientes</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Coeficientes Relacionados</p></th>
+<th class="text-align:center head"><p>Relación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(B = A tan(k_1 L)\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(C\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(A = C \left(\frac{e^{k_2a} - e^{-k_2a}}{-sin(k_1 a) + tan(k_1L)cos(k_1a)}\right)\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(C\)</span> y <span class="math notranslate nohighlight">\(D\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(C = - D\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G = -F tan(k_1 L)\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(C\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(F = C \left(\frac{ e^{k_2a} - e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}\right)\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Note que es posible poner todo en función de <span class="math notranslate nohighlight">\(C\)</span>. Además note que <span class="math notranslate nohighlight">\(A = E\)</span> y <span class="math notranslate nohighlight">\(B = -F\)</span>. El valor de <span class="math notranslate nohighlight">\(C\)</span> debe ser aquel que haga que la función de onda este normalizada. Aunque es posible obtener una función analítica, aquí tomaremos un camino numérico.</p>
+</div>
 <p>Defina funciones para:</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{II}(x) = \frac{e^{-k_2E*a}-e^{k_2Ea}}{-sin(k_1Ea)+tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)+tan(k_1EL)np.cos(k_1Ex))
+\psi_{II}(x) = \frac{e^{-k_2a}-e^{k_2a}}{-sin(k_1a)+tan(k_1L)cos(k_1a)}(sin(k_1x)+tan(k_1L)np.cos(k_1x))
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\psi_{III}(x) = e^{k_2Ex}-e^{-k_2Ex}
+\psi_{III}(x) = e^{k_2x}-e^{-k_2x}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\psi_{IV}(x) = \frac{e^{k_2Ea}-e^{-k_2Ea}}{sin(k_1Ea)-tan(k_1EL)cos(k_1Ea)}(sin(k_1Ex)-tan(k_1EL)cos(k_1Ex))
+\psi_{IV}(x) = \frac{e^{k_2a}-e^{-k_2a}}{sin(k_1a)-tan(k_1L)cos(k_1a)}(sin(k_1x)-tan(k_1L)cos(k_1x))
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
