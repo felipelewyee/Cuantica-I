@@ -44,7 +44,7 @@ $$
 Para encontrar la función de onda en la región II hay que escribir la de Schrödinger
 
 $$
-\left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} \right)\psi(x)=\varepsilon\psi(x)
+\left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} \right)\psi(x) = E \psi(x)
 $$
 
 cuya solución es
