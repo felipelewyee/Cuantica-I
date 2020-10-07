@@ -2,7 +2,7 @@
 
 A continuación estudiaremos sistemas sencillos que nos permiten entender como surge la cuantización. Además, nos permitirán familiarizarnos con los pasos para resolver los problemas de química cuántica. Podemos resumir estos como:
 1. Identificar las interacciones y restricciones del sistema.
-2. Escribir el Hamiltoniano ($\mathcal{H}$) y la ecuación de Schrödinger ($\mathcal{H}\psi = \varepsilon \psi$).
+2. Escribir el Hamiltoniano ($\mathcal{H}$) y la ecuación de Schrödinger ($\mathcal{H}\psi = E \psi$).
 3. Encontrar la función de onda ($\psi$).
 4. Estudiar las condiciones de cuantización.
 
