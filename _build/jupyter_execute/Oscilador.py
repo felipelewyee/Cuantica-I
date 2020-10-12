@@ -21,32 +21,32 @@ $$
 y la ecuación de Schrödinger a resolver es
 
 $$
--\frac{\hbar^2}{2m} \frac{d}{dx}\psi + \frac{1}{2} kx^2 \psi = E \psi
+\left(-\frac{\hbar^2}{2m} \frac{d}{dx} + \frac{1}{2} kx^2 \right) \psi = E \psi
 $$
 
 esta es una ecuación cuyas soluciones a la energía y la función de onda son
 
 $$
-E_\nu = \left(\nu + \frac{1}{2} \right) \hbar \omega
+E_n = \left(n + \frac{1}{2}\right) h \nu
 $$
 
 $$
-\psi_\nu = N_\nu H_\nu(\alpha x) e^{-\alpha^2x^2/2}
+\psi_n = N_n H_n(\alpha x) e^{-\alpha^2x^2/2}
 $$
 
-aquí $\nu$ es un número cuántico tal que $\nu = 0,1,2,3,...$, y los términos $N_\nu$ y $\alpha$ están dados por
+aquí $n$ es un número cuántico tal que $n = 0,1,2,3,...$, y los términos $N_n$ y $\alpha$ están dados por
 
 $$
-N_\nu = \left(\frac{\alpha}{2^\nu \nu! \pi^{1/2}} \right)^{1/2}
+N_n = \left(\frac{\alpha}{2^n n! \pi^{1/2}} \right)^{1/2}
 $$
 
 $$
 \alpha = \left( \frac{mk}{\hbar^2} \right)^{1/4}
 $$
 
-$H_\nu(x)$ son los polinomios de Hermite
+$H_n(x)$ son los polinomios de Hermite
 
-|$\nu$|$H_\nu(x)$|
+|$n$|$H_n(x)$|
 |-|-|
 |0|$1$|
 |1|$2x$|
@@ -54,78 +54,80 @@ $H_\nu(x)$ son los polinomios de Hermite
 |3|$8x^3 - 12 x$|
 |4|$16x^4 - 48 x^2 +12$|
 
-**Grafique la función de onda del oscilador Harmónico cuántico para $\nu=0,2,4$. Considere $m=1$, $k=1$, $\hbar=1$.**
+**Importe las librerías numpy, math, pyplot de matplotlib y eval_hermite de scipy.special** 
+
+# Importe librerías
+
+import numpy as np
+import math
+from matplotlib import pyplot as plt
+from scipy.special import eval_hermite
+
+**Asigne valores a las constantes $m$, $k$, $\hbar$, $h$, $\alpha$. Considere $m=1$, $k=1$, $\hbar=1$.**
+
+# Asigne valores
+
+m=1.0
+k=1.0
+hbar=1.0
+h = hbar*2*np.pi
+
+alpha = np.power(m*k/(hbar**2),1.0/4.0)
+
+**Defina un dominio de puntos para x, por ejemplo $1000$ puntos de $-5$ a $5$.**
+
+# Defina dominio
+
+x = np.linspace(-5,5,1000)
+
+**Grafique la función de onda del oscilador Harmónico cuántico y su cuadrado para $n=0,2,4$.**
 
 Compare con Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005, p.62.
 
 # Grafica
 
-from scipy.special import hermite as hermite
-import numpy as np
-from matplotlib import pyplot as plt
-
-m=1.0
-k=1.0
-hbar=1.0
-
-x = np.linspace(-5,5,100)
-
 #Psi
-for nu in range(0,5,2):
-    alpha = np.power(m*k/(hbar**2),1.0/4.0)
-    N_nu = np.sqrt(alpha/(np.power(2.0,nu)*np.math.factorial(nu)*np.pi**2))
-    H_nu = hermite(nu)(alpha*x)
-    psi_nu=N_nu*H_nu*np.exp(-alpha**2*x**2/2)
-    plt.plot(x,psi_nu,label=nu)
+for n in range(0,5,2):
+    N_n = np.sqrt(alpha/(2**n*math.factorial(n)*np.pi**2))
+    H_n = eval_hermite(n,alpha*x)
+    psi_n = N_n*H_n*np.exp(-alpha**2*x**2/2)
+    plt.plot(x,psi_n,label=n)
 plt.legend()
 plt.title("$\psi$")
 plt.show()
 
 #Psi^2
-for nu in range(0,5,2):
-    alpha = np.power(m*k/(hbar**2),1.0/4.0)
-    N_nu = np.sqrt(alpha/(np.power(2.0,nu)*np.math.factorial(nu)*np.pi**2))
-    H_nu = hermite(nu)(alpha*x)
-    psi_nu=N_nu*H_nu*np.exp(-alpha**2*x**2/2)
-    plt.plot(x,psi_nu**2,label=nu)
+for n in range(0,5,2):
+    N_n = np.sqrt(alpha/(2.0**n*math.factorial(n)*np.pi**2))
+    H_n = eval_hermite(n,alpha*x)
+    psi_n = N_n*H_n*np.exp(-alpha**2*x**2/2)
+    plt.plot(x,psi_n**2,label=n)
 plt.legend()
 plt.title("$\psi^2$")
 plt.show()
 
-**Grafique la función de onda del oscilador Harmónico cuántico para $\nu=1,3,5$. Considere $m=1$, $k=1$, $\hbar=1$.**
+**Grafique la función de onda del oscilador Harmónico cuántico para $n=1,3,5$.**
 
 Compare con Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005, p.62.
 
 # Gráfica
 
-from scipy.special import hermite as hermite
-import numpy as np
-from matplotlib import pyplot as plt
-
-m=1.0
-k=1.0
-hbar=1.0
-
-x = np.linspace(-5,5,100)
-
 #Psi
-for nu in range(1,6,2):
-    alpha = np.power(m*k/(hbar**2),1.0/4.0)
-    N_nu = np.sqrt(alpha/(np.power(2.0,nu)*np.math.factorial(nu)*np.pi**2))
-    H_nu = hermite(nu)(alpha*x)
-    psi_nu=N_nu*H_nu*np.exp(-alpha**2*x**2/2)
-    plt.plot(x,psi_nu,label=nu)
+for n in range(1,6,2):
+    N_n = np.sqrt(alpha/(2**n*math.factorial(n)*np.pi**2))
+    H_n = eval_hermite(n,alpha*x)
+    psi_n = N_n*H_n*np.exp(-alpha**2*x**2/2)
+    plt.plot(x,psi_n,label=n)
 plt.legend()
 plt.title("$\psi$")
 plt.show()
 
 #Psi^2
-for nu in range(1,6,2):
-    alpha = np.power(m*k/(hbar**2),1.0/4.0)
-    N_nu = np.sqrt(alpha/(np.power(2.0,nu)*np.math.factorial(nu)*np.pi**2))
-    H_nu = hermite(nu)(alpha*x)
-    psi_nu=N_nu*H_nu*np.exp(-alpha**2*x**2/2)
-    plt.plot(x,psi_nu**2,label=nu)
+for n in range(1,6,2):
+    N_n = np.sqrt(alpha/(2**n*math.factorial(n)*np.pi**2))
+    H_n = eval_hermite(n,alpha*x)
+    psi_n = N_n*H_n*np.exp(-alpha**2*x**2/2)
+    plt.plot(x,psi_n**2,label=n)
 plt.legend()
 plt.title("$\psi^2$")
 plt.show()

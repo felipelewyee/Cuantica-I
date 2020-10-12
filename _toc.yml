@@ -9,7 +9,6 @@
 - part: Sistemas Sencillos
   chapters:
   - file: Caja
-  - file: CajaConTope
   - file: Anillo_Esfera_Rotor
   - file: Oscilador
 
@@ -35,3 +34,7 @@
   chapters:
   - file: matematicas1
   - file: matematicas2
+
+- part: Anexos
+  chapters:
+  - file: CajaConTope

@@ -215,7 +215,6 @@ Tutorial-Avanzado
 :caption: Sistemas Sencillos
 
 Caja
-CajaConTope
 Anillo_Esfera_Rotor
 Oscilador
 ```
@@ -265,4 +264,14 @@ Dimerizacion
 
 matematicas1
 matematicas2
+```
+
+
+```{toctree}
+:hidden:
+:titlesonly:
+:numbered: 
+:caption: Anexos
+
+CajaConTope
 ```
