@@ -9,8 +9,9 @@
 - part: Sistemas Sencillos
   chapters:
   - file: Caja
-  - file: Anillo_Esfera_Rotor
+  - file: Tunel
   - file: Oscilador
+  - file: Anillo_Esfera_Rotor
 
 - part: Átomo de Hidrógeno
   chapters:

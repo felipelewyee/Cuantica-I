@@ -1,0 +1,867 @@
+
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Efecto Túnel &#8212; Cuántica I</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. Oscilador Armónico Cuántico" href="Oscilador.html" />
+    <link rel="prev" title="1. Partícula en la caja" href="Caja.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Cuántica I</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   La Química Cuántica a tu alcance
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Basico.html">
+   1. Tutorial Básico.
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Avanzado.html">
+   2. Tutorial Avanzado.
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas Sencillos
+ </span>
+</p>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Caja.html">
+   1. Partícula en la caja
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   2. Efecto Túnel
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Oscilador.html">
+   3. Oscilador Armónico Cuántico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Anillo_Esfera_Rotor.html">
+   4. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Átomo de Hidrógeno
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Radial.html">
+   1. Solución Radial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Orbitales.html">
+   2. Orbitales Atómicos
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Métodos Aproximados
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Variacional_Lineal.html">
+   1. Método variacional lineal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="PerturbacionesSinDegeneracion.html">
+   2. Teoría de perturbaciones (niveles de energía no degenerados)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas de Muchos Electrones
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software.html">
+   1. Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Hartree-Fock.html">
+   2. Hartree-Fock-Roothan (HF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Moller-Plesset.html">
+   3. Moller-Plesset (MPn)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="DFT.html">
+   4. Teoría de funcionales de la densidad (DFT)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Dimerizacion.html">
+   5. Dimerización de
+   <span class="math notranslate nohighlight">
+    \(NO_2\)
+   </span>
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Matemáticas
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas1.html">
+   1. Expansión en series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas2.html">
+   2. Álgebra simbólica
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Anexos
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="CajaConTope.html">
+   1. Efecto Túnel en la Caja
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Tunel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/Tunel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Tunel.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#barrera-de-potencial-v-de-longitud-infinita">
+   2.1. Barrera de potencial
+   <span class="math notranslate nohighlight">
+    \(V\)
+   </span>
+   de longitud infinita
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#barrera-de-potencial-v-de-longitud-finita">
+   2.2. Barrera de potencial
+   <span class="math notranslate nohighlight">
+    \(V\)
+   </span>
+   de longitud finita
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="efecto-tunel">
+<h1><span class="section-number">2. </span>Efecto Túnel<a class="headerlink" href="#efecto-tunel" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="barrera-de-potencial-v-de-longitud-infinita">
+<h2><span class="section-number">2.1. </span>Barrera de potencial <span class="math notranslate nohighlight">\(V\)</span> de longitud infinita<a class="headerlink" href="#barrera-de-potencial-v-de-longitud-infinita" title="Permalink to this headline">¶</a></h2>
+<p>Considere una partícula moviéndose hacia una barrera de potencial V en <span class="math notranslate nohighlight">\(x=0\)</span>. Antes de <span class="math notranslate nohighlight">\(x=0\)</span> el potencial vale cero, y después vale <span class="math notranslate nohighlight">\(V\)</span>, es decir:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V(x) = \left\{
+  \begin{array}{lll}
+  0      &amp; \mathrm{si\ } x &lt; 0 &amp; I\\
+  V &amp; \mathrm{si\ } 0 \le x &lt; \infty &amp; II \\
+  \end{array}
+  \right.
+\end{split}\]</div>
+<p>En este sistema consideraremos el caso en el que la partícula tiene menor energía, <span class="math notranslate nohighlight">\(E\)</span>, que el potencial, <span class="math notranslate nohighlight">\(V\)</span>, es decir, <span class="math notranslate nohighlight">\(E &lt; V\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Para pensar</p>
+<p>De manera clásica, la partícula no podría pasar del lado izquierdo (región I) al lado derecho (región II) de la caja, porque no tiene suficiente energía. Por esta razón, no podríamos encontrar a la partícula en la región II. ¿Qué pasará cuánticamente?</p>
+</div>
+<p>En la región I, la ecuación de Schrödinger es</p>
+<div class="math notranslate nohighlight">
+\[
+\left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} \right)\psi_I(x) = E \psi_I(x)
+\]</div>
+<p>cuya solución es</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lll}
+  \psi_I(x) = Acos(k_1x) + Bsin(k_1x)      &amp; \mathrm{si\ } 0 \le x; &amp; k_1^2 = \frac{2mE}{\hbar^2}\\
+  \end{array}
+\end{split}\]</div>
+<p>En la región II, la ecuación de Schrödinger es</p>
+<div class="math notranslate nohighlight">
+\[
+\left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V \right)\psi_{II}(x) = E \psi_{II}(x)
+\]</div>
+<p>cuya solución, si <span class="math notranslate nohighlight">\(E &lt; V\)</span> es</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lll}
+  \psi_{II}(x) = C e^{-k_2x} + De^{k_2x}      &amp; \mathrm{si\ } 0 \le x; &amp; k_2^2 = \frac{2m(V-E)}{\hbar^2}\\
+  \end{array}
+\end{split}\]</div>
+<p>Los coeficientes pueden obtenerse a partir de la condicióón de continuidad de la función de onda en <span class="math notranslate nohighlight">\(x=0\)</span></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Condiciones de continuidad</p>
+<p>Para que la función de onda converga al infinito, se requiere que <span class="math notranslate nohighlight">\(D\)</span> sea cero, ya que <span class="math notranslate nohighlight">\(e^{k_2x}\)</span> es una función siempre creciente, es decir</p>
+<div class="math notranslate nohighlight">
+\[
+D = 0
+\]</div>
+<p>Se requiere que la función de onda de la zona I y de la zona II sean iguales en <span class="math notranslate nohighlight">\(x=0\)</span>, es decir</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_I(0) = \psi_{II}(0)
+A = C
+\]</div>
+<p>También se requiere que las derivadas de la función de onda de la zona I y de la zona II sean iguales en <span class="math notranslate nohighlight">\(x=0\)</span>, es decir</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d\psi_I}{dx}(0) = \frac{d\psi_{II}}{dx}(0)
+k_1 B = - k_2 C
+\]</div>
+</div>
+<p>Se obtiene</p>
+<div class="math notranslate nohighlight">
+\[
+B = -\frac{k_2}{k_1} A
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+C = A
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D = 0
+\]</div>
+<p><strong>Importe numpy y pyplot de matplotlib.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importe librerías</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>De valores a las constantes del sistema</strong>. Considere <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(\hbar=1\)</span>. Asigne algún valor a la energía y al potencial, respetando que <span class="math notranslate nohighlight">\(V &gt; E\)</span>, observe que en este caso la energía no está cuantizada, por lo que puede tomar cualquier valor. A manera de ejemplo, considere <span class="math notranslate nohighlight">\(E=1\)</span> y <span class="math notranslate nohighlight">\(V=10\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Valores de m,hbar,E,V</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">hbar</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defina <span class="math notranslate nohighlight">\(k_1\)</span> y <span class="math notranslate nohighlight">\(k_2\)</span>, recuerde que</p>
+<div class="math notranslate nohighlight">
+\[
+k_1 = \frac{\sqrt{2mE}}{\hbar}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+k_2 = \frac{\sqrt{2m(V-E)}}{\hbar}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># k1 y k2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">E</span><span class="p">))</span><span class="o">/</span><span class="n">hbar</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defina las constantes</p>
+<div class="math notranslate nohighlight">
+\[
+B = -\frac{k_2}{k_1} A
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+C = A
+\]</div>
+<p>Por conveniencia, defina</p>
+<div class="math notranslate nohighlight">
+\[
+A=1
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A, B, C</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="n">k2</span><span class="o">/</span><span class="n">k1</span><span class="o">*</span><span class="n">A</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">A</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defina el dominio de <span class="math notranslate nohighlight">\(x\)</span> para la región I y para la región II, recuerde que ambos se separan en <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># x1 y x2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Genere la función de onda para la región I y para la región II. Recuerde</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_I = A cos(k_1 x) + B sin(k_1 x)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\psi_{II} = C e^{-k_2 x}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># psi_I y psi_II</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_I</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span> <span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">psi_II</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Grafique <span class="math notranslate nohighlight">\(\psi_I\)</span> y <span class="math notranslate nohighlight">\(\psi_{II}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">psi_I</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">psi_II</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x146befd171d0&gt;]
+</pre></div>
+</div>
+<img alt="_images/Tunel_22_1.png" src="_images/Tunel_22_1.png" />
+</div>
+</div>
+<p>Note que la partícula puede ser encontrada dentro de la región clásicamente prohibida, esto se conoce como penetración.</p>
+<div class="note admonition">
+<p class="admonition-title">Concepto: Longitud de decaimiento</p>
+<p>La longitud de decaimiento, <span class="math notranslate nohighlight">\(\frac{1}{k_2}\)</span> es la distancia dentro de la barrera a la cual la función de onda a deacído a  <span class="math notranslate nohighlight">\(\frac{1}{e}\)</span>.</p>
+</div>
+<p><strong>Calcule la longitud de decaimiento de este sistema.</strong></p>
+</div>
+<div class="section" id="barrera-de-potencial-v-de-longitud-finita">
+<h2><span class="section-number">2.2. </span>Barrera de potencial <span class="math notranslate nohighlight">\(V\)</span> de longitud finita<a class="headerlink" href="#barrera-de-potencial-v-de-longitud-finita" title="Permalink to this headline">¶</a></h2>
+<p>Considere una partícula moviéndose hacia una barrera de potencial V en <span class="math notranslate nohighlight">\(0 \leq x \leq  L\)</span>, es decir:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V(x) = \left\{
+  \begin{array}{lll}
+  0      &amp; \mathrm{si\ } x &lt; 0 &amp; I\\
+  V &amp; \mathrm{si\ } 0 \leq x \leq L &amp; II \\
+  0 &amp; \mathrm{si\ } L \le x &amp; II \\
+  \end{array}
+  \right.
+\end{split}\]</div>
+<p>En este sistema consideraremos el caso en el que la partícula tiene menor energía, <span class="math notranslate nohighlight">\(E\)</span>, que el potencial, <span class="math notranslate nohighlight">\(V\)</span>, es decir, <span class="math notranslate nohighlight">\(E &lt; V\)</span>.</p>
+<p>En la región I, la ecuación de Schrödinger es</p>
+<div class="math notranslate nohighlight">
+\[
+\left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} \right)\psi_I(x) = E \psi_I(x)
+\]</div>
+<p>cuya solución es</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lll}
+  \psi_I(x) = Acos(k_1x) + Bsin(k_1x)      &amp; \mathrm{si\ } 0 \le x; &amp; k_1^2 = \frac{2mE}{\hbar^2}\\
+  \end{array}
+\end{split}\]</div>
+<p>En la región II, la ecuación de Schrödinger es</p>
+<div class="math notranslate nohighlight">
+\[
+\left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V \right)\psi_{II}(x) = E \psi_{II}(x)
+\]</div>
+<p>cuya solución, si <span class="math notranslate nohighlight">\(E &lt; V\)</span> es</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lll}
+  \psi_{II}(x) = C e^{-k_2x} + De^{k_2x}      &amp; \mathrm{si\ } 0 \le x; &amp; k_2^2 = \frac{2m(V-E)}{\hbar^2}\\
+  \end{array}
+\end{split}\]</div>
+<p>En la región III, la ecuación de Schrödinger es</p>
+<div class="math notranslate nohighlight">
+\[
+\left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} \right)\psi_{III}(x) = E \psi_{III}(x)
+\]</div>
+<p>cuya solución es</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{lll}
+  \psi_I(x) = Fcos(k_1x) + Gsin(k_1x)      &amp; \mathrm{si\ } 0 \le x; &amp; k_1^2 = \frac{2mE}{\hbar^2}\\
+  \end{array}
+\end{split}\]</div>
+<p>Los coeficientes pueden obtenerse a partir de la condicióón de continuidad de la función de onda en <span class="math notranslate nohighlight">\(x=0\)</span></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Condiciones de continuidad</p>
+<p>Se requiere que la función de onda de la zona I y de la zona II sean iguales en <span class="math notranslate nohighlight">\(x=0\)</span>, es decir</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_I(0) = \psi_{II}(0)
+A = C + D
+\]</div>
+<p>También se requiere que las derivadas de la función de onda de la zona I y de la zona II sean iguales en <span class="math notranslate nohighlight">\(x=0\)</span>, es decir</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d\psi_I}{dx}(0) = \frac{d\psi_{II}}{dx}(0)
+k_1 B = - k_2 (C - D)
+\]</div>
+<p>Se requiere que la función de onda de la zona II y de la zona III sean iguales en <span class="math notranslate nohighlight">\(x=L\)</span>, es decir</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_{II}(L) = \psi_{III}(L)
+Ce^{k_2L} + De^{-k_2L} = F cos(k_1L) + G sin(k_1L)
+\]</div>
+<p>También se requiere que las derivadas de la función de onda de la zona II y de la zona III sean iguales en <span class="math notranslate nohighlight">\(x=L\)</span>, es decir</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d\psi_{II}}{dx}(L) = \frac{d\psi_{III}}{dx}(L)
+-k_2 C e^{-k_2L} + k_2 D e^{k_2L}  = - k_1 F sin(k_1L) + k_1 G cos(k_1L) 
+\]</div>
+<p>Al dividir la última ecuación entre <span class="math notranslate nohighlight">\(k_2\)</span>, y sumarla con la penúltima se obtiene</p>
+<div class="math notranslate nohighlight">
+\[
+D = \frac{F(cos(k_1L) - \frac{k_1}{k_2}sin(k_1L) ) + G(sin(k_1L) + \frac{k_1}{k_2}cos(k_1L) )}{2 e^{k_2L}}
+\]</div>
+<p>y al restarla</p>
+<div class="math notranslate nohighlight">
+\[
+C = \frac{F(cos(k_1L) + \frac{k_2}{k_1}sin(k_1L) ) + G(sin(k_1L) - \frac{k_2}{k_1}cos(k_1L) )}{2 e^{-k_2L}}
+\]</div>
+</div>
+<p>Se obtiene</p>
+<div class="math notranslate nohighlight">
+\[
+A = C + D
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+B = - \frac{k_2}{k_1} (C - D)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+C = \frac{F(cos(k_1L) + \frac{k_1}{k_2}sin(k_2L) ) + G(sin(k_1L) - \frac{k_1}{k_2}cos(k_1L) )}{2 e^{-k_2L}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D = \frac{F(cos(k_1L) - \frac{k_1}{k_2}sin(k_1L) ) + G(sin(k_1L) + \frac{k_1}{k_2}cos(k_1L) )}{2 e^{k_2L}}
+\]</div>
+<p><strong>De valores a las constantes del sistema</strong>. Considere <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(\hbar=1\)</span>. Asigne algún valor a la energía y al potencial, respetando que <span class="math notranslate nohighlight">\(V &gt; E\)</span>, observe que en este caso la energía no está cuantizada, por lo que puede tomar cualquier valor. A manera de ejemplo, considere <span class="math notranslate nohighlight">\(E=1\)</span> y <span class="math notranslate nohighlight">\(V=10\)</span>. Asigne un valor a la longitud de la berrera de potencial, por ejemplo, <span class="math notranslate nohighlight">\(L=1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># m, hbar, L, E, v</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">hbar</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Asigne valores a las constantes <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, <span class="math notranslate nohighlight">\(F\)</span>, <span class="math notranslate nohighlight">\(G\)</span>. Recuerde.</p>
+<div class="math notranslate nohighlight">
+\[
+A = C + D
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+B = - \frac{k_2}{k_1} (C - D)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+C = \frac{F(cos(k_1L) + \frac{k_1}{k_2}sin(k_1L) ) + G(sin(k_1L) - \frac{k_1}{k_2}cos(k_1L) )}{2 e^{-k_2L}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D = \frac{F(cos(k_1L) - \frac{k_1}{k_2}sin(k_1L) ) + G(sin(k_1L) + \frac{k_1}{k_2}cos(k_1L) )}{2 e^{k_2L}}
+\]</div>
+<p>Por conveniencia, considere <span class="math notranslate nohighlight">\(F=1\)</span> y <span class="math notranslate nohighlight">\(G=1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A, B, C, D, F, G</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">G</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="p">(</span><span class="n">F</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="p">)</span> <span class="o">+</span> <span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="p">))</span> <span class="o">+</span> <span class="n">G</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">))</span>
+<span class="n">D</span> <span class="o">=</span> <span class="p">(</span><span class="n">F</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="p">))</span> <span class="o">+</span> <span class="n">G</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="p">)</span> <span class="o">+</span> <span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">))</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">C</span> <span class="o">+</span> <span class="n">D</span>
+
+<span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="o">*</span><span class="p">(</span><span class="n">C</span><span class="o">-</span><span class="n">D</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defina un dominio para x.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dominio de x para región I, II y III</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defina la función de onda para las tres regiones. Recuerde</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_I = A cos(k_1x) + B sin(k_1x)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\psi_{II} = C e^{-k_2 x} + D e^{k_2 x}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\psi_{III} = F cos(k_1x) + G sin(k_1x)
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Función de onda para región I, II y III</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_I</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">psi_II</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span> <span class="o">+</span> <span class="n">D</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
+<span class="n">psi_III</span> <span class="o">=</span> <span class="n">F</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">x3</span><span class="p">)</span> <span class="o">+</span> <span class="n">G</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">x3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Grafique la función de onda.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafique función de onda</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">psi_I</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">psi_II</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="n">psi_III</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x146befc21d50&gt;]
+</pre></div>
+</div>
+<img alt="_images/Tunel_40_1.png" src="_images/Tunel_40_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "felipelewyee/Cuantica-I",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="Caja.html" title="previous page"><span class="section-number">1. </span>Partícula en la caja</a>
+    <a class='right-next' id="next-link" href="Oscilador.html" title="next page"><span class="section-number">3. </span>Oscilador Armónico Cuántico</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
