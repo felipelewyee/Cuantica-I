@@ -398,6 +398,9 @@ D = 0
 <div class="math notranslate nohighlight">
 \[
 \psi_I(0) = \psi_{II}(0)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 A = C
 \]</div>
 <p>También se requiere que las derivadas de la función de onda de la zona I y de la zona II sean iguales en <span class="math notranslate nohighlight">\(x=0\)</span>, es decir</p>
@@ -556,7 +559,7 @@ A=1
 </div>
 </div>
 </div>
-<div class="cell tag_hide-cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">psi_I</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">psi_II</span><span class="p">)</span>
@@ -564,7 +567,7 @@ A=1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x146befd171d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x149591957e50&gt;]
 </pre></div>
 </div>
 <img alt="_images/Tunel_22_1.png" src="_images/Tunel_22_1.png" />
@@ -634,24 +637,36 @@ V(x) = \left\{
 <div class="math notranslate nohighlight">
 \[
 \psi_I(0) = \psi_{II}(0)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 A = C + D
 \]</div>
 <p>También se requiere que las derivadas de la función de onda de la zona I y de la zona II sean iguales en <span class="math notranslate nohighlight">\(x=0\)</span>, es decir</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{d\psi_I}{dx}(0) = \frac{d\psi_{II}}{dx}(0)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 k_1 B = - k_2 (C - D)
 \]</div>
 <p>Se requiere que la función de onda de la zona II y de la zona III sean iguales en <span class="math notranslate nohighlight">\(x=L\)</span>, es decir</p>
 <div class="math notranslate nohighlight">
 \[
 \psi_{II}(L) = \psi_{III}(L)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 Ce^{k_2L} + De^{-k_2L} = F cos(k_1L) + G sin(k_1L)
 \]</div>
 <p>También se requiere que las derivadas de la función de onda de la zona II y de la zona III sean iguales en <span class="math notranslate nohighlight">\(x=L\)</span>, es decir</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{d\psi_{II}}{dx}(L) = \frac{d\psi_{III}}{dx}(L)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 -k_2 C e^{-k_2L} + k_2 D e^{k_2L}  = - k_1 F sin(k_1L) + k_1 G cos(k_1L) 
 \]</div>
 <p>Al dividir la última ecuación entre <span class="math notranslate nohighlight">\(k_2\)</span>, y sumarla con la penúltima se obtiene</p>
@@ -795,7 +810,7 @@ D = \frac{F(cos(k_1L) - \frac{k_1}{k_2}sin(k_1L) ) + G(sin(k_1L) + \frac{k_1}{k_
 </div>
 </div>
 </div>
-<div class="cell tag_hide-cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">psi_I</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">psi_II</span><span class="p">)</span>
@@ -804,7 +819,7 @@ D = \frac{F(cos(k_1L) - \frac{k_1}{k_2}sin(k_1L) ) + G(sin(k_1L) + \frac{k_1}{k_
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x146befc21d50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1495910a0a10&gt;]
 </pre></div>
 </div>
 <img alt="_images/Tunel_40_1.png" src="_images/Tunel_40_1.png" />
