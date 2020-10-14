@@ -575,7 +575,7 @@ A=1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x149cd1b6ee50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x145713eff290&gt;]
 </pre></div>
 </div>
 <img alt="_images/Tunel_22_1.png" src="_images/Tunel_22_1.png" />
@@ -829,7 +829,7 @@ F = 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x149cd12c6250&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x145713646210&gt;]
 </pre></div>
 </div>
 <img alt="_images/Tunel_43_1.png" src="_images/Tunel_43_1.png" />
@@ -957,7 +957,7 @@ A = \frac{1}{2} \left[ \left(1 + \frac{k_2}{k_1} \right)C + \left(1 - \frac{k_2}
 <p>El coeficiente de transmisión se puede encontrar al dividir el cuadrado del coeficiente de la parte de la función que representa el paso de partículas a la región III (coeficiente F), entre el cuadrado del coeficiente de la parte de la función de onda que representa a la partícula dirigiénsoe hacia la región I (coeficiente A).</p>
 <div class="math notranslate nohighlight">
 \[
-T = \frac{4(E/V)(E/V-1)}{4(E/V)(E/V-1) + sin^2(k_1L)}
+T = \frac{4(E/V)(E/V-1)}{4(E/V)(E/V-1) + sin^2(k_2L)}
 \]</div>
 <p><strong>De valores a las constantes del sistema</strong>. Considere <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(\hbar=1\)</span> y <span class="math notranslate nohighlight">\(L=1\)</span>. Asigne un valor de enería y potencial respetando la relación <span class="math notranslate nohighlight">\(E &gt; V\)</span>, por ejemplo, <span class="math notranslate nohighlight">\(E=40\)</span>, <span class="math notranslate nohighlight">\(V=10\)</span>.</p>
 <div class="cell docutils container">
@@ -1104,7 +1104,7 @@ F = 1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x149cd11dde50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x145713561bd0&gt;]
 </pre></div>
 </div>
 <img alt="_images/Tunel_66_1.png" src="_images/Tunel_66_1.png" />
@@ -1112,7 +1112,7 @@ F = 1
 </div>
 <p>Para <span class="math notranslate nohighlight">\(V=2,4,8,16\)</span>:</p>
 <p>1 Defina un conjunto de 100 energías de V a 4V. <strong>Sugerencia.</strong> Use linspace.</p>
-<p>2 Calcule <span class="math notranslate nohighlight">\(k_1\)</span></p>
+<p>2 Calcule <span class="math notranslate nohighlight">\(k_2\)</span></p>
 <p>3 Calcule el coeficiente de transmisión. Recuerde</p>
 <p>4 Grafique T vs E/V</p>
 <div class="cell docutils container">
@@ -1127,8 +1127,8 @@ F = 1
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">V</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">]:</span>
     
     <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">V</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">V</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">k1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">-</span><span class="n">V</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">T</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">-</span><span class="n">V</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;V = &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">V</span><span class="p">))</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
