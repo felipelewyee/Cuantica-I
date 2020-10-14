@@ -376,7 +376,7 @@ V(x) = \left\{
 <tbody>
 <tr class="row-even"><td class="text-align:center"><p>I</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_I(x) = Acos(k_1x) + Bsin(k_1x)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_I(x) = Ae^{ik_1x} + Be^{-ik_1x}\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>II</p></td>
@@ -390,7 +390,7 @@ V(x) = \left\{
 <p>Se obtienen las funciones de onda</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_I(x) = Acos(k_1x) + Bsin(k_1x)
+\psi_I(x) = Ae^{ik_1x} + Be^{-ik_1x}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
@@ -407,17 +407,17 @@ V(x) = \left\{
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:center"><p>I y II</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{I}(0) = \psi_{II}(0)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(A = C\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>II</p></td>
+<tr class="row-even"><td class="text-align:center"><p>II</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(\infty) = 0\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(D = 0\)</span></p></td>
 </tr>
+<tr class="row-odd"><td class="text-align:center"><p>I y II</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{I}(0) = \psi_{II}(0)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(A + B = C\)</span></p></td>
+</tr>
 <tr class="row-even"><td class="text-align:center"><p>I y II</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frac{\psi_{I}}{dx}(0) = \frac{\psi_{II}}{dx}(0)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1 B = - k_2 C\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(ik_1 (A - B) = - k_2 C\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -425,15 +425,11 @@ V(x) = \left\{
 <p>Se obtiene</p>
 <div class="math notranslate nohighlight">
 \[
-B = -\frac{k_2}{k_1} A
+B = -\left(\frac{k_2 + ik_1}{k_2 - ik_1}\right) A
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-C = A
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-D = 0
+C = \frac{2ik_1}{ik_1 - k_2} A
 \]</div>
 <p><strong>Importe numpy y pyplot de matplotlib.</strong></p>
 <div class="cell docutils container">
@@ -496,11 +492,11 @@ k_2 = \frac{\sqrt{2m(V-E)}}{\hbar}
 <p>Defina las constantes</p>
 <div class="math notranslate nohighlight">
 \[
-B = -\frac{k_2}{k_1} A
+B = -\left(\frac{k_2 + ik_1}{k_2 - ik_1}\right) A
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-C = A
+C = \frac{2ik_1}{ik_1 - k_2} A
 \]</div>
 <p>Por conveniencia, defina</p>
 <div class="math notranslate nohighlight">
@@ -517,8 +513,8 @@ A=1
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="n">k2</span><span class="o">/</span><span class="n">k1</span><span class="o">*</span><span class="n">A</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">A</span>
+<span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="p">((</span><span class="n">k2</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">k2</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="p">))</span><span class="o">*</span><span class="n">A</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">-</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">A</span>
 </pre></div>
 </div>
 </div>
@@ -533,8 +529,8 @@ A=1
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -542,7 +538,7 @@ A=1
 <p>Genere la función de onda para la región I y para la región II. Recuerde</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_I = A cos(k_1 x) + B sin(k_1 x)
+\psi_I = A e^{ik_1 x} + B e^{-ik_1 x}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
@@ -557,13 +553,13 @@ A=1
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_I</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span> <span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_I</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span>
 <span class="n">psi_II</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Grafique <span class="math notranslate nohighlight">\(\psi_I\)</span> y <span class="math notranslate nohighlight">\(\psi_{II}\)</span></p>
+<p>Grafique <span class="math notranslate nohighlight">\(|\psi_I|^2\)</span> y <span class="math notranslate nohighlight">\(|\psi_{II}|^2\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafica</span>
@@ -573,13 +569,13 @@ A=1
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">psi_I</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="n">psi_II</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_I</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_II</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x153b07205f50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x15321ace1110&gt;]
 </pre></div>
 </div>
 <img alt="_images/Tunel_22_1.png" src="_images/Tunel_22_1.png" />
@@ -620,7 +616,7 @@ V(x) = \left\{
 <tbody>
 <tr class="row-even"><td class="text-align:center"><p>I</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_I(x) = Ae^{k_1x} + Be^{-k_1x}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_I(x) = Ae^{ik_1x} + Be^{-ik_1x}\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>II</p></td>
@@ -652,8 +648,8 @@ V(x) = \left\{
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(A + B = C + D\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>I y II</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frac{\psi_{I}}{dx}(0) = \frac{\psi_{II}}{dx}(0)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(ik_1 (A + B) = -k_2 (C - D)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frac{d\psi_{I}}{dx}(0) = \frac{d\psi_{II}}{dx}(0)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(ik_1 (A - B) = -k_2 (C - D)\)</span></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>III</p></td>
 <td class="text-align:center"><p>La partícula viaja hacia la derecha</p></td>
@@ -672,15 +668,15 @@ V(x) = \left\{
 <p>Al despejar, se obtiene</p>
 <div class="math notranslate nohighlight">
 \[
-C = \frac{F}{2} \left( 1 + \frac{i k_1}{k_2} \right) e^{ik_1L - k_2L}
+C = \frac{F}{2} \left( 1 - \frac{i k_1}{k_2} \right) e^{ik_1L + k_2L}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-D = \frac{F}{2} \left( 1 - \frac{i k_1}{k_2} \right) e^{ik_1L + k_2L}
+D = \frac{F}{2} \left( 1 + \frac{i k_1}{k_2} \right) e^{ik_1L - k_2L}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-A = \frac{1}{2} [1 - \frac{i k_1}{k_2} \right)C + 1 + \frac{i k_1}{k_2} \right)D]
+A = \frac{1}{2} \left[ \left(1 + \frac{i k_2}{k_1} \right)C + \left(1 - \frac{i k_2}{k_1} \right)D \right]
 \]</div>
 </div>
 <p>El coeficiente de transmisión se puede encontrar al dividir el cuadrado del coeficiente de la parte de la función que representa el paso de partículas a la región III (coeficiente F), entre el cuadrado del coeficiente de la parte de la función de onda que representa a la partícula dirigiénsoe hacia la región I (coeficiente A).</p>
@@ -688,10 +684,10 @@ A = \frac{1}{2} [1 - \frac{i k_1}{k_2} \right)C + 1 + \frac{i k_1}{k_2} \right)D
 \[
 T = \frac{|F|^2}{|A|^2} = \frac{16(E/V)(1-E/V)}{16(E/V)(1-E/V) + (e^{k_2L} - e^{-k_2L})^2}
 \]</div>
-<p><strong>De valores a las constantes del sistema</strong>. Considere <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(\hbar=1\)</span> y <span class="math notranslate nohighlight">\(L=1\)</span>.</p>
+<p><strong>De valores a las constantes del sistema</strong>. Considere <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(\hbar=1\)</span> y <span class="math notranslate nohighlight">\(L=1\)</span>. Asigne un valor de enería y potencial respetando la relación <span class="math notranslate nohighlight">\(E &lt; V\)</span>, por ejemplo, <span class="math notranslate nohighlight">\(E=1\)</span>, <span class="math notranslate nohighlight">\(V=10\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># m, hbar, L</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># m, hbar, L, E, V</span>
 </pre></div>
 </div>
 </div>
@@ -701,11 +697,146 @@ T = \frac{|F|^2}{|A|^2} = \frac{16(E/V)(1-E/V)}{16(E/V)(1-E/V) + (e^{k_2L} - e^{
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">hbar</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Para <span class="math notranslate nohighlight">\(V=2,4,8,16,32\)</span>:</p>
+<p>Defina <span class="math notranslate nohighlight">\(k_1\)</span> y <span class="math notranslate nohighlight">\(k_2\)</span> acorde a</p>
+<div class="math notranslate nohighlight">
+\[
+k_1 = \sqrt{\frac{2mE}{\hbar^2}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+k_2 = \sqrt{\frac{2m(V-E)}{\hbar^2}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#k1 y k2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">E</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A continuación graficaremos el cuadrado de la función de onda. Para ello, primero defina las siguientes constantes.</p>
+<div class="math notranslate nohighlight">
+\[
+C = \frac{F}{2} \left( 1 - \frac{i k_1}{k_2} \right) e^{ik_1L + k_2L}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D = \frac{F}{2} \left( 1 + \frac{i k_1}{k_2} \right) e^{ik_1L - k_2L}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+A = \frac{1}{2} \left[ \left(1 + \frac{i k_2}{k_1} \right)C + \left(1 - \frac{i k_2}{k_1} \right)D \right]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+B = C + D - A
+\]</div>
+<p>Considere</p>
+<div class="math notranslate nohighlight">
+\[
+F = 1
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A, B, C, D, F</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="o">+</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">D</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">C</span> <span class="o">+</span> <span class="n">D</span> <span class="o">-</span> <span class="n">A</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defina un dominio para <span class="math notranslate nohighlight">\(x\)</span>. Sugerencia: Use linspace</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dominio de x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defina la función de onda en las tres regiones según</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\psi(x) = \left\{
+  \begin{array}{lll}
+  A e^{ik_1x}+ B e^{-ik_1x}      &amp; \mathrm{si\ } x &lt; 0 &amp; I\\
+  C e^{-k_2x} + De^{k_2x} &amp; \mathrm{si\ } 0 \leq x \leq L &amp; II \\
+  F e^{ik_1x}&amp; \mathrm{si\ } L \le x &amp; III \\
+  \end{array}
+  \right.
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># psi_I, psi_II y psi_III</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_I</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">psi_II</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span> <span class="o">+</span> <span class="n">D</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
+<span class="n">psi_III</span> <span class="o">=</span> <span class="n">F</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Grafique el cuadrado de la función de onda.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_I</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_II</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_III</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x15321abeff50&gt;]
+</pre></div>
+</div>
+<img alt="_images/Tunel_43_1.png" src="_images/Tunel_43_1.png" />
+</div>
+</div>
+<p>A continuación, calcule el coeficiente de transmisión a diferentes energías y diferentes potenciales, cumnpliendo <span class="math notranslate nohighlight">\(E&lt;V\)</span>.</p>
+<p>Para <span class="math notranslate nohighlight">\(V=2,4,8,16\)</span>:</p>
 <p>1 Defina un conjunto de 100 energías de 0 a V. <strong>Sugerencia.</strong> Use linspace.</p>
 <p>2 Calcule <span class="math notranslate nohighlight">\(k_2\)</span></p>
 <div class="math notranslate nohighlight">
@@ -727,9 +858,9 @@ T = \frac{16(E/V)(1-E/V)}{16(E/V)(1-E/V) + (e^{k_2L} - e^{-k_2L})^2}
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">V</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">32</span><span class="p">]:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">V</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">]:</span>
     
-    <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
     <span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">T</span> <span class="o">=</span> <span class="mi">16</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">16</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;V = &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">V</span><span class="p">))</span>
@@ -738,36 +869,248 @@ T = \frac{16(E/V)(1-E/V)}{16(E/V)(1-E/V) + (e^{k_2L} - e^{-k_2L})^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/ipykernel_launcher.py:5: RuntimeWarning: invalid value encountered in true_divide
-  &quot;&quot;&quot;
-/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/ipykernel_launcher.py:5: RuntimeWarning: invalid value encountered in true_divide
-  &quot;&quot;&quot;
-/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/ipykernel_launcher.py:5: RuntimeWarning: invalid value encountered in true_divide
-  &quot;&quot;&quot;
-/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/ipykernel_launcher.py:5: RuntimeWarning: invalid value encountered in true_divide
-  &quot;&quot;&quot;
-/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/ipykernel_launcher.py:5: RuntimeWarning: invalid value encountered in true_divide
-  &quot;&quot;&quot;
-</pre></div>
-</div>
-<img alt="_images/Tunel_31_1.png" src="_images/Tunel_31_1.png" />
+<img alt="_images/Tunel_47_0.png" src="_images/Tunel_47_0.png" />
 </div>
 </div>
+<p>Ahora consideraremos el caso en el que la partícula tiene mayor energía, <span class="math notranslate nohighlight">\(E\)</span>, que el potencial, <span class="math notranslate nohighlight">\(V\)</span>, es decir, <span class="math notranslate nohighlight">\(E &gt; V\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">Para pensar</p>
 <p>De manera clásica, cuando la partícula tiene mayor energía que el potencial, <span class="math notranslate nohighlight">\(E&gt;V\)</span>, debería poder moverse sin ninguna restricción. ¿Qué pasará cuánticamente?</p>
 </div>
-<p>Cuando <span class="math notranslate nohighlight">\(E&gt;V\)</span>, el coeficiente de transmisión es</p>
+<p>El sistema puede analizarse por regiones</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Hamiltoniano por regiones</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Región</p></th>
+<th class="text-align:center head"><p>Hamiltoniano</p></th>
+<th class="text-align:center head"><p>Función de onda</p></th>
+<th class="text-align:center head"><p>Constantes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>I</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_I(x) = Ae^{ik_1x} + Be^{-ik_1x}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>II</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(x) = C e^{ik_2x} + De^{-ik_2x}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_2^2 = \frac{2m(E-V)}{\hbar^2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>III</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{III}(x) = Fe^{ik_1x} + Ge^{-ik_1x}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Los coeficientes pueden obtenerse a partir de la condición de continuidad de la función de onda en <span class="math notranslate nohighlight">\(x=0\)</span> y <span class="math notranslate nohighlight">\(x=L\)</span></p>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Condiciones de continuidad</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Regiones</p></th>
+<th class="text-align:center head"><p>Condición</p></th>
+<th class="text-align:center head"><p>Ecuación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>I y II</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{I}(0) = \psi_{II}(0)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(A + B = C + D\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>I y II</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frac{d\psi_{I}}{dx}(0) = \frac{d\psi_{II}}{dx}(0)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1 (A - B) = k_2 (C - D)\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>III</p></td>
+<td class="text-align:center"><p>La partícula viaja hacia la derecha</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G = 0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>II y III</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(L) = \psi_{III}(L)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(Ce^{ik_2L} + De^{-k_2L} = F e^{ik_1L}\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>II y III</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frac{d\psi_{II}}{dx}(L) = \frac{d\psi_{III}}{dx}(L)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_2 \left( C e^{ik_2L} + D e^{-ik_2L} \right)  = k_1F e^{ik_1L}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Al despejar, se obtiene</p>
+<div class="math notranslate nohighlight">
+\[
+C = \frac{F}{2} \left( 1 + \frac{k_1}{k_2} \right) e^{i(k_1-k_2)L}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D = \frac{F}{2} \left( 1 - \frac{k_1}{k_2} \right) e^{i(k_1+k_2)L}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+A = \frac{1}{2} \left[ \left(1 + \frac{k_2}{k_1} \right)C + \left(1 - \frac{k_2}{k_1} \right)D \right]
+\]</div>
+</div>
+<p>El coeficiente de transmisión se puede encontrar al dividir el cuadrado del coeficiente de la parte de la función que representa el paso de partículas a la región III (coeficiente F), entre el cuadrado del coeficiente de la parte de la función de onda que representa a la partícula dirigiénsoe hacia la región I (coeficiente A).</p>
 <div class="math notranslate nohighlight">
 \[
 T = \frac{4(E/V)(E/V-1)}{4(E/V)(E/V-1) + sin^2(k_3L)}
 \]</div>
-<p>con</p>
+<p><strong>De valores a las constantes del sistema</strong>. Considere <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(\hbar=1\)</span> y <span class="math notranslate nohighlight">\(L=1\)</span>. Asigne un valor de enería y potencial respetando la relación <span class="math notranslate nohighlight">\(E &gt; V\)</span>, por ejemplo, <span class="math notranslate nohighlight">\(E=40\)</span>, <span class="math notranslate nohighlight">\(V=10\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># m, hbar, L, E, V</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">hbar</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defina <span class="math notranslate nohighlight">\(k_1\)</span> y <span class="math notranslate nohighlight">\(k_2\)</span> acorde a</p>
 <div class="math notranslate nohighlight">
 \[
-k_3^2 = \frac{2m(E-V)}{\hbar^2}
+k_1 = \sqrt{\frac{2mE}{\hbar^2}}
 \]</div>
-<p>Para <span class="math notranslate nohighlight">\(V=2,4,8,16,32\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+k_2 = \sqrt{\frac{2m(E-V)}{\hbar^2}}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#k1 y k2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">E</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">-</span><span class="n">V</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A continuación graficaremos el cuadrado de la función de onda. Para ello, primero defina las siguientes constantes.</p>
+<div class="math notranslate nohighlight">
+\[
+C = \frac{F}{2} \left( 1 + \frac{k_1}{k_2} \right) e^{i(k_1-k_2)L}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+D = \frac{F}{2} \left( 1 - \frac{k_1}{k_2} \right) e^{i(k_1+k_2)L}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+A = \frac{1}{2} \left[ \left(1 + \frac{k_2}{k_1} \right)C + \left(1 - \frac{k_2}{k_1} \right)D \right]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+B = C + D - A
+\]</div>
+<p>Considere</p>
+<div class="math notranslate nohighlight">
+\[
+F = 1
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A, B, C, D, F</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">C</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">k1</span><span class="o">-</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">k2</span><span class="o">/</span><span class="n">k1</span><span class="p">)</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">k2</span><span class="o">/</span><span class="n">k1</span><span class="p">)</span><span class="o">*</span><span class="n">D</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">C</span> <span class="o">+</span> <span class="n">D</span> <span class="o">-</span> <span class="n">A</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defina un dominio para <span class="math notranslate nohighlight">\(x\)</span>. Sugerencia: Use linspace</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dominio de x</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defina la función de onda en las tres regiones según</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\psi(x) = \left\{
+  \begin{array}{lll}
+  A e^{ik_1x}+ B e^{-ik_1x}      &amp; \mathrm{si\ } x &lt; 0 &amp; I\\
+  C e^{ik_2x} + De^{-ik_2x} &amp; \mathrm{si\ } 0 \leq x \leq L &amp; II \\
+  F e^{ik_1x}&amp; \mathrm{si\ } L \le x &amp; III \\
+  \end{array}
+  \right.
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># psi_I, psi_II y psi_III</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_I</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">psi_II</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span> <span class="o">+</span> <span class="n">D</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
+<span class="n">psi_III</span> <span class="o">=</span> <span class="n">F</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Grafique el cuadrado de la función de onda.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_I</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_II</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_III</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x15321ab16910&gt;]
+</pre></div>
+</div>
+<img alt="_images/Tunel_66_1.png" src="_images/Tunel_66_1.png" />
+</div>
+</div>
+<p>Para <span class="math notranslate nohighlight">\(V=2,4,8,16\)</span>:</p>
 <p>1 Defina un conjunto de 100 energías de V a 4V. <strong>Sugerencia.</strong> Use linspace.</p>
 <p>2 Calcule <span class="math notranslate nohighlight">\(k_3\)</span></p>
 <p>3 Calcule el coeficiente de transmisión. Recuerde</p>
@@ -779,11 +1122,11 @@ k_3^2 = \frac{2m(E-V)}{\hbar^2}
 </div>
 </div>
 </div>
-<div class="cell tag_hide-cell docutils container">
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">V</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">32</span><span class="p">]:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">V</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">]:</span>
     
-    <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">V</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">V</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">V</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">V</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
     <span class="n">k3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">-</span><span class="n">V</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">T</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k3</span><span class="o">*</span><span class="n">L</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;V = &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">V</span><span class="p">))</span>
@@ -792,21 +1135,7 @@ k_3^2 = \frac{2m(E-V)}{\hbar^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/ipykernel_launcher.py:5: RuntimeWarning: invalid value encountered in true_divide
-  &quot;&quot;&quot;
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/ipykernel_launcher.py:5: RuntimeWarning: invalid value encountered in true_divide
-  &quot;&quot;&quot;
-/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/ipykernel_launcher.py:5: RuntimeWarning: invalid value encountered in true_divide
-  &quot;&quot;&quot;
-/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/ipykernel_launcher.py:5: RuntimeWarning: invalid value encountered in true_divide
-  &quot;&quot;&quot;
-/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/ipykernel_launcher.py:5: RuntimeWarning: invalid value encountered in true_divide
-  &quot;&quot;&quot;
-</pre></div>
-</div>
-<img alt="_images/Tunel_35_2.png" src="_images/Tunel_35_2.png" />
+<img alt="_images/Tunel_69_0.png" src="_images/Tunel_69_0.png" />
 </div>
 </div>
 </div>
