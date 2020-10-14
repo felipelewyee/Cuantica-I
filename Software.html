@@ -108,18 +108,28 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Tunel.html">
-   2. Efecto Túnel
+  <a class="reference internal" href="Tunel_Region_Infinita.html">
+   2. Efecto Túnel de una partícula viajando hacia una barrera de potencial de longitud infinita
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tunel_Region_Finita.html">
+   3. Efecto Túnel de una partícula en una región finita de potencial
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Oscilador.html">
-   3. Oscilador Armónico Cuántico
+   4. Oscilador Armónico Cuántico
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Anillo_Esfera_Rotor.html">
-   4. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
+  <a class="reference internal" href="Anillo.html">
+   5. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Esfera.html">
+   6. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
   </a>
  </li>
 </ul>
@@ -505,7 +515,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-231.1469747677921
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-231.14697476779213
 </pre></div>
 </div>
 </div>
@@ -525,11 +535,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-232.09147480648218
-</pre></div>
-</div>
-</div>
 </div>
 <p>Usualmente la geometría especificada no es necesariamente la geometría real. Es posible pedir al software que mueva los átomos hasta encontrar las coordenadas que representen un mínimo de energía con el método y base usados. Esto se llama <code class="docutils literal notranslate"><span class="pre">optimización</span> <span class="pre">de</span> <span class="pre">geometrías</span></code> y se hace con la línea</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">opt</span><span class="p">(</span><span class="s1">&#39;método/base&#39;</span><span class="p">)</span>
@@ -543,6 +548,14 @@
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi4</span><span class="o">.</span><span class="n">opt</span><span class="p">(</span><span class="s1">&#39;M062X/6-31G&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimizer: Optimization complete!
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-232.0914786670685
 </pre></div>
 </div>
 </div>

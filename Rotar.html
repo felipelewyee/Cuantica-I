@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search &#8212; Cuántica I</title>
+    <title>Rotor Rígido &#8212; Cuántica I</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -16,7 +16,6 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-dropdown.css" />
-    
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/sphinx-book-theme.js"></script>
     <script src="_static/jquery.js"></script>
@@ -37,15 +36,11 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="_static/searchtools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
-  <script src="searchindex.js" defer></script>
-  
+    <link rel="search" title="Search" href="search.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="docsearch:language" content="en">
-
 
 
 
@@ -69,7 +64,7 @@
 </a>
 </div>
 
-<form class="bd-search d-flex align-items-center" action="#" method="get">
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
@@ -136,8 +131,13 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Rotor.html">
+  <a class="reference internal" href="Esfera.html#rotor-rigido">
    7. Rotor Rígido
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Esfera.html#referencias">
+   8. Referencias
   </a>
  </li>
 </ul>
@@ -276,6 +276,18 @@
             class="fas fa-download"></i></button>
 
     
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Rotar.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
 </div>
         <!-- Source interaction buttons -->
 
@@ -287,12 +299,47 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/Rotar.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Rotar.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
         <nav id="bd-toc-nav">
-            
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   Referencias
+  </a>
+ </li>
+</ul>
+
         </nav>
     </div>
 </div>
@@ -301,27 +348,111 @@
         
               <div>
                 
-  <h1 id="search-documentation">Search</h1>
-  <div id="fallback" class="admonition warning">
-  <script>$('#fallback').hide();</script>
-  <p>
-    Please activate JavaScript to enable the search
-    functionality.
-  </p>
-  </div>
-  <p>
-    Searching for multiple words only shows matches that contain
-    all words.
-  </p>
-  <form action="" method="get">
-    <input type="text" name="q" aria-labelledby="search-documentation" value="" />
-    <input type="submit" value="search" />
-    <span id="search-progress" style="padding-left: 10px"></span>
-  </form>
-  
-  <div id="search-results">
-  
-  </div>
+  <div class="section" id="rotor-rigido">
+<h1>Rotor Rígido<a class="headerlink" href="#rotor-rigido" title="Permalink to this headline">¶</a></h1>
+<p>Este sistema consiste en dos partículas de masa <span class="math notranslate nohighlight">\(m_1\)</span> y <span class="math notranslate nohighlight">\(m_2\)</span> moviéndose con una separación constante <span class="math notranslate nohighlight">\(r=r_2-r_1\)</span>.</p>
+<p>El Hamiltoniano consta de los términos de energía cinética de ambas partículas</p>
+<div class="math notranslate nohighlight">
+\[
+H = -\frac{\hbar^2}{2m_1} \nabla^2_1 -\frac{\hbar^2}{2m_2} \nabla^2_2
+\]</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Inserto matemático: Sistema de masa reducida</p>
+<p>Este sistema es equivalente al de una partícula de masa reducida girando en torno al centro de masa de ambas partículas. La masa total del sistema está dada por la suma de las masas de las partículas</p>
+<div class="math notranslate nohighlight">
+\[
+m_T = m_1 + m_2
+\]</div>
+<p>La masa reducida de la nueva partícula está dada por</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{\mu} = \frac{1}{m_1} + \frac{1}{m_2}
+\]</div>
+<p>El centro de masa del sistema se calcula mediante</p>
+<div class="math notranslate nohighlight">
+\[
+R_{cm} = \left( \frac{m_1}{m_T} \right) r_1 + \left( \frac{m_2}{m_T} \right) r_2
+\]</div>
+<p>y el Hamiltoniano se calcula con la energía cinética de la masa reducida y del centro de masa, es decir</p>
+<div class="math notranslate nohighlight">
+\[
+H = -\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}
+\]</div>
+<p>La ecuación de Schrödinger a resolver es</p>
+<div class="math notranslate nohighlight">
+\[
+\left(-\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}\right) \psi = E \psi
+\]</div>
+<p>Se propone que la función de onda se puede separar en el producto de una función de onda del centro de masa y una función de onda de la partícula de masa reducida</p>
+<div class="math notranslate nohighlight">
+\[
+\psi=\psi_{cm}\psi_r
+\]</div>
+<p>Al sustituir en la ecuación de Schrödinger se obtiene</p>
+<div class="math notranslate nohighlight">
+\[
+\left(-\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}\right) \psi_{cm}\psi_r = E \psi_{cm}\psi_r
+\]</div>
+<p>Si consideramos que la energía está dada por <span class="math notranslate nohighlight">\(E_T = E_{cm} + E_{r}\)</span> y distribuimos, resulta</p>
+<div class="math notranslate nohighlight">
+\[
+-\psi_{r} \frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} \psi_{cm} - \psi_{cm}\frac{\hbar^2}{2\mu} \nabla^2_{r} \psi_r = \psi_r E_{cm} \psi_{cm} +  \psi_{cm} E_r \psi_r
+\]</div>
+<p>Si multiplicamos ambos lados de la ecuación anterior por <span class="math notranslate nohighlight">\(\frac{1}{\psi_{r}\psi_{cm}}\)</span>, resulta</p>
+<div class="math notranslate nohighlight">
+\[
+-\frac{1}{\psi_{cm}} \left( \frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} \psi_{cm} - E_{cm} \psi_{cm} \right) = \frac{1}{\psi_{r}} \left( \frac{\hbar^2}{2\mu} \nabla^2_{r} \psi_r + E_r \psi_r \right)
+\]</div>
+<p>ya que el lado izquierdo solo depende de las coordenadas del centro de masa, y el lado derecho solo depende de las coordenadas de la masa reducida, ambos lados deben ser igual a una constante. Si elegimos esta constante como cero, y despejamos lo que está dentro de cada paréntesis se obtienen dos ecuaciones independientes.</p>
+</div>
+<p>Después de cambiar a un sistema de masa reducida se obtienen dos ecuaciones.</p>
+<p>La primera ecuación corresponde al movimiento del <code class="docutils literal notranslate"><span class="pre">centro</span> <span class="pre">de</span> <span class="pre">masa</span> <span class="pre">del</span> <span class="pre">sistema</span></code> y la hemos estudiado previamente en el movimiento de la <code class="docutils literal notranslate"><span class="pre">partícula</span> <span class="pre">libre</span></code></p>
+<div class="math notranslate nohighlight">
+\[
+-\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} \psi_{cm} = E_{cm} \psi_{cm}
+\]</div>
+<p>esta ecuación tiene como soluciones</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_{cm} = A e^{ikx} + B e^{-ikx}
+\]</div>
+<p>con <span class="math notranslate nohighlight">\(k^2=2m_TE/\hbar^2\)</span>, y simplemente nos dice que el sistema en conjunto se mueve libremente por el espacio.</p>
+<p>La segunda ecuación corresponde a la <code class="docutils literal notranslate"><span class="pre">masa</span> <span class="pre">reducida</span></code>, y la hemos estudiado en la <code class="docutils literal notranslate"><span class="pre">partícula</span> <span class="pre">en</span> <span class="pre">la</span> <span class="pre">esfera</span></code></p>
+<div class="math notranslate nohighlight">
+\[
+-\frac{\hbar^2}{2\mu} \nabla^2_{r} \psi_r = E_r \psi_r
+\]</div>
+<p>sabemos por tanto que su solución son los armónico esféricos <span class="math notranslate nohighlight">\(Y_l^{m_l}(\theta,\phi)\)</span> con <span class="math notranslate nohighlight">\(E = -l(l+1)\)</span>.</p>
+<div class="section" id="referencias">
+<h2>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005.</p></li>
+<li><p>Zettili, N. Quantum Mechanics: Concepts and Applications, 2nd ed.; Wiley: Chichester, U.K, 2009.</p></li>
+<li><p>Levine, I. N. Quantum Chemistry, 5th ed.; Prentice Hall: Upper Saddle River, N.J, 2000.</p></li>
+<li><p>McQuarrie, D. A.; Simon, J. D. Physical Chemistry: A Molecular Approach; University Science Books: Sausalito, Calif, 1997.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "felipelewyee/Cuantica-I",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               

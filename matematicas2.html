@@ -108,18 +108,28 @@
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Tunel.html">
-   2. Efecto Túnel
+  <a class="reference internal" href="Tunel_Region_Infinita.html">
+   2. Efecto Túnel de una partícula viajando hacia una barrera de potencial de longitud infinita
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tunel_Region_Finita.html">
+   3. Efecto Túnel de una partícula en una región finita de potencial
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Oscilador.html">
-   3. Oscilador Armónico Cuántico
+   4. Oscilador Armónico Cuántico
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="Anillo_Esfera_Rotor.html">
-   4. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
+  <a class="reference internal" href="Anillo.html">
+   5. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Esfera.html">
+   6. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
   </a>
  </li>
 </ul>
@@ -346,8 +356,8 @@
 </div>
 </div>
 <p>En vez de realizar operaciones de manera numérica, el álgebra simbólica guarda las operaciones como símbolos. Obtenga la siguiente operación:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3825b8ca-3c1b-4ef5-b64e-01186105c6fa">
-<span class="eqno">(2.1)<a class="headerlink" href="#equation-3825b8ca-3c1b-4ef5-b64e-01186105c6fa" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8c9a0259-03b3-464c-a207-5659e70467ff">
+<span class="eqno">(2.1)<a class="headerlink" href="#equation-8c9a0259-03b3-464c-a207-5659e70467ff" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \sqrt{11}
 \end{equation}\]</div>
 <p>Usando python estándar</p>
@@ -503,8 +513,8 @@ x  + x
 </pre></div>
 </div>
 <p>Exprese de manera simbólica la función</p>
-<div class="amsmath math notranslate nohighlight" id="equation-387a0160-d7dc-45b3-b1f8-aab9c0bee34d">
-<span class="eqno">(2.2)<a class="headerlink" href="#equation-387a0160-d7dc-45b3-b1f8-aab9c0bee34d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-584aba56-b357-4280-8257-da4e89fa4e08">
+<span class="eqno">(2.2)<a class="headerlink" href="#equation-584aba56-b357-4280-8257-da4e89fa4e08" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f=x^2+sin(x)
 \end{equation}\]</div>
 <p>y obtenga <span class="math notranslate nohighlight">\(\frac{df}{dx}\)</span> y <span class="math notranslate nohighlight">\(\frac{d^2f}{dx^2}\)</span>.</p>
@@ -532,13 +542,13 @@ x  + sin(x)
 </pre></div>
 </div>
 <p>Defina la función</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b7016bfb-0882-4499-aa0a-16541f08df11">
-<span class="eqno">(2.3)<a class="headerlink" href="#equation-b7016bfb-0882-4499-aa0a-16541f08df11" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-77f778d0-62dc-4054-9be0-1df73e464bf3">
+<span class="eqno">(2.3)<a class="headerlink" href="#equation-77f778d0-62dc-4054-9be0-1df73e464bf3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f=e^{-r}
 \end{equation}\]</div>
 <p>Y realice la integral indefnida</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c4eb21ce-448d-46e0-8e7f-a21e31fb32a8">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-c4eb21ce-448d-46e0-8e7f-a21e31fb32a8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a4f437e4-dee0-47d0-8dff-08a14686d8f4">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-a4f437e4-dee0-47d0-8dff-08a14686d8f4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \int e^{-r} dr
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -553,7 +563,9 @@ f=e^{-r}
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> -r
 ℯ  
-  -r
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  -r
 -ℯ  
 </pre></div>
 </div>
@@ -564,13 +576,13 @@ f=e^{-r}
 </pre></div>
 </div>
 <p>Defina la función</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4f12ed49-5e30-4b22-9b88-604c3f7faaf3">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-4f12ed49-5e30-4b22-9b88-604c3f7faaf3" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7bb6f0dc-f815-4ed2-a7ec-8f31ee930d5a">
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-7bb6f0dc-f815-4ed2-a7ec-8f31ee930d5a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f=e^{-\alpha r^2}
 \end{equation}\]</div>
 <p>Y realice la integral</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2481a051-e78d-4711-baa1-7fe29b9ec0ba">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-2481a051-e78d-4711-baa1-7fe29b9ec0ba" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b6cddb58-4f87-4728-b066-a6b63b6af474">
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-b6cddb58-4f87-4728-b066-a6b63b6af474" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \int_0^\infty e^{-\alpha r^2} dr
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -592,13 +604,13 @@ f=e^{-\alpha r^2}
 </div>
 <p>También se pueden resolver ecuaciones diferenciales. dsolve indica resolver una ecuación, y Eq indica la ecuación.
 Resuelva</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7afc3070-66e6-478f-b6df-6ef4adee7f64">
-<span class="eqno">(2.7)<a class="headerlink" href="#equation-7afc3070-66e6-478f-b6df-6ef4adee7f64" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d3a3e7b9-dcac-43e7-8c29-601937d13898">
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-d3a3e7b9-dcac-43e7-8c29-601937d13898" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi(x) = E \psi(x)
 \end{equation}\]</div>
 <p>Con <span class="math notranslate nohighlight">\(k^2=\frac{2mE}{\hbar^2}\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-2ca8cc2b-76da-4b4f-9b72-41707d51fc9a">
-<span class="eqno">(2.8)<a class="headerlink" href="#equation-2ca8cc2b-76da-4b4f-9b72-41707d51fc9a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cfef2271-8b41-4a75-a4e8-7f4b0ff5cac2">
+<span class="eqno">(2.8)<a class="headerlink" href="#equation-cfef2271-8b41-4a75-a4e8-7f4b0ff5cac2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{d^2}{dx^2} \psi(x) + k^2 \psi(x) = 0
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -629,18 +641,18 @@ k ⋅ψ(x) + ───(ψ(x)) = 0
 </div>
 </div>
 <p>La parte radial del Hamiltoniano del átomo de hidrógeno es</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf6144e2-d97b-4383-913d-f1d50c9db5f8">
-<span class="eqno">(2.9)<a class="headerlink" href="#equation-cf6144e2-d97b-4383-913d-f1d50c9db5f8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7f21d314-fedb-4d6d-961e-db793c2199d6">
+<span class="eqno">(2.9)<a class="headerlink" href="#equation-7f21d314-fedb-4d6d-961e-db793c2199d6" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 H = -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r}
 \end{equation}\]</div>
 <p>Se usa la función de prueba</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7bba072b-30ec-4916-9263-e7e7cb6c3ecd">
-<span class="eqno">(2.10)<a class="headerlink" href="#equation-7bba072b-30ec-4916-9263-e7e7cb6c3ecd" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2532160c-c609-48dd-a18f-913828c0dffa">
+<span class="eqno">(2.10)<a class="headerlink" href="#equation-2532160c-c609-48dd-a18f-913828c0dffa" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \psi^{prueba} = \left( \frac{2\alpha}{\pi} \right)^{3/4} e^{-\alpha r^2}
 \end{equation}\]</div>
 <p>La energía se obtiene como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fe11c20d-3adf-491a-ac14-d662d2a6e108">
-<span class="eqno">(2.11)<a class="headerlink" href="#equation-fe11c20d-3adf-491a-ac14-d662d2a6e108" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f4442762-bd0a-4fa0-ae52-472305f23485">
+<span class="eqno">(2.11)<a class="headerlink" href="#equation-f4442762-bd0a-4fa0-ae52-472305f23485" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 E^{prueba} = \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \hat{H} \psi^{prueba} \right) dr d\theta d\phi
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -665,18 +677,18 @@ E^{prueba} = \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 
 <div class="section" id="atomo-de-hidrogeno">
 <h2><span class="section-number">2.1. </span>Átomo de hidrógeno<a class="headerlink" href="#atomo-de-hidrogeno" title="Permalink to this headline">¶</a></h2>
 <p>La parte radial del Hamiltoniano del átomo de hidrógeno es</p>
-<div class="amsmath math notranslate nohighlight" id="equation-98201835-2a90-41e1-93bc-eee3cb99522d">
-<span class="eqno">(2.12)<a class="headerlink" href="#equation-98201835-2a90-41e1-93bc-eee3cb99522d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7e229334-0f5b-4ddf-b128-aa89355b0a9a">
+<span class="eqno">(2.12)<a class="headerlink" href="#equation-7e229334-0f5b-4ddf-b128-aa89355b0a9a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 H = -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r}
 \end{equation}\]</div>
 <p>Se usa la función de prueba</p>
-<div class="amsmath math notranslate nohighlight" id="equation-baf79e01-ca38-4975-8ab8-8bcc081c34f5">
-<span class="eqno">(2.13)<a class="headerlink" href="#equation-baf79e01-ca38-4975-8ab8-8bcc081c34f5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d33bbb02-6961-4485-a28e-56380ed8a802">
+<span class="eqno">(2.13)<a class="headerlink" href="#equation-d33bbb02-6961-4485-a28e-56380ed8a802" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \psi^{prueba} = \left( \frac{2\alpha}{\pi} \right)^{3/4} e^{-\alpha r^2}
 \end{equation}\]</div>
 <p>La energía se obtiene como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-380ce696-bfa2-4546-8ae9-4ffb54affebb">
-<span class="eqno">(2.14)<a class="headerlink" href="#equation-380ce696-bfa2-4546-8ae9-4ffb54affebb" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-2172b26e-7249-43ad-8b66-df27ad427a55">
+<span class="eqno">(2.14)<a class="headerlink" href="#equation-2172b26e-7249-43ad-8b66-df27ad427a55" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 E^{prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \hat{H} \psi^{prueba} \right) dr d\theta d\phi
 \end{eqnarray}\]</div>
 <p><strong>Paso 1.</strong> Identifique las variables y declarelas como símbolos. En este caso: <span class="math notranslate nohighlight">\(r\)</span> y <span class="math notranslate nohighlight">\(alpha\)</span>.</p>
@@ -709,8 +721,8 @@ E^{prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=
 </div>
 <p><strong>Paso 3.</strong> Opcional. Identifique si hay partes de la ecuación que pueda agrupar o distirbuir con operaciones simples, como multiplicación y expréselas por separado.</p>
 <p>En este caso</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3a8997bb-22b9-426e-af6b-2ae6c239f0e7">
-<span class="eqno">(2.15)<a class="headerlink" href="#equation-3a8997bb-22b9-426e-af6b-2ae6c239f0e7" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-8ab7bf4b-de37-4fc4-a26a-821d100940e5">
+<span class="eqno">(2.15)<a class="headerlink" href="#equation-8ab7bf4b-de37-4fc4-a26a-821d100940e5" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 E^{prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \hat{H} \psi^{prueba} \right) dr d\theta d\phi\\
 &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \left( -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r} \right) \psi^{prueba} \right) dr d\theta d\phi\\
 &amp;=&amp; 4\pi \int_{0}^{r=\infty} r^2 \left( {\psi^{prueba}}^* \left( \color{red}{ -\frac{1}{2}  \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \psi^{prueba}} \color{blue}{-\frac{1 }{r}\psi^{prueba}} \right)  \right) dr \\
