@@ -215,9 +215,12 @@ Tutorial-Avanzado
 :caption: Sistemas Sencillos
 
 Caja
-Tunel
+Tunel_Region_Infinita
+Tunel_Region_Finita
 Oscilador
-Anillo_Esfera_Rotor
+Anillo
+Esfera
+Rotor
 ```
 
 
