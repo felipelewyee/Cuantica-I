@@ -63,6 +63,9 @@ Se requiere que la función de onda de la zona I y de la zona II sean iguales en
 
 $$
 \psi_I(0) = \psi_{II}(0)
+$$
+
+$$
 A = C
 $$
 
@@ -246,6 +249,9 @@ Se requiere que la función de onda de la zona I y de la zona II sean iguales en
 
 $$
 \psi_I(0) = \psi_{II}(0)
+$$
+
+$$
 A = C + D
 $$
 
@@ -253,6 +259,9 @@ También se requiere que las derivadas de la función de onda de la zona I y de 
 
 $$
 \frac{d\psi_I}{dx}(0) = \frac{d\psi_{II}}{dx}(0)
+$$
+
+$$
 k_1 B = - k_2 (C - D)
 $$
 
@@ -260,13 +269,20 @@ Se requiere que la función de onda de la zona II y de la zona III sean iguales 
 
 $$
 \psi_{II}(L) = \psi_{III}(L)
+$$
+
+$$
 Ce^{k_2L} + De^{-k_2L} = F cos(k_1L) + G sin(k_1L)
 $$
+
 
 También se requiere que las derivadas de la función de onda de la zona II y de la zona III sean iguales en $x=L$, es decir
 
 $$
 \frac{d\psi_{II}}{dx}(L) = \frac{d\psi_{III}}{dx}(L)
+$$
+
+$$
 -k_2 C e^{-k_2L} + k_2 D e^{k_2L}  = - k_1 F sin(k_1L) + k_1 G cos(k_1L) 
 $$
 
