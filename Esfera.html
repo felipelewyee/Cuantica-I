@@ -109,12 +109,12 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tunel_Region_Infinita.html">
-   2. Efecto Túnel de una partícula viajando hacia una barrera de potencial de longitud infinita
+   2. Penetración
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tunel_Region_Finita.html">
-   3. Efecto Túnel de una partícula en una región finita de potencial
+   3. Efecto Túnel
   </a>
  </li>
  <li class="toctree-l1">
@@ -331,13 +331,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rotor-rigido">
-   6.1. Rotor Rígido
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   6.2. Referencias
+   6.1. Referencias
   </a>
  </li>
 </ul>
@@ -496,84 +491,8 @@ E = -l(l+1)
 <img alt="_images/Esfera_4_1.png" src="_images/Esfera_4_1.png" />
 </div>
 </div>
-<div class="section" id="rotor-rigido">
-<h2><span class="section-number">6.1. </span>Rotor Rígido<a class="headerlink" href="#rotor-rigido" title="Permalink to this headline">¶</a></h2>
-<p>Este sistema consiste en dos partículas de masa <span class="math notranslate nohighlight">\(m_1\)</span> y <span class="math notranslate nohighlight">\(m_2\)</span> moviéndose con una separación constante <span class="math notranslate nohighlight">\(r=r_2-r_1\)</span>.</p>
-<p>El Hamiltoniano consta de los términos de energía cinética de ambas partículas</p>
-<div class="math notranslate nohighlight">
-\[
-H = -\frac{\hbar^2}{2m_1} \nabla^2_1 -\frac{\hbar^2}{2m_2} \nabla^2_2
-\]</div>
-<div class="dropdown admonition">
-<p class="admonition-title">Inserto matemático: Sistema de masa reducida</p>
-<p>Este sistema es equivalente al de una partícula de masa reducida girando en torno al centro de masa de ambas partículas. La masa total del sistema está dada por la suma de las masas de las partículas</p>
-<div class="math notranslate nohighlight">
-\[
-m_T = m_1 + m_2
-\]</div>
-<p>La masa reducida de la nueva partícula está dada por</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{1}{\mu} = \frac{1}{m_1} + \frac{1}{m_2}
-\]</div>
-<p>El centro de masa del sistema se calcula mediante</p>
-<div class="math notranslate nohighlight">
-\[
-R_{cm} = \left( \frac{m_1}{m_T} \right) r_1 + \left( \frac{m_2}{m_T} \right) r_2
-\]</div>
-<p>y el Hamiltoniano se calcula con la energía cinética de la masa reducida y del centro de masa, es decir</p>
-<div class="math notranslate nohighlight">
-\[
-H = -\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}
-\]</div>
-<p>La ecuación de Schrödinger a resolver es</p>
-<div class="math notranslate nohighlight">
-\[
-\left(-\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}\right) \psi = E \psi
-\]</div>
-<p>Se propone que la función de onda se puede separar en el producto de una función de onda del centro de masa y una función de onda de la partícula de masa reducida</p>
-<div class="math notranslate nohighlight">
-\[
-\psi=\psi_{cm}\psi_r
-\]</div>
-<p>Al sustituir en la ecuación de Schrödinger se obtiene</p>
-<div class="math notranslate nohighlight">
-\[
-\left(-\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} - \frac{\hbar^2}{2\mu} \nabla^2_{r}\right) \psi_{cm}\psi_r = E \psi_{cm}\psi_r
-\]</div>
-<p>Si consideramos que la energía está dada por <span class="math notranslate nohighlight">\(E_T = E_{cm} + E_{r}\)</span> y distribuimos, resulta</p>
-<div class="math notranslate nohighlight">
-\[
--\psi_{r} \frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} \psi_{cm} - \psi_{cm}\frac{\hbar^2}{2\mu} \nabla^2_{r} \psi_r = \psi_r E_{cm} \psi_{cm} +  \psi_{cm} E_r \psi_r
-\]</div>
-<p>Si multiplicamos ambos lados de la ecuación anterior por <span class="math notranslate nohighlight">\(\frac{1}{\psi_{r}\psi_{cm}}\)</span>, resulta</p>
-<div class="math notranslate nohighlight">
-\[
--\frac{1}{\psi_{cm}} \left( \frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} \psi_{cm} - E_{cm} \psi_{cm} \right) = \frac{1}{\psi_{r}} \left( \frac{\hbar^2}{2\mu} \nabla^2_{r} \psi_r + E_r \psi_r \right)
-\]</div>
-<p>ya que el lado izquierdo solo depende de las coordenadas del centro de masa, y el lado derecho solo depende de las coordenadas de la masa reducida, ambos lados deben ser igual a una constante. Si elegimos esta constante como cero, y despejamos lo que está dentro de cada paréntesis se obtienen dos ecuaciones independientes.</p>
-</div>
-<p>Después de cambiar a un sistema de masa reducida se obtienen dos ecuaciones.</p>
-<p>La primera ecuación corresponde al movimiento del <code class="docutils literal notranslate"><span class="pre">centro</span> <span class="pre">de</span> <span class="pre">masa</span> <span class="pre">del</span> <span class="pre">sistema</span></code> y la hemos estudiado previamente en el movimiento de la <code class="docutils literal notranslate"><span class="pre">partícula</span> <span class="pre">libre</span></code></p>
-<div class="math notranslate nohighlight">
-\[
--\frac{\hbar^2}{2m_T} \nabla^2_{R_{cm}} \psi_{cm} = E_{cm} \psi_{cm}
-\]</div>
-<p>esta ecuación tiene como soluciones</p>
-<div class="math notranslate nohighlight">
-\[
-\psi_{cm} = A e^{ikx} + B e^{-ikx}
-\]</div>
-<p>con <span class="math notranslate nohighlight">\(k^2=2m_TE/\hbar^2\)</span>, y simplemente nos dice que el sistema en conjunto se mueve libremente por el espacio.</p>
-<p>La segunda ecuación corresponde a la <code class="docutils literal notranslate"><span class="pre">masa</span> <span class="pre">reducida</span></code>, y la hemos estudiado en la <code class="docutils literal notranslate"><span class="pre">partícula</span> <span class="pre">en</span> <span class="pre">la</span> <span class="pre">esfera</span></code></p>
-<div class="math notranslate nohighlight">
-\[
--\frac{\hbar^2}{2\mu} \nabla^2_{r} \psi_r = E_r \psi_r
-\]</div>
-<p>sabemos por tanto que su solución son los armónico esféricos <span class="math notranslate nohighlight">\(Y_l^{m_l}(\theta,\phi)\)</span> con <span class="math notranslate nohighlight">\(E = -l(l+1)\)</span>.</p>
-</div>
 <div class="section" id="referencias">
-<h2><span class="section-number">6.2. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">6.1. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005.</p></li>
 <li><p>Zettili, N. Quantum Mechanics: Concepts and Applications, 2nd ed.; Wiley: Chichester, U.K, 2009.</p></li>

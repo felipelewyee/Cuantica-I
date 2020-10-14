@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Efecto Túnel de una partícula viajando hacia una barrera de potencial de longitud infinita &#8212; Cuántica I</title>
+    <title>2. Penetración &#8212; Cuántica I</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
@@ -38,7 +38,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Efecto Túnel de una partícula en una región finita de potencial" href="Tunel_Region_Finita.html" />
+    <link rel="next" title="3. Efecto Túnel" href="Tunel_Region_Finita.html" />
     <link rel="prev" title="1. Partícula en la caja" href="Caja.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -109,12 +109,12 @@
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Efecto Túnel de una partícula viajando hacia una barrera de potencial de longitud infinita
+   2. Penetración
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tunel_Region_Finita.html">
-   3. Efecto Túnel de una partícula en una región finita de potencial
+   3. Efecto Túnel
   </a>
  </li>
  <li class="toctree-l1">
@@ -124,12 +124,17 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo.html">
-   5. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
+   5. Partícula en el anillo
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Esfera.html">
-   6. Partícula en el anillo, Partícula en la esfera y Rotor Rígido
+   6. Partícula en la esfera
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rotor.html">
+   7. Rotor Rígido
   </a>
  </li>
 </ul>
@@ -324,18 +329,7 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#barrera-de-potencial-v-de-longitud-finita">
-   2.1. Barrera de potencial
-   <span class="math notranslate nohighlight">
-    \(V\)
-   </span>
-   de longitud finita
-  </a>
- </li>
-</ul>
-
+            
         </nav>
     </div>
 </div>
@@ -344,9 +338,9 @@
         
               <div>
                 
-  <div class="section" id="efecto-tunel-de-una-particula-viajando-hacia-una-barrera-de-potencial-de-longitud-infinita">
-<h1><span class="section-number">2. </span>Efecto Túnel de una partícula viajando hacia una barrera de potencial de longitud infinita<a class="headerlink" href="#efecto-tunel-de-una-particula-viajando-hacia-una-barrera-de-potencial-de-longitud-infinita" title="Permalink to this headline">¶</a></h1>
-<p>Considere una partícula moviéndose hacia una barrera de potencial V en <span class="math notranslate nohighlight">\(x=0\)</span>. Antes de <span class="math notranslate nohighlight">\(x=0\)</span> el potencial vale cero, y después vale <span class="math notranslate nohighlight">\(V\)</span>, es decir:</p>
+  <div class="section" id="penetracion">
+<h1><span class="section-number">2. </span>Penetración<a class="headerlink" href="#penetracion" title="Permalink to this headline">¶</a></h1>
+<p>Considere una partícula moviéndose hacia una barrera de potencial de longitud infinita de valor V en <span class="math notranslate nohighlight">\(x=0\)</span>. Antes de <span class="math notranslate nohighlight">\(x=0\)</span> el potencial vale cero, y después vale <span class="math notranslate nohighlight">\(V\)</span>, es decir:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 V(x) = \left\{
@@ -575,7 +569,7 @@ A=1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x149de4507250&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14885ce77fd0&gt;]
 </pre></div>
 </div>
 <img alt="_images/Tunel_Region_Infinita_22_1.png" src="_images/Tunel_Region_Infinita_22_1.png" />
@@ -587,557 +581,6 @@ A=1
 <p>La longitud de decaimiento, <span class="math notranslate nohighlight">\(\frac{1}{k_2}\)</span> es la distancia dentro de la barrera a la cual la función de onda a deacído a  <span class="math notranslate nohighlight">\(\frac{1}{e}\)</span>.</p>
 </div>
 <p><strong>Calcule la longitud de decaimiento de este sistema.</strong></p>
-<div class="section" id="barrera-de-potencial-v-de-longitud-finita">
-<h2><span class="section-number">2.1. </span>Barrera de potencial <span class="math notranslate nohighlight">\(V\)</span> de longitud finita<a class="headerlink" href="#barrera-de-potencial-v-de-longitud-finita" title="Permalink to this headline">¶</a></h2>
-<p>Considere una partícula moviéndose por la izquierda hacia una barrera de potencial V en <span class="math notranslate nohighlight">\(0 \leq x \leq  L\)</span>, es decir:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-V(x) = \left\{
-  \begin{array}{lll}
-  0      &amp; \mathrm{si\ } x &lt; 0 &amp; I\\
-  V &amp; \mathrm{si\ } 0 \leq x \leq L &amp; II \\
-  0 &amp; \mathrm{si\ } L \le x &amp; II \\
-  \end{array}
-  \right.
-\end{split}\]</div>
-<p>Primero consideraremos el caso en el que la partícula tiene menor energía, <span class="math notranslate nohighlight">\(E\)</span>, que el potencial, <span class="math notranslate nohighlight">\(V\)</span>, es decir, <span class="math notranslate nohighlight">\(E &lt; V\)</span>.</p>
-<p>El sistema puede analizarse por regiones</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Inserto matemático: Hamiltoniano por regiones</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Región</p></th>
-<th class="text-align:center head"><p>Hamiltoniano</p></th>
-<th class="text-align:center head"><p>Función de onda</p></th>
-<th class="text-align:center head"><p>Constantes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:center"><p>I</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_I(x) = Ae^{ik_1x} + Be^{-ik_1x}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>II</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(x) = C e^{-k_2x} + De^{k_2x}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_2^2 = \frac{2m(V-E)}{\hbar^2}\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>III</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{III}(x) = Fe^{ik_1x} + Ge^{-ik_1x}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Los coeficientes pueden obtenerse a partir de la condición de continuidad de la función de onda en <span class="math notranslate nohighlight">\(x=0\)</span> y <span class="math notranslate nohighlight">\(x=L\)</span></p>
-<div class="dropdown admonition">
-<p class="admonition-title">Inserto matemático: Condiciones de continuidad</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Regiones</p></th>
-<th class="text-align:center head"><p>Condición</p></th>
-<th class="text-align:center head"><p>Ecuación</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:center"><p>I y II</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{I}(0) = \psi_{II}(0)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(A + B = C + D\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>I y II</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frac{d\psi_{I}}{dx}(0) = \frac{d\psi_{II}}{dx}(0)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(ik_1 (A - B) = -k_2 (C - D)\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>III</p></td>
-<td class="text-align:center"><p>La partícula viaja hacia la derecha</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G = 0\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>II y III</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(L) = \psi_{III}(L)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(Ce^{-k_2L} + De^{k_2L} = F e^{ik_1L}\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>II y III</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frac{d\psi_{II}}{dx}(L) = \frac{d\psi_{III}}{dx}(L)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-k_2 C e^{-k_2L} + k_2 D e^{k_2L}  = ik_1F e^{ik_1L}\)</span></p></td>
-</tr>
-</tbody>
-</table>
-<p>Al despejar, se obtiene</p>
-<div class="math notranslate nohighlight">
-\[
-C = \frac{F}{2} \left( 1 - \frac{i k_1}{k_2} \right) e^{ik_1L + k_2L}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-D = \frac{F}{2} \left( 1 + \frac{i k_1}{k_2} \right) e^{ik_1L - k_2L}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-A = \frac{1}{2} \left[ \left(1 + \frac{i k_2}{k_1} \right)C + \left(1 - \frac{i k_2}{k_1} \right)D \right]
-\]</div>
-</div>
-<p>El coeficiente de transmisión se puede encontrar al dividir el cuadrado del coeficiente de la parte de la función que representa el paso de partículas a la región III (coeficiente F), entre el cuadrado del coeficiente de la parte de la función de onda que representa a la partícula dirigiénsoe hacia la región I (coeficiente A).</p>
-<div class="math notranslate nohighlight">
-\[
-T = \frac{|F|^2}{|A|^2} = \frac{16(E/V)(1-E/V)}{16(E/V)(1-E/V) + (e^{k_2L} - e^{-k_2L})^2}
-\]</div>
-<p><strong>De valores a las constantes del sistema</strong>. Considere <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(\hbar=1\)</span> y <span class="math notranslate nohighlight">\(L=1\)</span>. Asigne un valor de enería y potencial respetando la relación <span class="math notranslate nohighlight">\(E &lt; V\)</span>, por ejemplo, <span class="math notranslate nohighlight">\(E=1\)</span>, <span class="math notranslate nohighlight">\(V=10\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># m, hbar, L, E, V</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">hbar</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">E</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">V</span> <span class="o">=</span> <span class="mi">10</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Defina <span class="math notranslate nohighlight">\(k_1\)</span> y <span class="math notranslate nohighlight">\(k_2\)</span> acorde a</p>
-<div class="math notranslate nohighlight">
-\[
-k_1 = \sqrt{\frac{2mE}{\hbar^2}}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-k_2 = \sqrt{\frac{2m(V-E)}{\hbar^2}}
-\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#k1 y k2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">E</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>A continuación graficaremos el cuadrado de la función de onda. Para ello, primero defina las siguientes constantes.</p>
-<div class="math notranslate nohighlight">
-\[
-C = \frac{F}{2} \left( 1 - \frac{i k_1}{k_2} \right) e^{ik_1L + k_2L}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-D = \frac{F}{2} \left( 1 + \frac{i k_1}{k_2} \right) e^{ik_1L - k_2L}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-A = \frac{1}{2} \left[ \left(1 + \frac{i k_2}{k_1} \right)C + \left(1 - \frac{i k_2}{k_1} \right)D \right]
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-B = C + D - A
-\]</div>
-<p>Considere</p>
-<div class="math notranslate nohighlight">
-\[
-F = 1
-\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A, B, C, D, F</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="n">C</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="o">+</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
-<span class="n">D</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
-<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">D</span><span class="p">)</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">C</span> <span class="o">+</span> <span class="n">D</span> <span class="o">-</span> <span class="n">A</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Defina un dominio para <span class="math notranslate nohighlight">\(x\)</span>. Sugerencia: Use linspace</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dominio de x</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Defina la función de onda en las tres regiones según</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\psi(x) = \left\{
-  \begin{array}{lll}
-  A e^{ik_1x}+ B e^{-ik_1x}      &amp; \mathrm{si\ } x &lt; 0 &amp; I\\
-  C e^{-k_2x} + De^{k_2x} &amp; \mathrm{si\ } 0 \leq x \leq L &amp; II \\
-  F e^{ik_1x}&amp; \mathrm{si\ } L \le x &amp; III \\
-  \end{array}
-  \right.
-\end{split}\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># psi_I, psi_II y psi_III</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_I</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span>
-<span class="n">psi_II</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span> <span class="o">+</span> <span class="n">D</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
-<span class="n">psi_III</span> <span class="o">=</span> <span class="n">F</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Grafique el cuadrado de la función de onda.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafica</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_I</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_II</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_III</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x149de4424250&gt;]
-</pre></div>
-</div>
-<img alt="_images/Tunel_Region_Infinita_43_1.png" src="_images/Tunel_Region_Infinita_43_1.png" />
-</div>
-</div>
-<p>A continuación, calcule el coeficiente de transmisión a diferentes energías y diferentes potenciales, cumnpliendo <span class="math notranslate nohighlight">\(E&lt;V\)</span>.</p>
-<p>Para <span class="math notranslate nohighlight">\(V=2,4,8,16\)</span>:</p>
-<p>1 Defina un conjunto de 100 energías de 0 a V. <strong>Sugerencia.</strong> Use linspace.</p>
-<p>2 Calcule <span class="math notranslate nohighlight">\(k_2\)</span></p>
-<div class="math notranslate nohighlight">
-\[
-k_2^2 = \frac{2m(V-E)}{\hbar^2}
-\]</div>
-<p>3 Calcule el coeficiente de transmisión. Recuerde</p>
-<div class="math notranslate nohighlight">
-\[
-T = \frac{16(E/V)(1-E/V)}{16(E/V)(1-E/V) + (e^{k_2L} - e^{-k_2L})^2}
-\]</div>
-<p>4 Grafique T vs E/V</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráficas</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">V</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">]:</span>
-    
-    <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">T</span> <span class="o">=</span> <span class="mi">16</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">16</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;V = &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">V</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/Tunel_Region_Infinita_47_0.png" src="_images/Tunel_Region_Infinita_47_0.png" />
-</div>
-</div>
-<p>Ahora consideraremos el caso en el que la partícula tiene mayor energía, <span class="math notranslate nohighlight">\(E\)</span>, que el potencial, <span class="math notranslate nohighlight">\(V\)</span>, es decir, <span class="math notranslate nohighlight">\(E &gt; V\)</span>.</p>
-<div class="tip admonition">
-<p class="admonition-title">Para pensar</p>
-<p>De manera clásica, cuando la partícula tiene mayor energía que el potencial, <span class="math notranslate nohighlight">\(E&gt;V\)</span>, debería poder moverse sin ninguna restricción. ¿Qué pasará cuánticamente?</p>
-</div>
-<p>El sistema puede analizarse por regiones</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Inserto matemático: Hamiltoniano por regiones</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Región</p></th>
-<th class="text-align:center head"><p>Hamiltoniano</p></th>
-<th class="text-align:center head"><p>Función de onda</p></th>
-<th class="text-align:center head"><p>Constantes</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:center"><p>I</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_I(x) = Ae^{ik_1x} + Be^{-ik_1x}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>II</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(x) = C e^{ik_2x} + De^{-ik_2x}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_2^2 = \frac{2m(E-V)}{\hbar^2}\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>III</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{III}(x) = Fe^{ik_1x} + Ge^{-ik_1x}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>Los coeficientes pueden obtenerse a partir de la condición de continuidad de la función de onda en <span class="math notranslate nohighlight">\(x=0\)</span> y <span class="math notranslate nohighlight">\(x=L\)</span></p>
-<div class="dropdown admonition">
-<p class="admonition-title">Inserto matemático: Condiciones de continuidad</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:center head"><p>Regiones</p></th>
-<th class="text-align:center head"><p>Condición</p></th>
-<th class="text-align:center head"><p>Ecuación</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:center"><p>I y II</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{I}(0) = \psi_{II}(0)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(A + B = C + D\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>I y II</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frac{d\psi_{I}}{dx}(0) = \frac{d\psi_{II}}{dx}(0)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1 (A - B) = k_2 (C - D)\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>III</p></td>
-<td class="text-align:center"><p>La partícula viaja hacia la derecha</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G = 0\)</span></p></td>
-</tr>
-<tr class="row-odd"><td class="text-align:center"><p>II y III</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(L) = \psi_{III}(L)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(Ce^{ik_2L} + De^{-k_2L} = F e^{ik_1L}\)</span></p></td>
-</tr>
-<tr class="row-even"><td class="text-align:center"><p>II y III</p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frac{d\psi_{II}}{dx}(L) = \frac{d\psi_{III}}{dx}(L)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_2 \left( C e^{ik_2L} + D e^{-ik_2L} \right)  = k_1F e^{ik_1L}\)</span></p></td>
-</tr>
-</tbody>
-</table>
-<p>Al despejar, se obtiene</p>
-<div class="math notranslate nohighlight">
-\[
-C = \frac{F}{2} \left( 1 + \frac{k_1}{k_2} \right) e^{i(k_1-k_2)L}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-D = \frac{F}{2} \left( 1 - \frac{k_1}{k_2} \right) e^{i(k_1+k_2)L}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-A = \frac{1}{2} \left[ \left(1 + \frac{k_2}{k_1} \right)C + \left(1 - \frac{k_2}{k_1} \right)D \right]
-\]</div>
-</div>
-<p>El coeficiente de transmisión se puede encontrar al dividir el cuadrado del coeficiente de la parte de la función que representa el paso de partículas a la región III (coeficiente F), entre el cuadrado del coeficiente de la parte de la función de onda que representa a la partícula dirigiénsoe hacia la región I (coeficiente A).</p>
-<div class="math notranslate nohighlight">
-\[
-T = \frac{4(E/V)(E/V-1)}{4(E/V)(E/V-1) + sin^2(k_2L)}
-\]</div>
-<p><strong>De valores a las constantes del sistema</strong>. Considere <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(\hbar=1\)</span> y <span class="math notranslate nohighlight">\(L=1\)</span>. Asigne un valor de enería y potencial respetando la relación <span class="math notranslate nohighlight">\(E &gt; V\)</span>, por ejemplo, <span class="math notranslate nohighlight">\(E=40\)</span>, <span class="math notranslate nohighlight">\(V=10\)</span>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># m, hbar, L, E, V</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">hbar</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">E</span> <span class="o">=</span> <span class="mi">40</span>
-<span class="n">V</span> <span class="o">=</span> <span class="mi">10</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Defina <span class="math notranslate nohighlight">\(k_1\)</span> y <span class="math notranslate nohighlight">\(k_2\)</span> acorde a</p>
-<div class="math notranslate nohighlight">
-\[
-k_1 = \sqrt{\frac{2mE}{\hbar^2}}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-k_2 = \sqrt{\frac{2m(E-V)}{\hbar^2}}
-\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#k1 y k2</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">E</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">-</span><span class="n">V</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>A continuación graficaremos el cuadrado de la función de onda. Para ello, primero defina las siguientes constantes.</p>
-<div class="math notranslate nohighlight">
-\[
-C = \frac{F}{2} \left( 1 + \frac{k_1}{k_2} \right) e^{i(k_1-k_2)L}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-D = \frac{F}{2} \left( 1 - \frac{k_1}{k_2} \right) e^{i(k_1+k_2)L}
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-A = \frac{1}{2} \left[ \left(1 + \frac{k_2}{k_1} \right)C + \left(1 - \frac{k_2}{k_1} \right)D \right]
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-B = C + D - A
-\]</div>
-<p>Considere</p>
-<div class="math notranslate nohighlight">
-\[
-F = 1
-\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A, B, C, D, F</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="o">=</span> <span class="mi">1</span>
-
-<span class="n">C</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">k1</span><span class="o">-</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
-<span class="n">D</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
-<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">k2</span><span class="o">/</span><span class="n">k1</span><span class="p">)</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">k2</span><span class="o">/</span><span class="n">k1</span><span class="p">)</span><span class="o">*</span><span class="n">D</span><span class="p">)</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">C</span> <span class="o">+</span> <span class="n">D</span> <span class="o">-</span> <span class="n">A</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Defina un dominio para <span class="math notranslate nohighlight">\(x\)</span>. Sugerencia: Use linspace</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dominio de x</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Defina la función de onda en las tres regiones según</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\psi(x) = \left\{
-  \begin{array}{lll}
-  A e^{ik_1x}+ B e^{-ik_1x}      &amp; \mathrm{si\ } x &lt; 0 &amp; I\\
-  C e^{ik_2x} + De^{-ik_2x} &amp; \mathrm{si\ } 0 \leq x \leq L &amp; II \\
-  F e^{ik_1x}&amp; \mathrm{si\ } L \le x &amp; III \\
-  \end{array}
-  \right.
-\end{split}\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># psi_I, psi_II y psi_III</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_I</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span>
-<span class="n">psi_II</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span> <span class="o">+</span> <span class="n">D</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
-<span class="n">psi_III</span> <span class="o">=</span> <span class="n">F</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x3</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Grafique el cuadrado de la función de onda.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafica</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_I</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_II</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_III</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x149de433db90&gt;]
-</pre></div>
-</div>
-<img alt="_images/Tunel_Region_Infinita_66_1.png" src="_images/Tunel_Region_Infinita_66_1.png" />
-</div>
-</div>
-<p>Para <span class="math notranslate nohighlight">\(V=2,4,8,16\)</span>:</p>
-<p>1 Defina un conjunto de 100 energías de V a 4V. <strong>Sugerencia.</strong> Use linspace.</p>
-<p>2 Calcule <span class="math notranslate nohighlight">\(k_2\)</span></p>
-<p>3 Calcule el coeficiente de transmisión. Recuerde</p>
-<p>4 Grafique T vs E/V</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell tag_hide-input docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">V</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">]:</span>
-    
-    <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">V</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">V</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">-</span><span class="n">V</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">T</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;V = &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">V</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/Tunel_Region_Infinita_69_0.png" src="_images/Tunel_Region_Infinita_69_0.png" />
-</div>
-</div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1169,7 +612,7 @@ F = 1
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="Caja.html" title="previous page"><span class="section-number">1. </span>Partícula en la caja</a>
-    <a class='right-next' id="next-link" href="Tunel_Region_Finita.html" title="next page"><span class="section-number">3. </span>Efecto Túnel de una partícula en una región finita de potencial</a>
+    <a class='right-next' id="next-link" href="Tunel_Region_Finita.html" title="next page"><span class="section-number">3. </span>Efecto Túnel</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
