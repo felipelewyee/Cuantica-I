@@ -387,7 +387,7 @@ $$
 El coeficiente de transmisión se puede encontrar al dividir el cuadrado del coeficiente de la parte de la función que representa el paso de partículas a la región III (coeficiente F), entre el cuadrado del coeficiente de la parte de la función de onda que representa a la partícula dirigiénsoe hacia la región I (coeficiente A).
 
 $$
-T = \frac{4(E/V)(E/V-1)}{4(E/V)(E/V-1) + sin^2(k_3L)}
+T = \frac{4(E/V)(E/V-1)}{4(E/V)(E/V-1) + sin^2(k_2L)}
 $$
 
 **De valores a las constantes del sistema**. Considere $m=1$, $\hbar=1$ y $L=1$. Asigne un valor de enería y potencial respetando la relación $E > V$, por ejemplo, $E=40$, $V=10$.
@@ -486,7 +486,7 @@ Para $V=2,4,8,16$:
 
 1 Defina un conjunto de 100 energías de V a 4V. **Sugerencia.** Use linspace.
 
-2 Calcule $k_3$
+2 Calcule $k_2$
 
 3 Calcule el coeficiente de transmisión. Recuerde
 
@@ -497,8 +497,8 @@ Para $V=2,4,8,16$:
 for V in [2,4,8,16]:
     
     E = np.linspace(V+0.1,4*V,100)
-    k3 = np.sqrt(2*m*(E-V)/hbar**2)
-    T = 4*(E/V)*(E/V-1)/(4*(E/V)*(E/V-1) + (np.sin(k3*L))**2)
+    k2 = np.sqrt(2*m*(E-V)/hbar**2)
+    T = 4*(E/V)*(E/V-1)/(4*(E/V)*(E/V-1) + (np.sin(k2*L))**2)
     plt.plot(E/V,T,label="V = "+str(V))
     plt.legend()
 
