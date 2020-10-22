@@ -237,7 +237,7 @@ for n in range(1,5):
     plt.axhline(y=0, color='k')
     plt.show()
 
-**Haga la gráfica de E en función de n para los primeros 10 niveles energéticos de un electrón en una caja.**
+**Haga la gráfica de E en función de n para los primeros 5 niveles energéticos de un electrón en una caja.**
 
 `````{tip}
 $$
@@ -253,12 +253,22 @@ plt.hlines(valor,inicio,fin)
 Para trazar líneas horizontales desde `inicio` hasta `fin` del eje X en `valor` del eje Y.
 `````
 
+Alternativamente, también puede graficar $n$ vs $E/\frac{\hbar^2 \pi^2}{2mL^2}$
+
 # Inserte código para gráfica
 
 L = 1
 
-for n in range(1,11):
+for n in range(1,6):
     plt.hlines(hbar**2*np.pi**2*n**2/(2*m*L**2),0,1)
+
+plt.xlim(0,4)
+plt.show()
+
+L = 1
+
+for n in range(1,6):
+    plt.hlines(n**2,0,1)
 
 plt.xlim(0,4)
 plt.show()
