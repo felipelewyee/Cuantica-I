@@ -18,6 +18,7 @@ H = -\frac{\hbar^2}{2mr^2} \frac{d^2}{d\phi^2}
 $$
 
 Al sustituir el Hamiltoniano en la ecuación de Schrödinger, se obtiene
+
 $$
 -\frac{\hbar^2}{2mr^2} \frac{d^2}{d\phi^2} \psi = E \psi
 $$

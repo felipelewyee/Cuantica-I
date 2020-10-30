@@ -5,13 +5,22 @@ El sistema consta de un electrón girándo en torno a un núcleo (protón) con r
 El Hamiltoniano de este sistema contiene la energía cinética del electrón, la energía cinética del núcleo y la interacción coulómbica núcleo-electrón.
 
 $$
-H=-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{e^2}{|\vec{r}_p-\vec{r}_e|}
+H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}
 $$
+
+```{margin}
+Para `átomos hidrogenoides` en general, podemos considerar la carga del núcleo, Z, en el término del `potencial` y escribir $\frac{Ze^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}$.
+```
+
+```{margin}
+Los `átomos hidrogenoides` son aquellos que solo tienen un electrón. Por ejemplo `H`, `He`$^+$, `Li`$^{2+}$, `C`$^{5+}$, `U`$^{91+}$.
+```
+
 
 La ecuación de Schrodinger a resolver es
 
 $$
-\left(-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{e^2}{|\vec{r}_p-\vec{r}_e|}\right) \Psi = E \Psi
+\left(-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}\right) \Psi = E \Psi
 $$
 
 ```{admonition} Inserto matemático: Cambio a sistema de masa reducida
@@ -20,26 +29,25 @@ $$
 El problema se puede simplificar al utilizar coordenadas de masa reducida, la nueva ecuación de Schrodinger es
 
 $$
-\left(-\frac{\hbar^2}{2M_T}\nabla^2_{R_{cm}}-\frac{\hbar^2}{2\mu}\nabla^2_r-\frac{e^2}{|\vec{r}|}\right) \Psi = E \Psi
+\left(-\frac{\hbar^2}{2M_T}\nabla^2_{cm}-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0|\vec{r}|}\right) \Psi = E \Psi
 $$
 
-La función de onda $\Psi$ de la ecuación anterior depende de las coordenadas del centro de masa, $R$ y de las coordenadas de la masa reducida, $r$. Se propone una solución por separación de variables, tal que $\Psi(R,r) = \Phi(R) \psi(r)$. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones
+La función de onda $\Psi$ de la ecuación anterior depende de las coordenadas del centro de masa, $R_{cm}$ y de las coordenadas de la masa reducida, $r$. Se propone una solución por separación de variables, tal que $\Psi(R,r) = \Phi(R_{cm}) \psi(r)$. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones
 
 $$
-\left(-\frac{\hbar^2}{2M}\nabla^2_{R_{cm}}\right) \Phi = E_R \Phi
+\left(-\frac{\hbar^2}{2M}\nabla^2_{cm}\right) \Phi = E_{cm} \Phi
 $$
 
 $$
-\left(-\frac{\hbar^2}{2\mu}\nabla^2_r-\frac{e^2}{|\vec{r}|}\right) \psi = E \psi
+\left(-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0|\vec{r}|}\right) \psi = E \psi
 $$
-
 
 La primera ecuación corresponde al movimiento de una partícula libre.
 
 Para resolver la segunda ecuación cambiamos a coordenadas polares, recordando que 
 
 $$
-\nabla^2_r=\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) = \left( \frac{1}{r} \frac{\partial}{\partial r^2} r + \frac{1}{r^2} \Lambda^2 \right) 
+\nabla^2_{\mu}=\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) = \left( \frac{1}{r} \frac{\partial}{\partial r^2} r + \frac{1}{r^2} \Lambda^2 \right) 
 $$
 
 Entonces

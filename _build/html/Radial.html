@@ -237,7 +237,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Huckel.html">
-   2. Método de Huckel
+   2. Método de Hückel
   </a>
  </li>
 </ul>
@@ -356,34 +356,42 @@
 <p>El Hamiltoniano de este sistema contiene la energía cinética del electrón, la energía cinética del núcleo y la interacción coulómbica núcleo-electrón.</p>
 <div class="math notranslate nohighlight">
 \[
-H=-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{e^2}{|\vec{r}_p-\vec{r}_e|}
+H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}
 \]</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Para <code class="docutils literal notranslate"><span class="pre">átomos</span> <span class="pre">hidrogenoides</span></code> en general, podemos considerar la carga del núcleo, Z, en el término del <code class="docutils literal notranslate"><span class="pre">potencial</span></code> y escribir <span class="math notranslate nohighlight">\(\frac{Ze^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}\)</span>.</p>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Los <code class="docutils literal notranslate"><span class="pre">átomos</span> <span class="pre">hidrogenoides</span></code> son aquellos que solo tienen un electrón. Por ejemplo <code class="docutils literal notranslate"><span class="pre">H</span></code>, <code class="docutils literal notranslate"><span class="pre">He</span></code><span class="math notranslate nohighlight">\(^+\)</span>, <code class="docutils literal notranslate"><span class="pre">Li</span></code><span class="math notranslate nohighlight">\(^{2+}\)</span>, <code class="docutils literal notranslate"><span class="pre">C</span></code><span class="math notranslate nohighlight">\(^{5+}\)</span>, <code class="docutils literal notranslate"><span class="pre">U</span></code><span class="math notranslate nohighlight">\(^{91+}\)</span>.</p>
+</div>
 <p>La ecuación de Schrodinger a resolver es</p>
 <div class="math notranslate nohighlight">
 \[
-\left(-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{e^2}{|\vec{r}_p-\vec{r}_e|}\right) \Psi = E \Psi
+\left(-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}\right) \Psi = E \Psi
 \]</div>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Cambio a sistema de masa reducida</p>
 <p>El problema se puede simplificar al utilizar coordenadas de masa reducida, la nueva ecuación de Schrodinger es</p>
 <div class="math notranslate nohighlight">
 \[
-\left(-\frac{\hbar^2}{2M_T}\nabla^2_{R_{cm}}-\frac{\hbar^2}{2\mu}\nabla^2_r-\frac{e^2}{|\vec{r}|}\right) \Psi = E \Psi
+\left(-\frac{\hbar^2}{2M_T}\nabla^2_{cm}-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0|\vec{r}|}\right) \Psi = E \Psi
 \]</div>
-<p>La función de onda <span class="math notranslate nohighlight">\(\Psi\)</span> de la ecuación anterior depende de las coordenadas del centro de masa, <span class="math notranslate nohighlight">\(R\)</span> y de las coordenadas de la masa reducida, <span class="math notranslate nohighlight">\(r\)</span>. Se propone una solución por separación de variables, tal que <span class="math notranslate nohighlight">\(\Psi(R,r) = \Phi(R) \psi(r)\)</span>. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones</p>
+<p>La función de onda <span class="math notranslate nohighlight">\(\Psi\)</span> de la ecuación anterior depende de las coordenadas del centro de masa, <span class="math notranslate nohighlight">\(R_{cm}\)</span> y de las coordenadas de la masa reducida, <span class="math notranslate nohighlight">\(r\)</span>. Se propone una solución por separación de variables, tal que <span class="math notranslate nohighlight">\(\Psi(R,r) = \Phi(R_{cm}) \psi(r)\)</span>. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones</p>
 <div class="math notranslate nohighlight">
 \[
-\left(-\frac{\hbar^2}{2M}\nabla^2_{R_{cm}}\right) \Phi = E_R \Phi
+\left(-\frac{\hbar^2}{2M}\nabla^2_{cm}\right) \Phi = E_{cm} \Phi
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\left(-\frac{\hbar^2}{2\mu}\nabla^2_r-\frac{e^2}{|\vec{r}|}\right) \psi = E \psi
+\left(-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0|\vec{r}|}\right) \psi = E \psi
 \]</div>
 <p>La primera ecuación corresponde al movimiento de una partícula libre.</p>
 <p>Para resolver la segunda ecuación cambiamos a coordenadas polares, recordando que</p>
 <div class="math notranslate nohighlight">
 \[
-\nabla^2_r=\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) = \left( \frac{1}{r} \frac{\partial}{\partial r^2} r + \frac{1}{r^2} \Lambda^2 \right) 
+\nabla^2_{\mu}=\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) = \left( \frac{1}{r} \frac{\partial}{\partial r^2} r + \frac{1}{r^2} \Lambda^2 \right) 
 \]</div>
 <p>Entonces</p>
 <div class="math notranslate nohighlight">

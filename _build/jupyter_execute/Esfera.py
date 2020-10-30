@@ -11,11 +11,13 @@ $$
 ```{admonition} Inserto matemático: Hamiltoniano
 :class: dropdown
 Donde
+
 $$
 \nabla^2 = \frac{1}{r} \frac{\partial^2}{\partial r^2}r + \frac{1}{r^2} \Lambda^2 = \frac{1}{r} \frac{\partial^2}{\partial r^2} r + \frac{1}{r^2} \left( \frac{1}{sin^2 \theta} \frac{\partial^2}{\partial \phi^2} + \frac{1}{sin \theta} \frac{\partial}{\partial \theta} sin \theta \frac{\partial}{\partial \theta} \right)
 $$
 
 Si r es constante, entonces
+
 $$
 -\frac{\hbar^2}{2mr^2} \Lambda^2 \psi(\theta,\phi) = E \psi(\theta,\phi)
 $$
@@ -33,6 +35,7 @@ Y_l^{m_l}(\theta,\phi) = \sqrt{\frac{2l+1}{4\pi} \frac{(l-|m_l|)!}{(l+|m_l|)!}} 
 $$
 
 donde $P_l^{m_l}(cos(\phi))$ son los polinomios asociados de Legendre, dados por
+
 $$
 P_l^{m_l}(x) = \frac{l}{2^l l!}(1-x^2)^{|m_l|/2} \frac{d^{l+|m_l|}}{dx^{l+|m_l|}} (x^2-1)^l
 $$
