@@ -237,7 +237,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Huckel.html">
-   2. Método de Huckel
+   2. Método de Hückel
   </a>
  </li>
 </ul>
@@ -365,28 +365,28 @@
 <div class="section" id="serie-de-taylor">
 <h2><span class="section-number">1.1. </span>Serie de Taylor<a class="headerlink" href="#serie-de-taylor" title="Permalink to this headline">¶</a></h2>
 <p>Sea una función f(x) continua e infinitamente diferenciable, esta puede expresarse en torno a <span class="math notranslate nohighlight">\(a\)</span> mediante una serie de potencias</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0083da2d-86f9-489b-8bf0-105e21a7b90c">
-<span class="eqno">(1.1)<a class="headerlink" href="#equation-0083da2d-86f9-489b-8bf0-105e21a7b90c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d8274eab-700a-497c-ae8e-06f78021363f">
+<span class="eqno">(1.1)<a class="headerlink" href="#equation-d8274eab-700a-497c-ae8e-06f78021363f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x) = \sum_{n=0}^\infty c_n (x-a)^n
 \end{equation}\]</div>
 <p>La m-ésima derivada de <span class="math notranslate nohighlight">\(f(x)\)</span> es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ce84e044-55b1-4b1a-87de-2924de463bb8">
-<span class="eqno">(1.2)<a class="headerlink" href="#equation-ce84e044-55b1-4b1a-87de-2924de463bb8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-40569d61-1346-4f85-952a-e5732d313814">
+<span class="eqno">(1.2)<a class="headerlink" href="#equation-40569d61-1346-4f85-952a-e5732d313814" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f^{(m)}(x) = \sum_{n=m}^\infty c_n (m!)(x-a)^{n-m} = \sum_{p=0}^\infty c_{p+m} (m!)(x-a)^{p}
 \end{equation}\]</div>
 <p>donde se ha hecho el cambio de índice <span class="math notranslate nohighlight">\(p=n-m\)</span>. Al evaluar en x=a se obtiene</p>
-<div class="amsmath math notranslate nohighlight" id="equation-973d7907-a3c9-403d-ab78-22d1e3b6608b">
-<span class="eqno">(1.3)<a class="headerlink" href="#equation-973d7907-a3c9-403d-ab78-22d1e3b6608b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d7ac67db-a07e-48f5-a7f1-66477cb0b7e9">
+<span class="eqno">(1.3)<a class="headerlink" href="#equation-d7ac67db-a07e-48f5-a7f1-66477cb0b7e9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f^{(m)}(a) = \sum_{p=0}^\infty c_{p+m} (m!)(a-a)^{p} = c_p (m!)
 \end{equation}\]</div>
 <p>El único término que sobrevive es el que tiene potencia cero, despejando <span class="math notranslate nohighlight">\(c_p\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-26cc7156-ffe8-4e9f-96f1-91ccc4eca278">
-<span class="eqno">(1.4)<a class="headerlink" href="#equation-26cc7156-ffe8-4e9f-96f1-91ccc4eca278" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-220db18e-c983-445f-850a-64ed90bf0f32">
+<span class="eqno">(1.4)<a class="headerlink" href="#equation-220db18e-c983-445f-850a-64ed90bf0f32" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 c_m = \frac{f^{(m)}(a)}{m!}
 \end{equation}\]</div>
 <p>Sustituyendo en la serie</p>
-<div class="amsmath math notranslate nohighlight" id="equation-38ce0888-d8aa-4559-94c6-105927ea8aeb">
-<span class="eqno">(1.5)<a class="headerlink" href="#equation-38ce0888-d8aa-4559-94c6-105927ea8aeb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f0ac8007-474e-4911-982f-eac6631744e1">
+<span class="eqno">(1.5)<a class="headerlink" href="#equation-f0ac8007-474e-4911-982f-eac6631744e1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 \end{equation}\]</div>
 <p><strong>Haga la expansión en series de Taylor en torno a <span class="math notranslate nohighlight">\(x=0\)</span> de <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [0,10]\)</span> hasta potencias de grado 10.</strong></p>
@@ -421,21 +421,21 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 <div class="section" id="serie-de-fourier">
 <h2><span class="section-number">1.2. </span>Serie de Fourier<a class="headerlink" href="#serie-de-fourier" title="Permalink to this headline">¶</a></h2>
 <p>Una funcion periodica se puede aproximar por</p>
-<div class="amsmath math notranslate nohighlight" id="equation-da0078aa-31ef-4885-b37d-13e866705754">
-<span class="eqno">(1.6)<a class="headerlink" href="#equation-da0078aa-31ef-4885-b37d-13e866705754" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0ca46fcc-08ef-45c6-9049-4fffe30e0d06">
+<span class="eqno">(1.6)<a class="headerlink" href="#equation-0ca46fcc-08ef-45c6-9049-4fffe30e0d06" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x)=\frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n cos \left( \frac{2n\pi}{T}x \right) + b_n sin \left( \frac{2n\pi}{T}x \right) \right]
 \end{equation}\]</div>
 <p>donde</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b05450dc-adc1-4cf4-a2ac-eac8f78927f2">
-<span class="eqno">(1.7)<a class="headerlink" href="#equation-b05450dc-adc1-4cf4-a2ac-eac8f78927f2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-49e2efaa-0408-4641-94eb-7fec28aa0cb5">
+<span class="eqno">(1.7)<a class="headerlink" href="#equation-49e2efaa-0408-4641-94eb-7fec28aa0cb5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 a_0 = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) dx
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-5fd112a4-8419-4a18-97a4-6f70dc5c7ea8">
-<span class="eqno">(1.8)<a class="headerlink" href="#equation-5fd112a4-8419-4a18-97a4-6f70dc5c7ea8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e2a07d3e-7e03-4757-87dc-b28fb3602c5f">
+<span class="eqno">(1.8)<a class="headerlink" href="#equation-e2a07d3e-7e03-4757-87dc-b28fb3602c5f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 a_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) cos \left( \frac{2n\pi}{T}x \right) dx
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-9c83e44d-6f3e-49b1-a91f-543501daa6c9">
-<span class="eqno">(1.9)<a class="headerlink" href="#equation-9c83e44d-6f3e-49b1-a91f-543501daa6c9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-04e5dd24-43c9-4aee-ac65-c2d2146d5589">
+<span class="eqno">(1.9)<a class="headerlink" href="#equation-04e5dd24-43c9-4aee-ac65-c2d2146d5589" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) sin \left( \frac{2n\pi}{T}x \right) dx
 \end{equation}\]</div>
 <p><strong>Haga la expansión en series de Fourier de la <span class="math notranslate nohighlight">\(f(x)=x\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
@@ -471,8 +471,8 @@ b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) sin \left( \frac{2n\pi}{T}x \rig
 </div>
 </div>
 <p><strong>Haga la expansión en series de Fourier de la fución escalón en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-9709a1af-47d3-4c53-8700-8bbf95bc25a7">
-<span class="eqno">(1.10)<a class="headerlink" href="#equation-9709a1af-47d3-4c53-8700-8bbf95bc25a7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-15d657b1-f777-453e-813d-b12c3dbf9c01">
+<span class="eqno">(1.10)<a class="headerlink" href="#equation-15d657b1-f777-453e-813d-b12c3dbf9c01" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x) = \left\{
   \begin{array}{ll}
   0      &amp; \mathrm{si\ } x &lt; 0\\
