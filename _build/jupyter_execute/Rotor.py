@@ -8,10 +8,14 @@ $$
 H = -\frac{\hbar^2}{2m_1} \nabla^2_1 -\frac{\hbar^2}{2m_2} \nabla^2_2
 $$
 
+```{margin}
+La `masa reducida` tiene masa $\mu$ y coordenadas $r$, el `centro de masa` tiene masa $m_T$ y coordenadas $R_{cm}$.
+```
+
 ```{admonition} Inserto matemático: Sistema de masa reducida
 :class: dropdown
 
-Este sistema es equivalente al de una partícula de masa reducida girando en torno al centro de masa de ambas partículas. La masa total del sistema está dada por la suma de las masas de las partículas
+Este sistema es equivalente al de una partícula de masa reducida ($\mu$) girando en torno al centro de masa de ambas partículas (cm). La masa total del sistema está dada por la suma de las masas de las partículas
 
 $$
 m_T = m_1 + m_2

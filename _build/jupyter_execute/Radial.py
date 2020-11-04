@@ -26,16 +26,18 @@ $$
 ```{admonition} Inserto matemático: Cambio a sistema de masa reducida
 :class: dropdown
 
-El problema se puede simplificar al utilizar coordenadas de masa reducida, la nueva ecuación de Schrodinger es
+El problema se puede simplificar al utilizar coordenadas de masa reducida. La `masa reducida` tiene masa $\mu$ y coordenadas $r$, el `centro de masa` tiene masa $m_T$ y coordenadas $R_{cm}$. Para ver como hacer este cambio, vea {doc}`Rotor`.
+
+La nueva ecuación de Schrodinger es
 
 $$
-\left(-\frac{\hbar^2}{2M_T}\nabla^2_{cm}-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0|\vec{r}|}\right) \Psi = E \Psi
+\left(-\frac{\hbar^2}{2m_T}\nabla^2_{cm}-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0|\vec{r}|}\right) \Psi = E \Psi
 $$
 
 La función de onda $\Psi$ de la ecuación anterior depende de las coordenadas del centro de masa, $R_{cm}$ y de las coordenadas de la masa reducida, $r$. Se propone una solución por separación de variables, tal que $\Psi(R,r) = \Phi(R_{cm}) \psi(r)$. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones
 
 $$
-\left(-\frac{\hbar^2}{2M}\nabla^2_{cm}\right) \Phi = E_{cm} \Phi
+\left(-\frac{\hbar^2}{2m_T}\nabla^2_{cm}\right) \Phi = E_{cm} \Phi
 $$
 
 $$
@@ -53,7 +55,7 @@ $$
 Entonces
 
 $$
-\left(-\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\partial}{\partial r^2} r -\frac{\hbar^2}{2\mu} \frac{1}{r^2} \Lambda^2 -\frac{e^2}{|\vec{r}|}\right) \psi = E \psi
+\left(-\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\partial}{\partial r^2} r -\frac{\hbar^2}{2\mu} \frac{1}{r^2} \Lambda^2 -\frac{e^2}{4\pi\varepsilon_0|\vec{r}|}\right) \psi = E \psi
 $$
 ```
 
@@ -69,7 +71,7 @@ $$
 Esto genera una ecuación a resolver para la parte radial (y una para la parte angular que trataremos posteriormente)
 
 $$
--\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{d(rR)}{dr} -\frac{\hbar^2}{2\mu} \left[ \frac{e^2}{r} -\frac{l(l+1)}{r^2} \right] R = ER 
+-\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{d(rR)}{dr} -\frac{\hbar^2}{2\mu} \left[ \frac{e^2}{4\pi\varepsilon_0r} -\frac{l(l+1)}{r^2} \right] R = ER 
 $$
 ```
 
