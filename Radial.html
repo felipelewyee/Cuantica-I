@@ -373,15 +373,16 @@ H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi
 \]</div>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Cambio a sistema de masa reducida</p>
-<p>El problema se puede simplificar al utilizar coordenadas de masa reducida, la nueva ecuación de Schrodinger es</p>
+<p>El problema se puede simplificar al utilizar coordenadas de masa reducida. La <code class="docutils literal notranslate"><span class="pre">masa</span> <span class="pre">reducida</span></code> tiene masa <span class="math notranslate nohighlight">\(\mu\)</span> y coordenadas <span class="math notranslate nohighlight">\(r\)</span>, el <code class="docutils literal notranslate"><span class="pre">centro</span> <span class="pre">de</span> <span class="pre">masa</span></code> tiene masa <span class="math notranslate nohighlight">\(m_T\)</span> y coordenadas <span class="math notranslate nohighlight">\(R_{cm}\)</span>. Para ver como hacer este cambio, vea <a class="reference internal" href="Rotor.html"><span class="doc">Rotor Rígido</span></a>.</p>
+<p>La nueva ecuación de Schrodinger es</p>
 <div class="math notranslate nohighlight">
 \[
-\left(-\frac{\hbar^2}{2M_T}\nabla^2_{cm}-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0|\vec{r}|}\right) \Psi = E \Psi
+\left(-\frac{\hbar^2}{2m_T}\nabla^2_{cm}-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0|\vec{r}|}\right) \Psi = E \Psi
 \]</div>
 <p>La función de onda <span class="math notranslate nohighlight">\(\Psi\)</span> de la ecuación anterior depende de las coordenadas del centro de masa, <span class="math notranslate nohighlight">\(R_{cm}\)</span> y de las coordenadas de la masa reducida, <span class="math notranslate nohighlight">\(r\)</span>. Se propone una solución por separación de variables, tal que <span class="math notranslate nohighlight">\(\Psi(R,r) = \Phi(R_{cm}) \psi(r)\)</span>. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones</p>
 <div class="math notranslate nohighlight">
 \[
-\left(-\frac{\hbar^2}{2M}\nabla^2_{cm}\right) \Phi = E_{cm} \Phi
+\left(-\frac{\hbar^2}{2m_T}\nabla^2_{cm}\right) \Phi = E_{cm} \Phi
 \]</div>
 <div class="math notranslate nohighlight">
 \[
@@ -396,7 +397,7 @@ H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi
 <p>Entonces</p>
 <div class="math notranslate nohighlight">
 \[
-\left(-\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\partial}{\partial r^2} r -\frac{\hbar^2}{2\mu} \frac{1}{r^2} \Lambda^2 -\frac{e^2}{|\vec{r}|}\right) \psi = E \psi
+\left(-\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\partial}{\partial r^2} r -\frac{\hbar^2}{2\mu} \frac{1}{r^2} \Lambda^2 -\frac{e^2}{4\pi\varepsilon_0|\vec{r}|}\right) \psi = E \psi
 \]</div>
 </div>
 <div class="dropdown admonition">
@@ -409,7 +410,7 @@ H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi
 <p>Esto genera una ecuación a resolver para la parte radial (y una para la parte angular que trataremos posteriormente)</p>
 <div class="math notranslate nohighlight">
 \[
--\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{d(rR)}{dr} -\frac{\hbar^2}{2\mu} \left[ \frac{e^2}{r} -\frac{l(l+1)}{r^2} \right] R = ER 
+-\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{d(rR)}{dr} -\frac{\hbar^2}{2\mu} \left[ \frac{e^2}{4\pi\varepsilon_0r} -\frac{l(l+1)}{r^2} \right] R = ER 
 \]</div>
 </div>
 <p>Las soluciones a la ecuación radial son</p>
