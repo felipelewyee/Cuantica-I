@@ -15,13 +15,13 @@ En mecánica clásica podemos encontrar sistemas con este potencial como los res
 En este caso, el Hamiltoniano contiene la energía cinética y el potencial
 
 $$
-H = -\frac{\hbar^2}{2m} \frac{d}{dx} + \frac{1}{2} kx^2
+H = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2} kx^2
 $$
 
 y la ecuación de Schrödinger a resolver es
 
 $$
-\left(-\frac{\hbar^2}{2m} \frac{d}{dx} + \frac{1}{2} kx^2 \right) \psi = E \psi
+\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2} kx^2 \right) \psi = E \psi
 $$
 
 esta es una ecuación cuyas soluciones a la energía y la función de onda son
