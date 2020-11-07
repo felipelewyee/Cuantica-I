@@ -1,0 +1,47 @@
+Traceback (most recent call last):
+  File "/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/jupyter_cache/executors/utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/nbclient/client.py", line 1082, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/asyncio/base_events.py", line 587, in run_until_complete
+    return future.result()
+  File "/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/nbclient/client.py", line 536, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/nbclient/client.py", line 827, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/nbclient/client.py", line 735, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+n = 1
+l = 0
+
+R = R_func(r,n,l)
+
+plt.plot(r,R,label=n)
+plt.xlabel("$r$")
+plt.ylabel("$R$")
+plt.show()
+
+plt.plot(r,4*np.pi*r**2*R**2,label=n)
+plt.xlabel("$r$")
+plt.ylabel("$4\pi^2R^2$")
+plt.show()
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-6-bd6d651b0e60>[0m in [0;36m<module>[0;34m[0m
+[1;32m      2[0m [0ml[0m [0;34m=[0m [0;36m0[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;34m[0m[0m
+[0;32m----> 4[0;31m [0mR[0m [0;34m=[0m [0mR_func[0m[0;34m([0m[0mr[0m[0;34m,[0m[0mn[0m[0;34m,[0m[0ml[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m [0;34m[0m[0m
+[1;32m      6[0m [0mplt[0m[0;34m.[0m[0mplot[0m[0;34m([0m[0mr[0m[0;34m,[0m[0mR[0m[0;34m,[0m[0mlabel[0m[0;34m=[0m[0mn[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mNameError[0m: name 'r' is not defined
+NameError: name 'r' is not defined
+

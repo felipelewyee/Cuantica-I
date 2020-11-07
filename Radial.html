@@ -366,7 +366,7 @@ H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi
 <p class="sidebar-title"></p>
 <p>Los <code class="docutils literal notranslate"><span class="pre">átomos</span> <span class="pre">hidrogenoides</span></code> son aquellos que solo tienen un electrón. Por ejemplo <code class="docutils literal notranslate"><span class="pre">H</span></code>, <code class="docutils literal notranslate"><span class="pre">He</span></code><span class="math notranslate nohighlight">\(^+\)</span>, <code class="docutils literal notranslate"><span class="pre">Li</span></code><span class="math notranslate nohighlight">\(^{2+}\)</span>, <code class="docutils literal notranslate"><span class="pre">C</span></code><span class="math notranslate nohighlight">\(^{5+}\)</span>, <code class="docutils literal notranslate"><span class="pre">U</span></code><span class="math notranslate nohighlight">\(^{91+}\)</span>.</p>
 </div>
-<p>La ecuación de Schrodinger a resolver es</p>
+<p>La ecuación de Schrödinger a resolver es</p>
 <div class="math notranslate nohighlight">
 \[
 \left(-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}\right) \Psi = E \Psi
@@ -374,10 +374,10 @@ H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Cambio a sistema de masa reducida</p>
 <p>El problema se puede simplificar al utilizar coordenadas de masa reducida. La <code class="docutils literal notranslate"><span class="pre">masa</span> <span class="pre">reducida</span></code> tiene masa <span class="math notranslate nohighlight">\(\mu\)</span> y coordenadas <span class="math notranslate nohighlight">\(r\)</span>, el <code class="docutils literal notranslate"><span class="pre">centro</span> <span class="pre">de</span> <span class="pre">masa</span></code> tiene masa <span class="math notranslate nohighlight">\(m_T\)</span> y coordenadas <span class="math notranslate nohighlight">\(R_{cm}\)</span>. Para ver como hacer este cambio, vea <a class="reference internal" href="Rotor.html"><span class="doc">Rotor Rígido</span></a>.</p>
-<p>La nueva ecuación de Schrodinger es</p>
+<p>La nueva ecuación de Schrödinger es</p>
 <div class="math notranslate nohighlight">
 \[
-\left(-\frac{\hbar^2}{2m_T}\nabla^2_{cm}-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0|\vec{r}|}\right) \Psi = E \Psi
+\left(-\frac{\hbar^2}{2m_T}\nabla^2_{cm}-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0r}\right) \Psi = E \Psi
 \]</div>
 <p>La función de onda <span class="math notranslate nohighlight">\(\Psi\)</span> de la ecuación anterior depende de las coordenadas del centro de masa, <span class="math notranslate nohighlight">\(R_{cm}\)</span> y de las coordenadas de la masa reducida, <span class="math notranslate nohighlight">\(r\)</span>. Se propone una solución por separación de variables, tal que <span class="math notranslate nohighlight">\(\Psi(R,r) = \Phi(R_{cm}) \psi(r)\)</span>. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones</p>
 <div class="math notranslate nohighlight">
@@ -386,18 +386,18 @@ H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\left(-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0|\vec{r}|}\right) \psi = E \psi
+\left(-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0r}\right) \psi = E \psi
 \]</div>
 <p>La primera ecuación corresponde al movimiento de una partícula libre.</p>
 <p>Para resolver la segunda ecuación cambiamos a coordenadas polares, recordando que</p>
 <div class="math notranslate nohighlight">
 \[
-\nabla^2_{\mu}=\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) = \left( \frac{1}{r} \frac{\partial}{\partial r^2} r + \frac{1}{r^2} \Lambda^2 \right) 
+\nabla^2_{\mu}=\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) = \left( \frac{1}{r} \frac{\partial^2}{\partial r^2} r + \frac{1}{r^2} \Lambda^2 \right) 
 \]</div>
 <p>Entonces</p>
 <div class="math notranslate nohighlight">
 \[
-\left(-\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\partial}{\partial r^2} r -\frac{\hbar^2}{2\mu} \frac{1}{r^2} \Lambda^2 -\frac{e^2}{4\pi\varepsilon_0|\vec{r}|}\right) \psi = E \psi
+\left(-\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\partial^2}{\partial r^2} r -\frac{\hbar^2}{2\mu} \frac{1}{r^2} \Lambda^2 -\frac{e^2}{4\pi\varepsilon_0r}\right) \psi = E \psi
 \]</div>
 </div>
 <div class="dropdown admonition">
@@ -410,13 +410,13 @@ H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi
 <p>Esto genera una ecuación a resolver para la parte radial (y una para la parte angular que trataremos posteriormente)</p>
 <div class="math notranslate nohighlight">
 \[
--\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{d(rR)}{dr} -\frac{\hbar^2}{2\mu} \left[ \frac{e^2}{4\pi\varepsilon_0r} -\frac{l(l+1)}{r^2} \right] R = ER 
+-\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{d^2(rR)}{dr^2} - \left[ \frac{e^2}{4\pi\varepsilon_0r} -\frac{l(l+1)\hbar^2}{2\mu r^2} \right] R = ER 
 \]</div>
 </div>
 <p>Las soluciones a la ecuación radial son</p>
 <div class="math notranslate nohighlight">
 \[
-R_{n,l}(r) = N_{n,l} \left( \frac{2r}{na_0} \right)^l e^{-r/na_0} L_{n+l}^{2l+1} \left( \frac{2r}{n a_0} \right)
+R_{n,l}(r) = -N_{n,l} \left( \frac{2r}{na_0} \right)^l e^{-r/na_0} L_{n+l}^{2l+1} \left( \frac{2r}{n a_0} \right)
 \]</div>
 <p>aquí han surgido los números cuánticos</p>
 <div class="margin sidebar">
@@ -452,6 +452,94 @@ L_{k}^N (r) = \frac{d^N}{dr^N} L_k(r)
 L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 \]</div>
 </div>
+<p><strong>Importe las siguientes librerías</strong></p>
+<ul class="simple">
+<li><p>pyplot de matplotlib</p></li>
+<li><p>numpy</p></li>
+<li><p>derivative de scipy.misc</p></li>
+<li><p>laguerre de scipy.special</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Librerías</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">derivative</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">laguerre</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Defina una función que reciba valores de <span class="math notranslate nohighlight">\(n\)</span> y <span class="math notranslate nohighlight">\(l\)</span> y regresen la función <span class="math notranslate nohighlight">\(R(r)\)</span></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># def R(r)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">)))</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">laguerre</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">L</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">])</span>
+    <span class="n">assoc_L</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">),</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="o">-</span><span class="n">N</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">**</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">*</span><span class="n">assoc_L</span>
+    
+    <span class="k">return</span> <span class="n">R</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Grafique la función del orbital 1s, <span class="math notranslate nohighlight">\(R_{n=1,l=0}\)</span>, y su función de distribución radial <span class="math notranslate nohighlight">\(4\pi r^2R^2_{n=1,l=0}\)</span></strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$R$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$4\pi^2R^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="n">bd6d651b0e60</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;r&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
 <p><strong>Realice la gráfica de R(r) (la parte radial de la función de onda) para los orbitales 1s (n=1, l=0),2s (n=2, l=0),3s (n=3, l=0) y 4s (n=4, l=0), y de <span class="math notranslate nohighlight">\(4\pi r^2R^2\)</span>.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -462,12 +550,7 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">derivative</span> <span class="k">as</span> <span class="n">derivative</span>
-<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">laguerre</span> <span class="k">as</span> <span class="n">laguerre</span>
-
-<span class="c1">#Cambiar aqui para ajustar limites del eje X</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Cambiar aqui para ajustar limites del eje X</span>
 <span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="n">a0</span><span class="o">=</span><span class="mf">1.0</span>
@@ -479,13 +562,7 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 <span class="n">n_max</span><span class="o">=</span><span class="mi">4</span>
 
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span><span class="n">n_max</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">N</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">),</span><span class="mf">3.0</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">)),</span><span class="mf">3.0</span><span class="p">)))</span>
-    <span class="n">L</span><span class="o">=</span><span class="n">laguerre</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">)</span>
-    <span class="n">L</span><span class="o">=</span><span class="n">L</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">])</span>
-    <span class="n">assoc_L</span><span class="o">=</span><span class="n">derivative</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">),</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
-
-    <span class="n">R</span><span class="o">=</span><span class="n">N</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">**</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">*</span><span class="n">assoc_L</span>
-
+    <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -496,14 +573,8 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span><span class="n">n_max</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">N</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">),</span><span class="mf">3.0</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">)),</span><span class="mf">3.0</span><span class="p">)))</span>
-    <span class="n">L</span><span class="o">=</span><span class="n">laguerre</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">)</span>
-    <span class="n">L</span><span class="o">=</span><span class="n">L</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">])</span>
-    <span class="n">assoc_L</span><span class="o">=</span><span class="n">derivative</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">),</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
-
-    <span class="n">R</span><span class="o">=</span><span class="n">N</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">**</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">*</span><span class="n">assoc_L</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="o">*</span><span class="n">R</span><span class="o">**</span><span class="mf">2.0</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="c1">#Cambiar aqui los titulos de los ejes</span>
@@ -515,8 +586,8 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Radial_4_0.png" src="_images/Radial_4_0.png" />
-<img alt="_images/Radial_4_1.png" src="_images/Radial_4_1.png" />
+<img alt="_images/Radial_13_0.png" src="_images/Radial_13_0.png" />
+<img alt="_images/Radial_13_1.png" src="_images/Radial_13_1.png" />
 </div>
 </div>
 <p><strong>Responda las siguientes preguntas</strong></p>
@@ -537,12 +608,7 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">derivative</span> <span class="k">as</span> <span class="n">derivative</span>
-<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">laguerre</span> <span class="k">as</span> <span class="n">laguerre</span>
-
-<span class="c1">#Cambiar aqui para ajustar eje X</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Cambiar aqui para ajustar eje X</span>
 <span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="n">a0</span><span class="o">=</span><span class="mf">1.0</span>
@@ -554,13 +620,7 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 <span class="n">lmax</span><span class="o">=</span><span class="mi">2</span>
 
 <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lmin</span><span class="p">,</span><span class="n">lmax</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">N</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">),</span><span class="mf">3.0</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">)),</span><span class="mf">3.0</span><span class="p">)))</span>
-    <span class="n">L</span><span class="o">=</span><span class="n">laguerre</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">)</span>
-    <span class="n">L</span><span class="o">=</span><span class="n">L</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">])</span>
-    <span class="n">assoc_L</span><span class="o">=</span><span class="n">derivative</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">),</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
-
-    <span class="n">R</span><span class="o">=</span><span class="n">N</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">**</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">*</span><span class="n">assoc_L</span>
-
+    <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -571,14 +631,8 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lmin</span><span class="p">,</span><span class="n">lmax</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">N</span><span class="o">=-</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">),</span><span class="mf">3.0</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">power</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">)),</span><span class="mf">3.0</span><span class="p">)))</span>
-    <span class="n">L</span><span class="o">=</span><span class="n">laguerre</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">)</span>
-    <span class="n">L</span><span class="o">=</span><span class="n">L</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">])</span>
-    <span class="n">assoc_L</span><span class="o">=</span><span class="n">derivative</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">),</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
-
-    <span class="n">R</span><span class="o">=</span><span class="n">N</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">**</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">*</span><span class="n">assoc_L</span>
-
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="o">*</span><span class="n">R</span><span class="o">**</span><span class="mf">2.0</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="o">*</span><span class="n">R</span><span class="o">**</span><span class="mf">2.0</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="c1">#Cambiar aqui los titulos de los ejes</span>
@@ -590,8 +644,8 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Radial_8_0.png" src="_images/Radial_8_0.png" />
-<img alt="_images/Radial_8_1.png" src="_images/Radial_8_1.png" />
+<img alt="_images/Radial_17_0.png" src="_images/Radial_17_0.png" />
+<img alt="_images/Radial_17_1.png" src="_images/Radial_17_1.png" />
 </div>
 </div>
 <p>¿Cuál de los orbitales (3s/3p/3d) tiene el máximo del cuadrado de la parte radial más cerca del origen? Es decir, ¿Cuál de estos orbitales (3s/3p/3d) es más penetrante?</p>
