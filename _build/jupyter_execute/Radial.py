@@ -144,33 +144,37 @@ def R_func(r,n,l):
     
     return R
 
-**Grafique la función del orbital 1s, $R_{n=1,l=0}$, y su función de distribución radial $4\pi r^2R^2_{n=1,l=0}$**
+**Grafique el cuadrado de la función de densidad de probabilidad del orbital 1s, $R^2_{n=1,l=0}$, y su función de distribución radial $r^2R^2_{n=1,l=0}$**
 
 # Grafica
+
+r=np.linspace(0,25,100)
+
+a0=1.0
 
 n = 1
 l = 0
 
 R = R_func(r,n,l)
 
-plt.plot(r,R,label=n)
+plt.plot(r,R**2,label=n)
 plt.xlabel("$r$")
-plt.ylabel("$R$")
+plt.ylabel("$R^2$")
+plt.title("Función de densidad de probabilidad")
 plt.show()
 
 plt.plot(r,4*np.pi*r**2*R**2,label=n)
 plt.xlabel("$r$")
-plt.ylabel("$4\pi^2R^2$")
+plt.ylabel("$r^2R^2$")
+plt.title("Función de distribución radial")
 plt.show()
 
-**Realice la gráfica de R(r) (la parte radial de la función de onda) para los orbitales 1s (n=1, l=0),2s (n=2, l=0),3s (n=3, l=0) y 4s (n=4, l=0), y de $4\pi r^2R^2$.**
+**Realice la gráfica de R^2(r) (el cuadrado de la parte radial de la función de onda) para los orbitales 1s (n=1, l=0),2s (n=2, l=0),3s (n=3, l=0) y 4s (n=4, l=0), y de $r^2R^2$.**
 
 # Gráfica
 
 #Cambiar aqui para ajustar limites del eje X
 r=np.linspace(0,25,100)
-
-a0=1.0
 
 #Cambiar aqui para usar s,p,d,etc
 l=0
@@ -180,24 +184,24 @@ n_max=4
 
 for n in range(n_min,n_max+1):
     R = R_func(r,n,l)
-    plt.plot(r,R,label=n)
+    plt.plot(r,R**2,label=n)
 
 plt.legend()
 #Cambiar aqui los titulos de los ejes
 plt.xlabel("$r$")
-plt.ylabel("$R$")
-plt.title("$R(r)$ 1s, 2s ,3s y 4s")
+plt.ylabel("$R^2$")
+plt.title("$R^2(r)$ 1s, 2s ,3s y 4s")
 plt.show()
 
 for n in range(n_min,n_max+1):
     R = R_func(r,n,l)
-    plt.plot(r,4*np.pi*r**2*R**2,label=n)
+    plt.plot(r,r**2*R**2,label=n)
 
 plt.legend()
 #Cambiar aqui los titulos de los ejes
 plt.xlabel("$r$")
-plt.ylabel("$4\pi r^2R^2$")
-plt.title("$4\pi r^2R^2(r)$ 1s, 2s ,3s y 4s")
+plt.ylabel("$r^2R^2$")
+plt.title("$r^2R^2(r)$ 1s, 2s ,3s y 4s")
 plt.show()
 
 **Responda las siguientes preguntas**
@@ -216,7 +220,7 @@ plt.show()
 
 ¿Encuentra algún patrón respecto al número de máximos?
 
-**Realice la gráfica de la parte radial de la función de onda para los orbitales 3s (n=3, l=0),3p (n=3, l=1) y 3d (n=3, l=2), y de $4\pi r^2R^2$.**
+**Realice la gráfica del cuadrado de la parte radial de la función de onda para los orbitales 3s (n=3, l=0),3p (n=3, l=1) y 3d (n=3, l=2), y de $r^2R^2$.**
 
 # Gráfica
 
@@ -233,13 +237,13 @@ lmax=2
 
 for l in range(lmin,lmax+1):
     R = R_func(r,n,l)
-    plt.plot(r,R,label=l)
+    plt.plot(r,R**2,label=l)
 
 plt.legend()
 #Cambiar aqui los titulos de los ejes
 plt.xlabel("$r$")
 plt.ylabel("$R$")
-plt.title("$R(r)$ 3s, 3p ,3d")
+plt.title("$R^2(r)$ 3s, 3p ,3d")
 plt.show()
 
 for l in range(lmin,lmax+1):
@@ -249,8 +253,8 @@ for l in range(lmin,lmax+1):
 plt.legend()
 #Cambiar aqui los titulos de los ejes
 plt.xlabel("$r$")
-plt.ylabel("$4\pi r^2R^2$")
-plt.title("$4\pi r^2R^2$ 3s, 3p ,3d")
+plt.ylabel("$r^2R^2$")
+plt.title("$r^2R^2$ 3s, 3p ,3d")
 plt.show()
 
 ¿Cuál de los orbitales (3s/3p/3d) tiene el máximo del cuadrado de la parte radial más cerca del origen? Es decir, ¿Cuál de estos orbitales (3s/3p/3d) es más penetrante?
