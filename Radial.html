@@ -498,7 +498,7 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 </div>
 </div>
 </div>
-<p><strong>Grafique la función del orbital 1s, <span class="math notranslate nohighlight">\(R_{n=1,l=0}\)</span>, y su función de distribución radial <span class="math notranslate nohighlight">\(4\pi r^2R^2_{n=1,l=0}\)</span></strong></p>
+<p><strong>Grafique el cuadrado de la función de densidad de probabilidad del orbital 1s, <span class="math notranslate nohighlight">\(R^2_{n=1,l=0}\)</span>, y su función de distribución radial <span class="math notranslate nohighlight">\(r^2R^2_{n=1,l=0}\)</span></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafica</span>
@@ -508,39 +508,35 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">a0</span><span class="o">=</span><span class="mf">1.0</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$R$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$R^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Función de densidad de probabilidad&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$4\pi^2R^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$r^2R^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Función de distribución radial&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="n">bd6d651b0e60</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;r&#39; is not defined
-</pre></div>
+<img alt="_images/Radial_10_0.png" src="_images/Radial_10_0.png" />
+<img alt="_images/Radial_10_1.png" src="_images/Radial_10_1.png" />
 </div>
 </div>
-</div>
-<p><strong>Realice la gráfica de R(r) (la parte radial de la función de onda) para los orbitales 1s (n=1, l=0),2s (n=2, l=0),3s (n=3, l=0) y 4s (n=4, l=0), y de <span class="math notranslate nohighlight">\(4\pi r^2R^2\)</span>.</strong></p>
+<p><strong>Realice la gráfica de R^2(r) (el cuadrado de la parte radial de la función de onda) para los orbitales 1s (n=1, l=0),2s (n=2, l=0),3s (n=3, l=0) y 4s (n=4, l=0), y de <span class="math notranslate nohighlight">\(r^2R^2\)</span>.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
@@ -553,8 +549,6 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Cambiar aqui para ajustar limites del eje X</span>
 <span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 
-<span class="n">a0</span><span class="o">=</span><span class="mf">1.0</span>
-
 <span class="c1">#Cambiar aqui para usar s,p,d,etc</span>
 <span class="n">l</span><span class="o">=</span><span class="mi">0</span>
 <span class="c1">#Cambiar aquí para elegir limites de los numeros cuanticos n</span>
@@ -563,24 +557,24 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span><span class="n">n_max</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="c1">#Cambiar aqui los titulos de los ejes</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$R$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$R(r)$ 1s, 2s ,3s y 4s&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$R^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$R^2(r)$ 1s, 2s ,3s y 4s&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span><span class="n">n_max</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="c1">#Cambiar aqui los titulos de los ejes</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$4\pi r^2R^2$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$4\pi r^2R^2(r)$ 1s, 2s ,3s y 4s&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$r^2R^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$r^2R^2(r)$ 1s, 2s ,3s y 4s&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -598,7 +592,7 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 <p>¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 3s?</p>
 <p><strong>Respuesta</strong></p>
 <p>¿Encuentra algún patrón respecto al número de máximos?</p>
-<p><strong>Realice la gráfica de la parte radial de la función de onda para los orbitales 3s (n=3, l=0),3p (n=3, l=1) y 3d (n=3, l=2), y de <span class="math notranslate nohighlight">\(4\pi r^2R^2\)</span>.</strong></p>
+<p><strong>Realice la gráfica del cuadrado de la parte radial de la función de onda para los orbitales 3s (n=3, l=0),3p (n=3, l=1) y 3d (n=3, l=2), y de <span class="math notranslate nohighlight">\(r^2R^2\)</span>.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
@@ -621,13 +615,13 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 
 <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lmin</span><span class="p">,</span><span class="n">lmax</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">)</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="c1">#Cambiar aqui los titulos de los ejes</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$R$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$R(r)$ 3s, 3p ,3d&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$R^2(r)$ 3s, 3p ,3d&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
 <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lmin</span><span class="p">,</span><span class="n">lmax</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
@@ -637,8 +631,8 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="c1">#Cambiar aqui los titulos de los ejes</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$4\pi r^2R^2$&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$4\pi r^2R^2$ 3s, 3p ,3d&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$r^2R^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$r^2R^2$ 3s, 3p ,3d&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
