@@ -1,80 +1,90 @@
-# Teoría de perturbaciones (niveles de energía no degenerados)
+#!/usr/bin/env python
+# coding: utf-8
 
-El objetivo es determinar una solución aproximada a la ecuación de Schrödinger para un Hamiltoniano $\hat{H}$. La suposición importante en la teoría de perturbaciones es que $\hat{H}$ es un poco diferente de un Hamiltoniano $\hat{H}^{(0)}$ del cual conocemos su solución; es decir, conocemos sus eigenfunciones y eigenvalores. Esto es 
+# # Teoría de perturbaciones (niveles de energía no degenerados)
 
-$$
-\hat{H}^{(0)} \Psi_n^{(0)} = E_n^{(0)}  \Psi_n^{(0)}
-$$
+# El objetivo es determinar una solución aproximada a la ecuación de Schrödinger para un Hamiltoniano $\hat{H}$. La suposición importante en la teoría de perturbaciones es que $\hat{H}$ es un poco diferente de un Hamiltoniano $\hat{H}^{(0)}$ del cual conocemos su solución; es decir, conocemos sus eigenfunciones y eigenvalores. Esto es 
+# 
+# $$
+# \hat{H}^{(0)} \Psi_n^{(0)} = E_n^{(0)}  \Psi_n^{(0)}
+# $$
+# 
+# donde tanto $E_n^{(0)}$ y $\Psi_n^{(0)}$ son conocidos. La diferencia entre $\hat{H}$ y $\hat{H}^{(0)}$ se llama la perturbación y la denotamos por $\hat{H}'$, esto es
+# 
+# $$
+# \hat{H}' = \hat{H}-\hat{H}^{(0)}
+# $$
+# 
+# El método presentado en este notebook tiene la suposición los niveles de energía $\big\{ E_n^{(0)}\big\}$ no están degenerados.
+# 
+# Proponemos una solución en serie aproximada a los eigenvalores ($E_n$) y eigenfunciones ($\Psi_n$) de $\hat{H}$ en términos de $E_n^{(0)}$ y $\Psi_n^{(0)}$ y correcciones a dichos valores. De tal foma que tenemos,
+# 
+# $$
+# E_n &=& E_n^{(0)}+ E_n^{(1)} + E_n^{(2)} +\ldots \\
+# \Psi_n &=& \Psi_n^{(0)}+\Psi^{(1)}+\Psi^{(2)}+\ldots
+# $$
+# 
+# ```{admonition} Inserto matemático: Correcciones
+# :class: dropdown
+# 
+# Con el fin de escribir las expresiones para las diferentes correcciones introducimos la notación para los elementos de matriz de la perturbación, ($\hat{H}'$),
+# 
+# $$
+# \hat{H}'_{m,n} = \langle \Psi_m^{(0)} | \hat{H}' | \Psi_n^{(0)} \rangle = \int \big( \Psi_m^{(0)} \big)^* \hat{H}' \Psi_n ^{(0)} \,dq
+# $$
+# 
+# donde $\Psi_n^{(0)}(q)$ son la eigenfunciones que conocemos de $\hat{H}^{(0)}$ y hemos denoatdo por $q$ a las coordenadas de las que dependen.
+# 
+# En términos de los elementos de matriz de $\hat{H}'$ tenemos,
+# 
+# $$
+# E_n \approx E_n^{(0)} +H'_{n,n} + \sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
+# $$
+# 
+# y
+# 
+# $$
+# \Psi_n \approx \Psi_n^{(0)} + \sum_{m\neq n} \frac{\hat{H}'_{m,n}}{E_n^{(0)}-E_m^{(0)}} \Psi_m^{(0)}
+# $$
+# ```
+# 
+# ---
 
-donde tanto $E_n^{(0)}$ y $\Psi_n^{(0)}$ son conocidos. La diferencia entre $\hat{H}$ y $\hat{H}^{(0)}$ se llama la perturbación y la denotamos por $\hat{H}'$, esto es
+# ## Ejemplo-Oscilador anarmónico
+# En Hamiltoniano del oscilador anarmónico de una partícula en una dimensión es:
+# 
+# $$
+# \hat{H} = \underbrace{-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2} k x^2 }_{\hat{H}^{(0)}} + \underbrace{cx^3 + dx^4}_{\hat{H}'}
+# $$
+# 
+# Los eigenvalores y eigenfunciones del oscilador armónico son:
+# 
+# $$
+# E_n^{(0)} = \bigg(n+\frac{1}{2}\bigg) h\nu
+# $$
+# 
+# $$
+# \Psi_n^{(0)} (x) = \frac{1}{\sqrt{2^n n !}} \bigg( \frac{\alpha}{\pi} \bigg)^{1/4} e^{-\alpha x^2/2 } H_n\bigg( \alpha^{1/2}\,x \bigg)
+# $$
+# 
+# donde  $\alpha = 2\pi\nu m /\hbar$ y 
+# 
+# $$
+# \nu = \frac{1}{2\pi }\bigg( \frac{k}{m}  \bigg)^{1/2}
+# $$
+# 
+# Realicemos numéricamente el cáculo de los elementos de matriz. 
 
-$$
-\hat{H}' = \hat{H}-\hat{H}^{(0)}
-$$
+# In[1]:
 
-El método presentado en este notebook tiene la suposición los niveles de energía $\big\{ E_n^{(0)}\big\}$ no están degenerados.
-
-Proponemos una solución en serie aproximada a los eigenvalores ($E_n$) y eigenfunciones ($\Psi_n$) de $\hat{H}$ en términos de $E_n^{(0)}$ y $\Psi_n^{(0)}$ y correcciones a dichos valores. De tal foma que tenemos,
-
-$$
-E_n &=& E_n^{(0)}+ E_n^{(1)} + E_n^{(2)} +\ldots \\
-\Psi_n &=& \Psi_n^{(0)}+\Psi^{(1)}+\Psi^{(2)}+\ldots
-$$
-
-```{admonition} Inserto matemático: Correcciones
-:class: dropdown
-
-Con el fin de escribir las expresiones para las diferentes correcciones introducimos la notación para los elementos de matriz de la perturbación, ($\hat{H}'$),
-
-$$
-\hat{H}'_{m,n} = \langle \Psi_m^{(0)} | \hat{H}' | \Psi_n^{(0)} \rangle = \int \big( \Psi_m^{(0)} \big)^* \hat{H}' \Psi_n ^{(0)} \,dq
-$$
-
-donde $\Psi_n^{(0)}(q)$ son la eigenfunciones que conocemos de $\hat{H}^{(0)}$ y hemos denoatdo por $q$ a las coordenadas de las que dependen.
-
-En términos de los elementos de matriz de $\hat{H}'$ tenemos,
-
-$$
-E_n \approx E_n^{(0)} +H'_{n,n} + \sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
-$$
-
-y
-
-$$
-\Psi_n \approx \Psi_n^{(0)} + \sum_{m\neq n} \frac{\hat{H}'_{m,n}}{E_n^{(0)}-E_m^{(0)}} \Psi_m^{(0)}
-$$
-```
-
----
-
-## Ejemplo-Oscilador anarmónico
-En Hamiltoniano del oscilador anarmónico de una partícula en una dimensión es:
-
-$$
-\hat{H} = \underbrace{-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2} k x^2 }_{\hat{H}^{(0)}} + \underbrace{cx^3 + dx^4}_{\hat{H}'}
-$$
-
-Los eigenvalores y eigenfunciones del oscilador armónico son:
-
-$$
-E_n^{(0)} = \bigg(n+\frac{1}{2}\bigg) h\nu
-$$
-
-$$
-\Psi_n^{(0)} (x) = \frac{1}{\sqrt{2^n n !}} \bigg( \frac{\alpha}{\pi} \bigg)^{1/4} e^{-\alpha x^2/2 } H_n\bigg( \alpha^{1/2}\,x \bigg)
-$$
-
-donde  $\alpha = 2\pi\nu m /\hbar$ y 
-
-$$
-\nu = \frac{1}{2\pi }\bigg( \frac{k}{m}  \bigg)^{1/2}
-$$
-
-Realicemos numéricamente el cáculo de los elementos de matriz. 
 
 from pylab import *
 from scipy.special import factorial
 from scipy.special import eval_hermite as Hn
+
+
+# In[2]:
+
 
 π = pi
 k = 1902.5             # [ N·m^{-1}]  constante de fuerza del CO
@@ -116,13 +126,21 @@ def funcΨ0n(n,x):
 
 Ψ0n = funcΨ0n(n,x)
 
+
+# In[3]:
+
+
 # Podemos verificar que las eigenfunciones están normalizadas utilizando la regla del trapecio
 # Notemos que las eigenfunciones son reales por lo que Ψ*(x) = Ψ(x)
 Ψ2       = Ψ0n*Ψ0n
 Integral = trapz(Ψ2,x)
 print ("Integral: {0:.3f}".format(Integral))
 
-**Procedemos a evaluar los elementos de matriz**
+
+# **Procedemos a evaluar los elementos de matriz**
+
+# In[4]:
+
 
 # Definimos la perturbación H'
 c  = 600; d = 1e-4*(α*k*k)/4
@@ -147,22 +165,30 @@ for m in range(m_max):
     for mm in range(m_max):
         matrizHp[(m,mm)] = ElementoMatriz(m,mm,x)
 
+
+# In[5]:
+
+
 # Las matrices se pueden visulizar utilizando un mapa de colores
 plotM = imshow(matrizHp/e,cmap="Greys");
 plt.colorbar(label="$H'_{mn} [eV]$");
 # Notamos como los valores distinto de cero están cerca de la diagonal
 # lo cual es típico en la teoría de perturbaciones
 
----
 
-### Ejercicio 1.
-La corrección a primer orden de la energía de la energía del estado base es,
+# ---
 
-$$
-E_0^{(1)} = \frac{3d}{4\alpha²} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
-$$
+# ### Ejercicio 1.
+# La corrección a primer orden de la energía de la energía del estado base es,
+# 
+# $$
+# E_0^{(1)} = \frac{3d}{4\alpha²} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
+# $$
+# 
+# ¿Podría verificarla numéricamente?
 
-¿Podría verificarla numéricamente?
+# In[6]:
+
 
 # Solución
 
@@ -183,8 +209,12 @@ print ("E0^(0) = {0:.3e} [eV]".format(E00/e))
 print ("    En ≈ {0:.3e} [eV]".format(E00/e + E01numerico/e))
 # ¿La energía es mayor o menor a la del oscilador armónico?
 
-### Ejercicio 2.
-Podría calcular la corrección a primer orden del primer nivel excitado del oscilador armónico.
+
+# ### Ejercicio 2.
+# Podría calcular la corrección a primer orden del primer nivel excitado del oscilador armónico.
+
+# In[7]:
+
 
 # Solución
 
@@ -201,8 +231,12 @@ print ("E1^(0) = {0:.3e} [eV]".format(E10/e))
 print ("    En ≈ {0:.3e} [eV]".format(E10/e + E11numerico/e))
 # ¿La energía es mayor o menor a la del oscilador armónico?
 
-### Ejercicio 3.
-Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la primera corrección a la energía.
+
+# ### Ejercicio 3.
+# Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la primera corrección a la energía.
+
+# In[8]:
+
 
 # Solución
 
@@ -211,6 +245,10 @@ En1numerico = array( [ matrizHp[n,n] for n in range(5) ] )
 En0         = array( [ eigenEn0(n) for n in range(5) ] )
 
 Enapprox    = En0 + En1numerico
+
+
+# In[9]:
+
 
 for n in range(5):
     plot( [0,1],[En0[n]/e,En0[n]/e],c='k' )
@@ -221,13 +259,17 @@ xlim(-2,3)
 xticks([])
 ylabel("$E [eV]$")
 
-### Corrección a segundo orden
 
-De la teoría de perturbaciones tenemos que 
+# ### Corrección a segundo orden
+# 
+# De la teoría de perturbaciones tenemos que 
+# 
+# $$
+# E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
+# $$
 
-$$
-E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
-$$
+# In[10]:
+
 
 # Previamente realizamos el gráfico de los elementos de matriz
 
@@ -237,6 +279,10 @@ plt.colorbar(label="$H'_{mn} [eV]$");
 # Notamos como los valores distinto de cero están cerca de la diagonal
 # lo cual es típico en la teoría de perturbaciones
 
+
+# In[11]:
+
+
 # Sin embargo, los términos a sumar son los elementos de matriz 
 # al cuadrado dividos por la diferencia de energía del nivel a corregir.
 
@@ -244,8 +290,11 @@ plt.colorbar(label="$H'_{mn} [eV]$");
 n   = 0
 E00 = eigenEn0(0) 
 # Dado que las eigenfunciones son reales no tenemos que tomar el conjugado
-Sumandos = array( [ matrizHp[(m,n)]*matrizHp[(m,n)]/( eigenEn0(n)-eigenEn0(m) ) \
-                    for m in range(m_max) if m != n ] )
+Sumandos = array( [ matrizHp[(m,n)]*matrizHp[(m,n)]/( eigenEn0(n)-eigenEn0(m) )                     for m in range(m_max) if m != n ] )
+
+
+# In[12]:
+
 
 # Grafiquemos los sumandos
 plot(range(1,m_max),Sumandos/e,'o-');
@@ -255,10 +304,19 @@ xlabel("m")
 
 #Podemos notar en este caso que la mayor corrección al estado base proviene del nivel n = 2
 
+
+# In[13]:
+
+
 # Notamos que los sumandos siempre son negativos para el estado base
 print (" Máximo valor de los sumandos: {0:.3e}".format( max(Sumandos)/e ))
 
-### Ejercicio 4.
-Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la segunda corrección a la energía. ¿Es muy diferente al resultado de la corrección a primer orden?
+
+# ### Ejercicio 4.
+# Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la segunda corrección a la energía. ¿Es muy diferente al resultado de la corrección a primer orden?
+
+# In[ ]:
+
 
 # Solución
+

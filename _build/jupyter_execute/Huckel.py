@@ -1,77 +1,99 @@
-# Método de Hückel
+#!/usr/bin/env python
+# coding: utf-8
 
-El método de Hückel fue propuesto por Erich Hückel en 1930 y permite modelar de una forma muy aproximada a sistemas $\pi$ conjugados. Se establece un Hamiltoniano para los electrones $\pi$.
+# # Método de Hückel
 
-```{admonition} Descripción del Hamiltoniano de electrones $\pi$
-:class: dropdown
-$$
-H_\pi = \sum_{i=1}^{n_\pi}h^{eff}(i)
-$$
+# El método de Hückel fue propuesto por Erich Hückel en 1930 y permite modelar de una forma muy aproximada a sistemas $\pi$ conjugados. Se establece un Hamiltoniano para los electrones $\pi$.
+# 
+# ```{admonition} Descripción del Hamiltoniano de electrones $\pi$
+# :class: dropdown
+# $$
+# H_\pi = \sum_{i=1}^{n_\pi}h^{eff}(i)
+# $$
+# 
+# donde a $h^{eff}(i)$ se le conoce como Hamiltoniano efectivo, y representa las interacciones promediadas del i-ésimo electrón $\pi$ con los núcleos y los otros electrones. Se debe cumplir la ecuación
+# 
+# $$
+# h^{eff}(i) \phi_i = \varepsilon_i \phi_i
+# $$
+# 
+# donde $\phi_i$ son los orbitales moleculares de Hückel. Aplicaremos la combinación lineal de orbitales atómicos
+# 
+# $$
+# \phi_i(x) = \sum_{\mu} C_{\mu i} \mu (x)
+# $$
+# ```
+# 
+# Encontraremos los coeficientes que minimizen la energía, resolviendo la ecuación del método variacional lineal
+# 
+# $$
+# HC = SC\varepsilon
+# $$
 
-donde a $h^{eff}(i)$ se le conoce como Hamiltoniano efectivo, y representa las interacciones promediadas del i-ésimo electrón $\pi$ con los núcleos y los otros electrones. Se debe cumplir la ecuación
+# **Importe las siguientes librerías**
+# 
+# - numpy
+# - sympy
+# - pyplot de matplotlib
 
-$$
-h^{eff}(i) \phi_i = \varepsilon_i \phi_i
-$$
+# In[1]:
 
-donde $\phi_i$ son los orbitales moleculares de Hückel. Aplicaremos la combinación lineal de orbitales atómicos
-
-$$
-\phi_i(x) = \sum_{\mu} C_{\mu i} \mu (x)
-$$
-```
-
-Encontraremos los coeficientes que minimizen la energía, resolviendo la ecuación del método variacional lineal
-
-$$
-HC = SC\varepsilon
-$$
-
-**Importe las siguientes librerías**
-
-- numpy
-- sympy
-- pyplot de matplotlib
 
 # Librerías
+
+
+# In[2]:
+
 
 import numpy as np
 import sympy as sp
 from matplotlib import pyplot as plt
 
-El método de Hückel implica las siguientes aproximaciones
 
-1. El traslape entre el mismo orbital es uno, y entre orbitales distintos es cero.
-2. Los elementos diagonales, $h^{eff}_{ii}$ valen $\alpha$
-3. Los elementos $h^{eff}_{ij}$ valen $\beta$ si el i-ésimo átomo y el j-ésimo átomo son vecinos, y cero si no lo son.
+# El método de Hückel implica las siguientes aproximaciones
+# 
+# 1. El traslape entre el mismo orbital es uno, y entre orbitales distintos es cero.
+# 2. Los elementos diagonales, $h^{eff}_{ii}$ valen $\alpha$
+# 3. Los elementos $h^{eff}_{ij}$ valen $\beta$ si el i-ésimo átomo y el j-ésimo átomo son vecinos, y cero si no lo son.
+# 
+# El valor de $\alpha$ y $\beta$ es negativo.
 
-El valor de $\alpha$ y $\beta$ es negativo.
+# ## Butadieno
+# 
+# <img src="images/butadieno.png" alt="butadieno" width="150"/>
+# 
+# Considere al butadieno con la numeración que se muestra sobre cada carbono.
 
-## Butadieno
+# **Defina los símbolos $\alpha$ y $\beta$ con sympy.**
 
-<img src="images/butadieno.png" alt="butadieno" width="150"/>
+# In[4]:
 
-Considere al butadieno con la numeración que se muestra sobre cada carbono.
-
-**Defina los símbolos $\alpha$ y $\beta$ con sympy.**
 
 # Defina alpha y beta
+
+
+# In[5]:
+
 
 alpha = sp.Symbol("alpha")
 beta = sp.Symbol("beta")
 
-**Construya la matriz S de $4 \times 4$, donde cada columna y cada renglón corresponde a un renglón según su numeración.** Por ejemplo, la primera columna corresponde al carbono con el número 1, la segunda columna al carbono con el número 2, etc. Recuerde que
 
-$$
-S_{ij} = \left\{
-  \begin{array}{lll}
-  1 & \mathrm{si\ } i=j \\
-  0 & \mathrm{si\ } i \neq j
-  \end{array}
-  \right.
-$$
+# **Construya la matriz S de $4 \times 4$, donde cada columna y cada renglón corresponde a un renglón según su numeración.** Por ejemplo, la primera columna corresponde al carbono con el número 1, la segunda columna al carbono con el número 2, etc. Recuerde que
+# 
+# $$
+# S_{ij} = \left\{
+#   \begin{array}{lll}
+#   1 & \mathrm{si\ } i=j \\
+#   0 & \mathrm{si\ } i \neq j
+#   \end{array}
+#   \right.
+# $$
+# 
+# Note que $S$ es la matriz identidad.
 
-Note que $S$ es la matriz identidad.
+# In[6]:
+
 
 S = sp.zeros(4)
 
@@ -82,19 +104,27 @@ S[3,3] = 1
 
 S
 
-**Construya la matriz $H$ de $4 \times 4$, donde cada columna y cada renglón corresponde a un renglón según su numeración.** Por ejemplo, la primera columna corresponde al carbono con el número 1, la segunda columna al carbono con el número 2, etc. Recuerde que
 
-$$
-H_{ij} = \left\{
-  \begin{array}{lll}
-  \alpha & \mathrm{si\ } i=j \\
-  \beta & \mathrm{si\ } i \neq j \mathrm{\ pero\ pertenecen\ a\ átomos\ vecinos}\\
-  0 & \mathrm{si\ } i \neq j \mathrm{\ pero\ NO \ pertenecen\ a\ átomos\ vecinos}\\
-  \end{array}
-  \right.
-$$
+# **Construya la matriz $H$ de $4 \times 4$, donde cada columna y cada renglón corresponde a un renglón según su numeración.** Por ejemplo, la primera columna corresponde al carbono con el número 1, la segunda columna al carbono con el número 2, etc. Recuerde que
+# 
+# $$
+# H_{ij} = \left\{
+#   \begin{array}{lll}
+#   \alpha & \mathrm{si\ } i=j \\
+#   \beta & \mathrm{si\ } i \neq j \mathrm{\ pero\ pertenecen\ a\ átomos\ vecinos}\\
+#   0 & \mathrm{si\ } i \neq j \mathrm{\ pero\ NO \ pertenecen\ a\ átomos\ vecinos}\\
+#   \end{array}
+#   \right.
+# $$
+
+# In[7]:
+
 
 # Matriz H
+
+
+# In[8]:
+
 
 H = sp.zeros(4)
 
@@ -112,37 +142,49 @@ H[3,2] = beta
 
 H
 
-Hay que resolver
 
-$$
-HC = SC\varepsilon
-$$
+# Hay que resolver
+# 
+# $$
+# HC = SC\varepsilon
+# $$
+# 
+# Note que como $S$ es la matriz identidad, en realidad hay que resolver
+# 
+# $$
+# HC = C\varepsilon
+# $$
+# 
+# es decir, hay que encontrar los vectores y valores propios de $H$.
+# 
+# Para ello utilizaremos la instrucción
+# ~~~python
+# H.eigenvects(simplify=True)
+# ~~~
+# 
+# El primer número es el valor propio (energía orbital), el segundo número su repetición (degeneración) y el tercer número son los coeficientes no normalizados (orbital molecular).
 
-Note que como $S$ es la matriz identidad, en realidad hay que resolver
+# In[9]:
 
-$$
-HC = C\varepsilon
-$$
-
-es decir, hay que encontrar los vectores y valores propios de $H$.
-
-Para ello utilizaremos la instrucción
-~~~python
-H.eigenvects(simplify=True)
-~~~
-
-El primer número es el valor propio (energía orbital), el segundo número su repetición (degeneración) y el tercer número son los coeficientes no normalizados (orbital molecular).
 
 # Valores y vectores propios de H
 
+
+# In[10]:
+
+
 sp.pprint(H.eigenvects(simplify=True))
 
-**Extra**. Dibuje a mano una representación esquemática del diagrama de orbitales moleculares según las energías que obtuvo. Las energías son
 
-$$\varepsilon_1 = \alpha + \left(\frac{1+\sqrt{5}}{2} \right)\beta$$
-$$\varepsilon_2 = \alpha + \left(\frac{-1+\sqrt{5}}{2} \right)\beta$$
-$$\varepsilon_3 = \alpha + \left(\frac{1-\sqrt{5}}{2} \right)\beta$$
-$$\varepsilon_4 = \alpha + \left(\frac{-1-\sqrt{5}}{2} \right)\beta$$
+# **Extra**. Dibuje a mano una representación esquemática del diagrama de orbitales moleculares según las energías que obtuvo. Las energías son
+# 
+# $$\varepsilon_1 = \alpha + \left(\frac{1+\sqrt{5}}{2} \right)\beta$$
+# $$\varepsilon_2 = \alpha + \left(\frac{-1+\sqrt{5}}{2} \right)\beta$$
+# $$\varepsilon_3 = \alpha + \left(\frac{1-\sqrt{5}}{2} \right)\beta$$
+# $$\varepsilon_4 = \alpha + \left(\frac{-1-\sqrt{5}}{2} \right)\beta$$
+
+# In[16]:
+
 
 alpha = -1
 beta = -1
@@ -156,29 +198,41 @@ plt.xlim(0,4)
 plt.legend()
 plt.show()
 
-## Benceno
 
-<img src="images/benceno.png" alt="benceno" width="150"/>
+# ## Benceno
+# 
+# <img src="images/benceno.png" alt="benceno" width="150"/>
+# 
+# Considere al benceno con la numeración que se muestra sobre cada carbono.
 
-Considere al benceno con la numeración que se muestra sobre cada carbono.
+# **Defina los símbolos $\alpha$ y $\beta$ con sympy.**
 
-**Defina los símbolos $\alpha$ y $\beta$ con sympy.**
+# In[4]:
+
 
 # Defina alpha y beta
+
+
+# In[5]:
+
 
 alpha = sp.Symbol("alpha")
 beta = sp.Symbol("beta")
 
-**Construya la matriz S de $6 \times 6$, donde cada columna y cada renglón corresponde a un renglón según su numeración.**
 
-$$
-S_{ij} = \left\{
-  \begin{array}{lll}
-  1 & \mathrm{si\ } i=j \\
-  0 & \mathrm{si\ } i \neq j
-  \end{array}
-  \right.
-$$
+# **Construya la matriz S de $6 \times 6$, donde cada columna y cada renglón corresponde a un renglón según su numeración.**
+# 
+# $$
+# S_{ij} = \left\{
+#   \begin{array}{lll}
+#   1 & \mathrm{si\ } i=j \\
+#   0 & \mathrm{si\ } i \neq j
+#   \end{array}
+#   \right.
+# $$
+
+# In[10]:
+
 
 S = sp.zeros(6)
 
@@ -191,19 +245,27 @@ S[5,5] = 1
 
 S
 
-**Construya la matriz $H$ de $4 \times 4$, donde cada columna y cada renglón corresponde a un renglón según su numeración.** Por ejemplo, la primera columna corresponde al carbono con el número 1, la segunda columna al carbono con el número 2, etc. Recuerde que
 
-$$
-H_{ij} = \left\{
-  \begin{array}{lll}
-  \alpha & \mathrm{si\ } i=j \\
-  \beta & \mathrm{si\ } i \neq j \mathrm{\ pero\ pertenecen\ a\ átomos\ vecinos}\\
-  0 & \mathrm{si\ } i \neq j \mathrm{\ pero\ NO \ pertenecen\ a\ átomos\ vecinos}\\
-  \end{array}
-  \right.
-$$
+# **Construya la matriz $H$ de $4 \times 4$, donde cada columna y cada renglón corresponde a un renglón según su numeración.** Por ejemplo, la primera columna corresponde al carbono con el número 1, la segunda columna al carbono con el número 2, etc. Recuerde que
+# 
+# $$
+# H_{ij} = \left\{
+#   \begin{array}{lll}
+#   \alpha & \mathrm{si\ } i=j \\
+#   \beta & \mathrm{si\ } i \neq j \mathrm{\ pero\ pertenecen\ a\ átomos\ vecinos}\\
+#   0 & \mathrm{si\ } i \neq j \mathrm{\ pero\ NO \ pertenecen\ a\ átomos\ vecinos}\\
+#   \end{array}
+#   \right.
+# $$
+
+# In[11]:
+
 
 # Matriz H
+
+
+# In[14]:
+
 
 H = sp.zeros(6)
 
@@ -229,34 +291,46 @@ H[5,0] = beta
 
 H
 
-Note que $H$ en benceno es similar, pero no igual al caso del butadieno.
 
-Hay que resolver
+# Note que $H$ en benceno es similar, pero no igual al caso del butadieno.
+# 
+# Hay que resolver
+# 
+# $$
+# HC = SC\varepsilon
+# $$
+# 
+# Note que como $S$ es la matriz identidad, en realidad hay que resolver
+# 
+# $$
+# HC = C\varepsilon
+# $$
 
-$$
-HC = SC\varepsilon
-$$
+# In[ ]:
 
-Note que como $S$ es la matriz identidad, en realidad hay que resolver
-
-$$
-HC = C\varepsilon
-$$
 
 # Valores y vectores propios de H
 
+
+# In[15]:
+
+
 sp.pprint(H.eigenvects(simplify=True))
 
-**Extra**. Dibuje a mano una representación esquemática del diagrama de orbitales moleculares según las energías que obtuvo. Las energías son
 
-$$\varepsilon_1 = \alpha - 2\beta$$
-$$\varepsilon_2 = \alpha - \beta$$
-$$\varepsilon_3 = \alpha - \beta$$
-$$\varepsilon_4 = \alpha + \beta$$
-$$\varepsilon_5 = \alpha + \beta$$
-$$\varepsilon_6 = \alpha + 2\beta$$
+# **Extra**. Dibuje a mano una representación esquemática del diagrama de orbitales moleculares según las energías que obtuvo. Las energías son
+# 
+# $$\varepsilon_1 = \alpha - 2\beta$$
+# $$\varepsilon_2 = \alpha - \beta$$
+# $$\varepsilon_3 = \alpha - \beta$$
+# $$\varepsilon_4 = \alpha + \beta$$
+# $$\varepsilon_5 = \alpha + \beta$$
+# $$\varepsilon_6 = \alpha + 2\beta$$
+# 
+# Note que hay degeneración.
 
-Note que hay degeneración.
+# In[17]:
+
 
 alpha = -1
 beta = -1
@@ -272,18 +346,19 @@ plt.xlim(0,4)
 plt.legend()
 plt.show()
 
-<img src="images/benceno-hmo1.png" alt="benceno-hmo1" width="100"/>
 
-<img src="images/benceno-hmo2.png" alt="benceno-hmo2" width="120"/>
+# <img src="images/benceno-hmo1.png" alt="benceno-hmo1" width="100"/>
+# 
+# <img src="images/benceno-hmo2.png" alt="benceno-hmo2" width="120"/>
+# 
+# <img src="images/benceno-hmo3.png" alt="benceno-hmo3" width="80"/>
+# 
+# <img src="images/benceno-hmo4.png" alt="benceno-hmo4" width="120"/>
+# 
+# <img src="images/benceno-hmo5.png" alt="benceno-hmo5" width="80"/>
+# 
+# <img src="images/benceno-hmo6.png" alt="benceno-hmo6" width="120"/>
 
-<img src="images/benceno-hmo3.png" alt="benceno-hmo3" width="80"/>
-
-<img src="images/benceno-hmo4.png" alt="benceno-hmo4" width="120"/>
-
-<img src="images/benceno-hmo5.png" alt="benceno-hmo5" width="80"/>
-
-<img src="images/benceno-hmo6.png" alt="benceno-hmo6" width="120"/>
-
-## Referencias
-
-P. Atkins and R. Friedman, Oxford Univ. Press New York (2005).
+# ## Referencias
+# 
+# P. Atkins and R. Friedman, Oxford Univ. Press New York (2005).

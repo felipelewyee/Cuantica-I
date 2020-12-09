@@ -1,139 +1,157 @@
-# Solución Radial
+#!/usr/bin/env python
+# coding: utf-8
 
-El sistema consta de un electrón girándo en torno a un núcleo (protón) con radio no fijo.
+# # Solución Radial
 
-El Hamiltoniano de este sistema contiene la energía cinética del electrón, la energía cinética del núcleo y la interacción coulómbica núcleo-electrón.
+# El sistema consta de un electrón girándo en torno a un núcleo (protón) con radio no fijo.
+# 
+# El Hamiltoniano de este sistema contiene la energía cinética del electrón, la energía cinética del núcleo y la interacción coulómbica núcleo-electrón.
+# 
+# $$
+# H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}
+# $$
+# 
+# ```{margin}
+# Para `átomos hidrogenoides` en general, podemos considerar la carga del núcleo, Z, en el término del `potencial` y escribir $\frac{Ze^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}$.
+# ```
+# 
+# ```{margin}
+# Los `átomos hidrogenoides` son aquellos que solo tienen un electrón. Por ejemplo `H`, `He`$^+$, `Li`$^{2+}$, `C`$^{5+}$, `U`$^{91+}$.
+# ```
+# 
+# 
+# La ecuación de Schrödinger a resolver es
+# 
+# $$
+# \left(-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}\right) \Psi = E \Psi
+# $$
+# 
+# ```{admonition} Inserto matemático: Cambio a sistema de masa reducida
+# :class: dropdown
+# 
+# El problema se puede simplificar al utilizar coordenadas de masa reducida. La `masa reducida` tiene masa $\mu$ y coordenadas $r$, el `centro de masa` tiene masa $m_T$ y coordenadas $R_{cm}$. Para ver como hacer este cambio, vea {doc}`Rotor`.
+# 
+# La nueva ecuación de Schrödinger es
+# 
+# $$
+# \left(-\frac{\hbar^2}{2m_T}\nabla^2_{cm}-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0r}\right) \Psi = E \Psi
+# $$
+# 
+# La función de onda $\Psi$ de la ecuación anterior depende de las coordenadas del centro de masa, $R_{cm}$ y de las coordenadas de la masa reducida, $r$. Se propone una solución por separación de variables, tal que $\Psi(R,r) = \Phi(R_{cm}) \psi(r)$. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones
+# 
+# $$
+# \left(-\frac{\hbar^2}{2m_T}\nabla^2_{cm}\right) \Phi = E_{cm} \Phi
+# $$
+# 
+# $$
+# \left(-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0r}\right) \psi = E \psi
+# $$
+# 
+# La primera ecuación corresponde al movimiento de una partícula libre.
+# 
+# Para resolver la segunda ecuación cambiamos a coordenadas polares, recordando que 
+# 
+# $$
+# \nabla^2_{\mu}=\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) = \left( \frac{1}{r} \frac{\partial^2}{\partial r^2} r + \frac{1}{r^2} \Lambda^2 \right) 
+# $$
+# 
+# Entonces
+# 
+# $$
+# \left(-\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\partial^2}{\partial r^2} r -\frac{\hbar^2}{2\mu} \frac{1}{r^2} \Lambda^2 -\frac{e^2}{4\pi\varepsilon_0r}\right) \psi = E \psi
+# $$
+# ```
+# 
+# ```{admonition} Inserto matemático: Separación de variables
+# :class: dropdown
+# 
+# Se propone que la función de onda $\psi$ puede ser separada en una parte radial y una parte angular, es decir
+# 
+# $$
+# \psi=R(r)Y(\theta,\phi)
+# $$
+# 
+# Esto genera una ecuación a resolver para la parte radial (y una para la parte angular que trataremos posteriormente)
+# 
+# $$
+# -\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{d^2(rR)}{dr^2} - \left[ \frac{e^2}{4\pi\varepsilon_0r} -\frac{l(l+1)\hbar^2}{2\mu r^2} \right] R = ER 
+# $$
+# ```
+# 
+# Las soluciones a la ecuación radial son
+# 
+# $$
+# R_{n,l}(r) = -N_{n,l} \left( \frac{2r}{na_0} \right)^l e^{-r/na_0} L_{n+l}^{2l+1} \left( \frac{2r}{n a_0} \right)
+# $$
+# 
+# aquí han surgido los números cuánticos
+# 
+# ```{margin}
+# $n$ es el `número cuántico principal`.
+# ```
+# $$
+# n=1,2,3,...
+# $$
+# 
+# ```{margin}
+# $l$ es el `número cuántico azimutal` o `momento angular`.
+# ```
+# $$
+# l=0,...,n-1
+# $$
+# 
+# $N_{n,l}$ toma la forma
+# 
+# $$
+# N_{n,l} = \left( \frac{2}{na_0} \right)^{3/2} \sqrt{\frac{(n-l-1)!}{2n[(n+l)!]^3}}
+# $$
+# 
+# $L_{n+l}^{2l+1}$ son los polinomios asociados de Laguerre
+# 
+# ```{admonition} Inserto matemático: Polinomios de Laguerre
+# :class: dropdown
+# 
+# $$
+# L_{k}^N (r) = \frac{d^N}{dr^N} L_k(r)
+# $$
+# 
+# $$
+# L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
+# $$
+# ```
 
-$$
-H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}
-$$
+# **Importe las siguientes librerías**
+# 
+# - pyplot de matplotlib
+# - numpy
+# - derivative de scipy.misc
+# - laguerre de scipy.special
 
-```{margin}
-Para `átomos hidrogenoides` en general, podemos considerar la carga del núcleo, Z, en el término del `potencial` y escribir $\frac{Ze^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}$.
-```
+# In[1]:
 
-```{margin}
-Los `átomos hidrogenoides` son aquellos que solo tienen un electrón. Por ejemplo `H`, `He`$^+$, `Li`$^{2+}$, `C`$^{5+}$, `U`$^{91+}$.
-```
-
-
-La ecuación de Schrödinger a resolver es
-
-$$
-\left(-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}\right) \Psi = E \Psi
-$$
-
-```{admonition} Inserto matemático: Cambio a sistema de masa reducida
-:class: dropdown
-
-El problema se puede simplificar al utilizar coordenadas de masa reducida. La `masa reducida` tiene masa $\mu$ y coordenadas $r$, el `centro de masa` tiene masa $m_T$ y coordenadas $R_{cm}$. Para ver como hacer este cambio, vea {doc}`Rotor`.
-
-La nueva ecuación de Schrödinger es
-
-$$
-\left(-\frac{\hbar^2}{2m_T}\nabla^2_{cm}-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0r}\right) \Psi = E \Psi
-$$
-
-La función de onda $\Psi$ de la ecuación anterior depende de las coordenadas del centro de masa, $R_{cm}$ y de las coordenadas de la masa reducida, $r$. Se propone una solución por separación de variables, tal que $\Psi(R,r) = \Phi(R_{cm}) \psi(r)$. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones
-
-$$
-\left(-\frac{\hbar^2}{2m_T}\nabla^2_{cm}\right) \Phi = E_{cm} \Phi
-$$
-
-$$
-\left(-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0r}\right) \psi = E \psi
-$$
-
-La primera ecuación corresponde al movimiento de una partícula libre.
-
-Para resolver la segunda ecuación cambiamos a coordenadas polares, recordando que 
-
-$$
-\nabla^2_{\mu}=\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) = \left( \frac{1}{r} \frac{\partial^2}{\partial r^2} r + \frac{1}{r^2} \Lambda^2 \right) 
-$$
-
-Entonces
-
-$$
-\left(-\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{\partial^2}{\partial r^2} r -\frac{\hbar^2}{2\mu} \frac{1}{r^2} \Lambda^2 -\frac{e^2}{4\pi\varepsilon_0r}\right) \psi = E \psi
-$$
-```
-
-```{admonition} Inserto matemático: Separación de variables
-:class: dropdown
-
-Se propone que la función de onda $\psi$ puede ser separada en una parte radial y una parte angular, es decir
-
-$$
-\psi=R(r)Y(\theta,\phi)
-$$
-
-Esto genera una ecuación a resolver para la parte radial (y una para la parte angular que trataremos posteriormente)
-
-$$
--\frac{\hbar^2}{2\mu} \frac{1}{r} \frac{d^2(rR)}{dr^2} - \left[ \frac{e^2}{4\pi\varepsilon_0r} -\frac{l(l+1)\hbar^2}{2\mu r^2} \right] R = ER 
-$$
-```
-
-Las soluciones a la ecuación radial son
-
-$$
-R_{n,l}(r) = -N_{n,l} \left( \frac{2r}{na_0} \right)^l e^{-r/na_0} L_{n+l}^{2l+1} \left( \frac{2r}{n a_0} \right)
-$$
-
-aquí han surgido los números cuánticos
-
-```{margin}
-$n$ es el `número cuántico principal`.
-```
-$$
-n=1,2,3,...
-$$
-
-```{margin}
-$l$ es el `número cuántico azimutal` o `momento angular`.
-```
-$$
-l=0,...,n-1
-$$
-
-$N_{n,l}$ toma la forma
-
-$$
-N_{n,l} = \left( \frac{2}{na_0} \right)^{3/2} \sqrt{\frac{(n-l-1)!}{2n[(n+l)!]^3}}
-$$
-
-$L_{n+l}^{2l+1}$ son los polinomios asociados de Laguerre
-
-```{admonition} Inserto matemático: Polinomios de Laguerre
-:class: dropdown
-
-$$
-L_{k}^N (r) = \frac{d^N}{dr^N} L_k(r)
-$$
-
-$$
-L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
-$$
-```
-
-**Importe las siguientes librerías**
-
-- pyplot de matplotlib
-- numpy
-- derivative de scipy.misc
-- laguerre de scipy.special
 
 # Librerías
+
+
+# In[2]:
+
 
 from matplotlib import pyplot as plt
 import numpy as np
 from scipy.misc import derivative
 from scipy.special import laguerre
 
-**Defina una función que reciba valores de $n$ y $l$ y regresen la función $R(r)$**
+
+# **Defina una función que reciba valores de $n$ y $l$ y regresen la función $R(r)$**
+
+# In[3]:
+
 
 # def R(r)
+
+
+# In[4]:
+
 
 def R_func(r,n,l):
     N = (2/(n*a0))**(3/2)*np.sqrt((np.math.factorial(n-l-1))/(2*n*((np.math.factorial(n+l)))**3))
@@ -144,9 +162,17 @@ def R_func(r,n,l):
     
     return R
 
-**Grafique el cuadrado de la función de densidad de probabilidad del orbital 1s, $R^2_{n=1,l=0}$, y su función de distribución radial $r^2R^2_{n=1,l=0}$**
+
+# **Grafique el cuadrado de la función de densidad de probabilidad del orbital 1s, $R^2_{n=1,l=0}$, y su función de distribución radial $r^2R^2_{n=1,l=0}$**
+
+# In[5]:
+
 
 # Grafica
+
+
+# In[6]:
+
 
 r=np.linspace(0,25,100)
 
@@ -169,9 +195,17 @@ plt.ylabel("$r^2R^2$")
 plt.title("Función de distribución radial")
 plt.show()
 
-**Realice la gráfica de R^2(r) (el cuadrado de la parte radial de la función de onda) para los orbitales 1s (n=1, l=0),2s (n=2, l=0),3s (n=3, l=0) y 4s (n=4, l=0), y de $r^2R^2$.**
+
+# **Realice la gráfica de R^2(r) (el cuadrado de la parte radial de la función de onda) para los orbitales 1s (n=1, l=0),2s (n=2, l=0),3s (n=3, l=0) y 4s (n=4, l=0), y de $r^2R^2$.**
+
+# In[7]:
+
 
 # Gráfica
+
+
+# In[8]:
+
 
 #Cambiar aqui para ajustar limites del eje X
 r=np.linspace(0,25,100)
@@ -204,25 +238,33 @@ plt.ylabel("$r^2R^2$")
 plt.title("$r^2R^2(r)$ 1s, 2s ,3s y 4s")
 plt.show()
 
-**Responda las siguientes preguntas**
 
-¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 1s?
+# **Responda las siguientes preguntas**
+# 
+# ¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 1s?
+# 
+# **Respuesta**
+# 
+# ¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 2s?
+# 
+# **Respuesta**
+# 
+# ¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 3s?
+# 
+# **Respuesta**
+# 
+# ¿Encuentra algún patrón respecto al número de máximos?
 
-**Respuesta**
+# **Realice la gráfica del cuadrado de la parte radial de la función de onda para los orbitales 3s (n=3, l=0),3p (n=3, l=1) y 3d (n=3, l=2), y de $r^2R^2$.**
 
-¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 2s?
+# In[5]:
 
-**Respuesta**
-
-¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 3s?
-
-**Respuesta**
-
-¿Encuentra algún patrón respecto al número de máximos?
-
-**Realice la gráfica del cuadrado de la parte radial de la función de onda para los orbitales 3s (n=3, l=0),3p (n=3, l=1) y 3d (n=3, l=2), y de $r^2R^2$.**
 
 # Gráfica
+
+
+# In[9]:
+
 
 #Cambiar aqui para ajustar eje X
 r=np.linspace(0,25,100)
@@ -257,14 +299,15 @@ plt.ylabel("$r^2R^2$")
 plt.title("$r^2R^2$ 3s, 3p ,3d")
 plt.show()
 
-¿Cuál de los orbitales (3s/3p/3d) tiene el máximo del cuadrado de la parte radial más cerca del origen? Es decir, ¿Cuál de estos orbitales (3s/3p/3d) es más penetrante?
 
-**Respuesta**
+# ¿Cuál de los orbitales (3s/3p/3d) tiene el máximo del cuadrado de la parte radial más cerca del origen? Es decir, ¿Cuál de estos orbitales (3s/3p/3d) es más penetrante?
+# 
+# **Respuesta**
 
-## Referencias
+# ## Referencias
 
-- Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005.
-- Pilar, F. L. Elementary Quantum Chemistry; 2001.
-- Zettili, N. Quantum Mechanics: Concepts and Applications, 2nd ed.; Wiley: Chichester, U.K, 2009.
-- Levine, I. N. Quantum Chemistry, 5th ed.; Prentice Hall: Upper Saddle River, N.J, 2000.
-- McQuarrie, D. A.; Simon, J. D. Physical Chemistry: A Molecular Approach; University Science Books: Sausalito, Calif, 1997.
+# - Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005.
+# - Pilar, F. L. Elementary Quantum Chemistry; 2001.
+# - Zettili, N. Quantum Mechanics: Concepts and Applications, 2nd ed.; Wiley: Chichester, U.K, 2009.
+# - Levine, I. N. Quantum Chemistry, 5th ed.; Prentice Hall: Upper Saddle River, N.J, 2000.
+# - McQuarrie, D. A.; Simon, J. D. Physical Chemistry: A Molecular Approach; University Science Books: Sausalito, Calif, 1997.

@@ -1,67 +1,85 @@
-# Método variacional lineal
+#!/usr/bin/env python
+# coding: utf-8
 
-El método variacional lineal permite resolver el problema
+# # Método variacional lineal
 
-$$
-H\psi = E \psi
-$$
+# El método variacional lineal permite resolver el problema
+# 
+# $$
+# H\psi = E \psi
+# $$
+# 
+# al expresar la función de onda como una combinación lineal de funciones. Cuando las funciones $\psi_i$ forman un conjunto completo, la combinación lineal es exacta, sin embargo, en la práctica se usan solo algunas funciones, por lo que la función de onda resultante es aproximada, es decir
+# 
+# $$
+# \psi_{prueba} = \sum_{i=1} c_i \psi_i  
+# $$
+# 
+# ```{important}
+# Al sustituir la expansión de la función de onda en la ecuación de Schrödinger, se obtiene la ecuación
+# 
+# $$
+# \mathcal{H} \mathcal{C} = \mathcal{S} \mathcal{C} \mathcal{\varepsilon}
+# $$
+# 
+# En general se realizan los siguientes pasos:
+# 
+# 1. Se seleccionan las funciones $\psi_i$ que se usarán para expandir la función de onda, es común elegir funciones exponenciales o gaussianas.
+# 2. Se evalúan las matrices $\mathcal{H}$, y $\mathcal{S}$.
+# 3. Se resuelve el problema de valores propios $\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}$.
+# 4. Se construye la función de onda utilizando los coeficientes obtenidos.
+# ```
+# 
+# Una consecuencia de este método es que sin importar las funciones $\psi_i$ que se usen, siempre que cumplan con las restricciones del problema, la solución de prueba siempre tiene una energía mayor o igual a la solución exacta. Por lo tanto, podemos construir varias funciones de prueba y tomar la que de la energía más baja.
+# 
+# Para ejemplificar este procedimiento, resolveremos el `átomo de hidrógeno` utilizando el método variacional lineal.
 
-al expresar la función de onda como una combinación lineal de funciones. Cuando las funciones $\psi_i$ forman un conjunto completo, la combinación lineal es exacta, sin embargo, en la práctica se usan solo algunas funciones, por lo que la función de onda resultante es aproximada, es decir
+# **Importe las siguientes librerías**
+# 
+# - numpy
+# - sympy
 
-$$
-\psi_{prueba} = \sum_{i=1} c_i \psi_i  
-$$
+# In[1]:
 
-```{important}
-Al sustituir la expansión de la función de onda en la ecuación de Schrödinger, se obtiene la ecuación
-
-$$
-\mathcal{H} \mathcal{C} = \mathcal{S} \mathcal{C} \mathcal{\varepsilon}
-$$
-
-En general se realizan los siguientes pasos:
-
-1. Se seleccionan las funciones $\psi_i$ que se usarán para expandir la función de onda, es común elegir funciones exponenciales o gaussianas.
-2. Se evalúan las matrices $\mathcal{H}$, y $\mathcal{S}$.
-3. Se resuelve el problema de valores propios $\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}$.
-4. Se construye la función de onda utilizando los coeficientes obtenidos.
-```
-
-Una consecuencia de este método es que sin importar las funciones $\psi_i$ que se usen, siempre que cumplan con las restricciones del problema, la solución de prueba siempre tiene una energía mayor o igual a la solución exacta. Por lo tanto, podemos construir varias funciones de prueba y tomar la que de la energía más baja.
-
-Para ejemplificar este procedimiento, resolveremos el `átomo de hidrógeno` utilizando el método variacional lineal.
-
-**Importe las siguientes librerías**
-
-- numpy
-- sympy
 
 # Librerías
+
+
+# In[2]:
+
 
 import numpy as np
 import sympy as sp
 
-## Átomo de hidrógeno con dos gausianas
 
-**Paso 1.** Seleccionar funciones $\psi_i$ para construir $\psi_{prueba}$
+# ## Átomo de hidrógeno con dos gausianas
 
-$$
-\psi_{prueba} = \sum_{i=1} c_i \psi_i  
-$$
+# **Paso 1.** Seleccionar funciones $\psi_i$ para construir $\psi_{prueba}$
+# 
+# $$
+# \psi_{prueba} = \sum_{i=1} c_i \psi_i  
+# $$
 
-Para este ejemplo tomaremos dos funciones gaussianas:
+# Para este ejemplo tomaremos dos funciones gaussianas:
+# 
+# $$
+# \psi_1 = \left( \frac{2(1.309756377)}{\pi} \right)^{\frac{3}{4}} e^{-1.309756377r^2}
+# $$
+# 
+# $$
+# \psi_2 = \left( \frac{2(0.233135974)}{\pi} \right)^{\frac{3}{4}} e^{-0.233135974r^2}
+# $$
+# 
+# **Defina las funciones gaussianas usando álgebra simbólica**
 
-$$
-\psi_1 = \left( \frac{2(1.309756377)}{\pi} \right)^{\frac{3}{4}} e^{-1.309756377r^2}
-$$
+# In[3]:
 
-$$
-\psi_2 = \left( \frac{2(0.233135974)}{\pi} \right)^{\frac{3}{4}} e^{-0.233135974r^2}
-$$
-
-**Defina las funciones gaussianas usando álgebra simbólica**
 
 # Defina funciones
+
+
+# In[4]:
+
 
 
 
@@ -73,27 +91,35 @@ sp.pprint(psi_1)
 print("psi_2")
 sp.pprint(psi_2)
 
-**Paso 2.** Evaluar las matrices $\mathcal{H}$ y $\mathcal{S}$.
 
-El Hamiltoniano del átomo de hidrógeno es
+# **Paso 2.** Evaluar las matrices $\mathcal{H}$ y $\mathcal{S}$.
 
-$$
-\hat{H} = -\frac{1}{2} \nabla^2 - \frac{1}{r} = -\frac{1}{2} \frac{1}{r} \frac{d^2}{dr^2} r -\frac{1}{r}
-$$
+# El Hamiltoniano del átomo de hidrógeno es
+# 
+# $$
+# \hat{H} = -\frac{1}{2} \nabla^2 - \frac{1}{r} = -\frac{1}{2} \frac{1}{r} \frac{d^2}{dr^2} r -\frac{1}{r}
+# $$
+# 
+# Por tanto, la matriz $\mathcal{H}$ es
+# 
+# $$
+# \mathcal{H} = \begin{pmatrix} H_{11} & H_{12}\\
+# H_{21} & H_{22}
+# \end{pmatrix} = \begin{pmatrix} 4 \pi\int_0^\infty \psi_1^* \hat{H} \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_1^* \hat{H} \psi_2 r^2dr\\
+# 4 \pi\int_0^\infty \psi_2^* \hat{H} \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_2^* \hat{H} \psi_2 r^2dr
+# \end{pmatrix}
+# $$
+# 
+# **Genere una matriz de 2x2 y evalúe las integrales**
 
-Por tanto, la matriz $\mathcal{H}$ es
+# In[5]:
 
-$$
-\mathcal{H} = \begin{pmatrix} H_{11} & H_{12}\\
-H_{21} & H_{22}
-\end{pmatrix} = \begin{pmatrix} 4 \pi\int_0^\infty \psi_1^* \hat{H} \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_1^* \hat{H} \psi_2 r^2dr\\
-4 \pi\int_0^\infty \psi_2^* \hat{H} \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_2^* \hat{H} \psi_2 r^2dr
-\end{pmatrix}
-$$
-
-**Genere una matriz de 2x2 y evalúe las integrales**
 
 # Matriz H
+
+
+# In[6]:
+
 
 H_1 = -1/2*1/r*sp.diff(r*psi_1,r,r) - 1/r*psi_1
 H_2 = -1/2*1/r*sp.diff(r*psi_2,r,r) - 1/r*psi_2
@@ -106,19 +132,27 @@ H[1,1] = 4*sp.pi*sp.integrate(psi_2*H_2*r**2,(r,0,sp.oo))
 H=H.evalf()
 H
 
-La matriz S es
 
-$$
-\mathcal{S} = \begin{pmatrix} S_{11} & S_{12}\\
-S_{21} & S_{22}
-\end{pmatrix} = \begin{pmatrix} 4 \pi\int_0^\infty \psi_1^* \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_1^* \psi_2 r^2dr\\
-4 \pi\int_0^\infty \psi_2^* \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_2^* \psi_2 r^2dr
-\end{pmatrix}
-$$
+# La matriz S es
+# 
+# $$
+# \mathcal{S} = \begin{pmatrix} S_{11} & S_{12}\\
+# S_{21} & S_{22}
+# \end{pmatrix} = \begin{pmatrix} 4 \pi\int_0^\infty \psi_1^* \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_1^* \psi_2 r^2dr\\
+# 4 \pi\int_0^\infty \psi_2^* \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_2^* \psi_2 r^2dr
+# \end{pmatrix}
+# $$
+# 
+# **Genere una matrix de 2x2 y evalúe las integrales**
 
-**Genere una matrix de 2x2 y evalúe las integrales**
+# In[7]:
+
 
 # Matriz S
+
+
+# In[8]:
+
 
 S = sp.zeros(2)
 S[0,0] = 4*sp.pi*sp.integrate(psi_1*psi_1*r**2,(r,0,sp.oo))
@@ -127,15 +161,23 @@ S[1,0] = 4*sp.pi*sp.integrate(psi_2*psi_1*r**2,(r,0,sp.oo))
 S[1,1] = 4*sp.pi*sp.integrate(psi_2*psi_2*r**2,(r,0,sp.oo))
 S
 
-**Paso 3.** Resolver $\color{red}{\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}}$
 
-Para ello utilizaremos la instrucción
-~~~python
-E,C = LA.eigh(H,S)
-~~~
-la cual resuelve directamente el problema $\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}$. La columna de $\mathcal{C}$ con la energía más baja nos indica los coeficientes de la combinación lineal de la función de onda.
+# **Paso 3.** Resolver $\color{red}{\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}}$
+# 
+# Para ello utilizaremos la instrucción
+# ~~~python
+# E,C = LA.eigh(H,S)
+# ~~~
+# la cual resuelve directamente el problema $\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}$. La columna de $\mathcal{C}$ con la energía más baja nos indica los coeficientes de la combinación lineal de la función de onda.
+
+# In[9]:
+
 
 # Resuelva HC = SCe
+
+
+# In[10]:
+
 
 from scipy import linalg as LA
 import numpy
@@ -147,42 +189,74 @@ E,C = LA.eigh(H,S)
 print(E)
 print(C)
 
-**Paso 4.** Sustituir los coeficientes en $\psi_{prueba} = \sum_{i=1} c_i \psi_i$ para construir la función de onda.
+
+# **Paso 4.** Sustituir los coeficientes en $\psi_{prueba} = \sum_{i=1} c_i \psi_i$ para construir la función de onda.
+
+# In[11]:
+
 
 # Genere función de prueba
+
+
+# In[12]:
+
 
 psi_p = C[0][0]*psi_1 + C[1][0]*psi_2
 psi_p
 
-Adicionalmente, se puede comprobar que se cumple la condición de normalización. **Evalúe la integral**
 
-$$
-4\pi \int_0^{\infty} r^2 |\psi_{prueba}|^2 dr= 1
-$$
+# Adicionalmente, se puede comprobar que se cumple la condición de normalización. **Evalúe la integral**
+# 
+# $$
+# 4\pi \int_0^{\infty} r^2 |\psi_{prueba}|^2 dr= 1
+# $$
+
+# In[13]:
+
 
 # Integral
 
+
+# In[14]:
+
+
 4*sp.pi*sp.integrate(psi_p*psi_p*r**2,(r,0,sp.oo))
 
-**Almacene la función de prueba, así como cada una de las gausianas que la componen para comparar con la función de onda exacta**.
+
+# **Almacene la función de prueba, así como cada una de las gausianas que la componen para comparar con la función de onda exacta**.
+
+# In[15]:
+
 
 # Código
+
+
+# In[16]:
+
 
 psi_2g = psi_p
 psi_2g_1 = psi_1
 psi_2g_2 = psi_2
 
-**Genere la gráfica de las dos funciones $\psi_1$ y $\psi_2$, así como la $\psi_{prueba}$ y la solución exacta para el átomo de hidrógeno (1s)**
 
-```{tip}
-Recuerde
+# **Genere la gráfica de las dos funciones $\psi_1$ y $\psi_2$, así como la $\psi_{prueba}$ y la solución exacta para el átomo de hidrógeno (1s)**
+# 
+# ```{tip}
+# Recuerde
+# 
+# $$
+# 1s = \pi^{-1/2} e^{-|r|}
+# $$
+# ```
 
-$$
-1s = \pi^{-1/2} e^{-|r|}
-$$
-```
+# In[17]:
+
 
 # Gráfica
+
+
+# In[18]:
+
 
 from matplotlib import pyplot as plt
 
@@ -205,29 +279,37 @@ plt.plot(r1,psi_2g_2,label="psi_2",linestyle=':')
 plt.legend()
 plt.show()
 
-## Átomo de hidrógeno con tres gausianas
 
-**Paso 1.** Seleccionar funciones $\psi_i$ para construir $\psi_{prueba}$
+# ## Átomo de hidrógeno con tres gausianas
 
-$$
-\psi_{prueba} = \sum_{i=1} c_i \psi_i  
-$$
+# **Paso 1.** Seleccionar funciones $\psi_i$ para construir $\psi_{prueba}$
+# 
+# $$
+# \psi_{prueba} = \sum_{i=1} c_i \psi_i  
+# $$
+# 
+# Para este ejemplo **declare tres funciones gaussianas**
+# 
+# $$
+# \psi_1 = \left( \frac{2(3.42525091)}{\pi} \right)^{\frac{3}{4}} e^{-3.42525091r^2}
+# $$
+# 
+# $$
+# \psi_2 = \left( \frac{2(0.62391373)}{\pi} \right)^{\frac{3}{4}} e^{-0.62391373r^2}
+# $$
+# 
+# $$
+# \psi_3 = \left( \frac{2(0.16885540)}{\pi} \right)^{\frac{3}{4}} e^{-0.16885540r^2}
+# $$
 
-Para este ejemplo **declare tres funciones gaussianas**
+# In[19]:
 
-$$
-\psi_1 = \left( \frac{2(3.42525091)}{\pi} \right)^{\frac{3}{4}} e^{-3.42525091r^2}
-$$
-
-$$
-\psi_2 = \left( \frac{2(0.62391373)}{\pi} \right)^{\frac{3}{4}} e^{-0.62391373r^2}
-$$
-
-$$
-\psi_3 = \left( \frac{2(0.16885540)}{\pi} \right)^{\frac{3}{4}} e^{-0.16885540r^2}
-$$
 
 # Declare funciones
+
+
+# In[20]:
+
 
 sp.init_printing()
 
@@ -242,27 +324,35 @@ sp.pprint(psi_2)
 print("psi_3")
 sp.pprint(psi_3)
 
-El Hamiltoniano del átomo de hidrógeno es
 
-$$
-\hat{H} = -\frac{1}{2} \nabla^2 - \frac{1}{r} = -\frac{1}{2} \frac{1}{r} \frac{d^2}{dr^2} r -\frac{1}{r}
-$$
+# El Hamiltoniano del átomo de hidrógeno es
+# 
+# $$
+# \hat{H} = -\frac{1}{2} \nabla^2 - \frac{1}{r} = -\frac{1}{2} \frac{1}{r} \frac{d^2}{dr^2} r -\frac{1}{r}
+# $$
+# 
+# Por tanto, la matriz $\mathcal{H}$ es
+# 
+# $$
+# \mathcal{H} = \begin{pmatrix} H_{11} & H_{12} & H_{13}\\
+# H_{21} & H_{22} & H_{23}\\
+# H_{31} & H_{32} & H_{33}\\
+# \end{pmatrix} = \begin{pmatrix} 4 \pi\int_0^\infty \psi_1^* \hat{H} \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_1^* \hat{H} \psi_2 r^2dr & 4 \pi\int_0^\infty \psi_1^* \hat{H} \psi_3 r^2dr\\
+# 4 \pi\int_0^\infty \psi_2^* \hat{H} \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_2^* \hat{H} \psi_2 r^2dr & 4 \pi\int_0^\infty \psi_2^* \hat{H} \psi_3 r^2dr\\
+# 4 \pi\int_0^\infty \psi_3^* \hat{H} \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_3^* \hat{H} \psi_2 r^2dr & 4 \pi\int_0^\infty \psi_3^* \hat{H} \psi_3 r^2dr\\
+# \end{pmatrix}
+# $$
+# 
+# **Evalúe la matriz H**
 
-Por tanto, la matriz $\mathcal{H}$ es
+# In[21]:
 
-$$
-\mathcal{H} = \begin{pmatrix} H_{11} & H_{12} & H_{13}\\
-H_{21} & H_{22} & H_{23}\\
-H_{31} & H_{32} & H_{33}\\
-\end{pmatrix} = \begin{pmatrix} 4 \pi\int_0^\infty \psi_1^* \hat{H} \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_1^* \hat{H} \psi_2 r^2dr & 4 \pi\int_0^\infty \psi_1^* \hat{H} \psi_3 r^2dr\\
-4 \pi\int_0^\infty \psi_2^* \hat{H} \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_2^* \hat{H} \psi_2 r^2dr & 4 \pi\int_0^\infty \psi_2^* \hat{H} \psi_3 r^2dr\\
-4 \pi\int_0^\infty \psi_3^* \hat{H} \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_3^* \hat{H} \psi_2 r^2dr & 4 \pi\int_0^\infty \psi_3^* \hat{H} \psi_3 r^2dr\\
-\end{pmatrix}
-$$
-
-**Evalúe la matriz H**
 
 # Matriz H
+
+
+# In[22]:
+
 
 H_1 = -1/2*1/r*sp.diff(r*psi_1,r,r) - 1/r*psi_1
 H_2 = -1/2*1/r*sp.diff(r*psi_2,r,r) - 1/r*psi_2
@@ -282,19 +372,27 @@ H[2,2] = 4*sp.pi*sp.integrate(psi_3*H_3*r**2,(r,0,sp.oo))
 H=H.evalf()
 H
 
-**Evalúe la matriz S**
 
-$$
-\mathcal{S} = \begin{pmatrix} S_{11} & S_{12} & S_{13}\\
-S_{21} & S_{22} & S_{23} \\
-S_{31} & S_{32} & S_{33} \\
-\end{pmatrix} = \begin{pmatrix} 4 \pi\int_0^\infty \psi_1^* \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_1^* \psi_2 r^2dr & 4 \pi\int_0^\infty \psi_1^* \psi_3 r^2dr\\
-4 \pi\int_0^\infty \psi_2^* \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_2^* \psi_2 r^2dr & 4 \pi\int_0^\infty \psi_2^* \psi_3 r^2dr\\
-4 \pi\int_0^\infty \psi_2^* \psi_3 r^2dr & 4 \pi\int_0^\infty \psi_3^* \psi_2 r^2dr & 4 \pi\int_0^\infty \psi_3^* \psi_3 r^2dr
-\end{pmatrix}
-$$
+# **Evalúe la matriz S**
+# 
+# $$
+# \mathcal{S} = \begin{pmatrix} S_{11} & S_{12} & S_{13}\\
+# S_{21} & S_{22} & S_{23} \\
+# S_{31} & S_{32} & S_{33} \\
+# \end{pmatrix} = \begin{pmatrix} 4 \pi\int_0^\infty \psi_1^* \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_1^* \psi_2 r^2dr & 4 \pi\int_0^\infty \psi_1^* \psi_3 r^2dr\\
+# 4 \pi\int_0^\infty \psi_2^* \psi_1 r^2dr & 4 \pi\int_0^\infty \psi_2^* \psi_2 r^2dr & 4 \pi\int_0^\infty \psi_2^* \psi_3 r^2dr\\
+# 4 \pi\int_0^\infty \psi_2^* \psi_3 r^2dr & 4 \pi\int_0^\infty \psi_3^* \psi_2 r^2dr & 4 \pi\int_0^\infty \psi_3^* \psi_3 r^2dr
+# \end{pmatrix}
+# $$
+
+# In[23]:
+
 
 # Matriz S
+
+
+# In[24]:
+
 
 S = sp.zeros(3)
 S[0,0] = 4*sp.pi*sp.integrate(psi_1*psi_1*r**2,(r,0,sp.oo))
@@ -308,15 +406,23 @@ S[2,1] = 4*sp.pi*sp.integrate(psi_3*psi_2*r**2,(r,0,sp.oo))
 S[2,2] = 4*sp.pi*sp.integrate(psi_3*psi_3*r**2,(r,0,sp.oo))
 S
 
-**Paso 3.** Resolver $\color{red}{\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}}$
 
-Para ello utilizaremos la instrucción
-~~~python
-E,C = LA.eigh(H,S)
-~~~
-la cual resuelve directamente el problema $\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}$. La columna de $\mathcal{C}$ con la energía más baja nos indica los coeficientes de la combinación lineal de la función de onda.
+# **Paso 3.** Resolver $\color{red}{\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}}$
+# 
+# Para ello utilizaremos la instrucción
+# ~~~python
+# E,C = LA.eigh(H,S)
+# ~~~
+# la cual resuelve directamente el problema $\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}$. La columna de $\mathcal{C}$ con la energía más baja nos indica los coeficientes de la combinación lineal de la función de onda.
+
+# In[25]:
+
 
 # Resuelva HC=SCe
+
+
+# In[26]:
+
 
 from scipy import linalg as LA
 
@@ -327,31 +433,63 @@ E,C = LA.eigh(H,S)
 print(E)
 print(C)
 
-**Paso 4.** Sustituir los coeficientes en $\psi_{prueba} = \sum_{i=1} c_i \psi_i$ para construir la función de onda.
+
+# **Paso 4.** Sustituir los coeficientes en $\psi_{prueba} = \sum_{i=1} c_i \psi_i$ para construir la función de onda.
+
+# In[27]:
+
 
 # Genere la función de onda
+
+
+# In[28]:
+
 
 psi_p = C[0][0]*psi_1 + C[1][0]*psi_2 + C[2][0]*psi_3
 psi_p
 
-**Compruebe la normalización**
+
+# **Compruebe la normalización**
+
+# In[29]:
+
 
 # Normalizacióm
 
+
+# In[30]:
+
+
 4*sp.pi*sp.integrate(psi_p*psi_p*r**2,(r,0,sp.oo))
 
-**Guarde sus funciones para graficar**
+
+# **Guarde sus funciones para graficar**
+
+# In[31]:
+
 
 # Guarde funciones
+
+
+# In[32]:
+
 
 psi_3g = psi_p
 psi_3g_1 = psi_1
 psi_3g_2 = psi_2
 psi_3g_3 = psi_3
 
-**Genere la gráfica con tres gaussianas**
+
+# **Genere la gráfica con tres gaussianas**
+
+# In[33]:
+
 
 # Gráfica
+
+
+# In[34]:
+
 
 from matplotlib import pyplot as plt
 
@@ -377,9 +515,13 @@ plt.plot(r1,psi_3g_3,label="psi_3",linestyle=':')
 plt.legend()
 plt.show()
 
-## Átomo de hidrógeno dos gaussianas vs tres gaussianas
 
-En la gráfica se compara la función de onda aproximada por el método variacional lineal con dos gausianas y con tres gausianas contra la solución exacta del átomo de hidrógeno del orbital 1s. 
+# ## Átomo de hidrógeno dos gaussianas vs tres gaussianas
+
+# En la gráfica se compara la función de onda aproximada por el método variacional lineal con dos gausianas y con tres gausianas contra la solución exacta del átomo de hidrógeno del orbital 1s. 
+
+# In[35]:
+
 
 from matplotlib import pyplot as plt
 
@@ -399,10 +541,11 @@ plt.plot(r1,psi_3g1,label="3g")
 plt.legend()
 plt.show()
 
-## Referencias
 
-- Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005.
-- Pilar, F. L. Elementary Quantum Chemistry; 2001.
-- Zettili, N. Quantum Mechanics: Concepts and Applications, 2nd ed.; Wiley: Chichester, U.K, 2009.
-- Levine, I. N. Quantum Chemistry, 5th ed.; Prentice Hall: Upper Saddle River, N.J, 2000.
-- McQuarrie, D. A.; Simon, J. D. Physical Chemistry: A Molecular Approach; University Science Books: Sausalito, Calif, 1997.
+# ## Referencias
+
+# - Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005.
+# - Pilar, F. L. Elementary Quantum Chemistry; 2001.
+# - Zettili, N. Quantum Mechanics: Concepts and Applications, 2nd ed.; Wiley: Chichester, U.K, 2009.
+# - Levine, I. N. Quantum Chemistry, 5th ed.; Prentice Hall: Upper Saddle River, N.J, 2000.
+# - McQuarrie, D. A.; Simon, J. D. Physical Chemistry: A Molecular Approach; University Science Books: Sausalito, Calif, 1997.
