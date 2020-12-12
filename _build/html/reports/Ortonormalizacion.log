@@ -17,16 +17,24 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import scipy.integrate as integrate
-integrate.quad(lambda x: x**2,-3,3)
+norm2 = integrate.quad(lambda x: x*x,-3,3)[0]
+print("N**2 =",norm2)
+
+norm = np.sqrt(norm2)
+print("N =",norm)
+
+integrate.quad(lambda x: (x/norm)*(x/norm),-3,3)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m<ipython-input-2-ee93fbfd0788>[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mimport[0m [0mscipy[0m[0;34m.[0m[0mintegrate[0m [0;32mas[0m [0mintegrate[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m [0mintegrate[0m[0;34m.[0m[0mquad[0m[0;34m([0m[0;32mlambda[0m [0mx[0m[0;34m:[0m [0mx[0m[0;34m**[0m[0;36m2[0m[0;34m,[0m[0;34m-[0m[0;36m3[0m[0;34m,[0m[0;36m3[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-4-b2df9a5841ba>[0m in [0;36m<module>[0;34m[0m
+[1;32m      2[0m [0mprint[0m[0;34m([0m[0;34m"N**2 ="[0m[0;34m,[0m[0mnorm2[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      3[0m [0;34m[0m[0m
+[0;32m----> 4[0;31m [0mnorm[0m [0;34m=[0m [0mnp[0m[0;34m.[0m[0msqrt[0m[0;34m([0m[0mnorm2[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m [0mprint[0m[0;34m([0m[0;34m"N ="[0m[0;34m,[0m[0mnorm[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m [0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'scipy'
-ModuleNotFoundError: No module named 'scipy'
+[0;31mNameError[0m: name 'np' is not defined
+NameError: name 'np' is not defined
 

@@ -159,7 +159,7 @@ sym.pprint(sym.diff(f,x,x))
 # \end{equation}
 # 
 
-# In[14]:
+# In[13]:
 
 
 r=sym.symbols("r")
@@ -182,7 +182,7 @@ sym.pprint(sym.integrate(f,r))
 # \end{equation}
 # 
 
-# In[15]:
+# In[14]:
 
 
 r=sym.symbols("r")
@@ -201,7 +201,7 @@ sym.pprint(sym.integrate(f,(r,0,sym.oo)))
 # \frac{d^2}{dx^2} \psi(x) + k^2 \psi(x) = 0
 # \end{equation}
 
-# In[16]:
+# In[15]:
 
 
 x=sym.symbols("x")
@@ -230,7 +230,7 @@ sym.pprint(sym.dsolve(eq,psi(x)))
 # \end{equation}
 # 
 
-# In[17]:
+# In[16]:
 
 
 r=sym.symbols("r")
@@ -261,7 +261,7 @@ sym.pprint(sym.integrate(4*sym.pi*r**2*psi*(-1/2*1/r**2*sym.diff(r**2*sym.diff(p
 
 # **Paso 1.** Identifique las variables y declarelas como símbolos. En este caso: $r$ y $alpha$.
 
-# In[18]:
+# In[17]:
 
 
 r=sym.symbols("r")
@@ -270,7 +270,7 @@ alpha=sym.symbols("alpha",positive="True") #positive=True indica que alpha solo 
 
 # **Paso 2.** Identifique si existe alguna función que pueda ser expresada con las variables anteriores. En este caso sí la hay y es $\psi^{prueba}$.
 
-# In[19]:
+# In[18]:
 
 
 psi=(2*alpha/sym.pi)**(sym.S(3)/4)*sym.exp(-alpha*r**2)
@@ -288,7 +288,7 @@ sym.pprint(psi)
 # 
 # A la parte en $\color{red}{rojo}$ le llamaremos A, y a la parte en $\color{blue}{azul}$ le llamaremos B.
 
-# In[20]:
+# In[19]:
 
 
 # Primera parte (en rojo)
@@ -302,7 +302,7 @@ B=-(1/r)*psi
 
 # **Paso 4.** Exprese la función a integrar y haga la integral con $sp.integrate()$
 
-# In[22]:
+# In[20]:
 
 
 f=r**2*psi*(A+B)

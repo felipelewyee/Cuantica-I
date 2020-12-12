@@ -316,7 +316,7 @@ plt.xlim(0,4)
 plt.show()
 
 
-# In[14]:
+# In[13]:
 
 
 L = 1
@@ -353,13 +353,13 @@ plt.show()
 # 
 # ```
 
-# In[13]:
+# In[14]:
 
 
 # Integral
 
 
-# In[14]:
+# In[15]:
 
 
 import numpy as np
@@ -418,13 +418,13 @@ print("psi_1psi_3",psi_1psi_3)
 # from mpl_toolkits import mplot3d
 # ```
 
-# In[15]:
+# In[16]:
 
 
 # librería
 
 
-# In[16]:
+# In[17]:
 
 
 from mpl_toolkits import mplot3d
@@ -432,13 +432,13 @@ from mpl_toolkits import mplot3d
 
 # **Declare los valores de Lx=4, Ly=4, nx=1 y ny=1** 
 
-# In[17]:
+# In[18]:
 
 
 #valores
 
 
-# In[18]:
+# In[19]:
 
 
 Lx=4.0
@@ -463,13 +463,13 @@ ny=1.0
 # X, Y = np.meshgrid(x, y)
 # `````
 
-# In[19]:
+# In[20]:
 
 
 # Mallado
 
 
-# In[20]:
+# In[21]:
 
 
 x = np.linspace(0, Lx, 30)
@@ -500,13 +500,13 @@ X, Y = np.meshgrid(x, y)
 # ```
 # `````
 
-# In[21]:
+# In[22]:
 
 
 # Inserte código para gráfica
 
 
-# In[22]:
+# In[23]:
 
 
 psi = np.sqrt(2.0/Lx)*np.sqrt(2.0/Ly)*np.sin(nx*np.pi*X/Lx)*np.sin(ny*np.pi*Y/Ly)
@@ -534,13 +534,13 @@ plt.show()
 # 3. Genere la gráfica de $\psi$ y $\psi^2$.
 # ```
 
-# In[23]:
+# In[24]:
 
 
 # Inserte código para gráfica
 
 
-# In[24]:
+# In[25]:
 
 
 Lx=4.0

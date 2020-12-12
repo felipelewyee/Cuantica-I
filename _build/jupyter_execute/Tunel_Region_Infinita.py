@@ -83,13 +83,13 @@ from matplotlib import pyplot as plt
 
 # **De valores a las constantes del sistema**. Considere $m=1$, $\hbar=1$. Asigne algún valor a la energía y al potencial, respetando que $V > E$, observe que en este caso la energía no está cuantizada, por lo que puede tomar cualquier valor. A manera de ejemplo, considere $E=1$ y $V=10$. 
 
-# In[6]:
+# In[3]:
 
 
 # Valores de m,hbar,E,V
 
 
-# In[7]:
+# In[4]:
 
 
 m = 1
@@ -108,13 +108,13 @@ V = 10
 # k_2 = \frac{\sqrt{2m(V-E)}}{\hbar}
 # $$
 
-# In[8]:
+# In[5]:
 
 
 # k1 y k2
 
 
-# In[9]:
+# In[6]:
 
 
 k1 = np.sqrt(2*m*E)/hbar
@@ -137,13 +137,13 @@ k2 = np.sqrt(2*m*(V-E))/hbar
 # A=1
 # $$
 
-# In[10]:
+# In[7]:
 
 
 # A, B, C
 
 
-# In[81]:
+# In[8]:
 
 
 A = 1
@@ -153,13 +153,13 @@ C = 2*1j*k1/(1j*k1-k2)*A
 
 # Defina el dominio de $x$ para la región I y para la región II, recuerde que ambos se separan en $x=0$.
 
-# In[82]:
+# In[9]:
 
 
 # x1 y x2
 
 
-# In[88]:
+# In[10]:
 
 
 x1 = np.linspace(-2,0,100)
@@ -176,13 +176,13 @@ x2 = np.linspace(0,2,100)
 # \psi_{II} = C e^{-k_2 x}
 # $$
 
-# In[89]:
+# In[11]:
 
 
 # psi_I y psi_II
 
 
-# In[90]:
+# In[12]:
 
 
 psi_I = A*np.exp(1j*k1*x1) + B*np.exp(-1j*k1*x1)
@@ -191,13 +191,13 @@ psi_II = C*np.exp(-k2*x2)
 
 # Grafique $|\psi_I|^2$ y $|\psi_{II}|^2$
 
-# In[91]:
+# In[13]:
 
 
 # Grafica
 
 
-# In[92]:
+# In[14]:
 
 
 plt.plot(x1,abs(psi_I)**2)

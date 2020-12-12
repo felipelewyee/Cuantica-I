@@ -74,13 +74,13 @@ from scipy import integrate
 
 # **Establezca valores para las constantes** $\hbar$, $m$, $V$, $a$, $L$.
 
-# In[4]:
+# In[3]:
 
 
 # De valor a las constantes
 
 
-# In[5]:
+# In[4]:
 
 
 hbar = 1
@@ -170,13 +170,13 @@ L = 1.2
 # 
 # **Defina la función $f(E)$**
 
-# In[6]:
+# In[5]:
 
 
 # f(E)
 
 
-# In[13]:
+# In[6]:
 
 
 def f(E): 
@@ -198,7 +198,7 @@ def f(E):
 # E_dominio
 
 
-# In[14]:
+# In[8]:
 
 
 E_dominio = np.linspace(0,V,10000)
@@ -206,7 +206,7 @@ E_dominio = np.linspace(0,V,10000)
 
 # **Para cada uno de estos puntos evalúe si f(E) es menos a $10^{-2}$**, si la condición se cumple el valor de E es un buen candidato para ser una raíz de f(E). Haga una lista con los valores de E que cumplieron el criterio, este será su `primer guess`.
 
-# In[15]:
+# In[9]:
 
 
 E_primerguess = []
@@ -222,7 +222,7 @@ for E_i in E_dominio:
 # 
 # Para cada valor de energía de su primer guess, utilice el método de Newton para encontrar la raíz más cercana y guárdela en una lista si la diferencia con la última raíz es mayor a 0.1. Este será su `segundo guess`.
 
-# In[16]:
+# In[10]:
 
 
 E_segundoguess = [0]
@@ -234,13 +234,13 @@ for E_i in E_primerguess:
 
 # Imprima su segundo guess
 
-# In[17]:
+# In[11]:
 
 
 # Impresión
 
 
-# In[18]:
+# In[12]:
 
 
 print(E_segundoguess)

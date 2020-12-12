@@ -430,17 +430,6 @@ H\psi = E \psi
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mi">82</span><span class="n">f943850791</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="section" id="atomo-de-hidrogeno-con-dos-gausianas">
 <h2><span class="section-number">1.1. </span>Átomo de hidrógeno con dos gausianas<a class="headerlink" href="#atomo-de-hidrogeno-con-dos-gausianas" title="Permalink to this headline">¶</a></h2>
@@ -480,7 +469,9 @@ H\psi = E \psi
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>psi_1
-                                       2
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                       2
                   -0.75  -1.309756377⋅r 
 2.05904286572975⋅π     ⋅ℯ               
 psi_2
@@ -816,7 +807,8 @@ H_{31} &amp; H_{32} &amp; H_{33}\\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Variacional_Lineal_38_0.png" src="_images/Variacional_Lineal_38_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}2.18451729124954 &amp; -0.421671712626339 &amp; -0.456023099400813\\-0.421671712626338 &amp; -0.324598867969427 &amp; -0.449040085682301\\-0.456023099400813 &amp; -0.4490400856823 &amp; -0.402450645695726\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p><strong>Evalúe la matriz S</strong></p>
@@ -854,7 +846,8 @@ S_{31} &amp; S_{32} &amp; S_{33} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Variacional_Lineal_41_0.png" src="_images/Variacional_Lineal_41_0.png" />
+<div class="output text_latex math notranslate nohighlight">
+\[\begin{split}\displaystyle \left[\begin{matrix}1.0 &amp; 0.613563533690226 &amp; 0.275305015423435\\0.613563533690226 &amp; 1.0 &amp; 0.740976646110113\\0.275305015423435 &amp; 0.740976646110113 &amp; 1.0\end{matrix}\right]\end{split}\]</div>
 </div>
 </div>
 <p><strong>Paso 3.</strong> Resolver <span class="math notranslate nohighlight">\(\color{red}{\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}}\)</span></p>

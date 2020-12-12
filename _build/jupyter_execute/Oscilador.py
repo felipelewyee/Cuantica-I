@@ -101,7 +101,7 @@ alpha = np.power(m*k/(hbar**2),1.0/4.0)
 # Defina dominio
 
 
-# In[13]:
+# In[6]:
 
 
 x = np.linspace(-5,5,1000)
@@ -111,13 +111,13 @@ x = np.linspace(-5,5,1000)
 # 
 # Compare con Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005, p.62.
 
-# In[14]:
+# In[7]:
 
 
 # Grafica
 
 
-# In[15]:
+# In[8]:
 
 
 #Psi
@@ -145,13 +145,13 @@ plt.show()
 # 
 # Compare con Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005, p.62.
 
-# In[16]:
+# In[9]:
 
 
 # Gráfica
 
 
-# In[17]:
+# In[10]:
 
 
 #Psi

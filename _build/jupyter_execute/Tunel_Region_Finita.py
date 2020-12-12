@@ -92,13 +92,13 @@ from matplotlib import pyplot as plt
 
 # **De valores a las constantes del sistema**. Considere $m=1$, $\hbar=1$ y $L=1$. Asigne un valor de enería y potencial respetando la relación $E < V$, por ejemplo, $E=1$, $V=10$.
 
-# In[18]:
+# In[3]:
 
 
 # m, hbar, L, E, V
 
 
-# In[19]:
+# In[4]:
 
 
 m = 1
@@ -118,13 +118,13 @@ V = 10
 # k_2 = \sqrt{\frac{2m(V-E)}{\hbar^2}}
 # $$
 
-# In[20]:
+# In[5]:
 
 
 #k1 y k2
 
 
-# In[21]:
+# In[6]:
 
 
 k1 = np.sqrt(2*m*E/hbar**2)
@@ -155,13 +155,13 @@ k2 = np.sqrt(2*m*(V-E)/hbar**2)
 # F = 1
 # $$
 
-# In[22]:
+# In[7]:
 
 
 # A, B, C, D, F
 
 
-# In[23]:
+# In[8]:
 
 
 F = 1
@@ -174,13 +174,13 @@ B = C + D - A
 
 # Defina un dominio para $x$. Sugerencia: Use linspace
 
-# In[24]:
+# In[9]:
 
 
 # Dominio de x
 
 
-# In[25]:
+# In[10]:
 
 
 x1 = np.linspace(-10,0,100)
@@ -200,13 +200,13 @@ x3 = np.linspace(L,10,100)
 #   \right.
 # $$
 
-# In[26]:
+# In[11]:
 
 
 # psi_I, psi_II y psi_III
 
 
-# In[27]:
+# In[12]:
 
 
 psi_I = A*np.exp(1j*k1*x1) + B*np.exp(-1j*k1*x1)
@@ -216,13 +216,13 @@ psi_III = F*np.exp(1j*k1*x3)
 
 # Grafique el cuadrado de la función de onda.
 
-# In[28]:
+# In[13]:
 
 
 # Grafica
 
 
-# In[29]:
+# In[14]:
 
 
 plt.plot(x1,abs(psi_I)**2)
@@ -250,13 +250,13 @@ plt.plot(x3,abs(psi_III)**2)
 # 
 # 4 Grafique T vs E/V
 
-# In[30]:
+# In[15]:
 
 
 # Gráficas
 
 
-# In[95]:
+# In[16]:
 
 
 for V in [2,4,8,16]:
@@ -322,13 +322,13 @@ for V in [2,4,8,16]:
 
 # **De valores a las constantes del sistema**. Considere $m=1$, $\hbar=1$ y $L=1$. Asigne un valor de enería y potencial respetando la relación $E > V$, por ejemplo, $E=40$, $V=10$.
 
-# In[34]:
+# In[17]:
 
 
 # m, hbar, L, E, V
 
 
-# In[35]:
+# In[18]:
 
 
 m = 1
@@ -348,13 +348,13 @@ V = 10
 # k_2 = \sqrt{\frac{2m(E-V)}{\hbar^2}}
 # $$
 
-# In[36]:
+# In[19]:
 
 
 #k1 y k2
 
 
-# In[37]:
+# In[20]:
 
 
 k1 = np.sqrt(2*m*E/hbar**2)
@@ -385,13 +385,13 @@ k2 = np.sqrt(2*m*(E-V)/hbar**2)
 # F = 1
 # $$
 
-# In[38]:
+# In[21]:
 
 
 # A, B, C, D, F
 
 
-# In[59]:
+# In[22]:
 
 
 F = 1
@@ -404,13 +404,13 @@ B = C + D - A
 
 # Defina un dominio para $x$. Sugerencia: Use linspace
 
-# In[60]:
+# In[23]:
 
 
 # Dominio de x
 
 
-# In[61]:
+# In[24]:
 
 
 x1 = np.linspace(-2,0,100)
@@ -430,13 +430,13 @@ x3 = np.linspace(L,2,100)
 #   \right.
 # $$
 
-# In[62]:
+# In[25]:
 
 
 # psi_I, psi_II y psi_III
 
 
-# In[63]:
+# In[26]:
 
 
 psi_I = A*np.exp(1j*k1*x1) + B*np.exp(-1j*k1*x1)
@@ -446,13 +446,13 @@ psi_III = F*np.exp(1j*k1*x3)
 
 # Grafique el cuadrado de la función de onda.
 
-# In[64]:
+# In[27]:
 
 
 # Grafica
 
 
-# In[65]:
+# In[28]:
 
 
 plt.plot(x1,abs(psi_I)**2)
@@ -470,13 +470,13 @@ plt.plot(x3,abs(psi_III)**2)
 # 
 # 4 Grafique T vs E/V
 
-# In[93]:
+# In[29]:
 
 
 # Gráfica
 
 
-# In[94]:
+# In[30]:
 
 
 for V in [2,4,8,16]:

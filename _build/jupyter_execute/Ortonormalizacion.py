@@ -111,13 +111,13 @@ integrate.quad(lambda x: x**2,-3,3)
 # $$
 # ```
 
-# In[23]:
+# In[3]:
 
 
 #Normalice función de onda
 
 
-# In[24]:
+# In[4]:
 
 
 norm2 = integrate.quad(lambda x: x*x,-3,3)[0]

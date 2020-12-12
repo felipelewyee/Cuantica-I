@@ -315,7 +315,7 @@ print (" Máximo valor de los sumandos: {0:.3e}".format( max(Sumandos)/e ))
 # ### Ejercicio 4.
 # Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la segunda corrección a la energía. ¿Es muy diferente al resultado de la corrección a primer orden?
 
-# In[ ]:
+# In[14]:
 
 
 # Solución

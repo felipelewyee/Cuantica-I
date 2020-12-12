@@ -66,13 +66,13 @@ from matplotlib import pyplot as plt
 
 # **Defina los símbolos $\alpha$ y $\beta$ con sympy.**
 
-# In[4]:
+# In[3]:
 
 
 # Defina alpha y beta
 
 
-# In[5]:
+# In[4]:
 
 
 alpha = sp.Symbol("alpha")
@@ -92,7 +92,7 @@ beta = sp.Symbol("beta")
 # 
 # Note que $S$ es la matriz identidad.
 
-# In[6]:
+# In[5]:
 
 
 S = sp.zeros(4)
@@ -117,13 +117,13 @@ S
 #   \right.
 # $$
 
-# In[7]:
+# In[6]:
 
 
 # Matriz H
 
 
-# In[8]:
+# In[7]:
 
 
 H = sp.zeros(4)
@@ -164,13 +164,13 @@ H
 # 
 # El primer número es el valor propio (energía orbital), el segundo número su repetición (degeneración) y el tercer número son los coeficientes no normalizados (orbital molecular).
 
-# In[9]:
+# In[8]:
 
 
 # Valores y vectores propios de H
 
 
-# In[10]:
+# In[9]:
 
 
 sp.pprint(H.eigenvects(simplify=True))
@@ -183,7 +183,7 @@ sp.pprint(H.eigenvects(simplify=True))
 # $$\varepsilon_3 = \alpha + \left(\frac{1-\sqrt{5}}{2} \right)\beta$$
 # $$\varepsilon_4 = \alpha + \left(\frac{-1-\sqrt{5}}{2} \right)\beta$$
 
-# In[16]:
+# In[10]:
 
 
 alpha = -1
@@ -207,13 +207,13 @@ plt.show()
 
 # **Defina los símbolos $\alpha$ y $\beta$ con sympy.**
 
-# In[4]:
+# In[11]:
 
 
 # Defina alpha y beta
 
 
-# In[5]:
+# In[12]:
 
 
 alpha = sp.Symbol("alpha")
@@ -231,7 +231,7 @@ beta = sp.Symbol("beta")
 #   \right.
 # $$
 
-# In[10]:
+# In[13]:
 
 
 S = sp.zeros(6)
@@ -258,13 +258,13 @@ S
 #   \right.
 # $$
 
-# In[11]:
+# In[14]:
 
 
 # Matriz H
 
 
-# In[14]:
+# In[15]:
 
 
 H = sp.zeros(6)
@@ -306,13 +306,13 @@ H
 # HC = C\varepsilon
 # $$
 
-# In[ ]:
+# In[16]:
 
 
 # Valores y vectores propios de H
 
 
-# In[15]:
+# In[17]:
 
 
 sp.pprint(H.eigenvects(simplify=True))
@@ -329,7 +329,7 @@ sp.pprint(H.eigenvects(simplify=True))
 # 
 # Note que hay degeneración.
 
-# In[17]:
+# In[18]:
 
 
 alpha = -1

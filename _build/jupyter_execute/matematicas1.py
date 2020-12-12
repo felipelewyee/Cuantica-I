@@ -76,7 +76,7 @@ plt.show()
 
 # **Haga la expansión en series de Fourier de la $f(x)=x$ en el intervalo $x \varepsilon [-10,10]$ con $n=10$**
 
-# In[ ]:
+# In[2]:
 
 
 from scipy import integrate
@@ -115,7 +115,7 @@ plt.show()
 # \end{equation}
 # 
 
-# In[ ]:
+# In[3]:
 
 
 from scipy import integrate

@@ -90,13 +90,13 @@ from mpl_toolkits.mplot3d import Axes3D
 # THETA,PHI = np.meshgrid(theta,phi)
 # ```
 
-# In[ ]:
+# In[3]:
 
 
 # Mallado
 
 
-# In[ ]:
+# In[4]:
 
 
 theta = np.linspace(0,np.pi,200)
@@ -109,13 +109,13 @@ THETA,PHI = np.meshgrid(theta,phi)
 # se recomienda $l=1$ y $ml=1$ para empezar, pero puede probar con otros
 # ```
 
-# In[ ]:
+# In[5]:
 
 
 # Seleccione l y ml
 
 
-# In[ ]:
+# In[6]:
 
 
 l = 1
@@ -145,13 +145,13 @@ ml = 1
 # plt.show()
 # ```
 
-# In[ ]:
+# In[7]:
 
 
 # Gráfica
 
 
-# In[ ]:
+# In[8]:
 
 
 R = abs(special.sph_harm(ml,l,PHI,THETA))
@@ -200,13 +200,13 @@ plt.show()
 
 # Represente la parte angular de las combinaciones lineales de $p_-$ y $p_+$ para formar $p_x$ y $p_y$.
 
-# In[ ]:
+# In[9]:
 
 
 # px y py
 
 
-# In[ ]:
+# In[10]:
 
 
 Rz = special.sph_harm(0,1,PHI,THETA)

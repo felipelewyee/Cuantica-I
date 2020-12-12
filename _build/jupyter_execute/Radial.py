@@ -257,13 +257,13 @@ plt.show()
 
 # **Realice la gráfica del cuadrado de la parte radial de la función de onda para los orbitales 3s (n=3, l=0),3p (n=3, l=1) y 3d (n=3, l=2), y de $r^2R^2$.**
 
-# In[5]:
+# In[9]:
 
 
 # Gráfica
 
 
-# In[9]:
+# In[10]:
 
 
 #Cambiar aqui para ajustar eje X
