@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Hartree-Fock-Roothan (HF) &#8212; Cuántica I</title>
+    <title>15. Hartree-Fock-Roothan (HF) &#8212; Cuántica I</title>
     
-  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -34,21 +31,20 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
         const thebe_selector_input = "pre,.cell_input div.highlight"
@@ -57,16 +53,16 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Moller-Plesset (MPn)" href="Moller-Plesset.html" />
-    <link rel="prev" title="1. Software" href="Software.html" />
-
+    <link rel="next" title="16. Moller-Plesset (MPn)" href="Moller-Plesset.html" />
+    <link rel="prev" title="14. Software" href="Software.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -75,32 +71,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Cuántica I</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Cuántica I</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    La Química Cuántica a tu alcance
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Python
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Tutorial-Basico.html">
    1. Tutorial Básico.
@@ -112,152 +108,153 @@
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Sistemas Sencillos
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Caja.html">
-   1. Partícula en la caja
+   3. Partícula en la caja
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tunel_Region_Infinita.html">
-   2. Penetración
+   4. Penetración
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tunel_Region_Finita.html">
-   3. Efecto Túnel
+   5. Efecto Túnel
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Oscilador.html">
-   4. Oscilador Armónico Cuántico
+   6. Oscilador Armónico Cuántico
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo.html">
-   5. Partícula en el anillo
+   7. Partícula en el anillo
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Esfera.html">
-   6. Partícula en la esfera
+   8. Partícula en la esfera
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Rotor.html">
-   7. Rotor Rígido
+   9. Rotor Rígido
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Átomo de Hidrógeno
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Radial.html">
-   1. Solución Radial
+   10. Solución Radial
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Orbitales.html">
-   2. Orbitales Atómicos
+   11. Orbitales Atómicos
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Métodos Aproximados
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Variacional_Lineal.html">
-   1. Método variacional lineal
+   12. Método variacional lineal
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="PerturbacionesSinDegeneracion.html">
-   2. Teoría de perturbaciones (niveles de energía no degenerados)
+   13. Teoría de perturbaciones (niveles de energía no degenerados)
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Sistemas de Muchos Electrones
  </span>
 </p>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Software.html">
-   1. Software
+   14. Software
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   2. Hartree-Fock-Roothan (HF)
+   15. Hartree-Fock-Roothan (HF)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Moller-Plesset.html">
-   3. Moller-Plesset (MPn)
+   16. Moller-Plesset (MPn)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="DFT.html">
-   4. Teoría de funcionales de la densidad (DFT)
+   17. Teoría de funcionales de la densidad (DFT)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Dimerizacion.html">
-   5. Dimerización de
+   18. Dimerización de
    <span class="math notranslate nohighlight">
     \(NO_2\)
    </span>
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Matemáticas
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="matematicas1.html">
-   1. Expansión en series
+   19. Expansión en series
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matematicas2.html">
-   2. Álgebra simbólica
+   20. Álgebra simbólica
   </a>
  </li>
 </ul>
-<p class="caption collapsible-parent">
+<p class="caption">
  <span class="caption-text">
   Anexos
  </span>
 </p>
-<ul class="nav sidenav_l1">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="CajaConTope.html">
-   1. Efecto Túnel en la Caja
+   21. Efecto Túnel en la Caja
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Huckel.html">
-   2. Método de Hückel
+   22. Método de Hückel
   </a>
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -273,21 +270,21 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
@@ -305,16 +302,16 @@
     </div>
 </div>
 
-        <!-- Source interaction buttons -->
+            <!-- Source interaction buttons -->
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -341,30 +338,30 @@
     </div>
 </div>
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#metodo-simple-psi4">
-   2.1. Método Simple. PSI4
+   15.1. Método Simple. PSI4
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   2.2. Referencias
+   15.2. Referencias
   </a>
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -373,7 +370,7 @@
               <div>
                 
   <div class="section" id="hartree-fock-roothan-hf">
-<h1><span class="section-number">2. </span>Hartree-Fock-Roothan (HF)<a class="headerlink" href="#hartree-fock-roothan-hf" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">15. </span>Hartree-Fock-Roothan (HF)<a class="headerlink" href="#hartree-fock-roothan-hf" title="Permalink to this headline">¶</a></h1>
 <p>Tenemos que resolver:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -469,7 +466,14 @@ H_{ij} = T_{ij} + V_{ij}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------Matriz S----------------
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------Matriz S----------------   =&gt; Loading Basis Set &lt;=
+
+    Name: STO-3G
+    Role: ORBITAL
+    Keyword: None
+    atoms 1-2 entry H          line    19 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/sto-3g.gbs 
+
+
 ⎡       1.0         0.658957120044946⎤
 ⎢                                    ⎥
 ⎣0.658957120044946         1.0       ⎦
@@ -620,9 +624,9 @@ Energia Electronica:  0.0
 ⎢                                    ⎥
 ⎣0.301394167431195  0.301394167431195⎦
 ----------------Matriz J----------------
-⎡0.672609505784481  0.446338435442644⎤
+⎡0.67260950578448   0.446338435442644⎤
 ⎢                                    ⎥
-⎣0.446338435442644  0.672609505784481⎦
+⎣0.446338435442644  0.67260950578448 ⎦
 ----------------Matriz K----------------
 ⎡0.590387599244941  0.528560341982183⎤
 ⎢                                    ⎥
@@ -635,7 +639,7 @@ Energia Electronica:  0.0
 ⎡-0.548993777224474  -1.21082257257642⎤
 ⎢                                     ⎥
 ⎣-0.548993777224474  1.21082257257642 ⎦
-Energia Electronica:  -1.8304383804166122
+Energia Electronica:  -1.8304383804166124
 ---------------------------------ITERACION---------------------------------
 ------------Matriz C Entrada------------
 ⎡-0.548993777224474  -1.21082257257642⎤
@@ -646,9 +650,9 @@ Energia Electronica:  -1.8304383804166122
 ⎢                                    ⎥
 ⎣0.301394167431195  0.301394167431195⎦
 ----------------Matriz J----------------
-⎡0.672609505784481  0.446338435442644⎤
+⎡0.67260950578448   0.446338435442644⎤
 ⎢                                    ⎥
-⎣0.446338435442644  0.672609505784481⎦
+⎣0.446338435442644  0.67260950578448 ⎦
 ----------------Matriz K----------------
 ⎡0.590387599244941  0.528560341982183⎤
 ⎢                                    ⎥
@@ -692,7 +696,7 @@ Energia Total:  -1.116684387066194
 </div>
 </div>
 <div class="section" id="metodo-simple-psi4">
-<h2><span class="section-number">2.1. </span>Método Simple. PSI4<a class="headerlink" href="#metodo-simple-psi4" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.1. </span>Método Simple. PSI4<a class="headerlink" href="#metodo-simple-psi4" title="Permalink to this headline">¶</a></h2>
 <p>Geometría del agua</p>
 <table class="colwidths-auto table">
 <thead>
@@ -741,12 +745,212 @@ Energia Total:  -1.116684387066194
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Hartree-Fock_19_0.png" src="_images/Hartree-Fock_19_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scratch directory: /tmp/
+
+Scratch directory: /tmp/
+
+*** tstart() called on HP-Pavilion-Gaming-Laptop-15-ec1xxx
+*** at Mon Sep  6 17:14:49 2021
+
+   =&gt; Loading Basis Set &lt;=
+
+    Name: 6-311G
+    Role: ORBITAL
+    Keyword: BASIS
+    atoms 1-2 entry H          line    21 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/6-311g.gbs 
+
+
+         ---------------------------------------------------------
+                                   SCF
+               by Justin Turney, Rob Parrish, Andy Simmonett
+                          and Daniel G. A. Smith
+                              RHF Reference
+                        1 Threads,    500 MiB Core
+         ---------------------------------------------------------
+
+  ==&gt; Geometry &lt;==
+
+    Molecular point group: d2h
+    Full point group: D_inf_h
+
+    Geometry (in Angstrom), charge = 0, multiplicity = 1:
+
+       Center              X                  Y                   Z               Mass       
+    ------------   -----------------  -----------------  -----------------  -----------------
+         H            0.000000000000     0.000000000000    -0.370700000000     1.007825032230
+         H            0.000000000000     0.000000000000     0.370700000000     1.007825032230
+
+  Running in d2h symmetry.
+
+  Rotational constants: A = ************  B =     60.86059  C =     60.86059 [cm^-1]
+  Rotational constants: A = ************  B = 1824554.71049  C = 1824554.71049 [MHz]
+  Nuclear repulsion =    0.713753993350418
+
+  Charge       = 0
+  Multiplicity = 1
+  Electrons    = 2
+  Nalpha       = 1
+  Nbeta        = 1
+
+  ==&gt; Algorithm &lt;==
+
+  SCF Algorithm Type is DF.
+  DIIS enabled.
+  MOM disabled.
+  Fractional occupation disabled.
+  Guess Type is SAD.
+  Energy threshold   = 1.00e-06
+  Density threshold  = 1.00e-06
+  Integral threshold = 1.00e-12
+
+  ==&gt; Primary Basis &lt;==
+
+  Basis Set: 6-311G
+    Blend: 6-311G
+    Number of shells: 6
+    Number of basis functions: 6
+    Number of Cartesian functions: 6
+    Spherical Harmonics?: true
+    Max angular momentum: 0
+
+   =&gt; Loading Basis Set &lt;=
+
+    Name: (6-311G AUX)
+    Role: JKFIT
+    Keyword: DF_BASIS_SCF
+    atoms 1-2 entry H          line    51 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/cc-pvtz-jkfit.gbs 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ==&gt; Integral Setup &lt;==
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  DFHelper Memory: AOs need 0.000 GiB; user supplied 0.366 GiB. Using in-core AOs.
+
+  ==&gt; MemDFJK: Density-Fitted J/K Matrices &lt;==
+
+    J tasked:                   Yes
+    K tasked:                   Yes
+    wK tasked:                   No
+    OpenMP threads:               1
+    Memory [MiB]:               375
+    Algorithm:                 Core
+    Schwarz Cutoff:           1E-12
+    Mask sparsity (%):       0.0000
+    Fitting Condition:        1E-10
+
+   =&gt; Auxiliary Basis Set &lt;=
+
+  Basis Set: (6-311G AUX)
+    Blend: CC-PVTZ-JKFIT
+    Number of shells: 20
+    Number of basis functions: 60
+    Number of Cartesian functions: 70
+    Spherical Harmonics?: true
+    Max angular momentum: 3
+
+  Minimum eigenvalue in the overlap matrix is 8.5036351072E-02.
+  Reciprocal condition number of the overlap matrix is 3.6125890129E-02.
+    Using symmetric orthogonalization.
+
+  ==&gt; Pre-Iterations &lt;==
+
+  SCF Guess: Superposition of Atomic Densities via on-the-fly atomic UHF (no occupation information).
+
+   -------------------------
+    Irrep   Nso     Nmo    
+   ---
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>----------------------
+     Ag         3       3 
+     B1g        0       0 
+     B2g        0       0 
+     B3g        0       0 
+     Au         0       0 
+     B1u        3       3 
+     B2u        0       0 
+     B3u        0       0 
+   -------------------------
+    Total       6       6
+   -------------------------
+
+  ==&gt; Iterations &lt;==
+
+                           Total Energy        Delta E     RMS |[F,P]|
+
+   @DF-RHF iter SAD:    -0.84246038208224   -8.42460e-01   0.00000e+00 
+   @DF-RHF iter   1:    -1.12473285530662   -2.82272e-01   1.16402e-02 DIIS
+   @DF-RHF iter   2:    -1.12782785388762   -3.09500e-03   2.37446e-03 DIIS
+   @DF-RHF iter   3:    -1.12797087286329   -1.43019e-04   1.57972e-04 DIIS
+   @DF-RHF iter   4:    -1.12797124757557   -3.74712e-07   2.66440e-06 DIIS
+   @DF-RHF iter   5:    -1.12797124772942   -1.53854e-10   1.01005e-08 DIIS
+  Energy and wave function converged.
+
+
+  ==&gt; Post-Iterations &lt;==
+
+    Orbital Energies [Eh]
+    ---------------------
+
+    Doubly Occupied:                                                      
+
+       1Ag    -0.595505  
+
+    Virtual:                                                              
+
+       1B1u    0.168613     2Ag     0.306255     2B1u    0.650788  
+       3Ag     2.416154     3B1u    2.746917  
+
+    Final Occupation by Irrep:
+             Ag   B1g   B2g   B3g    Au   B1u   B2u   B3u 
+    DOCC [     1,    0,    0,    0,    0,    0,    0,    0 ]
+
+  @DF-RHF Final Energy:    -1.12797124772942
+
+   =&gt; Energetics &lt;=
+
+    Nuclear Repulsion Energy =              0.7137539933504182
+    One-Electron Energy =                  -2.4924412319759206
+    Two-Electron Energy =                   0.6507159908960785
+    Total Energy =                         -1.1279712477294239
+
+Computation Completed
+
+
+Properties will be evaluated at   0.000000,   0.000000,   0.000000 [a0]
+
+Properties computed using the SCF density matrix
+
+  Nuclear Dipole Moment: [e a0]
+     X:     0.0000      Y:     0.0000      Z:     0.0000
+
+  Electronic Dipole Moment: [e a0]
+     X:     0.0000      Y:     0.0000      Z:     0.0000
+
+  Dipole Moment: [e a0]
+     X:     0.0000      Y:     0.0000      Z:     0.0000     Total:     0.0000
+
+  Dipole Moment: [D]
+     X:     0.0000      Y:     0.0000      Z:     0.0000     Total:     0.0000
+
+
+*** tstop() called on HP-Pavilion-Gaming-Laptop-15-ec1xxx at Mon Sep  6 17:14:49 2021
+Module time:
+	user time   =       0.18 seconds =       0.00 minutes
+	system time =       0.00 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
+Total time:
+	user time   =       0.18 seconds =       0.00 minutes
+	system time =       0.00 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
+</pre></div>
+</div>
+<img alt="_images/Hartree-Fock_19_4.png" src="_images/Hartree-Fock_19_4.png" />
 </div>
 </div>
 </div>
 <div class="section" id="referencias">
-<h2><span class="section-number">2.2. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">15.2. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Szabo, A.; Ostlund, N. S. Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory; Dover Publications: Mineola, N.Y, 1996.</p></li>
 </ul>
@@ -775,15 +979,35 @@ Energia Total:  -1.116684387066194
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="Software.html" title="previous page"><span class="section-number">1. </span>Software</a>
-    <a class='right-next' id="next-link" href="Moller-Plesset.html" title="next page"><span class="section-number">3. </span>Moller-Plesset (MPn)</a>
+            
 
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="Software.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title"><span class="section-number">14. </span>Software</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="Moller-Plesset.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title"><span class="section-number">16. </span>Moller-Plesset (MPn)</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -791,7 +1015,7 @@ Energia Total:  -1.116684387066194
         
           By M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
         
-            &copy; Copyright 2020.<br/>
+            &copy; Copyright 2021.<br/>
       </p>
     </div>
   </footer>
@@ -800,11 +1024,9 @@ Energia Total:  -1.116684387066194
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
+  
   </body>
 </html>

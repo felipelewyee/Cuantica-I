@@ -1,12 +1,13 @@
-- file: intro
+format: jb-book
+root: intro
+parts:
+- caption: Python
   numbered: true
-
-- part: Python
   chapters:
   - file: Tutorial-Basico
   - file: Tutorial-Avanzado
-
-- part: Sistemas Sencillos
+- caption: Sistemas Sencillos
+  numbered: true
   chapters:
   - file: Caja
   - file: Tunel_Region_Infinita
@@ -15,31 +16,31 @@
   - file: Anillo
   - file: Esfera
   - file: Rotor
-
-- part: Átomo de Hidrógeno
+- caption: "Átomo de Hidrógeno"
+  numbered: true
   chapters:
   - file: Radial
   - file: Orbitales
-
-- part: Métodos Aproximados
+- caption: "Métodos Aproximados"
+  numbered: true
   chapters:
   - file: Variacional_Lineal
   - file: PerturbacionesSinDegeneracion
-
-- part: Sistemas de Muchos Electrones
+- caption: Sistemas de Muchos Electrones
+  numbered: true
   chapters:
   - file: Software
   - file: Hartree-Fock
   - file: Moller-Plesset
   - file: DFT
   - file: Dimerizacion
-
-- part: Matemáticas
+- caption: "Matemáticas"
+  numbered: true
   chapters:
   - file: matematicas1
   - file: matematicas2
-
-- part: Anexos
+- caption: Anexos
+  numbered: true
   chapters:
   - file: CajaConTope
   - file: Huckel
