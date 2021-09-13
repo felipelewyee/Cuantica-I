@@ -5,11 +5,11 @@
 
 # El presente libro digital tiene como objetivo ser un manual de prácticas para la asignatura de [`Química Cuántica I (clave 1404)`](https://quimica.unam.mx/wp-content/uploads/2017/03/1404qcuanticauno.pdf) de la Facultad de Química (UNAM). El libro digital es un esfuerzo compartido de Juan Felipe Huan Lew Yee, Eduardo Barrios Vargas y Jorge Martín del Campo Ramírez, en conjunto con los profesores del Departamento de Física y Química Teórica. Toda retroalimentación es bienvenida, y se le invita a compartirla a los correos:
 # 
-# M. en C. Juan Felipe Huan Lew Yee: [felipe.lew.yee@gmail.com](mailto:felipe.lew.yee@gmail.com)
+# M. en C. Juan Felipe Huan Lew Yee: [felipe.lew.yee@quimica.unam.mx](mailto:felipe.lew.yee@quimica.unam.mx)
 # 
-# Dr. Jorge Martín del Campo Ramirez: [jormacara@gmail.com](mailto:jormacara@gmail.com)
+# Dr. Jorge Martín del Campo Ramirez: [jormacara@quimica.unam.mx](mailto:jormacara@quimica.unam.mx)
 # 
-# Dr. José Eduardo Barrios Vargas: [j.e.barrios@gmail.com](mailto:j.e.barrios@gmail.com)
+# Dr. José Eduardo Barrios Vargas: [jebarrios@quimica.unam.mx](mailto:jebarrios@quimica.unam.mx)
 # 
 # ## Uso del manual
 # 

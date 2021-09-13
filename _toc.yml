@@ -12,10 +12,10 @@ parts:
   - file: Caja
   - file: Tunel_Region_Infinita
   - file: Tunel_Region_Finita
-  - file: Oscilador
   - file: Anillo
   - file: Esfera
   - file: Rotor
+  - file: Oscilador
 - caption: "Átomo de Hidrógeno"
   numbered: true
   chapters:
