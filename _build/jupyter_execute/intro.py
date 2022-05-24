@@ -22,15 +22,15 @@
 # La lectura de este apartado matemático oculto es opcional si ya se conoce la deducción previa de las ecuaciones, pero aquí está por si alguien lo necesita. Aquí van algunas funciones trigonométricas
 # 
 # $$
-# y = sin(x)
+# y = \sin(x)
 # $$
 # 
 # $$
-# y = cos(x)
+# y = \cos(x)
 # $$
 # 
 # $$
-# y = tan(x) = \frac{sin(x)}{cos(x)}
+# y = \tan(x) = \frac{\sin(x)}{\cos(x)}
 # $$
 # ```
 
