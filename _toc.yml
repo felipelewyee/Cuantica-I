@@ -26,6 +26,7 @@ parts:
   chapters:
   - file: Variacional_Lineal
   - file: PerturbacionesSinDegeneracion
+  - file: Huckel
 - caption: Sistemas de Muchos Electrones
   numbered: true
   chapters:
@@ -43,4 +44,3 @@ parts:
   numbered: true
   chapters:
   - file: CajaConTope
-  - file: Huckel
