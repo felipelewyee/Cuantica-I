@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>4. Teoría de funcionales de la densidad (DFT) &#8212; Cuántica I</title>
+    <title>18. Teoría de funcionales de la densidad (DFT) &#8212; Cuántica I</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,28 +33,30 @@
     
   <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="5. Dimerización de \(NO_2\)" href="Dimerizacion.html" />
-    <link rel="prev" title="3. Moller-Plesset (MPn)" href="Moller-Plesset.html" />
+    <link rel="next" title="19. Dimerización de \(NO_2\)" href="Dimerizacion.html" />
+    <link rel="prev" title="17. Moller-Plesset (MPn)" href="Moller-Plesset.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -88,7 +90,7 @@
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -98,7 +100,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Python
  </span>
@@ -115,7 +117,7 @@
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Sistemas Sencillos
  </span>
@@ -123,41 +125,41 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Caja.html">
-   1. Partícula en la caja
+   3. Partícula en la caja
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tunel_Region_Infinita.html">
-   2. Penetración
+   4. Penetración
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tunel_Region_Finita.html">
-   3. Efecto Túnel
+   5. Efecto Túnel
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo.html">
-   4. Partícula en el anillo
+   6. Partícula en el anillo
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Esfera.html">
-   5. Partícula en la esfera
+   7. Partícula en la esfera
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Rotor.html">
-   6. Rotor Rígido
+   8. Rotor Rígido
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Oscilador.html">
-   7. Oscilador Armónico Cuántico
+   9. Oscilador Armónico Cuántico
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Átomo de Hidrógeno
  </span>
@@ -165,16 +167,16 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Radial.html">
-   1. Solución Radial
+   10. Solución Radial
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Orbitales.html">
-   2. Orbitales Atómicos
+   11. Orbitales Atómicos
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Métodos Aproximados
  </span>
@@ -182,16 +184,21 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Variacional_Lineal.html">
-   1. Método variacional lineal
+   12. Método variacional lineal
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="PerturbacionesSinDegeneracion.html">
-   2. Teoría de perturbaciones (niveles de energía no degenerados)
+   13. Teoría de perturbaciones (niveles de energía no degenerados)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Huckel.html">
+   14. Método de Hückel
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Sistemas de Muchos Electrones
  </span>
@@ -199,34 +206,34 @@
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Software.html">
-   1. Software
+   15. Software
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Hartree-Fock.html">
-   2. Hartree-Fock-Roothan (HF)
+   16. Hartree-Fock-Roothan (HF)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Moller-Plesset.html">
-   3. Moller-Plesset (MPn)
+   17. Moller-Plesset (MPn)
   </a>
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   4. Teoría de funcionales de la densidad (DFT)
+   18. Teoría de funcionales de la densidad (DFT)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Dimerizacion.html">
-   5. Dimerización de
+   19. Dimerización de
    <span class="math notranslate nohighlight">
     \(NO_2\)
    </span>
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Matemáticas
  </span>
@@ -234,16 +241,16 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="matematicas1.html">
-   1. Expansión en series
+   20. Expansión en series
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="matematicas2.html">
-   2. Álgebra simbólica
+   21. Álgebra simbólica
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Anexos
  </span>
@@ -251,12 +258,7 @@
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="CajaConTope.html">
-   1. Efecto Túnel en la Caja
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="Huckel.html">
-   2. Método de Hückel
+   22. Efecto Túnel en la Caja
   </a>
  </li>
 </ul>
@@ -284,8 +286,8 @@
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -293,7 +295,7 @@
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -301,10 +303,10 @@
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="_sources/DFT.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
@@ -314,8 +316,8 @@
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -326,7 +328,7 @@
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/DFT.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -334,12 +336,12 @@
         
         
         <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/DFT.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Lanzamiento Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
@@ -351,33 +353,33 @@
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Contenido
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aproximacion-local-de-la-densidad-lda">
-   4.1. Aproximación Local de la Densidad (LDA)
+   18.1. Aproximación Local de la Densidad (LDA)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aproximacion-de-gradientes-generalizados-gga">
-   4.2. Aproximación de Gradientes Generalizados (GGA)
+   18.2. Aproximación de Gradientes Generalizados (GGA)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aproximacion-meta-gga">
-   4.3. Aproximación meta-GGA
+   18.3. Aproximación meta-GGA
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funcionales-hibridos">
-   4.4. Funcionales Híbridos
+   18.4. Funcionales Híbridos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   4.5. Referencias
+   18.5. Referencias
   </a>
  </li>
 </ul>
@@ -396,33 +398,33 @@
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contents </h2>
+                            <h2> Contenido </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aproximacion-local-de-la-densidad-lda">
-   4.1. Aproximación Local de la Densidad (LDA)
+   18.1. Aproximación Local de la Densidad (LDA)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aproximacion-de-gradientes-generalizados-gga">
-   4.2. Aproximación de Gradientes Generalizados (GGA)
+   18.2. Aproximación de Gradientes Generalizados (GGA)
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aproximacion-meta-gga">
-   4.3. Aproximación meta-GGA
+   18.3. Aproximación meta-GGA
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#funcionales-hibridos">
-   4.4. Funcionales Híbridos
+   18.4. Funcionales Híbridos
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   4.5. Referencias
+   18.5. Referencias
   </a>
  </li>
 </ul>
@@ -434,8 +436,8 @@
             
               <div>
                 
-  <div class="section" id="teoria-de-funcionales-de-la-densidad-dft">
-<h1><span class="section-number">4. </span>Teoría de funcionales de la densidad (DFT)<a class="headerlink" href="#teoria-de-funcionales-de-la-densidad-dft" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="teoria-de-funcionales-de-la-densidad-dft">
+<h1><span class="section-number">18. </span>Teoría de funcionales de la densidad (DFT)<a class="headerlink" href="#teoria-de-funcionales-de-la-densidad-dft" title="Permalink to this headline">¶</a></h1>
 <p>La teoría de los funcionales de la densidad se basa en que la densidad electrónica contiene toda la información del sistema, por lo que se puede extraer de ella la energía mediante un funcional</p>
 <div class="math notranslate nohighlight">
 \[
@@ -513,7 +515,7 @@ E[\rho] = T_s[\rho] + U[\rho] + V_{nuc}[\rho] + E_{xc}[\rho]
 </div>
 </div>
 <div class="section" id="aproximacion-local-de-la-densidad-lda">
-<h2><span class="section-number">4.1. </span>Aproximación Local de la Densidad (LDA)<a class="headerlink" href="#aproximacion-local-de-la-densidad-lda" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.1. </span>Aproximación Local de la Densidad (LDA)<a class="headerlink" href="#aproximacion-local-de-la-densidad-lda" title="Permalink to this headline">¶</a></h2>
 <p>Fue una de las primeros aproximaciones y ya ha sido superada. En este caso, el intercambio se calcula mediante</p>
 <div class="math notranslate nohighlight">
 \[
@@ -541,22 +543,24 @@ E_c^{LDA} = \int \varepsilon_c^{VWN} dr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** tstart() called on BlauweDraak
-*** at Tue May 24 15:35:13 2022
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scratch directory: /tmp/
+
+*** tstart() called on B450-AORUS-PRO-WIFI
+*** at Thu May 26 17:45:52 2022
 
    =&gt; Loading Basis Set &lt;=
 
     Name: 6-311G
     Role: ORBITAL
     Keyword: BASIS
-    atoms 1   entry O          line   126 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/6-311g.gbs 
-    atoms 2-3 entry H          line    21 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/6-311g.gbs 
+    atoms 1   entry O          line   126 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/6-311g.gbs 
+    atoms 2-3 entry H          line    21 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/6-311g.gbs 
 
 
          ---------------------------------------------------------
                                    SCF
-            by Justin Turney, Rob Parrish, Andy Simmonett
-                             and Daniel Smith
+               by Justin Turney, Rob Parrish, Andy Simmonett
+                          and Daniel G. A. Smith
                               RKS Reference
                         1 Threads,    500 MiB Core
          ---------------------------------------------------------
@@ -570,15 +574,15 @@ E_c^{LDA} = \int \varepsilon_c^{VWN} dr
 
        Center              X                  Y                   Z               Mass       
     ------------   -----------------  -----------------  -----------------  -----------------
-         O            0.000000000000     0.000000000000     0.065638073174    15.994914619560
-         H           -0.000000000000     0.757200000000    -0.520861926826     1.007825032070
-         H            0.000000000000    -0.757200000000    -0.520861926826     1.007825032070
+         O            0.000000000000     0.000000000000     0.065638073183    15.994914619570
+         H           -0.000000000000     0.757200000000    -0.520861926817     1.007825032230
+         H            0.000000000000    -0.757200000000    -0.520861926817     1.007825032230
 
   Running in c2v symmetry.
 
   Rotational constants: A =     27.37731  B =     14.58680  C =      9.51640 [cm^-1]
-  Rotational constants: A = 820751.01726  B = 437301.38089  C = 285294.59802 [MHz]
-  Nuclear repulsion =    9.189533722472818
+  Rotational constants: A = 820751.02340  B = 437301.38415  C = 285294.60015 [MHz]
+  Nuclear repulsion =    9.189533758593479
 
   Charge       = 0
   Multiplicity = 1
@@ -595,14 +599,14 @@ E_c^{LDA} = \int \varepsilon_c^{VWN} dr
   Guess Type is SAD.
   Energy threshold   = 1.00e-06
   Density threshold  = 1.00e-06
-  Integral threshold = 0.00e+00
+  Integral threshold = 1.00e-12
 
   ==&gt; Primary Basis &lt;==
 
   Basis Set: 6-311G
     Blend: 6-311G
     Number of shells: 13
-    Number of basis function: 19
+    Number of basis functions: 19
     Number of Cartesian functions: 19
     Spherical Harmonics?: true
     Max angular momentum: 1
@@ -631,45 +635,39 @@ E_c^{LDA} = \int \varepsilon_c^{VWN} dr
 
     1.0000   XC_LDA_C_VWN_RPA
 
+   =&gt; LibXC Density Thresholds  &lt;==
+
+    XC_LDA_C_VWN_RPA:  1.00E-15 
+    XC_LDA_X:  1.00E-15 
+
    =&gt; Molecular Quadrature &lt;=
 
-    Radial Scheme       =       TREUTLER
-    Pruning Scheme      =           FLAT
-    Nuclear Scheme      =       TREUTLER
+    Radial Scheme          =       TREUTLER
+    Pruning Scheme         =           NONE
+    Nuclear Scheme         =       TREUTLER
 
-    BS radius alpha     =              1
-    Pruning alpha       =              1
-    Radial Points       =             75
-    Spherical Points    =            302
-    Total Points        =          66783
-    Total Blocks        =            573
-    Max Points          =            255
-    Max Functions       =             19
+    Blocking Scheme        =         OCTREE
+    BS radius alpha        =              1
+    Pruning alpha          =              1
+    Radial Points          =             75
+    Spherical Points       =            302
+    Total Points           =          66335
+    Total Blocks           =            553
+    Max Points             =            255
+    Max Functions          =             19
+    Weights Tolerance      =       1.00E-15
 
    =&gt; Loading Basis Set &lt;=
 
     Name: (6-311G AUX)
     Role: JKFIT
     Keyword: DF_BASIS_SCF
-    atoms 1   entry O          line   229 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/cc-pvtz-jkfit.gbs 
-    atoms 2-3 entry H          line    51 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/cc-pvtz-jkfit.gbs 
-
-  ==&gt; Pre-Iterations &lt;==
-
-   -------------------------------------------------------
-    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
-   -------------------------------------------------------
-     A1        10      10       0       0       0       0
-     A2         0       0       0       0       0       0
-     B1         3       3       0       0       0       0
-     B2         6       6       0       0       0       0
-   -------------------------------------------------------
-    Total      19      19       5       5       5       0
-   -------------------------------------------------------
+    atoms 1   entry O          line   229 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/cc-pvtz-jkfit.gbs 
+    atoms 2-3 entry H          line    51 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/cc-pvtz-jkfit.gbs 
 
   ==&gt; Integral Setup &lt;==
 
-  DFHelper Memory: AOs need 0.001 [GiB]; user supplied 0.366 [GiB]. Using in-core AOs.
+  DFHelper Memory: AOs need 0.001 GiB; user supplied 0.357 GiB. Using in-core AOs.
 
   ==&gt; MemDFJK: Density-Fitted J/K Matrices &lt;==
 
@@ -677,40 +675,64 @@ E_c^{LDA} = \int \varepsilon_c^{VWN} dr
     K tasked:                    No
     wK tasked:                   No
     OpenMP threads:               1
-    Memory (MB):                375
+    Memory [MiB]:               365
     Algorithm:                 Core
     Schwarz Cutoff:           1E-12
     Mask sparsity (%):       0.0000
-    Fitting Condition:        1E-12
+    Fitting Condition:        1E-10
 
    =&gt; Auxiliary Basis Set &lt;=
 
   Basis Set: (6-311G AUX)
     Blend: CC-PVTZ-JKFIT
     Number of shells: 45
-    Number of basis function: 139
+    Number of basis functions: 139
     Number of Cartesian functions: 166
     Spherical Harmonics?: true
     Max angular momentum: 4
 
-  Minimum eigenvalue in the overlap matrix is 4.3275028627E-02.
-  Using Symmetric Orthogonalization.
+  Cached 100.0% of DFT collocation blocks in 0.009 [GiB].
 
-  SCF Guess: Superposition of Atomic Densities via on-the-fly atomic UHF.
+  Minimum eigenvalue in the overlap matrix is 3.8481855116E-02.
+  Reciprocal condition number of the overlap matrix is 1.0514592286E-02.
+    Using symmetric orthogonalization.
+
+  ==&gt; Pre-Iterations &lt;==
+
+  SCF Guess: Superposition of Atomic Densities via on-the-fly atomic UHF (no occupation information).
+
+   -------------------------
+    Irrep   Nso     Nmo    
+   -------------------------
+     A1        10      10 
+     A2         0       0 
+     B1         3       3 
+     B2         6       6 
+   -------------------------
+    Total      19      19
+   -------------------------
 
   ==&gt; Iterations &lt;==
 
                            Total Energy        Delta E     RMS |[F,P]|
 
-   @DF-RKS iter   0:   -76.03137538448343   -7.60314e+01   1.33476e-01 
-   @DF-RKS iter   1:   -75.96006001735046    7.13154e-02   4.07148e-02 
-   @DF-RKS iter   2:   -75.75040214195097    2.09658e-01   7.50154e-02 DIIS
-   @DF-RKS iter   3:   -76.04563175022196   -2.95230e-01   1.09540e-03 DIIS
-   @DF-RKS iter   4:   -76.04571201475450   -8.02645e-05   1.63467e-04 DIIS
-   @DF-RKS iter   5:   -76.04571335003709   -1.33528e-06   1.30477e-05 DIIS
-   @DF-RKS iter   6:   -76.04571335924186   -9.20477e-09   4.17080e-07 DIIS
+   @DF-RKS iter SAD:   -75.78680150612512   -7.57868e+01   0.00000e+00 
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   @DF-RKS iter   1:   -75.83750725761067   -5.07058e-02   6.54936e-02 ADIIS/DIIS
+   @DF-RKS iter   2:   -75.31953042974517    5.17977e-01   1.12927e-01 ADIIS
+   @DF-RKS iter   3:   -76.00860317866201   -6.89073e-01   2.84616e-02 ADIIS/DIIS
+   @DF-RKS iter   4:   -76.04484938328758   -3.62462e-02   4.35363e-03 ADIIS/DIIS
+   @DF-RKS iter   5:   -76.04570472895017   -8.55346e-04   4.21069e-04 ADIIS/DIIS
+   @DF-RKS iter   6:   -76.04571320376117   -8.47481e-06   1.63808e-05 DIIS
+   @DF-RKS iter   7:   -76.04571321527150   -1.15103e-08   9.88756e-07 DIIS
+  Energy and wave function converged.
+
 
   ==&gt; Post-Iterations &lt;==
+
+   Electrons on quadrature grid:
+      Ntotal   =    9.9999999211 ; deviation = -7.889e-08 
 
     Orbital Energies [Eh]
     ---------------------
@@ -718,75 +740,74 @@ E_c^{LDA} = \int \varepsilon_c^{VWN} dr
     Doubly Occupied:                                                      
 
        1A1   -18.592943     2A1    -0.948080     1B2    -0.502246  
-       3A1    -0.322092     1B1    -0.259374  
+       3A1    -0.322093     1B1    -0.259374  
 
     Virtual:                                                              
 
        4A1    -0.013432     2B2     0.069366     3B2     0.328459  
        5A1     0.362549     2B1     0.690125     6A1     0.710802  
-       4B2     0.817438     7A1     1.087532     8A1     2.065263  
-       5B2     2.110800     3B1     4.598277     9A1     4.702793  
-       6B2     4.816220    10A1    49.582114  
+       4B2     0.817438     7A1     1.087532     8A1     2.065264  
+       5B2     2.110800     3B1     4.598278     9A1     4.702793  
+       6B2     4.816221    10A1    49.582113  
 
     Final Occupation by Irrep:
              A1    A2    B1    B2 
     DOCC [     3,    0,    1,    1 ]
 
-  Energy converged.
-
-  @DF-RKS Final Energy:   -76.04571335924186
+  @DF-RKS Final Energy:   -76.04571321527150
 
    =&gt; Energetics &lt;=
 
-    Nuclear Repulsion Energy =              9.1895337224728184
-    One-Electron Energy =                -123.0415033780877394
-    Two-Electron Energy =                  46.7747492591550937
-    DFT Exchange-Correlation Energy =      -8.9684929627820384
+    Nuclear Repulsion Energy =              9.1895337585934787
+    One-Electron Energy =                -123.0414368366939470
+    Two-Electron Energy =                  46.7746742632343029
+    DFT Exchange-Correlation Energy =      -8.9684844004053446
     Empirical Dispersion Energy =           0.0000000000000000
     VV10 Nonlocal Energy =                  0.0000000000000000
-    Total Energy =                        -76.0457133592418728
+    Total Energy =                        -76.0457132152715047
 
+Computation Completed
 
 
 Properties will be evaluated at   0.000000,   0.000000,   0.000000 [a0]
+
+Properties computed using the SCF density matrix
+
+
+ Multipole Moments:
+
+ ------------------------------------------------------------------------------------
+     Multipole            Electronic (a.u.)      Nuclear  (a.u.)        Total (a.u.)
+ ------------------------------------------------------------------------------------
+
+ L = 1.  Multiply by 2.5417464519 to convert [e a0] to [Debye]
+ Dipole X            :          0.0000000            0.0000000            0.0000000
+ Dipole Y            :          0.0000000            0.0000000            0.0000000
+ Dipole Z            :         -0.0416553           -0.9762689           -1.0179242
+ Magnitude           :                                                    1.0179242
+
+ ------------------------------------------------------------------------------------
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Properties computed using the SCF density matrix
-
-  Nuclear Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:    -0.9763
-
-  Electronic Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:    -0.0417
-
-  Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:    -1.0179     Total:     1.0179
-
-  Dipole Moment: [D]
-     X:     0.0000      Y:     0.0000      Z:    -2.5873     Total:     2.5873
-
-
-*** tstop() called on BlauweDraak at Tue May 24 15:35:13 2022
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.0457132152715
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** tstop() called on B450-AORUS-PRO-WIFI at Thu May 26 17:45:53 2022
 Module time:
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.04571335924186
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>	user time   =       0.53 seconds =       0.01 minutes
-	system time =       0.01 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.37 seconds =       0.01 minutes
+	system time =       0.02 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       0.53 seconds =       0.01 minutes
-	system time =       0.01 seconds =       0.00 minutes
-	total time  =          0 seconds =       0.00 minutes
+	user time   =       0.37 seconds =       0.01 minutes
+	system time =       0.02 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="aproximacion-de-gradientes-generalizados-gga">
-<h2><span class="section-number">4.2. </span>Aproximación de Gradientes Generalizados (GGA)<a class="headerlink" href="#aproximacion-de-gradientes-generalizados-gga" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.2. </span>Aproximación de Gradientes Generalizados (GGA)<a class="headerlink" href="#aproximacion-de-gradientes-generalizados-gga" title="Permalink to this headline">¶</a></h2>
 <p>Esto calcula la energía con base en la densidad electrónica y su gradiente</p>
 <div class="math notranslate nohighlight">
 \[
@@ -822,22 +843,24 @@ E_{xc}^{GGA} = -\int \varepsilon_{xc}^{GGA} (\rho,\nabla \rho) dr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** tstart() called on BlauweDraak
-*** at Tue May 24 15:35:13 2022
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scratch directory: /tmp/
+
+*** tstart() called on B450-AORUS-PRO-WIFI
+*** at Thu May 26 17:45:53 2022
 
    =&gt; Loading Basis Set &lt;=
 
     Name: 6-311G
     Role: ORBITAL
     Keyword: BASIS
-    atoms 1   entry O          line   126 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/6-311g.gbs 
-    atoms 2-3 entry H          line    21 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/6-311g.gbs 
+    atoms 1   entry O          line   126 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/6-311g.gbs 
+    atoms 2-3 entry H          line    21 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/6-311g.gbs 
 
 
          ---------------------------------------------------------
                                    SCF
-            by Justin Turney, Rob Parrish, Andy Simmonett
-                             and Daniel Smith
+               by Justin Turney, Rob Parrish, Andy Simmonett
+                          and Daniel G. A. Smith
                               RKS Reference
                         1 Threads,    500 MiB Core
          ---------------------------------------------------------
@@ -851,15 +874,18 @@ E_{xc}^{GGA} = -\int \varepsilon_{xc}^{GGA} (\rho,\nabla \rho) dr
 
        Center              X                  Y                   Z               Mass       
     ------------   -----------------  -----------------  -----------------  -----------------
-         O            0.000000000000     0.000000000000     0.065638073174    15.994914619560
-         H           -0.000000000000     0.757200000000    -0.520861926826     1.007825032070
-         H            0.000000000000    -0.757200000000    -0.520861926826     1.007825032070
+         O            0.000000000000     0.000000000000     0.065638073183    15.994914619570
+         H           -0.000000000000     0.757200000000    -0.520861926817     1.007825032230
+         H            0.000000000000    -0.757200000000    -0.520861926817     1.007825032230
 
-  Running in c2v symmetry.
+  Running in
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> c2v symmetry.
 
   Rotational constants: A =     27.37731  B =     14.58680  C =      9.51640 [cm^-1]
-  Rotational constants: A = 820751.01726  B = 437301.38089  C = 285294.59802 [MHz]
-  Nuclear repulsion =    9.189533722472818
+  Rotational constants: A = 820751.02340  B = 437301.38415  C = 285294.60015 [MHz]
+  Nuclear repulsion =    9.189533758593479
 
   Charge       = 0
   Multiplicity = 1
@@ -876,14 +902,14 @@ E_{xc}^{GGA} = -\int \varepsilon_{xc}^{GGA} (\rho,\nabla \rho) dr
   Guess Type is SAD.
   Energy threshold   = 1.00e-06
   Density threshold  = 1.00e-06
-  Integral threshold = 0.00e+00
+  Integral threshold = 1.00e-12
 
   ==&gt; Primary Basis &lt;==
 
   Basis Set: 6-311G
     Blend: 6-311G
     Number of shells: 13
-    Number of basis function: 19
+    Number of basis functions: 19
     Number of Cartesian functions: 19
     Spherical Harmonics?: true
     Max angular momentum: 1
@@ -912,47 +938,39 @@ E_{xc}^{GGA} = -\int \varepsilon_{xc}^{GGA} (\rho,\nabla \rho) dr
 
     1.0000     XC_GGA_C_PBE
 
+   =&gt; LibXC Density Thresholds  &lt;==
+
+    XC_GGA_C_PBE:  1.00E-12 
+    XC_GGA_X_PBE:  1.00E-15 
+
    =&gt; Molecular Quadrature &lt;=
 
-    Radial Scheme       =       TREUTLER
-    Pruning Scheme      =           FLAT
-    Nuclear Scheme      =       TREUTLER
+    Radial Scheme          =       TREUTLER
+    Pruning Scheme         =           NONE
+    Nuclear Scheme         =       TREUTLER
 
-    BS radius alpha     =              1
-    Pruning alpha       =              1
-    Radial Points       =             75
-    Spherical Points    =            302
-    Total Points        =          66783
-    Total Blocks        =            573
-    Max Points          =            255
-    Max Functions       =             19
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   =&gt; Loading Basis Set &lt;=
+    Blocking Scheme        =         OCTREE
+    BS radius alpha        =              1
+    Pruning alpha          =              1
+    Radial Points          =             75
+    Spherical Points       =            302
+    Total Points           =          66335
+    Total Blocks           =            553
+    Max Points             =            255
+    Max Functions          =             19
+    Weights Tolerance      =       1.00E-15
+
+   =&gt; Loading Basis Set &lt;=
 
     Name: (6-311G AUX)
     Role: JKFIT
     Keyword: DF_BASIS_SCF
-    atoms 1   entry O          line   229 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/cc-pvtz-jkfit.gbs 
-    atoms 2-3 entry H          line    51 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/cc-pvtz-jkfit.gbs 
+    atoms 1   entry O          line   229 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/cc-pvtz-jkfit.gbs 
+    atoms 2-3 entry H          line    51 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/cc-pvtz-jkfit.gbs 
 
-  ==&gt; Pre-Iterations &lt;==
+  ==&gt; Integral Setup &lt;==
 
-   -------------------------------------------------------
-    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
-   -------------------------------------------------------
-     A1        10      10       0       0       0       0
-     A2         0       0       0       0       0       0
-     B1         3       3       0       0       0       0
-     B2         6       6       0       0       0       0
-   -------------------------------------------------------
-    Total      19      19       5       5       5       0
-   -------------------------------------------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ==&gt; Integral Setup &lt;==
-
-  DFHelper Memory: AOs need 0.001 [GiB]; user supplied 0.366 [GiB]. Using in-core AOs.
+  DFHelper Memory: AOs need 0.001 GiB; user supplied 0.331 GiB. Using in-core AOs.
 
   ==&gt; MemDFJK: Density-Fitted J/K Matrices &lt;==
 
@@ -960,107 +978,130 @@ E_{xc}^{GGA} = -\int \varepsilon_{xc}^{GGA} (\rho,\nabla \rho) dr
     K tasked:                    No
     wK tasked:                   No
     OpenMP threads:               1
-    Memory (MB):                375
+    Memory [MiB]:               338
     Algorithm:                 Core
     Schwarz Cutoff:           1E-12
     Mask sparsity (%):       0.0000
-    Fitting Condition:        1E-12
+    Fitting Condition:        1E-10
 
    =&gt; Auxiliary Basis Set &lt;=
 
   Basis Set: (6-311G AUX)
     Blend: CC-PVTZ-JKFIT
     Number of shells: 45
-    Number of basis function: 139
+    Number of basis functions: 139
     Number of Cartesian functions: 166
     Spherical Harmonics?: true
     Max angular momentum: 4
 
-  Minimum eigenvalue in the overlap matrix is 4.3275028627E-02.
-  Using Symmetric Orthogonalization.
+  Cached 100.0% of DFT collocation blocks in 0.035 [GiB].
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Minimum eigenvalue in the overlap matrix is 3.8481855116E-02.
+  Reciprocal condition number of the overlap matrix is 1.0514592286E-02.
+    Using symmetric orthogonalization.
 
-  SCF Guess: Superposition of Atomic Densities via on-the-fly atomic UHF.
+  ==&gt; Pre-Iterations &lt;==
+
+  SCF Guess: Superposition of Atomic Densities via on-the-fly atomic UHF (no occupation information).
+
+   -------------------------
+    Irrep   Nso     Nmo    
+   -------------------------
+     A1        10      10 
+     A2         0       0 
+     B1         3       3 
+     B2         6       6 
+   -------------------------
+    Total      19      19
+   -------------------------
 
   ==&gt; Iterations &lt;==
 
                            Total Energy        Delta E     RMS |[F,P]|
 
-   @DF-RKS iter   0:   -76.31315107372512   -7.63132e+01   1.30451e-01 
-   @DF-RKS iter   1:   -76.24493028291617    6.82208e-02   3.99406e-02 
-   @DF-RKS iter   2:   -76.04807225996659    1.96858e-01   7.22912e-02 DIIS
-   @DF-RKS iter   3:   -76.32764284494797   -2.79571e-01   1.23925e-03 DIIS
-   @DF-RKS iter   4:   -76.32774534679760   -1.02502e-04   1.66898e-04 DIIS
-   @DF-RKS iter   5:   -76.32774681260878   -1.46581e-06   1.16320e-05 DIIS
-   @DF-RKS iter   6:   -76.32774681997822   -7.36944e-09   3.75999e-07 DIIS
+   @DF-RKS iter SAD:   -76.05808687398583   -7.60581e+01   0.00000e+00 
+   @DF-RKS iter   1:   -76.12655589141131   -6.84690e-02   6.41352e-02 ADIIS/DIIS
+   @DF-RKS iter   2:   -75.62770920108809    4.98847e-01   1.09611e-01 ADIIS
+   @DF-RKS iter   3:   -76.29253535917977   -6.64826e-01   2.74487e-02 ADIIS/DIIS
+   @DF-RKS iter   4:   -76.32696343666217   -3.44281e-02   4.10966e-03 ADIIS/DIIS
+   @DF-RKS iter   5:   -76.32773979369991   -7.76357e-04   3.77557e-04 ADIIS/DIIS
+   @DF-RKS iter   6:   -76.32774682582524   -7.03213e-06   1.64132e-05 DIIS
+   @DF-RKS iter   7:   -76.32774683796953   -1.21443e-08   6.72488e-07 DIIS
+  Energy and wave function converged.
+
 
   ==&gt; Post-Iterations &lt;==
+
+   Electrons on quadrature grid:
+      Ntotal   =    9.9999999104 ; deviation = -8.958e-08 
 
     Orbital Energies [Eh]
     ---------------------
 
     Doubly Occupied:                                                      
 
-       1A1   -18.723192     2A1    -0.934053     1B2    -0.480903  
+       1A1   -18.723192     2A1    -0.934052     1B2    -0.480902  
        3A1    -0.302844     1B1    -0.236425  
 
     Virtual:                                                              
 
        4A1     0.003413     2B2     0.084152     3B2     0.344734  
-       5A1     0.378494     2B1     0.719640     6A1     0.740364  
-       4B2     0.847962     7A1     1.109017     8A1     2.068045  
-       5B2     2.114865     3B1     4.637169     9A1     4.742630  
-       6B2     4.857520    10A1    49.345080  
+       5A1     0.378494     2B1     0.719640     6A1     0.740365  
+       4B2     0.847962     7A1     1.109018     8A1     2.068045  
+       5B2     2.114866     3B1     4.637170     9A1     4.742631  
+       6B2     4.857520    10A1    49.345078  
 
     Final Occupation by Irrep:
              A1    A2    B1    B2 
     DOCC [     3,    0,    1,    1 ]
 
-  Energy converged.
-
-  @DF-RKS Final Energy:   -76.32774681997822
+  @DF-RKS Final Energy:   -76.32774683796953
 
    =&gt; Energetics &lt;=
 
-    Nuclear Repulsion Energy =              9.1895337224728184
-    One-Electron Energy =                -123.0614501795035949
-    Two-Electron Energy =                  46.8182167901852395
-    DFT Exchange-Correlation Energy =      -9.2740471531326705
+    Nuclear Repulsion Energy =              9.1895337585934787
+    One-Electron Energy =                -123.0613996619173918
+    Two-Electron Energy =                  46.8181597376886600
+    DFT Exchange-Correlation Energy =      -9.2740406723342819
     Empirical Dispersion Energy =           0.0000000000000000
     VV10 Nonlocal Energy =                  0.0000000000000000
-    Total Energy =                        -76.3277468199782163
+    Total Energy =                        -76.3277468379695279
 
+Computation Completed
 
 
 Properties will be evaluated at   0.000000,   0.000000,   0.000000 [a0]
 
 Properties computed using the SCF density matrix
 
-  Nuclear Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:    -0.9763
 
-  Electronic Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:     0.0020
+ Multipole Moments:
 
-  Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:    -0.9743     Total:     0.9743
+ ------------------------------------------------------------------------------------
+     Multipole            Electronic (a.u.)      Nuclear  (a.u.)        Total (a.u.)
+ ------------------------------------------------------------------------------------
 
-  Dipole Moment: [D]
-     X:     0.0000      Y:     0.0000      Z:    -2.4764     Total:     2.4764
+ L = 1.  Multiply by 2.5417464519 to convert [e a0] to [Debye]
+ Dipole X            :          0.0000000            0.0000000            0.0000000
+ Dipole Y            :          0.0000000            0.0000000            0.0000000
+ Dipole Z            :          0.0019738           -0.9762689           -0.9742951
+ Magnitude           :                                                    0.9742951
 
-
-*** tstop() called on BlauweDraak at Tue May 24 15:35:14 2022
+ ------------------------------------------------------------------------------------
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.32774681997822
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.32774683796953
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Module time:
-	user time   =       0.60 seconds =       0.01 minutes
-	system time =       0.01 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
-Total time:
-	user time   =       1.14 seconds =       0.02 minutes
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** tstop() called on B450-AORUS-PRO-WIFI at Thu May 26 17:45:53 2022
+Module time:
+	user time   =       0.46 seconds =       0.01 minutes
 	system time =       0.02 seconds =       0.00 minutes
+	total time  =          0 seconds =       0.00 minutes
+Total time:
+	user time   =       0.85 seconds =       0.01 minutes
+	system time =       0.04 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 </pre></div>
 </div>
@@ -1068,7 +1109,7 @@ Total time:
 </div>
 </div>
 <div class="section" id="aproximacion-meta-gga">
-<h2><span class="section-number">4.3. </span>Aproximación meta-GGA<a class="headerlink" href="#aproximacion-meta-gga" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.3. </span>Aproximación meta-GGA<a class="headerlink" href="#aproximacion-meta-gga" title="Permalink to this headline">¶</a></h2>
 <p>Los funcionales meta-GGA usan la densidad electrónica, el gradiente de la densidad electrónica, y el laplaciano de la densidad electrónica.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1097,22 +1138,24 @@ E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** tstart() called on BlauweDraak
-*** at Tue May 24 15:35:14 2022
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scratch directory: /tmp/
+
+*** tstart() called on B450-AORUS-PRO-WIFI
+*** at Thu May 26 17:45:53 2022
 
    =&gt; Loading Basis Set &lt;=
 
     Name: 6-311G
     Role: ORBITAL
     Keyword: BASIS
-    atoms 1   entry O          line   126 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/6-311g.gbs 
-    atoms 2-3 entry H          line    21 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/6-311g.gbs 
+    atoms 1   entry O          line   126 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/6-311g.gbs 
+    atoms 2-3 entry H          line    21 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/6-311g.gbs 
 
 
          ---------------------------------------------------------
                                    SCF
-            by Justin Turney, Rob Parrish, Andy Simmonett
-                             and Daniel Smith
+               by Justin Turney, Rob Parrish, Andy Simmonett
+                          and Daniel G. A. Smith
                               RKS Reference
                         1 Threads,    500 MiB Core
          ---------------------------------------------------------
@@ -1126,15 +1169,15 @@ E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2
 
        Center              X                  Y                   Z               Mass       
     ------------   -----------------  -----------------  -----------------  -----------------
-         O            0.000000000000     0.000000000000     0.065638073174    15.994914619560
-         H           -0.000000000000     0.757200000000    -0.520861926826     1.007825032070
-         H            0.000000000000    -0.757200000000    -0.520861926826     1.007825032070
+         O            0.000000000000     0.000000000000     0.065638073183    15.994914619570
+         H           -0.000000000000     0.757200000000    -0.520861926817     1.007825032230
+         H            0.000000000000    -0.757200000000    -0.520861926817     1.007825032230
 
   Running in c2v symmetry.
 
   Rotational constants: A =     27.37731  B =     14.58680  C =      9.51640 [cm^-1]
-  Rotational constants: A = 820751.01726  B = 437301.38089  C = 285294.59802 [MHz]
-  Nuclear repulsion =    9.189533722472818
+  Rotational constants: A = 820751.02340  B = 437301.38415  C = 285294.60015 [MHz]
+  Nuclear repulsion =    9.189533758593479
 
   Charge       = 0
   Multiplicity = 1
@@ -1151,14 +1194,14 @@ E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2
   Guess Type is SAD.
   Energy threshold   = 1.00e-06
   Density threshold  = 1.00e-06
-  Integral threshold = 0.00e+00
+  Integral threshold = 1.00e-12
 
   ==&gt; Primary Basis &lt;==
 
   Basis Set: 6-311G
     Blend: 6-311G
     Number of shells: 13
-    Number of basis function: 19
+    Number of basis functions: 19
     Number of Cartesian functions: 19
     Spherical Harmonics?: true
     Max angular momentum: 1
@@ -1169,7 +1212,7 @@ E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2
 
     TPSS Meta-GGA XC Functional
 
-   J. Tao, et al., Phys. Rev. Lett., 91, 146401, 2003
+    J. Tao, et al., Phys. Rev. Lett., 91, 146401, 2003
 
 
     Deriv               =              1
@@ -1187,20 +1230,27 @@ E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2
 
     1.0000   XC_MGGA_C_TPSS
 
+   =&gt; LibXC Density Thresholds  &lt;==
+
+    XC_MGGA_C_TPSS:  1.00E-15 
+    XC_MGGA_X_TPSS:  1.00E-15 
+
    =&gt; Molecular Quadrature &lt;=
 
-    Radial Scheme       =       TREUTLER
-    Pruning Scheme      =           FLAT
-    Nuclear Scheme      =       TREUTLER
+    Radial Scheme          =       TREUTLER
+    Pruning Scheme         =           NONE
+    Nuclear Scheme         =       TREUTLER
 
-    BS radius alpha     =              1
-    Pruning alpha       =              1
-    Radial Points       =             75
-    Spherical Points    =            302
-    Total Points        =          66783
-    Total Blocks        =            573
-    Max Points          =            255
-    Max Functions       =             19
+    Blocking Scheme        =         OCTREE
+    BS radius alpha        =              1
+    Pruning alpha          =              1
+    Radial Points          =             75
+    Spherical Points       =            302
+    Total Points           =          66335
+    Total Blocks           =            553
+    Max Points             =            255
+    Max Functions          =             19
+    Weights Tolerance      =       1.00E-15
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   =&gt; Loading Basis Set &lt;=
@@ -1208,25 +1258,12 @@ E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2
     Name: (6-311G AUX)
     Role: JKFIT
     Keyword: DF_BASIS_SCF
-    atoms 1   entry O          line   229 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/cc-pvtz-jkfit.gbs 
-    atoms 2-3 entry H          line    51 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/cc-pvtz-jkfit.gbs 
-
-  ==&gt; Pre-Iterations &lt;==
-
-   -------------------------------------------------------
-    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
-   -------------------------------------------------------
-     A1        10      10       0       0       0       0
-     A2         0       0       0       0       0       0
-     B1         3       3       0       0       0       0
-     B2         6       6       0       0       0       0
-   -------------------------------------------------------
-    Total      19      19       5       5       5       0
-   -------------------------------------------------------
+    atoms 1   entry O          line   229 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/cc-pvtz-jkfit.gbs 
+    atoms 2-3 entry H          line    51 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/cc-pvtz-jkfit.gbs 
 
   ==&gt; Integral Setup &lt;==
 
-  DFHelper Memory: AOs need 0.001 [GiB]; user supplied 0.366 [GiB]. Using in-core AOs.
+  DFHelper Memory: AOs need 0.001 GiB; user supplied 0.278 GiB. Using in-core AOs.
 
   ==&gt; MemDFJK: Density-Fitted J/K Matrices &lt;==
 
@@ -1234,40 +1271,67 @@ E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2
     K tasked:                    No
     wK tasked:                   No
     OpenMP threads:               1
-    Memory (MB):                375
+    Memory [MiB]:               284
     Algorithm:                 Core
     Schwarz Cutoff:           1E-12
     Mask sparsity (%):       0.0000
-    Fitting Condition:        1E-12
+    Fitting Condition:        1E-10
 
    =&gt; Auxiliary Basis Set &lt;=
 
   Basis Set: (6-311G AUX)
     Blend: CC-PVTZ-JKFIT
     Number of shells: 45
-    Number of basis function: 139
+    Number of basis functions: 139
     Number of Cartesian functions: 166
     Spherical Harmonics?: true
     Max angular momentum: 4
 
-  Minimum eigenvalue in the overlap matrix is 4.3275028627E-02.
-  Using Symmetric Orthogonalization.
+  Cached 100.0% of DFT collocation blocks in 0.088 [GiB].
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  Minimum eigenvalue in the overlap matrix is 3.8481855116E-02.
+  Reciprocal condition number of the overlap matrix is 1.0514592286E-02.
+    Using symmetric orthogonalization.
 
-  SCF Guess: Superposition of Atomic Densities via on-the-fly atomic UHF.
+  ==&gt; Pre-Iterations &lt;==
+
+  SCF Guess: Superposition of Atomic Densities via on-the-fly atomic UHF (no occupation information).
+
+   -------------------------
+    Irrep   Nso     Nmo    
+   -------------------------
+     A1        10      10 
+     A2         0       0 
+     B1         3       3 
+     B2         6       6 
+   -------------------------
+    Total      19      19
+   -------------------------
 
   ==&gt; Iterations &lt;==
 
                            Total Energy        Delta E     RMS |[F,P]|
 
-   @DF-RKS iter   0:   -76.39779118367051   -7.63978e+01   1.30232e-01 
-   @DF-RKS iter   1:   -76.33855949560252    5.92317e-02   3.90136e-02 
-   @DF-RKS iter   2:   -76.18341715869511    1.55142e-01   6.63527e-02 DIIS
-   @DF-RKS iter   3:   -76.41716011962504   -2.33743e-01   1.08966e-03 DIIS
-   @DF-RKS iter   4:   -76.41723395980274   -7.38402e-05   1.30817e-04 DIIS
-   @DF-RKS iter   5:   -76.41723476471714   -8.04914e-07   1.07439e-05 DIIS
-   @DF-RKS iter   6:   -76.41723477132335   -6.60621e-09   6.64971e-07 DIIS
+   @DF-RKS iter SAD:   -76.13236875156562   -7.61324e+01   0.00000e+00 
+   @DF-RKS iter   1:   -76.22349882312619   -9.11301e-02   6.28939e-02 ADIIS/DIIS
+   @DF-RKS iter   2:   -75.81858472735249    4.04914e-01   1.02073e-01 ADIIS
+   @DF-RKS iter   3:   -76.39132781978782   -5.72743e-01   2.35718e-02 ADIIS/DIIS
+   @DF-RKS iter   4:   -76.41654416581284   -2.52163e-02   3.85010e-03 ADIIS/DIIS
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   @DF-RKS iter   5:   -76.41723114646567   -6.86981e-04   2.85777e-04 ADIIS/DIIS
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   @DF-RKS iter   6:   -76.41723503389798   -3.88743e-06   5.01882e-06 DIIS
+   @DF-RKS iter   7:   -76.41723503492187   -1.02389e-09   1.27723e-07 DIIS
+  Energy and wave function converged.
+
 
   ==&gt; Post-Iterations &lt;==
+
+   Electrons on quadrature grid:
+      Ntotal   =    9.9999999095 ; deviation = -9.045e-08 
 
     Orbital Energies [Eh]
     ---------------------
@@ -1279,68 +1343,70 @@ E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2
 
     Virtual:                                                              
 
-       4A1     0.011915     2B2     0.091731     3B2     0.352344  
+       4A1     0.011915     2B2     0.091732     3B2     0.352344  
        5A1     0.386412     2B1     0.735694     6A1     0.758241  
-       4B2     0.869035     7A1     1.127509     8A1     2.144272  
-       5B2     2.190458     3B1     4.708406     9A1     4.817659  
-       6B2     4.934246    10A1    49.747693  
+       4B2     0.869035     7A1     1.127509     8A1     2.144273  
+       5B2     2.190459     3B1     4.708413     9A1     4.817659  
+       6B2     4.934251    10A1    49.747692  
 
     Final Occupation by Irrep:
              A1    A2    B1    B2 
     DOCC [     3,    0,    1,    1 ]
 
-  Energy converged.
-
-  @DF-RKS Final Energy:   -76.41723477132335
+  @DF-RKS Final Energy:   -76.41723503492187
 
    =&gt; Energetics &lt;=
 
-    Nuclear Repulsion Energy =              9.1895337224728184
-    One-Electron Energy =                -123.0748387221805444
-    Two-Electron Energy =                  46.8358816114624048
-    DFT Exchange-Correlation Energy =      -9.3678113830780241
+    Nuclear Repulsion Energy =              9.1895337585934787
+    One-Electron Energy =                -123.0748011131732085
+    Two-Electron Energy =                  46.8358396635487679
+    DFT Exchange-Correlation Energy =      -9.3678073438909149
     Empirical Dispersion Energy =           0.0000000000000000
     VV10 Nonlocal Energy =                  0.0000000000000000
-    Total Energy =                        -76.4172347713233364
+    Total Energy =                        -76.4172350349218732
 
+Computation Completed
 
 
 Properties will be evaluated at   0.000000,   0.000000,   0.000000 [a0]
 
 Properties computed using the SCF density matrix
 
-  Nuclear Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:    -0.9763
 
-  Electronic Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:     0.0100
+ Multipole Moments:
 
-  Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:    -0.9663     Total:     0.9663
+ ------------------------------------------------------------------------------------
+     Multipole            Electronic (a.u.)      Nuclear  (a.u.)        Total (a.u.)
+ ------------------------------------------------------------------------------------
 
-  Dipole Moment: [D]
-     X:     0.0000      Y:     0.0000      Z:    -2.4561     Total:     2.4561
+ L = 1.  Multiply by 2.5417464519 to convert [e a0] to [Debye]
+ Dipole X            :          0.0000000            0.0000000            0.0000000
+ Dipole Y            :          0.0000000            0.0000000            0.0000000
+ Dipole Z            :          0.0099581           -0.9762689           -0.9663108
+ Magnitude           :                                                    0.9663108
 
-
-*** tstop() called on BlauweDraak at Tue May 24 15:35:15 2022
-Module time:
-	user time   =       0.96 seconds =       0.02 minutes
-	system time =       0.00 seconds =       0.00 minutes
-	total time  =          1 seconds =       0.02 minutes
-Total time:
-	user time   =       2.11 seconds =       0.04 minutes
-	system time =       0.03 seconds =       0.00 minutes
-	total time  =          2 seconds =       0.03 minutes
+ ------------------------------------------------------------------------------------
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.41723477132335
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.41723503492187
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** tstop() called on B450-AORUS-PRO-WIFI at Thu May 26 17:45:54 2022
+Module time:
+	user time   =       1.19 seconds =       0.02 minutes
+	system time =       0.01 seconds =       0.00 minutes
+	total time  =          1 seconds =       0.02 minutes
+Total time:
+	user time   =       2.07 seconds =       0.03 minutes
+	system time =       0.05 seconds =       0.00 minutes
+	total time  =          2 seconds =       0.03 minutes
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="funcionales-hibridos">
-<h2><span class="section-number">4.4. </span>Funcionales Híbridos<a class="headerlink" href="#funcionales-hibridos" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.4. </span>Funcionales Híbridos<a class="headerlink" href="#funcionales-hibridos" title="Permalink to this headline">¶</a></h2>
 <p>Mezclan un funcional de intercambio con el <code class="docutils literal notranslate"><span class="pre">intercambio</span> <span class="pre">de</span> <span class="pre">Hartree-Fock</span></code> en alguna proporción.</p>
 <p>Algunos ejemplos de estos funcionales son:</p>
 <ul class="simple">
@@ -1367,22 +1433,24 @@ Total time:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** tstart() called on BlauweDraak
-*** at Tue May 24 15:35:15 2022
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scratch directory: /tmp/
+
+*** tstart() called on B450-AORUS-PRO-WIFI
+*** at Thu May 26 17:45:54 2022
 
    =&gt; Loading Basis Set &lt;=
 
     Name: 6-311G
     Role: ORBITAL
     Keyword: BASIS
-    atoms 1   entry O          line   126 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/6-311g.gbs 
-    atoms 2-3 entry H          line    21 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/6-311g.gbs 
+    atoms 1   entry O          line   126 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/6-311g.gbs 
+    atoms 2-3 entry H          line    21 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/6-311g.gbs 
 
 
          ---------------------------------------------------------
                                    SCF
-            by Justin Turney, Rob Parrish, Andy Simmonett
-                             and Daniel Smith
+               by Justin Turney, Rob Parrish, Andy Simmonett
+                          and Daniel G. A. Smith
                               RKS Reference
                         1 Threads,    500 MiB Core
          ---------------------------------------------------------
@@ -1396,15 +1464,15 @@ Total time:
 
        Center              X                  Y                   Z               Mass       
     ------------   -----------------  -----------------  -----------------  -----------------
-         O            0.000000000000     0.000000000000     0.065638073174    15.994914619560
-         H           -0.000000000000     0.757200000000    -0.520861926826     1.007825032070
-         H            0.000000000000    -0.757200000000    -0.520861926826     1.007825032070
+         O            0.000000000000     0.000000000000     0.065638073183    15.994914619570
+         H           -0.000000000000     0.757200000000    -0.520861926817     1.007825032230
+         H            0.000000000000    -0.757200000000    -0.520861926817     1.007825032230
 
   Running in c2v symmetry.
 
   Rotational constants: A =     27.37731  B =     14.58680  C =      9.51640 [cm^-1]
-  Rotational constants: A = 820751.01726  B = 437301.38089  C = 285294.59802 [MHz]
-  Nuclear repulsion =    9.189533722472818
+  Rotational constants: A = 820751.02340  B = 437301.38415  C = 285294.60015 [MHz]
+  Nuclear repulsion =    9.189533758593479
 
   Charge       = 0
   Multiplicity = 1
@@ -1421,14 +1489,14 @@ Total time:
   Guess Type is SAD.
   Energy threshold   = 1.00e-06
   Density threshold  = 1.00e-06
-  Integral threshold = 0.00e+00
+  Integral threshold = 1.00e-12
 
   ==&gt; Primary Basis &lt;==
 
   Basis Set: 6-311G
     Blend: 6-311G
     Number of shells: 13
-    Number of basis function: 19
+    Number of basis functions: 19
     Number of Cartesian functions: 19
     Spherical Harmonics?: true
     Max angular momentum: 1
@@ -1438,7 +1506,7 @@ Total time:
    =&gt; Composite Functional: M06-2X &lt;= 
 
     Hybrid M06-2X Meta-GGA XC Functional
-
+(10.1007/s00214-007-0310-x)
     Y. Zhao and D. G. Truhlar,  Theor. Chem. Acc., 120, 215, 2008
 
 
@@ -1461,47 +1529,39 @@ Total time:
 
     1.0000   XC_MGGA_C_M06_2X
 
+   =&gt; LibXC Density Thresholds  &lt;==
+
+    XC_MGGA_C_M06_2X:  1.00E-12 
+    XC_HYB_MGGA_X_M06_2X:  1.00E-15 
+
    =&gt; Molecular Quadrature &lt;=
 
-    Radial Scheme       =       TREUTLER
-    Pruning Scheme      =           FLAT
-    Nuclear Scheme      =       TREUTLER
+    Radial Scheme          =       TREUTLER
+    Pruning Scheme         =           NONE
+    Nuclear Scheme         =       TREUTLER
 
-    BS radius alpha     =              1
-    Pruning alpha       =              1
-    Radial Points       =             75
-    Spherical Points    =            302
-    Total Points        =          66783
-    Total Blocks        =            573
-    Max Points          =            255
-    Max Functions       =             19
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   =&gt; Loading Basis Set &lt;=
+    Blocking Scheme        =         OCTREE
+    BS radius alpha        =              1
+    Pruning alpha          =              1
+    Radial Points          =             75
+    Spherical Points       =            302
+    Total Points           =          66335
+    Total Blocks           =            553
+    Max Points             =            255
+    Max Functions          =             19
+    Weights Tolerance      =       1.00E-15
+
+   =&gt; Loading Basis Set &lt;=
 
     Name: (6-311G AUX)
     Role: JKFIT
     Keyword: DF_BASIS_SCF
-    atoms 1   entry O          line   229 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/cc-pvtz-jkfit.gbs 
-    atoms 2-3 entry H          line    51 file /home/jebarrios/anaconda3/envs/QCI/share/psi4/basis/cc-pvtz-jkfit.gbs 
+    atoms 1   entry O          line   229 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/cc-pvtz-jkfit.gbs 
+    atoms 2-3 entry H          line    51 file /home/jfhlewyee/anaconda3/envs/jb/share/psi4/basis/cc-pvtz-jkfit.gbs 
 
-  ==&gt; Pre-Iterations &lt;==
+  ==&gt; Integral Setup &lt;==
 
-   -------------------------------------------------------
-    Irrep   Nso     Nmo     Nalpha   Nbeta   Ndocc  Nsocc
-   -------------------------------------------------------
-     A1        10      10       0       0       0       0
-     A2         0       0       0       0       0       0
-     B1         3       3       0       0       0       0
-     B2         6       6       0       0       0       0
-   -------------------------------------------------------
-    Total      19      19       5       5       5       0
-   -------------------------------------------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  ==&gt; Integral Setup &lt;==
-
-  DFHelper Memory: AOs need 0.001 [GiB]; user supplied 0.366 [GiB]. Using in-core AOs.
+  DFHelper Memory: AOs need 0.001 GiB; user supplied 0.278 GiB. Using in-core AOs.
 
   ==&gt; MemDFJK: Density-Fitted J/K Matrices &lt;==
 
@@ -1509,106 +1569,132 @@ Total time:
     K tasked:                   Yes
     wK tasked:                   No
     OpenMP threads:               1
-    Memory (MB):                375
+    Memory [MiB]:               284
     Algorithm:                 Core
     Schwarz Cutoff:           1E-12
     Mask sparsity (%):       0.0000
-    Fitting Condition:        1E-12
+    Fitting Condition:        1E-10
 
    =&gt; Auxiliary Basis Set &lt;=
 
   Basis Set: (6-311G AUX)
     Blend: CC-PVTZ-JKFIT
     Number of shells: 45
-    Number of basis function: 139
+    Number of basis functions: 139
     Number of Cartesian functions: 166
     Spherical Harmonics?: true
     Max angular momentum: 4
 
-  Minimum eigenvalue in the overlap matrix is 4.3275028627E-02.
-  Using Symmetric Orthogonalization.
+  Cached 100.0% of DFT collocation blocks in 0.088 [GiB].
 
-  SCF Guess: Superposition of Atomic Densities via on-the-fly atomic UHF.
+  Minimum eigenvalue in the overlap matrix is 3.8481855116E-02.
+  Reciprocal condition number of the overlap matrix is 1.0514592286E-02.
+    Using symmetric orthogonalization.
+
+  ==&gt; Pre-Iterations &lt;==
+
+  SCF Guess: Superposition of Atomic Densities via on-the-fly atomic UHF (no occupation information).
+
+   -------------------------
+    Irrep   Nso     Nmo    
+   -------------------------
+     A1        10      10 
+     A2         0       0 
+     B1         3       3 
+     B2         6       6 
+   -------------------------
+    Total      19      19
+   -------------------------
 
   ==&gt; Iterations &lt;==
 
                            Total Energy        Delta E     RMS |[F,P]|
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   @DF-RKS iter SAD:   -75.99934673233051   -7.59993e+01   0.00000e+00 
+   @DF-RKS iter   1:   -76.25640781076299   -2.57061e-01   4.79274e-02 ADIIS/DIIS
+   @DF-RKS iter   2:   -76.24503686597785    1.13709e-02   5.26774e-02 ADIIS/DIIS
+   @DF-RKS iter   3:   -76.37834333918407   -1.33306e-01   8.11596e-04 ADIIS/DIIS
+   @DF-RKS iter   4:   -76.37840581773118   -6.24785e-05   1.78179e-04 ADIIS/DIIS
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   @DF-RKS iter   5:   -76.37840818416221   -2.36643e-06   1.34487e-05 DIIS
+   @DF-RKS iter   6:   -76.37840821397789   -2.98157e-08   1.95764e-06 DIIS
+   @DF-RKS iter   7:   -76.37840821474991   -7.72019e-10   2.27077e-07 DIIS
+  Energy and wave function converged.
 
-   @DF-RKS iter   0:   -76.32245300039084   -7.63225e+01   1.33896e-01 
-   @DF-RKS iter   1:   -76.33427500577780   -1.18220e-02   2.82099e-02 
-   @DF-RKS iter   2:   -76.33316762242728    1.10738e-03   3.10591e-02 DIIS
-   @DF-RKS iter   3:   -76.37839633253427   -4.52287e-02   4.13327e-04 DIIS
-   @DF-RKS iter   4:   -76.37840713735670   -1.08048e-05   7.25292e-05 DIIS
-   @DF-RKS iter   5:   -76.37840758877606   -4.51419e-07   9.54048e-06 DIIS
-   @DF-RKS iter   6:   -76.37840759927579   -1.04997e-08   1.06956e-06 DIIS
-   @DF-RKS iter   7:   -76.37840759959782   -3.22032e-10   8.31584e-08 DIIS
 
   ==&gt; Post-Iterations &lt;==
+
+   Electrons on quadrature grid:
+      Ntotal   =    9.9999999195 ; deviation = -8.052e-08 
 
     Orbital Energies [Eh]
     ---------------------
 
     Doubly Occupied:                                                      
 
-       1A1   -19.606960     2A1    -1.142312     1B2    -0.608183  
-       3A1    -0.446056     1B1    -0.385388  
+       1A1   -19.606960     2A1    -1.142308     1B2    -0.608173  
+       3A1    -0.446058     1B1    -0.385389  
 
     Virtual:                                                              
 
-       4A1     0.058118     2B2     0.133410     3B2     0.424968  
-       5A1     0.459894     2B1     0.832832     6A1     0.853903  
-       4B2     0.959332     7A1     1.225444     8A1     2.173262  
-       5B2     2.212145     3B1     4.881181     9A1     4.985629  
-       6B2     5.094104    10A1    49.850269  
+       4A1     0.058116     2B2     0.133409     3B2     0.424957  
+       5A1     0.459890     2B1     0.832824     6A1     0.853903  
+       4B2     0.959320     7A1     1.225442     8A1     2.173187  
+       5B2     2.212067     3B1     4.881167     9A1     4.985598  
+       6B2     5.094071    10A1    49.850239  
 
     Final Occupation by Irrep:
              A1    A2    B1    B2 
     DOCC [     3,    0,    1,    1 ]
 
-  Energy converged.
-
-  @DF-RKS Final Energy:   -76.37840759959782
+  @DF-RKS Final Energy:   -76.37840821474991
 
    =&gt; Energetics &lt;=
 
-    Nuclear Repulsion Energy =              9.1895337224728184
-    One-Electron Energy =                -123.0465201037716980
-    Two-Electron Energy =                  41.9684554030333601
-    DFT Exchange-Correlation Energy =      -4.4898766213323009
+    Nuclear Repulsion Energy =              9.1895337585934787
+    One-Electron Energy =                -123.0465209685796140
+    Two-Electron Energy =                  41.9684561839964516
+    DFT Exchange-Correlation Energy =      -4.4898771887602376
     Empirical Dispersion Energy =           0.0000000000000000
     VV10 Nonlocal Energy =                  0.0000000000000000
-    Total Energy =                        -76.3784075995978213
+    Total Energy =                        -76.3784082147499106
 
+Computation Completed
 
 
 Properties will be evaluated at   0.000000,   0.000000,   0.000000 [a0]
 
 Properties computed using the SCF density matrix
 
-  Nuclear Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:    -0.9763
 
-  Electronic Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:    -0.0368
+ Multipole Moments:
 
-  Dipole Moment: [e a0]
-     X:     0.0000      Y:     0.0000      Z:    -1.0130     Total:     1.0130
+ ------------------------------------------------------------------------------------
+     Multipole            Electronic (a.u.)      Nuclear  (a.u.)        Total (a.u.)
+ ------------------------------------------------------------------------------------
 
-  Dipole Moment: [D]
-     X:     0.0000      Y:     0.0000      Z:    -2.5748     Total:     2.5748
+ L = 1.  Multiply by 2.5417464519 to convert [e a0] to [Debye]
+ Dipole X            :          0.0000000            0.0000000            0.0000000
+ Dipole Y            :          0.0000000            0.0000000            0.0000000
+ Dipole Z            :         -0.0367425           -0.9762689           -1.0130114
+ Magnitude           :                                                    1.0130114
+
+ ------------------------------------------------------------------------------------
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.37840759959782
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.37840821474991
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** tstop() called on BlauweDraak at Tue May 24 15:35:16 2022
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>*** tstop() called on B450-AORUS-PRO-WIFI at Thu May 26 17:45:55 2022
 Module time:
-	user time   =       0.94 seconds =       0.02 minutes
-	system time =       0.01 seconds =       0.00 minutes
+	user time   =       0.92 seconds =       0.02 minutes
+	system time =       0.00 seconds =       0.00 minutes
 	total time  =          1 seconds =       0.02 minutes
 Total time:
-	user time   =       3.06 seconds =       0.05 minutes
-	system time =       0.04 seconds =       0.00 minutes
+	user time   =       3.01 seconds =       0.05 minutes
+	system time =       0.05 seconds =       0.00 minutes
 	total time  =          3 seconds =       0.05 minutes
 </pre></div>
 </div>
@@ -1616,7 +1702,7 @@ Total time:
 </div>
 </div>
 <div class="section" id="referencias">
-<h2><span class="section-number">4.5. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">18.5. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>P. Hohenberg and W. Kohn, Phys. Rev. 136, B864 (1964).</p></li>
 <li><p>P. Atkins, Molecular Quantum Mechanics (Oxford University Press, 2005).</p></li>
@@ -1657,13 +1743,13 @@ Total time:
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">3. </span>Moller-Plesset (MPn)</p>
+            <p class="prev-next-title"><span class="section-number">17. </span>Moller-Plesset (MPn)</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="Dimerizacion.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>Dimerización de <span class="math notranslate nohighlight">\(NO_2\)</span></p>
+        <p class="prev-next-title"><span class="section-number">19. </span>Dimerización de <span class="math notranslate nohighlight">\(NO_2\)</span></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -1674,9 +1760,9 @@ Total time:
     <footer class="footer">
   <p>
     
-      By M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+      Por M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Derechos de autor 2021.<br/>
   </p>
 </footer>
 </main>
