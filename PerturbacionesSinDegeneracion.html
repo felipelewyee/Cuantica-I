@@ -463,7 +463,7 @@ const thebe_selector_output = ".output, .cell_output"
 \hat{H}' = \hat{H}-\hat{H}^{(0)}
 \]</div>
 <p>El método presentado en este notebook tiene la suposición los niveles de energía <span class="math notranslate nohighlight">\(\big\{ E_n^{(0)}\big\}\)</span> no están degenerados.</p>
-<p>Proponemos una solución en serie aproximada a los eigenvalores (<span class="math notranslate nohighlight">\(E_n\)</span>) y eigenfunciones (<span class="math notranslate nohighlight">\(\Psi_n\)</span>) de <span class="math notranslate nohighlight">\(\hat{H}\)</span> en términos de <span class="math notranslate nohighlight">\(E_n^{(0)}\)</span> y <span class="math notranslate nohighlight">\(\Psi_n^{(0)}\)</span> y correcciones a dichos valores. De tal foma que tenemos,</p>
+<p>Proponemos una solución en serie aproximada a los eigenvalores (<span class="math notranslate nohighlight">\(E_n\)</span>) y eigenfunciones (<span class="math notranslate nohighlight">\(\Psi_n\)</span>) de <span class="math notranslate nohighlight">\(\hat{H}\)</span> en términos de <span class="math notranslate nohighlight">\(E_n^{(0)}\)</span> y <span class="math notranslate nohighlight">\(\Psi_n^{(0)}\)</span> y correcciones a dichos valores. De tal forma que tenemos,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 E_n &amp;=&amp; E_n^{(0)}+ E_n^{(1)} + E_n^{(2)} +\ldots \\
@@ -510,7 +510,7 @@ E_n^{(0)} = \bigg(n+\frac{1}{2}\bigg) h\nu
 \[
 \nu = \frac{1}{2\pi }\bigg( \frac{k}{m}  \bigg)^{1/2}
 \]</div>
-<p>Realicemos numéricamente el cáculo de los elementos de matriz.</p>
+<p>Realicemos numéricamente el cálculo de los elementos de matriz.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
@@ -537,7 +537,7 @@ E_n^{(0)} = \bigg(n+\frac{1}{2}\bigg) h\nu
 <span class="c1"># n -&gt; nivel de energía</span>
 <span class="n">n</span>   <span class="o">=</span> <span class="mi">0</span>
 
-<span class="c1"># Definimos una función que nos de la eigenenergía del </span>
+<span class="c1"># Definimos una función que nos dé la eigenenergía del </span>
 <span class="c1"># oscilado armónico</span>
 <span class="k">def</span> <span class="nf">eigenEn0</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">ν</span>
@@ -597,7 +597,7 @@ E0^(0) = 0.135 [eV]
 <span class="n">Hp</span> <span class="o">=</span> <span class="n">c</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">d</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span>
 
 <span class="c1"># Construimos los elementos de matriz de H&#39;_{m,n}</span>
-<span class="c1"># Notemos que numericamente la matriz numericamente</span>
+<span class="c1"># Notemos que numéricamente la matriz</span>
 <span class="c1"># tiene un tamaño finito</span>
 <span class="n">m_max</span> <span class="o">=</span> <span class="mi">20</span>
 
@@ -619,7 +619,7 @@ E0^(0) = 0.135 [eV]
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Las matrices se pueden visulizar utilizando un mapa de colores</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Las matrices se pueden visualizar utilizando un mapa de colores</span>
 <span class="n">plotM</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">matrizHp</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greys&quot;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$H&#39;_</span><span class="si">{mn}</span><span class="s2"> [eV]$&quot;</span><span class="p">);</span>
 <span class="c1"># Notamos como los valores distinto de cero están cerca de la diagonal</span>
@@ -752,7 +752,7 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Previamente realizamos el gráfico de los elementos de matriz</span>
 
-<span class="c1"># Las matrices se pueden visulizar utilizando un mapa de colores</span>
+<span class="c1"># Las matrices se pueden visualizar utilizando un mapa de colores</span>
 <span class="n">plotM</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">matrizHp</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greys&quot;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$H&#39;_</span><span class="si">{mn}</span><span class="s2"> [eV]$&quot;</span><span class="p">);</span>
 <span class="c1"># Notamos como los valores distinto de cero están cerca de la diagonal</span>
@@ -767,7 +767,7 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sin embargo, los términos a sumar son los elementos de matriz </span>
-<span class="c1"># al cuadrado dividos por la diferencia de energía del nivel a corregir.</span>
+<span class="c1"># al cuadrado divididos por la diferencia de energía del nivel a corregir.</span>
 
 <span class="c1"># Analicemos los términos de la suma cuando n = 0, es decir el estado base</span>
 <span class="n">n</span>   <span class="o">=</span> <span class="mi">0</span>

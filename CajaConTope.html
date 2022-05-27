@@ -418,7 +418,7 @@ const thebe_selector_output = ".output, .cell_output"
   <div class="tex2jax_ignore mathjax_ignore section" id="efecto-tunel-en-la-caja">
 <h1><span class="section-number">22. </span>Efecto Túnel en la Caja<a class="headerlink" href="#efecto-tunel-en-la-caja" title="Permalink to this headline">¶</a></h1>
 <p>Este problema es continuación de la partícula en la caja y nos permite ejemplificar el efecto túnel. Para ello, planteemos una caja de <span class="math notranslate nohighlight">\(-L\)</span> a <span class="math notranslate nohighlight">\(L\)</span>, con potencial infinito afuera de la caja, pero esta vez hay un tope de potencial en el centro de la caja</p>
-<a class="reference internal image-reference" href="_images/caja1d-tope.png"><img alt="Figura de la caja 1D con topr" src="_images/caja1d-tope.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/caja1d-tope.png"><img alt="Figura de la caja 1D con tope" src="_images/caja1d-tope.png" style="width: 300px;" /></a>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 V(x) = \left\{
@@ -517,7 +517,7 @@ V(x) = \left\{
 </div>
 </div>
 </div>
-<p>La función de onda y su derivada deben de ser contínuas, por lo que podemos igualar la función de onda en el punto donde se unen las regiones, y obtener nuevas ecuaciones.</p>
+<p>La función de onda y su derivada deben de ser continuas, por lo que podemos igualar la función de onda en el punto donde se unen las regiones, y obtener nuevas ecuaciones.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Condiciones de Frontera</p>
 <table class="colwidths-auto table">
@@ -554,7 +554,7 @@ V(x) = \left\{
 <p>A partir de aquí podemos ayudarnos de la simetría del problema.</p>
 <div class="section" id="simetria-par">
 <h2><span class="section-number">22.1. </span>Simetría Par<a class="headerlink" href="#simetria-par" title="Permalink to this headline">¶</a></h2>
-<p>Empezaremos asumiendo que lo que esta del lado izquierdo respecto a <span class="math notranslate nohighlight">\(x=0\)</span> tiene simetría par respecto a lo que está del lado derecho.</p>
+<p>Empezaremos asumiendo que lo que está del lado izquierdo respecto a <span class="math notranslate nohighlight">\(x=0\)</span> tiene simetría par respecto a lo que está del lado derecho.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Simetría par</p>
 <p>Al imponer la simetría en la región III</p>
@@ -652,7 +652,7 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_14025/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_17640/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
   return np.tanh(arg1)**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
@@ -919,17 +919,17 @@ k_1\frac{1 + tan(k_1 a)tan(k_1 L)}{tan(k_1 a) - tan(k_1 L)} = k_2 tanh^{-1}(k_2a
 \]</div>
 <p>El siguiente paso es sustituir los valores de <span class="math notranslate nohighlight">\(k_1\)</span> y <span class="math notranslate nohighlight">\(k_2\)</span>.</p>
 </div>
-<p>Al considerar esta condición en las ecuaciones de continuidad, se obtienen las siguiente ecuación</p>
+<p>Al considerar esta condición en las ecuaciones de continuidad, se obtiene la siguiente ecuación</p>
 <div class="math notranslate nohighlight">
 \[
 tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
 \]</div>
-<p>En esta ecuación no es trivial despear E, pero la igualdad sólo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos <span class="math notranslate nohighlight">\(f(E)\)</span></p>
+<p>En esta ecuación no es trivial despear E, pero la igualdad solo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos <span class="math notranslate nohighlight">\(f(E)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2 tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{V-E}
 \]</div>
-<p>Cuando se tenga el <span class="math notranslate nohighlight">\(E\)</span> correcto se cumplirá <span class="math notranslate nohighlight">\(f(E) = 0\)</span>, así que sólo tenemos que buscar los ceros (o raíces) de la función.</p>
+<p>Cuando se tenga el <span class="math notranslate nohighlight">\(E\)</span> correcto se cumplirá <span class="math notranslate nohighlight">\(f(E) = 0\)</span>, así que solo tenemos que buscar los ceros (o raíces) de la función.</p>
 <p><strong>Defina la función <span class="math notranslate nohighlight">\(f(E)\)</span></strong></p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
@@ -969,9 +969,9 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_14025/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_17640/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
-/tmp/ipykernel_14025/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
+/tmp/ipykernel_17640/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
@@ -1059,7 +1059,7 @@ F &amp;= C \left(\frac{ e^{k_2a} - e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}
 <p>Realice las gráficas de la función de onda</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Graficas</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráficas</span>
 </pre></div>
 </div>
 </div>
