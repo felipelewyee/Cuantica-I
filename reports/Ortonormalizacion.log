@@ -17,24 +17,16 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-norm2 = integrate.quad(lambda x: x*x,-3,3)[0]
-print("N**2 =",norm2)
-
-norm = np.sqrt(norm2)
-print("N =",norm)
-
-integrate.quad(lambda x: (x/norm)*(x/norm),-3,3)
+import scipy.integrate as integrate
+integrate.quad(lambda x: x**2,-3,3)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Input [0;32mIn [4][0m, in [0;36m<cell line: 4>[0;34m()[0m
-[1;32m      1[0m norm2 [38;5;241m=[39m integrate[38;5;241m.[39mquad([38;5;28;01mlambda[39;00m x: x[38;5;241m*[39mx,[38;5;241m-[39m[38;5;241m3[39m,[38;5;241m3[39m)[[38;5;241m0[39m]
-[1;32m      2[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mN**2 =[39m[38;5;124m"[39m,norm2)
-[0;32m----> 4[0m norm [38;5;241m=[39m [43mnp[49m[38;5;241m.[39msqrt(norm2)
-[1;32m      5[0m [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mN =[39m[38;5;124m"[39m,norm)
-[1;32m      7[0m integrate[38;5;241m.[39mquad([38;5;28;01mlambda[39;00m x: (x[38;5;241m/[39mnorm)[38;5;241m*[39m(x[38;5;241m/[39mnorm),[38;5;241m-[39m[38;5;241m3[39m,[38;5;241m3[39m)
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [0;32mIn [2][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m [38;5;28;01mimport[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mintegrate[39;00m [38;5;28;01mas[39;00m [38;5;21;01mintegrate[39;00m
+[1;32m      2[0m integrate[38;5;241m.[39mquad([38;5;28;01mlambda[39;00m x: x[38;5;241m*[39m[38;5;241m*[39m[38;5;241m2[39m,[38;5;241m-[39m[38;5;241m3[39m,[38;5;241m3[39m)
 
-[0;31mNameError[0m: name 'np' is not defined
-NameError: name 'np' is not defined
+[0;31mModuleNotFoundError[0m: No module named 'scipy'
+ModuleNotFoundError: No module named 'scipy'
 

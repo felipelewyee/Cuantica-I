@@ -462,6 +462,18 @@ H_{\pi}C = SC\varepsilon
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p>El método de Hückel implica las siguientes aproximaciones</p>
 <ol class="simple">
@@ -592,29 +604,29 @@ HC = C\varepsilon
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⎡⎛                 ⎡⎡   -1   ⎤⎤⎞  ⎛                 ⎡⎡  1   ⎤⎤⎞  ⎛                 ⎡⎡   -1   ⎤⎤⎞  ⎛ 
-⎢⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟  ⎜                 ⎢⎢        ⎥⎥⎟  ⎜ 
-⎢⎜                 ⎢⎢ 1   √5 ⎥⎥⎟  ⎜                 ⎢⎢1   √5⎥⎥⎟  ⎜                 ⎢⎢ 1   √5 ⎥⎥⎟  ⎜ 
-⎢⎜                 ⎢⎢ ─ - ── ⎥⎥⎟  ⎜                 ⎢⎢─ + ──⎥⎥⎟  ⎜                 ⎢⎢ ─ + ── ⎥⎥⎟  ⎜ 
-⎢⎜    β   √5⋅β     ⎢⎢ 2   2  ⎥⎥⎟  ⎜    β   √5⋅β     ⎢⎢2   2 ⎥⎥⎟  ⎜    √5⋅β   β     ⎢⎢ 2   2  ⎥⎥⎟  ⎜ 
-⎢⎜α - ─ + ────, 1, ⎢⎢        ⎥⎥⎟, ⎜α + ─ + ────, 1, ⎢⎢      ⎥⎥⎟, ⎜α - ──── - ─, 1, ⎢⎢        ⎥⎥⎟, ⎜α
-⎢⎜    2    2       ⎢⎢  1   √5⎥⎥⎟  ⎜    2    2       ⎢⎢1   √5⎥⎥⎟  ⎜     2     2     ⎢⎢  √5   1⎥⎥⎟  ⎜ 
-⎢⎜                 ⎢⎢- ─ + ──⎥⎥⎟  ⎜                 ⎢⎢─ + ──⎥⎥⎟  ⎜                 ⎢⎢- ── - ─⎥⎥⎟  ⎜ 
-⎢⎜                 ⎢⎢  2   2 ⎥⎥⎟  ⎜                 ⎢⎢2   2 ⎥⎥⎟  ⎜                 ⎢⎢  2    2⎥⎥⎟  ⎜ 
-⎢⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟  ⎜                 ⎢⎢        ⎥⎥⎟  ⎜ 
-⎣⎝                 ⎣⎣   1    ⎦⎦⎠  ⎝                 ⎣⎣  1   ⎦⎦⎠  ⎝                 ⎣⎣   1    ⎦⎦⎠  ⎝ 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⎡⎛                 ⎡⎡   -1   ⎤⎤⎞  ⎛                 ⎡⎡  1   ⎤⎤⎞  ⎛            
+⎢⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟  ⎜            
+⎢⎜                 ⎢⎢ 1   √5 ⎥⎥⎟  ⎜                 ⎢⎢1   √5⎥⎥⎟  ⎜            
+⎢⎜                 ⎢⎢ ─ - ── ⎥⎥⎟  ⎜                 ⎢⎢─ + ──⎥⎥⎟  ⎜            
+⎢⎜    β   √5⋅β     ⎢⎢ 2   2  ⎥⎥⎟  ⎜    β   √5⋅β     ⎢⎢2   2 ⎥⎥⎟  ⎜    √5⋅β   β
+⎢⎜α - ─ + ────, 1, ⎢⎢        ⎥⎥⎟, ⎜α + ─ + ────, 1, ⎢⎢      ⎥⎥⎟, ⎜α - ──── - ─
+⎢⎜    2    2       ⎢⎢  1   √5⎥⎥⎟  ⎜    2    2       ⎢⎢1   √5⎥⎥⎟  ⎜     2     2
+⎢⎜                 ⎢⎢- ─ + ──⎥⎥⎟  ⎜                 ⎢⎢─ + ──⎥⎥⎟  ⎜            
+⎢⎜                 ⎢⎢  2   2 ⎥⎥⎟  ⎜                 ⎢⎢2   2 ⎥⎥⎟  ⎜            
+⎢⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟  ⎜            
+⎣⎝                 ⎣⎣   1    ⎦⎦⎠  ⎝                 ⎣⎣  1   ⎦⎦⎠  ⎝            
 
-                ⎡⎡  1   ⎤⎤⎞⎤
-                ⎢⎢      ⎥⎥⎟⎥
-                ⎢⎢1   √5⎥⎥⎟⎥
-                ⎢⎢─ - ──⎥⎥⎟⎥
-   √5⋅β   β     ⎢⎢2   2 ⎥⎥⎟⎥
- - ──── + ─, 1, ⎢⎢      ⎥⎥⎟⎥
-    2     2     ⎢⎢1   √5⎥⎥⎟⎥
-                ⎢⎢─ - ──⎥⎥⎟⎥
-                ⎢⎢2   2 ⎥⎥⎟⎥
-                ⎢⎢      ⎥⎥⎟⎥
-                ⎣⎣  1   ⎦⎦⎠⎦
+     ⎡⎡   -1   ⎤⎤⎞  ⎛                 ⎡⎡  1   ⎤⎤⎞⎤
+     ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟⎥
+     ⎢⎢ 1   √5 ⎥⎥⎟  ⎜                 ⎢⎢1   √5⎥⎥⎟⎥
+     ⎢⎢ ─ + ── ⎥⎥⎟  ⎜                 ⎢⎢─ - ──⎥⎥⎟⎥
+     ⎢⎢ 2   2  ⎥⎥⎟  ⎜    √5⋅β   β     ⎢⎢2   2 ⎥⎥⎟⎥
+, 1, ⎢⎢        ⎥⎥⎟, ⎜α - ──── + ─, 1, ⎢⎢      ⎥⎥⎟⎥
+     ⎢⎢  √5   1⎥⎥⎟  ⎜     2     2     ⎢⎢1   √5⎥⎥⎟⎥
+     ⎢⎢- ── - ─⎥⎥⎟  ⎜                 ⎢⎢─ - ──⎥⎥⎟⎥
+     ⎢⎢  2    2⎥⎥⎟  ⎜                 ⎢⎢2   2 ⎥⎥⎟⎥
+     ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟⎥
+     ⎣⎣   1    ⎦⎦⎠  ⎝                 ⎣⎣  1   ⎦⎦⎠⎦
 </pre></div>
 </div>
 </div>
@@ -775,17 +787,29 @@ HC = C\varepsilon
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⎡⎛            ⎡⎡-1⎤⎤⎞  ⎛          ⎡⎡-1⎤  ⎡-1⎤⎤⎞  ⎛          ⎡⎡-1⎤  ⎡1 ⎤⎤⎞  ⎛            ⎡⎡1⎤⎤⎞⎤
-⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜            ⎢⎢ ⎥⎥⎟⎥
-⎢⎜            ⎢⎢1 ⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢0 ⎥⎥⎟  ⎜          ⎢⎢-1⎥  ⎢0 ⎥⎥⎟  ⎜            ⎢⎢1⎥⎥⎟⎥
-⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜            ⎢⎢ ⎥⎥⎟⎥
-⎢⎜            ⎢⎢-1⎥⎥⎟  ⎜          ⎢⎢0 ⎥  ⎢1 ⎥⎥⎟  ⎜          ⎢⎢0 ⎥  ⎢-1⎥⎥⎟  ⎜            ⎢⎢1⎥⎥⎟⎥
-⎢⎜α - 2⋅β, 1, ⎢⎢  ⎥⎥⎟, ⎜α - β, 2, ⎢⎢  ⎥, ⎢  ⎥⎥⎟, ⎜α + β, 2, ⎢⎢  ⎥, ⎢  ⎥⎥⎟, ⎜α + 2⋅β, 1, ⎢⎢ ⎥⎥⎟⎥
-⎢⎜            ⎢⎢1 ⎥⎥⎟  ⎜          ⎢⎢-1⎥  ⎢-1⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢-1⎥⎥⎟  ⎜            ⎢⎢1⎥⎥⎟⎥
-⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜            ⎢⎢ ⎥⎥⎟⎥
-⎢⎜            ⎢⎢-1⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢0 ⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢0 ⎥⎥⎟  ⎜            ⎢⎢1⎥⎥⎟⎥
-⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜            ⎢⎢ ⎥⎥⎟⎥
-⎣⎝            ⎣⎣1 ⎦⎦⎠  ⎝          ⎣⎣0 ⎦  ⎣1 ⎦⎦⎠  ⎝          ⎣⎣0 ⎦  ⎣1 ⎦⎦⎠  ⎝            ⎣⎣1⎦⎦⎠⎦
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⎡⎛            ⎡⎡-1⎤⎤⎞  ⎛          ⎡⎡-1⎤  ⎡-1⎤⎤⎞  ⎛          ⎡⎡-1⎤  ⎡1 ⎤⎤⎞  ⎛  
+⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜  
+⎢⎜            ⎢⎢1 ⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢0 ⎥⎥⎟  ⎜          ⎢⎢-1⎥  ⎢0 ⎥⎥⎟  ⎜  
+⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜  
+⎢⎜            ⎢⎢-1⎥⎥⎟  ⎜          ⎢⎢0 ⎥  ⎢1 ⎥⎥⎟  ⎜          ⎢⎢0 ⎥  ⎢-1⎥⎥⎟  ⎜  
+⎢⎜α - 2⋅β, 1, ⎢⎢  ⎥⎥⎟, ⎜α - β, 2, ⎢⎢  ⎥, ⎢  ⎥⎥⎟, ⎜α + β, 2, ⎢⎢  ⎥, ⎢  ⎥⎥⎟, ⎜α 
+⎢⎜            ⎢⎢1 ⎥⎥⎟  ⎜          ⎢⎢-1⎥  ⎢-1⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢-1⎥⎥⎟  ⎜  
+⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜  
+⎢⎜            ⎢⎢-1⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢0 ⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢0 ⎥⎥⎟  ⎜  
+⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜  
+⎣⎝            ⎣⎣1 ⎦⎦⎠  ⎝          ⎣⎣0 ⎦  ⎣1 ⎦⎦⎠  ⎝          ⎣⎣0 ⎦  ⎣1 ⎦⎦⎠  ⎝  
+
+          ⎡⎡1⎤⎤⎞⎤
+          ⎢⎢ ⎥⎥⎟⎥
+          ⎢⎢1⎥⎥⎟⎥
+          ⎢⎢ ⎥⎥⎟⎥
+          ⎢⎢1⎥⎥⎟⎥
++ 2⋅β, 1, ⎢⎢ ⎥⎥⎟⎥
+          ⎢⎢1⎥⎥⎟⎥
+          ⎢⎢ ⎥⎥⎟⎥
+          ⎢⎢1⎥⎥⎟⎥
+          ⎢⎢ ⎥⎥⎟⎥
+          ⎣⎣1⎦⎦⎠⎦
 </pre></div>
 </div>
 </div>
