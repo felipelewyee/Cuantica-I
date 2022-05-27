@@ -497,18 +497,6 @@ V(x) = \left\{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;numpy&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Establezca valores para las constantes</strong> <span class="math notranslate nohighlight">\(\hbar\)</span>, <span class="math notranslate nohighlight">\(m\)</span>, <span class="math notranslate nohighlight">\(V\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(L\)</span>.</p>
 <div class="cell docutils container">
@@ -663,6 +651,12 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_14025/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
+  return np.tanh(arg1)**2*np.tan(arg2)**2 - E/(V-E)
+</pre></div>
+</div>
+</div>
 </div>
 <p>Python tiene funciones especiales para buscar raíces partiendo de cierto punto. La siguiente línea busca la raíz de f(E) más cercana a un punto E_i</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="n">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x0</span><span class="o">=</span><span class="n">E_i</span><span class="p">)</span>
@@ -695,7 +689,7 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 4.03702980948585, 6.183977172993015, 15.950917097849253, 25.481208577291266, 34.789304765449806]
 </pre></div>
 </div>
 </div>
@@ -975,10 +969,10 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/ipykernel_launcher.py:5: RuntimeWarning: divide by zero encountered in double_scalars
-  &quot;&quot;&quot;
-/home/jfhlewyee/Software/anaconda3/envs/book/lib/python3.7/site-packages/ipykernel_launcher.py:5: RuntimeWarning: invalid value encountered in double_scalars
-  &quot;&quot;&quot;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_14025/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
+  return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
+/tmp/ipykernel_14025/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
+  return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
 </div>

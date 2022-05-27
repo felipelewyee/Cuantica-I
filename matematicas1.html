@@ -421,28 +421,28 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="section" id="serie-de-taylor">
 <h2><span class="section-number">20.1. </span>Serie de Taylor<a class="headerlink" href="#serie-de-taylor" title="Permalink to this headline">¶</a></h2>
 <p>Sea una función f(x) continua e infinitamente diferenciable, esta puede expresarse en torno a <span class="math notranslate nohighlight">\(a\)</span> mediante una serie de potencias</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ba147de-4eeb-46b2-86b0-9ae8e64e675f">
-<span class="eqno">(20.1)<a class="headerlink" href="#equation-9ba147de-4eeb-46b2-86b0-9ae8e64e675f" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9c3daa0b-8f95-4c6d-bfe6-f05f4f8eba86">
+<span class="eqno">(20.1)<a class="headerlink" href="#equation-9c3daa0b-8f95-4c6d-bfe6-f05f4f8eba86" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x) = \sum_{n=0}^\infty c_n (x-a)^n
 \end{equation}\]</div>
 <p>La m-ésima derivada de <span class="math notranslate nohighlight">\(f(x)\)</span> es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2621ab64-504a-4d7e-afde-20b0a3766750">
-<span class="eqno">(20.2)<a class="headerlink" href="#equation-2621ab64-504a-4d7e-afde-20b0a3766750" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7845e819-af1a-4f4d-a5a3-197a5247f3bf">
+<span class="eqno">(20.2)<a class="headerlink" href="#equation-7845e819-af1a-4f4d-a5a3-197a5247f3bf" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f^{(m)}(x) = \sum_{n=m}^\infty c_n (m!)(x-a)^{n-m} = \sum_{p=0}^\infty c_{p+m} (m!)(x-a)^{p}
 \end{equation}\]</div>
 <p>donde se ha hecho el cambio de índice <span class="math notranslate nohighlight">\(p=n-m\)</span>. Al evaluar en x=a se obtiene</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e9b03203-b570-443a-b995-0e37c648f003">
-<span class="eqno">(20.3)<a class="headerlink" href="#equation-e9b03203-b570-443a-b995-0e37c648f003" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c335bd1e-943b-4991-8b23-ae76488ec2fc">
+<span class="eqno">(20.3)<a class="headerlink" href="#equation-c335bd1e-943b-4991-8b23-ae76488ec2fc" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f^{(m)}(a) = \sum_{p=0}^\infty c_{p+m} (m!)(a-a)^{p} = c_p (m!)
 \end{equation}\]</div>
 <p>El único término que sobrevive es el que tiene potencia cero, despejando <span class="math notranslate nohighlight">\(c_p\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-99e30f72-2b54-40e0-9bef-de9115d880b4">
-<span class="eqno">(20.4)<a class="headerlink" href="#equation-99e30f72-2b54-40e0-9bef-de9115d880b4" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bbbafe27-18d2-4f66-8757-18c0a0ce3da1">
+<span class="eqno">(20.4)<a class="headerlink" href="#equation-bbbafe27-18d2-4f66-8757-18c0a0ce3da1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 c_m = \frac{f^{(m)}(a)}{m!}
 \end{equation}\]</div>
 <p>Sustituyendo en la serie</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b58356da-324b-46ef-baba-241502350309">
-<span class="eqno">(20.5)<a class="headerlink" href="#equation-b58356da-324b-46ef-baba-241502350309" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a683adba-1cdb-4223-a226-1cf143ab7e93">
+<span class="eqno">(20.5)<a class="headerlink" href="#equation-a683adba-1cdb-4223-a226-1cf143ab7e93" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 \end{equation}\]</div>
 <p><strong>Haga la expansión en series de Taylor en torno a <span class="math notranslate nohighlight">\(x=0\)</span> de <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [0,10]\)</span> hasta potencias de grado 10.</strong></p>
@@ -470,37 +470,28 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">derivative</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;scipy&#39;
-</pre></div>
-</div>
+<img alt="_images/matematicas1_4_0.png" src="_images/matematicas1_4_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="serie-de-fourier">
 <h2><span class="section-number">20.2. </span>Serie de Fourier<a class="headerlink" href="#serie-de-fourier" title="Permalink to this headline">¶</a></h2>
 <p>Una funcion periodica se puede aproximar por</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7e9be899-9beb-4c5f-849a-a18e702dd973">
-<span class="eqno">(20.6)<a class="headerlink" href="#equation-7e9be899-9beb-4c5f-849a-a18e702dd973" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2edeb3f7-e889-4a63-98d6-78635b28bfde">
+<span class="eqno">(20.6)<a class="headerlink" href="#equation-2edeb3f7-e889-4a63-98d6-78635b28bfde" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x)=\frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n cos \left( \frac{2n\pi}{T}x \right) + b_n sin \left( \frac{2n\pi}{T}x \right) \right]
 \end{equation}\]</div>
 <p>donde</p>
-<div class="amsmath math notranslate nohighlight" id="equation-20abe01e-4fd1-451f-a48d-961bbba6de59">
-<span class="eqno">(20.7)<a class="headerlink" href="#equation-20abe01e-4fd1-451f-a48d-961bbba6de59" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-19fb4ab0-0d9f-41aa-9407-cec09f23b346">
+<span class="eqno">(20.7)<a class="headerlink" href="#equation-19fb4ab0-0d9f-41aa-9407-cec09f23b346" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 a_0 = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) dx
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-d56f4180-4421-4904-8079-e06629aec0af">
-<span class="eqno">(20.8)<a class="headerlink" href="#equation-d56f4180-4421-4904-8079-e06629aec0af" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3be03992-9087-424b-a7a1-93fbf3ac973b">
+<span class="eqno">(20.8)<a class="headerlink" href="#equation-3be03992-9087-424b-a7a1-93fbf3ac973b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 a_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) cos \left( \frac{2n\pi}{T}x \right) dx
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-91477543-9275-48b9-9b8b-a35a5a6260d5">
-<span class="eqno">(20.9)<a class="headerlink" href="#equation-91477543-9275-48b9-9b8b-a35a5a6260d5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8f531534-b0d4-40c5-a764-6aab3aa6140e">
+<span class="eqno">(20.9)<a class="headerlink" href="#equation-8f531534-b0d4-40c5-a764-6aab3aa6140e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) sin \left( \frac{2n\pi}{T}x \right) dx
 \end{equation}\]</div>
 <p><strong>Haga la expansión en series de Fourier de la <span class="math notranslate nohighlight">\(f(x)=x\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
@@ -531,10 +522,13 @@ b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) sin \left( \frac{2n\pi}{T}x \rig
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/matematicas1_8_0.png" src="_images/matematicas1_8_0.png" />
+</div>
 </div>
 <p><strong>Haga la expansión en series de Fourier de la fución escalón en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-925879a9-fd4f-43dc-8e2b-dc4de84cfc15">
-<span class="eqno">(20.10)<a class="headerlink" href="#equation-925879a9-fd4f-43dc-8e2b-dc4de84cfc15" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8c7ea481-c09a-46e9-a9f0-d7fbe18af793">
+<span class="eqno">(20.10)<a class="headerlink" href="#equation-8c7ea481-c09a-46e9-a9f0-d7fbe18af793" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x) = \left\{
   \begin{array}{ll}
   0      &amp; \mathrm{si\ } x &lt; 0\\
@@ -568,6 +562,9 @@ f(x) = \left\{
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/matematicas1_10_0.png" src="_images/matematicas1_10_0.png" />
 </div>
 </div>
 </div>
