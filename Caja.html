@@ -464,7 +464,7 @@ V(x) = \left\{
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{array}{lll}
-  \psi(x) = Acos(kx) + Bsin(kx)      &amp; \mathrm{si\ } 0 \leq x \leq L; &amp; k^2 = \frac{2mE}{\hbar^2}\\
+  \psi(x) = A\cos(kx) + B\sin(kx)      &amp; \mathrm{si\ } 0 \leq x \leq L; &amp; k^2 = \frac{2mE}{\hbar^2}\\
   \end{array}
 \end{split}\]</div>
 <p>posteriormente hay que recurrir a las condiciones a la frontera.</p>
@@ -473,12 +473,12 @@ V(x) = \left\{
 <p>La función de onda debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, <span class="math notranslate nohighlight">\(\psi_{I}(0) = \psi_{II}(0) = 0\)</span>. Esto implica que <span class="math notranslate nohighlight">\(A=0\)</span>, ya que</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{II}(0) = 0 = Acos(0) + Bsin(0) = A
+\psi_{II}(0) = 0 = A\cos(0) + B\sin(0) = A
 \]</div>
 <p>Por la continuidad con la región III también se cumple <span class="math notranslate nohighlight">\(\psi_{II}(L) = \psi_{III}(L) = 0\)</span>, es decir</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{II}(L) = 0 = Bsin(kL)
+\psi_{II}(L) = 0 = B\sin(kL)
 \]</div>
 <p>Ya obtuvimos que <span class="math notranslate nohighlight">\(A\)</span> vale cero, sin embargo, <span class="math notranslate nohighlight">\(B\)</span> no puede ser cero porque <span class="math notranslate nohighlight">\(\psi_{II}\)</span> se anularía. La única forma de que se cumpla la <code class="docutils literal notranslate"><span class="pre">condición</span> <span class="pre">a</span> <span class="pre">la</span> <span class="pre">frontera</span></code> expresada en la ecuación anterior es que <span class="math notranslate nohighlight">\(kL\)</span> sea un <code class="docutils literal notranslate"><span class="pre">múltiplo</span></code> de <span class="math notranslate nohighlight">\(\pi\)</span>, es decir <span class="math notranslate nohighlight">\(kL = n \pi\)</span>, o lo que es lo mismo</p>
 <div class="math notranslate nohighlight">
@@ -491,13 +491,13 @@ V(x) = \left\{
 <p>Hemos obtenido que</p>
 <div class="math notranslate nohighlight">
 \[
-\psi = B sin \left( \frac{n \pi x}{L}\right)
+\psi = B \sin \left( \frac{n \pi x}{L}\right)
 \]</div>
 </div>
 <p>Para encontrar el valor de B hay que normalizar la función de onda, resultando que:</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_n(x)=\left(\frac{2}{L}\right)^{1/2}sin\left(\frac{n\pi x}{L}\right)
+\psi_n(x)=\left(\frac{2}{L}\right)^{1/2}\sin\left(\frac{n\pi x}{L}\right)
 \]</div>
 <p>Finalmente, la energía toma la forma</p>
 <div class="math notranslate nohighlight">
@@ -795,10 +795,10 @@ E = \frac{\hbar^2 \pi^2 n^2}{2mL^2}
 
 <span class="n">L</span><span class="o">=</span><span class="mf">2.0</span>
 
-<span class="n">psi_1psi_1</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
-<span class="n">psi_3psi_3</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">3.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">3.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+<span class="n">psi_1psi_1</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">psi_3psi_3</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">3.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">3.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="n">psi_1psi_3</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">3.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+<span class="n">psi_1psi_3</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">1.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">L</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mf">3.0</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="n">L</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Integrales&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;psi_1psi_1&quot;</span><span class="p">,</span><span class="n">psi_1psi_1</span><span class="p">)</span>
@@ -809,9 +809,9 @@ E = \frac{\hbar^2 \pi^2 n^2}{2mL^2}
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Integrales
-psi_1psi_1 (1.0, 1.1102230246251565e-14)
-psi_3psi_3 (1.0000000000000002, 1.1102230246251565e-14)
-psi_1psi_3 (4.163336342344337e-17, 6.473948889086305e-10)
+psi_1psi_1 1.0
+psi_3psi_3 1.0000000000000002
+psi_1psi_3 4.163336342344337e-17
 </pre></div>
 </div>
 </div>
@@ -840,29 +840,32 @@ psi_1psi_3 (4.163336342344337e-17, 6.473948889086305e-10)
 \end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[
-\psi_{n_x,n_y}(x,y)=\left(\frac{2}{L_x}\right)^{1/2} \left(\frac{2}{L_y}\right)^{1/2}sin\left(\frac{n_x\pi x}{L_x}\right)sin\left(\frac{n_y\pi y}{L_y}\right)
+\psi_{n_x,n_y}(x,y)=\left(\frac{2}{L_x}\right)^{1/2} \left(\frac{2}{L_y}\right)^{1/2}\sin\left(\frac{n_x\pi x}{L_x}\right)\sin\left(\frac{n_y\pi y}{L_y}\right)
 \]</div>
 <div class="math notranslate nohighlight">
 \[
 E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 \]</div>
 <p>A continuación realizará una serie de pasos que le permitirán generar <strong>la gráfica de <span class="math notranslate nohighlight">\(\psi_{1,1}\)</span>, es decir <span class="math notranslate nohighlight">\(n_x=1\)</span> y <span class="math notranslate nohighlight">\(n_y=1\)</span>, y de <span class="math notranslate nohighlight">\(|\psi_{1,1}|^2\)</span> con <span class="math notranslate nohighlight">\(L_x = L_y = 4.0\)</span></strong></p>
-<p>Para hacer gráficas 3D, importe la siguiente librería</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
+<p>Para hacer gráficas 3D, declararemos el siguiente código</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># librería</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ejes 3D</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpl_toolkits</span> <span class="kn">import</span> <span class="n">mplot3d</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/Caja_32_0.png" src="_images/Caja_32_0.png" />
 </div>
 </div>
 <p><strong>Declare los valores de Lx=4, Ly=4, nx=1 y ny=1</strong></p>

@@ -649,7 +649,7 @@ M v = \lambda v
 </div>
 <div class="section" id="graficas">
 <h2><span class="section-number">2.2. </span>Gráficas<a class="headerlink" href="#graficas" title="Permalink to this headline">¶</a></h2>
-<p>Vamos a graficar la función y=sin(x) de -3 a 3.</p>
+<p>Vamos a graficar la función <span class="math notranslate nohighlight">\(y=\sin(x)\)</span> de <span class="math notranslate nohighlight">\(-3\)</span> a <span class="math notranslate nohighlight">\(3\)</span>.</p>
 <p>Primero crearemos el dominio de la función (los valores de x), en nuestro ejemplo le daremos 50 puntos. Utilizaremos la función linspace(a,b,n) de numpy, esta crea un conjunto de n números distribuidos en el intervalo de a hasta b.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
@@ -669,7 +669,7 @@ M v = \lambda v
 <p><strong>Evalúe la función</strong></p>
 <div class="math notranslate nohighlight">
 \[
-y = sin(x)
+y = \sin(x)
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -748,7 +748,11 @@ y = sin(x)
 </pre></div>
 </div>
 <p>y luego realizaremos la integral con la función quad</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>El resultado de <code class="docutils literal notranslate"><span class="pre">integrate.quad</span></code> es un vector, por eso al final de la línea escribimos <code class="docutils literal notranslate"><span class="pre">[0]</span></code> para acceder al primer elemento, que contiene el resultado de la integral. Pruebe escribiendo <code class="docutils literal notranslate"><span class="pre">integrate.quad(lambda</span> <span class="pre">x:</span> <span class="pre">x**2,-3,3)</span></code> y observe la diferencia.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Aquí “lambda” indica las variables de la ecuación, seguido de la ecuación y los límites de la integral. <strong>Pruebe a realizar la integral.</strong></p>
@@ -762,12 +766,12 @@ y = sin(x)
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.integrate</span> <span class="k">as</span> <span class="nn">integrate</span>
-<span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(18.0, 1.9984014443252818e-13)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.0
 </pre></div>
 </div>
 </div>
@@ -807,7 +811,7 @@ N = \sqrt{N^2} = \sqrt{\int_{x_1}^{x_2} |\psi_{original}|^2 dx}
 <span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N =&quot;</span><span class="p">,</span><span class="n">norm</span><span class="p">)</span>
 
-<span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">norm</span><span class="p">),</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">norm</span><span class="p">),</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -816,7 +820,7 @@ N = \sqrt{N^2} = \sqrt{\int_{x_1}^{x_2} |\psi_{original}|^2 dx}
 N = 4.242640687119285
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.0, 1.1102230246251565e-14)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>
@@ -831,7 +835,7 @@ N = 4.242640687119285
 <p>La integral de su cuadrado será</p>
 <div class="math notranslate nohighlight">
 \[
-N^2 = \int \psi^* \psi d\textbf{r} = \int\limits_{0}^\infty \int\limits_{0}^{2\pi} \int\limits_{0}^\pi\psi^* \psi r^2 sin\theta dr d\phi d\theta = \int\limits_{0}^{\pi} sin \theta d\theta \int\limits_{0}^{2\pi} d\phi \int\limits_{0}^\infty e^{-2r^2} r^2 dr = \left(2\pi\right)\left(2\right)\left(\frac{1}{8}\sqrt{\frac{\pi}{2}}\right) = \left(\frac{\pi}{2}\right)^{3/2}
+N^2 = \int \psi^* \psi d\textbf{r} = \int\limits_{0}^\infty \int\limits_{0}^{2\pi} \int\limits_{0}^\pi\psi^* \psi r^2 \sin\theta dr d\phi d\theta = \int\limits_{0}^{\pi} \sin \theta d\theta \int\limits_{0}^{2\pi} d\phi \int\limits_{0}^\infty e^{-2r^2} r^2 dr = \left(2\pi\right)\left(2\right)\left(\frac{1}{8}\sqrt{\frac{\pi}{2}}\right) = \left(\frac{\pi}{2}\right)^{3/2}
 \]</div>
 <p>El siguiente código evalúa la integral y la guarda en la variable “norm2”.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">norm2</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">tplquad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -919,13 +923,13 @@ N^2 = \int \psi^* \psi d\textbf{r} = \int\limits_{0}^\infty \int\limits_{0}^{2\p
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norm</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">tplquad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">r</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">norm</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norm</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">tplquad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">r</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">norm</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">norm</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.0, 5.07838216823191e-10)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>
@@ -951,7 +955,7 @@ N^2 = \int \psi^* \psi d\textbf{r} = \int\limits_{0}^\infty \int\limits_{0}^{2\p
 <span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N =&quot;</span><span class="p">,</span><span class="n">norm</span><span class="p">)</span>
 
-<span class="n">norm</span><span class="o">=</span><span class="n">integrate</span><span class="o">.</span><span class="n">tplquad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">r</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">norm</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">4.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">norm</span><span class="o">=</span><span class="n">integrate</span><span class="o">.</span><span class="n">tplquad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">r</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">norm</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">4.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">norm</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -961,7 +965,7 @@ N^2 = \int \psi^* \psi d\textbf{r} = \int\limits_{0}^\infty \int\limits_{0}^{2\p
 N = 1.2151238341878892
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1.0, 5.088497375982098e-09)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0
 </pre></div>
 </div>
 </div>
