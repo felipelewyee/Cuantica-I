@@ -115,13 +115,6 @@ const thebe_selector_output = ".output, .cell_output"
    2. Tutorial Avanzado.
   </a>
  </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Matemáticas
- </span>
-</p>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="matematicas1.html">
    3. Expansión en series
@@ -369,18 +362,18 @@ const thebe_selector_output = ".output, .cell_output"
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autoria">
+   22.1. Autoría
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#simetria-par">
-   22.1. Simetría Par
+   22.2. Simetría Par
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#simetria-impar">
-   22.2. Simetría impar
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#autoria">
-   22.3. Autoría
+   22.3. Simetría impar
   </a>
  </li>
 </ul>
@@ -404,18 +397,18 @@ const thebe_selector_output = ".output, .cell_output"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autoria">
+   22.1. Autoría
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#simetria-par">
-   22.1. Simetría Par
+   22.2. Simetría Par
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#simetria-impar">
-   22.2. Simetría impar
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#autoria">
-   22.3. Autoría
+   22.3. Simetría impar
   </a>
  </li>
 </ul>
@@ -429,6 +422,12 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="efecto-tunel-en-la-caja">
 <h1><span class="section-number">22. </span>Efecto Túnel en la Caja<a class="headerlink" href="#efecto-tunel-en-la-caja" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="autoria">
+<h2><span class="section-number">22.1. </span>Autoría<a class="headerlink" href="#autoria" title="Permalink to this headline">¶</a></h2>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Esta es una contribución del <strong>Dr. Carlos Amador Bedolla</strong>, del departamento de Física y Química Teórica de la Facultad de Química, UNAM.</p>
+</div>
 <p>Este problema es continuación de la partícula en la caja y nos permite ejemplificar el efecto túnel. Para ello, planteemos una caja de <span class="math notranslate nohighlight">\(-L\)</span> a <span class="math notranslate nohighlight">\(L\)</span>, con potencial infinito afuera de la caja, pero esta vez hay un tope de potencial en el centro de la caja</p>
 <a class="reference internal image-reference" href="_images/caja1d-tope.png"><img alt="Figura de la caja 1D con tope" src="_images/caja1d-tope.png" style="width: 300px;" /></a>
 <div class="math notranslate nohighlight">
@@ -564,8 +563,9 @@ V(x) = \left\{
 </table>
 </div>
 <p>A partir de aquí podemos ayudarnos de la simetría del problema.</p>
+</div>
 <div class="section" id="simetria-par">
-<h2><span class="section-number">22.1. </span>Simetría Par<a class="headerlink" href="#simetria-par" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">22.2. </span>Simetría Par<a class="headerlink" href="#simetria-par" title="Permalink to this headline">¶</a></h2>
 <p>Empezaremos asumiendo que lo que está del lado izquierdo respecto a <span class="math notranslate nohighlight">\(x=0\)</span> tiene simetría par respecto a lo que está del lado derecho.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Simetría par</p>
@@ -664,7 +664,7 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_552568/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_556702/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
   return np.tanh(arg1)**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
@@ -871,28 +871,28 @@ x_{IV} \in [a,L]
 E: 4.03702980948585 Probabilidad de [-a,a]: 0.009171376328832647
 </pre></div>
 </div>
-<img alt="_images/CajaConTope_35_1.png" src="_images/CajaConTope_35_1.png" />
+<img alt="_images/CajaConTope_36_1.png" src="_images/CajaConTope_36_1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 6.183977172993015 Probabilidad de [-a,a]: 0.017525687126182986
 </pre></div>
 </div>
-<img alt="_images/CajaConTope_35_3.png" src="_images/CajaConTope_35_3.png" />
+<img alt="_images/CajaConTope_36_3.png" src="_images/CajaConTope_36_3.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 15.950917097849253 Probabilidad de [-a,a]: 0.04344512067766844
 </pre></div>
 </div>
-<img alt="_images/CajaConTope_35_5.png" src="_images/CajaConTope_35_5.png" />
+<img alt="_images/CajaConTope_36_5.png" src="_images/CajaConTope_36_5.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 25.481208577291266 Probabilidad de [-a,a]: 0.09411665657854962
 </pre></div>
 </div>
-<img alt="_images/CajaConTope_35_7.png" src="_images/CajaConTope_35_7.png" />
+<img alt="_images/CajaConTope_36_7.png" src="_images/CajaConTope_36_7.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 34.789304765449806 Probabilidad de [-a,a]: 0.13886978965910068
 </pre></div>
 </div>
-<img alt="_images/CajaConTope_35_9.png" src="_images/CajaConTope_35_9.png" />
+<img alt="_images/CajaConTope_36_9.png" src="_images/CajaConTope_36_9.png" />
 </div>
 </div>
 </div>
 <div class="section" id="simetria-impar">
-<h2><span class="section-number">22.2. </span>Simetría impar<a class="headerlink" href="#simetria-impar" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">22.3. </span>Simetría impar<a class="headerlink" href="#simetria-impar" title="Permalink to this headline">¶</a></h2>
 <p>Empezaremos asumiendo que lo que esta del lado izquierdo de <span class="math notranslate nohighlight">\(x=0\)</span> tiene simetría impar respecto a lo que está del lado derecho.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Simetría impar</p>
@@ -981,9 +981,9 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_552568/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_556702/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
-/tmp/ipykernel_552568/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
+/tmp/ipykernel_556702/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
@@ -1108,23 +1108,23 @@ F &amp;= C \left(\frac{ e^{k_2a} - e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}
 E: 4.098118934645123 Probabilidad de [-a,a]: 0.06152438345572405
 </pre></div>
 </div>
-<img alt="_images/CajaConTope_45_1.png" src="_images/CajaConTope_45_1.png" />
+<img alt="_images/CajaConTope_46_1.png" src="_images/CajaConTope_46_1.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 6.062762952515444 Probabilidad de [-a,a]: 0.29151676557600037
 </pre></div>
 </div>
-<img alt="_images/CajaConTope_45_3.png" src="_images/CajaConTope_45_3.png" />
+<img alt="_images/CajaConTope_46_3.png" src="_images/CajaConTope_46_3.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 16.302766510025553 Probabilidad de [-a,a]: 0.1553139426950121
 </pre></div>
 </div>
-<img alt="_images/CajaConTope_45_5.png" src="_images/CajaConTope_45_5.png" />
+<img alt="_images/CajaConTope_46_5.png" src="_images/CajaConTope_46_5.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 24.50996443721989 Probabilidad de [-a,a]: 0.21637118642172976
 </pre></div>
 </div>
-<img alt="_images/CajaConTope_45_7.png" src="_images/CajaConTope_45_7.png" />
+<img alt="_images/CajaConTope_46_7.png" src="_images/CajaConTope_46_7.png" />
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 36.30141253472844 Probabilidad de [-a,a]: 0.1767475720645189
 </pre></div>
 </div>
-<img alt="_images/CajaConTope_45_9.png" src="_images/CajaConTope_45_9.png" />
+<img alt="_images/CajaConTope_46_9.png" src="_images/CajaConTope_46_9.png" />
 </div>
 </div>
 <div class="warning admonition">
@@ -1135,10 +1135,6 @@ E: 4.098118934645123 Probabilidad de [-a,a]: 0.06152438345572405
 <li><p>Si la partícula tiene energía menor que V, es imposible que pase de un lado al otro lado de la caja. (Cierto/Falso)</p></li>
 </ol>
 </div>
-</div>
-<div class="section" id="autoria">
-<h2><span class="section-number">22.3. </span>Autoría<a class="headerlink" href="#autoria" title="Permalink to this headline">¶</a></h2>
-<p>Esta es una contribución del Dr. Carlos Amador Bedolla.</p>
 </div>
 </div>
 
