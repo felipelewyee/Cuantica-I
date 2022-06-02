@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,19 +33,19 @@
     
   <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >let toggleHintShow = 'Click to show';</script>
-    <script >let toggleHintHide = 'Click to hide';</script>
-    <script >let toggleOpenOnPrint = 'true';</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -86,7 +86,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Python
  </span>
@@ -113,7 +113,24 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Matemáticas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas1.html">
+   3. Expansión en series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas2.html">
+   4. Álgebra simbólica
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Sistemas Sencillos
  </span>
@@ -121,7 +138,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Caja.html">
-   3. Partícula en la caja
+   5. Partícula en la caja
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -131,43 +148,43 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="CajaEjercicios.html">
-     3.4. Ejercicios partícula en una caja
+     5.4. Ejercicios partícula en una caja
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tunel_Region_Infinita.html">
-   4. Penetración
+   6. Penetración
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tunel_Region_Finita.html">
-   5. Efecto Túnel
+   7. Efecto Túnel
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo.html">
-   6. Partícula en el anillo
+   8. Partícula en el anillo
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Esfera.html">
-   7. Partícula en la esfera
+   9. Partícula en la esfera
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Rotor.html">
-   8. Rotor Rígido
+   10. Rotor Rígido
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Oscilador.html">
-   9. Oscilador Armónico Cuántico
+   11. Oscilador Armónico Cuántico
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Átomo de Hidrógeno
  </span>
@@ -175,16 +192,16 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Radial.html">
-   10. Solución Radial
+   12. Solución Radial
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Orbitales.html">
-   11. Orbitales Atómicos
+   13. Orbitales Atómicos
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Métodos Aproximados
  </span>
@@ -192,21 +209,21 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Variacional_Lineal.html">
-   12. Método variacional lineal
+   14. Método variacional lineal
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="PerturbacionesSinDegeneracion.html">
-   13. Teoría de perturbaciones (niveles de energía no degenerados)
+   15. Teoría de perturbaciones (niveles de energía no degenerados)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Huckel.html">
-   14. Método de Hückel
+   16. Método de Hückel
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Sistemas de Muchos Electrones
  </span>
@@ -214,51 +231,34 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Software.html">
-   15. Software
+   17. Software
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Hartree-Fock.html">
-   16. Hartree-Fock-Roothan (HF)
+   18. Hartree-Fock-Roothan (HF)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Moller-Plesset.html">
-   17. Moller-Plesset (MPn)
+   19. Moller-Plesset (MPn)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="DFT.html">
-   18. Teoría de funcionales de la densidad (DFT)
+   20. Teoría de funcionales de la densidad (DFT)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Dimerizacion.html">
-   19. Dimerización de
+   21. Dimerización de
    <span class="math notranslate nohighlight">
     \(NO_2\)
    </span>
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Matemáticas
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="matematicas1.html">
-   20. Expansión en series
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="matematicas2.html">
-   21. Álgebra simbólica
-  </a>
- </li>
-</ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Anexos
  </span>
@@ -294,8 +294,8 @@ const thebe_selector_output = ".output, .cell_output"
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -307,8 +307,8 @@ const thebe_selector_output = ".output, .cell_output"
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -356,9 +356,9 @@ const thebe_selector_output = ".output, .cell_output"
     <footer class="footer">
   <p>
     
-      By M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+      Por M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Derechos de autor 2021.<br/>
   </p>
 </footer>
 </main>

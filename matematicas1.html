@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>20. Expansión en series &#8212; Cuántica I</title>
+    <title>3. Expansión en series &#8212; Cuántica I</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,30 +33,30 @@
     
   <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script >let toggleHintShow = 'Click to show';</script>
-    <script >let toggleHintHide = 'Click to hide';</script>
-    <script >let toggleOpenOnPrint = 'true';</script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="21. Álgebra simbólica" href="matematicas2.html" />
-    <link rel="prev" title="19. Dimerización de \(NO_2\)" href="Dimerizacion.html" />
+    <link rel="next" title="4. Álgebra simbólica" href="matematicas2.html" />
+    <link rel="prev" title="2. Tutorial Avanzado." href="Tutorial-Avanzado.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -90,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -100,7 +100,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Python
  </span>
@@ -117,7 +117,24 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Matemáticas
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   3. Expansión en series
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="matematicas2.html">
+   4. Álgebra simbólica
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Sistemas Sencillos
  </span>
@@ -125,7 +142,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Caja.html">
-   3. Partícula en la caja
+   5. Partícula en la caja
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -135,43 +152,43 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="CajaEjercicios.html">
-     3.4. Ejercicios partícula en una caja
+     5.4. Ejercicios partícula en una caja
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tunel_Region_Infinita.html">
-   4. Penetración
+   6. Penetración
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tunel_Region_Finita.html">
-   5. Efecto Túnel
+   7. Efecto Túnel
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Anillo.html">
-   6. Partícula en el anillo
+   8. Partícula en el anillo
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Esfera.html">
-   7. Partícula en la esfera
+   9. Partícula en la esfera
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Rotor.html">
-   8. Rotor Rígido
+   10. Rotor Rígido
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Oscilador.html">
-   9. Oscilador Armónico Cuántico
+   11. Oscilador Armónico Cuántico
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Átomo de Hidrógeno
  </span>
@@ -179,16 +196,16 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Radial.html">
-   10. Solución Radial
+   12. Solución Radial
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Orbitales.html">
-   11. Orbitales Atómicos
+   13. Orbitales Atómicos
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Métodos Aproximados
  </span>
@@ -196,21 +213,21 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Variacional_Lineal.html">
-   12. Método variacional lineal
+   14. Método variacional lineal
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="PerturbacionesSinDegeneracion.html">
-   13. Teoría de perturbaciones (niveles de energía no degenerados)
+   15. Teoría de perturbaciones (niveles de energía no degenerados)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Huckel.html">
-   14. Método de Hückel
+   16. Método de Hückel
   </a>
  </li>
 </ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Sistemas de Muchos Electrones
  </span>
@@ -218,51 +235,34 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Software.html">
-   15. Software
+   17. Software
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Hartree-Fock.html">
-   16. Hartree-Fock-Roothan (HF)
+   18. Hartree-Fock-Roothan (HF)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Moller-Plesset.html">
-   17. Moller-Plesset (MPn)
+   19. Moller-Plesset (MPn)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="DFT.html">
-   18. Teoría de funcionales de la densidad (DFT)
+   20. Teoría de funcionales de la densidad (DFT)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Dimerizacion.html">
-   19. Dimerización de
+   21. Dimerización de
    <span class="math notranslate nohighlight">
     \(NO_2\)
    </span>
   </a>
  </li>
 </ul>
-<p class="caption">
- <span class="caption-text">
-  Matemáticas
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   20. Expansión en series
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="matematicas2.html">
-   21. Álgebra simbólica
-  </a>
- </li>
-</ul>
-<p class="caption">
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Anexos
  </span>
@@ -298,8 +298,8 @@ const thebe_selector_output = ".output, .cell_output"
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -307,7 +307,7 @@ const thebe_selector_output = ".output, .cell_output"
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -315,10 +315,10 @@ const thebe_selector_output = ".output, .cell_output"
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="_sources/matematicas1.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
@@ -328,8 +328,8 @@ const thebe_selector_output = ".output, .cell_output"
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -340,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/matematicas1.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -348,12 +348,12 @@ const thebe_selector_output = ".output, .cell_output"
         
         
         <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/matematicas1.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Lanzamiento Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
@@ -365,23 +365,23 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+                <i class="fas fa-list"></i> Contenido
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#serie-de-taylor">
-   20.1. Serie de Taylor
+   3.1. Serie de Taylor
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#serie-de-fourier">
-   20.2. Serie de Fourier
+   3.2. Serie de Fourier
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   20.3. Referencias
+   3.3. Referencias
   </a>
  </li>
 </ul>
@@ -400,23 +400,23 @@ const thebe_selector_output = ".output, .cell_output"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contents </h2>
+                            <h2> Contenido </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#serie-de-taylor">
-   20.1. Serie de Taylor
+   3.1. Serie de Taylor
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#serie-de-fourier">
-   20.2. Serie de Fourier
+   3.2. Serie de Fourier
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   20.3. Referencias
+   3.3. Referencias
   </a>
  </li>
 </ul>
@@ -429,32 +429,32 @@ const thebe_selector_output = ".output, .cell_output"
               <div>
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="expansion-en-series">
-<h1><span class="section-number">20. </span>Expansión en series<a class="headerlink" href="#expansion-en-series" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">3. </span>Expansión en series<a class="headerlink" href="#expansion-en-series" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="serie-de-taylor">
-<h2><span class="section-number">20.1. </span>Serie de Taylor<a class="headerlink" href="#serie-de-taylor" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.1. </span>Serie de Taylor<a class="headerlink" href="#serie-de-taylor" title="Permalink to this headline">¶</a></h2>
 <p>Sea una función f(x) continua e infinitamente diferenciable, esta puede expresarse en torno a <span class="math notranslate nohighlight">\(a\)</span> mediante una serie de potencias</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea7a65ac-d4b1-45a1-9250-a13ce96384d9">
-<span class="eqno">(20.1)<a class="headerlink" href="#equation-ea7a65ac-d4b1-45a1-9250-a13ce96384d9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b55223e6-3d1b-4d94-bf78-84f7b4ba4d05">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-b55223e6-3d1b-4d94-bf78-84f7b4ba4d05" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x) = \sum_{n=0}^\infty c_n (x-a)^n
 \end{equation}\]</div>
 <p>La m-ésima derivada de <span class="math notranslate nohighlight">\(f(x)\)</span> es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8b60b5d5-bc11-4a0f-9d4b-45e6bc244ce8">
-<span class="eqno">(20.2)<a class="headerlink" href="#equation-8b60b5d5-bc11-4a0f-9d4b-45e6bc244ce8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8f942bcf-7020-4e15-8583-9d7a9276ab38">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-8f942bcf-7020-4e15-8583-9d7a9276ab38" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f^{(m)}(x) = \sum_{n=m}^\infty c_n (m!)(x-a)^{n-m} = \sum_{p=0}^\infty c_{p+m} (m!)(x-a)^{p}
 \end{equation}\]</div>
 <p>donde se ha hecho el cambio de índice <span class="math notranslate nohighlight">\(p=n-m\)</span>. Al evaluar en x=a se obtiene</p>
-<div class="amsmath math notranslate nohighlight" id="equation-72125d06-787d-4e8b-a08e-6eb7d98df7ce">
-<span class="eqno">(20.3)<a class="headerlink" href="#equation-72125d06-787d-4e8b-a08e-6eb7d98df7ce" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3ac67d9f-e409-4145-914c-ad86ac0f3def">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-3ac67d9f-e409-4145-914c-ad86ac0f3def" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f^{(m)}(a) = \sum_{p=0}^\infty c_{p+m} (m!)(a-a)^{p} = c_p (m!)
 \end{equation}\]</div>
 <p>El único término que sobrevive es el que tiene potencia cero, despejando <span class="math notranslate nohighlight">\(c_p\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e6094d29-2fcf-4df2-b1d0-a1a8a9e8b2e8">
-<span class="eqno">(20.4)<a class="headerlink" href="#equation-e6094d29-2fcf-4df2-b1d0-a1a8a9e8b2e8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-61f63462-62bc-4743-aeb3-1e17297d0989">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-61f63462-62bc-4743-aeb3-1e17297d0989" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 c_m = \frac{f^{(m)}(a)}{m!}
 \end{equation}\]</div>
 <p>Sustituyendo en la serie</p>
-<div class="amsmath math notranslate nohighlight" id="equation-119a828e-b188-4a9d-92a9-4fe31e851f72">
-<span class="eqno">(20.5)<a class="headerlink" href="#equation-119a828e-b188-4a9d-92a9-4fe31e851f72" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5f530f00-6a10-41c5-ba7c-146cbe7bfa1a">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-5f530f00-6a10-41c5-ba7c-146cbe7bfa1a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 \end{equation}\]</div>
 <p><strong>Haga la expansión en series de Taylor en torno a <span class="math notranslate nohighlight">\(x=0\)</span> de <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [0,10]\)</span> hasta potencias de grado 10.</strong></p>
@@ -487,23 +487,23 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 </div>
 </div>
 <div class="section" id="serie-de-fourier">
-<h2><span class="section-number">20.2. </span>Serie de Fourier<a class="headerlink" href="#serie-de-fourier" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.2. </span>Serie de Fourier<a class="headerlink" href="#serie-de-fourier" title="Permalink to this headline">¶</a></h2>
 <p>Una función periódica se puede aproximar por</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cdffd362-292c-4a73-9788-eb7575ef1dce">
-<span class="eqno">(20.6)<a class="headerlink" href="#equation-cdffd362-292c-4a73-9788-eb7575ef1dce" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cf30327b-7203-478e-ba78-faa02e7905f9">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-cf30327b-7203-478e-ba78-faa02e7905f9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x)=\frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n cos \left( \frac{2n\pi}{T}x \right) + b_n sin \left( \frac{2n\pi}{T}x \right) \right]
 \end{equation}\]</div>
 <p>donde</p>
-<div class="amsmath math notranslate nohighlight" id="equation-337491ce-66ef-4bb8-aa32-eb829f242353">
-<span class="eqno">(20.7)<a class="headerlink" href="#equation-337491ce-66ef-4bb8-aa32-eb829f242353" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e2957ede-a8fc-489b-ba18-fd50860c02ba">
+<span class="eqno">(3.7)<a class="headerlink" href="#equation-e2957ede-a8fc-489b-ba18-fd50860c02ba" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 a_0 = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) dx
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-0ba18634-9cc5-4105-a74c-aae6f318ccc7">
-<span class="eqno">(20.8)<a class="headerlink" href="#equation-0ba18634-9cc5-4105-a74c-aae6f318ccc7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-55c31356-2296-41e6-90b8-ed6bf268b16c">
+<span class="eqno">(3.8)<a class="headerlink" href="#equation-55c31356-2296-41e6-90b8-ed6bf268b16c" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 a_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) cos \left( \frac{2n\pi}{T}x \right) dx
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-7a087f43-ea81-4fcb-9cda-f8b38d1506f1">
-<span class="eqno">(20.9)<a class="headerlink" href="#equation-7a087f43-ea81-4fcb-9cda-f8b38d1506f1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6a567a75-25bd-4c2a-b736-51bf57e176d7">
+<span class="eqno">(3.9)<a class="headerlink" href="#equation-6a567a75-25bd-4c2a-b736-51bf57e176d7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) sin \left( \frac{2n\pi}{T}x \right) dx
 \end{equation}\]</div>
 <p><strong>Haga la expansión en series de Fourier de la <span class="math notranslate nohighlight">\(f(x)=x\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
@@ -539,8 +539,8 @@ b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) sin \left( \frac{2n\pi}{T}x \rig
 </div>
 </div>
 <p><strong>Realice la expansión en series de Fourier de la función escalón en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-af4d3518-cd76-46bc-88c3-00ba28f3c850">
-<span class="eqno">(20.10)<a class="headerlink" href="#equation-af4d3518-cd76-46bc-88c3-00ba28f3c850" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0906915a-90d6-4e37-a23c-2527474eb84a">
+<span class="eqno">(3.10)<a class="headerlink" href="#equation-0906915a-90d6-4e37-a23c-2527474eb84a" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f(x) = \left\{
   \begin{array}{ll}
   0      &amp; \mathrm{si\ } x &lt; 0\\
@@ -581,7 +581,7 @@ f(x) = \left\{
 </div>
 </div>
 <div class="section" id="referencias">
-<h2><span class="section-number">20.3. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">3.3. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Gersting, J. L. Technical Calculus with Analytic Geometry, Dover ed.; Dover: New York, 1992.</p></li>
 <li><p>Jackson, J. D. Mathematics for Quantum Mechanics: An Introductory Survey of Operators, Eigenvalues, and Linear Vector Spaces, Dover ed.; Dover books on mathematics; Dover: Mineola, N.Y, 2006.</p></li>
@@ -615,17 +615,17 @@ f(x) = \left\{
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="Dimerizacion.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="Tutorial-Avanzado.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">19. </span>Dimerización de <span class="math notranslate nohighlight">\(NO_2\)</span></p>
+            <p class="prev-next-title"><span class="section-number">2. </span>Tutorial Avanzado.</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="matematicas2.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">21. </span>Álgebra simbólica</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Álgebra simbólica</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -636,9 +636,9 @@ f(x) = \left\{
     <footer class="footer">
   <p>
     
-      By M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+      Por M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
     
-        &copy; Copyright 2021.<br/>
+        &copy; Derechos de autor 2021.<br/>
   </p>
 </footer>
 </main>
