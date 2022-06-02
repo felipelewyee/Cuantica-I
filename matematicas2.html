@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,26 +33,26 @@
     
   <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="22. Efecto Túnel en la Caja" href="CajaConTope.html" />
@@ -90,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -100,7 +100,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Python
  </span>
@@ -117,16 +117,28 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Sistemas Sencillos
  </span>
 </p>
 <ul class="nav bd-sidenav">
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="Caja.html">
    3. Partícula en la caja
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CajaEjercicios.html">
+     3.4. Ejercicios partícula en una caja
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tunel_Region_Infinita.html">
@@ -159,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Átomo de Hidrógeno
  </span>
@@ -176,7 +188,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Métodos Aproximados
  </span>
@@ -198,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Sistemas de Muchos Electrones
  </span>
@@ -233,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Matemáticas
  </span>
@@ -250,7 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Anexos
  </span>
@@ -286,8 +298,8 @@ const thebe_selector_output = ".output, .cell_output"
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
-                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -295,7 +307,7 @@ const thebe_selector_output = ".output, .cell_output"
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -303,10 +315,10 @@ const thebe_selector_output = ".output, .cell_output"
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="_sources/matematicas2.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
@@ -316,8 +328,8 @@ const thebe_selector_output = ".output, .cell_output"
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
-        title="Modo de pantalla completa"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -328,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/matematicas2.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -336,12 +348,12 @@ const thebe_selector_output = ".output, .cell_output"
         
         
         <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/matematicas2.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Lanzamiento Thebe" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
@@ -353,7 +365,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contenido
+                <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -383,7 +395,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contenido </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -415,20 +427,10 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [1],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;sympy&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>En vez de realizar operaciones de manera numérica, el álgebra simbólica guarda las operaciones como símbolos. Obtenga la siguiente operación:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e8782316-8950-4128-b840-5fdcfd2e4bd2">
-<span class="eqno">(21.1)<a class="headerlink" href="#equation-e8782316-8950-4128-b840-5fdcfd2e4bd2" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c8c95e60-43d8-4a88-b413-5116a453d985">
+<span class="eqno">(21.1)<a class="headerlink" href="#equation-c8c95e60-43d8-4a88-b413-5116a453d985" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \sqrt{11}
 \end{equation}\]</div>
 <p>Usando python estándar</p>
@@ -584,8 +586,8 @@ x  + x
 </pre></div>
 </div>
 <p>Exprese de manera simbólica la función</p>
-<div class="amsmath math notranslate nohighlight" id="equation-60c7ab7b-c152-401b-bb9c-92070cbd7deb">
-<span class="eqno">(21.2)<a class="headerlink" href="#equation-60c7ab7b-c152-401b-bb9c-92070cbd7deb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-61ee6dd4-4381-48d9-bbee-bbe5c33368a8">
+<span class="eqno">(21.2)<a class="headerlink" href="#equation-61ee6dd4-4381-48d9-bbee-bbe5c33368a8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f=x^2+sin(x)
 \end{equation}\]</div>
 <p>y obtenga <span class="math notranslate nohighlight">\(\frac{df}{dx}\)</span> y <span class="math notranslate nohighlight">\(\frac{d^2f}{dx^2}\)</span>.</p>
@@ -613,13 +615,13 @@ x  + sin(x)
 </pre></div>
 </div>
 <p>Defina la función</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a8ae6800-a6c6-49eb-91c6-c6b208781a3e">
-<span class="eqno">(21.3)<a class="headerlink" href="#equation-a8ae6800-a6c6-49eb-91c6-c6b208781a3e" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0ff5e1eb-12b4-4dca-a2d6-f23304e4fa61">
+<span class="eqno">(21.3)<a class="headerlink" href="#equation-0ff5e1eb-12b4-4dca-a2d6-f23304e4fa61" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f=e^{-r}
 \end{equation}\]</div>
 <p>Y realice la integral indefinida</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f5efaf47-b30e-464a-9ed7-5e62a22bca1b">
-<span class="eqno">(21.4)<a class="headerlink" href="#equation-f5efaf47-b30e-464a-9ed7-5e62a22bca1b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b29080e4-9fab-4177-842a-cc43fcaeda6b">
+<span class="eqno">(21.4)<a class="headerlink" href="#equation-b29080e4-9fab-4177-842a-cc43fcaeda6b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \int e^{-r} dr
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -645,13 +647,13 @@ f=e^{-r}
 </pre></div>
 </div>
 <p>Defina la función</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dd8a35e0-e95d-477c-9443-81fc96a4d47d">
-<span class="eqno">(21.5)<a class="headerlink" href="#equation-dd8a35e0-e95d-477c-9443-81fc96a4d47d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1b436b44-fe14-4f81-a1bf-c78e79e66281">
+<span class="eqno">(21.5)<a class="headerlink" href="#equation-1b436b44-fe14-4f81-a1bf-c78e79e66281" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 f=e^{-\alpha r^2}
 \end{equation}\]</div>
 <p>Y realice la integral</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c728d6be-3723-4006-b6cc-b1ace7d170f7">
-<span class="eqno">(21.6)<a class="headerlink" href="#equation-c728d6be-3723-4006-b6cc-b1ace7d170f7" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0b995893-6297-4080-8c8f-68289d867808">
+<span class="eqno">(21.6)<a class="headerlink" href="#equation-0b995893-6297-4080-8c8f-68289d867808" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \int_0^\infty e^{-\alpha r^2} dr
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -673,13 +675,13 @@ f=e^{-\alpha r^2}
 </div>
 <p>También se pueden resolver ecuaciones diferenciales. dsolve indica resolver una ecuación, y Eq indica la ecuación.
 Resuelva</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3a671a55-ca52-4e35-bee6-da6bec836dd9">
-<span class="eqno">(21.7)<a class="headerlink" href="#equation-3a671a55-ca52-4e35-bee6-da6bec836dd9" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-fe9bff35-3d13-48f0-aa31-9dfea9fa1f67">
+<span class="eqno">(21.7)<a class="headerlink" href="#equation-fe9bff35-3d13-48f0-aa31-9dfea9fa1f67" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi(x) = E \psi(x)
 \end{equation}\]</div>
 <p>Con <span class="math notranslate nohighlight">\(k^2=\frac{2mE}{\hbar^2}\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-33eb71b5-cec0-49a0-94bc-f0d663e05421">
-<span class="eqno">(21.8)<a class="headerlink" href="#equation-33eb71b5-cec0-49a0-94bc-f0d663e05421" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2a816ad2-19ab-461e-9f5c-6b96b832182b">
+<span class="eqno">(21.8)<a class="headerlink" href="#equation-2a816ad2-19ab-461e-9f5c-6b96b832182b" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \frac{d^2}{dx^2} \psi(x) + k^2 \psi(x) = 0
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -701,25 +703,27 @@ Resuelva</p>
 k ⋅ψ(x) + ───(ψ(x)) = 0
             2          
           dx           
-           -ⅈ⋅k⋅x       ⅈ⋅k⋅x
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>           -ⅈ⋅k⋅x       ⅈ⋅k⋅x
 ψ(x) = C₁⋅ℯ       + C₂⋅ℯ     
 </pre></div>
 </div>
 </div>
 </div>
 <p>La parte radial del Hamiltoniano del átomo de hidrógeno es</p>
-<div class="amsmath math notranslate nohighlight" id="equation-db99870c-2a9d-4c86-9bbc-76f7bc151a37">
-<span class="eqno">(21.9)<a class="headerlink" href="#equation-db99870c-2a9d-4c86-9bbc-76f7bc151a37" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-af33ca3d-895e-47aa-b125-c0a61bdedc82">
+<span class="eqno">(21.9)<a class="headerlink" href="#equation-af33ca3d-895e-47aa-b125-c0a61bdedc82" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 H = -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r}
 \end{equation}\]</div>
 <p>Se usa la función de prueba</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a72415f2-b5ba-4e3e-b5ac-b8965d9296af">
-<span class="eqno">(21.10)<a class="headerlink" href="#equation-a72415f2-b5ba-4e3e-b5ac-b8965d9296af" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a662cfe3-db96-43a2-8f70-ffe1663b3c7d">
+<span class="eqno">(21.10)<a class="headerlink" href="#equation-a662cfe3-db96-43a2-8f70-ffe1663b3c7d" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \psi^{prueba} = \left( \frac{2\alpha}{\pi} \right)^{3/4} e^{-\alpha r^2}
 \end{equation}\]</div>
 <p>La energía se obtiene como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8f64bd98-676d-4363-8ef8-10cf2b09aea8">
-<span class="eqno">(21.11)<a class="headerlink" href="#equation-8f64bd98-676d-4363-8ef8-10cf2b09aea8" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b0b0187d-6061-434b-9a9a-0f16379c8ce5">
+<span class="eqno">(21.11)<a class="headerlink" href="#equation-b0b0187d-6061-434b-9a9a-0f16379c8ce5" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 E^{prueba} = \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \hat{H} \psi^{prueba} \right) dr d\theta d\phi
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -744,18 +748,18 @@ E^{prueba} = \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 
 <div class="section" id="atomo-de-hidrogeno">
 <h2><span class="section-number">21.1. </span>Átomo de hidrógeno<a class="headerlink" href="#atomo-de-hidrogeno" title="Permalink to this headline">¶</a></h2>
 <p>La parte radial del Hamiltoniano del átomo de hidrógeno es</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2ecea7a3-28d6-4af8-8a67-e99344faf841">
-<span class="eqno">(21.12)<a class="headerlink" href="#equation-2ecea7a3-28d6-4af8-8a67-e99344faf841" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-64211365-9061-4011-8b89-6a6b68c999fb">
+<span class="eqno">(21.12)<a class="headerlink" href="#equation-64211365-9061-4011-8b89-6a6b68c999fb" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 H = -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r}
 \end{equation}\]</div>
 <p>Se usa la función de prueba</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c057989-7759-4a9e-9057-917a0bef1516">
-<span class="eqno">(21.13)<a class="headerlink" href="#equation-3c057989-7759-4a9e-9057-917a0bef1516" title="Permalink to this equation">¶</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bc9699d3-0421-4714-a204-694d002e1754">
+<span class="eqno">(21.13)<a class="headerlink" href="#equation-bc9699d3-0421-4714-a204-694d002e1754" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 \psi^{prueba} = \left( \frac{2\alpha}{\pi} \right)^{3/4} e^{-\alpha r^2}
 \end{equation}\]</div>
 <p>La energía se obtiene como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7a98191a-7715-4db3-8a80-8559fe2e5d48">
-<span class="eqno">(21.14)<a class="headerlink" href="#equation-7a98191a-7715-4db3-8a80-8559fe2e5d48" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-585ca13b-9b31-4b87-93a7-c8c38b95e486">
+<span class="eqno">(21.14)<a class="headerlink" href="#equation-585ca13b-9b31-4b87-93a7-c8c38b95e486" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 E^{prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \hat{H} \psi^{prueba} \right) dr d\theta d\phi
 \end{eqnarray}\]</div>
 <p><strong>Paso 1.</strong> Identifique las variables y declárelas como símbolos. En este caso: <span class="math notranslate nohighlight">\(r\)</span> y <span class="math notranslate nohighlight">\(alpha\)</span>.</p>
@@ -788,8 +792,8 @@ E^{prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=
 </div>
 <p><strong>Paso 3.</strong> Opcional. Identifique si hay partes de la ecuación que pueda agrupar o distribuir con operaciones simples, como multiplicación y expréselas por separado.</p>
 <p>En este caso</p>
-<div class="amsmath math notranslate nohighlight" id="equation-98598840-4518-4dbb-addc-46f42fbc332a">
-<span class="eqno">(21.15)<a class="headerlink" href="#equation-98598840-4518-4dbb-addc-46f42fbc332a" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-4347404f-6e13-43c9-8a04-e4284120e745">
+<span class="eqno">(21.15)<a class="headerlink" href="#equation-4347404f-6e13-43c9-8a04-e4284120e745" title="Permalink to this equation">¶</a></span>\[\begin{eqnarray}
 E^{prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \hat{H} \psi^{prueba} \right) dr d\theta d\phi\\
 &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \left( -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r} \right) \psi^{prueba} \right) dr d\theta d\phi\\
 &amp;=&amp; 4\pi \int_{0}^{r=\infty} r^2 \left( {\psi^{prueba}}^* \left( \color{red}{ -\frac{1}{2}  \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \psi^{prueba}} \color{blue}{-\frac{1 }{r}\psi^{prueba}} \right)  \right) dr \\
@@ -879,9 +883,9 @@ E^{prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=
     <footer class="footer">
   <p>
     
-      Por M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+      By M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
     
-        &copy; Derechos de autor 2021.<br/>
+        &copy; Copyright 2021.<br/>
   </p>
 </footer>
 </main>

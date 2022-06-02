@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -33,29 +33,29 @@
     
   <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Penetración" href="Tunel_Region_Infinita.html" />
+    <link rel="next" title="3.4. Ejercicios partícula en una caja" href="CajaEjercicios.html" />
     <link rel="prev" title="2. Tutorial Avanzado." href="Tutorial-Avanzado.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -90,7 +90,7 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
@@ -100,7 +100,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Python
  </span>
@@ -117,16 +117,28 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Sistemas Sencillos
  </span>
 </p>
 <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    3. Partícula en la caja
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CajaEjercicios.html">
+     3.4. Ejercicios partícula en una caja
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Tunel_Region_Infinita.html">
@@ -159,7 +171,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Átomo de Hidrógeno
  </span>
@@ -176,7 +188,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Métodos Aproximados
  </span>
@@ -198,7 +210,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Sistemas de Muchos Electrones
  </span>
@@ -233,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Matemáticas
  </span>
@@ -250,7 +262,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Anexos
  </span>
@@ -286,8 +298,8 @@ const thebe_selector_output = ".output, .cell_output"
             
             <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
                 data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
-                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
                 <i class="fas fa-bars"></i>
                 <i class="fas fa-arrow-left"></i>
                 <i class="fas fa-arrow-up"></i>
@@ -295,7 +307,7 @@ const thebe_selector_output = ".output, .cell_output"
             
             
 <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
     <div class="dropdown-buttons">
@@ -303,10 +315,10 @@ const thebe_selector_output = ".output, .cell_output"
         
         <!-- Download raw file -->
         <a class="dropdown-buttons" href="_sources/Caja.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
@@ -316,8 +328,8 @@ const thebe_selector_output = ".output, .cell_output"
             <!-- Full screen (wrap in <a> to have style consistency -->
 
 <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
-        title="Modo de pantalla completa"><i
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
             class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
@@ -328,7 +340,7 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="dropdown-buttons">
         
         <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/Caja.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
@@ -336,12 +348,12 @@ const thebe_selector_output = ".output, .cell_output"
         
         
         <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Caja.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
         
         <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Lanzamiento Thebe" data-toggle="tooltip" data-placement="left"><i
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
@@ -353,7 +365,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
             <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contenido
+                <i class="fas fa-list"></i> Contents
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
@@ -388,7 +400,7 @@ const thebe_selector_output = ".output, .cell_output"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contenido </h2>
+                            <h2> Contents </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -438,24 +450,24 @@ const thebe_selector_output = ".output, .cell_output"
 \[\begin{split}
 V(x) = \left\{
   \begin{array}{lll}
-  \infty      &amp; \mathrm{si\ } x &lt; 0 &amp; I\\
-  0 &amp; \mathrm{si\ } 0 \le x \le L &amp; II \\
-  \infty     &amp; \mathrm{si\ } x &gt; L &amp; III
+  \infty      &amp; \mathrm{si\ } x &lt; 0 &amp; \text{I}\\
+  0 &amp; \mathrm{si\ } 0 \le x \le L &amp; \text{II} \\
+  \infty     &amp; \mathrm{si\ } x &gt; L &amp; \text{III}
   \end{array}
   \right.
 \end{split}\]</div>
 <p>Esto significa que la partícula está confinada a un intervalo en <span class="math notranslate nohighlight">\(x \epsilon [0,L]\)</span>.</p>
-<p>La función de onda se puede dividir por regiones. Es imposible que la partícula se encuentre en la región I y en la región III, ya que el potencial es infinito, por lo tanto:</p>
+<p>La función de onda se puede dividir por regiones. Es imposible que la partícula se encuentre en la región <span class="math notranslate nohighlight">\(\text{I}\)</span> y en la región <span class="math notranslate nohighlight">\(\text{III}\)</span>, ya que el potencial es infinito, por lo tanto:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \psi(x) = 0 \left\{
   \begin{array}{lll}
-  \mathrm{si\ } x &lt; 0 &amp; I\\
-  \mathrm{si\ } x &gt; L &amp; III
+  \mathrm{si\ } x &lt; 0 &amp; \text{I}\\
+  \mathrm{si\ } x &gt; L &amp; \text{III}
   \end{array}
   \right.
 \end{split}\]</div>
-<p>Para encontrar la función de onda en la región II hay que escribir la de Schrödinger</p>
+<p>Para encontrar la función de onda en la región <span class="math notranslate nohighlight">\(\text{II}\)</span> hay que escribir la de Schrödinger</p>
 <div class="math notranslate nohighlight">
 \[
 \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} \right)\psi(x) = E \psi(x)
@@ -1028,6 +1040,8 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 <p>(1) Pilar, F. L. Elementary Quantum Chemistry, Dover ed.; Dover Publications: Mineola, N.Y, 2001.</p>
 <p>(2) Breneman, G. L. The Two-Dimensional Particle in a Box. Journal of Chemical Education 1990, 67 (10), 866.</p>
 </div>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1062,10 +1076,10 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
             <p class="prev-next-title"><span class="section-number">2. </span>Tutorial Avanzado.</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="Tunel_Region_Infinita.html" title="next page">
+    <a class='right-next' id="next-link" href="CajaEjercicios.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>Penetración</p>
+        <p class="prev-next-title"><span class="section-number">3.4. </span>Ejercicios partícula en una caja</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -1076,9 +1090,9 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
     <footer class="footer">
   <p>
     
-      Por M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+      By M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
     
-        &copy; Derechos de autor 2021.<br/>
+        &copy; Copyright 2021.<br/>
   </p>
 </footer>
 </main>

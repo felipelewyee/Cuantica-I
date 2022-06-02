@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>La Química Cuántica a tu alcance &#8212; Cuántica I</title>
+    <title>3.4. Ejercicios partícula en una caja &#8212; Cuántica I</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -51,11 +51,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Tutorial Básico." href="Tutorial-Basico.html" />
+    <link rel="next" title="4. Penetración" href="Tunel_Region_Infinita.html" />
+    <link rel="prev" title="3. Partícula en la caja" href="Caja.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -93,8 +92,8 @@ const thebe_selector_output = ".output, .cell_output"
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
- <li class="toctree-l1 current">
-  <a class="reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
    La Química Cuántica a tu alcance
   </a>
  </li>
@@ -121,19 +120,19 @@ const thebe_selector_output = ".output, .cell_output"
   Sistemas Sencillos
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="Caja.html">
    3. Partícula en la caja
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="CajaEjercicios.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      3.4. Ejercicios partícula en una caja
     </a>
    </li>
@@ -313,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/intro.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/CajaEjercicios.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -338,7 +337,7 @@ const thebe_selector_output = ".output, .cell_output"
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/intro.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/CajaEjercicios.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -346,7 +345,7 @@ const thebe_selector_output = ".output, .cell_output"
         
         
         
-        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/intro.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/CajaEjercicios.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
                 title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
                     src="_static/images/logo_colab.png"
                     alt="Interact on Colab">Colab</button></a>
@@ -363,24 +362,6 @@ const thebe_selector_output = ".output, .cell_output"
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uso-del-libro-digital">
-   Uso del libro digital
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instalacion-y-ejecucion">
-   Instalación y Ejecución
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -388,130 +369,28 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>La Química Cuántica a tu alcance</h1>
+                <h1>Ejercicios partícula en una caja</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uso-del-libro-digital">
-   Uso del libro digital
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instalacion-y-ejecucion">
-   Instalación y Ejecución
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="la-quimica-cuantica-a-tu-alcance">
-<h1>La Química Cuántica a tu alcance<a class="headerlink" href="#la-quimica-cuantica-a-tu-alcance" title="Permalink to this headline">¶</a></h1>
-<p>El presente libro digital tiene como objetivo ser un manual de prácticas para la asignatura de <a class="reference external" href="https://quimica.unam.mx/wp-content/uploads/2017/03/1404qcuanticauno.pdf"><code class="docutils literal notranslate"><span class="pre">Química</span> <span class="pre">Cuántica</span> <span class="pre">I</span> <span class="pre">(clave</span> <span class="pre">1404)</span></code></a> de la Facultad de Química (UNAM). El libro digital es un esfuerzo compartido de Juan Felipe Huan Lew Yee, José Eduardo Barrios Vargas y Jorge Martín del Campo Ramírez, en conjunto con los profesores del Departamento de Física y Química Teórica. Toda retroalimentación es bienvenida, y se le invita a compartirla a los correos:</p>
-<p>M. en C. Juan Felipe Huan Lew Yee: <a class="reference external" href="mailto:felipe&#46;lew&#46;yee&#37;&#52;&#48;quimica&#46;unam&#46;mx">felipe<span>&#46;</span>lew<span>&#46;</span>yee<span>&#64;</span>quimica<span>&#46;</span>unam<span>&#46;</span>mx</a></p>
-<p>Dr. Jorge Martín del Campo Ramírez: <a class="reference external" href="mailto:jormacara&#37;&#52;&#48;quimica&#46;unam&#46;mx">jormacara<span>&#64;</span>quimica<span>&#46;</span>unam<span>&#46;</span>mx</a></p>
-<p>Dr. José Eduardo Barrios Vargas: <a class="reference external" href="mailto:jebarrios&#37;&#52;&#48;quimica&#46;unam&#46;mx">jebarrios<span>&#64;</span>quimica<span>&#46;</span>unam<span>&#46;</span>mx</a></p>
-<div class="section" id="uso-del-libro-digital">
-<h2>Uso del libro digital<a class="headerlink" href="#uso-del-libro-digital" title="Permalink to this headline">¶</a></h2>
-<p>Se recomienda la lectura en el orden de los capítulos, el cual puede seguirse utilizando la barra de navegación que aparece del lado izquierdo en computadoras, o con el menú emergente en dispositivos móviles.</p>
-<p>Se ha buscado reducir lo más posible los antecedentes matemáticos requeridos, por lo que en la mayoría de los ejercicios se plantea el problema y se pasa directamente al análisis de la solución. Aunque se asume que las ecuaciones han sido previamente revisadas en clase, el desarrollo matemático correspondiente se encuentra en celdas ocultas como la siguiente:</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Inserto matemático: Celda con contenido matemático oculto</p>
-<p>La lectura de este apartado matemático oculto es opcional si ya se conoce la deducción previa de las ecuaciones, pero aquí está por si alguien lo necesita. Aquí van algunas funciones trigonométricas</p>
-<div class="math notranslate nohighlight">
-\[
-y = \sin(x)
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-y = \cos(x)
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-y = \tan(x) = \frac{\sin(x)}{\cos(x)}
-\]</div>
-</div>
-<p>A lo largo de los ejercicios encontrará celdas con el código correspondiente, y celdas vacías con una nota para indicar que debe ser llenada siguiendo alguna instrucción, <strong>como la siguiente</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Llene la siguiente celda con su código</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>La primera vez que se presente una instrucción se mostrará directamente para copiar y pegar en la celda, por ejemplo, el siguiente código muestra como realizar una impresión</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bienvenidos al manual de Química Cuántica I&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Posteriormente, cuando se solicite realizar algo usando código ya presentado, se mostrará la respuesta oculta para permitir que se intente resolver el ejercicio en la celda vacía por cuenta propia. Para revelar la respuesta hay que presionar en el botón con el símbolo + como en la siguiente celda</p>
-<div class="cell tag_hide-cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bienvenidos al manual de Química Cuántica I&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
+  <div class="tex2jax_ignore mathjax_ignore section" id="ejercicios-particula-en-una-caja">
+<h1><span class="section-number">3.4. </span>Ejercicios partícula en una caja<a class="headerlink" href="#ejercicios-particula-en-una-caja" title="Permalink to this headline">¶</a></h1>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Bienvenidos al manual de Química Cuántica I
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="instalacion-y-ejecucion">
-<h2>Instalación y Ejecución<a class="headerlink" href="#instalacion-y-ejecucion" title="Permalink to this headline">¶</a></h2>
-<p>Este libro permite interactuar con el contenido. Seleccione la opción que le resulte más conveniente acorde a su sistema operativo.</p>
-<div class="dropdown admonition">
-<p class="admonition-title">Google Colab</p>
-<p>Los notebooks pueden ejecutarse en línea desde <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colab</span></code> al presionar el ícono de la nave y dar clic sobre Colab, este ícono aparece en la parte superior de cada notebook. Los archivos generados en Google Colab se guardan automáticamente en su Google Drive. El único requisito es tener una cuenta de Gmail.</p>
-<p><img alt="Google Colab example button" src="_images/google_colab.png" /></p>
-<p>La ejecución en <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colab</span></code> de los notebooks que usen Psi4 requiere agregar manualmente lo siguiente como primera celda</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-!chmod +x Miniconda3-latest-Linux-x86_64.sh
-!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-!conda install -y psi4 python=3.7 -c psi4
-import sys
-sys.path.append(&quot;/usr/local/lib/python3.7/site-packages/&quot;)
-</pre></div>
-</div>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">En la misma página web</p>
-<p>Puede ejecutar los notebooks directamente en el libro haciendo clic sobre el botón.</p>
-<p><img alt="Live Code" src="_images/live_code.png" /></p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">En computadora</p>
-<p>Puede descargar los notebooks en formato *.ipynb con el botón con la flecha apuntando hacia abajo y dando clic en .ipynb.</p>
-<p><img alt="Descarga de ipynb" src="_images/download_ipynb.png" /></p>
-<p>Para ejecutarlos localmente es su computadora se requiere una instalación previa de Python. En caso de no tenerla puede instalar <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a>. Una vez descargado puede interactuar con el notebook utilizando Jupyter Notebook.</p>
-</div>
-<p>Los ejercicios de este libro requieren un conocimiento básico de Python, mismo que puede adquirirse en el primer capítulo del libro.</p>
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
+<div class="output text_html"><h4>La energía del estado base de una partícula en una caja es cero.</h4><form><input type="radio" name="answer" value="Falso">Falso<br><input type="radio" name="answer" value="Cierto">Cierto<br></form>
+<button title="Click to show/hide content" type="button"
+onclick="if(document.getElementById('dJmrb_gmvkwp1JRq2Wr-vlxDDBI')
+ .style.display=='none') {document.getElementById('dJmrb_gmvkwp1JRq2Wr-vlxDDBI')
+ .style.display=''}else{document.getElementById('dJmrb_gmvkwp1JRq2Wr-vlxDDBI')
+ .style.display='none'}">Show answer</button>
+<div id="dJmrb_gmvkwp1JRq2Wr-vlxDDBI" style="display:none">La respuesta correcta es: <br>Falso<br><i>Dado que si E=0 entonces ψ=0 y dicha solución no cumple que su cuadrado sea una densidad de probabilidad.</i></div></div></div>
 </div>
 </div>
 
@@ -539,11 +418,18 @@ sys.path.append(&quot;/usr/local/lib/python3.7/site-packages/&quot;)
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="Tutorial-Basico.html" title="next page">
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Caja.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">3. </span>Partícula en la caja</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Tunel_Region_Infinita.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Tutorial Básico.</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>Penetración</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
