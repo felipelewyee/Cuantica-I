@@ -10,6 +10,8 @@ parts:
   numbered: true
   chapters:
   - file: Caja
+    sections:
+      - file: CajaEjercicios
   - file: Tunel_Region_Infinita
   - file: Tunel_Region_Finita
   - file: Anillo
