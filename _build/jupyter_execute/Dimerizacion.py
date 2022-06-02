@@ -3,6 +3,18 @@
 
 # # Dimerización de $NO_2$
 
+# ```{warning}
+# Si está utilizando Google Colab o la ejecución en línea, recuerde que debe de ejecutar al inicio el siguiente código
+# ~~~python
+# !wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# !chmod +x Miniconda3-latest-Linux-x86_64.sh
+# !bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
+# !conda install -y psi4 python=3.7 -c psi4
+# import sys
+# sys.path.append("/usr/local/lib/python3.7/site-packages/")
+# ~~~
+# ```
+
 # El $N_2O_4$ es un compuesto que se encuentra en la atmósfera. Con los cambios de temperatura se descompone en el radical $NO_2$ mediante la reacción:
 # 
 # $N_2O_4 <=> 2NO_2$
@@ -29,12 +41,32 @@
 # |O     | 0.0000|-1.0989|0.4653|
 # 
 
-# **Pregunta 1.** Calcule la energía de la molécula de $N_2O_4$ con HF y la base aug-cc-pvdz. 
-
 # In[1]:
 
 
+# Importe Psi4
+
+
+# In[2]:
+
+
+# Descomentar estas líneas si está en modo online
+
+#!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+#!chmod +x Miniconda3-latest-Linux-x86_64.sh
+#!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
+#!conda install -y psi4 python=3.7 -c psi4
+#import sys
+#sys.path.append("/usr/local/lib/python3.7/site-packages/")
+
 import psi4
+
+
+# **Pregunta 1.** Calcule la energía de la molécula de $N_2O_4$ con HF y la base aug-cc-pvdz. 
+
+# In[3]:
+
+
 psi4.set_memory("2 gb")
 psi4.geometry("""
 0 1
@@ -51,10 +83,9 @@ print(n2o4)
 
 # **Pregunta 2.** Calcule la energía de la molécula de $NO_2$ con HF y la base aug-cc-pvdz. [Complete donde haga falta - Reemplace las X]
 
-# In[2]:
+# In[4]:
 
 
-import psi4
 NO2 = psi4.geometry("""
 0 2
    N       -4.39539        1.87380        0.00000
@@ -69,7 +100,7 @@ print(no2)
 
 # **Pregunta a.** Calcule el $\Delta U$ de la reacción $N_2O_4 <=> 2NO_2$ según HF.
 
-# In[3]:
+# In[5]:
 
 
 (2*no2-n2o4)*2625.5
@@ -77,10 +108,9 @@ print(no2)
 
 # **Pregunta 3.** Calcule la energía de la molécula de $N_2O_4$ con DFT B3LYP y la base aug-cc-pvdz.
 
-# In[4]:
+# In[6]:
 
 
-import psi4
 psi4.set_memory("2 gb")
 psi4.geometry("""
 0 1
@@ -100,7 +130,6 @@ print(n2o4)
 # In[5]:
 
 
-import psi4
 NO2 = psi4.geometry("""
 0 2
 N      0.0000  0.0000 0.0000 

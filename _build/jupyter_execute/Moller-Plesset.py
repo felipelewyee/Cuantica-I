@@ -3,6 +3,18 @@
 
 # # Moller-Plesset (MPn)
 
+# ```{warning}
+# Si está utilizando Google Colab o la ejecución en línea, recuerde que debe de ejecutar al inicio el siguiente código
+# ~~~python
+# !wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# !chmod +x Miniconda3-latest-Linux-x86_64.sh
+# !bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
+# !conda install -y psi4 python=3.7 -c psi4
+# import sys
+# sys.path.append("/usr/local/lib/python3.7/site-packages/")
+# ~~~
+# ```
+
 # Las ecuaciones de Moller-Plesset surgen de aplicar la teoría de perturbaciones a Hartree-Fock. Para ello se toma como sistema conocido el Hamiltoniano de Hartree-Fock ($\mathcal{H}_0$) y se le aplica  una perturbación ($\mathcal{V}$) para convertirlo en el Hamiltoniano del sistema con correlación electrónica ($\mathcal{H}$).
 # 
 # $$
@@ -20,8 +32,17 @@
 # In[2]:
 
 
-import numpy as np
+# Descomentar estas líneas si está en modo online
+
+#!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+#!chmod +x Miniconda3-latest-Linux-x86_64.sh
+#!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
+#!conda install -y psi4 python=3.7 -c psi4
+#import sys
+#sys.path.append("/usr/local/lib/python3.7/site-packages/")
+
 import psi4
+import numpy as np
 
 
 # **Defina una molécula de su interés.** A continuación se proporciona la geometría de la molécula de hidrógeno, aunque puede usar cualquier otro sistema. Se recomienda que sea pequeño por tiempo de ejecución.

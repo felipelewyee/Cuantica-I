@@ -3,6 +3,18 @@
 
 # # Hartree-Fock-Roothan (HF)
 
+# ```{warning}
+# Si está utilizando Google Colab o la ejecución en línea, recuerde que debe de ejecutar al inicio el siguiente código
+# ~~~python
+# !wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# !chmod +x Miniconda3-latest-Linux-x86_64.sh
+# !bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
+# !conda install -y psi4 python=3.7 -c psi4
+# import sys
+# sys.path.append("/usr/local/lib/python3.7/site-packages/")
+# ~~~
+# ```
+
 # Tenemos que resolver:
 # 
 # $$
@@ -21,6 +33,15 @@
 
 # In[1]:
 
+
+# Descomentar estas líneas si está en modo online
+
+#!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+#!chmod +x Miniconda3-latest-Linux-x86_64.sh
+#!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
+#!conda install -y psi4 python=3.7 -c psi4
+#import sys
+#sys.path.append("/usr/local/lib/python3.7/site-packages/")
 
 import psi4
 import numpy as np
