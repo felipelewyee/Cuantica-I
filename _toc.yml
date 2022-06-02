@@ -6,9 +6,6 @@ parts:
   chapters:
   - file: Tutorial-Basico
   - file: Tutorial-Avanzado
-- caption: "Matemáticas"
-  numbered: true
-  chapters:
   - file: matematicas1
   - file: matematicas2
 - caption: Sistemas Sencillos
