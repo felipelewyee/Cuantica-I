@@ -66,16 +66,6 @@ print("Bienvenidos al manual de Química Cuántica I")
 # Los notebooks pueden ejecutarse en línea desde `Google Colab` al presionar el ícono de la nave y dar clic sobre Colab, este ícono aparece en la parte superior de cada notebook. Los archivos generados en Google Colab se guardan automáticamente en su Google Drive. El único requisito es tener una cuenta de Gmail.
 # 
 # ![Google Colab example button](images/google_colab.png)
-# 
-# La ejecución en `Google Colab` de los notebooks que usen Psi4 requiere agregar manualmente lo siguiente como primera celda
-# ```
-# !wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-# !chmod +x Miniconda3-latest-Linux-x86_64.sh
-# !bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-# !conda install -y psi4 python=3.7 -c psi4
-# import sys
-# sys.path.append("/usr/local/lib/python3.7/site-packages/")
-# ```
 # `````
 # 
 # ````{admonition} En la misma página web
@@ -84,17 +74,6 @@ print("Bienvenidos al manual de Química Cuántica I")
 # Puede ejecutar los notebooks directamente en el libro haciendo clic sobre el botón.
 # 
 # ![Live Code](images/live_code.png)
-# `````
-# 
-# ````{admonition} En computadora
-# :class: tip
-# :class: dropdown
-# 
-# Puede descargar los notebooks en formato *.ipynb con el botón con la flecha apuntando hacia abajo y dando clic en .ipynb.
-# 
-# ![Descarga de ipynb](images/download_ipynb.png)
-# 
-# Para ejecutarlos localmente es su computadora se requiere una instalación previa de Python. En caso de no tenerla puede instalar [Anaconda](https://www.anaconda.com/products/individual). Una vez descargado puede interactuar con el notebook utilizando Jupyter Notebook.
 # `````
 # 
 # Los ejercicios de este libro requieren un conocimiento básico de Python, mismo que puede adquirirse en el primer capítulo del libro.

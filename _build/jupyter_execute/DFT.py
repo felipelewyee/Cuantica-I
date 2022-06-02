@@ -39,6 +39,18 @@
 
 # **Importe psi4**
 
+# ```{warning}
+# Si está utilizando Google Colab o la ejecución en línea, debe de ejecutar al inicio el siguiente código
+# ~~~python
+# !wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+# !chmod +x Miniconda3-latest-Linux-x86_64.sh
+# !bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
+# !conda install -y psi4 python=3.7 -c psi4
+# import sys
+# sys.path.append("/usr/local/lib/python3.7/site-packages/")
+# ~~~
+# ```
+
 # In[1]:
 
 
@@ -47,6 +59,15 @@
 
 # In[2]:
 
+
+# Descomentar estas líneas si está en modo online
+
+#!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
+#!chmod +x Miniconda3-latest-Linux-x86_64.sh
+#!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
+#!conda install -y psi4 python=3.7 -c psi4
+#import sys
+#sys.path.append("/usr/local/lib/python3.7/site-packages/")
 
 import psi4
 

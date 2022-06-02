@@ -4,7 +4,7 @@
 # # Moller-Plesset (MPn)
 
 # ```{warning}
-# Si está utilizando Google Colab o la ejecución en línea, recuerde que debe de ejecutar al inicio el siguiente código
+# Si está utilizando Google Colab o la ejecución en línea, debe de ejecutar al inicio el siguiente código
 # ~~~python
 # !wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 # !chmod +x Miniconda3-latest-Linux-x86_64.sh
