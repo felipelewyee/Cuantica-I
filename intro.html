@@ -469,26 +469,11 @@ y = \tan(x) = \frac{\sin(x)}{\cos(x)}
 <p class="admonition-title">Google Colab</p>
 <p>Los notebooks pueden ejecutarse en línea desde <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colab</span></code> al presionar el ícono de la nave y dar clic sobre Colab, este ícono aparece en la parte superior de cada notebook. Los archivos generados en Google Colab se guardan automáticamente en su Google Drive. El único requisito es tener una cuenta de Gmail.</p>
 <p><img alt="Google Colab example button" src="_images/google_colab.png" /></p>
-<p>La ejecución en <code class="docutils literal notranslate"><span class="pre">Google</span> <span class="pre">Colab</span></code> de los notebooks que usen Psi4 requiere agregar manualmente lo siguiente como primera celda</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-!chmod +x Miniconda3-latest-Linux-x86_64.sh
-!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-!conda install -y psi4 python=3.7 -c psi4
-import sys
-sys.path.append(&quot;/usr/local/lib/python3.7/site-packages/&quot;)
-</pre></div>
-</div>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">En la misma página web</p>
 <p>Puede ejecutar los notebooks directamente en el libro haciendo clic sobre el botón.</p>
 <p><img alt="Live Code" src="_images/live_code.png" /></p>
-</div>
-<div class="dropdown admonition">
-<p class="admonition-title">En computadora</p>
-<p>Puede descargar los notebooks en formato *.ipynb con el botón con la flecha apuntando hacia abajo y dando clic en .ipynb.</p>
-<p><img alt="Descarga de ipynb" src="_images/download_ipynb.png" /></p>
-<p>Para ejecutarlos localmente es su computadora se requiere una instalación previa de Python. En caso de no tenerla puede instalar <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a>. Una vez descargado puede interactuar con el notebook utilizando Jupyter Notebook.</p>
 </div>
 <p>Los ejercicios de este libro requieren un conocimiento básico de Python, mismo que puede adquirirse en el primer capítulo del libro.</p>
 </div>
