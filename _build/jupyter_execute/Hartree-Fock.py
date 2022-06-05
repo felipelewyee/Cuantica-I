@@ -4,14 +4,9 @@
 # # Hartree-Fock-Roothan (HF)
 
 # ```{warning}
-# Si está utilizando Google Colab o la ejecución en línea, recuerde que debe de ejecutar al inicio el siguiente código
+# Si está utilizando Google Colab o la ejecución en línea, debe de ejecutar al inicio el siguiente código
 # ~~~python
-# !wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-# !chmod +x Miniconda3-latest-Linux-x86_64.sh
-# !bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-# !conda install -y psi4 python=3.7 -c psi4
-# import sys
-# sys.path.append("/usr/local/lib/python3.7/site-packages/")
+# !pip install pyscf
 # ~~~
 # ```
 
@@ -36,14 +31,9 @@
 
 # Descomentar estas líneas si está en modo online
 
-#!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-#!chmod +x Miniconda3-latest-Linux-x86_64.sh
-#!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-#!conda install -y psi4 python=3.7 -c psi4
-#import sys
-#sys.path.append("/usr/local/lib/python3.7/site-packages/")
+#!pip install pyscf
 
-import psi4
+import pyscf
 import numpy as np
 from scipy.linalg import eigh
 import sympy as sp
@@ -55,18 +45,11 @@ sp.init_printing()
 # In[2]:
 
 
-H2 = psi4.geometry("""
-0 1
-H 0.0000  0.0000 0.0000
-H 0.0000  0.0000 0.7414 
-units angstrom
-""")
-
-
-# In[3]:
-
-
-psi4.set_options({'basis':'STO-3G'})
+H2 = pyscf.gto.Mole(atom = """
+    H 0.0000  0.0000 0.0000
+    H 0.0000  0.0000 0.7414 
+    """,basis = "STO-3G")
+H2.build()
 
 
 # **Paso 2.** Calcular $S$, $H$, $(ij|kl)$.
@@ -91,35 +74,32 @@ psi4.set_options({'basis':'STO-3G'})
 # (\mu \nu|\sigma \lambda) = \int \int \phi_\mu^*(r_1) \phi_\nu(r_1) \frac{1}{r_{12}} \phi_\sigma^*(r_2) \phi_\lambda(r_2) dr_1 dr_2
 # $$
 
-# In[4]:
+# In[3]:
 
 
-wfn = psi4.core.Wavefunction.build(H2)
-mints = psi4.core.MintsHelper(wfn.basisset())
-
-S = np.asarray(mints.ao_overlap())
+S = H2.intor('int1e_ovlp')
 print("----------------Matriz S----------------")
 sp.pprint(sp.Matrix(S))
 
-T = np.asarray(mints.ao_kinetic())
-V = np.asarray(mints.ao_potential())
+T = H2.intor('int1e_kin')
+V = H2.intor('int1e_nuc')
 H=T+V
 print("----------------Matriz H----------------")
 sp.pprint(sp.Matrix(H))
 
-I = np.asarray(mints.ao_eri())
+I = H2.intor('int2e')
 #print("Integrales (ij|kl):")
 #print(I)
 
 nbf = S.shape[0]
-ndocc = wfn.nalpha()
+ndocc = int(H2.nelectron/2)
 #print(nbf)
 #print(ndocc)
 
 
 # **Paso 3.** Proponer una matriz C.
 
-# In[5]:
+# In[4]:
 
 
 C = np.zeros((nbf,nbf))
@@ -145,7 +125,7 @@ print(C)
 # - **Paso 7.** $E_{elec} = \sum_\mu \sum_\nu P_{\nu \mu}(H_{\mu \nu} + F_{\mu \nu})$
 # - **Paso 8.** ¿$E_i=E_{i-1}$?, Sí: acabé. No: volver a paso 4.
 
-# In[6]:
+# In[5]:
 
 
 E_old = -1.0
@@ -208,7 +188,6 @@ while(not converged):
         converged = True
     else:
         E_old = E_elec
-        
 
 
 # **Paso 9.** Calcular energía nuclear y sumarla a la energía electrónica.
@@ -221,16 +200,16 @@ while(not converged):
 # E_{Tot} = E_{elec} + E_{nuc}
 # $$
 
-# In[7]:
+# In[6]:
 
 
-E_nuc = H2.nuclear_repulsion_energy() 
+E_nuc = H2.energy_nuc()
 print("Energia nuclear: ", E_nuc)
 E_T = E_elec + E_nuc
 print("Energia Total: ", E_T)
 
 
-# ## Método Simple. PSI4
+# ## Método Simple. PySCF
 
 # Geometría del agua
 # 
@@ -240,27 +219,27 @@ print("Energia Total: ", E_T)
 # |H|0.0000|0.0000|0.7414|
 # 
 
+# In[7]:
+
+
+import pyscf
+
+
 # In[8]:
 
 
-import psi4
+H2 = pyscf.gto.Mole(atom = """
+    H 0.0000  0.0000 0.0000
+    H 0.0000  0.0000 0.7414 
+    """,basis = "STO-3G")
+H2.build()
 
 
 # In[9]:
 
 
-H2 = psi4.geometry("""
-0 1
-H 0.0000  0.0000 0.0000
-H 0.0000  0.0000 0.7414 
-units angstrom
-""")
-
-
-# In[10]:
-
-
-psi4.energy("HF/6-311G")
+rhf = pyscf.scf.RHF(H2)
+rhf.kernel()
 
 
 # ## Referencias

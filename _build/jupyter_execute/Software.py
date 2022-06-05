@@ -8,8 +8,8 @@
 # ```{note}
 # Algunos programas de estructura electrónica son:
 # - Gaussian (https://gaussian.com)
-# - Psi4 (http://www.psicode.org)
 # - PySCF (https://pyscf.org)
+# - Psi4 (http://www.psicode.org)
 # - NWChem (http://www.nwchem-sw.org)
 # - QChem (http://www.q-chem.com)
 # - TeraChem (http://www.petachem.com)
@@ -21,31 +21,27 @@
 # - Quantum Espresso (https://www.quantum-espresso.org)
 # ```
 
-# ## Aprendiendo a usar Psi4
+# ## Aprendiendo a usar PySCF
 
 # ```{warning}
 # Si está utilizando Google Colab o la ejecución en línea, debe de ejecutar al inicio el siguiente código
 # ~~~python
-# !wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-# !chmod +x Miniconda3-latest-Linux-x86_64.sh
-# !bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-# !conda install -y psi4 python=3.7 -c psi4
-# import sys
-# sys.path.append("/usr/local/lib/python3.7/site-packages/")
+# !pip install pyscf
+# !pip install geomeTRIC
 # ~~~
 # ```
 
-# Para usar Psi4, puede importarlo como si de una librería se tratase, es decir
+# Para usar PySCF, puede importarlo como si de una librería se tratase, es decir
 # 
 # ~~~python
-# import psi4
+# import pyscf
 # ~~~
-# **Importe psi4 en la siguiente celda**
+# **Importe PySCF en la siguiente celda**
 
 # In[1]:
 
 
-# importe psi4
+# importe pyscf
 
 
 # In[2]:
@@ -53,36 +49,95 @@
 
 # Descomentar estas líneas si está en modo online
 
-#!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-#!chmod +x Miniconda3-latest-Linux-x86_64.sh
-#!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-#!conda install -y psi4 python=3.7 -c psi4
-#import sys
-#sys.path.append("/usr/local/lib/python3.7/site-packages/")
+#!pip install pyscf
+#!pip install geomeTRIC
 
-import psi4
+import pyscf
 
 
-# En la mayoría de los software es común (pero no obligatorio) que antes de mandar el cálculo de una molécula se asigne una cantidad de memoria RAM, por ejemplo 2 gb. 
+# El siguiente paso es **declarar las coordenadas de los átomos que forman la molécula**. Para ello se pueden usar visualizadores como `Avogadro` o `IQmol`. También es posible obtener valores experimentales o calculados de https://cccbdb.nist.gov/ . En este caso utilizaremos los resultados experimentales de benceno.
 # 
-# En psi4 esto se hace mediante la instrucción
+# Use las siguientes líneas para declarar la geometría y seleccionar una base
+# ```{margin}
+# Se asume que la molécula es neutra. Si desea editar la carga y/o el espín (note que esto es 2S, no la multiplicidad, 2S+1) puede usar instrucciones como
 # ~~~python
-# psi4.set_memory("2 gb")
+# mol.charge = 1
+# mol.spin = 1/2
 # ~~~
+# Recuerde volver a construir la molécula.
+# ```
 # 
-# **Asigne memoria a su cálculo**
+# ```
+# benzene = pyscf.gto.Mole(atom = """
+#     C  0.0000  1.3970  0.0000
+#     C  1.2098  0.6985  0.0000
+#     C  1.2098 -0.6985  0.0000
+#     C  0.0000 -1.3970  0.0000
+#     C -1.2098 -0.6985  0.0000
+#     C -1.2098  0.6985  0.0000
+#     H  0.0000  2.4810  0.0000
+#     H  2.1486  1.2405  0.0000
+#     H  2.1486 -1.2405  0.0000
+#     H  0.0000 -2.4810  0.0000
+#     H -2.1486 -1.2405  0.0000
+#     H -2.1486  1.2405  0.0000
+#     """,basis = "6-31G")
+# benzene.build()
+# ```
+# 
+# ```{margin}
+# En este caso estamos llamando benzene a la molécula, usted puede usar cualquier otro nombre que prefiera.
+# ```
 
 # In[3]:
 
 
-# Establezca memoria
+#Geometría
 
 
 # In[4]:
 
 
+benzene = pyscf.gto.Mole(atom = """
+    C  0.0000  1.3970  0.0000
+    C  1.2098  0.6985  0.0000
+    C  1.2098 -0.6985  0.0000
+    C  0.0000 -1.3970  0.0000
+    C -1.2098 -0.6985  0.0000
+    C -1.2098  0.6985  0.0000
+    H  0.0000  2.4810  0.0000
+    H  2.1486  1.2405  0.0000
+    H  2.1486 -1.2405  0.0000
+    H  0.0000 -2.4810  0.0000
+    H -2.1486 -1.2405  0.0000
+    H -2.1486  1.2405  0.0000
+    """,basis = "6-31G")
+benzene.build()
+
+
+# En la mayoría de los software es común (pero no obligatorio) que antes de mandar el cálculo de una molécula se asigne una cantidad de memoria RAM, por ejemplo 2000 MB. 
+# 
+# En PySCF esto se hace mediante la instrucción
+# ~~~python
+# mol.max_memory = 2000
+# ~~~
+# 
+# **Asigne memoria a su cálculo**
+# ```{margin}
+# Note que mol es el nombre que le asignó a la molécula. En este ejemplo usamos el nombre de benzene.
+# ```
+
+# In[5]:
+
+
 # Establezca memoria
-psi4.set_memory("2 gb")
+
+
+# In[6]:
+
+
+# Establezca memoria (en MB)
+benzene.max_memory = 2000
 
 
 # ```{note}
@@ -93,80 +148,47 @@ psi4.set_memory("2 gb")
 # La cantidad de memoria que puede asignar al cálculo depende de la cantidad de RAM que tenga su computadora. Recomendamos asignar menos memoria del total disponible ya que la memoria se reparte con los demás programas de su computadora. 
 # ```
 
-# El siguiente paso es **declarar las coordenadas de los átomos que forman la molécula**. Para ello se pueden usar visualizadores como `Avogadro` o `IQmol`. También es posible obtener valores experimentales o calculados de https://cccbdb.nist.gov/ . En este caso utilizaremos los resultados experimentales de benceno.
-# 
-# Use las siguientes líneas para declarar la geometría
-# ```{margin}
-# En este caso el 0 y el 1 indican la `carga` y `multiplicidad`, posteriormente viene el `X`, `Y`, `Z` y las unidades en las que se expresan las coordenadas.
-# ```
-# 
-# ```
-# benzene = psi4.geometry("""
-# 0 1
-# C 0.0000 1.3970 0.0000
-# C 1.2098 0.6985 0.0000
-# C 1.2098 -0.6985 0.0000
-# C 0.0000 -1.3970 0.0000
-# C -1.2098 -0.6985 0.0000
-# C -1.2098 0.6985 0.0000
-# H 0.0000 2.4810 0.0000
-# H 2.1486 1.2405 0.0000
-# H 2.1486 -1.2405 0.0000
-# H 0.0000 -2.4810 0.0000
-# H -2.1486 -1.2405 0.0000
-# H -2.1486 1.2405 0.0000
-# units angstrom
-# """)
-# ```
-
-# In[5]:
-
-
-#Geometría
-
-
-# In[6]:
-
-
-benzene = psi4.geometry("""
-0 1
-C 0.0000 1.3970 0.0000
-C 1.2098 0.6985 0.0000
-C 1.2098 -0.6985 0.0000
-C 0.0000 -1.3970 0.0000
-C -1.2098 -0.6985 0.0000
-C -1.2098 0.6985 0.0000
-H 0.0000 2.4810 0.0000
-H 2.1486 1.2405 0.0000
-H 2.1486 -1.2405 0.0000
-H 0.0000 -2.4810 0.0000
-H -2.1486 -1.2405 0.0000
-H -2.1486 1.2405 0.0000
-units angstrom
-""")
-
-
-# Para realizar un cálculo de `energía` de una molécula `con la geometría` especificada arriba, es necesario especificar  un `método` y una `base` en la siguiente instrucción
+# Para realizar un cálculo de `energía` de una molécula `con la geometría y la base` especificada arriba, es necesario especificar un `método`. Por ejemplo, para hacer Hartree-Fock, escribiremos
 # ~~~python
-# psi4.energy('método/base')
+# rhf = pyscf.scf.RHF(mol)
+# E = rhf.kernel()
 # ~~~
+# hemos de cambiar mol por el nombre que le asignamos a nuestra molécula.
+# ```{margin}
+# SCF significa Self-Consistent Field, RHF Significa Restricted Hartree-Fock. En moléculas de capa abierta se debe de usar UHF Unrestricted Hartree-Fock o ROHF Restricted-Open Hartree-Fock.
+# ```
 # 
 # **Realice un cálculo con el método HF y la base 6-31G**
+# ```{margin}
+# En el caso de este ejemplo, la molécula se llama benzene, así que en vez de escribir mol, escribimos benzene.
+# ```
 
 # In[7]:
 
 
-# Benceno HF/6-31G
+# Benceno HF
 
 
 # In[8]:
 
 
-# Benceno HF/6-31G
-psi4.energy('HF/6-31G')
+# Benceno HF
+rhf = pyscf.scf.RHF(benzene)
+E = rhf.kernel()
 
 
 # **Calcule la energía de benceno con MP2 y 6-31G**
+# 
+# ~~~python
+# mp2 = pyscf.mp.MP2(mol)
+# Ecorr = mp2.kernel()
+# ~~~
+# ```{margin}
+# MP significa M\"oller-Plesset y MP2 indica que es de Segundo orden.
+# ```
+# ```{margin}
+# Note que la última línea guarda en Ecorr solo la energía de correlación, no la energía de Hartree-Fock.
+# ```
 
 # In[9]:
 
@@ -178,10 +200,27 @@ psi4.energy('HF/6-31G')
 
 
 # Benceno MP2/6-31G
-psi4.energy('MP2/6-31G')
+mp2 = pyscf.mp.MP2(benzene)
+Ecorr = mp2.kernel()
 
 
 # **Calcule la energía de benceno con el funcional M062X y la base 6-31G**
+# ~~~python
+# rks = dft.RKS(mol)
+# rks.xc = 'M062X'
+# E = rks.kernel()
+# ~~~
+# ```{margin}
+# DFT significa Density Functional Theory, y RKS significa Restricted Kohn-Sham. En moléculas de capa abierta se debe de usar UKS Unrestriced Kohn-Sham. 
+# ```
+# 
+# ```{margin}
+# La línea
+# ~~~python
+# rks.xc = 'M062X'
+# ~~~
+# define el funcional a usar.
+# ```
 
 # In[11]:
 
@@ -193,34 +232,39 @@ psi4.energy('MP2/6-31G')
 
 
 # Benceno M062X/6-31G
-psi4.energy('M062X/6-31G')
+rks = pyscf.dft.RKS(benzene)
+rks.xc = 'M062X'
+E = rks.kernel()
 
 
-# Usualmente la geometría especificada no es necesariamente la geometría real. Es posible pedir al software que mueva los átomos hasta encontrar las coordenadas que representen un mínimo de energía con el método y base usados. Esto se llama `optimización de geometrías` y se hace con la línea
-# 
+# Usualmente la geometría especificada no es necesariamente la geometría real. Es posible pedir al software que mueva los átomos hasta encontrar las coordenadas que representen un mínimo de energía con el método y base usados. Esto se llama `optimización de geometrías`, para lo cual hay que importar el optimizador y pasar la instancia del método. Por ejemplo, para optimizar con M062X, utilizaremos el rks que definimos antes
 # ```
-# psi4.opt('método/base')
+# from pyscf.geomopt.geometric_solver import optimize
+# mol = geometric_opt(rks)
 # ```
 # 
 # **Optimice la geometría de benceno con el método M062X y base 6-31G e imprima su energía**.
 # 
 # ```{warning}
-# Este cálculo puede tardar entre 1 y 10 minutos dependiendo del procesador de cada computadora.
+# Este cálculo puede tardar entre segundos y unos minutos dependiendo del procesador de cada computadora.
 # ```
 
 # In[13]:
 
 
-psi4.opt('M062X/6-31G')
+# Optimizacion de Geometría
+
+
+# In[14]:
+
+
+from pyscf.geomopt.geometric_solver import optimize
+mol = optimize(rhf)
 
 
 # ## Referencias
 
-# - Smith, D. G. A.; Burns, L. A.; Sirianni, D. A.; Nascimento, D. R.; Kumar, A.; James, A. M.; Schriber, J. B.; Zhang, T.; Zhang, B.; Abbott, A. S.; et al. Psi4NumPy : An Interactive Quantum Chemistry Programming Environment for Reference Implementations and Rapid Development. Journal of Chemical Theory and Computation 2018, 14 (7), 3504–3511.
-# - https://github.com/psi4/psi4numpy/tree/master/Tutorials
-
-# In[ ]:
-
-
-
-
+# - Recent developments in the PySCF program package, Q. Sun, X. Zhang, S. Banerjee, P. Bao, M. Barbry, N. S. Blunt, N. A. Bogdanov, G. H. Booth, J. Chen, Z.-H. Cui, J. J. Eriksen, Y. Gao, S. Guo, J. Hermann, M. R. Hermes, K. Koh, P. Koval, S. Lehtola, Z. Li, J. Liu, N. Mardirossian, J. D. McClain, M. Motta, B. Mussard, H. Q. Pham, A. Pulkin, W. Purwanto, P. J. Robinson, E. Ronca, E. R. Sayfutyarova, M. Scheurer, H. F. Schurkus, J. E. T. Smith, C. Sun, S.-N. Sun, S. Upadhyay, L. K. Wagner, X. Wang, A. White, J. Daniel Whitfield, M. J. Williamson, S. Wouters, J. Yang, J. M. Yu, T. Zhu, T. C. Berkelbach, S. Sharma, A. Yu. Sokolov, and G. K.-L. Chan, J. Chem. Phys. 153, 024109 (2020)
+# - PySCF: the Python-based simulations of chemistry framework, Q. Sun, T. C. Berkelbach, N. S. Blunt, G. H. Booth, S. Guo, Z. Li, J. Liu, J. McClain, S. Sharma, S. Wouters, and G. K.-L. Chan, WIREs Comput. Mol. Sci. 8, e1340 (2018)
+# - Libcint: An efficient general integral library for Gaussian basis functions, Q. Sun, J. Comp. Chem. 36, 1664 (2015)
+# - https://pyscf.org/quickstart.html#geometry-optimization

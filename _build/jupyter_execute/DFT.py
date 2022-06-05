@@ -37,24 +37,19 @@
 # Evaluar la contribución del funcional de intercambio-correlación requiere de realizar integración numérica. Esto se hace con un mallado entorno a la molécula. Existen diversos esquemas para colocar los puntos en el mallado, y para seleccionar cuantos puntos poner, estos puede cambiar de un software a otro, e incluso entre diferentes versiones de un mismo software.
 # ```
 
-# **Importe psi4**
+# **Importe PySCF**
 
 # ```{warning}
 # Si está utilizando Google Colab o la ejecución en línea, debe de ejecutar al inicio el siguiente código
 # ~~~python
-# !wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-# !chmod +x Miniconda3-latest-Linux-x86_64.sh
-# !bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-# !conda install -y psi4 python=3.7 -c psi4
-# import sys
-# sys.path.append("/usr/local/lib/python3.7/site-packages/")
+# !pip install pyscf
 # ~~~
 # ```
 
 # In[1]:
 
 
-#Importe psi4
+#Importe PySCF
 
 
 # In[2]:
@@ -62,26 +57,20 @@
 
 # Descomentar estas líneas si está en modo online
 
-#!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-#!chmod +x Miniconda3-latest-Linux-x86_64.sh
-#!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-#!conda install -y psi4 python=3.7 -c psi4
-#import sys
-#sys.path.append("/usr/local/lib/python3.7/site-packages/")
+#!pip install pyscf
 
-import psi4
+import pyscf
 
 
 # Para ejemplificar el uso de estos funcionales, declare la molécula de agua.
 # 
 # ```
-# h2o = psi4.geometry("""
-# 0 1
-# O    0.0000    0.0000    0.1173
-# H    0.0000    0.7572   -0.4692
-# H    0.0000   -0.7572   -0.4692 
-# units angstrom
-# """)
+# h2o = pyscf.gto.M(atom="""
+#     O    0.0000    0.0000    0.1173
+#     H    0.0000    0.7572   -0.4692
+#     H    0.0000   -0.7572   -0.4692 
+# """,basis="6-311G")
+# h2o = h2o.build()
 # ```
 
 # In[3]:
@@ -93,13 +82,12 @@ import psi4
 # In[4]:
 
 
-h2o = psi4.geometry("""
-0 1
-O    0.0000    0.0000    0.1173
-H    0.0000    0.7572   -0.4692
-H    0.0000   -0.7572   -0.4692 
-units angstrom
-""")
+h2o = pyscf.gto.M(atom="""
+    O    0.0000    0.0000    0.1173
+    H    0.0000    0.7572   -0.4692
+    H    0.0000   -0.7572   -0.4692 
+""",basis="6-311G")
+h2o = h2o.build()
 
 
 # ## Aproximación Local de la Densidad (LDA)
@@ -115,21 +103,25 @@ units angstrom
 # E_c^{LDA} = \int \varepsilon_c^{VWN} dr
 # $$
 # 
-# Haga un cálculo de energía con SVWN y la base 6-311G con la siguiente instrucción
+# Haga un cálculo de energía con LDA y la base 6-311G con la siguiente instrucción
 # ```
-# psi4.energy('SVWN/6-311G')
+# rks = pyscf.dft.RKS(h2o)
+# rks.xc = "LDA"
+# rks.kernel()
 # ```
 
 # In[5]:
 
 
-# SVWN
+# LDA
 
 
 # In[6]:
 
 
-psi4.energy('SVWN/6-311G')
+rks = pyscf.dft.RKS(h2o)
+rks.xc = "LDA"
+rks.kernel()
 
 
 # ## Aproximación de Gradientes Generalizados (GGA)
@@ -160,13 +152,23 @@ psi4.energy('SVWN/6-311G')
 #     
 # La combinación de estos funcionales genera los funcionales GGA. **Haga un cálculo de energía con PBE y la base 6-311G con la siguiente instrucción**
 # ```
-# psi4.energy('PBE/6-311G')
+# rks = pyscf.dft.RKS(h2o)
+# rks.xc = "LDA"
+# rks.kernel()
 # ```
 
-# In[7]:
+# In[17]:
 
 
-psi4.energy('pbe/6-311G')
+# PBE
+
+
+# In[16]:
+
+
+rks = pyscf.dft.RKS(h2o)
+rks.xc = "PBE"
+rks.kernel()
 
 
 # ## Aproximación meta-GGA
@@ -183,19 +185,23 @@ psi4.energy('pbe/6-311G')
 # 
 # **Haga un cálculo de energía con TPSS y la base 6-311G con la siguiente instrucción**
 # ```
-# psi4.energy('TPSS/6-311G')
+# rks = pyscf.dft.RKS(h2o)
+# rks.xc = "TPSS"
+# rks.kernel()
 # ```
 
-# In[8]:
+# In[17]:
 
 
 # TPSS
 
 
-# In[9]:
+# In[18]:
 
 
-psi4.energy('TPSS/6-311G')
+rks = pyscf.dft.RKS(h2o)
+rks.xc = "TPSS"
+rks.kernel()
 
 
 # ## Funcionales Híbridos
@@ -211,19 +217,23 @@ psi4.energy('TPSS/6-311G')
 # 
 # **Haga un cálculo de energía con M06-2X y la base 6-311G con la siguiente instrucción**
 # ```
-# psi4.energy('M062X/6-311G')
+# rks = pyscf.dft.RKS(h2o)
+# rks.xc = "M062X"
+# rks.kernel()
 # ```
 
-# In[10]:
+# In[19]:
 
 
 #M062X
 
 
-# In[11]:
+# In[19]:
 
 
-psi4.energy('M062X/6-311G')
+rks = pyscf.dft.RKS(h2o)
+rks.xc = "M062X"
+rks.kernel()
 
 
 # ## Referencias

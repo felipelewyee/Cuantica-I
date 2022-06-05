@@ -3,7 +3,7 @@
 
 # # La Química Cuántica a tu alcance
 
-# El presente libro digital tiene como objetivo ser un manual de prácticas para la asignatura de [`Química Cuántica I (clave 1404)`](https://quimica.unam.mx/wp-content/uploads/2017/03/1404qcuanticauno.pdf) de la Facultad de Química (UNAM). El libro digital es un esfuerzo compartido de Juan Felipe Huan Lew Yee, José Eduardo Barrios Vargas y Jorge Martín del Campo Ramírez, en conjunto con los profesores del Departamento de Física y Química Teórica. Toda retroalimentación es bienvenida, y se le invita a compartirla a los correos:
+# El presente libro digital tiene como objetivo ser un manual de prácticas para la asignatura de [`Química Cuántica I (clave 1404)`](https://quimica.unam.mx/wp-content/uploads/2017/03/1404qcuanticauno.pdf) y auxiliar en [`Química Cuántica II (clave 0038)`](https://quimica.unam.mx/wp-content/uploads/2022/02/0038-Quimica-Cuantica-II-Q.pdf) de la Facultad de Química (UNAM). El libro digital es un esfuerzo compartido de Juan Felipe Huan Lew Yee, José Eduardo Barrios Vargas y Jorge Martín del Campo Ramírez, en conjunto con los profesores del Departamento de Física y Química Teórica. Toda retroalimentación es bienvenida, y se le invita a compartirla a los correos:
 # 
 # M. en C. Juan Felipe Huan Lew Yee: [felipe.lew.yee@quimica.unam.mx](mailto:felipe.lew.yee@quimica.unam.mx)
 # 
@@ -55,7 +55,7 @@
 print("Bienvenidos al manual de Química Cuántica I")
 
 
-# ## Instalación y Ejecución
+# ## Ejecución
 # 
 # Este libro permite interactuar con el contenido. Seleccione la opción que le resulte más conveniente acorde a su sistema operativo.
 # 

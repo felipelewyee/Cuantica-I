@@ -3,6 +3,12 @@
 
 # # Efecto Túnel en la Caja
 
+# ## Autoría
+# 
+# `````{tip}
+# Esta es una contribución del **Dr. Carlos Amador Bedolla**, del departamento de Física y Química Teórica de la Facultad de Química, UNAM.
+# `````
+
 # Este problema es continuación de la partícula en la caja y nos permite ejemplificar el efecto túnel. Para ello, planteemos una caja de $-L$ a $L$, con potencial infinito afuera de la caja, pero esta vez hay un tope de potencial en el centro de la caja
 # 
 # <img src="images/caja1d-tope.png" alt="Figura de la caja 1D con tope" width="300"/>
@@ -606,7 +612,3 @@ for E in E_segundoguess:
 # 1. Si la partícula tiene energía menor que V, la probabilidad de encontrarla en el intervalo [-a,a]. (Cierto/Falso)
 # 2. Si la partícula tiene energía menor que V, es imposible que pase de un lado al otro lado de la caja. (Cierto/Falso)  
 # ```
-
-# ## Autoría
-
-# Esta es una contribución del Dr. Carlos Amador Bedolla.

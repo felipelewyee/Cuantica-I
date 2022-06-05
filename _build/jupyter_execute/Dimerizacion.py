@@ -6,12 +6,8 @@
 # ```{warning}
 # Si está utilizando Google Colab o la ejecución en línea, debe de ejecutar al inicio el siguiente código
 # ~~~python
-# !wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-# !chmod +x Miniconda3-latest-Linux-x86_64.sh
-# !bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-# !conda install -y psi4 python=3.7 -c psi4
-# import sys
-# sys.path.append("/usr/local/lib/python3.7/site-packages/")
+# !pip install pyscf
+# !pip install geomeTRIC
 # ~~~
 # ```
 
@@ -44,7 +40,7 @@
 # In[1]:
 
 
-# Importe Psi4
+# Importe PySCF y su Optimizador
 
 
 # In[2]:
@@ -52,14 +48,11 @@
 
 # Descomentar estas líneas si está en modo online
 
-#!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-#!chmod +x Miniconda3-latest-Linux-x86_64.sh
-#!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-#!conda install -y psi4 python=3.7 -c psi4
-#import sys
-#sys.path.append("/usr/local/lib/python3.7/site-packages/")
+#!pip install pyscf
+#!pip install geomeTRIC
 
-import psi4
+import pyscf
+from pyscf.geomopt.geometric_solver import optimize
 
 
 # **Pregunta 1.** Calcule la energía de la molécula de $N_2O_4$ con HF y la base aug-cc-pvdz. 
@@ -67,40 +60,49 @@ import psi4
 # In[3]:
 
 
-psi4.set_memory("2 gb")
-psi4.geometry("""
-0 1
+N2O4 = pyscf.gto.M(atom="""
    N       -4.84638        1.76109        0.00000
    N       -3.46888        1.78415        0.00000
    O       -2.82385        2.93169       -0.00000
    O       -2.85055        0.76276        0.00000
    O       -5.46471        2.78248        0.00000
    O       -5.49141        0.61355        0.00000
-""")
-n2o4,wfn=psi4.opt("HF/aug-cc-pvdz", return_wfn=True)
-print(n2o4)
+""",basis="aug-cc-pVDZ")
+N2O4.max_memory = 2000
+N2O4.build()
+
+rhf = pyscf.scf.RHF(N2O4)
+
+N2O4_eq = optimize(rhf)
+
+rhf = pyscf.scf.RHF(N2O4_eq)
+n2o4 = rhf.kernel()
 
 
 # **Pregunta 2.** Calcule la energía de la molécula de $NO_2$ con HF y la base aug-cc-pvdz. [Complete donde haga falta - Reemplace las X]
 
-# In[4]:
+# In[43]:
 
 
-NO2 = psi4.geometry("""
-0 2
+NO2 = pyscf.gto.M(atom="""
    N       -4.39539        1.87380        0.00000
    O       -3.90978        3.09520       -0.00000
    O       -3.65594        0.93810        0.00000
-units angstrom
-""")
-psi4.set_options({'reference': 'uhf'})
-no2=psi4.optimize("HF/aug-cc-pvdz")
-print(no2)
+""",spin=1,basis="aug-cc-pVDZ")
+NO2.max_memory = 2000
+NO2.build()
+
+uhf = pyscf.scf.UHF(NO2)
+
+NO2_eq = optimize(uhf)
+
+uhf = pyscf.scf.UHF(NO2_eq)
+no2 = uhf.kernel()
 
 
 # **Pregunta a.** Calcule el $\Delta U$ de la reacción $N_2O_4 <=> 2NO_2$ según HF.
 
-# In[5]:
+# In[44]:
 
 
 (2*no2-n2o4)*2625.5
@@ -108,43 +110,54 @@ print(no2)
 
 # **Pregunta 3.** Calcule la energía de la molécula de $N_2O_4$ con DFT B3LYP y la base aug-cc-pvdz.
 
-# In[6]:
+# In[46]:
 
 
-psi4.set_memory("2 gb")
-psi4.geometry("""
-0 1
-N     0.0000  0.0000  0.0000
-N     -1.7820 0.0000  0.0000
-O     0.4516  1.1010  0.0000
-O     0.4516  -1.1010 0.0000
-O     -2.2336 1.1010  0.0000
-O     -2.2336 -1.1010 0.0000
-""")
-n2o4,wfn=psi4.opt("B3LYP/aug-cc-pvdz", return_wfn=True)
-print(n2o4)
+N2O4 = pyscf.gto.M(atom="""
+   N       -4.84638        1.76109        0.00000
+   N       -3.46888        1.78415        0.00000
+   O       -2.82385        2.93169       -0.00000
+   O       -2.85055        0.76276        0.00000
+   O       -5.46471        2.78248        0.00000
+   O       -5.49141        0.61355        0.00000
+""",basis="aug-cc-pVDZ")
+N2O4.max_memory = 2000
+N2O4.build()
+
+rks = pyscf.dft.RKS(N2O4)
+rks.xc = "B3LYP"
+N2O4_eq = optimize(rks)
+
+rks = pyscf.dft.RKS(N2O4_eq)
+rks.xc = "B3LYP"
+n2o4 = rks.kernel()
 
 
 # **Pregunta 4.** Calcule la energía de la molécula de $NO_2$ con DFT B3LYP y la base aug-cc-pvdz.
 
-# In[5]:
+# In[45]:
 
 
-NO2 = psi4.geometry("""
-0 2
-N      0.0000  0.0000 0.0000 
-O      0.0000  1.0989 0.4653 
-O      0.0000 -1.0989 0.4653 
-units angstrom
-""")
-psi4.set_options({'reference': 'uhf'})
-no2=psi4.optimize("B3LYP/aug-cc-pvdz")
-print(no2)
+NO2 = pyscf.gto.M(atom="""
+   N       -4.39539        1.87380        0.00000
+   O       -3.90978        3.09520       -0.00000
+   O       -3.65594        0.93810        0.00000
+""",spin=1,basis="aug-cc-pVDZ")
+NO2.max_memory = 2000
+NO2.build()
+
+uks = pyscf.dft.UKS(NO2)
+uks.xc = "B3LYP"
+NO2_eq = optimize(uks)
+
+uks = pyscf.dft.UKS(NO2_eq)
+uks.xc = "B3LYP"
+no2 = uks.kernel()
 
 
 # **Pregunta b.** Calcule el $\Delta U$ de la reacción $N_2O_4 <=> 2NO_2$ según DFT B3LYP.
 
-# In[6]:
+# In[47]:
 
 
 (2*no2-n2o4)*2625.5

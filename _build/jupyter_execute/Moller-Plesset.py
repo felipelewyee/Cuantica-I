@@ -6,22 +6,17 @@
 # ```{warning}
 # Si está utilizando Google Colab o la ejecución en línea, debe de ejecutar al inicio el siguiente código
 # ~~~python
-# !wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-# !chmod +x Miniconda3-latest-Linux-x86_64.sh
-# !bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-# !conda install -y psi4 python=3.7 -c psi4
-# import sys
-# sys.path.append("/usr/local/lib/python3.7/site-packages/")
+# !pip install pyscf
 # ~~~
 # ```
 
-# Las ecuaciones de Moller-Plesset surgen de aplicar la teoría de perturbaciones a Hartree-Fock. Para ello se toma como sistema conocido el Hamiltoniano de Hartree-Fock ($\mathcal{H}_0$) y se le aplica  una perturbación ($\mathcal{V}$) para convertirlo en el Hamiltoniano del sistema con correlación electrónica ($\mathcal{H}$).
+# Las ecuaciones de M\"oller-Plesset surgen de aplicar la teoría de perturbaciones a Hartree-Fock. Para ello se toma como sistema conocido el Hamiltoniano de Hartree-Fock ($\mathcal{H}_0$) y se le aplica  una perturbación ($\mathcal{V}$) para convertirlo en el Hamiltoniano del sistema con correlación electrónica ($\mathcal{H}$).
 # 
 # $$
 # \mathcal{H} = \mathcal{H}_0 + \mathcal{V}
 # $$
 
-# Para comenzar, **importe las librerías numpy y psi4**.
+# Para comenzar, **importe las librerías numpy y PySCF**.
 
 # In[1]:
 
@@ -34,18 +29,13 @@
 
 # Descomentar estas líneas si está en modo online
 
-#!wget -c https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
-#!chmod +x Miniconda3-latest-Linux-x86_64.sh
-#!bash ./Miniconda3-latest-Linux-x86_64.sh -b -f -p /usr/local
-#!conda install -y psi4 python=3.7 -c psi4
-#import sys
-#sys.path.append("/usr/local/lib/python3.7/site-packages/")
+#!pip install pyscf
 
-import psi4
+import pyscf
 import numpy as np
 
 
-# **Defina una molécula de su interés.** A continuación se proporciona la geometría de la molécula de hidrógeno, aunque puede usar cualquier otro sistema. Se recomienda que sea pequeño por tiempo de ejecución.
+# **Defina una molécula de su interés y seleccione una base.** A continuación se proporciona la geometría de la molécula de hidrógeno y se recomienda usar la base 6-31G, aunque puede usar cualquier otro sistema. Se recomienda que sea pequeño por tiempo de ejecución.
 # ```
 # H 0.0000  0.0000 0.0000
 # H 0.0000  0.0000 0.7414 
@@ -60,28 +50,26 @@ import numpy as np
 # In[4]:
 
 
-mol = psi4.geometry("""
-0 1
-H 0.0000  0.0000 0.0000
-H 0.0000  0.0000 0.7414 
-units angstrom
-symmetry C1
-""")
+mol = pyscf.gto.Mole(atom = """
+    H 0.0000  0.0000 0.0000
+    H 0.0000  0.0000 0.7414 
+    """,basis = "6-31G")
+mol = mol.build()
 
 
-# Ya que la teoría de Moller-Plesset corrige el Hamiltoniano de Hartree-Fock, **realice un cálculo de Hartree-Fock y recupere la energía y la función de onda**. La energía resultante contiene tanto energía electrónica como nuclear. Seleccione la base que desee, por ejemplo, 6-31G
+# Ya que la teoría de M\"oller-Plesset corrige el Hamiltoniano de Hartree-Fock, **realice un cálculo de Hartree-Fock y recupere la energía.**
 
 # In[5]:
 
 
-# Calcule E_HF y wfn
+# Calcule E_HF
 
 
 # In[6]:
 
 
-E_HF, wfn = psi4.energy('HF/6-31G',return_wfn=True)
-print("E_HF =",E_HF)
+rhf = pyscf.scf.RHF(mol)
+E_HF = rhf.kernel()
 
 
 # **Obtenga la energía nuclear**
@@ -95,11 +83,14 @@ print("E_HF =",E_HF)
 # In[8]:
 
 
-E_nuc = mol.nuclear_repulsion_energy() 
+E_nuc = mol.energy_nuc() 
 print("E_nuc =",E_nuc)
 
 
-# **Obtenga los coeficientes de los orbitales moleculares a partir de la función de onda**
+# **Obtenga los coeficientes de los orbitales moleculares.** Utilice la instrucción
+# ~~~python
+# C = rhf.mo_coeff
+# ~~~
 
 # In[9]:
 
@@ -107,26 +98,32 @@ print("E_nuc =",E_nuc)
 # Coeficientes
 
 
+# **Obtenga el número de funciones de base ($N_{bf}$), de orbitales moleculares ($N_{mo})$ y de electrones ($N_{e}$)**
+
 # In[10]:
 
 
-C = np.asarray(wfn.Ca())
+C = rhf.mo_coeff
 
-
-# **Obtenga el número de funciones de base ($N_{bf}$), de orbitales moleculares ($N_{mo})$ y de electrones ($N_{e}$)**
 
 # In[11]:
 
 
-# nbf, nmo y ne
+C
 
 
 # In[12]:
 
 
+# nbf, nmo y ne
+
+
+# In[13]:
+
+
 nbf = len(C)
-nmo = wfn.nmo()
-ne = wfn.nalpha() + wfn.nbeta()
+nmo = nbf
+ne = mol.nelectron
 print("nbf =",nbf," nmo =",nmo," ne =",ne)
 
 
@@ -141,22 +138,20 @@ print("nbf =",nbf," nmo =",nmo," ne =",ne)
 # `````{tip}
 # Puede usar las siguientes líneas
 # ~~~
-# mints = psi4.core.MintsHelper(wfn.basisset())
-# I_AO = np.asarray(mints.ao_eri())
+# I_AO = mol.intor('int2e')
 # ~~~
 # `````
 
-# In[13]:
+# In[14]:
 
 
 # ERIs I_AO
 
 
-# In[14]:
+# In[15]:
 
 
-mints = psi4.core.MintsHelper(wfn.basisset())
-I_AO = np.asarray(mints.ao_eri())
+I_AO = mol.intor('int2e')
 
 
 # ```{Note}
@@ -187,13 +182,13 @@ I_AO = np.asarray(mints.ao_eri())
 # La cual es sustancialmente más rápida que los 8 for. Esto puede hacer su programa más rápido si su sistema no es tan pequeño.
 # `````
 
-# In[15]:
+# In[16]:
 
 
 # ERIs I_MO
 
 
-# In[16]:
+# In[17]:
 
 
 I_MO = np.zeros((nmo,nmo,nmo,nmo))
@@ -212,20 +207,20 @@ for p in range(nmo):
 # `````{tip}
 # Puede usar el siguiente código
 # ~~~
-# epsilon = wfn.epsilon_a()
+# epsilon = rhf.mo_energy
 # ~~~
 # `````
 
-# In[17]:
+# In[18]:
 
 
 # epsilon
 
 
-# In[18]:
+# In[19]:
 
 
-epsilon = np.array(wfn.epsilon_a())
+epsilon = rhf.mo_energy
 
 
 # Recordando teoría de perturbaciones, es posible realizar correcciones de n-orden a la energía $E_i^{(n)}$, tal que la energía electrónica total del estado basal ($i=0$) es
@@ -254,13 +249,13 @@ epsilon = np.array(wfn.epsilon_a())
 # Aunque las sumas empiezan en el primer orbital molecular ocupado, recuerde que en Python los índices empiezan en cero.
 # ```
 
-# In[19]:
+# In[20]:
 
 
 # E_0 y E_1
 
 
-# In[20]:
+# In[21]:
 
 
 E_0 = 0
@@ -279,13 +274,13 @@ for a in range(int(ne/2)):
 # E_{MP1} = E_{nuc} + E_0^{(0)} + E_0^{(1)}
 # $$
 
-# In[21]:
+# In[22]:
 
 
 # E_MP1
 
 
-# In[22]:
+# In[23]:
 
 
 E_MP1 = E_nuc + E_0 + E_1
@@ -324,13 +319,13 @@ print("E_MP1 =",E_MP1)
 # E_{corr} = E_{MP2} - E_{HF}
 # $$
 
-# In[23]:
+# In[24]:
 
 
 # E_2, E_MP2 y E_corr
 
 
-# In[24]:
+# In[25]:
 
 
 E_2 = 0
@@ -361,21 +356,21 @@ print("E_corr =",E_MP2-E_HF)
 # $$
 # ```
 
-# **Adapte la instrucción a MP2 junto con la base que usó para comprobar sus resultados**.
+# **Adapte la instrucción a MP2 para comprobar sus resultados**.
 # ```
-# E_MPn = psi4.energy('MPn/Base')
-# print("E_MPn =",E_MPn)
+# mp2 = pyscf.mp.MP2(mol)
+# E_corr = mp2.kernel()
 # ```
-
-# In[25]:
-
-
-# E_MP2 psi4
-
 
 # In[26]:
 
 
-E_MP2 = psi4.energy('MP2/6-31G')
-print("E_MP2 =",E_MP2)
+# E_MP2 PySCF
+
+
+# In[27]:
+
+
+mp2 = pyscf.mp.MP2(mol)
+E_corr = mp2.kernel()
 
