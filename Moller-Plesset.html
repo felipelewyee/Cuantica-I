@@ -509,6 +509,8 @@ title="Print to PDF"
 <span class="c1">#!pip install pyscf</span>
 
 <span class="kn">import</span> <span class="nn">pyscf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
+<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">mp</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
@@ -547,7 +549,7 @@ title="Print to PDF"
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rhf</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rhf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="n">E_HF</span> <span class="o">=</span> <span class="n">rhf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -605,10 +607,10 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.32670763, -0.12292411,  0.76693628, -1.1214825 ],
-       [ 0.2721563 , -1.71135642, -0.68633984,  1.34834978],
-       [ 0.32670763,  0.12292411,  0.76693628,  1.1214825 ],
-       [ 0.2721563 ,  1.71135642, -0.68633984, -1.34834978]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.32670763,  0.12292411,  0.76693628,  1.1214825 ],
+       [ 0.2721563 ,  1.71135642, -0.68633984, -1.34834978],
+       [ 0.32670763, -0.12292411,  0.76693628, -1.1214825 ],
+       [ 0.2721563 , -1.71135642, -0.68633984,  1.34834978]])
 </pre></div>
 </div>
 </div>
@@ -796,7 +798,7 @@ E_{MP1} = E_{nuc} + E_0^{(0)} + E_0^{(1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_MP1 = -1.1267344779324067
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_MP1 = -1.1267344779324082
 </pre></div>
 </div>
 </div>
@@ -851,8 +853,8 @@ E_{corr} = E_{MP2} - E_{HF}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_MP2 = -1.1441309213453614
-E_corr = -0.01739695422879528
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_MP2 = -1.1441309213453632
+E_corr = -0.01739695422879617
 </pre></div>
 </div>
 </div>
@@ -871,7 +873,7 @@ E_{corr} = E_{MPn} - E_{HF} = E_0^{(2)} + ... + E_0^{(n)}
 \]</div>
 </div>
 <p><strong>Adapte la instrucción a MP2 para comprobar sus resultados</strong>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mp2</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mp2</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="n">E_corr</span> <span class="o">=</span> <span class="n">mp2</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -884,19 +886,16 @@ E_{corr} = E_{MPn} - E_{HF} = E_0^{(2)} + ... + E_0^{(n)}
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mp2</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mp2</span> <span class="o">=</span> <span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
 <span class="n">E_corr</span> <span class="o">=</span> <span class="n">mp2</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">Input In [27],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mp2</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">mp</span><span class="o">.</span><span class="n">MP2</span><span class="p">(</span><span class="n">mol</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">E_corr</span> <span class="o">=</span> <span class="n">mp2</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
-
-<span class="ne">AttributeError</span>: module &#39;pyscf&#39; has no attribute &#39;mp&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -1.12673396711657
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E(MP2) = -1.14413041052952  E_corr = -0.0173964434129548
 </pre></div>
 </div>
 </div>

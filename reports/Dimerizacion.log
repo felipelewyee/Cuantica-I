@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['N2O4 = pyscf.gto.M(atom="""', '   N       -4.84638        1.76109        0.00000', '   N       -3.46888        1.78415        0.00000', '   O       -2.82385        2.93169       -0.00000', '   O       -2.85055        0.76276        0.00000']
+['N2O4 = pyscf.gto.Mole(atom="""', '   N       -4.84638        1.76109        0.00000', '   N       -3.46888        1.78415        0.00000', '   O       -2.82385        2.93169       -0.00000', '   O       -2.85055        0.76276        0.00000']
 ...
-['', 'N2O4_eq = optimize(rhf)', '', 'rhf = pyscf.scf.RHF(N2O4_eq)', 'n2o4 = rhf.kernel()']
+['', 'N2O4_eq = optimize(rhf)', '', 'rhf = scf.RHF(N2O4_eq)', 'n2o4 = rhf.kernel()']
 -------------------
 
