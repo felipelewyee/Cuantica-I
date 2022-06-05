@@ -32,6 +32,8 @@
 #!pip install pyscf
 
 import pyscf
+from pyscf import scf
+from pyscf import mp
 import numpy as np
 
 
@@ -68,7 +70,7 @@ mol = mol.build()
 # In[6]:
 
 
-rhf = pyscf.scf.RHF(mol)
+rhf = scf.RHF(mol)
 E_HF = rhf.kernel()
 
 
@@ -358,7 +360,7 @@ print("E_corr =",E_MP2-E_HF)
 
 # **Adapte la instrucción a MP2 para comprobar sus resultados**.
 # ```
-# mp2 = pyscf.mp.MP2(mol)
+# mp2 = mp.MP2(mol)
 # E_corr = mp2.kernel()
 # ```
 
@@ -371,6 +373,6 @@ print("E_corr =",E_MP2-E_HF)
 # In[27]:
 
 
-mp2 = pyscf.mp.MP2(mol)
+mp2 = mp.MP2(mol)
 E_corr = mp2.kernel()
 

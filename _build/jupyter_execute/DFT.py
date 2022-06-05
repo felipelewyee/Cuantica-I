@@ -60,12 +60,13 @@
 #!pip install pyscf
 
 import pyscf
+from pyscf import dft
 
 
 # Para ejemplificar el uso de estos funcionales, declare la molécula de agua.
 # 
 # ```
-# h2o = pyscf.gto.M(atom="""
+# h2o = pyscf.gto.Mole(atom="""
 #     O    0.0000    0.0000    0.1173
 #     H    0.0000    0.7572   -0.4692
 #     H    0.0000   -0.7572   -0.4692 
@@ -82,7 +83,7 @@ import pyscf
 # In[4]:
 
 
-h2o = pyscf.gto.M(atom="""
+h2o = pyscf.gto.Mole(atom="""
     O    0.0000    0.0000    0.1173
     H    0.0000    0.7572   -0.4692
     H    0.0000   -0.7572   -0.4692 
@@ -105,7 +106,7 @@ h2o = h2o.build()
 # 
 # Haga un cálculo de energía con LDA y la base 6-311G con la siguiente instrucción
 # ```
-# rks = pyscf.dft.RKS(h2o)
+# rks = dft.RKS(h2o)
 # rks.xc = "LDA"
 # rks.kernel()
 # ```
@@ -119,7 +120,7 @@ h2o = h2o.build()
 # In[6]:
 
 
-rks = pyscf.dft.RKS(h2o)
+rks = dft.RKS(h2o)
 rks.xc = "LDA"
 rks.kernel()
 
@@ -157,16 +158,16 @@ rks.kernel()
 # rks.kernel()
 # ```
 
-# In[17]:
+# In[7]:
 
 
 # PBE
 
 
-# In[16]:
+# In[8]:
 
 
-rks = pyscf.dft.RKS(h2o)
+rks = dft.RKS(h2o)
 rks.xc = "PBE"
 rks.kernel()
 
@@ -190,16 +191,16 @@ rks.kernel()
 # rks.kernel()
 # ```
 
-# In[17]:
+# In[9]:
 
 
 # TPSS
 
 
-# In[18]:
+# In[10]:
 
 
-rks = pyscf.dft.RKS(h2o)
+rks = dft.RKS(h2o)
 rks.xc = "TPSS"
 rks.kernel()
 
@@ -222,16 +223,16 @@ rks.kernel()
 # rks.kernel()
 # ```
 
-# In[19]:
+# In[11]:
 
 
 #M062X
 
 
-# In[19]:
+# In[12]:
 
 
-rks = pyscf.dft.RKS(h2o)
+rks = dft.RKS(h2o)
 rks.xc = "M062X"
 rks.kernel()
 

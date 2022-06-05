@@ -60,10 +60,12 @@ import pyscf
 # Use las siguientes líneas para declarar la geometría y seleccionar una base
 # ```{margin}
 # Se asume que la molécula es neutra. Si desea editar la carga y/o el espín (note que esto es 2S, no la multiplicidad, 2S+1) puede usar instrucciones como
+# 
 # ~~~python
 # mol.charge = 1
-# mol.spin = 1/2
+# mol.spin = 1
 # ~~~
+# 
 # Recuerde volver a construir la molécula.
 # ```
 # 
@@ -82,7 +84,7 @@ import pyscf
 #     H -2.1486 -1.2405  0.0000
 #     H -2.1486  1.2405  0.0000
 #     """,basis = "6-31G")
-# benzene.build()
+# benzene = benzene.build()
 # ```
 # 
 # ```{margin}
@@ -112,7 +114,7 @@ benzene = pyscf.gto.Mole(atom = """
     H -2.1486 -1.2405  0.0000
     H -2.1486  1.2405  0.0000
     """,basis = "6-31G")
-benzene.build()
+benzene = benzene.build()
 
 
 # En la mayoría de los software es común (pero no obligatorio) que antes de mandar el cálculo de una molécula se asigne una cantidad de memoria RAM, por ejemplo 2000 MB. 
@@ -122,6 +124,8 @@ benzene.build()
 # mol.max_memory = 2000
 # ~~~
 # 
+# Cada vez que modifique algún parámetro de la molécula, debe volver a construirla antes de usarla.
+# 
 # **Asigne memoria a su cálculo**
 # ```{margin}
 # Note que mol es el nombre que le asignó a la molécula. En este ejemplo usamos el nombre de benzene.
@@ -130,14 +134,15 @@ benzene.build()
 # In[5]:
 
 
-# Establezca memoria
+# Establezca memoria (y reconstruya la molécula)
 
 
 # In[6]:
 
 
-# Establezca memoria (en MB)
+# Establezca memoria (en MB) (y reconstruya la molécula)
 benzene.max_memory = 2000
+benzene = benzene.build()
 
 
 # ```{note}
@@ -150,7 +155,8 @@ benzene.max_memory = 2000
 
 # Para realizar un cálculo de `energía` de una molécula `con la geometría y la base` especificada arriba, es necesario especificar un `método`. Por ejemplo, para hacer Hartree-Fock, escribiremos
 # ~~~python
-# rhf = pyscf.scf.RHF(mol)
+# from pyscf improt scf
+# rhf = scf.RHF(mol)
 # E = rhf.kernel()
 # ~~~
 # hemos de cambiar mol por el nombre que le asignamos a nuestra molécula.
@@ -173,14 +179,15 @@ benzene.max_memory = 2000
 
 
 # Benceno HF
-rhf = pyscf.scf.RHF(benzene)
+rhf = scf.RHF(benzene)
 E = rhf.kernel()
 
 
 # **Calcule la energía de benceno con MP2 y 6-31G**
 # 
 # ~~~python
-# mp2 = pyscf.mp.MP2(mol)
+# from pyscf import mp
+# mp2 = mp.MP2(mol)
 # Ecorr = mp2.kernel()
 # ~~~
 # ```{margin}
@@ -190,22 +197,26 @@ E = rhf.kernel()
 # Note que la última línea guarda en Ecorr solo la energía de correlación, no la energía de Hartree-Fock.
 # ```
 
-# In[9]:
-
-
-# Benceno MP2/6-31G
-
-
 # In[10]:
 
 
 # Benceno MP2/6-31G
-mp2 = pyscf.mp.MP2(benzene)
+
+
+# In[17]:
+
+
+# Benceno MP2/6-31G
+from pyscf import mp
+mp2 = mp.MP2(benzene)
 Ecorr = mp2.kernel()
 
 
 # **Calcule la energía de benceno con el funcional M062X y la base 6-31G**
+# 
+# Use el código
 # ~~~python
+# from pyscf import dft
 # rks = dft.RKS(mol)
 # rks.xc = 'M062X'
 # E = rks.kernel()
@@ -222,17 +233,18 @@ Ecorr = mp2.kernel()
 # define el funcional a usar.
 # ```
 
-# In[11]:
+# In[18]:
 
 
 # Benceno M062X/6-31G
 
 
-# In[12]:
+# In[22]:
 
 
 # Benceno M062X/6-31G
-rks = pyscf.dft.RKS(benzene)
+from pyscf import dft
+rks = dft.RKS(benzene)
 rks.xc = 'M062X'
 E = rks.kernel()
 
@@ -249,13 +261,13 @@ E = rks.kernel()
 # Este cálculo puede tardar entre segundos y unos minutos dependiendo del procesador de cada computadora.
 # ```
 
-# In[13]:
+# In[20]:
 
 
 # Optimizacion de Geometría
 
 
-# In[14]:
+# In[21]:
 
 
 from pyscf.geomopt.geometric_solver import optimize

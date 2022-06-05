@@ -52,6 +52,8 @@
 #!pip install geomeTRIC
 
 import pyscf
+from pyscf import scf
+from pyscf import dft
 from pyscf.geomopt.geometric_solver import optimize
 
 
@@ -71,17 +73,17 @@ N2O4 = pyscf.gto.M(atom="""
 N2O4.max_memory = 2000
 N2O4.build()
 
-rhf = pyscf.scf.RHF(N2O4)
+rhf = scf.RHF(N2O4)
 
 N2O4_eq = optimize(rhf)
 
-rhf = pyscf.scf.RHF(N2O4_eq)
+rhf = scf.RHF(N2O4_eq)
 n2o4 = rhf.kernel()
 
 
 # **Pregunta 2.** Calcule la energía de la molécula de $NO_2$ con HF y la base aug-cc-pvdz. [Complete donde haga falta - Reemplace las X]
 
-# In[43]:
+# In[7]:
 
 
 NO2 = pyscf.gto.M(atom="""
@@ -92,17 +94,17 @@ NO2 = pyscf.gto.M(atom="""
 NO2.max_memory = 2000
 NO2.build()
 
-uhf = pyscf.scf.UHF(NO2)
+uhf = scf.UHF(NO2)
 
 NO2_eq = optimize(uhf)
 
-uhf = pyscf.scf.UHF(NO2_eq)
+uhf = scf.UHF(NO2_eq)
 no2 = uhf.kernel()
 
 
 # **Pregunta a.** Calcule el $\Delta U$ de la reacción $N_2O_4 <=> 2NO_2$ según HF.
 
-# In[44]:
+# In[8]:
 
 
 (2*no2-n2o4)*2625.5
@@ -110,7 +112,7 @@ no2 = uhf.kernel()
 
 # **Pregunta 3.** Calcule la energía de la molécula de $N_2O_4$ con DFT B3LYP y la base aug-cc-pvdz.
 
-# In[46]:
+# In[9]:
 
 
 N2O4 = pyscf.gto.M(atom="""
@@ -124,18 +126,18 @@ N2O4 = pyscf.gto.M(atom="""
 N2O4.max_memory = 2000
 N2O4.build()
 
-rks = pyscf.dft.RKS(N2O4)
+rks = dft.RKS(N2O4)
 rks.xc = "B3LYP"
 N2O4_eq = optimize(rks)
 
-rks = pyscf.dft.RKS(N2O4_eq)
+rks = dft.RKS(N2O4_eq)
 rks.xc = "B3LYP"
 n2o4 = rks.kernel()
 
 
 # **Pregunta 4.** Calcule la energía de la molécula de $NO_2$ con DFT B3LYP y la base aug-cc-pvdz.
 
-# In[45]:
+# In[10]:
 
 
 NO2 = pyscf.gto.M(atom="""
@@ -146,18 +148,18 @@ NO2 = pyscf.gto.M(atom="""
 NO2.max_memory = 2000
 NO2.build()
 
-uks = pyscf.dft.UKS(NO2)
+uks = dft.UKS(NO2)
 uks.xc = "B3LYP"
 NO2_eq = optimize(uks)
 
-uks = pyscf.dft.UKS(NO2_eq)
+uks = dft.UKS(NO2_eq)
 uks.xc = "B3LYP"
 no2 = uks.kernel()
 
 
 # **Pregunta b.** Calcule el $\Delta U$ de la reacción $N_2O_4 <=> 2NO_2$ según DFT B3LYP.
 
-# In[47]:
+# In[11]:
 
 
 (2*no2-n2o4)*2625.5

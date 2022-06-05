@@ -49,7 +49,7 @@ H2 = pyscf.gto.Mole(atom = """
     H 0.0000  0.0000 0.0000
     H 0.0000  0.0000 0.7414 
     """,basis = "STO-3G")
-H2.build()
+H2 = H2.build()
 
 
 # **Paso 2.** Calcular $S$, $H$, $(ij|kl)$.
@@ -222,7 +222,7 @@ print("Energia Total: ", E_T)
 # In[7]:
 
 
-import pyscf
+from pyscf import scf
 
 
 # In[8]:
@@ -232,13 +232,13 @@ H2 = pyscf.gto.Mole(atom = """
     H 0.0000  0.0000 0.0000
     H 0.0000  0.0000 0.7414 
     """,basis = "STO-3G")
-H2.build()
+H2 = H2.build()
 
 
 # In[9]:
 
 
-rhf = pyscf.scf.RHF(H2)
+rhf = scf.RHF(H2)
 rhf.kernel()
 
 
