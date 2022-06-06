@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>21. Dimerización de \(NO_2\) &#8212; Cuántica I</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,16 +18,20 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -37,13 +39,12 @@
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
@@ -63,21 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -86,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -104,18 +90,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Buscar este libro ..." aria-label="Buscar este libro ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
-                    La Química Cuántica a tu alcance
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   La Química Cuántica a tu alcance
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
   Python
  </span>
@@ -253,7 +238,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Moller-Plesset.html">
-   19. Moller-Plesset (MPn)
+   19. Möller-Plesset (MPn)
   </a>
  </li>
  <li class="toctree-l1">
@@ -284,17 +269,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -302,182 +282,86 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Navegación de palanca" aria-controls="site-navigation"
+                title="Navegación de palanca" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Descarga esta pagina"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/Dimerizacion.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Dimerizacion.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/Dimerizacion.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Dimerizacion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Descargar archivo fuente" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir en PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo de pantalla completa"
+        title="Modo de pantalla completa"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/Dimerizacion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Lanzamiento Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Dimerizacion.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Lanzamiento Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Lanzamiento Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contenido
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
    21.1. Referencias
@@ -485,11 +369,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Dimerización de NO_2</h1>
@@ -498,7 +383,7 @@ title="Print to PDF"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contents </h2>
+                            <h2> Contenido </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -513,12 +398,11 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="dimerizacion-de-no-2">
-<h1><span class="section-number">21. </span>Dimerización de <span class="math notranslate nohighlight">\(NO_2\)</span><a class="headerlink" href="#dimerizacion-de-no-2" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="dimerizacion-de-no-2">
+<h1><span class="section-number">21. </span>Dimerización de <span class="math notranslate nohighlight">\(NO_2\)</span><a class="headerlink" href="#dimerizacion-de-no-2" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Si está utilizando Google Colab o la ejecución en línea, debe de ejecutar al inicio el siguiente código</p>
@@ -620,9 +504,28 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 9&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">pyscf.geomopt.geometric_solver</span> <span class="kn">import</span> <span class="n">optimize</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jb</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pyscf</span><span class="o">/</span><span class="n">geomopt</span><span class="o">/</span><span class="n">geometric_solver</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">import</span> <span class="nn">tempfile</span>
+<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">import</span> <span class="nn">numpy</span>
+<span class="ne">---&gt; </span><span class="mi">23</span> <span class="kn">import</span> <span class="nn">geometric</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="kn">import</span> <span class="nn">geometric.molecule</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="c1">#from geometric import molecule</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;geometric&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>Pregunta 1.</strong> Calcule la energía de la molécula de <span class="math notranslate nohighlight">\(N_2O_4\)</span> con HF y la base aug-cc-pvdz.</p>
-<div class="cell tag_hide-ouput docutils container">
+<div class="cell tag_hide-ouput tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N2O4</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">   N       -4.84638        1.76109        0.00000</span>
@@ -645,112 +548,41 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                        ())))))))))))))))/                     
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                    ())))))))))))))))))))))))),                
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                *)))))))))))))))))))))))))))))))))             
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        #,    ()))))))))/                .)))))))))),          
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      #%%%%,  ())))))                        .))))))))*        
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      *%%%%%%,  ))              ..              ,))))))).      
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        *%%%%%%,         ***************/.        .)))))))     
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                #%%/      (%%%%%%,    /*********************.       )))))))    
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              .%%%%%%#      *%%%%%%,  *******/,     **********,      .))))))   
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                .%%%%%%/      *%%%%%%,  **              ********      .))))))  
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ##      .%%%%%%/      (%%%%%%,                  ,******      /)))))  
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        %%%%%%      .%%%%%%#      *%%%%%%,    ,/////.       ******      )))))) 
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      #%      %%      .%%%%%%/      *%%%%%%,  ////////,      *****/     ,))))) 
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #%%  %%%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  #%%%%.      %%%%%#      /%%%%%%*      #%%%%%%   /////)     ******      ))))),
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #%%%%##%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      ##     %%%      .%%%%%%/      *%%%%%%,  ////////.      *****/     ,))))) 
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        #%%%%#      /%%%%%%/      (%%%%%%      /)/)//       ******      )))))) 
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ##      .%%%%%%/      (%%%%%%,                  *******      ))))))  
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                .%%%%%%/      *%%%%%%,  **.             /*******      .))))))  
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              *%%%%%%/      (%%%%%%   ********/*..,*/*********       *))))))   
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                #%%/      (%%%%%%,    *********************/        )))))))    
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        *%%%%%%,         ,**************/         ,))))))/     
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      (%%%%%%   ()                              ))))))))       
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      #%%%%,  ())))))                        ,)))))))),        
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        #,    ())))))))))                ,)))))))))).          
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                 ()))))))))))))))))))))))))))))))/             
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                    ())))))))))))))))))))))))).                
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                         ())))))))))))))),                     
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-=# <span class=" -Color -Color-Bold"> geomeTRIC started. Version: 0.9.7.2 </span> #=-
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>geometric-optimize called with the following command line:
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/ipykernel_launcher.py -f /tmp/tmpx4qzej2x.json --HistoryManager.hist_file=:memory:
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18 internal coordinates being used (instead of 18 Cartesians)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Internal coordinate system (atoms numbered from 1):
+                                    ())))))))))))))))))))))))),                
+                                *)))))))))))))))))))))))))))))))))             
+                        #,    ()))))))))/                .)))))))))),          
+                      #%%%%,  ())))))                        .))))))))*        
+                      *%%%%%%,  ))              ..              ,))))))).      
+                        *%%%%%%,         ***************/.        .)))))))     
+                #%%/      (%%%%%%,    /*********************.       )))))))    
+              .%%%%%%#      *%%%%%%,  *******/,     **********,      .))))))   
+                .%%%%%%/      *%%%%%%,  **              ********      .))))))  
+          ##      .%%%%%%/      (%%%%%%,                  ,******      /)))))  
+        %%%%%%      .%%%%%%#      *%%%%%%,    ,/////.       ******      )))))) 
+      #%      %%      .%%%%%%/      *%%%%%%,  ////////,      *****/     ,))))) 
+    #%%  %%%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
+  #%%%%.      %%%%%#      /%%%%%%*      #%%%%%%   /////)     ******      ))))),
+    #%%%%##%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
+      ##     %%%      .%%%%%%/      *%%%%%%,  ////////.      *****/     ,))))) 
+        #%%%%#      /%%%%%%/      (%%%%%%      /)/)//       ******      )))))) 
+          ##      .%%%%%%/      (%%%%%%,                  *******      ))))))  
+                .%%%%%%/      *%%%%%%,  **.             /*******      .))))))  
+              *%%%%%%/      (%%%%%%   ********/*..,*/*********       *))))))   
+                #%%/      (%%%%%%,    *********************/        )))))))    
+                        *%%%%%%,         ,**************/         ,))))))/     
+                      (%%%%%%   ()                              ))))))))       
+                      #%%%%,  ())))))                        ,)))))))),        
+                        #,    ())))))))))                ,)))))))))).          
+                                 ()))))))))))))))))))))))))))))))/             
+                                    ())))))))))))))))))))))))).                
+                                         ())))))))))))))),                     
+
+-=# <span class=" -Color -Color-Bold"> geomeTRIC started. Version: 0.9.7.2 </span> #=-
+geometric-optimize called with the following command line:
+/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/ipykernel_launcher.py -f /home/jfhlewyee/.local/share/jupyter/runtime/kernel-5557e4ef-5b00-457f-9087-197dd65da7ba.json
+18 internal coordinates being used (instead of 18 Cartesians)
+Internal coordinate system (atoms numbered from 1):
 Distance 1-2
 Distance 1-5
 Distance 1-6
@@ -784,13 +616,8 @@ Rotation-C 1-6
 &lt;class &#39;geometric.internal.RotationC&#39;&gt; : 1
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
    N  -4.846380   1.761090   0.000000    0.000000  0.000000  0.000000
    N  -3.468880   1.784150   0.000000    0.000000  0.000000  0.000000
@@ -798,293 +625,290 @@ Rotation-C 1-6
    O  -2.850550   0.762760   0.000000    0.000000  0.000000  0.000000
    O  -5.464710   2.782480   0.000000    0.000000  0.000000  0.000000
    O  -5.491410   0.613550   0.000000    0.000000  0.000000  0.000000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -408.034646158382
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+converged SCF energy = -408.034646158383
+--------------- SCF_Scanner gradients ---------------
+         x                y                z
 0 N     0.2081707192     0.0585029341     0.0000000000
-1 N    -0.2081707192    -0.0585029341     0.0000000000
-2 O     0.0944553150     0.0966506139    -0.0000000000
-3 O     0.0661972026    -0.0370192391    -0.0000000000
-4 O    -0.0661972026     0.0370192391     0.0000000000
+1 N    -0.2081707192    -0.0585029341    -0.0000000000
+2 O     0.0944553150     0.0966506139     0.0000000000
+3 O     0.0661972026    -0.0370192391     0.0000000000
+4 O    -0.0661972026     0.0370192391    -0.0000000000
 5 O    -0.0944553150    -0.0966506139    -0.0000000000
 ----------------------------------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 1: E = -408.034646158  dE = -408.035  norm(grad) = 0.376227
+cycle 1: E = -408.034646158  dE = -408.035  norm(grad) = 0.376227
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    0 : Gradient = 1.536e-01/2.162e-01 (rms/max) Energy = -408.0346461584
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 6.28366e-01 1.07911e+00 1.07911e+00
+Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 6.28366e-01 1.07911e+00 1.07911e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 2
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
    N  -4.858557   1.736198  -0.000000   -0.012177 -0.024892 -0.000000
    N  -3.450842   1.757509   0.000000    0.018038 -0.026641  0.000000
    O  -3.010820   2.922023   0.000000   -0.186970 -0.009667  0.000000
-   O  -2.842610   0.758811   0.000000    0.007940 -0.003949  0.000000
+   O  -2.842610   0.758811  -0.000000    0.007940 -0.003949 -0.000000
    O  -5.317302   2.811789   0.000000    0.147408  0.029309  0.000000
    O  -5.465648   0.649389  -0.000000    0.025762  0.035839 -0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -408.083493912674
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
-0 N     0.1320939616     0.0466022054    -0.0000000000
+
+converged SCF energy = -408.083493912674
+--------------- SCF_Scanner gradients ---------------
+         x                y                z
+0 N     0.1320939616     0.0466022054     0.0000000000
 1 N    -0.1234078200    -0.0787657914    -0.0000000000
 2 O     0.0230604134     0.0897842904     0.0000000000
-3 O     0.0258475779    -0.0073415021     0.0000000000
-4 O     0.0054625235     0.0210066580     0.0000000000
+3 O     0.0258475779    -0.0073415021    -0.0000000000
+4 O     0.0054625235     0.0210066580    -0.0000000000
 5 O    -0.0630566565    -0.0712858602     0.0000000000
 ----------------------------------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 2: E = -408.083493913  dE = -0.0488478  norm(grad) = 0.244741
+cycle 2: E = -408.083493913  dE = -0.0488478  norm(grad) = 0.244741
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    1 : Displace = 1.012e-01/1.872e-01 (rms/max) Trust = 1.000e-01 (=) Grad = 9.992e-02/1.464e-01 (rms/max) E (change) = -408.0834939127 (-4.885e-02) Quality = 0.992
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 8.72669e-01 1.07900e+00 1.24860e+00
+Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 8.72669e-01 1.07900e+00 1.24860e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 3
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
    N  -4.902273   1.786461  -0.000000   -0.043716  0.050263 -0.000000
-   N  -3.407253   1.808412   0.000000    0.043589  0.050903  0.000000
-   O  -2.901393   2.800734   0.000000    0.109427 -0.121290  0.000000
-   O  -2.968463   0.762681   0.000000   -0.125852  0.003870  0.000000
-   O  -5.508855   2.746001  -0.000000   -0.191553 -0.065788 -0.000000
+   N  -3.407253   1.808412   0.000000    0.043589  0.050903 -0.000000
+   O  -2.901393   2.800734  -0.000000    0.109427 -0.121290 -0.000000
+   O  -2.968463   0.762681  -0.000000   -0.125852  0.003870 -0.000000
+   O  -5.508855   2.746001   0.000000   -0.191553 -0.065788  0.000000
    O  -5.257542   0.731432  -0.000000    0.208106  0.082042 -0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -408.088752087566
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
-0 N    -0.0140518822    -0.0216958049    -0.0000000000
-1 N     0.0212827731     0.0333036788     0.0000000000
+
+converged SCF energy = -408.088752087566
+--------------- SCF_Scanner gradients ---------------
+         x                y                z
+0 N    -0.0140518822    -0.0216958049     0.0000000000
+1 N     0.0212827731     0.0333036788    -0.0000000000
 2 O    -0.0426140142    -0.1301198337    -0.0000000000
-3 O    -0.0326966722     0.0798467912    -0.0000000000
-4 O     0.0171220663    -0.0926296142     0.0000000000
+3 O    -0.0326966722     0.0798467912     0.0000000000
+4 O     0.0171220663    -0.0926296142    -0.0000000000
 5 O     0.0509577292     0.1312947827     0.0000000000
 ----------------------------------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 3: E = -408.088752088  dE = -0.00525817  norm(grad) = 0.23902
+cycle 3: E = -408.088752088  dE = -0.00525817  norm(grad) = 0.23902
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    2 : Displace = 1.541e-01/2.230e-01 (rms/max) Trust = 1.414e-01 (+) Grad = 9.758e-02/1.408e-01 (rms/max) E (change) = -408.0887520876 (-5.258e-03) Quality = 0.082
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.07894e+00 1.19548e+00 1.28141e+00
+Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.07894e+00 1.19548e+00 1.28141e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 4
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
    N  -4.922658   1.754932  -0.000000   -0.020384 -0.031529  0.000000
    N  -3.399129   1.803138   0.000000    0.008124 -0.005273  0.000000
-   O  -2.916598   2.870962   0.000000   -0.015204  0.070229  0.000000
-   O  -2.918574   0.745893   0.000000    0.049889 -0.016788  0.000000
-   O  -5.437362   2.797745  -0.000000    0.071493  0.051744 -0.000000
+   O  -2.916598   2.870962  -0.000000   -0.015204  0.070229 -0.000000
+   O  -2.918574   0.745893  -0.000000    0.049889 -0.016788 -0.000000
+   O  -5.437362   2.797745   0.000000    0.071493  0.051744  0.000000
    O  -5.351460   0.663050  -0.000000   -0.093918 -0.068381 -0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -408.114295119652
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+
+converged SCF energy = -408.114295119654
+--------------- SCF_Scanner gradients ---------------
+         x                y                z
 0 N     0.0256720501     0.0116848438     0.0000000000
 1 N    -0.0301060756    -0.0059787283     0.0000000000
 2 O     0.0127862364     0.0055703528    -0.0000000000
 3 O    -0.0041529016     0.0053528716    -0.0000000000
 4 O    -0.0006962990    -0.0021382373    -0.0000000000
-5 O    -0.0035030103    -0.0144911026    -0.0000000000
+5 O    -0.0035030103    -0.0144911027    -0.0000000000
 ----------------------------------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 4: E = -408.11429512  dE = -0.025543  norm(grad) = 0.0469622
+cycle 4: E = -408.11429512  dE = -0.025543  norm(grad) = 0.0469622
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    3 : Displace = 7.155e-02/1.160e-01 (rms/max) Trust = 7.071e-02 (-) Grad = 1.917e-02/3.069e-02 (rms/max) E (change) = -408.1142951197 (-2.554e-02) Quality = 0.848
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.07839e+00 1.18291e+00 1.38419e+00
+Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.07839e+00 1.18291e+00 1.38419e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 5
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
    N  -4.929575   1.760467  -0.000000   -0.006917  0.005535 -0.000000
-   N  -3.369056   1.770875   0.000000    0.030073 -0.032263 -0.000000
-   O  -2.984784   2.870166   0.000000   -0.068186 -0.000797  0.000000
+   N  -3.369056   1.770875  -0.000000    0.030073 -0.032263 -0.000000
+   O  -2.984784   2.870166  -0.000000   -0.068186 -0.000797 -0.000000
    O  -2.842865   0.728733   0.000000    0.075709 -0.017160  0.000000
-   O  -5.432383   2.813406  -0.000000    0.004978  0.015661 -0.000000
-   O  -5.387117   0.692073  -0.000000   -0.035657  0.029023  0.000000
+   O  -5.432383   2.813406   0.000000    0.004978  0.015661  0.000000
+   O  -5.387117   0.692073   0.000000   -0.035657  0.029023  0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -408.114465985346
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+
+converged SCF energy = -408.114465985342
+--------------- SCF_Scanner gradients ---------------
+         x                y                z
 0 N     0.0199911025     0.0058899299    -0.0000000000
 1 N    -0.0055004975    -0.0133490288    -0.0000000000
 2 O    -0.0131869283     0.0059687843     0.0000000000
 3 O     0.0095399026    -0.0091892512     0.0000000000
-4 O    -0.0096448108     0.0027229039     0.0000000000
-5 O    -0.0011987685     0.0079566619    -0.0000000000
+4 O    -0.0096448109     0.0027229039     0.0000000000
+5 O    -0.0011987684     0.0079566619     0.0000000000
 ----------------------------------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 5: E = -408.114465985  dE = -0.000170866  norm(grad) = 0.034539
+cycle 5: E = -408.114465985  dE = -0.000170866  norm(grad) = 0.034539
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    4 : Displace = 5.014e-02/7.755e-02 (rms/max) Trust = 1.000e-01 (+) Grad = 1.410e-02/2.084e-02 (rms/max) E (change) = -408.1144659853 (-1.709e-04) Quality = 0.075
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.13234e+00 1.26969e+00 1.38234e+00
+Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.13234e+00 1.26969e+00 1.38234e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.952798   1.736022  -0.000000   -0.023223 -0.024445 -0.000000
+   N  -4.952798   1.736022   0.000000   -0.023223 -0.024445  0.000000
    N  -3.371179   1.797624   0.000000   -0.002124  0.026749  0.000000
-   O  -2.946338   2.872635   0.000000    0.038446  0.002469  0.000000
-   O  -2.860287   0.750687   0.000000   -0.017422  0.021954 -0.000000
-   O  -5.411487   2.806676  -0.000000    0.020896 -0.006730 -0.000000
-   O  -5.403690   0.672076  -0.000000   -0.016573 -0.019997  0.000000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -408.115680252896
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+   O  -2.946338   2.872635  -0.000000    0.038446  0.002469 -0.000000
+   O  -2.860287   0.750687  -0.000000   -0.017422  0.021954 -0.000000
+   O  -5.411487   2.806676   0.000000    0.020896 -0.006730 -0.000000
+   O  -5.403690   0.672076   0.000000   -0.016573 -0.019997 -0.000000
+converged SCF energy = -408.115680252897
+--------------- SCF_Scanner gradients ---------------
+         x                y                z
 0 N    -0.0046836295    -0.0206208294    -0.0000000000
 1 N    -0.0041381532     0.0153680449     0.0000000000
 2 O    -0.0017418537    -0.0112852831    -0.0000000000
 3 O     0.0027635469     0.0026671966    -0.0000000000
-4 O     0.0066597551     0.0038790661     0.0000000000
-5 O     0.0011403343     0.0099918048     0.0000000000
+4 O     0.0066597551     0.0038790661    -0.0000000000
+5 O     0.0011403343     0.0099918048    -0.0000000000
 ----------------------------------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 6: E = -408.115680253  dE = -0.00121427  norm(grad) = 0.0317196
+cycle 6: E = -408.115680253  dE = -0.00121427  norm(grad) = 0.0317196
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    5 : Displace = 2.967e-02/3.891e-02 (rms/max) Trust = 5.000e-02 (-) Grad = 1.295e-02/2.115e-02 (rms/max) E (change) = -408.1156802529 (-1.214e-03) Quality = 0.593
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.11154e+00 1.22012e+00 1.38661e+00
+Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.11154e+00 1.22012e+00 1.38661e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 7
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.946261   1.753580  -0.000000    0.006537  0.017558 -0.000000
-   N  -3.368492   1.797755   0.000000    0.002687  0.000131 -0.000000
-   O  -2.925622   2.874402   0.000000    0.020716  0.001767  0.000000
-   O  -2.890736   0.737325   0.000000   -0.030450 -0.013362  0.000000
-   O  -5.445227   2.803850  -0.000000   -0.033740 -0.002826 -0.000000
-   O  -5.369442   0.668809  -0.000000    0.034249 -0.003268 -0.000000
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -408.116201751501
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
-0 N     0.0036293799     0.0027505433    -0.0000000000
+   N  -4.946261   1.753580   0.000000    0.006537  0.017558 -0.000000
+   N  -3.368492   1.797755  -0.000000    0.002687  0.000131 -0.000000
+   O  -2.925622   2.874402  -0.000000    0.020716  0.001767  0.000000
+   O  -2.890736   0.737325  -0.000000   -0.030450 -0.013362  0.000000
+   O  -5.445227   2.803850   0.000000   -0.033740 -0.002826  0.000000
+   O  -5.369442   0.668809   0.000000    0.034249 -0.003268  0.000000
+converged SCF energy = -408.116201751501
+--------------- SCF_Scanner gradients ---------------
+         x                y                z
+0 N     0.0036293799     0.0027505433     0.0000000000
 1 N    -0.0031730665     0.0006525179    -0.0000000000
 2 O     0.0017636797     0.0027401726     0.0000000000
 3 O    -0.0022759198    -0.0025497349     0.0000000000
 4 O    -0.0005949334     0.0003662561    -0.0000000000
-5 O     0.0006508601    -0.0039597550     0.0000000000
+5 O     0.0006508602    -0.0039597550    -0.0000000000
 ----------------------------------------------
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 7: E = -408.116201752  dE = -0.000521499  norm(grad) = 0.00837397
+cycle 7: E = -408.116201752  dE = -0.000521499  norm(grad) = 0.00837397
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    6 : Displace = 2.654e-02/3.467e-02 (rms/max) Trust = 5.000e-02 (=) Grad = 3.419e-03/4.554e-03 (rms/max) E (change) = -408.1162017515 (-5.215e-04) Quality = 0.678
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.10744e+00 1.24155e+00 1.40142e+00
+Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.10744e+00 1.24155e+00 1.40142e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 8
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.949592   1.751178  -0.000000   -0.003331 -0.002401  0.000000
+   N  -4.949592   1.751178   0.000000   -0.003331 -0.002401  0.000000
    N  -3.365404   1.793865   0.000000    0.003087 -0.003890  0.000000
-   O  -2.933581   2.872859   0.000000   -0.007959 -0.001543 -0.000000
+   O  -2.933581   2.872859  -0.000000   -0.007959 -0.001543 -0.000000
    O  -2.873866   0.740151  -0.000000    0.016870  0.002826 -0.000000
-   O  -5.440573   2.805185  -0.000000    0.004654  0.001335  0.000000
-   O  -5.382763   0.672482  -0.000000   -0.013321  0.003673 -0.000000
+   O  -5.440573   2.805185   0.000000    0.004654  0.001335  0.000000
+   O  -5.382763   0.672482   0.000000   -0.013321  0.003673 -0.000000
+converged SCF energy = -408.116312733882
+--------------- SCF_Scanner gradients ---------------
+         x                y                z
+0 N     0.0018818462    -0.0001959476    -0.0000000000
+1 N    -0.0015260048     0.0003711404     0.0000000000
+2 O    -0.0000375823    -0.0004583727    -0.0000000000
+3 O     0.0005962544    -0.0002102601    -0.0000000000
+4 O    -0.0005990998     0.0002622409     0.0000000000
+5 O    -0.0003154137     0.0002311991     0.0000000000
+----------------------------------------------
+cycle 8: E = -408.116312734  dE = -0.000110982  norm(grad) = 0.00269036
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -408.116312733882
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    7 : Displace = 1.012e-02/1.701e-02 (rms/max) Trust = 5.000e-02 (=) Grad = 1.098e-03/1.892e-03 (rms/max) E (change) = -408.1163127339 (-1.110e-04) Quality = 0.979
+Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.10999e+00 1.21397e+00 1.40082e+00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 9
+Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -4.950998   1.750817   0.000000   -0.001406 -0.000362  0.000000
+   N  -3.364257   1.794205  -0.000000    0.001147  0.000340 -0.000000
+   O  -2.933025   2.873428   0.000000    0.000556  0.000570  0.000000
+   O  -2.874289   0.739960   0.000000   -0.000423 -0.000191  0.000000
+   O  -5.440339   2.805321   0.000000    0.000235  0.000136 -0.000000
+   O  -5.382873   0.671989   0.000000   -0.000110 -0.000493  0.000000
+converged SCF energy = -408.116318074557
+--------------- SCF_Scanner gradients ---------------
+         x                y                z
+0 N     0.0002805676    -0.0006550057     0.0000000000
+1 N    -0.0003609887     0.0004278542    -0.0000000000
+2 O    -0.0001786224    -0.0001414696     0.0000000000
+3 O     0.0000801035    -0.0002682070     0.0000000000
+4 O     0.0000183315     0.0002190731    -0.0000000000
+5 O     0.0001606085     0.0004177550    -0.0000000000
+----------------------------------------------
+cycle 9: E = -408.116318075  dE = -5.34068e-06  norm(grad) = 0.00109546
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    8 : Displace = 8.866e-04/1.452e-03 (rms/max) Trust = 7.071e-02 (+) Grad = 4.472e-04/7.126e-04 (rms/max) E (change) = -408.1163180746 (-5.341e-06) Quality = 1.159
+Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.10779e+00 1.26497e+00 1.40201e+00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 10
+Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -4.951622   1.751001  -0.000000   -0.000624  0.000184 -0.000000
+   N  -3.363661   1.794251   0.000000    0.000595  0.000046  0.000000
+   O  -2.932140   2.873412  -0.000000    0.000885 -0.000016 -0.000000
+   O  -2.874142   0.740075  -0.000000    0.000147  0.000115 -0.000000
+   O  -5.441074   2.805222   0.000000   -0.000735 -0.000099  0.000000
+   O  -5.383140   0.671760   0.000000   -0.000268 -0.000229 -0.000000
+converged SCF energy = -408.116318916615
+--------------- SCF_Scanner gradients ---------------
+         x                y                z
+0 N     0.0000058825    -0.0000059100    -0.0000000000
+1 N     0.0000176620     0.0000883575     0.0000000000
+2 O    -0.0000392934    -0.0001096574    -0.0000000000
+3 O    -0.0000339831     0.0000469479    -0.0000000000
+4 O     0.0000407372     0.0000123316     0.0000000000
+5 O     0.0000089948    -0.0000320696     0.0000000000
+----------------------------------------------
+cycle 10: E = -408.116318917  dE = -8.42057e-07  norm(grad) = 0.000167443
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    9 : Displace = 6.154e-04/8.889e-04 (rms/max) Trust = 1.000e-01 (+) Grad = 6.836e-05/1.165e-04 (rms/max) E (change) = -408.1163189166 (-8.421e-07) Quality = 1.061
+Converged! =D
+
+    #==========================================================================#
+    #| If this code has benefited your research, please support us by citing: |#
+    #|                                                                        |#
+    #| Wang, L.-P.; Song, C.C. (2016) &quot;Geometry optimization made simple with |#
+    #| translation and rotation coordinates&quot;, J. Chem, Phys. 144, 214108.     |#
+    #| http://dx.doi.org/10.1063/1.4952956                                    |#
+    #==========================================================================#
+    
+Time elapsed since start of run_optimizer: 40.973 seconds
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -408.116318916673
 </pre></div>
 </div>
 </div>
 </div>
 <p><strong>Pregunta 2.</strong> Calcule la energía de la molécula de <span class="math notranslate nohighlight">\(NO_2\)</span> con HF y la base aug-cc-pvdz. [Complete donde haga falta - Reemplace las X]</p>
-<div class="cell tag_hide-ouput docutils container">
+<div class="cell tag_hide-ouput tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NO2</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">   N       -4.39539        1.87380        0.00000</span>
@@ -1330,7 +1154,7 @@ Time elapsed since start of run_optimizer: 6.232 seconds
 </div>
 </div>
 <p><strong>Pregunta a.</strong> Calcule el <span class="math notranslate nohighlight">\(\Delta U\)</span> de la reacción <span class="math notranslate nohighlight">\(N_2O_4 &lt;=&gt; 2NO_2\)</span> según HF.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">no2</span><span class="o">-</span><span class="n">n2o4</span><span class="p">)</span><span class="o">*</span><span class="mf">2625.5</span>
 </pre></div>
@@ -1343,7 +1167,7 @@ Time elapsed since start of run_optimizer: 6.232 seconds
 </div>
 </div>
 <p><strong>Pregunta 3.</strong> Calcule la energía de la molécula de <span class="math notranslate nohighlight">\(N_2O_4\)</span> con DFT B3LYP y la base aug-cc-pvdz.</p>
-<div class="cell tag_hide-ouput docutils container">
+<div class="cell tag_hide-ouput tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N2O4</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">   N       -4.84638        1.76109        0.00000</span>
@@ -1731,7 +1555,7 @@ Time elapsed since start of run_optimizer: 157.808 seconds
 </div>
 </div>
 <p><strong>Pregunta 4.</strong> Calcule la energía de la molécula de <span class="math notranslate nohighlight">\(NO_2\)</span> con DFT B3LYP y la base aug-cc-pvdz.</p>
-<div class="cell tag_hide-ouput docutils container">
+<div class="cell tag_hide-ouput tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NO2</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">   N       -4.39539        1.87380        0.00000</span>
@@ -1974,7 +1798,7 @@ Time elapsed since start of run_optimizer: 38.724 seconds
 </div>
 </div>
 <p><strong>Pregunta b.</strong> Calcule el <span class="math notranslate nohighlight">\(\Delta U\)</span> de la reacción <span class="math notranslate nohighlight">\(N_2O_4 &lt;=&gt; 2NO_2\)</span> según DFT B3LYP.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">no2</span><span class="o">-</span><span class="n">n2o4</span><span class="p">)</span><span class="o">*</span><span class="mf">2625.5</span>
 </pre></div>
@@ -1986,13 +1810,13 @@ Time elapsed since start of run_optimizer: 38.724 seconds
 </div>
 </div>
 </div>
-<section id="referencias">
-<h2><span class="section-number">21.1. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<div class="section" id="referencias">
+<h2><span class="section-number">21.1. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Parrish, R. M.; Burns, L. A.; Smith, D. G. A.; Simmonett, A. C.; DePrince, A. E.; Hohenstein, E. G.; Bozkaya, U.; Sokolov, A. Y.; Di Remigio, R.; Richard, R. M.; et al. <strong>Psi4 1.1: An Open-Source Electronic Structure Program Emphasizing Automation, Advanced Libraries, and Interoperability.</strong> Journal of Chemical Theory and Computation 2017, 13 (7), 3185–3197.</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -2016,11 +1840,9 @@ Time elapsed since start of run_optimizer: 38.724 seconds
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="DFT.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -2036,28 +1858,24 @@ Time elapsed since start of run_optimizer: 38.724 seconds
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      Por M en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+    
+        &copy; Derechos de autor 2021.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
