@@ -406,13 +406,13 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Si está utilizando Google Colab o la ejecución en línea, debe de ejecutar al inicio el siguiente código</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!pip install pyscf
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>!pip install pyscf
 !pip install geomeTRIC
 </pre></div>
 </div>
 </div>
 <p>El <span class="math notranslate nohighlight">\(N_2O_4\)</span> es un compuesto que se encuentra en la atmósfera. Con los cambios de temperatura se descompone en el radical <span class="math notranslate nohighlight">\(NO_2\)</span> mediante la reacción:</p>
-<p><span class="math notranslate nohighlight">\(N_2O_4 &lt;=&gt; 2NO_2\)</span></p>
+<p><span class="math notranslate nohighlight">\(N_2O_4\)</span> ↔ <span class="math notranslate nohighlight">\(2NO_2\)</span></p>
 <p>Las geometrías de <span class="math notranslate nohighlight">\(N_2O_4\)</span> y <span class="math notranslate nohighlight">\(NO_2\)</span> se dan a continuación:</p>
 <p>Molécula: <span class="math notranslate nohighlight">\(N_2O_4\)</span> Carga: 0 Multiplicidad: 1</p>
 <table class="colwidths-auto table">
@@ -504,27 +504,37 @@ const thebe_selector_output = ".output, .cell_output"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 9&gt;</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="kn">from</span> <span class="nn">pyscf.geomopt.geometric_solver</span> <span class="kn">import</span> <span class="n">optimize</span>
+</div>
+<p><strong>Pregunta 1.</strong> Complete el siguiente código para calcular la energía de la molécula optimizada de <span class="math notranslate nohighlight">\(N_2O_4\)</span> con Hartree-Fock y la base 6-31G.</p>
+<ul class="simple">
+<li><p><strong>Ayuda.</strong> Reemplace XXXX por los valores apropiados.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">N2O4</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">   N        XXXXXXX        XXXXXXX        XXXXXXX</span>
+<span class="s2">   N        XXXXXXX        XXXXXXX        XXXXXXX</span>
+<span class="s2">   O        XXXXXXX        XXXXXXX        XXXXXXX</span>
+<span class="s2">   O        XXXXXXX        XXXXXXX        XXXXXXX</span>
+<span class="s2">   O        XXXXXXX        XXXXXXX        XXXXXXX</span>
+<span class="s2">   O        XXXXXXX        XXXXXXX        XXXXXXX</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="s2">&quot;XXXX&quot;</span><span class="p">)</span>
+<span class="n">N2O4</span><span class="o">.</span><span class="n">max_memory</span> <span class="o">=</span> <span class="n">XXXX</span>
+<span class="n">N2O4</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 
-<span class="n">File</span> <span class="o">~/</span><span class="n">anaconda3</span><span class="o">/</span><span class="n">envs</span><span class="o">/</span><span class="n">jb</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.10</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">pyscf</span><span class="o">/</span><span class="n">geomopt</span><span class="o">/</span><span class="n">geometric_solver</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">23</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span> <span class="kn">import</span> <span class="nn">tempfile</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span> <span class="kn">import</span> <span class="nn">numpy</span>
-<span class="ne">---&gt; </span><span class="mi">23</span> <span class="kn">import</span> <span class="nn">geometric</span>
-<span class="g g-Whitespace">     </span><span class="mi">24</span> <span class="kn">import</span> <span class="nn">geometric.molecule</span>
-<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="c1">#from geometric import molecule</span>
+<span class="n">rhf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">N2O4</span><span class="p">)</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;geometric&#39;
+<span class="n">N2O4_eq</span> <span class="o">=</span> <span class="n">optimize</span><span class="p">(</span><span class="n">rhf</span><span class="p">)</span>
+
+<span class="n">rhf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">N2O4_eq</span><span class="p">)</span>
+<span class="n">n2o4</span> <span class="o">=</span> <span class="n">rhf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimice Geometría y obtenga la energia N2O4 HF/6-31G</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Pregunta 1.</strong> Calcule la energía de la molécula de <span class="math notranslate nohighlight">\(N_2O_4\)</span> con HF y la base aug-cc-pvdz.</p>
 <div class="cell tag_hide-ouput tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N2O4</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
@@ -534,7 +544,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="s2">   O       -2.85055        0.76276        0.00000</span>
 <span class="s2">   O       -5.46471        2.78248        0.00000</span>
 <span class="s2">   O       -5.49141        0.61355        0.00000</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="s2">&quot;aug-cc-pVDZ&quot;</span><span class="p">)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="s2">&quot;6-31G&quot;</span><span class="p">)</span>
 <span class="n">N2O4</span><span class="o">.</span><span class="n">max_memory</span> <span class="o">=</span> <span class="mi">2000</span>
 <span class="n">N2O4</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 
@@ -548,41 +558,112 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                        ())))))))))))))))/                     
-                                    ())))))))))))))))))))))))),                
-                                *)))))))))))))))))))))))))))))))))             
-                        #,    ()))))))))/                .)))))))))),          
-                      #%%%%,  ())))))                        .))))))))*        
-                      *%%%%%%,  ))              ..              ,))))))).      
-                        *%%%%%%,         ***************/.        .)))))))     
-                #%%/      (%%%%%%,    /*********************.       )))))))    
-              .%%%%%%#      *%%%%%%,  *******/,     **********,      .))))))   
-                .%%%%%%/      *%%%%%%,  **              ********      .))))))  
-          ##      .%%%%%%/      (%%%%%%,                  ,******      /)))))  
-        %%%%%%      .%%%%%%#      *%%%%%%,    ,/////.       ******      )))))) 
-      #%      %%      .%%%%%%/      *%%%%%%,  ////////,      *****/     ,))))) 
-    #%%  %%%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
-  #%%%%.      %%%%%#      /%%%%%%*      #%%%%%%   /////)     ******      ))))),
-    #%%%%##%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
-      ##     %%%      .%%%%%%/      *%%%%%%,  ////////.      *****/     ,))))) 
-        #%%%%#      /%%%%%%/      (%%%%%%      /)/)//       ******      )))))) 
-          ##      .%%%%%%/      (%%%%%%,                  *******      ))))))  
-                .%%%%%%/      *%%%%%%,  **.             /*******      .))))))  
-              *%%%%%%/      (%%%%%%   ********/*..,*/*********       *))))))   
-                #%%/      (%%%%%%,    *********************/        )))))))    
-                        *%%%%%%,         ,**************/         ,))))))/     
-                      (%%%%%%   ()                              ))))))))       
-                      #%%%%,  ())))))                        ,)))))))),        
-                        #,    ())))))))))                ,)))))))))).          
-                                 ()))))))))))))))))))))))))))))))/             
-                                    ())))))))))))))))))))))))).                
-                                         ())))))))))))))),                     
-
--=# <span class=" -Color -Color-Bold"> geomeTRIC started. Version: 0.9.7.2 </span> #=-
-geometric-optimize called with the following command line:
-/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/ipykernel_launcher.py -f /home/jfhlewyee/.local/share/jupyter/runtime/kernel-5557e4ef-5b00-457f-9087-197dd65da7ba.json
-18 internal coordinates being used (instead of 18 Cartesians)
-Internal coordinate system (atoms numbered from 1):
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                    ())))))))))))))))))))))))),                
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                *)))))))))))))))))))))))))))))))))             
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        #,    ()))))))))/                .)))))))))),          
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      #%%%%,  ())))))                        .))))))))*        
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      *%%%%%%,  ))              ..              ,))))))).      
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        *%%%%%%,         ***************/.        .)))))))     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                #%%/      (%%%%%%,    /*********************.       )))))))    
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              .%%%%%%#      *%%%%%%,  *******/,     **********,      .))))))   
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                .%%%%%%/      *%%%%%%,  **              ********      .))))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ##      .%%%%%%/      (%%%%%%,                  ,******      /)))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        %%%%%%      .%%%%%%#      *%%%%%%,    ,/////.       ******      )))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      #%      %%      .%%%%%%/      *%%%%%%,  ////////,      *****/     ,))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #%%  %%%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  #%%%%.      %%%%%#      /%%%%%%*      #%%%%%%   /////)     ******      ))))),
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #%%%%##%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      ##     %%%      .%%%%%%/      *%%%%%%,  ////////.      *****/     ,))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        #%%%%#      /%%%%%%/      (%%%%%%      /)/)//       ******      )))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ##      .%%%%%%/      (%%%%%%,                  *******      ))))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                .%%%%%%/      *%%%%%%,  **.             /*******      .))))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              *%%%%%%/      (%%%%%%   ********/*..,*/*********       *))))))   
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                #%%/      (%%%%%%,    *********************/        )))))))    
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        *%%%%%%,         ,**************/         ,))))))/     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      (%%%%%%   ()                              ))))))))       
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      #%%%%,  ())))))                        ,)))))))),        
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        #,    ())))))))))                ,)))))))))).          
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                 ()))))))))))))))))))))))))))))))/             
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                    ())))))))))))))))))))))))).                
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                         ())))))))))))))),                     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-=# <span class=" -Color -Color-Bold"> geomeTRIC started. Version: 0.9.7.2 </span> #=-
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>geometric-optimize called with the following command line:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jfhlewyee/anaconda3/envs/jb/lib/python3.10/site-packages/ipykernel_launcher.py -f /tmp/tmpenpkwuuy.json --HistoryManager.hist_file=:memory:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18 internal coordinates being used (instead of 18 Cartesians)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Internal coordinate system (atoms numbered from 1):
 Distance 1-2
 Distance 1-5
 Distance 1-6
@@ -616,8 +697,13 @@ Rotation-C 1-6
 &lt;class &#39;geometric.internal.RotationC&#39;&gt; : 1
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 1
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
    N  -4.846380   1.761090   0.000000    0.000000  0.000000  0.000000
    N  -3.468880   1.784150   0.000000    0.000000  0.000000  0.000000
@@ -625,273 +711,345 @@ Cartesian coordinates (Angstrom)
    O  -2.850550   0.762760   0.000000    0.000000  0.000000  0.000000
    O  -5.464710   2.782480   0.000000    0.000000  0.000000  0.000000
    O  -5.491410   0.613550   0.000000    0.000000  0.000000  0.000000
-converged SCF energy = -408.034646158383
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.2081707192     0.0585029341     0.0000000000
-1 N    -0.2081707192    -0.0585029341    -0.0000000000
-2 O     0.0944553150     0.0966506139     0.0000000000
-3 O     0.0661972026    -0.0370192391     0.0000000000
-4 O    -0.0661972026     0.0370192391    -0.0000000000
-5 O    -0.0944553150    -0.0966506139    -0.0000000000
-----------------------------------------------
-cycle 1: E = -408.034646158  dE = -408.035  norm(grad) = 0.376227
+converged SCF energy = -407.731086258657
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    0 : Gradient = 1.536e-01/2.162e-01 (rms/max) Energy = -408.0346461584
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 6.28366e-01 1.07911e+00 1.07911e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.1364944014     0.0625759323    -0.0000000000
+1 N    -0.1364944014    -0.0625759323     0.0000000000
+2 O     0.0609843523     0.0470933974    -0.0000000000
+3 O     0.0289060280     0.0154588415    -0.0000000000
+4 O    -0.0289060280    -0.0154588415     0.0000000000
+5 O    -0.0609843523    -0.0470933974     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 1: E = -407.731086259  dE = -407.731  norm(grad) = 0.243137
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    0 : Gradient = 9.926e-02/1.502e-01 (rms/max) Energy = -407.7310862587
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 6.28366e-01 1.07911e+00 1.07911e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 2
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.858557   1.736198  -0.000000   -0.012177 -0.024892 -0.000000
-   N  -3.450842   1.757509   0.000000    0.018038 -0.026641  0.000000
-   O  -3.010820   2.922023   0.000000   -0.186970 -0.009667  0.000000
-   O  -2.842610   0.758811  -0.000000    0.007940 -0.003949 -0.000000
-   O  -5.317302   2.811789   0.000000    0.147408  0.029309  0.000000
-   O  -5.465648   0.649389  -0.000000    0.025762  0.035839 -0.000000
+   N  -4.859695   1.735825  -0.000000   -0.013315 -0.025265 -0.000000
+   N  -3.450568   1.758850  -0.000000    0.018312 -0.025300 -0.000000
+   O  -2.988665   2.947542   0.000000   -0.164815  0.015852  0.000000
+   O  -2.831116   0.738932   0.000000    0.019434 -0.023828  0.000000
+   O  -5.332764   2.831342  -0.000000    0.131946  0.048862 -0.000000
+   O  -5.482972   0.623229  -0.000000    0.008438  0.009679 -0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -408.083493912674
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.1320939616     0.0466022054     0.0000000000
-1 N    -0.1234078200    -0.0787657914    -0.0000000000
-2 O     0.0230604134     0.0897842904     0.0000000000
-3 O     0.0258475779    -0.0073415021    -0.0000000000
-4 O     0.0054625235     0.0210066580    -0.0000000000
-5 O    -0.0630566565    -0.0712858602     0.0000000000
-----------------------------------------------
-cycle 2: E = -408.083493913  dE = -0.0488478  norm(grad) = 0.244741
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    1 : Displace = 1.012e-01/1.872e-01 (rms/max) Trust = 1.000e-01 (=) Grad = 9.992e-02/1.464e-01 (rms/max) E (change) = -408.0834939127 (-4.885e-02) Quality = 0.992
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 8.72669e-01 1.07900e+00 1.24860e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -407.750917665723
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0943391425     0.0387264897     0.0000000000
+1 N    -0.0903687332    -0.0623329117    -0.0000000000
+2 O     0.0080957325     0.0618298086     0.0000000000
+3 O     0.0131065114     0.0033624877     0.0000000000
+4 O     0.0176448915     0.0069266968    -0.0000000000
+5 O    -0.0428175447    -0.0485125711    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 2: E = -407.750917666  dE = -0.0198314  norm(grad) = 0.176265
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    1 : Displace = 9.139e-02/1.656e-01 (rms/max) Trust = 1.000e-01 (=) Grad = 7.196e-02/1.098e-01 (rms/max) E (change) = -407.7509176657 (-1.983e-02) Quality = 0.794
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.07801e+00 1.07900e+00 1.33965e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 3
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.902273   1.786461  -0.000000   -0.043716  0.050263 -0.000000
-   N  -3.407253   1.808412   0.000000    0.043589  0.050903 -0.000000
-   O  -2.901393   2.800734  -0.000000    0.109427 -0.121290 -0.000000
-   O  -2.968463   0.762681  -0.000000   -0.125852  0.003870 -0.000000
-   O  -5.508855   2.746001   0.000000   -0.191553 -0.065788  0.000000
-   O  -5.257542   0.731432  -0.000000    0.208106  0.082042 -0.000000
+   N  -4.915822   1.782068  -0.000000   -0.056127  0.046243 -0.000000
+   N  -3.390852   1.806572  -0.000000    0.059716  0.047723 -0.000000
+   O  -2.913483   2.861478  -0.000000    0.075182 -0.086064 -0.000000
+   O  -2.967615   0.693999   0.000000   -0.136499 -0.044933 -0.000000
+   O  -5.508769   2.816442  -0.000000   -0.176005 -0.014900 -0.000000
+   O  -5.249239   0.675160   0.000000    0.233733  0.051931  0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -408.088752087566
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N    -0.0140518822    -0.0216958049     0.0000000000
-1 N     0.0212827731     0.0333036788    -0.0000000000
-2 O    -0.0426140142    -0.1301198337    -0.0000000000
-3 O    -0.0326966722     0.0798467912     0.0000000000
-4 O     0.0171220663    -0.0926296142    -0.0000000000
-5 O     0.0509577292     0.1312947827     0.0000000000
-----------------------------------------------
-cycle 3: E = -408.088752088  dE = -0.00525817  norm(grad) = 0.23902
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    2 : Displace = 1.541e-01/2.230e-01 (rms/max) Trust = 1.414e-01 (+) Grad = 9.758e-02/1.408e-01 (rms/max) E (change) = -408.0887520876 (-5.258e-03) Quality = 0.082
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.07894e+00 1.19548e+00 1.28141e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -407.762539830676
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N    -0.0032089139    -0.0254232494    -0.0000000000
+1 N     0.0120939071     0.0329851457    -0.0000000000
+2 O    -0.0353281201    -0.0576892460     0.0000000000
+3 O    -0.0350901526     0.0071808802     0.0000000000
+4 O     0.0032286716    -0.0180561509     0.0000000000
+5 O     0.0583046080     0.0610026204    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 3: E = -407.762539831  dE = -0.0116222  norm(grad) = 0.123317
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    2 : Displace = 1.491e-01/2.385e-01 (rms/max) Trust = 1.414e-01 (+) Grad = 5.034e-02/8.438e-02 (rms/max) E (change) = -407.7625398307 (-1.162e-02) Quality = 0.290
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.07632e+00 1.08140e+00 1.38171e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 4
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.922658   1.754932  -0.000000   -0.020384 -0.031529  0.000000
-   N  -3.399129   1.803138   0.000000    0.008124 -0.005273  0.000000
-   O  -2.916598   2.870962  -0.000000   -0.015204  0.070229 -0.000000
-   O  -2.918574   0.745893  -0.000000    0.049889 -0.016788 -0.000000
-   O  -5.437362   2.797745   0.000000    0.071493  0.051744  0.000000
-   O  -5.351460   0.663050  -0.000000   -0.093918 -0.068381 -0.000000
+   N  -4.944516   1.731913   0.000000   -0.028694 -0.050155  0.000000
+   N  -3.385457   1.811430   0.000000    0.005394  0.004858  0.000000
+   O  -2.883788   2.897180  -0.000000    0.029695  0.035702 -0.000000
+   O  -2.855817   0.739624  -0.000000    0.111798  0.045625 -0.000000
+   O  -5.446839   2.818713  -0.000000    0.061930  0.002271 -0.000000
+   O  -5.429362   0.636859   0.000000   -0.180123 -0.038300  0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -408.114295119654
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0256720501     0.0116848438     0.0000000000
-1 N    -0.0301060756    -0.0059787283     0.0000000000
-2 O     0.0127862364     0.0055703528    -0.0000000000
-3 O    -0.0041529016     0.0053528716    -0.0000000000
-4 O    -0.0006962990    -0.0021382373    -0.0000000000
-5 O    -0.0035030103    -0.0144911027    -0.0000000000
-----------------------------------------------
-cycle 4: E = -408.11429512  dE = -0.025543  norm(grad) = 0.0469622
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    3 : Displace = 7.155e-02/1.160e-01 (rms/max) Trust = 7.071e-02 (-) Grad = 1.917e-02/3.069e-02 (rms/max) E (change) = -408.1142951197 (-2.554e-02) Quality = 0.848
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.07839e+00 1.18291e+00 1.38419e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -407.775050492625
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0167386493    -0.0163436526     0.0000000000
+1 N    -0.0284120855     0.0160348932     0.0000000000
+2 O     0.0145334538    -0.0073045289    -0.0000000000
+3 O     0.0035574426     0.0073498720    -0.0000000000
+4 O     0.0031853919     0.0026720890    -0.0000000000
+5 O    -0.0096028520    -0.0024086727    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 4: E = -407.775050493  dE = -0.0125107  norm(grad) = 0.0453676
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    3 : Displace = 9.822e-02/1.845e-01 (rms/max) Trust = 1.414e-01 (=) Grad = 1.852e-02/3.262e-02 (rms/max) E (change) = -407.7750504926 (-1.251e-02) Quality = 0.715
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.07452e+00 1.08361e+00 1.32790e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 5
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.929575   1.760467  -0.000000   -0.006917  0.005535 -0.000000
-   N  -3.369056   1.770875  -0.000000    0.030073 -0.032263 -0.000000
-   O  -2.984784   2.870166  -0.000000   -0.068186 -0.000797 -0.000000
-   O  -2.842865   0.728733   0.000000    0.075709 -0.017160  0.000000
-   O  -5.432383   2.813406   0.000000    0.004978  0.015661  0.000000
-   O  -5.387117   0.692073   0.000000   -0.035657  0.029023  0.000000
+   N  -4.932195   1.772838  -0.000000    0.012321  0.040925 -0.000000
+   N  -3.348101   1.757478  -0.000000    0.037356 -0.053952 -0.000000
+   O  -2.960658   2.897661   0.000000   -0.076870  0.000481  0.000000
+   O  -2.791436   0.695477   0.000000    0.064381 -0.044148  0.000000
+   O  -5.486881   2.835020   0.000000   -0.040041  0.016306  0.000000
+   O  -5.426508   0.677247   0.000000    0.002854  0.040387  0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -408.114465985342
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0199911025     0.0058899299    -0.0000000000
-1 N    -0.0055004975    -0.0133490288    -0.0000000000
-2 O    -0.0131869283     0.0059687843     0.0000000000
-3 O     0.0095399026    -0.0091892512     0.0000000000
-4 O    -0.0096448109     0.0027229039     0.0000000000
-5 O    -0.0011987684     0.0079566619     0.0000000000
-----------------------------------------------
-cycle 5: E = -408.114465985  dE = -0.000170866  norm(grad) = 0.034539
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    4 : Displace = 5.014e-02/7.755e-02 (rms/max) Trust = 1.000e-01 (+) Grad = 1.410e-02/2.084e-02 (rms/max) E (change) = -408.1144659853 (-1.709e-04) Quality = 0.075
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.13234e+00 1.26969e+00 1.38234e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -407.772791915314
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0357477039     0.0285488303    -0.0000000000
+1 N    -0.0045052705    -0.0323482972    -0.0000000000
+2 O    -0.0134293717     0.0182095003     0.0000000000
+3 O     0.0126846343    -0.0110699765     0.0000000000
+4 O    -0.0194028901    -0.0038489687     0.0000000000
+5 O    -0.0110948058     0.0005089119     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 5: E = -407.772791915  dE = 0.00225858  norm(grad) = 0.0668555
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    4 : Displace = 6.006e-02/7.812e-02 (rms/max) Trust = 1.414e-01 (=) Grad = 2.729e-02/4.575e-02 (rms/max) E (change) = -407.7727919153 (+2.259e-03) Quality = -0.627
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.08136e+00 1.14620e+00 1.33623e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 6
-Cartesian coordinates (Angstrom)
- Atom        New coordinates             dX        dY        dZ
-   N  -4.952798   1.736022   0.000000   -0.023223 -0.024445  0.000000
-   N  -3.371179   1.797624   0.000000   -0.002124  0.026749  0.000000
-   O  -2.946338   2.872635  -0.000000    0.038446  0.002469 -0.000000
-   O  -2.860287   0.750687  -0.000000   -0.017422  0.021954 -0.000000
-   O  -5.411487   2.806676   0.000000    0.020896 -0.006730 -0.000000
-   O  -5.403690   0.672076   0.000000   -0.016573 -0.019997 -0.000000
-converged SCF energy = -408.115680252897
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N    -0.0046836295    -0.0206208294    -0.0000000000
-1 N    -0.0041381532     0.0153680449     0.0000000000
-2 O    -0.0017418537    -0.0112852831    -0.0000000000
-3 O     0.0027635469     0.0026671966    -0.0000000000
-4 O     0.0066597551     0.0038790661    -0.0000000000
-5 O     0.0011403343     0.0099918048    -0.0000000000
-----------------------------------------------
-cycle 6: E = -408.115680253  dE = -0.00121427  norm(grad) = 0.0317196
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    5 : Displace = 2.967e-02/3.891e-02 (rms/max) Trust = 5.000e-02 (-) Grad = 1.295e-02/2.115e-02 (rms/max) E (change) = -408.1156802529 (-1.214e-03) Quality = 0.593
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.11154e+00 1.22012e+00 1.38661e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -4.954571   1.750146   0.000000   -0.022375 -0.022692  0.000000
+   N  -3.360518   1.793636   0.000000   -0.012417  0.036158  0.000000
+   O  -2.910137   2.897715   0.000000    0.050521  0.000053  0.000000
+   O  -2.843508   0.714696  -0.000000   -0.052072  0.019219 -0.000000
+   O  -5.468365   2.831324  -0.000000    0.018515 -0.003696 -0.000000
+   O  -5.408681   0.648204   0.000000    0.017827 -0.029043  0.000000
+
+WARN: Large deviations found between the input molecule and the molecule from chkfile
+Initial guess density matrix may have large error.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -407.777314117104
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0075408124    -0.0045704506    -0.0000000000
+1 N    -0.0073671089     0.0028364465     0.0000000000
+2 O    -0.0003020028    -0.0006111890    -0.0000000000
+3 O     0.0024407997    -0.0030192530    -0.0000000000
+4 O    -0.0023471089     0.0038830380     0.0000000000
+5 O     0.0000346085     0.0014814081    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 6: E = -407.777314117  dE = -0.0045222  norm(grad) = 0.0133564
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    5 : Displace = 4.006e-02/5.558e-02 (rms/max) Trust = 7.071e-02 (-) Grad = 5.453e-03/8.818e-03 (rms/max) E (change) = -407.7773141171 (-4.522e-03) Quality = 1.032
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.07517e+00 1.11673e+00 1.33150e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 7
-Cartesian coordinates (Angstrom)
- Atom        New coordinates             dX        dY        dZ
-   N  -4.946261   1.753580   0.000000    0.006537  0.017558 -0.000000
-   N  -3.368492   1.797755  -0.000000    0.002687  0.000131 -0.000000
-   O  -2.925622   2.874402  -0.000000    0.020716  0.001767  0.000000
-   O  -2.890736   0.737325  -0.000000   -0.030450 -0.013362  0.000000
-   O  -5.445227   2.803850   0.000000   -0.033740 -0.002826  0.000000
-   O  -5.369442   0.668809   0.000000    0.034249 -0.003268  0.000000
-converged SCF energy = -408.116201751501
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0036293799     0.0027505433     0.0000000000
-1 N    -0.0031730665     0.0006525179    -0.0000000000
-2 O     0.0017636797     0.0027401726     0.0000000000
-3 O    -0.0022759198    -0.0025497349     0.0000000000
-4 O    -0.0005949334     0.0003662561    -0.0000000000
-5 O     0.0006508602    -0.0039597550    -0.0000000000
-----------------------------------------------
-cycle 7: E = -408.116201752  dE = -0.000521499  norm(grad) = 0.00837397
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    6 : Displace = 2.654e-02/3.467e-02 (rms/max) Trust = 5.000e-02 (=) Grad = 3.419e-03/4.554e-03 (rms/max) E (change) = -408.1162017515 (-5.215e-04) Quality = 0.678
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.10744e+00 1.24155e+00 1.40142e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -4.959541   1.750008  -0.000000   -0.004971 -0.000138 -0.000000
+   N  -3.355485   1.795020  -0.000000    0.005033  0.001385 -0.000000
+   O  -2.905996   2.898536   0.000000    0.004141  0.000822 -0.000000
+   O  -2.844771   0.714993   0.000000   -0.001263  0.000297  0.000000
+   O  -5.470171   2.830260  -0.000000   -0.001805 -0.001064 -0.000000
+   O  -5.409817   0.646902   0.000000   -0.001136 -0.001302  0.000000
+converged SCF energy = -407.777426159974
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0038875741    -0.0034330913     0.0000000000
+1 N    -0.0036490231     0.0031080155    -0.0000000000
+2 O    -0.0006276110    -0.0012641438     0.0000000000
+3 O     0.0007596881    -0.0018469435     0.0000000000
+4 O    -0.0008798015     0.0019816243    -0.0000000000
+5 O     0.0005091734     0.0014545389    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 7: E = -407.77742616  dE = -0.000112043  norm(grad) = 0.00793288
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    6 : Displace = 3.625e-03/5.219e-03 (rms/max) Trust = 1.000e-01 (+) Grad = 3.239e-03/5.186e-03 (rms/max) E (change) = -407.7774261600 (-1.120e-04) Quality = 1.529
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.02640e+00 1.11565e+00 1.32975e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 8
-Cartesian coordinates (Angstrom)
- Atom        New coordinates             dX        dY        dZ
-   N  -4.949592   1.751178   0.000000   -0.003331 -0.002401  0.000000
-   N  -3.365404   1.793865   0.000000    0.003087 -0.003890  0.000000
-   O  -2.933581   2.872859  -0.000000   -0.007959 -0.001543 -0.000000
-   O  -2.873866   0.740151  -0.000000    0.016870  0.002826 -0.000000
-   O  -5.440573   2.805185   0.000000    0.004654  0.001335  0.000000
-   O  -5.382763   0.672482   0.000000   -0.013321  0.003673 -0.000000
-converged SCF energy = -408.116312733882
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0018818462    -0.0001959476    -0.0000000000
-1 N    -0.0015260048     0.0003711404     0.0000000000
-2 O    -0.0000375823    -0.0004583727    -0.0000000000
-3 O     0.0005962544    -0.0002102601    -0.0000000000
-4 O    -0.0005990998     0.0002622409     0.0000000000
-5 O    -0.0003154137     0.0002311991     0.0000000000
-----------------------------------------------
-cycle 8: E = -408.116312734  dE = -0.000110982  norm(grad) = 0.00269036
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    7 : Displace = 1.012e-02/1.701e-02 (rms/max) Trust = 5.000e-02 (=) Grad = 1.098e-03/1.892e-03 (rms/max) E (change) = -408.1163127339 (-1.110e-04) Quality = 0.979
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.10999e+00 1.21397e+00 1.40082e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -4.966953   1.750900  -0.000000   -0.007412  0.000892 -0.000000
+   N  -3.348557   1.794898   0.000000    0.006928 -0.000123  0.000000
+   O  -2.900263   2.899606  -0.000000    0.005733  0.001070 -0.000000
+   O  -2.842362   0.715430   0.000000    0.002409  0.000437 -0.000000
+   O  -5.474274   2.829689  -0.000000   -0.004103 -0.000571 -0.000000
+   O  -5.413371   0.645198   0.000000   -0.003554 -0.001705 -0.000000
+converged SCF energy = -407.777488080706
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N    -0.0000282995     0.0004059749    -0.0000000000
+1 N    -0.0001493495     0.0001530800     0.0000000000
+2 O    -0.0000589804    -0.0000920393    -0.0000000000
+3 O    -0.0002108717    -0.0000751336    -0.0000000000
+4 O     0.0001949583    -0.0000360700     0.0000000000
+5 O     0.0002525427    -0.0003558119     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 8: E = -407.777488081  dE = -6.19207e-05  norm(grad) = 0.0007093
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    7 : Displace = 5.423e-03/7.466e-03 (rms/max) Trust = 1.414e-01 (+) Grad = 2.896e-04/4.363e-04 (rms/max) E (change) = -407.7774880807 (-6.192e-05) Quality = 1.036
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.03401e+00 1.11577e+00 1.33120e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 9
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.950998   1.750817   0.000000   -0.001406 -0.000362  0.000000
-   N  -3.364257   1.794205  -0.000000    0.001147  0.000340 -0.000000
-   O  -2.933025   2.873428   0.000000    0.000556  0.000570  0.000000
-   O  -2.874289   0.739960   0.000000   -0.000423 -0.000191  0.000000
-   O  -5.440339   2.805321   0.000000    0.000235  0.000136 -0.000000
-   O  -5.382873   0.671989   0.000000   -0.000110 -0.000493  0.000000
-converged SCF energy = -408.116318074557
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0002805676    -0.0006550057     0.0000000000
-1 N    -0.0003609887     0.0004278542    -0.0000000000
-2 O    -0.0001786224    -0.0001414696     0.0000000000
-3 O     0.0000801035    -0.0002682070     0.0000000000
-4 O     0.0000183315     0.0002190731    -0.0000000000
-5 O     0.0001606085     0.0004177550    -0.0000000000
+   N  -4.967459   1.750548   0.000000   -0.000506 -0.000352  0.000000
+   N  -3.347803   1.794670  -0.000000    0.000755 -0.000228 -0.000000
+   O  -2.900409   2.899573   0.000000   -0.000146 -0.000033  0.000000
+   O  -2.840766   0.715716   0.000000    0.001596  0.000286  0.000000
+   O  -5.474381   2.829456  -0.000000   -0.000107 -0.000233  0.000000
+   O  -5.414963   0.645757   0.000000   -0.001592  0.000559  0.000000
+converged SCF energy = -407.777488998624
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N    -0.0001888179    -0.0000856245     0.0000000000
+1 N     0.0001201058     0.0001035810    -0.0000000000
+2 O    -0.0001047615    -0.0002565484     0.0000000000
+3 O    -0.0000471845     0.0001442397     0.0000000000
+4 O     0.0001049175    -0.0002827020    -0.0000000000
+5 O     0.0001157405     0.0003770541    -0.0000000000
 ----------------------------------------------
-cycle 9: E = -408.116318075  dE = -5.34068e-06  norm(grad) = 0.00109546
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    8 : Displace = 8.866e-04/1.452e-03 (rms/max) Trust = 7.071e-02 (+) Grad = 4.472e-04/7.126e-04 (rms/max) E (change) = -408.1163180746 (-5.341e-06) Quality = 1.159
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.10779e+00 1.26497e+00 1.40201e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 9: E = -407.777488999  dE = -9.17918e-07  norm(grad) = 0.000643782
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 10
-Cartesian coordinates (Angstrom)
- Atom        New coordinates             dX        dY        dZ
-   N  -4.951622   1.751001  -0.000000   -0.000624  0.000184 -0.000000
-   N  -3.363661   1.794251   0.000000    0.000595  0.000046  0.000000
-   O  -2.932140   2.873412  -0.000000    0.000885 -0.000016 -0.000000
-   O  -2.874142   0.740075  -0.000000    0.000147  0.000115 -0.000000
-   O  -5.441074   2.805222   0.000000   -0.000735 -0.000099  0.000000
-   O  -5.383140   0.671760   0.000000   -0.000268 -0.000229 -0.000000
-converged SCF energy = -408.116318916615
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0000058825    -0.0000059100    -0.0000000000
-1 N     0.0000176620     0.0000883575     0.0000000000
-2 O    -0.0000392934    -0.0001096574    -0.0000000000
-3 O    -0.0000339831     0.0000469479    -0.0000000000
-4 O     0.0000407372     0.0000123316     0.0000000000
-5 O     0.0000089948    -0.0000320696     0.0000000000
-----------------------------------------------
-cycle 10: E = -408.116318917  dE = -8.42057e-07  norm(grad) = 0.000167443
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    8 : Displace = 1.046e-03/1.708e-03 (rms/max) Trust = 2.000e-01 (+) Grad = 2.628e-04/3.944e-04 (rms/max) E (change) = -407.7774889986 (-9.179e-07) Quality = 0.786
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    9 : Displace = 6.154e-04/8.889e-04 (rms/max) Trust = 1.000e-01 (+) Grad = 6.836e-05/1.165e-04 (rms/max) E (change) = -408.1163189166 (-8.421e-07) Quality = 1.061
-Converged! =D
-
-    #==========================================================================#
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Converged! =D
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #==========================================================================#
     #| If this code has benefited your research, please support us by citing: |#
     #|                                                                        |#
     #| Wang, L.-P.; Song, C.C. (2016) &quot;Geometry optimization made simple with |#
@@ -899,22 +1057,56 @@ Converged! =D
     #| http://dx.doi.org/10.1063/1.4952956                                    |#
     #==========================================================================#
     
-Time elapsed since start of run_optimizer: 40.973 seconds
+Time elapsed since start of run_optimizer: 5.720 seconds
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -408.116318916673
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -407.777488998701
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Pregunta 2.</strong> Calcule la energía de la molécula de <span class="math notranslate nohighlight">\(NO_2\)</span> con HF y la base aug-cc-pvdz. [Complete donde haga falta - Reemplace las X]</p>
+<p><strong>Pregunta 2.</strong> Complete el siguiente código para calcular la energía de la molécula optimizada de <span class="math notranslate nohighlight">\(NO_2\)</span> con Hartree-Fock y la base 6-31G.</p>
+<ul class="simple">
+<li><p><strong>Ayuda.</strong> Reemplace XXXX por los valores apropiados.</p></li>
+<li><p><strong>Nota.</strong> El <span class="math notranslate nohighlight">\(NO_2\)</span> es un doblete (<span class="math notranslate nohighlight">\(2S+1 = 2\)</span>, capa abierta) mientras que el <span class="math notranslate nohighlight">\(N_2O_4\)</span> es un singulete (<span class="math notranslate nohighlight">\(2S+1 = 1\)</span>, capa cerrada). ¿Que diferencias tiene el código de esta celda respecto al de la anterior?</p></li>
+</ul>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<ul class="simple">
+<li><p>Esta celda dice <span class="math notranslate nohighlight">\(spin=1\)</span>, recuerde que este corresponde a <span class="math notranslate nohighlight">\(2S\)</span>.</p></li>
+<li><p>Esta celda utiliza <code class="docutils literal notranslate"><span class="pre">UKS</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">RKS</span></code>.</p></li>
+</ul>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NO2</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">   N        XXXXXXX        XXXXXXX        XXXXXXX</span>
+<span class="s2">   O        XXXXXXX        XXXXXXX        XXXXXXX</span>
+<span class="s2">   O        XXXXXXX        XXXXXXX        XXXXXXX</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span><span class="n">spin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="s2">&quot;6-31G&quot;</span><span class="p">)</span>
+<span class="n">NO2</span><span class="o">.</span><span class="n">max_memory</span> <span class="o">=</span> <span class="n">XXXX</span>
+<span class="n">NO2</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+
+<span class="n">uhf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">UHF</span><span class="p">(</span><span class="n">NO2</span><span class="p">)</span>
+
+<span class="n">NO2_eq</span> <span class="o">=</span> <span class="n">optimize</span><span class="p">(</span><span class="n">uhf</span><span class="p">)</span>
+
+<span class="n">uhf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">UHF</span><span class="p">(</span><span class="n">NO2_eq</span><span class="p">)</span>
+<span class="n">no2</span> <span class="o">=</span> <span class="n">uhf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimice Geometría y obtenga la energia NO2 HF/6-31G</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_hide-ouput tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NO2</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">   N       -4.39539        1.87380        0.00000</span>
 <span class="s2">   O       -3.90978        3.09520       -0.00000</span>
 <span class="s2">   O       -3.65594        0.93810        0.00000</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span><span class="n">spin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="s2">&quot;aug-cc-pVDZ&quot;</span><span class="p">)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span><span class="n">spin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="s2">&quot;6-31G&quot;</span><span class="p">)</span>
 <span class="n">NO2</span><span class="o">.</span><span class="n">max_memory</span> <span class="o">=</span> <span class="mi">2000</span>
 <span class="n">NO2</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 
@@ -928,41 +1120,112 @@ Time elapsed since start of run_optimizer: 40.973 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                        ())))))))))))))))/                     
-                                    ())))))))))))))))))))))))),                
-                                *)))))))))))))))))))))))))))))))))             
-                        #,    ()))))))))/                .)))))))))),          
-                      #%%%%,  ())))))                        .))))))))*        
-                      *%%%%%%,  ))              ..              ,))))))).      
-                        *%%%%%%,         ***************/.        .)))))))     
-                #%%/      (%%%%%%,    /*********************.       )))))))    
-              .%%%%%%#      *%%%%%%,  *******/,     **********,      .))))))   
-                .%%%%%%/      *%%%%%%,  **              ********      .))))))  
-          ##      .%%%%%%/      (%%%%%%,                  ,******      /)))))  
-        %%%%%%      .%%%%%%#      *%%%%%%,    ,/////.       ******      )))))) 
-      #%      %%      .%%%%%%/      *%%%%%%,  ////////,      *****/     ,))))) 
-    #%%  %%%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
-  #%%%%.      %%%%%#      /%%%%%%*      #%%%%%%   /////)     ******      ))))),
-    #%%%%##%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
-      ##     %%%      .%%%%%%/      *%%%%%%,  ////////.      *****/     ,))))) 
-        #%%%%#      /%%%%%%/      (%%%%%%      /)/)//       ******      )))))) 
-          ##      .%%%%%%/      (%%%%%%,                  *******      ))))))  
-                .%%%%%%/      *%%%%%%,  **.             /*******      .))))))  
-              *%%%%%%/      (%%%%%%   ********/*..,*/*********       *))))))   
-                #%%/      (%%%%%%,    *********************/        )))))))    
-                        *%%%%%%,         ,**************/         ,))))))/     
-                      (%%%%%%   ()                              ))))))))       
-                      #%%%%,  ())))))                        ,)))))))),        
-                        #,    ())))))))))                ,)))))))))).          
-                                 ()))))))))))))))))))))))))))))))/             
-                                    ())))))))))))))))))))))))).                
-                                         ())))))))))))))),                     
-
--=# <span class=" -Color -Color-Bold"> geomeTRIC started. Version: 0.9.7.2 </span> #=-
-geometric-optimize called with the following command line:
-/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/ipykernel_launcher.py -f /home/jfhlewyee/.local/share/jupyter/runtime/kernel-5557e4ef-5b00-457f-9087-197dd65da7ba.json
-9 internal coordinates being used (instead of 9 Cartesians)
-Internal coordinate system (atoms numbered from 1):
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                    ())))))))))))))))))))))))),                
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                *)))))))))))))))))))))))))))))))))             
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        #,    ()))))))))/                .)))))))))),          
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      #%%%%,  ())))))                        .))))))))*        
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      *%%%%%%,  ))              ..              ,))))))).      
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        *%%%%%%,         ***************/.        .)))))))     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                #%%/      (%%%%%%,    /*********************.       )))))))    
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              .%%%%%%#      *%%%%%%,  *******/,     **********,      .))))))   
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                .%%%%%%/      *%%%%%%,  **              ********      .))))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ##      .%%%%%%/      (%%%%%%,                  ,******      /)))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        %%%%%%      .%%%%%%#      *%%%%%%,    ,/////.       ******      )))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      #%      %%      .%%%%%%/      *%%%%%%,  ////////,      *****/     ,))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #%%  %%%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  #%%%%.      %%%%%#      /%%%%%%*      #%%%%%%   /////)     ******      ))))),
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #%%%%##%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      ##     %%%      .%%%%%%/      *%%%%%%,  ////////.      *****/     ,))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        #%%%%#      /%%%%%%/      (%%%%%%      /)/)//       ******      )))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ##      .%%%%%%/      (%%%%%%,                  *******      ))))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                .%%%%%%/      *%%%%%%,  **.             /*******      .))))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              *%%%%%%/      (%%%%%%   ********/*..,*/*********       *))))))   
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                #%%/      (%%%%%%,    *********************/        )))))))    
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        *%%%%%%,         ,**************/         ,))))))/     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      (%%%%%%   ()                              ))))))))       
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      #%%%%,  ())))))                        ,)))))))),        
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        #,    ())))))))))                ,)))))))))).          
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                 ()))))))))))))))))))))))))))))))/             
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                    ())))))))))))))))))))))))).                
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                         ())))))))))))))),                     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-=# <span class=" -Color -Color-Bold"> geomeTRIC started. Version: 0.9.7.2 </span> #=-
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>geometric-optimize called with the following command line:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jfhlewyee/anaconda3/envs/jb/lib/python3.10/site-packages/ipykernel_launcher.py -f /tmp/tmpenpkwuuy.json --HistoryManager.hist_file=:memory:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9 internal coordinates being used (instead of 9 Cartesians)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Internal coordinate system (atoms numbered from 1):
 Distance 1-2
 Distance 1-3
 Angle 2-1-3
@@ -982,162 +1245,242 @@ Rotation-C 1-3
 &lt;class &#39;geometric.internal.RotationC&#39;&gt; : 1
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 1
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
    N  -4.395390   1.873800   0.000000    0.000000  0.000000  0.000000
    O  -3.909780   3.095200   0.000000    0.000000  0.000000  0.000000
    O  -3.655940   0.938100   0.000000    0.000000  0.000000  0.000000
-converged SCF energy = -204.031651344624  &lt;S^2&gt; = 0.85628569  2S+1 = 2.1036023
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N    -0.1568709457    -0.0421698819     0.0000000000
-1 O     0.0719972432     0.0892808868    -0.0000000000
-2 O     0.0848737025    -0.0471110050     0.0000000000
-----------------------------------------------
-cycle 1: E = -204.031651345  dE = -204.032  norm(grad) = 0.221279
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    0 : Gradient = 1.278e-01/1.624e-01 (rms/max) Energy = -204.0316513446
-Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 2.50000e-01 6.33488e-01 1.08625e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -203.882695374303  &lt;S^2&gt; = 0.80452483  2S+1 = 2.0538012
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N    -0.1062928148    -0.0412675055    -0.0000000000
+1 O     0.0553697683     0.0414978706     0.0000000000
+2 O     0.0509230464    -0.0002303650     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 1: E = -203.882695374  dE = -203.883  norm(grad) = 0.142766
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    0 : Gradient = 8.243e-02/1.140e-01 (rms/max) Energy = -203.8826953743
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 2.50000e-01 6.33488e-01 1.08625e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 2
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.256623   1.910543   0.000000    0.138767  0.036743  0.000000
-   O  -3.983454   3.102514   0.000000   -0.073674  0.007314  0.000000
-   O  -3.721033   0.894043  -0.000000   -0.065093 -0.044057 -0.000000
+   N  -4.273186   1.902920   0.000000    0.122204  0.029120  0.000000
+   O  -3.977526   3.135717  -0.000000   -0.067746  0.040517 -0.000000
+   O  -3.710397   0.868462   0.000000   -0.054457 -0.069638  0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -204.064395959327  &lt;S^2&gt; = 0.77178859  2S+1 = 2.0216712
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N    -0.0000370022    -0.0693865259    -0.0000000000
-1 O     0.0072227122     0.0809746067     0.0000000000
-2 O    -0.0071857100    -0.0115880808     0.0000000000
-----------------------------------------------
-cycle 2: E = -204.064395959  dE = -0.0327446  norm(grad) = 0.107747
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    1 : Displace = 1.037e-01/1.435e-01 (rms/max) Trust = 1.000e-01 (=) Grad = 6.221e-02/8.130e-02 (rms/max) E (change) = -204.0643959593 (-3.274e-02) Quality = 1.197
-Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 2.88851e-01 4.78375e-01 1.11087e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -203.901354509923  &lt;S^2&gt; = 0.77734474  2S+1 = 2.0271603
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N    -0.0109124496    -0.0504452233     0.0000000000
+1 O     0.0096178119     0.0669108747    -0.0000000000
+2 O     0.0012946378    -0.0164656514     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 2: E = -203.90135451  dE = -0.0186591  norm(grad) = 0.0866381
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    1 : Displace = 9.971e-02/1.256e-01 (rms/max) Trust = 1.000e-01 (=) Grad = 5.002e-02/6.760e-02 (rms/max) E (change) = -203.9013545099 (-1.866e-02) Quality = 0.980
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 2.68542e-01 6.41709e-01 1.07062e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 3
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.253633   1.939328   0.000000    0.002990  0.028785  0.000000
-   O  -3.985935   3.028642   0.000000   -0.002481 -0.073872  0.000000
-   O  -3.721543   0.939130  -0.000000   -0.000510  0.045087 -0.000000
+   N  -4.257463   1.925148   0.000000    0.015723  0.022228  0.000000
+   O  -3.986571   3.089708  -0.000000   -0.009044 -0.046009  0.000000
+   O  -3.717076   0.892243  -0.000000   -0.006679  0.023781 -0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -204.06506430725  &lt;S^2&gt; = 0.76435055  2S+1 = 2.0142994
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0612076683     0.0277706884    -0.0000000000
-1 O    -0.0250211129    -0.0896913226    -0.0000000000
-2 O    -0.0361865554     0.0619206342     0.0000000000
-----------------------------------------------
-cycle 3: E = -204.065064307  dE = -0.000668348  norm(grad) = 0.135395
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    2 : Displace = 5.265e-02/7.388e-02 (rms/max) Trust = 1.414e-01 (+) Grad = 7.817e-02/9.312e-02 (rms/max) E (change) = -204.0650643072 (-6.683e-04) Quality = 0.083
-Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 3.25873e-01 7.81652e-01 1.34502e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -203.906059614238  &lt;S^2&gt; = 0.76765288  2S+1 = 2.0175757
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0286709510    -0.0281400904     0.0000000000
+1 O    -0.0067255623     0.0013751407    -0.0000000000
+2 O    -0.0219453888     0.0267649497     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 3: E = -203.906059614  dE = -0.0047051  norm(grad) = 0.0534694
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    2 : Displace = 3.437e-02/4.659e-02 (rms/max) Trust = 1.414e-01 (+) Grad = 3.087e-02/4.017e-02 (rms/max) E (change) = -203.9060596142 (-4.705e-03) Quality = 1.027
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 3.33010e-01 4.79949e-01 1.29868e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 4
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.274267   1.925809   0.000000   -0.020635 -0.013519 -0.000000
-   O  -3.976313   3.062298   0.000000    0.009622  0.033656 -0.000000
-   O  -3.710530   0.918993  -0.000000    0.011013 -0.020137 -0.000000
+   N  -4.275164   1.928065   0.000000   -0.017701  0.002917  0.000000
+   O  -3.979321   3.084953   0.000000    0.007249 -0.004755  0.000000
+   O  -3.706624   0.894082  -0.000000    0.010452  0.001838 -0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -204.069908577933  &lt;S^2&gt; = 0.76742937  2S+1 = 2.0173541
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N    -0.0030473522    -0.0253509044     0.0000000000
-1 O     0.0056727205     0.0195674811     0.0000000000
-2 O    -0.0026253683     0.0057834233    -0.0000000000
-----------------------------------------------
-cycle 4: E = -204.069908578  dE = -0.00484427  norm(grad) = 0.033277
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    3 : Displace = 2.805e-02/3.487e-02 (rms/max) Trust = 7.071e-02 (-) Grad = 1.921e-02/2.553e-02 (rms/max) E (change) = -204.0699085779 (-4.844e-03) Quality = 0.780
-Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 3.32174e-01 9.08211e-01 1.30377e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -203.907030721303  &lt;S^2&gt; = 0.76811904  2S+1 = 2.0180377
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0064333903    -0.0126381801    -0.0000000000
+1 O     0.0000265982     0.0017440774     0.0000000000
+2 O    -0.0064599885     0.0108941027     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 4: E = -203.907030721  dE = -0.000971107  norm(grad) = 0.0190937
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    3 : Displace = 1.301e-02/1.801e-02 (rms/max) Trust = 2.000e-01 (+) Grad = 1.102e-02/1.418e-02 (rms/max) E (change) = -203.9070307213 (-9.711e-04) Quality = 1.236
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 3.73607e-01 4.21668e-01 9.94827e-01
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 5
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.271532   1.931599   0.000000    0.002735  0.005790 -0.000000
-   O  -3.978970   3.057947   0.000000   -0.002657 -0.004351 -0.000000
-   O  -3.710608   0.917554  -0.000000   -0.000078 -0.001439  0.000000
+   N  -4.277793   1.932140   0.000000   -0.002629  0.004075  0.000000
+   O  -3.979411   3.083437  -0.000000   -0.000089 -0.001516 -0.000000
+   O  -3.703906   0.891523  -0.000000    0.002718 -0.002559 -0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -204.07021435113  &lt;S^2&gt; = 0.76695559  2S+1 = 2.0168843
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0006098718    -0.0059564586    -0.0000000000
-1 O     0.0006875392     0.0046621393     0.0000000000
-2 O    -0.0012974110     0.0012943192    -0.0000000000
-----------------------------------------------
-cycle 5: E = -204.070214351  dE = -0.000305773  norm(grad) = 0.00783697
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    4 : Displace = 4.789e-03/6.486e-03 (rms/max) Trust = 1.000e-01 (+) Grad = 4.525e-03/5.988e-03 (rms/max) E (change) = -204.0702143511 (-3.058e-04) Quality = 1.228
-Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 3.47868e-01 6.90208e-01 1.28576e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -203.907151331468  &lt;S^2&gt; = 0.76820709  2S+1 = 2.018125
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0012212717    -0.0007327856     0.0000000000
+1 O    -0.0001961482    -0.0015289036    -0.0000000000
+2 O    -0.0010251235     0.0022616893    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 5: E = -203.907151331  dE = -0.00012061  norm(grad) = 0.00325125
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    4 : Displace = 3.622e-03/4.954e-03 (rms/max) Trust = 2.828e-01 (+) Grad = 1.877e-03/2.483e-03 (rms/max) E (change) = -203.9071513315 (-1.206e-04) Quality = 1.096
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 3.73054e-01 4.80258e-01 7.81474e-01
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 6
-Cartesian coordinates (Angstrom)
- Atom        New coordinates             dX        dY        dZ
-   N  -4.272577   1.933145   0.000000   -0.001044  0.001546  0.000000
-   O  -3.978784   3.055705  -0.000000    0.000185 -0.002242 -0.000000
-   O  -3.709749   0.918250   0.000000    0.000859  0.000697  0.000000
-converged SCF energy = -204.070231917669  &lt;S^2&gt; = 0.76691499  2S+1 = 2.0168441
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0001272784     0.0001947804     0.0000000000
-1 O    -0.0000289909    -0.0006556160     0.0000000000
-2 O    -0.0000982874     0.0004608356    -0.0000000000
-----------------------------------------------
-cycle 6: E = -204.070231918  dE = -1.75665e-05  norm(grad) = 0.000840739
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    5 : Displace = 1.798e-03/2.272e-03 (rms/max) Trust = 1.414e-01 (+) Grad = 4.854e-04/6.563e-04 (rms/max) E (change) = -204.0702319177 (-1.757e-05) Quality = 0.912
-Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 3.57265e-01 7.00526e-01 1.34672e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -4.278012   1.932263   0.000000   -0.000219  0.000123  0.000000
+   O  -3.979501   3.084753  -0.000000   -0.000090  0.001316  0.000000
+   O  -3.703597   0.890083  -0.000000    0.000309 -0.001440 -0.000000
+converged SCF energy = -203.907155413675  &lt;S^2&gt; = 0.76833946  2S+1 = 2.0182561
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N    -0.0003892613    -0.0005234346    -0.0000000000
+1 O     0.0002174125     0.0008308163    -0.0000000000
+2 O     0.0001718488    -0.0003073818     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 6: E = -203.907155414  dE = -4.08221e-06  norm(grad) = 0.00113448
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    5 : Displace = 1.151e-03/1.472e-03 (rms/max) Trust = 3.000e-01 (+) Grad = 6.550e-04/8.588e-04 (rms/max) E (change) = -203.9071554137 (-4.082e-06) Quality = 0.729
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 3.75615e-01 4.81307e-01 9.82314e-01
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 7
-Cartesian coordinates (Angstrom)
- Atom        New coordinates             dX        dY        dZ
-   N  -4.272357   1.933125  -0.000000    0.000219 -0.000019 -0.000000
-   O  -3.978921   3.056068  -0.000000   -0.000137  0.000364 -0.000000
-   O  -3.709831   0.917906   0.000000   -0.000082 -0.000344  0.000000
-converged SCF energy = -204.070232250848  &lt;S^2&gt; = 0.7669235  2S+1 = 2.0168525
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0000757409     0.0000021022    -0.0000000000
-1 O    -0.0000340872    -0.0000233940     0.0000000000
-2 O    -0.0000416536     0.0000212918     0.0000000000
-----------------------------------------------
-cycle 7: E = -204.070232251  dE = -3.33179e-07  norm(grad) = 9.81768e-05
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    6 : Displace = 3.289e-04/3.912e-04 (rms/max) Trust = 2.000e-01 (+) Grad = 5.668e-05/7.577e-05 (rms/max) E (change) = -204.0702322508 (-3.332e-07) Quality = 0.978
-Converged! =D
-
-    #==========================================================================#
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -4.277873   1.932476   0.000000    0.000139  0.000213 -0.000000
+   O  -3.979589   3.084376  -0.000000   -0.000088 -0.000377  0.000000
+   O  -3.703648   0.890248  -0.000000   -0.000051  0.000165 -0.000000
+converged SCF energy = -203.907155932957  &lt;S^2&gt; = 0.76830571  2S+1 = 2.0182227
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0000049473     0.0000391722     0.0000000000
+1 O    -0.0000106355    -0.0000212663     0.0000000000
+2 O     0.0000056882    -0.0000179059    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 7: E = -203.907155933  dE = -5.19282e-07  norm(grad) = 4.97723e-05
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    6 : Displace = 2.852e-04/3.849e-04 (rms/max) Trust = 3.000e-01 (=) Grad = 2.874e-05/3.948e-05 (rms/max) E (change) = -203.9071559330 (-5.193e-07) Quality = 0.986
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Converged! =D
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #==========================================================================#
     #| If this code has benefited your research, please support us by citing: |#
     #|                                                                        |#
     #| Wang, L.-P.; Song, C.C. (2016) &quot;Geometry optimization made simple with |#
@@ -1145,15 +1488,22 @@ Converged! =D
     #| http://dx.doi.org/10.1063/1.4952956                                    |#
     #==========================================================================#
     
-Time elapsed since start of run_optimizer: 6.232 seconds
+Time elapsed since start of run_optimizer: 2.074 seconds
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -204.070232250961  &lt;S^2&gt; = 0.76692232  2S+1 = 2.0168513
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -203.907155922822  &lt;S^2&gt; = 0.76830428  2S+1 = 2.0182213
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Pregunta a.</strong> Calcule el <span class="math notranslate nohighlight">\(\Delta U\)</span> de la reacción <span class="math notranslate nohighlight">\(N_2O_4 &lt;=&gt; 2NO_2\)</span> según HF.</p>
+<p><strong>Pregunta a.</strong> Calcule el <span class="math notranslate nohighlight">\(\Delta U\)</span> de la reacción <span class="math notranslate nohighlight">\(N_2O_4\)</span> ↔ <span class="math notranslate nohighlight">\(2NO_2\)</span> según HF.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtenga la energía de reacción (2E_{NO2} - E_{N2O4}). Recuerde convertur Hartree-&gt;kcal/mol.</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">no2</span><span class="o">-</span><span class="n">n2o4</span><span class="p">)</span><span class="o">*</span><span class="mf">2625.5</span>
@@ -1161,12 +1511,22 @@ Time elapsed since start of run_optimizer: 6.232 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-63.39423407009815
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-96.67838464909858
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Pregunta 3.</strong> Calcule la energía de la molécula de <span class="math notranslate nohighlight">\(N_2O_4\)</span> con DFT B3LYP y la base aug-cc-pvdz.</p>
+<p><strong>Pregunta 3.</strong> Calcule la energía de la molécula optimizada de <span class="math notranslate nohighlight">\(N_2O_4\)</span> con DFT B3LYP y la base 6-31G.</p>
+<ul class="simple">
+<li><p><strong>Ayuda.</strong> Reutilice el código de la pregunta 1, pero recuerde que va a usar DFT y requiere especificar un funcional.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimice Geometría y obtenga la energia N2O4 B3LYP/6-31G</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_hide-ouput tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N2O4</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
@@ -1176,7 +1536,7 @@ Time elapsed since start of run_optimizer: 6.232 seconds
 <span class="s2">   O       -2.85055        0.76276        0.00000</span>
 <span class="s2">   O       -5.46471        2.78248        0.00000</span>
 <span class="s2">   O       -5.49141        0.61355        0.00000</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="s2">&quot;aug-cc-pVDZ&quot;</span><span class="p">)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="s2">&quot;6-31G&quot;</span><span class="p">)</span>
 <span class="n">N2O4</span><span class="o">.</span><span class="n">max_memory</span> <span class="o">=</span> <span class="mi">2000</span>
 <span class="n">N2O4</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 
@@ -1191,41 +1551,112 @@ Time elapsed since start of run_optimizer: 6.232 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                        ())))))))))))))))/                     
-                                    ())))))))))))))))))))))))),                
-                                *)))))))))))))))))))))))))))))))))             
-                        #,    ()))))))))/                .)))))))))),          
-                      #%%%%,  ())))))                        .))))))))*        
-                      *%%%%%%,  ))              ..              ,))))))).      
-                        *%%%%%%,         ***************/.        .)))))))     
-                #%%/      (%%%%%%,    /*********************.       )))))))    
-              .%%%%%%#      *%%%%%%,  *******/,     **********,      .))))))   
-                .%%%%%%/      *%%%%%%,  **              ********      .))))))  
-          ##      .%%%%%%/      (%%%%%%,                  ,******      /)))))  
-        %%%%%%      .%%%%%%#      *%%%%%%,    ,/////.       ******      )))))) 
-      #%      %%      .%%%%%%/      *%%%%%%,  ////////,      *****/     ,))))) 
-    #%%  %%%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
-  #%%%%.      %%%%%#      /%%%%%%*      #%%%%%%   /////)     ******      ))))),
-    #%%%%##%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
-      ##     %%%      .%%%%%%/      *%%%%%%,  ////////.      *****/     ,))))) 
-        #%%%%#      /%%%%%%/      (%%%%%%      /)/)//       ******      )))))) 
-          ##      .%%%%%%/      (%%%%%%,                  *******      ))))))  
-                .%%%%%%/      *%%%%%%,  **.             /*******      .))))))  
-              *%%%%%%/      (%%%%%%   ********/*..,*/*********       *))))))   
-                #%%/      (%%%%%%,    *********************/        )))))))    
-                        *%%%%%%,         ,**************/         ,))))))/     
-                      (%%%%%%   ()                              ))))))))       
-                      #%%%%,  ())))))                        ,)))))))),        
-                        #,    ())))))))))                ,)))))))))).          
-                                 ()))))))))))))))))))))))))))))))/             
-                                    ())))))))))))))))))))))))).                
-                                         ())))))))))))))),                     
-
--=# <span class=" -Color -Color-Bold"> geomeTRIC started. Version: 0.9.7.2 </span> #=-
-geometric-optimize called with the following command line:
-/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/ipykernel_launcher.py -f /home/jfhlewyee/.local/share/jupyter/runtime/kernel-5557e4ef-5b00-457f-9087-197dd65da7ba.json
-18 internal coordinates being used (instead of 18 Cartesians)
-Internal coordinate system (atoms numbered from 1):
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                    ())))))))))))))))))))))))),                
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                *)))))))))))))))))))))))))))))))))             
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        #,    ()))))))))/                .)))))))))),          
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      #%%%%,  ())))))                        .))))))))*        
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      *%%%%%%,  ))              ..              ,))))))).      
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        *%%%%%%,         ***************/.        .)))))))     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                #%%/      (%%%%%%,    /*********************.       )))))))    
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              .%%%%%%#      *%%%%%%,  *******/,     **********,      .))))))   
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                .%%%%%%/      *%%%%%%,  **              ********      .))))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ##      .%%%%%%/      (%%%%%%,                  ,******      /)))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        %%%%%%      .%%%%%%#      *%%%%%%,    ,/////.       ******      )))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      #%      %%      .%%%%%%/      *%%%%%%,  ////////,      *****/     ,))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #%%  %%%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  #%%%%.      %%%%%#      /%%%%%%*      #%%%%%%   /////)     ******      ))))),
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #%%%%##%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      ##     %%%      .%%%%%%/      *%%%%%%,  ////////.      *****/     ,))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        #%%%%#      /%%%%%%/      (%%%%%%      /)/)//       ******      )))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ##      .%%%%%%/      (%%%%%%,                  *******      ))))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                .%%%%%%/      *%%%%%%,  **.             /*******      .))))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              *%%%%%%/      (%%%%%%   ********/*..,*/*********       *))))))   
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                #%%/      (%%%%%%,    *********************/        )))))))    
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        *%%%%%%,         ,**************/         ,))))))/     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      (%%%%%%   ()                              ))))))))       
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      #%%%%,  ())))))                        ,)))))))),        
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        #,    ())))))))))                ,)))))))))).          
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                 ()))))))))))))))))))))))))))))))/             
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                    ())))))))))))))))))))))))).                
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                         ())))))))))))))),                     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-=# <span class=" -Color -Color-Bold"> geomeTRIC started. Version: 0.9.7.2 </span> #=-
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>geometric-optimize called with the following command line:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jfhlewyee/anaconda3/envs/jb/lib/python3.10/site-packages/ipykernel_launcher.py -f /tmp/tmpenpkwuuy.json --HistoryManager.hist_file=:memory:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18 internal coordinates being used (instead of 18 Cartesians)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Internal coordinate system (atoms numbered from 1):
 Distance 1-2
 Distance 1-5
 Distance 1-6
@@ -1259,8 +1690,13 @@ Rotation-C 1-6
 &lt;class &#39;geometric.internal.RotationC&#39;&gt; : 1
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 1
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
    N  -4.846380   1.761090   0.000000    0.000000  0.000000  0.000000
    N  -3.468880   1.784150   0.000000    0.000000  0.000000  0.000000
@@ -1268,277 +1704,429 @@ Cartesian coordinates (Angstrom)
    O  -2.850550   0.762760   0.000000    0.000000  0.000000  0.000000
    O  -5.464710   2.782480   0.000000    0.000000  0.000000  0.000000
    O  -5.491410   0.613550   0.000000    0.000000  0.000000  0.000000
-converged SCF energy = -410.001293320943
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.1737854991     0.0734043449    -0.0000000000
-1 N    -0.1737854991    -0.0734043449    -0.0000000000
-2 O     0.0701937011     0.0535757855     0.0000000000
-3 O     0.0182082544     0.0306359244    -0.0000000000
-4 O    -0.0182082544    -0.0306359244     0.0000000000
-5 O    -0.0701937011    -0.0535757856    -0.0000000000
-----------------------------------------------
-cycle 1: E = -410.001293321  dE = -410.001  norm(grad) = 0.298855
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    0 : Gradient = 1.220e-01/1.887e-01 (rms/max) Energy = -410.0012933209
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 6.28366e-01 1.07911e+00 1.07911e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -409.756385238946
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.1341253626     0.0842920986    -0.0000000000
+1 N    -0.1341253626    -0.0842920987    -0.0000000000
+2 O     0.0496368528     0.0186572757    -0.0000000000
+3 O    -0.0108256298     0.0765464865    -0.0000000000
+4 O     0.0108256298    -0.0765464865    -0.0000000000
+5 O    -0.0496368528    -0.0186572757     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 1: E = -409.756385239  dE = -409.756  norm(grad) = 0.26032
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    0 : Gradient = 1.063e-01/1.584e-01 (rms/max) Energy = -409.7563852389
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 6.28366e-01 1.07911e+00 1.07911e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 2
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.867782   1.748472   0.000000   -0.021402 -0.012618  0.000000
-   N  -3.431266   1.742669  -0.000000    0.037614 -0.041481 -0.000000
-   O  -3.013609   2.940631  -0.000000   -0.189759  0.008941 -0.000000
-   O  -2.799471   0.721809  -0.000000    0.051079 -0.040951 -0.000000
-   O  -5.355117   2.845661  -0.000000    0.109593  0.063181 -0.000000
-   O  -5.478536   0.636478   0.000000    0.012874  0.022928  0.000000
+   N  -4.871262   1.749145   0.000000   -0.024882 -0.011945  0.000000
+   N  -3.426965   1.741374   0.000000    0.041915 -0.042776  0.000000
+   O  -3.001013   2.961382   0.000000   -0.177163  0.029692  0.000000
+   O  -2.783837   0.702231   0.000000    0.066713 -0.060529  0.000000
+   O  -5.369365   2.865086   0.000000    0.095345  0.082606  0.000000
+   O  -5.493338   0.616502   0.000000   -0.001928  0.002952  0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -410.03318865251
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.1291888523     0.0499282232     0.0000000000
-1 N    -0.1100041999    -0.0703749030     0.0000000000
-2 O     0.0041822652     0.0613895352    -0.0000000000
-3 O     0.0157574521     0.0020653142    -0.0000000000
-4 O     0.0049680245     0.0040774031     0.0000000000
-5 O    -0.0440454105    -0.0471280791    -0.0000000000
-----------------------------------------------
-cycle 2: E = -410.033188653  dE = -0.0318953  norm(grad) = 0.210896
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    1 : Displace = 1.007e-01/1.899e-01 (rms/max) Trust = 1.000e-01 (=) Grad = 8.610e-02/1.385e-01 (rms/max) E (change) = -410.0331886525 (-3.190e-02) Quality = 0.904
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 9.52116e-01 1.07897e+00 1.18518e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -409.783290744439
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.1102494286     0.0516268954     0.0000000000
+1 N    -0.0917653924    -0.0645874783    -0.0000000000
+2 O    -0.0055182631     0.0419895582     0.0000000000
+3 O     0.0054255792     0.0143390778     0.0000000000
+4 O     0.0141163790    -0.0113971692    -0.0000000000
+5 O    -0.0324643259    -0.0320147734     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 2: E = -409.783290744  dE = -0.0269055  norm(grad) = 0.178464
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    1 : Displace = 1.005e-01/1.796e-01 (rms/max) Trust = 1.000e-01 (=) Grad = 7.286e-02/1.217e-01 (rms/max) E (change) = -409.7832907444 (-2.691e-02) Quality = 0.807
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 7.78060e-01 1.07803e+00 1.29127e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 3
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.959425   1.780901   0.000000   -0.091643  0.032428  0.000000
-   N  -3.360077   1.806326   0.000000    0.071189  0.063658  0.000000
-   O  -2.874441   2.856632   0.000000    0.139167 -0.083999  0.000000
-   O  -2.902116   0.689472   0.000000   -0.102645 -0.032337  0.000000
-   O  -5.562333   2.829292  -0.000000   -0.207216 -0.016369 -0.000000
-   O  -5.288461   0.674067   0.000000    0.190075  0.037590  0.000000
+   N  -4.957379   1.783357  -0.000000   -0.086117  0.034212 -0.000000
+   N  -3.363883   1.806757   0.000000    0.063083  0.065384 -0.000000
+   O  -2.816321   2.918297   0.000000    0.184692 -0.043086  0.000000
+   O  -2.870150   0.648331  -0.000000   -0.086312 -0.053899 -0.000000
+   O  -5.598452   2.870605   0.000000   -0.229086  0.005519  0.000000
+   O  -5.340442   0.609227  -0.000000    0.152896 -0.007276 -0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -410.057337907485
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0234961851    -0.0505108238    -0.0000000000
-1 N    -0.0220760811     0.0527270607    -0.0000000000
-2 O    -0.0280590357    -0.0645944811    -0.0000000000
-3 O    -0.0016997733    -0.0072482633     0.0000000000
-4 O    -0.0133474193     0.0032668536    -0.0000000000
-5 O     0.0416884054     0.0663455808    -0.0000000000
-----------------------------------------------
-cycle 3: E = -410.057337907  dE = -0.0241493  norm(grad) = 0.133096
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    2 : Displace = 1.513e-01/2.057e-01 (rms/max) Trust = 1.414e-01 (+) Grad = 5.434e-02/7.836e-02 (rms/max) E (change) = -410.0573379075 (-2.415e-02) Quality = 0.485
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.00315e+00 1.07934e+00 1.18021e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -409.806973112702
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0626381323    -0.0044809056     0.0000000000
+1 N    -0.0673613951     0.0094590609     0.0000000000
+2 O     0.0120372454     0.0095800095    -0.0000000000
+3 O     0.0103439786    -0.0306342732     0.0000000000
+4 O    -0.0276270119     0.0267624808    -0.0000000000
+5 O     0.0099364896    -0.0106857390    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 3: E = -409.806973113  dE = -0.0236824  norm(grad) = 0.107448
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    2 : Displace = 1.523e-01/2.276e-01 (rms/max) Trust = 1.414e-01 (+) Grad = 4.387e-02/6.802e-02 (rms/max) E (change) = -409.8069731127 (-2.368e-02) Quality = 0.644
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.04661e+00 1.08809e+00 1.24286e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 4
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -5.002714   1.713676   0.000000   -0.043289 -0.067224  0.000000
-   N  -3.346515   1.836480   0.000000    0.013562  0.030154  0.000000
-   O  -2.841076   2.913493   0.000000    0.033365  0.056861  0.000000
-   O  -2.861118   0.734773   0.000000    0.040998  0.045301  0.000000
-   O  -5.454146   2.831503   0.000000    0.108187  0.002211  0.000000
-   O  -5.442145   0.608093   0.000000   -0.153684 -0.065974  0.000000
+   N  -5.023104   1.708541  -0.000000   -0.065725 -0.074816 -0.000000
+   N  -3.325983   1.839231  -0.000000    0.037899  0.032473 -0.000000
+   O  -2.818150   2.933124   0.000000   -0.001829  0.014827  0.000000
+   O  -2.805907   0.697082  -0.000000    0.064242  0.048751 -0.000000
+   O  -5.502899   2.870556   0.000000    0.095553 -0.000049  0.000000
+   O  -5.469354   0.588827  -0.000000   -0.128912 -0.020400  0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -410.066444633228
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0163336086    -0.0340558741     0.0000000000
-1 N    -0.0377100293     0.0351553918    -0.0000000000
-2 O     0.0111736770    -0.0115039048    -0.0000000000
-3 O    -0.0026560478    -0.0010001089    -0.0000000000
-4 O     0.0129629345     0.0146356205    -0.0000000000
-5 O    -0.0001271583    -0.0032323220    -0.0000000000
-----------------------------------------------
-cycle 4: E = -410.066444633  dE = -0.00910673  norm(grad) = 0.0688657
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    3 : Displace = 9.596e-02/1.674e-01 (rms/max) Trust = 1.414e-01 (=) Grad = 2.811e-02/5.156e-02 (rms/max) E (change) = -410.0664446332 (-9.107e-03) Quality = 0.697
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 9.69352e-01 1.08359e+00 1.17477e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -409.814027434059
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0164778797    -0.0602690018    -0.0000000000
+1 N    -0.0374042917     0.0594036505     0.0000000000
+2 O     0.0045765592    -0.0250472992     0.0000000000
+3 O     0.0095958004    -0.0176345204     0.0000000000
+4 O     0.0011226216     0.0304528572     0.0000000000
+5 O     0.0056088664     0.0130917813     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 4: E = -409.814027434  dE = -0.00705432  norm(grad) = 0.10495
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    3 : Displace = 8.688e-02/1.316e-01 (rms/max) Trust = 1.414e-01 (=) Grad = 4.285e-02/7.020e-02 (rms/max) E (change) = -409.8140274341 (-7.054e-03) Quality = 0.742
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 8.79754e-01 1.07735e+00 1.25069e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 5
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -5.000375   1.762421   0.000000    0.002339  0.048744  0.000000
-   N  -3.282490   1.776101   0.000000    0.064025 -0.060379  0.000000
-   O  -2.876350   2.921664   0.000000   -0.035274  0.008171  0.000000
-   O  -2.761499   0.693304   0.000000    0.099620 -0.041470  0.000000
-   O  -5.541544   2.832824   0.000000   -0.087398  0.001321  0.000000
-   O  -5.484881   0.652634   0.000000   -0.042736  0.044541  0.000000
+   N  -5.030364   1.743040   0.000000   -0.007260  0.034499  0.000000
+   N  -3.260110   1.791623  -0.000000    0.065873 -0.047607  0.000000
+   O  -2.862663   2.929961   0.000000   -0.044513 -0.003163 -0.000000
+   O  -2.724719   0.672623  -0.000000    0.081189 -0.024459 -0.000000
+   O  -5.561214   2.862758   0.000000   -0.058316 -0.007798 -0.000000
+   O  -5.504625   0.638058   0.000000   -0.035272  0.049231  0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -410.069652770564
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0447041361     0.0189350869    -0.0000000000
-1 N    -0.0250315230    -0.0219826733     0.0000000000
-2 O     0.0043324069     0.0306773849     0.0000000000
-3 O     0.0103149821    -0.0171277292    -0.0000000000
-4 O    -0.0172405861     0.0003769136     0.0000000000
-5 O    -0.0170578662    -0.0108621207     0.0000000000
-----------------------------------------------
-cycle 5: E = -410.069652771  dE = -0.00320814  norm(grad) = 0.0743826
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    4 : Displace = 7.586e-02/1.082e-01 (rms/max) Trust = 1.414e-01 (=) Grad = 3.037e-02/4.855e-02 (rms/max) E (change) = -410.0696527706 (-3.208e-03) Quality = 0.419
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.00200e+00 1.09539e+00 1.20155e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -409.819010653853
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0168211431    -0.0317565802     0.0000000000
+1 N    -0.0049936490     0.0282677781     0.0000000000
+2 O    -0.0117340332    -0.0179909798    -0.0000000000
+3 O     0.0082758869    -0.0153442339    -0.0000000000
+4 O    -0.0127076499     0.0051644653    -0.0000000000
+5 O     0.0043654531     0.0316766653    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 5: E = -409.819010654  dE = -0.00498322  norm(grad) = 0.0639637
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    4 : Displace = 6.345e-02/8.476e-02 (rms/max) Trust = 1.414e-01 (=) Grad = 2.611e-02/3.594e-02 (rms/max) E (change) = -409.8190106539 (-4.983e-03) Quality = 0.832
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 9.04650e-01 1.08958e+00 1.24987e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 6
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -5.031631   1.746702   0.000000   -0.031256 -0.015719  0.000000
-   N  -3.277777   1.792728   0.000000    0.004712  0.016627  0.000000
-   O  -2.864695   2.908856   0.000000    0.011654 -0.012808  0.000000
-   O  -2.769480   0.710040   0.000000   -0.007982  0.016736  0.000000
-   O  -5.524396   2.837429   0.000000    0.017148  0.004605  0.000000
-   O  -5.479762   0.642579   0.000000    0.005119 -0.010055  0.000000
-converged SCF energy = -410.073021513431
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0107597767    -0.0048275312     0.0000000000
-1 N    -0.0060801820     0.0043978143    -0.0000000000
-2 O    -0.0031677155    -0.0032451148     0.0000000000
-3 O     0.0025466934    -0.0030597658     0.0000000000
-4 O    -0.0032964914     0.0026565860    -0.0000000000
-5 O    -0.0007545822     0.0040843407     0.0000000000
-----------------------------------------------
-cycle 6: E = -410.073021513  dE = -0.00336874  norm(grad) = 0.0163394
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    5 : Displace = 2.084e-02/3.466e-02 (rms/max) Trust = 1.414e-01 (=) Grad = 6.671e-03/1.179e-02 (rms/max) E (change) = -410.0730215134 (-3.369e-03) Quality = 1.132
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 9.89148e-01 1.09817e+00 1.15773e+00
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 7
-Cartesian coordinates (Angstrom)
- Atom        New coordinates             dX        dY        dZ
-   N  -5.045335   1.745706   0.000000   -0.013704 -0.000996  0.000000
-   N  -3.270085   1.797223   0.000000    0.007692  0.004495  0.000000
-   O  -2.848073   2.911763   0.000000    0.016622  0.002906 -0.000000
-   O  -2.774575   0.710963   0.000000   -0.005094  0.000924  0.000000
-   O  -5.530806   2.837061   0.000000   -0.006410 -0.000368  0.000000
-   O  -5.479275   0.635165   0.000000    0.000487 -0.007414  0.000000
-converged SCF energy = -410.073333689175
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0025431147    -0.0027088201    -0.0000000000
-1 N    -0.0018154349     0.0021784457     0.0000000000
-2 O    -0.0016232109    -0.0010600339    -0.0000000000
-3 O    -0.0001306319    -0.0011132049    -0.0000000000
-4 O     0.0003373261     0.0020392216     0.0000000000
-5 O     0.0006908487     0.0006667650     0.0000000000
-----------------------------------------------
-cycle 7: E = -410.073333689  dE = -0.000312176  norm(grad) = 0.00566175
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    6 : Displace = 1.061e-02/1.714e-02 (rms/max) Trust = 2.000e-01 (+) Grad = 2.311e-03/3.716e-03 (rms/max) E (change) = -410.0733336892 (-3.122e-04) Quality = 1.280
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.03315e+00 1.11818e+00 1.12698e+00
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 8
-Cartesian coordinates (Angstrom)
- Atom        New coordinates             dX        dY        dZ
-   N  -5.054281   1.746429   0.000000   -0.008947  0.000724 -0.000000
-   N  -3.262372   1.798082   0.000000    0.007713  0.000859 -0.000000
-   O  -2.836654   2.912031   0.000000    0.011420  0.000268  0.000000
-   O  -2.769794   0.711950   0.000000    0.004781  0.000986 -0.000000
-   O  -5.541242   2.835123   0.000000   -0.010436 -0.001938 -0.000000
-   O  -5.484024   0.633922   0.000000   -0.004749 -0.001243 -0.000000
+   N  -5.046589   1.744259  -0.000000   -0.016225  0.001219 -0.000000
+   N  -3.257673   1.792388  -0.000000    0.002436  0.000765 -0.000000
+   O  -2.842440   2.945963   0.000000    0.020223  0.016002  0.000000
+   O  -2.737933   0.680189  -0.000000   -0.013215  0.007566 -0.000000
+   O  -5.545762   2.866327  -0.000000    0.015453  0.003569 -0.000000
+   O  -5.514239   0.608119  -0.000000   -0.009614 -0.029939 -0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -410.073412820184
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N    -0.0005698628    -0.0002835625     0.0000000000
-1 N     0.0002909269     0.0001090060    -0.0000000000
-2 O    -0.0006551036    -0.0003656279     0.0000000000
-3 O    -0.0005671463     0.0003991838     0.0000000000
-4 O     0.0009486032     0.0000226040    -0.0000000000
-5 O     0.0005530098     0.0001192086    -0.0000000000
-----------------------------------------------
-cycle 8: E = -410.07341282  dE = -7.9131e-05  norm(grad) = 0.0016631
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    7 : Displace = 8.475e-03/1.174e-02 (rms/max) Trust = 2.828e-01 (+) Grad = 6.790e-04/9.489e-04 (rms/max) E (change) = -410.0734128202 (-7.913e-05) Quality = 1.214
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 1.02597e+00 1.09176e+00 1.14342e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -409.82118529623
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0130528208     0.0009188018     0.0000000000
+1 N    -0.0058515688    -0.0000682206    -0.0000000000
+2 O    -0.0017621083     0.0048577172     0.0000000000
+3 O     0.0019477383    -0.0058110895    -0.0000000000
+4 O    -0.0030522911     0.0040040136     0.0000000000
+5 O    -0.0043176354    -0.0038908957    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 6: E = -409.821185296  dE = -0.00217464  norm(grad) = 0.0181345
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    5 : Displace = 2.003e-02/3.125e-02 (rms/max) Trust = 2.000e-01 (+) Grad = 7.403e-03/1.309e-02 (rms/max) E (change) = -409.8211852962 (-2.175e-03) Quality = 1.037
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 8.76114e-01 1.09084e+00 1.25276e+00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 7
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -5.063170   1.743193  -0.000000   -0.016581 -0.001066 -0.000000
+   N  -3.250713   1.795663  -0.000000    0.006960  0.003275  0.000000
+   O  -2.828522   2.943152   0.000000    0.013918 -0.002811 -0.000000
+   O  -2.738220   0.684663  -0.000000   -0.000287  0.004474  0.000000
+   O  -5.551989   2.865660  -0.000000   -0.006228 -0.000667 -0.000000
+   O  -5.512880   0.604053  -0.000000    0.001359 -0.004066 -0.000000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -409.821515173616
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0014819561    -0.0000384275    -0.0000000000
+1 N     0.0000384215     0.0004354840     0.0000000000
+2 O    -0.0019864342    -0.0002348005    -0.0000000000
+3 O    -0.0005119280    -0.0001943970    -0.0000000000
+4 O     0.0012040946     0.0015663909    -0.0000000000
+5 O    -0.0002181271    -0.0015280380     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 7: E = -409.821515174  dE = -0.000329877  norm(grad) = 0.00360217
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    6 : Displace = 1.011e-02/1.646e-02 (rms/max) Trust = 2.828e-01 (+) Grad = 1.471e-03/2.000e-03 (rms/max) E (change) = -409.8215151736 (-3.299e-04) Quality = 1.180
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 9.86634e-01 1.07921e+00 1.10760e+00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 8
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -5.069162   1.743938  -0.000000   -0.005992  0.000745 -0.000000
+   N  -3.246852   1.797242  -0.000000    0.003860  0.001579 -0.000000
+   O  -2.816732   2.942327  -0.000000    0.011790 -0.000824 -0.000000
+   O  -2.737297   0.685387  -0.000000    0.000923  0.000723 -0.000000
+   O  -5.563359   2.862908  -0.000000   -0.011369 -0.002752  0.000000
+   O  -5.512683   0.603834  -0.000000    0.000198 -0.000219 -0.000000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -409.821577746442
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N    -0.0005584784    -0.0002692441     0.0000000000
+1 N     0.0002369049    -0.0002890491    -0.0000000000
+2 O    -0.0007190763    -0.0002566647    -0.0000000000
+3 O    -0.0002690242     0.0006400978     0.0000000000
+4 O     0.0010601166     0.0001375104    -0.0000000000
+5 O     0.0002532686     0.0000404158    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 8: E = -409.821577746  dE = -6.25728e-05  norm(grad) = 0.00167262
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    7 : Displace = 7.420e-03/1.230e-02 (rms/max) Trust = 3.000e-01 (+) Grad = 6.828e-04/1.069e-03 (rms/max) E (change) = -409.8215777464 (-6.257e-05) Quality = 1.335
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 8.25487e-01 1.04977e+00 1.10295e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 9
-Cartesian coordinates (Angstrom)
- Atom        New coordinates             dX        dY        dZ
-   N  -5.056550   1.746948   0.000000   -0.002268  0.000519 -0.000000
-   N  -3.259899   1.798396   0.000000    0.002473  0.000314  0.000000
-   O  -2.832148   2.912037   0.000000    0.004506  0.000006 -0.000000
-   O  -2.767562   0.712079  -0.000000    0.002232  0.000129 -0.000000
-   O  -5.546708   2.834150   0.000000   -0.005467 -0.000973  0.000000
-   O  -5.485564   0.633772   0.000000   -0.001540 -0.000150 -0.000000
-converged SCF energy = -410.07342189935
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N    -0.0003193362     0.0003829812    -0.0000000000
-1 N     0.0001083338    -0.0003459249     0.0000000000
-2 O    -0.0000553443     0.0001225090    -0.0000000000
-3 O    -0.0001520753     0.0002495187    -0.0000000000
-4 O     0.0003633910    -0.0001946592     0.0000000000
-5 O     0.0000551224    -0.0002141725     0.0000000000
-----------------------------------------------
-cycle 9: E = -410.073421899  dE = -9.07917e-06  norm(grad) = 0.00083807
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    8 : Displace = 3.406e-03/5.291e-03 (rms/max) Trust = 3.000e-01 (+) Grad = 3.421e-04/4.986e-04 (rms/max) E (change) = -410.0734218994 (-9.079e-06) Quality = 1.151
-Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 9.31784e-01 1.09172e+00 1.13489e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -5.071283   1.744981  -0.000000   -0.002121  0.001043  0.000000
+   N  -3.244748   1.798765   0.000000    0.002105  0.001523  0.000000
+   O  -2.809041   2.942042   0.000000    0.007691 -0.000285  0.000000
+   O  -2.738357   0.685030  -0.000000   -0.001060 -0.000357  0.000000
+   O  -5.572392   2.860938  -0.000000   -0.009033 -0.001970  0.000000
+   O  -5.510688   0.603343  -0.000000    0.001994 -0.000490  0.000000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -409.821592777859
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N    -0.0003702796    -0.0001276713    -0.0000000000
+1 N    -0.0000671893    -0.0000968196     0.0000000000
+2 O    -0.0000078021    -0.0000740444    -0.0000000000
+3 O     0.0001208751     0.0002053730    -0.0000000000
+4 O     0.0002870430    -0.0001413401     0.0000000000
+5 O     0.0000383360     0.0002353635     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 9: E = -409.821592778  dE = -1.50314e-05  norm(grad) = 0.00062359
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    8 : Displace = 5.176e-03/8.706e-03 (rms/max) Trust = 3.000e-01 (=) Grad = 2.546e-04/3.917e-04 (rms/max) E (change) = -409.8215927779 (-1.503e-05) Quality = 1.151
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 8.05513e-01 1.05388e+00 1.10306e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 10
-Cartesian coordinates (Angstrom)
- Atom        New coordinates             dX        dY        dZ
-   N  -5.056722   1.746929   0.000000   -0.000172 -0.000019  0.000000
-   N  -3.259481   1.798684  -0.000000    0.000418  0.000288 -0.000000
-   O  -2.831310   2.912096   0.000000    0.000838  0.000059 -0.000000
-   O  -2.767245   0.712147  -0.000000    0.000316  0.000067  0.000000
-   O  -5.548227   2.833725   0.000000   -0.001518 -0.000426 -0.000000
-   O  -5.485456   0.633761  -0.000000    0.000108 -0.000011 -0.000000
-converged SCF energy = -410.073422480323
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N    -0.0000900808     0.0001137531     0.0000000000
-1 N     0.0000180862    -0.0000985676    -0.0000000000
-2 O     0.0000080393     0.0000547314     0.0000000000
-3 O    -0.0000040846     0.0000424076     0.0000000000
-4 O     0.0000819967    -0.0000982980    -0.0000000000
-5 O    -0.0000138809    -0.0000139069    -0.0000000000
-----------------------------------------------
-cycle 10: E = -410.07342248  dE = -5.80973e-07  norm(grad) = 0.000229661
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    9 : Displace = 7.373e-04/1.367e-03 (rms/max) Trust = 3.000e-01 (=) Grad = 9.376e-05/1.451e-04 (rms/max) E (change) = -410.0734224803 (-5.810e-07) Quality = 1.143
-Converged! =D
-
-    #==========================================================================#
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -5.071195   1.745262   0.000000    0.000088  0.000280  0.000000
+   N  -3.244475   1.799392   0.000000    0.000273  0.000627  0.000000
+   O  -2.807661   2.942267   0.000000    0.001380  0.000225  0.000000
+   O  -2.739556   0.684849   0.000000   -0.001199 -0.000181  0.000000
+   O  -5.574663   2.860334  -0.000000   -0.002271 -0.000605  0.000000
+   O  -5.509073   0.602860   0.000000    0.001615 -0.000484  0.000000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -409.821593872365
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N    -0.0000967791    -0.0000401705     0.0000000000
+1 N    -0.0000441705     0.0000487271    -0.0000000000
+2 O     0.0000377759     0.0000048933     0.0000000000
+3 O     0.0000976515    -0.0000423263     0.0000000000
+4 O     0.0000418445    -0.0000358526    -0.0000000000
+5 O    -0.0000360252     0.0000649746    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 10: E = -409.821593872  dE = -1.09451e-06  norm(grad) = 0.000191414
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    9 : Displace = 1.389e-03/2.019e-03 (rms/max) Trust = 3.000e-01 (=) Grad = 7.814e-05/1.064e-04 (rms/max) E (change) = -409.8215938724 (-1.095e-06) Quality = 1.186
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 2.30000e-02 2.81592e-02 2.85714e-02 ... 7.97881e-01 1.05556e+00 1.11443e+00
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 11
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -5.070963   1.745221  -0.000000    0.000232 -0.000041 -0.000000
+   N  -3.244576   1.799734   0.000000   -0.000101  0.000342  0.000000
+   O  -2.807681   2.942564   0.000000   -0.000020  0.000297  0.000000
+   O  -2.740055   0.685036   0.000000   -0.000498  0.000186  0.000000
+   O  -5.575364   2.859936  -0.000000   -0.000701 -0.000398  0.000000
+   O  -5.508021   0.602434   0.000000    0.001051 -0.000426  0.000000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -409.821594013782
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0000043644     0.0000056734    -0.0000000000
+1 N    -0.0000045504     0.0000441807     0.0000000000
+2 O     0.0000112355     0.0000073351    -0.0000000000
+3 O     0.0000322918    -0.0000582980    -0.0000000000
+4 O    -0.0000146363     0.0000170919     0.0000000000
+5 O    -0.0000286509    -0.0000159516     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 11: E = -409.821594014  dE = -1.41418e-07  norm(grad) = 9.07029e-05
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step   10 : Displace = 5.122e-04/7.834e-04 (rms/max) Trust = 3.000e-01 (=) Grad = 3.703e-05/6.664e-05 (rms/max) E (change) = -409.8215940138 (-1.414e-07) Quality = 1.100
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Converged! =D
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #==========================================================================#
     #| If this code has benefited your research, please support us by citing: |#
     #|                                                                        |#
     #| Wang, L.-P.; Song, C.C. (2016) &quot;Geometry optimization made simple with |#
@@ -1546,22 +2134,29 @@ Converged! =D
     #| http://dx.doi.org/10.1063/1.4952956                                    |#
     #==========================================================================#
     
-Time elapsed since start of run_optimizer: 157.808 seconds
+Time elapsed since start of run_optimizer: 27.195 seconds
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -410.073422479453
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -409.821594013813
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Pregunta 4.</strong> Calcule la energía de la molécula de <span class="math notranslate nohighlight">\(NO_2\)</span> con DFT B3LYP y la base aug-cc-pvdz.</p>
+<p><strong>Pregunta 4.</strong> Calcule la energía de la molécula optimizada de <span class="math notranslate nohighlight">\(NO_2\)</span> con DFT B3LYP y la base 6-31G.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Optimice Geometría y obtenga la energia NO2 B3LYP/6-31G</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_hide-ouput tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NO2</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">   N       -4.39539        1.87380        0.00000</span>
 <span class="s2">   O       -3.90978        3.09520       -0.00000</span>
 <span class="s2">   O       -3.65594        0.93810        0.00000</span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span><span class="n">spin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="s2">&quot;aug-cc-pVDZ&quot;</span><span class="p">)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span><span class="n">spin</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="s2">&quot;6-31G&quot;</span><span class="p">)</span>
 <span class="n">NO2</span><span class="o">.</span><span class="n">max_memory</span> <span class="o">=</span> <span class="mi">2000</span>
 <span class="n">NO2</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 
@@ -1576,41 +2171,112 @@ Time elapsed since start of run_optimizer: 157.808 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                        ())))))))))))))))/                     
-                                    ())))))))))))))))))))))))),                
-                                *)))))))))))))))))))))))))))))))))             
-                        #,    ()))))))))/                .)))))))))),          
-                      #%%%%,  ())))))                        .))))))))*        
-                      *%%%%%%,  ))              ..              ,))))))).      
-                        *%%%%%%,         ***************/.        .)))))))     
-                #%%/      (%%%%%%,    /*********************.       )))))))    
-              .%%%%%%#      *%%%%%%,  *******/,     **********,      .))))))   
-                .%%%%%%/      *%%%%%%,  **              ********      .))))))  
-          ##      .%%%%%%/      (%%%%%%,                  ,******      /)))))  
-        %%%%%%      .%%%%%%#      *%%%%%%,    ,/////.       ******      )))))) 
-      #%      %%      .%%%%%%/      *%%%%%%,  ////////,      *****/     ,))))) 
-    #%%  %%%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
-  #%%%%.      %%%%%#      /%%%%%%*      #%%%%%%   /////)     ******      ))))),
-    #%%%%##%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
-      ##     %%%      .%%%%%%/      *%%%%%%,  ////////.      *****/     ,))))) 
-        #%%%%#      /%%%%%%/      (%%%%%%      /)/)//       ******      )))))) 
-          ##      .%%%%%%/      (%%%%%%,                  *******      ))))))  
-                .%%%%%%/      *%%%%%%,  **.             /*******      .))))))  
-              *%%%%%%/      (%%%%%%   ********/*..,*/*********       *))))))   
-                #%%/      (%%%%%%,    *********************/        )))))))    
-                        *%%%%%%,         ,**************/         ,))))))/     
-                      (%%%%%%   ()                              ))))))))       
-                      #%%%%,  ())))))                        ,)))))))),        
-                        #,    ())))))))))                ,)))))))))).          
-                                 ()))))))))))))))))))))))))))))))/             
-                                    ())))))))))))))))))))))))).                
-                                         ())))))))))))))),                     
-
--=# <span class=" -Color -Color-Bold"> geomeTRIC started. Version: 0.9.7.2 </span> #=-
-geometric-optimize called with the following command line:
-/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/ipykernel_launcher.py -f /home/jfhlewyee/.local/share/jupyter/runtime/kernel-5557e4ef-5b00-457f-9087-197dd65da7ba.json
-9 internal coordinates being used (instead of 9 Cartesians)
-Internal coordinate system (atoms numbered from 1):
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                    ())))))))))))))))))))))))),                
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                *)))))))))))))))))))))))))))))))))             
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        #,    ()))))))))/                .)))))))))),          
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      #%%%%,  ())))))                        .))))))))*        
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      *%%%%%%,  ))              ..              ,))))))).      
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        *%%%%%%,         ***************/.        .)))))))     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                #%%/      (%%%%%%,    /*********************.       )))))))    
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              .%%%%%%#      *%%%%%%,  *******/,     **********,      .))))))   
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                .%%%%%%/      *%%%%%%,  **              ********      .))))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ##      .%%%%%%/      (%%%%%%,                  ,******      /)))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        %%%%%%      .%%%%%%#      *%%%%%%,    ,/////.       ******      )))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      #%      %%      .%%%%%%/      *%%%%%%,  ////////,      *****/     ,))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #%%  %%%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  #%%%%.      %%%%%#      /%%%%%%*      #%%%%%%   /////)     ******      ))))),
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #%%%%##%  %%%#      .%%%%%%/      (%%%%%%,  ///////.     /*****      ))))).
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      ##     %%%      .%%%%%%/      *%%%%%%,  ////////.      *****/     ,))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>        #%%%%#      /%%%%%%/      (%%%%%%      /)/)//       ******      )))))) 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>          ##      .%%%%%%/      (%%%%%%,                  *******      ))))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                .%%%%%%/      *%%%%%%,  **.             /*******      .))))))  
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>              *%%%%%%/      (%%%%%%   ********/*..,*/*********       *))))))   
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                #%%/      (%%%%%%,    *********************/        )))))))    
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        *%%%%%%,         ,**************/         ,))))))/     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      (%%%%%%   ()                              ))))))))       
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      #%%%%,  ())))))                        ,)))))))),        
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                        #,    ())))))))))                ,)))))))))).          
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                 ()))))))))))))))))))))))))))))))/             
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                    ())))))))))))))))))))))))).                
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                         ())))))))))))))),                     
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-=# <span class=" -Color -Color-Bold"> geomeTRIC started. Version: 0.9.7.2 </span> #=-
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>geometric-optimize called with the following command line:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/jfhlewyee/anaconda3/envs/jb/lib/python3.10/site-packages/ipykernel_launcher.py -f /tmp/tmpenpkwuuy.json --HistoryManager.hist_file=:memory:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9 internal coordinates being used (instead of 9 Cartesians)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Internal coordinate system (atoms numbered from 1):
 Distance 1-2
 Distance 1-3
 Angle 2-1-3
@@ -1630,158 +2296,246 @@ Rotation-C 1-3
 &lt;class &#39;geometric.internal.RotationC&#39;&gt; : 1
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 1
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
    N  -4.395390   1.873800   0.000000    0.000000  0.000000  0.000000
    O  -3.909780   3.095200   0.000000    0.000000  0.000000  0.000000
    O  -3.655940   0.938100   0.000000    0.000000  0.000000  0.000000
-converged SCF energy = -205.006014544467  &lt;S^2&gt; = 0.7562289  2S+1 = 2.0062192
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N    -0.0881936123    -0.0754352455     0.0000000000
-1 O     0.0574496356     0.0565532836    -0.0000000000
-2 O     0.0307665852     0.0188656586    -0.0000000000
-----------------------------------------------
-cycle 1: E = -205.006014544  dE = -205.006  norm(grad) = 0.145842
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    0 : Gradient = 8.420e-02/1.161e-01 (rms/max) Energy = -205.0060145445
-Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 2.50000e-01 6.33488e-01 1.08625e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -204.884655674853  &lt;S^2&gt; = 0.75536923  2S+1 = 2.005362
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N    -0.0475126816    -0.0829330014    -0.0000000000
+1 O     0.0470121470     0.0170939883     0.0000000000
+2 O     0.0005220145     0.0658258507     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 1: E = -204.884655675  dE = -204.885  norm(grad) = 0.126376
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    0 : Gradient = 7.296e-02/9.558e-02 (rms/max) Energy = -204.8846556749
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 2.50000e-01 6.33488e-01 1.08625e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 2
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.270945   1.912939   0.000000    0.124445  0.039139  0.000000
-   O  -3.981123   3.131713   0.000000   -0.071343  0.036513  0.000000
-   O  -3.709759   0.862965   0.000000   -0.053819 -0.075135  0.000000
+   N  -4.290089   1.906467   0.000000    0.105301  0.032667  0.000000
+   O  -3.973639   3.156396  -0.000000   -0.063859  0.061196 -0.000000
+   O  -3.697666   0.844411   0.000000   -0.041726 -0.093689  0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -205.021763341302  &lt;S^2&gt; = 0.75400217  2S+1 = 2.0039982
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0069751291    -0.0521527880     0.0000000000
-1 O     0.0021197446     0.0631181693     0.0000000000
-2 O    -0.0091172316    -0.0109331571    -0.0000000000
-----------------------------------------------
-cycle 2: E = -205.021763341  dE = -0.0157488  norm(grad) = 0.0834243
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    1 : Displace = 1.033e-01/1.306e-01 (rms/max) Trust = 1.000e-01 (=) Grad = 4.817e-02/6.315e-02 (rms/max) E (change) = -205.0217633413 (-1.575e-02) Quality = 0.908
-Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 2.92045e-01 5.79152e-01 1.08609e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -204.897651313982  &lt;S^2&gt; = 0.75406334  2S+1 = 2.0040592
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0025851465    -0.0505465178     0.0000000000
+1 O     0.0056965349     0.0508862012    -0.0000000000
+2 O    -0.0082997865    -0.0003048790    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 2: E = -204.897651314  dE = -0.0129956  norm(grad) = 0.0724739
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    1 : Displace = 1.008e-01/1.103e-01 (rms/max) Trust = 1.000e-01 (=) Grad = 4.184e-02/5.120e-02 (rms/max) E (change) = -204.8976513140 (-1.300e-02) Quality = 0.703
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 5.00000e-02 5.00000e-02 5.00000e-02 ... 3.23187e-01 6.65132e-01 1.07758e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 3
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.278090   1.931793   0.000000   -0.007144  0.018854  0.000000
-   O  -3.978664   3.083135   0.000000    0.002459 -0.048579  0.000000
-   O  -3.704580   0.891855   0.000000    0.005179  0.028890 -0.000000
+   N  -4.292313   1.922101   0.000000   -0.002224  0.015634  0.000000
+   O  -3.974766   3.126956  -0.000000   -0.001126 -0.029440 -0.000000
+   O  -3.693854   0.857235   0.000000    0.003812  0.012824  0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -205.025756907828  &lt;S^2&gt; = 0.75346594  2S+1 = 2.0034629
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0218837896     0.0003340375     0.0000000000
-1 O    -0.0089979939    -0.0117271095    -0.0000000000
-2 O    -0.0129015226     0.0114230981     0.0000000000
-----------------------------------------------
-cycle 3: E = -205.025756908  dE = -0.00399357  norm(grad) = 0.0315347
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    2 : Displace = 3.476e-02/4.851e-02 (rms/max) Trust = 1.414e-01 (+) Grad = 1.821e-02/2.189e-02 (rms/max) E (change) = -205.0257569078 (-3.994e-03) Quality = 0.948
-Hessian Eigenvalues: 4.99998e-02 5.00000e-02 5.00000e-02 ... 3.07639e-01 5.93325e-01 1.15858e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -204.900667068534  &lt;S^2&gt; = 0.75351996  2S+1 = 2.0035169
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0072295109    -0.0196276593    -0.0000000000
+1 O    -0.0001212039     0.0154998766     0.0000000000
+2 O    -0.0071208683     0.0041660042     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 3: E = -204.900667069  dE = -0.00301575  norm(grad) = 0.02731
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    2 : Displace = 2.074e-02/2.913e-02 (rms/max) Trust = 1.000e-01 (=) Grad = 1.577e-02/2.092e-02 (rms/max) E (change) = -204.9006670685 (-3.016e-03) Quality = 1.366
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 4.99989e-02 5.00000e-02 5.00000e-02 ... 3.38091e-01 4.19989e-01 1.10614e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 4
-Cartesian coordinates (Angstrom)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
  Atom        New coordinates             dX        dY        dZ
-   N  -4.296888   1.927100   0.000000   -0.018798 -0.004693 -0.000000
-   O  -3.969206   3.083527   0.000000    0.009458  0.000392  0.000000
-   O  -3.694818   0.895351  -0.000000    0.009762  0.003496 -0.000000
+   N  -4.300972   1.928900   0.000000   -0.008659  0.006799  0.000000
+   O  -3.972155   3.111034  -0.000000    0.002610 -0.015922 -0.000000
+   O  -3.687294   0.864644   0.000000    0.006561  0.007409  0.000000
 
 WARN: Large deviations found between the input molecule and the molecule from chkfile
 Initial guess density matrix may have large error.
-
-converged SCF energy = -205.026273423136  &lt;S^2&gt; = 0.75367588  2S+1 = 2.0036725
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0003911941    -0.0077167653    -0.0000000000
-1 O     0.0015912932     0.0029438537     0.0000000000
-2 O    -0.0019870636     0.0047863876    -0.0000000000
-----------------------------------------------
-cycle 4: E = -205.026273423  dE = -0.000516515  norm(grad) = 0.00988726
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    3 : Displace = 1.380e-02/1.943e-02 (rms/max) Trust = 2.000e-01 (+) Grad = 5.708e-03/7.727e-03 (rms/max) E (change) = -205.0262734231 (-5.165e-04) Quality = 0.918
-Hessian Eigenvalues: 4.99964e-02 5.00000e-02 5.00000e-02 ... 3.31269e-01 6.67267e-01 1.02679e+00
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -204.901038316177  &lt;S^2&gt; = 0.75343602  2S+1 = 2.0034331
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0037620998     0.0018012223    -0.0000000000
+1 O    -0.0015644120    -0.0054096622     0.0000000000
+2 O    -0.0022010828     0.0036368325    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 4: E = -204.901038316  dE = -0.000371248  norm(grad) = 0.0081964
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    3 : Displace = 1.256e-02/1.589e-02 (rms/max) Trust = 1.414e-01 (+) Grad = 4.732e-03/5.631e-03 (rms/max) E (change) = -204.9010383162 (-3.712e-04) Quality = 0.857
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 4.99897e-02 5.00000e-02 5.00000e-02 ... 3.16734e-01 5.10246e-01 1.13144e+00
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 5
-Cartesian coordinates (Angstrom)
- Atom        New coordinates             dX        dY        dZ
-   N  -4.295783   1.928810   0.000000    0.001104  0.001709 -0.000000
-   O  -3.970885   3.083072   0.000000   -0.001679 -0.000455 -0.000000
-   O  -3.694073   0.893629   0.000000    0.000746 -0.001722  0.000000
-converged SCF energy = -205.026304393285  &lt;S^2&gt; = 0.75366781  2S+1 = 2.0036645
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0004836401    -0.0018083731    -0.0000000000
-1 O     0.0002554377     0.0002652979    -0.0000000000
-2 O    -0.0007445410     0.0015581567    -0.0000000000
-----------------------------------------------
-cycle 5: E = -205.026304393  dE = -3.09701e-05  norm(grad) = 0.00257331
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    4 : Displace = 1.781e-03/2.305e-03 (rms/max) Trust = 2.828e-01 (+) Grad = 1.486e-03/1.872e-03 (rms/max) E (change) = -205.0263043933 (-3.097e-05) Quality = 1.237
-Hessian Eigenvalues: 4.98619e-02 4.99999e-02 5.00000e-02 ... 3.29382e-01 5.87414e-01 8.94671e-01
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -4.302618   1.927193   0.000000   -0.001646 -0.001707  0.000000
+   O  -3.971830   3.113485  -0.000000    0.000325  0.002451 -0.000000
+   O  -3.685891   0.863175   0.000000    0.001402 -0.001468  0.000000
+
+WARN: Large deviations found between the input molecule and the molecule from chkfile
+Initial guess density matrix may have large error.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -204.901070705864  &lt;S^2&gt; = 0.75348786  2S+1 = 2.0034848
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0007569673    -0.0013713950    -0.0000000000
+1 O     0.0000657927    -0.0001796255     0.0000000000
+2 O    -0.0008253780     0.0015780802     0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 5: E = -204.901070706  dE = -3.23897e-05  norm(grad) = 0.00237948
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    4 : Displace = 2.244e-03/2.808e-03 (rms/max) Trust = 2.000e-01 (+) Grad = 1.374e-03/1.781e-03 (rms/max) E (change) = -204.9010707059 (-3.239e-05) Quality = 1.089
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 4.98734e-02 4.99997e-02 5.00000e-02 ... 3.19490e-01 6.03581e-01 8.66122e-01
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 6
-Cartesian coordinates (Angstrom)
- Atom        New coordinates             dX        dY        dZ
-   N  -4.295521   1.928972   0.000000    0.000262  0.000162  0.000000
-   O  -3.971952   3.083077   0.000000   -0.001067  0.000005  0.000000
-   O  -3.693028   0.892806   0.000000    0.001045 -0.000823  0.000000
-converged SCF energy = -205.026306742757  &lt;S^2&gt; = 0.75367134  2S+1 = 2.003668
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N     0.0000626308    -0.0000075419     0.0000000000
-1 O    -0.0000069993    -0.0000027043    -0.0000000000
-2 O    -0.0000613964     0.0000254769     0.0000000000
-----------------------------------------------
-cycle 6: E = -205.026306743  dE = -2.34947e-06  norm(grad) = 9.19478e-05
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    5 : Displace = 6.432e-04/8.435e-04 (rms/max) Trust = 3.000e-01 (+) Grad = 5.309e-05/6.647e-05 (rms/max) E (change) = -205.0263067428 (-2.349e-06) Quality = 0.995
-Hessian Eigenvalues: 4.82586e-02 4.99999e-02 5.00000e-02 ... 3.34391e-01 5.90599e-01 8.82982e-01
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -4.302708   1.926989   0.000000   -0.000090 -0.000204  0.000000
+   O  -3.972722   3.113505  -0.000000   -0.000892  0.000021  0.000000
+   O  -3.684803   0.862340   0.000000    0.001088 -0.000835  0.000000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -204.901073122788  &lt;S^2&gt; = 0.75349676  2S+1 = 2.0034937
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N     0.0001388812    -0.0004813607     0.0000000000
+1 O     0.0000763453     0.0001071453     0.0000000000
+2 O    -0.0002180883     0.0004010930    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 6: E = -204.901073123  dE = -2.41692e-06  norm(grad) = 0.000690466
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    5 : Displace = 5.355e-04/7.558e-04 (rms/max) Trust = 2.828e-01 (+) Grad = 3.986e-04/5.010e-04 (rms/max) E (change) = -204.9010731228 (-2.417e-06) Quality = 1.237
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hessian Eigenvalues: 4.73284e-02 4.99999e-02 5.00000e-02 ... 3.20269e-01 5.11689e-01 7.86984e-01
 </pre></div>
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Geometry optimization cycle 7
-Cartesian coordinates (Angstrom)
- Atom        New coordinates             dX        dY        dZ
-   N  -4.295497   1.928634   0.000000    0.000024 -0.000338  0.000000
-   O  -3.972514   3.082897   0.000000   -0.000563 -0.000180  0.000000
-   O  -3.692297   0.892815  -0.000000    0.000731  0.000009 -0.000000
-converged SCF energy = -205.026306739808  &lt;S^2&gt; = 0.75367199  2S+1 = 2.0036686
---------------- SCF_Scanner gradients ---------------
-         x                y                z
-0 N    -0.0000082740     0.0000469876     0.0000000000
-1 O     0.0000127177    -0.0000149521     0.0000000000
-2 O    -0.0000102613    -0.0000171665     0.0000000000
-----------------------------------------------
-cycle 7: E = -205.02630674  dE = 2.9485e-09  norm(grad) = 5.53316e-05
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    6 : Displace = 4.673e-05/6.445e-05 (rms/max) Trust = 3.000e-01 (=) Grad = 3.195e-05/4.771e-05 (rms/max) E (change) = -205.0263067398 (+2.948e-09) Quality = -0.086
-Converged! =D
-
-    #==========================================================================#
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cartesian coordinates (Angstrom)
+ Atom        New coordinates             dX        dY        dZ
+   N  -4.302647   1.926517   0.000000    0.000062 -0.000472 -0.000000
+   O  -3.973712   3.113143  -0.000000   -0.000991 -0.000362 -0.000000
+   O  -3.683739   0.861935   0.000000    0.001064 -0.000405  0.000000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -204.901073327061  &lt;S^2&gt; = 0.75349872  2S+1 = 2.0034957
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--------------- SCF_Scanner gradients ---------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         x                y                z
+0 N    -0.0000242121     0.0000258814     0.0000000000
+1 O     0.0000236040     0.0000285469    -0.0000000000
+2 O    -0.0000026627    -0.0000278871    -0.0000000000
+----------------------------------------------
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>cycle 7: E = -204.901073327  dE = -2.04273e-07  norm(grad) = 5.84203e-05
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Step    6 : Displace = 1.983e-04/2.613e-04 (rms/max) Trust = 3.000e-01 (+) Grad = 3.373e-05/3.704e-05 (rms/max) E (change) = -204.9010733271 (-2.043e-07) Quality = 0.791
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Converged! =D
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    #==========================================================================#
     #| If this code has benefited your research, please support us by citing: |#
     #|                                                                        |#
     #| Wang, L.-P.; Song, C.C. (2016) &quot;Geometry optimization made simple with |#
@@ -1789,15 +2543,22 @@ Converged! =D
     #| http://dx.doi.org/10.1063/1.4952956                                    |#
     #==========================================================================#
     
-Time elapsed since start of run_optimizer: 38.724 seconds
+Time elapsed since start of run_optimizer: 7.316 seconds
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -205.026306740327  &lt;S^2&gt; = 0.75367198  2S+1 = 2.0036686
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -204.90107332717  &lt;S^2&gt; = 0.75349869  2S+1 = 2.0034956
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Pregunta b.</strong> Calcule el <span class="math notranslate nohighlight">\(\Delta U\)</span> de la reacción <span class="math notranslate nohighlight">\(N_2O_4 &lt;=&gt; 2NO_2\)</span> según DFT B3LYP.</p>
+<p><strong>Pregunta b.</strong> Calcule el <span class="math notranslate nohighlight">\(\Delta U\)</span> de la reacción <span class="math notranslate nohighlight">\(N_2O_4\)</span> ↔ <span class="math notranslate nohighlight">\(2NO_2\)</span> según DFT B3LYP.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtenga la energía de reacción (2E_{NO2} - E_{N2O4}). Recuerde convertur Hartree-&gt;kcal/mol.</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">no2</span><span class="o">-</span><span class="n">n2o4</span><span class="p">)</span><span class="o">*</span><span class="mf">2625.5</span>
@@ -1805,7 +2566,7 @@ Time elapsed since start of run_optimizer: 38.724 seconds
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54.6340263490076
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>51.05904229402557
 </pre></div>
 </div>
 </div>
@@ -1813,7 +2574,7 @@ Time elapsed since start of run_optimizer: 38.724 seconds
 <div class="section" id="referencias">
 <h2><span class="section-number">21.1. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Parrish, R. M.; Burns, L. A.; Smith, D. G. A.; Simmonett, A. C.; DePrince, A. E.; Hohenstein, E. G.; Bozkaya, U.; Sokolov, A. Y.; Di Remigio, R.; Richard, R. M.; et al. <strong>Psi4 1.1: An Open-Source Electronic Structure Program Emphasizing Automation, Advanced Libraries, and Interoperability.</strong> Journal of Chemical Theory and Computation 2017, 13 (7), 3185–3197.</p></li>
+<li><p>Q. Sun, T.C. Berkelbach, N.S. Blunt, G.H. Booth, S. Guo, Z. Li, J. Liu, J.D. McClain, E.R. Sayfutyarova, S. Sharma, S. Wouters, y G.K.-L. Chan, <strong>PySCF: the Python-based simulations of chemistry framework</strong>, Wiley Interdiscip. Rev. Comput. Mol. Sci. 8, e1340 (2018).</p></li>
 </ul>
 </div>
 </div>
