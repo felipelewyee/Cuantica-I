@@ -539,7 +539,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="tutorial-avanzado">
 <h1><span class="section-number">2. </span>Tutorial Avanzado.<a class="headerlink" href="#tutorial-avanzado" title="Permalink to this headline">#</a></h1>
-<p>En esta parte del tutorial aprenderá a utilizar Python para manejar vectores y matrices, crear gráficas y resolver integrales. Estas funciones serán trascendentales para el curso de <code class="docutils literal notranslate"><span class="pre">Química</span> <span class="pre">Cuántica</span> <span class="pre">I</span></code>. <strong>Recuerde escribir en los cuadros vacíos y presionar el botón Run o las teclas “Shift” + “Enter”.</strong></p>
+<p>En esta parte del tutorial aprenderá a utilizar Python para manejar vectores y matrices, crear gráficas y resolver integrales. Estas funciones serán trascendentales para el curso de <code class="docutils literal notranslate"><span class="pre">Química</span> <span class="pre">Cuántica</span></code>. <strong>Recuerde escribir en los cuadros vacíos y presionar el botón Run o las teclas “Shift” + “Enter”.</strong></p>
 <p>Utilizaremos las librerías numpy, matplotlib y scipy que aprendió a utilizar en el Tutorial Básico, <strong>impórtelas en el siguiente recuadro</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -559,7 +559,10 @@ title="Print to PDF"
 </div>
 <section id="vectores-y-matrices">
 <h2><span class="section-number">2.1. </span>Vectores y Matrices<a class="headerlink" href="#vectores-y-matrices" title="Permalink to this headline">#</a></h2>
-<p>Python permite manejar fácilmente objetos multidimensionales, como vectores y matrices. Empezaremos creando una lista, la cual es un conjunto de cosas. Las listas se crean poniendo elementos entre corchetes cuadrados, por ejemplo</p>
+<p>Python permite manejar fácilmente objetos multidimensionales, como vectores y matrices.</p>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
+<p>Empezaremos creando una lista, la cual es un conjunto de cosas. Las listas se crean poniendo elementos entre corchetes cuadrados, por ejemplo</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -570,6 +573,7 @@ title="Print to PDF"
 <p>También podemos imprimir un elemento específico indicando el número del elemento entre paréntesis cuadrados. En Python los elementos se cuentan desde “cero”. Para imprimir el número 9 en la lista anterior ejecutaríamos:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
+</div>
 </div>
 <p><strong>Cree la siguiente lista [8,25,32,41] y guárdela en la variable “lista”. Imprima la lista completa, así como el primer elemento del vector.</strong></p>
 <div class="cell docutils container">
@@ -594,7 +598,10 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>La lista puede convertirse en un arreglo de numpy, esto facilita el manejo de cantidades vectoriales. Para declarar la lista anterior como un arreglo de numpy escribiremos</p>
+<p>La lista puede convertirse en un arreglo de numpy, esto facilita el manejo de cantidades vectoriales.</p>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
+<p>Para declarar la lista anterior como un arreglo de numpy escribiremos</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -606,6 +613,7 @@ title="Print to PDF"
 <p>y sumarlos, de una forma muy parecida a como se haría en física.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">+</span><span class="n">v2</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p><strong>Cree dos vectores como arreglos de numpy, uno que contenga los elementos “1,8,6”, y otro que contenga “5,2,7”, e imprima su suma</strong></p>
 <div class="cell docutils container">
@@ -630,9 +638,12 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
 <p>También podemos crear matrices como una “lista de listas”, donde cada lista representa un renglón de la matriz. A continuación generemos una matriz de 3x3 que contenga ceros en todos sus elementos</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">],[</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">]]</span>
 </pre></div>
+</div>
 </div>
 <p><strong>Genere la matriz de ceros anterior, e imprímala.</strong></p>
 <div class="cell docutils container">
@@ -642,9 +653,11 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>Podemos usar numpy para hacer nuestra matriz de ceros de forma más fácil</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Podemos</span> <span class="n">usar</span> <span class="n">numpy</span> <span class="n">para</span> <span class="n">hacer</span> <span class="n">nuestra</span> <span class="n">matriz</span> <span class="n">de</span> <span class="n">ceros</span> <span class="n">de</span> <span class="n">forma</span> <span class="n">más</span> <span class="n">fácil</span>
+<span class="o">~~~</span><span class="n">python</span>
+<span class="n">matriz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">matriz</span><span class="p">)</span>
+<span class="o">~~~</span>
 </pre></div>
 </div>
 <p><strong>Prueba usar numpy para definir una matriz de ceros de 5x5, e imprímala.</strong></p>
@@ -714,6 +727,8 @@ matriz1 = \begin{pmatrix}
 </div>
 </div>
 </div>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
 <p>Hacer esto puede tomar mucho tiempo con matrices grandes. Existe una instrucción llamada <strong>for</strong> que nos permite hacer cosas repetitivas. Por ejemplo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="n">val</span><span class="o">=</span><span class="mf">0.0</span>
@@ -723,6 +738,7 @@ matriz1 = \begin{pmatrix}
         <span class="n">matriz2</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">val</span>
 </pre></div>
 </div>
+</div>
 <p><strong>Prueba la instrucción anterior e imprime las dos matrices (matriz1 y matriz2) en el siguiente recuadro.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -731,9 +747,12 @@ matriz1 = \begin{pmatrix}
 </div>
 </div>
 </div>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
 <p>Se pueden multiplicar dos matrices con</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matriz3</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">matriz1</span><span class="p">,</span><span class="n">matriz2</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p><strong>Multiplique las dos matrices anteriores e imprima el resultado.</strong></p>
 <div class="cell docutils container">
@@ -748,9 +767,12 @@ matriz1 = \begin{pmatrix}
 \[
 M v = \lambda v
 \]</div>
-<p>se pueden encontrar con</p>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
+<p>Los valores y vectores propios se pueden calcular con</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">val</span><span class="p">,</span><span class="n">vec</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">matriz</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p><strong>Encuentre los valores propios y vectores propios de la matriz 1, e imprímalos.</strong></p>
 <div class="cell docutils container">
@@ -771,9 +793,12 @@ M v = \lambda v
 <section id="graficas">
 <h2><span class="section-number">2.2. </span>Gráficas<a class="headerlink" href="#graficas" title="Permalink to this headline">#</a></h2>
 <p>Vamos a graficar la función <span class="math notranslate nohighlight">\(y=\sin(x)\)</span> de <span class="math notranslate nohighlight">\(-3\)</span> a <span class="math notranslate nohighlight">\(3\)</span>.</p>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
 <p>Primero crearemos el dominio de la función (los valores de x), en nuestro ejemplo le daremos 50 puntos. Utilizaremos la función linspace(a,b,n) de numpy, esta crea un conjunto de n números distribuidos en el intervalo de a hasta b.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p><strong>Genere el dominio tal que <span class="math notranslate nohighlight">\(x\in[-3,3]\)</span>, utilice 50 puntos, guárdelo en la variable x e imprímalo.</strong></p>
 <div class="cell docutils container">
@@ -783,9 +808,12 @@ M v = \lambda v
 </div>
 </div>
 </div>
-<p>Obtendremos el valor de “y” usando numpy, al escribir la siguiente instrucción Python toma cada valor de x, le aplica la función y lo guarda en la variable “y”.</p>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
+<p>Obtendremos el valor de “y” usando numpy. Al escribir la siguiente instrucción Python toma cada valor de x, le aplica la función y lo guarda en la variable “y”.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
+</div>
 </div>
 <p><strong>Evalúe la función</strong></p>
 <div class="math notranslate nohighlight">
@@ -799,10 +827,13 @@ y = \sin(x)
 </div>
 </div>
 </div>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
 <p>Finalmente, <strong>realice la gráfica con</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
+</div>
 </div>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -864,6 +895,8 @@ y = \sin(x)
 </section>
 <section id="integrales">
 <h2><span class="section-number">2.3. </span>Integrales<a class="headerlink" href="#integrales" title="Permalink to this headline">#</a></h2>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
 <p>También podemos hacer integrales con Python. Por ejemplo, vamos a integrar <span class="math notranslate nohighlight">\(y=x^2\)</span> en el dominio <span class="math notranslate nohighlight">\(-3 \leq x \leq3\)</span>. Para ello importaremos el subpaquete integrate de la librería scipy.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
 </pre></div>
@@ -876,7 +909,9 @@ y = \sin(x)
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>Aquí “lambda” indica las variables de la ecuación, seguido de la ecuación y los límites de la integral. <strong>Pruebe a realizar la integral.</strong></p>
+<p>Aquí “lambda” indica las variables de la ecuación, seguido de la ecuación y los límites de la integral.</p>
+</div>
+<p><strong>Pruebe a realizar la integral.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Integre y = x**2 de -3 a 3</span>
@@ -947,6 +982,8 @@ N = 4.242640687119285
 </div>
 </div>
 <p><strong>OPCIONAL</strong></p>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
 <p>También es posible realizar integrales triples, el siguiente ejemplo solo es demostrativo, <strong>simplemente copie y pegue para realizar la integral.</strong></p>
 <p>Sea la función de onda</p>
 <div class="math notranslate nohighlight">
@@ -962,6 +999,11 @@ N^2 = \int \psi^* \psi d\textbf{r} = \int\limits_{0}^\infty \int\limits_{0}^{2\p
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">norm2</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">tplquad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
+</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Nuestro objetivo en este punto es que conozca lo mucho que se puede hacer en Python. Exploraremos estas ideas más adelante.</p>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Encuentre el cuadrado de la norma de la función de onda</span>

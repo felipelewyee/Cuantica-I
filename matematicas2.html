@@ -538,11 +538,12 @@ title="Print to PDF"
 </div>
 </div>
 <p>En vez de realizar operaciones de manera numérica, el álgebra simbólica guarda las operaciones como símbolos. Obtenga la siguiente operación:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3f293333-e3e3-4a80-a6dc-c9be81e2e3cc">
-<span class="eqno">(4.1)<a class="headerlink" href="#equation-3f293333-e3e3-4a80-a6dc-c9be81e2e3cc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f48cf0c1-6943-4228-be3f-2e0e8bf1b093">
+<span class="eqno">(4.1)<a class="headerlink" href="#equation-f48cf0c1-6943-4228-be3f-2e0e8bf1b093" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \sqrt{11}
 \end{equation}\]</div>
-<p>Usando python estándar</p>
+<div class="importantusando python estandar admonition">
+<p class="admonition-title">Aprendizaje de código</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="n">a</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -554,52 +555,53 @@ title="Print to PDF"
 <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="n">a</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
-<span class="n">a</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.3166247903554
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># raiz de 11 en Python estándar</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
-<span class="n">a</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
-<span class="n">a</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># raíz de 11 en Python simbólico</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \sqrt{11}\]</div>
 </div>
+<div class="admonition-para-pensar admonition">
+<p class="admonition-title">Para pensar</p>
+<p>¿Qué diferencias observa entre los resultados de python estándar y de python simbólico?</p>
 </div>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
 <p>Podemos mejorar la apariencia de una expresión si en vez de usar print utilizamos:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>o si simplemente poniendo la expresión.</p>
+<p>o simplemente escribimos el nombre de la variable.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>√11
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pruebe la alternativa de impresión.</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Podemos obtener el valor numérico con evalf(). Obtenga el valor numérico de <span class="math notranslate nohighlight">\(\sqrt{11}\)</span></p>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
+<p>Podemos obtener el valor numérico con evalf().</p>
+</div>
+<p><strong>Obtenga el valor numérico de <span class="math notranslate nohighlight">\(\sqrt{11}\)</span></strong></p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Valor numérico de raíz de 11</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">evalf</span><span class="p">()</span>
 </pre></div>
@@ -610,46 +612,54 @@ title="Print to PDF"
 \[\displaystyle 3.3166247903554\]</div>
 </div>
 </div>
-<p>Las variables comunes de álgebra son símbolos. Si quiero definir x:</p>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
+<p>Las variables comunes de álgebra son símbolos. Si queremos definir x, escribimos</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defina la variable simbólica x</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Imprimimos x para verificar.</p>
+<p><strong>Imprimima x para verificar.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Imprima x</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle x\]</div>
 </div>
 </div>
 <p>Una variable puede almacenar cosas distintas a su nombre. Pruebe con</p>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span>
 </pre></div>
 </div>
+</div>
+<p>e imprima <span class="math notranslate nohighlight">\(y\)</span>. Observe que el resultado no es un número, sino una expresión.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span>
-<span class="n">y</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defina &quot;y&quot; simbólica e imprímala.</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_latex math notranslate nohighlight">
-\[\displaystyle x + 1\]</div>
 </div>
 </div>
 <p>Es posible multiplicar expresiones y hacerles cualquier tipo de operación. Por ejemplo, haga el producto <span class="math notranslate nohighlight">\(xy\)</span>, guárdelo en una variable <span class="math notranslate nohighlight">\(z\)</span> e imprima el resultado.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="o">=</span><span class="n">y</span><span class="o">*</span><span class="n">x</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># z = xy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span>
 <span class="n">z</span>
 </pre></div>
 </div>
@@ -659,12 +669,22 @@ title="Print to PDF"
 \[\displaystyle x \left(x + 1\right)\]</div>
 </div>
 </div>
+<div class="important admonition">
+<p class="admonition-title">Aprendiendo código</p>
 <p>Se puede obtener el resultado de desarrollar las operaciones con</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">expresión</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>Desarrolle la operación contenida en z, guárdelo en una variable c e imprímala.</p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Expanda el contenido de la variable z</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">expand</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
@@ -678,8 +698,19 @@ x  + x
 </div>
 </div>
 </div>
-<p>Podemos obtener expresiones en su forma factorizada con sp.simplify(). Pruebe con la variable c.</p>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de codigo</p>
+<p>Podemos obtener expresiones en su forma factorizada con sp.simplify().</p>
+</div>
+<p>Pruebe con la variable c.</p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Simplifique c</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">simplify</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
@@ -690,23 +721,37 @@ x  + x
 \[\displaystyle x \left(x + 1\right)\]</div>
 </div>
 </div>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
 <p>Se pueden utilizar álgebra simbólica para derivar, esto se hace con</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">funcion</span><span class="p">,</span> <span class="n">variable</span> <span class="n">a</span> <span class="n">derivar</span><span class="p">,</span> <span class="n">orden</span> <span class="n">de</span> <span class="n">la</span> <span class="n">derivada</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>o si vamos a derivar respecto a diferentes variables</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">funcion</span><span class="p">,</span> <span class="n">variable</span> <span class="n">a</span> <span class="n">derivar1</span><span class="p">,</span> <span class="n">variable</span> <span class="n">a</span> <span class="n">derivar2</span><span class="p">,</span> <span class="n">variable</span> <span class="n">a</span> <span class="n">derivar3</span><span class="p">,</span><span class="o">...</span><span class="p">)</span><span class="o">.</span>
 </pre></div>
 </div>
+</div>
 <p>Exprese de manera simbólica la función</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3bb215eb-f52f-4484-9cf5-36aa3288fdf1">
-<span class="eqno">(4.2)<a class="headerlink" href="#equation-3bb215eb-f52f-4484-9cf5-36aa3288fdf1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ea5db738-86ba-4fcc-99be-3bdc1ae4fc7d">
+<span class="eqno">(4.2)<a class="headerlink" href="#equation-ea5db738-86ba-4fcc-99be-3bdc1ae4fc7d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f=x^2+sin(x)
 \end{equation}\]</div>
 <p>y obtenga <span class="math notranslate nohighlight">\(\frac{df}{dx}\)</span> y <span class="math notranslate nohighlight">\(\frac{d^2f}{dx^2}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Exprese f(x) y derive a primer y segundo orden.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">=</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">sym</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
 <span class="n">sym</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
-<span class="n">sym</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -719,21 +764,31 @@ x  + sin(x)
 </div>
 </div>
 </div>
-<p>Podemos integrar con</p>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
+<p>Podemos integrar simbólicamente con</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">funcion</span><span class="p">,</span> <span class="n">variable</span> <span class="n">a</span> <span class="n">integrar1</span><span class="p">,</span> <span class="n">variable</span> <span class="n">a</span> <span class="n">integrar2</span><span class="p">,</span> <span class="n">variable</span> <span class="n">a</span> <span class="n">integrar3</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Defina la función</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fbe4618d-8739-456b-bc7c-dd5973a22105">
-<span class="eqno">(4.3)<a class="headerlink" href="#equation-fbe4618d-8739-456b-bc7c-dd5973a22105" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a632e9a3-7451-4e36-bf00-36a33150a4b3">
+<span class="eqno">(4.3)<a class="headerlink" href="#equation-a632e9a3-7451-4e36-bf00-36a33150a4b3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f=e^{-r}
 \end{equation}\]</div>
 <p>Y realice la integral indefinida</p>
-<div class="amsmath math notranslate nohighlight" id="equation-79ecfe13-aed6-4fe6-9e4c-c142212a2ff5">
-<span class="eqno">(4.4)<a class="headerlink" href="#equation-79ecfe13-aed6-4fe6-9e4c-c142212a2ff5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a599e9a8-f17a-418c-bda9-b2162c9b47f3">
+<span class="eqno">(4.4)<a class="headerlink" href="#equation-a599e9a8-f17a-418c-bda9-b2162c9b47f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int e^{-r} dr
 \end{equation}\]</div>
+</div>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defina f(r) = e^{-r} y realice la integral indicada.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
 <span class="n">f</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="p">)</span>
@@ -751,21 +806,31 @@ f=e^{-r}
 </div>
 </div>
 </div>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
 <p>Podemos integrar de manera definida con</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">funcion</span><span class="p">,</span> <span class="p">(</span><span class="n">variable_a_integrar1</span><span class="p">,</span><span class="n">lim_inf1</span><span class="p">,</span><span class="n">lim_sup1</span><span class="p">),</span> <span class="p">(</span><span class="n">variable_a_integrar2</span><span class="p">,</span><span class="n">lim_inf2</span><span class="p">,</span><span class="n">lim_sup2</span><span class="p">),(</span><span class="n">variable_a_integrar3</span><span class="p">,</span><span class="n">lim_inf3</span><span class="p">,</span><span class="n">lim_sup3</span><span class="p">),</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
 <p>Defina la función</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4020f0f8-c4c8-4052-a32f-65e6e746fcbf">
-<span class="eqno">(4.5)<a class="headerlink" href="#equation-4020f0f8-c4c8-4052-a32f-65e6e746fcbf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c3135538-80ee-4be7-bd75-cd4394a9c4c4">
+<span class="eqno">(4.5)<a class="headerlink" href="#equation-c3135538-80ee-4be7-bd75-cd4394a9c4c4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f=e^{-\alpha r^2}
 \end{equation}\]</div>
 <p>Y realice la integral</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6fe40fed-f2c7-4aa7-a81a-2aac42cc2805">
-<span class="eqno">(4.6)<a class="headerlink" href="#equation-6fe40fed-f2c7-4aa7-a81a-2aac42cc2805" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-18427168-93a3-4f58-8158-fae851db6d8a">
+<span class="eqno">(4.6)<a class="headerlink" href="#equation-18427168-93a3-4f58-8158-fae851db6d8a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \int_0^\infty e^{-\alpha r^2} dr
 \end{equation}\]</div>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Realice integral definida</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
 <span class="n">alpha</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -782,15 +847,19 @@ f=e^{-\alpha r^2}
 </div>
 </div>
 </div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>A partir de este punto el objetivo es mostrar las posibilidades y tener el código de referencia.</p>
+</aside>
 <p>También se pueden resolver ecuaciones diferenciales. dsolve indica resolver una ecuación, y Eq indica la ecuación.
 Resuelva</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cc29b9f3-cb94-4327-ae76-cb2d945bde21">
-<span class="eqno">(4.7)<a class="headerlink" href="#equation-cc29b9f3-cb94-4327-ae76-cb2d945bde21" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-861e52ef-216e-40fb-9f82-c6c4cc86a889">
+<span class="eqno">(4.7)<a class="headerlink" href="#equation-861e52ef-216e-40fb-9f82-c6c4cc86a889" title="Permalink to this equation">#</a></span>\[\begin{equation}
 -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi(x) = E \psi(x)
 \end{equation}\]</div>
 <p>Con <span class="math notranslate nohighlight">\(k^2=\frac{2mE}{\hbar^2}\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-00f0eb7d-c2d7-4d55-b204-313f64d1e118">
-<span class="eqno">(4.8)<a class="headerlink" href="#equation-00f0eb7d-c2d7-4d55-b204-313f64d1e118" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9740df33-7181-412b-882e-6c11ea8d5bdd">
+<span class="eqno">(4.8)<a class="headerlink" href="#equation-9740df33-7181-412b-882e-6c11ea8d5bdd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{d^2}{dx^2} \psi(x) + k^2 \psi(x) = 0
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -821,18 +890,18 @@ k ⋅ψ(x) + ───(ψ(x)) = 0
 </div>
 </div>
 <p>La parte radial del Hamiltoniano del átomo de hidrógeno es</p>
-<div class="amsmath math notranslate nohighlight" id="equation-02475da3-30fd-41dd-b4d1-937b003437b7">
-<span class="eqno">(4.9)<a class="headerlink" href="#equation-02475da3-30fd-41dd-b4d1-937b003437b7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bf1a1d44-842d-428d-8bba-bff4dc469673">
+<span class="eqno">(4.9)<a class="headerlink" href="#equation-bf1a1d44-842d-428d-8bba-bff4dc469673" title="Permalink to this equation">#</a></span>\[\begin{equation}
 H = -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r}
 \end{equation}\]</div>
 <p>Se usa la función de prueba</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f181ba96-be69-4f61-9983-96dbed17a844">
-<span class="eqno">(4.10)<a class="headerlink" href="#equation-f181ba96-be69-4f61-9983-96dbed17a844" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9583bb73-380d-494b-89e3-c5a07c964939">
+<span class="eqno">(4.10)<a class="headerlink" href="#equation-9583bb73-380d-494b-89e3-c5a07c964939" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \psi^{prueba} = \left( \frac{2\alpha}{\pi} \right)^{3/4} e^{-\alpha r^2}
 \end{equation}\]</div>
 <p>La energía se obtiene como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dcc2b2ee-8eef-4173-ba02-49be7f764a09">
-<span class="eqno">(4.11)<a class="headerlink" href="#equation-dcc2b2ee-8eef-4173-ba02-49be7f764a09" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c538ada5-b0e6-40c9-9bc5-e31bbff4f69a">
+<span class="eqno">(4.11)<a class="headerlink" href="#equation-c538ada5-b0e6-40c9-9bc5-e31bbff4f69a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 E^{prueba} = \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \hat{H} \psi^{prueba} \right) dr d\theta d\phi
 \end{equation}\]</div>
 <div class="cell docutils container">
@@ -857,18 +926,18 @@ E^{prueba} = \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 
 <section id="atomo-de-hidrogeno">
 <h2><span class="section-number">4.1. </span>Átomo de hidrógeno<a class="headerlink" href="#atomo-de-hidrogeno" title="Permalink to this headline">#</a></h2>
 <p>La parte radial del Hamiltoniano del átomo de hidrógeno es</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6844e2eb-71b6-4f2f-8030-109d7f73cb8b">
-<span class="eqno">(4.12)<a class="headerlink" href="#equation-6844e2eb-71b6-4f2f-8030-109d7f73cb8b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-342116b1-59bd-4130-9fdc-87b2fde10cb7">
+<span class="eqno">(4.12)<a class="headerlink" href="#equation-342116b1-59bd-4130-9fdc-87b2fde10cb7" title="Permalink to this equation">#</a></span>\[\begin{equation}
 H = -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r}
 \end{equation}\]</div>
 <p>Se usa la función de prueba</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ec89ff24-e83f-4774-ae2d-64019421a11a">
-<span class="eqno">(4.13)<a class="headerlink" href="#equation-ec89ff24-e83f-4774-ae2d-64019421a11a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bf0ebe96-cc14-4cd2-9d85-2d2108202c1c">
+<span class="eqno">(4.13)<a class="headerlink" href="#equation-bf0ebe96-cc14-4cd2-9d85-2d2108202c1c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \psi^{prueba} = \left( \frac{2\alpha}{\pi} \right)^{3/4} e^{-\alpha r^2}
 \end{equation}\]</div>
 <p>La energía se obtiene como:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-99092245-49e0-443d-a484-0947f9cc2558">
-<span class="eqno">(4.14)<a class="headerlink" href="#equation-99092245-49e0-443d-a484-0947f9cc2558" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-c47f6bbe-c861-4ab7-97dc-b0b87cf24f6e">
+<span class="eqno">(4.14)<a class="headerlink" href="#equation-c47f6bbe-c861-4ab7-97dc-b0b87cf24f6e" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 E^{prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \hat{H} \psi^{prueba} \right) dr d\theta d\phi
 \end{eqnarray}\]</div>
 <p><strong>Paso 1.</strong> Identifique las variables y declárelas como símbolos. En este caso: <span class="math notranslate nohighlight">\(r\)</span> y <span class="math notranslate nohighlight">\(alpha\)</span>.</p>
@@ -901,8 +970,8 @@ E^{prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=
 </div>
 <p><strong>Paso 3.</strong> Opcional. Identifique si hay partes de la ecuación que pueda agrupar o distribuir con operaciones simples, como multiplicación y expréselas por separado.</p>
 <p>En este caso</p>
-<div class="amsmath math notranslate nohighlight" id="equation-878dbd7f-62cd-4bce-b5a7-3354fba5c002">
-<span class="eqno">(4.15)<a class="headerlink" href="#equation-878dbd7f-62cd-4bce-b5a7-3354fba5c002" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
+<div class="amsmath math notranslate nohighlight" id="equation-686aada2-13ba-4020-918d-fe6f489eb9a9">
+<span class="eqno">(4.15)<a class="headerlink" href="#equation-686aada2-13ba-4020-918d-fe6f489eb9a9" title="Permalink to this equation">#</a></span>\[\begin{eqnarray}
 E^{prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \hat{H} \psi^{prueba} \right) dr d\theta d\phi\\
 &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \left( -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r} \right) \psi^{prueba} \right) dr d\theta d\phi\\
 &amp;=&amp; 4\pi \int_{0}^{r=\infty} r^2 \left( {\psi^{prueba}}^* \left( \color{red}{ -\frac{1}{2}  \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \psi^{prueba}} \color{blue}{-\frac{1 }{r}\psi^{prueba}} \right)  \right) dr \\

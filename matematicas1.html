@@ -542,81 +542,135 @@ title="Print to PDF"
 <section id="serie-de-taylor">
 <h2><span class="section-number">3.1. </span>Serie de Taylor<a class="headerlink" href="#serie-de-taylor" title="Permalink to this headline">#</a></h2>
 <p>Sea una función f(x) continua e infinitamente diferenciable, esta puede expresarse en torno a <span class="math notranslate nohighlight">\(a\)</span> mediante una serie de potencias</p>
-<div class="amsmath math notranslate nohighlight" id="equation-236f2086-c3f4-4c95-bd8e-a4c507fa659f">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-236f2086-c3f4-4c95-bd8e-a4c507fa659f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6a0eafdb-9606-4544-a552-4544543d6083">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-6a0eafdb-9606-4544-a552-4544543d6083" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \sum_{n=0}^\infty c_n (x-a)^n
 \end{equation}\]</div>
 <p>La m-ésima derivada de <span class="math notranslate nohighlight">\(f(x)\)</span> es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf9e78ba-7fe7-490d-b187-bb6d8692c198">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-cf9e78ba-7fe7-490d-b187-bb6d8692c198" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-34e1cd7f-84b7-4131-92f4-e9ff3100bc0f">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-34e1cd7f-84b7-4131-92f4-e9ff3100bc0f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f^{(m)}(x) = \sum_{n=m}^\infty c_n (m!)(x-a)^{n-m} = \sum_{p=0}^\infty c_{p+m} (m!)(x-a)^{p}
 \end{equation}\]</div>
 <p>donde se ha hecho el cambio de índice <span class="math notranslate nohighlight">\(p=n-m\)</span>. Al evaluar en x=a se obtiene</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0614d057-3e5d-44f3-89f8-8bcaf4021750">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-0614d057-3e5d-44f3-89f8-8bcaf4021750" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-072253d1-87ee-454a-9fb9-4229caafec69">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-072253d1-87ee-454a-9fb9-4229caafec69" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f^{(m)}(a) = \sum_{p=0}^\infty c_{p+m} (m!)(a-a)^{p} = c_p (m!)
 \end{equation}\]</div>
 <p>El único término que sobrevive es el que tiene potencia cero, despejando <span class="math notranslate nohighlight">\(c_p\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-01a600a9-a6b2-414f-be52-73ad972f4334">
-<span class="eqno">(3.4)<a class="headerlink" href="#equation-01a600a9-a6b2-414f-be52-73ad972f4334" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ccd66046-3941-4d9d-8824-23b420c93203">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-ccd66046-3941-4d9d-8824-23b420c93203" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c_m = \frac{f^{(m)}(a)}{m!}
 \end{equation}\]</div>
 <p>Sustituyendo en la serie</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e1dc5933-6edc-4a1d-9579-b868231af86b">
-<span class="eqno">(3.5)<a class="headerlink" href="#equation-e1dc5933-6edc-4a1d-9579-b868231af86b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-47394397-43c6-41c9-baf9-3cc9cb5cfec1">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-47394397-43c6-41c9-baf9-3cc9cb5cfec1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 \end{equation}\]</div>
-<p><strong>Haga la expansión en series de Taylor en torno a <span class="math notranslate nohighlight">\(x=0\)</span> de <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [0,10]\)</span> hasta potencias de grado 10.</strong></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">derivative</span>
+<div class="important admonition">
+<p class="admonition-title">Aprendizaje de código</p>
+<p><strong>A continuación realizaremos la expansión en series de Taylor en torno a <span class="math notranslate nohighlight">\(x=0\)</span> de <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \in [0,10]\)</span> hasta potencias de grado 6.</strong></p>
+<p>Importamos las librerías necesarias</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">derivative</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Definimos la función a aproximar</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-
-<span class="n">a</span><span class="o">=</span><span class="mf">0.0</span>
-
-<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
-
-<span class="n">y</span><span class="o">=</span><span class="n">f</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mf">0.0</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Seleccionamos el centro de la serie</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mf">0.0</span>
+</pre></div>
+</div>
+<p>Damos valores a la variable “x” en el intervalo establecido en el problema</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Sumamos los términos de la serie de Taylor a corde a la ecuación</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ddf23edf-132e-43f7-86d7-3a44ebccf711">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-ddf23edf-132e-43f7-86d7-3a44ebccf711" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
+\end{equation}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
     <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="o">+</span><span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="n">n</span>
-    
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>Graficamos la función exacta, <span class="math notranslate nohighlight">\(f(x)\)</span> y la serie de Taylor, <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/matematicas1_4_0.png" src="_images/matematicas1_4_0.png" />
+<p><strong>Haga la expansión en series de Taylor en torno a <span class="math notranslate nohighlight">\(x=0\)</span> de <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \in [0,10]\)</span> hasta potencias de grado 7 y compárela con la función original.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Serie de Taylor de f(x)=e^x con x \in [0,10] usando 6 términos</span>
+</pre></div>
 </div>
+</div>
+</div>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/matematicas1_6_0.png" src="_images/matematicas1_6_0.png" />
+</div>
+</div>
+<p><strong>Adapte el código para realizar las series de Taylor de <span class="math notranslate nohighlight">\(f(x)=e^x\)</span> con:</strong></p>
+<ul class="simple">
+<li><p>6 Términos</p></li>
+<li><p>9 Términos</p></li>
+<li><p>12 Términos</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Series de Taylor de f(x)=e^x con x \in [0,10] usando 6, 9 y 12 términos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input tag_hide-output docutils container">
+<div class="cell_output docutils container">
+<img alt="_images/matematicas1_9_0.png" src="_images/matematicas1_9_0.png" />
+</div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Cuestionamiento</p>
+<p>¿Qué observa al comparar las series de Taylor truncadas a diferentes números de términos con respecto a la función original?</p>
 </div>
 </section>
 <section id="serie-de-fourier">
 <h2><span class="section-number">3.2. </span>Serie de Fourier<a class="headerlink" href="#serie-de-fourier" title="Permalink to this headline">#</a></h2>
 <p>Una función periódica se puede aproximar por</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3ff0757b-a1e8-40f8-a243-622e6a44cce8">
-<span class="eqno">(3.6)<a class="headerlink" href="#equation-3ff0757b-a1e8-40f8-a243-622e6a44cce8" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-88eaadf6-bfa7-47e8-bf1f-b7907cd1c01a">
+<span class="eqno">(3.7)<a class="headerlink" href="#equation-88eaadf6-bfa7-47e8-bf1f-b7907cd1c01a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x)=\frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n cos \left( \frac{2n\pi}{T}x \right) + b_n sin \left( \frac{2n\pi}{T}x \right) \right]
 \end{equation}\]</div>
 <p>donde</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f6c4406d-4255-4ccd-8f4f-fd8abdbf1c7c">
-<span class="eqno">(3.7)<a class="headerlink" href="#equation-f6c4406d-4255-4ccd-8f4f-fd8abdbf1c7c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ceea1307-1a77-40e6-affa-ca905f7ca621">
+<span class="eqno">(3.8)<a class="headerlink" href="#equation-ceea1307-1a77-40e6-affa-ca905f7ca621" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a_0 = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) dx
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-0da4e29f-f416-4120-b232-33d3b3ba92ab">
-<span class="eqno">(3.8)<a class="headerlink" href="#equation-0da4e29f-f416-4120-b232-33d3b3ba92ab" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-7c8caf49-5fc0-4cba-8348-c15aa74fdc76">
+<span class="eqno">(3.9)<a class="headerlink" href="#equation-7c8caf49-5fc0-4cba-8348-c15aa74fdc76" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) cos \left( \frac{2n\pi}{T}x \right) dx
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-3cc4a472-2bb9-4f4c-b8fc-6e7d46c114ab">
-<span class="eqno">(3.9)<a class="headerlink" href="#equation-3cc4a472-2bb9-4f4c-b8fc-6e7d46c114ab" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-29f63232-8df1-409e-96e5-4a48ba490a9d">
+<span class="eqno">(3.10)<a class="headerlink" href="#equation-29f63232-8df1-409e-96e5-4a48ba490a9d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) sin \left( \frac{2n\pi}{T}x \right) dx
 \end{equation}\]</div>
 <p><strong>Haga la expansión en series de Fourier de la <span class="math notranslate nohighlight">\(f(x)=x\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Serie de Fourier</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -644,12 +698,12 @@ b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) sin \left( \frac{2n\pi}{T}x \rig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matematicas1_8_0.png" src="_images/matematicas1_8_0.png" />
+<img alt="_images/matematicas1_15_0.png" src="_images/matematicas1_15_0.png" />
 </div>
 </div>
 <p><strong>Realice la expansión en series de Fourier de la función escalón en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-32b0e804-6df3-4ea3-993c-f2efe2ed3c3e">
-<span class="eqno">(3.10)<a class="headerlink" href="#equation-32b0e804-6df3-4ea3-993c-f2efe2ed3c3e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-32e75042-9740-4865-b4c2-03f81fb1c6df">
+<span class="eqno">(3.11)<a class="headerlink" href="#equation-32e75042-9740-4865-b4c2-03f81fb1c6df" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \left\{
   \begin{array}{ll}
   0      &amp; \mathrm{si\ } x &lt; 0\\
@@ -658,6 +712,13 @@ f(x) = \left\{
   \right.
 \end{equation}\]</div>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Serie de Fourier</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -685,7 +746,7 @@ f(x) = \left\{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matematicas1_10_0.png" src="_images/matematicas1_10_0.png" />
+<img alt="_images/matematicas1_18_0.png" src="_images/matematicas1_18_0.png" />
 </div>
 </div>
 </section>
