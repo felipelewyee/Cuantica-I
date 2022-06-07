@@ -39,7 +39,7 @@ class MultipleChoice:
         onclick="if(document.getElementById('{0}')
          .style.display=='none') {{document.getElementById('{0}')
          .style.display=''}}else{{document.getElementById('{0}')
-         .style.display='none'}}">Show answer</button>
+         .style.display='none'}}">Mostrar la respuesta</button>
         <div id="{0}" style="display:none">{1}</div>"""
         )
         return s.format(secrets.token_urlsafe(20), answer)
