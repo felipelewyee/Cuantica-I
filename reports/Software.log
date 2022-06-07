@@ -17,18 +17,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Benceno HF
-rhf = scf.RHF(benzene)
-E = rhf.kernel()
+from pyscf.geomopt.geometric_solver import optimize
+mol = optimize(rhf)
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Input [0;32mIn [8][0m, in [0;36m<cell line: 2>[0;34m()[0m
-[1;32m      1[0m [38;5;66;03m# Benceno HF[39;00m
-[0;32m----> 2[0m rhf [38;5;241m=[39m [43mscf[49m[38;5;241m.[39mRHF(benzene)
-[1;32m      3[0m E [38;5;241m=[39m rhf[38;5;241m.[39mkernel()
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [0;32mIn [14][0m, in [0;36m<cell line: 1>[0;34m()[0m
+[0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpyscf[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgeomopt[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgeometric_solver[39;00m [38;5;28;01mimport[39;00m optimize
+[1;32m      2[0m mol [38;5;241m=[39m optimize(rhf)
 
-[0;31mNameError[0m: name 'scf' is not defined
-NameError: name 'scf' is not defined
+File [0;32m~/anaconda3/envs/jb/lib/python3.9/site-packages/pyscf/geomopt/geometric_solver.py:23[0m, in [0;36m<module>[0;34m[0m
+[1;32m     21[0m [38;5;28;01mimport[39;00m [38;5;21;01mtempfile[39;00m
+[1;32m     22[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m
+[0;32m---> 23[0m [38;5;28;01mimport[39;00m [38;5;21;01mgeometric[39;00m
+[1;32m     24[0m [38;5;28;01mimport[39;00m [38;5;21;01mgeometric[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmolecule[39;00m
+[1;32m     25[0m [38;5;66;03m#from geometric import molecule[39;00m
+
+[0;31mModuleNotFoundError[0m: No module named 'geometric'
+ModuleNotFoundError: No module named 'geometric'
 

@@ -539,36 +539,43 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="expansion-en-series">
 <h1><span class="section-number">3. </span>Expansión en series<a class="headerlink" href="#expansion-en-series" title="Permalink to this headline">#</a></h1>
+<p>Las funciones se pueden representar como una expansión en serie. Una serie es una suma infinita de términos de una sucesión. Representar a una función como una serie es útil para resolver ecuaciones diferenciales o para generar una intución sobre el comportamiento de la función. A continuación se ejemplifica las dos expansiones en serie más usadas: series de Taylor y series de Fourier.</p>
 <section id="serie-de-taylor">
 <h2><span class="section-number">3.1. </span>Serie de Taylor<a class="headerlink" href="#serie-de-taylor" title="Permalink to this headline">#</a></h2>
 <p>Sea una función f(x) continua e infinitamente diferenciable, esta puede expresarse en torno a <span class="math notranslate nohighlight">\(a\)</span> mediante una serie de potencias</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6a0eafdb-9606-4544-a552-4544543d6083">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-6a0eafdb-9606-4544-a552-4544543d6083" title="Permalink to this equation">#</a></span>\[\begin{equation}
-f(x) = \sum_{n=0}^\infty c_n (x-a)^n
+<div class="amsmath math notranslate nohighlight" id="equation-b78b5bc5-7168-4916-8088-58e9982a7abe">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-b78b5bc5-7168-4916-8088-58e9982a7abe" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x) = \sum_{n=0}^\infty c_n (x-a)^n\,.
 \end{equation}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(c_n\)</span> es un coeficiente que no depende de <span class="math notranslate nohighlight">\(x\)</span> y que se determinará a continuación.</p>
 <p>La m-ésima derivada de <span class="math notranslate nohighlight">\(f(x)\)</span> es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-34e1cd7f-84b7-4131-92f4-e9ff3100bc0f">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-34e1cd7f-84b7-4131-92f4-e9ff3100bc0f" title="Permalink to this equation">#</a></span>\[\begin{equation}
-f^{(m)}(x) = \sum_{n=m}^\infty c_n (m!)(x-a)^{n-m} = \sum_{p=0}^\infty c_{p+m} (m!)(x-a)^{p}
+<div class="amsmath math notranslate nohighlight" id="equation-bc18aedb-f1ad-4a7d-b51f-3fc22cc35a7d">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-bc18aedb-f1ad-4a7d-b51f-3fc22cc35a7d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f^{(m)}(x) = \sum_{n=m}^\infty c_n\,m!\, (x-a)^{n-m}\,.
 \end{equation}\]</div>
-<p>donde se ha hecho el cambio de índice <span class="math notranslate nohighlight">\(p=n-m\)</span>. Al evaluar en x=a se obtiene</p>
-<div class="amsmath math notranslate nohighlight" id="equation-072253d1-87ee-454a-9fb9-4229caafec69">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-072253d1-87ee-454a-9fb9-4229caafec69" title="Permalink to this equation">#</a></span>\[\begin{equation}
-f^{(m)}(a) = \sum_{p=0}^\infty c_{p+m} (m!)(a-a)^{p} = c_p (m!)
+<p>Realizando el cambio de índice <span class="math notranslate nohighlight">\(p=n-m\)</span> tenemos la expresión:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3d24e1d7-5478-4fc0-b864-7f4d2aa1d1c1">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-3d24e1d7-5478-4fc0-b864-7f4d2aa1d1c1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f^{(m)}(x) = \sum_{p=0}^\infty c_{p+m}\,m!\, (x-a)^{p}\,.
 \end{equation}\]</div>
-<p>El único término que sobrevive es el que tiene potencia cero, despejando <span class="math notranslate nohighlight">\(c_p\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ccd66046-3941-4d9d-8824-23b420c93203">
-<span class="eqno">(3.4)<a class="headerlink" href="#equation-ccd66046-3941-4d9d-8824-23b420c93203" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<p>Al evaluar en <span class="math notranslate nohighlight">\(x=a\)</span> se obtiene</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5d665e0c-365c-4f00-94ba-be4e3843ea16">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-5d665e0c-365c-4f00-94ba-be4e3843ea16" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f^{(m)}(a) = \sum_{p=0}^\infty c_{p+m}\,m!\, (a-a)^{p} = c_m\,m!\,
+\end{equation}\]</div>
+<p>El único término que sobrevive es el que tiene potencia cero, <span class="math notranslate nohighlight">\(p=0\)</span>, despejando <span class="math notranslate nohighlight">\(c_m\)</span>:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3761c702-f7cf-447f-9844-7686aa299a10">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-3761c702-f7cf-447f-9844-7686aa299a10" title="Permalink to this equation">#</a></span>\[\begin{equation}
 c_m = \frac{f^{(m)}(a)}{m!}
 \end{equation}\]</div>
 <p>Sustituyendo en la serie</p>
-<div class="amsmath math notranslate nohighlight" id="equation-47394397-43c6-41c9-baf9-3cc9cb5cfec1">
-<span class="eqno">(3.5)<a class="headerlink" href="#equation-47394397-43c6-41c9-baf9-3cc9cb5cfec1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e8dd95c2-1011-43e9-b0a5-746615dc0443">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-e8dd95c2-1011-43e9-b0a5-746615dc0443" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 \end{equation}\]</div>
 <div class="important admonition">
 <p class="admonition-title">Aprendizaje de código</p>
-<p><strong>A continuación realizaremos la expansión en series de Taylor en torno a <span class="math notranslate nohighlight">\(x=0\)</span> de <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \in [0,10]\)</span> hasta potencias de grado 6.</strong></p>
+<p><strong>A continuación realizaremos la expansión en series de Taylor en torno a <span class="math notranslate nohighlight">\(x=0\)</span> de <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \in [0,10]\)</span> truncada hasta la potencia de grado 6.</strong></p>
 <p>Importamos las librerías necesarias</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">derivative</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
@@ -580,17 +587,17 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Seleccionamos el centro de la serie</p>
+<p>Seleccionamos el centro de la expansión en serie</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="mf">0.0</span>
 </pre></div>
 </div>
-<p>Damos valores a la variable “x” en el intervalo establecido en el problema</p>
+<p>Damos valores a la variable <span class="math notranslate nohighlight">\(x\)</span> en el intervalo establecido en el problema</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Sumamos los términos de la serie de Taylor a corde a la ecuación</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ddf23edf-132e-43f7-86d7-3a44ebccf711">
-<span class="eqno">(3.6)<a class="headerlink" href="#equation-ddf23edf-132e-43f7-86d7-3a44ebccf711" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<p>Sumamos los términos de la serie de Taylor acorde a la ecuación</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ce5da5da-13e7-49b4-8b6b-80ed381db91f">
+<span class="eqno">(3.7)<a class="headerlink" href="#equation-ce5da5da-13e7-49b4-8b6b-80ed381db91f" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 \end{equation}\]</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="mi">0</span>
@@ -606,7 +613,7 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 </pre></div>
 </div>
 </div>
-<p><strong>Haga la expansión en series de Taylor en torno a <span class="math notranslate nohighlight">\(x=0\)</span> de <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \in [0,10]\)</span> hasta potencias de grado 7 y compárela con la función original.</strong></p>
+<p><strong>Haga la expansión en series de Taylor en torno a <span class="math notranslate nohighlight">\(x=0\)</span> de <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \in [0,10]\)</span> truncada hasta la potencia de grado 7 y compárela con la función original.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Serie de Taylor de f(x)=e^x con x \in [0,10] usando 6 términos</span>
@@ -616,7 +623,7 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 </div>
 <div class="cell tag_remove-input tag_hide-output docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/matematicas1_6_0.png" src="_images/matematicas1_6_0.png" />
+<img alt="_images/matematicas1_7_0.png" src="_images/matematicas1_7_0.png" />
 </div>
 </div>
 <p><strong>Adapte el código para realizar las series de Taylor de <span class="math notranslate nohighlight">\(f(x)=e^x\)</span> con:</strong></p>
@@ -634,33 +641,50 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 </div>
 <div class="cell tag_remove-input tag_hide-output docutils container">
 <div class="cell_output docutils container">
-<img alt="_images/matematicas1_9_0.png" src="_images/matematicas1_9_0.png" />
+<img alt="_images/matematicas1_10_0.png" src="_images/matematicas1_10_0.png" />
 </div>
 </div>
 <div class="note admonition">
 <p class="admonition-title">Cuestionamiento</p>
-<p>¿Qué observa al comparar las series de Taylor truncadas a diferentes números de términos con respecto a la función original?</p>
+<p>¿Qué observa al comparar las series de Taylor truncadas a diferentes grados de potencia con respecto a la función original?</p>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">MultipleChoice</span><span class="p">(</span>
+    <span class="n">question</span><span class="p">,</span> <span class="n">answers</span><span class="p">,</span> <span class="n">correct_answer</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">explanation</span><span class="o">=</span><span class="n">explanation</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><h4>¿Cuál de las expansión en serie de Taylor es más parecida a la función? e</h4><form><input type="radio" name="answer" value="La serie truncada hasta la potencia de grado 6.">La serie truncada hasta la potencia de grado 6.<br><input type="radio" name="answer" value="La serie truncada hasta la potencia de grado 9.">La serie truncada hasta la potencia de grado 9.<br><input type="radio" name="answer" value="La serie truncada hasta la potencia de grado 12.">La serie truncada hasta la potencia de grado 12.<br></form>
+<button title="Click to show/hide content" type="button"
+onclick="if(document.getElementById('u5Rej2yYtDsVpVrS1-mUkLBoZHw')
+ .style.display=='none') {document.getElementById('u5Rej2yYtDsVpVrS1-mUkLBoZHw')
+ .style.display=''}else{document.getElementById('u5Rej2yYtDsVpVrS1-mUkLBoZHw')
+ .style.display='none'}">Mostrar la respuesta</button>
+<div id="u5Rej2yYtDsVpVrS1-mUkLBoZHw" style="display:none">La respuesta correcta es: <br>La serie truncada hasta la potencia de grado 12.<br><i>La serie truncada hasta la potencia de grado 12. Entre más términos se sumen más parecida será la serie truncada a la función, y la igualdad se dará cuando no se trunque ningún término.</i></div></div></div>
 </div>
 </section>
 <section id="serie-de-fourier">
 <h2><span class="section-number">3.2. </span>Serie de Fourier<a class="headerlink" href="#serie-de-fourier" title="Permalink to this headline">#</a></h2>
 <p>Una función periódica se puede aproximar por</p>
-<div class="amsmath math notranslate nohighlight" id="equation-88eaadf6-bfa7-47e8-bf1f-b7907cd1c01a">
-<span class="eqno">(3.7)<a class="headerlink" href="#equation-88eaadf6-bfa7-47e8-bf1f-b7907cd1c01a" title="Permalink to this equation">#</a></span>\[\begin{equation}
-f(x)=\frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n cos \left( \frac{2n\pi}{T}x \right) + b_n sin \left( \frac{2n\pi}{T}x \right) \right]
+<div class="amsmath math notranslate nohighlight" id="equation-24135056-d0bb-4c4a-b894-b39332302b51">
+<span class="eqno">(3.8)<a class="headerlink" href="#equation-24135056-d0bb-4c4a-b894-b39332302b51" title="Permalink to this equation">#</a></span>\[\begin{equation}
+f(x)=\frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n \cos \left( \frac{2n\pi}{T}x \right) + b_n \sin \left( \frac{2n\pi}{T}x \right) \right]
 \end{equation}\]</div>
 <p>donde</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ceea1307-1a77-40e6-affa-ca905f7ca621">
-<span class="eqno">(3.8)<a class="headerlink" href="#equation-ceea1307-1a77-40e6-affa-ca905f7ca621" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-af691a69-e8d3-4019-ad30-f53223474255">
+<span class="eqno">(3.9)<a class="headerlink" href="#equation-af691a69-e8d3-4019-ad30-f53223474255" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a_0 = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) dx
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-7c8caf49-5fc0-4cba-8348-c15aa74fdc76">
-<span class="eqno">(3.9)<a class="headerlink" href="#equation-7c8caf49-5fc0-4cba-8348-c15aa74fdc76" title="Permalink to this equation">#</a></span>\[\begin{equation}
-a_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) cos \left( \frac{2n\pi}{T}x \right) dx
+<div class="amsmath math notranslate nohighlight" id="equation-e9dd27f1-f89b-475e-8939-5f2b58066767">
+<span class="eqno">(3.10)<a class="headerlink" href="#equation-e9dd27f1-f89b-475e-8939-5f2b58066767" title="Permalink to this equation">#</a></span>\[\begin{equation}
+a_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) \cos \left( \frac{2n\pi}{T}x \right) dx
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-29f63232-8df1-409e-96e5-4a48ba490a9d">
-<span class="eqno">(3.10)<a class="headerlink" href="#equation-29f63232-8df1-409e-96e5-4a48ba490a9d" title="Permalink to this equation">#</a></span>\[\begin{equation}
-b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) sin \left( \frac{2n\pi}{T}x \right) dx
+<div class="amsmath math notranslate nohighlight" id="equation-639018d6-bdb8-4282-85ad-99ed099da332">
+<span class="eqno">(3.11)<a class="headerlink" href="#equation-639018d6-bdb8-4282-85ad-99ed099da332" title="Permalink to this equation">#</a></span>\[\begin{equation}
+b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) \sin \left( \frac{2n\pi}{T}x \right) dx
 \end{equation}\]</div>
 <p><strong>Haga la expansión en series de Fourier de la <span class="math notranslate nohighlight">\(f(x)=x\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
 <div class="cell docutils container">
@@ -698,12 +722,12 @@ b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) sin \left( \frac{2n\pi}{T}x \rig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matematicas1_15_0.png" src="_images/matematicas1_15_0.png" />
+<img alt="_images/matematicas1_18_0.png" src="_images/matematicas1_18_0.png" />
 </div>
 </div>
 <p><strong>Realice la expansión en series de Fourier de la función escalón en el intervalo <span class="math notranslate nohighlight">\(x \varepsilon [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-32e75042-9740-4865-b4c2-03f81fb1c6df">
-<span class="eqno">(3.11)<a class="headerlink" href="#equation-32e75042-9740-4865-b4c2-03f81fb1c6df" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6307c944-4c1c-4682-b895-ea575fd8c333">
+<span class="eqno">(3.12)<a class="headerlink" href="#equation-6307c944-4c1c-4682-b895-ea575fd8c333" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \left\{
   \begin{array}{ll}
   0      &amp; \mathrm{si\ } x &lt; 0\\
@@ -746,7 +770,7 @@ f(x) = \left\{
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/matematicas1_18_0.png" src="_images/matematicas1_18_0.png" />
+<img alt="_images/matematicas1_21_0.png" src="_images/matematicas1_21_0.png" />
 </div>
 </div>
 </section>

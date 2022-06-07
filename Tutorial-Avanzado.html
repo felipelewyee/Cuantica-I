@@ -688,7 +688,7 @@ title="Print to PDF"
 <p><strong>A continuación genere una matriz de 3x3, guárdela en la variable “matriz1”, y asígnele los valores del 1 al 9, tal que</strong></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-matriz1 = \begin{pmatrix}
+\text{matriz}1 = \begin{pmatrix}
 1 &amp; 2 &amp; 3\\
 4 &amp; 5 &amp; 6\\
 7 &amp; 8 &amp; 9\\
@@ -775,6 +775,10 @@ M v = \lambda v
 </div>
 </div>
 <p><strong>Encuentre los valores propios y vectores propios de la matriz 1, e imprímalos.</strong></p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Si la matriz es simétrica o hermitiana es más adecuado usar <code class="docutils literal notranslate"><span class="pre">np.linalg.eigh(matriz)</span></code>.</p>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Valores y vectores propios</span>
@@ -837,7 +841,7 @@ y = \sin(x)
 </div>
 <aside class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>Pruebe cambiar <code class="docutils literal notranslate"><span class="pre">plt.scatter(x,y)</span></code> por <code class="docutils literal notranslate"><span class="pre">plt.plot(x,y)</span></code> para tener una gráfica continua.</p>
+<p>Prueba cambiar <code class="docutils literal notranslate"><span class="pre">plt.scatter(x,y)</span></code> por <code class="docutils literal notranslate"><span class="pre">plt.plot(x,y)</span></code> para tener una gráfica continua.</p>
 </aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -936,17 +940,17 @@ y = \sin(x)
 <p>1 Integre el cuadrado de la función de onda en el dominio.</p>
 <div class="math notranslate nohighlight">
 \[
-N^2 = \int_{x_1}^{x_2} |\psi_ {original}|^2 dr
+N^2 = \int_{x_1}^{x_2} |\psi_ {\rm original}|^2 dr
 \]</div>
 <p>2 Obtenga la norma.</p>
 <div class="math notranslate nohighlight">
 \[
-N = \sqrt{N^2} = \sqrt{\int_{x_1}^{x_2} |\psi_{original}|^2 dx}
+N = \sqrt{N^2} = \sqrt{\int_{x_1}^{x_2} |\psi_{\rm original}|^2 dx}
 \]</div>
 <p>3 Multiplique la función de onda original por el inverso de su norma.</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{normalizada} = \frac{1}{N} \psi_{original}
+\psi_{\rm normalizada} = \frac{1}{N} \psi_{\rm original}
 \]</div>
 </div>
 <div class="cell docutils container">
@@ -988,10 +992,12 @@ N = 4.242640687119285
 \psi = e^{-(x^2+y^2+z^2)}=e^{-r^2}
 \]</div>
 <p>La integral de su cuadrado será</p>
-<div class="math notranslate nohighlight">
-\[
-N^2 = \int \psi^* \psi d\textbf{r} = \int\limits_{0}^\infty \int\limits_{0}^{2\pi} \int\limits_{0}^\pi\psi^* \psi r^2 \sin\theta dr d\phi d\theta = \int\limits_{0}^{\pi} \sin \theta d\theta \int\limits_{0}^{2\pi} d\phi \int\limits_{0}^\infty e^{-2r^2} r^2 dr = \left(2\pi\right)\left(2\right)\left(\frac{1}{8}\sqrt{\frac{\pi}{2}}\right) = \left(\frac{\pi}{2}\right)^{3/2}
-\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{align*}
+N^2 &amp;= \int \bigg( \psi^* \psi \bigg)\,d\textbf{r}  = \int\limits_{0}^\infty \int\limits_{0}^{2\pi} \int\limits_{0}^\pi\bigg(\psi^* \psi\, r^2 \sin\theta \bigg) dr d\phi d\theta \\
+&amp;= \int\limits_{0}^{\pi} \sin \theta d\theta \int\limits_{0}^{2\pi} d\phi \int\limits_{0}^\infty e^{-2r^2} r^2 dr \\
+&amp;= \left(2\pi\right)\left(2\right)\left(\frac{1}{8}\sqrt{\frac{\pi}{2}}\right) = \left(\frac{\pi}{2}\right)^{3/2}
+\end{align*}\]</div>
 <p>El siguiente código evalúa la integral y la guarda en la variable “norm2”.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">norm2</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">tplquad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
@@ -1067,12 +1073,12 @@ N^2 = \int \psi^* \psi d\textbf{r} = \int\limits_{0}^\infty \int\limits_{0}^{2\p
 <p>Proponga una <span class="math notranslate nohighlight">\(\psi\)</span> normalizada, y compruebe que la integral de su cuadrado da 1. Recuerde la siguiente relación</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{normalizada} = \frac{1}{\sqrt{N}} \psi_{original}
+\psi_{\rm normalizada} = \frac{1}{\sqrt{N}} \psi_{\rm original}
 \]</div>
 <p>y que para este ejercicio</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{original} = e^{-r}
+\psi_{\rm original} = e^{-r}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1098,7 +1104,7 @@ N^2 = \int \psi^* \psi d\textbf{r} = \int\limits_{0}^\infty \int\limits_{0}^{2\p
 <p><strong>Repita el proceso de normalización para <span class="math notranslate nohighlight">\(\psi=re^{-r^2}\)</span>.</strong> La integral sin normalizar será</p>
 <div class="math notranslate nohighlight">
 \[
-\int \psi^* \psi d\textbf{r} = \frac{3}{4}\left(\frac{\pi}{2}\right)^{3/2}
+\int \psi^* \psi \,d\textbf{r} = \frac{3}{4}\left(\frac{\pi}{2}\right)^{3/2}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

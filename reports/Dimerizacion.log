@@ -1,15 +1,4 @@
 Traceback (most recent call last):
-  File "/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/nbclient/client.py", line 730, in _async_poll_for_reply
-    msg = await ensure_async(self.kc.shell_channel.get_msg(timeout=new_timeout))
-  File "/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/nbclient/util.py", line 96, in ensure_async
-    result = await obj
-  File "/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/jupyter_client/channels.py", line 230, in get_msg
-    raise Empty
-_queue.Empty
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
   File "/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
   File "/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
@@ -22,18 +11,37 @@ Traceback (most recent call last):
     return future.result()
   File "/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
     await self.async_execute_cell(
-  File "/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/nbclient/client.py", line 949, in async_execute_cell
-    exec_reply = await self.task_poll_for_reply
-  File "/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/nbclient/client.py", line 754, in _async_poll_for_reply
-    await self._async_handle_timeout(timeout, cell)
-  File "/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/nbclient/client.py", line 801, in _async_handle_timeout
-    raise CellTimeoutError.error_from_timeout_and_cell(
-nbclient.exceptions.CellTimeoutError: A cell timed out while it was being executed, after 30 seconds.
-The message was: Cell execution timed out.
-Here is a preview of the cell contents:
--------------------
-['N2O4 = pyscf.gto.Mole(atom="""', '   N       -4.84638        1.76109        0.00000', '   N       -3.46888        1.78415        0.00000', '   O       -2.82385        2.93169       -0.00000', '   O       -2.85055        0.76276        0.00000']
-...
-['N2O4_eq = optimize(rks)', '', 'rks = dft.RKS(N2O4_eq)', 'rks.xc = "B3LYP"', 'n2o4 = rks.kernel()']
--------------------
+  File "/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/jfhlewyee/anaconda3/envs/jb/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Descomentar estas líneas si está en modo online
+
+#!pip install pyscf
+#!pip install geomeTRIC
+
+import pyscf
+from pyscf import scf
+from pyscf import dft
+from pyscf.geomopt.geometric_solver import optimize
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Input [0;32mIn [2][0m, in [0;36m<cell line: 9>[0;34m()[0m
+[1;32m      7[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpyscf[39;00m [38;5;28;01mimport[39;00m scf
+[1;32m      8[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpyscf[39;00m [38;5;28;01mimport[39;00m dft
+[0;32m----> 9[0m [38;5;28;01mfrom[39;00m [38;5;21;01mpyscf[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgeomopt[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgeometric_solver[39;00m [38;5;28;01mimport[39;00m optimize
+
+File [0;32m~/anaconda3/envs/jb/lib/python3.9/site-packages/pyscf/geomopt/geometric_solver.py:23[0m, in [0;36m<module>[0;34m[0m
+[1;32m     21[0m [38;5;28;01mimport[39;00m [38;5;21;01mtempfile[39;00m
+[1;32m     22[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m
+[0;32m---> 23[0m [38;5;28;01mimport[39;00m [38;5;21;01mgeometric[39;00m
+[1;32m     24[0m [38;5;28;01mimport[39;00m [38;5;21;01mgeometric[39;00m[38;5;21;01m.[39;00m[38;5;21;01mmolecule[39;00m
+[1;32m     25[0m [38;5;66;03m#from geometric import molecule[39;00m
+
+[0;31mModuleNotFoundError[0m: No module named 'geometric'
+ModuleNotFoundError: No module named 'geometric'
 
