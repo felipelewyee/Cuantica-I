@@ -74,13 +74,13 @@ from pyscf import dft
 # h2o = h2o.build()
 # ```
 
-# In[11]:
+# In[3]:
 
 
 # h2o
 
 
-# In[12]:
+# In[4]:
 
 
 h2o = pyscf.gto.Mole(atom="""
@@ -111,13 +111,13 @@ h2o = h2o.build()
 # rks.kernel()
 # ```
 
-# In[13]:
+# In[5]:
 
 
 # LDA
 
 
-# In[14]:
+# In[6]:
 
 
 rks = dft.RKS(h2o)
@@ -158,13 +158,13 @@ rks.kernel()
 # rks.kernel()
 # ```
 
-# In[15]:
+# In[7]:
 
 
 # PBE
 
 
-# In[16]:
+# In[8]:
 
 
 rks = dft.RKS(h2o)
@@ -191,13 +191,13 @@ rks.kernel()
 # rks.kernel()
 # ```
 
-# In[17]:
+# In[9]:
 
 
 # TPSS
 
 
-# In[19]:
+# In[10]:
 
 
 rks = dft.RKS(h2o)
@@ -223,13 +223,13 @@ rks.kernel()
 # rks.kernel()
 # ```
 
-# In[20]:
+# In[11]:
 
 
 #M062X
 
 
-# In[22]:
+# In[12]:
 
 
 rks = dft.RKS(h2o)

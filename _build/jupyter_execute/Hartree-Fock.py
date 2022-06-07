@@ -42,7 +42,7 @@ sp.init_printing()
 
 # **Paso 1.** Especificar molécula: Coordenadas de los núcleos <span style="color:red">$\{R_A\}$</span>, Carga de los núcleos <span style="color:red">$\{Z_A\}$</span>, Número de electrones <span style="color:red">$(N)$</span>, y funciones base <span style="color:red">$\{\phi_i\}$</span>.
 
-# In[3]:
+# In[2]:
 
 
 H2 = pyscf.gto.Mole(atom = """
@@ -74,7 +74,7 @@ H2 = H2.build()
 # (\mu \nu|\sigma \lambda) = \int \int \phi_\mu^*(r_1) \phi_\nu(r_1) \frac{1}{r_{12}} \phi_\sigma^*(r_2) \phi_\lambda(r_2) dr_1 dr_2
 # $$
 
-# In[4]:
+# In[3]:
 
 
 S = H2.intor('int1e_ovlp')
@@ -99,7 +99,7 @@ ndocc = int(H2.nelectron/2)
 
 # **Paso 3.** Proponer una matriz C.
 
-# In[5]:
+# In[4]:
 
 
 C = np.zeros((nbf,nbf))
@@ -125,7 +125,7 @@ print(C)
 # - **Paso 7.** $E_{elec} = \sum_\mu \sum_\nu P_{\nu \mu}(H_{\mu \nu} + F_{\mu \nu})$
 # - **Paso 8.** ¿$E_i=E_{i-1}$?, Sí: acabé. No: volver a paso 4.
 
-# In[6]:
+# In[5]:
 
 
 E_old = -1.0
@@ -200,7 +200,7 @@ while(not converged):
 # E_{Tot} = E_{elec} + E_{nuc}
 # $$
 
-# In[7]:
+# In[6]:
 
 
 E_nuc = H2.energy_nuc()
@@ -219,13 +219,13 @@ print("Energia Total: ", E_T)
 # |H|0.0000|0.0000|0.7414|
 # 
 
-# In[8]:
+# In[7]:
 
 
 from pyscf import scf
 
 
-# In[9]:
+# In[8]:
 
 
 H2 = pyscf.gto.Mole(atom = """
@@ -235,7 +235,7 @@ H2 = pyscf.gto.Mole(atom = """
 H2 = H2.build()
 
 
-# In[10]:
+# In[9]:
 
 
 rhf = scf.RHF(H2)

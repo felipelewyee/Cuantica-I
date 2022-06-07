@@ -35,7 +35,7 @@
 # ```
 
 # La primera vez que se presente una instrucción o un bloque de código se mostrará directamente para copiar y pegar en la celda, por ejemplo, el siguiente código muestra como realizar una impresión:
-# ````{admonition} Aprendizaje de Código
+# ````{admonition} Aprendizaje de código
 # :class: important
 # ```
 # print("Bienvenidos al manual de Química Cuántica I")
@@ -70,7 +70,7 @@ print("Bienvenidos al manual de Química Cuántica I, esta es la respuesta ocult
 # ```{admonition} En la misma página web
 # :class: tip
 # :class: dropdown
-# Puede ejecutar los notebooks directamente en el libro haciendo clic sobre el botón.
+# Puede ejecutar los notebooks directamente en el libro haciendo clic sobre el botón de la nave, y luego sobre el botón de `Live Code`.
 # 
 # ![Live Code](images/live_code.png)
 # ```
@@ -79,9 +79,15 @@ print("Bienvenidos al manual de Química Cuántica I, esta es la respuesta ocult
 # :class: tip
 # :class: dropdown
 # 
-# Los notebooks pueden ejecutarse en línea desde `Google Colab` al presionar el ícono de la nave y dar clic sobre Colab, este ícono aparece en la parte superior de cada notebook. Los archivos generados en Google Colab se guardan automáticamente en su Google Drive. El único requisito es tener una cuenta de Gmail.
+# Los notebooks pueden ejecutarse en línea desde `Google Colab` al presionar el ícono de la nave y dar clic sobre Colab, este ícono aparece en la parte superior de cada notebook. Los archivos generados en Google Colab se guardan automáticamente en su Google Drive.
 # 
 # ![Google Colab example button](images/google_colab.png)
 # ```
 # 
 # Los ejercicios de este libro requieren un conocimiento básico de Python, mismo que puede adquirirse en el primer capítulo del libro.
+
+# In[ ]:
+
+
+
+
