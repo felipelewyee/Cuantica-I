@@ -12,9 +12,9 @@ import sympy as sym
 
 
 # En vez de realizar operaciones de manera numérica, el álgebra simbólica guarda las operaciones como símbolos. Obtenga la siguiente operación:
-# \begin{equation}
+# \begin{equation*}
 # \sqrt{11}
-# \end{equation}
+# \end{equation*}
 # 
 # ````{admonition} Aprendizaje de código
 # :class: importantUsando python estándar
@@ -60,7 +60,7 @@ print(a)
 
 
 # ```{admonition} Para pensar
-# ¿Qué diferencias observa entre los resultados de python estándar y de python simbólico?
+# ¿Qué diferencias observa entre los resultados de `print(a)` de python estándar y de python simbólico?
 # ```
 
 # ````{admonition} Aprendizaje de código
@@ -259,13 +259,13 @@ sym.pprint(sym.diff(f,x,2))
 # sym.integrate(funcion, variable a integrar1, variable a integrar2, variable a integrar3,...)
 # ~~~
 # Defina la función
-# \begin{equation}
+# \begin{equation*}
 # f=e^{-r}
-# \end{equation}
+# \end{equation*}
 # Y realice la integral indefinida
-# \begin{equation}
+# \begin{equation*}
 # \int e^{-r} dr
-# \end{equation}
+# \end{equation*}
 # ````
 
 # In[24]:
@@ -291,13 +291,13 @@ sym.pprint(sym.integrate(f,r))
 # ~~~
 # ````
 # Defina la función
-# \begin{equation}
+# \begin{equation*}
 # f=e^{-\alpha r^2}
-# \end{equation}
+# \end{equation*}
 # Y realice la integral
-# \begin{equation}
+# \begin{equation*}
 # \int_0^\infty e^{-\alpha r^2} dr
-# \end{equation}
+# \end{equation*}
 
 # In[26]:
 
@@ -320,13 +320,13 @@ sym.pprint(sym.integrate(f,(r,0,sym.oo)))
 # 
 # También se pueden resolver ecuaciones diferenciales. dsolve indica resolver una ecuación, y Eq indica la ecuación.
 # Resuelva
-# \begin{equation}
-# -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi(x) = E \psi(x)
-# \end{equation}
-# Con $k^2=\frac{2mE}{\hbar^2}$
-# \begin{equation}
-# \frac{d^2}{dx^2} \psi(x) + k^2 \psi(x) = 0
-# \end{equation}
+# \begin{equation*}
+# -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} \psi(x) = E \psi(x)\,,
+# \end{equation*}
+# definiendo $k^2=\frac{2mE}{\hbar^2}$
+# \begin{equation*}
+# \frac{d^2}{dx^2} \psi(x) + k^2 \psi(x) = 0\,.
+# \end{equation*}
 
 # In[28]:
 
@@ -342,19 +342,19 @@ sym.pprint(sym.dsolve(eq,psi(x)))
 
 
 # La parte radial del Hamiltoniano del átomo de hidrógeno es
-# \begin{equation}
+# \begin{equation*}
 # H = -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r}
-# \end{equation}
+# \end{equation*}
 # 
 # Se usa la función de prueba
-# \begin{equation}
-# \psi^{prueba} = \left( \frac{2\alpha}{\pi} \right)^{3/4} e^{-\alpha r^2}
-# \end{equation}
+# \begin{equation*}
+# \psi_{\rm prueba} = \left( \frac{2\alpha}{\pi} \right)^{3/4} e^{-\alpha r^2}
+# \end{equation*}
 # 
 # La energía se obtiene como:
-# \begin{equation}
-# E^{prueba} = \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \hat{H} \psi^{prueba} \right) dr d\theta d\phi
-# \end{equation}
+# \begin{equation*}
+# E_{\rm prueba} = \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 \sin \theta \bigg[ \big( \psi_{\rm prueba}^* \hat{H} \psi_{\rm prueba} \bigg] dr d\theta d\phi
+# \end{equation*}
 # 
 
 # In[29]:
@@ -371,19 +371,19 @@ sym.pprint(sym.integrate(4*sym.pi*r**2*psi*(-1/2*1/r**2*sym.diff(r**2*sym.diff(p
 # ## Átomo de hidrógeno
 
 # La parte radial del Hamiltoniano del átomo de hidrógeno es
-# \begin{equation}
+# \begin{equation*}
 # H = -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r}
-# \end{equation}
+# \end{equation*}
 # 
 # Se usa la función de prueba
-# \begin{equation}
-# \psi^{prueba} = \left( \frac{2\alpha}{\pi} \right)^{3/4} e^{-\alpha r^2}
-# \end{equation}
+# \begin{equation*}
+# \psi_{\rm prueba} = \left( \frac{2\alpha}{\pi} \right)^{3/4} e^{-\alpha r^2}
+# \end{equation*}
 # 
 # La energía se obtiene como:
-# \begin{eqnarray}
-# E^{prueba} &=& \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \hat{H} \psi^{prueba} \right) dr d\theta d\phi
-# \end{eqnarray}
+# \begin{eqnarray*}
+# E_{\rm prueba} &=& \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 \sin \theta \left( \psi_{\rm prueba}^* \hat{H} \psi_{\rm prueba} \right) dr d\theta d\phi
+# \end{eqnarray*}
 # 
 
 # **Paso 1.** Identifique las variables y declárelas como símbolos. En este caso: $r$ y $alpha$.
@@ -395,7 +395,7 @@ r=sym.symbols("r")
 alpha=sym.symbols("alpha",positive="True") #positive=True indica que alpha solo puede ser positivo.
 
 
-# **Paso 2.** Identifique si existe alguna función que pueda ser expresada con las variables anteriores. En este caso sí la hay y es $\psi^{prueba}$.
+# **Paso 2.** Identifique si existe alguna función que pueda ser expresada con las variables anteriores. En este caso sí la hay y es $\psi_{\rm prueba}$.
 
 # In[31]:
 
@@ -407,11 +407,11 @@ sym.pprint(psi)
 # **Paso 3.** Opcional. Identifique si hay partes de la ecuación que pueda agrupar o distribuir con operaciones simples, como multiplicación y expréselas por separado.
 # 
 # En este caso
-# \begin{eqnarray}
-# E^{prueba} &=& \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \hat{H} \psi^{prueba} \right) dr d\theta d\phi\\
-# &=& \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 sin \theta \left( {\psi^{prueba}}^* \left( -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r} \right) \psi^{prueba} \right) dr d\theta d\phi\\
-# &=& 4\pi \int_{0}^{r=\infty} r^2 \left( {\psi^{prueba}}^* \left( \color{red}{ -\frac{1}{2}  \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \psi^{prueba}} \color{blue}{-\frac{1 }{r}\psi^{prueba}} \right)  \right) dr \\
-# \end{eqnarray}
+# \begin{eqnarray*}
+# E_{\rm prueba} &=& \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 \sin \theta \bigg( \psi_{\rm prueba}^* \hat{H} \psi_{\rm prueba} \bigg) dr d\theta d\phi\\
+# &=& \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 \sin \theta \left\{ \psi_{\rm prueba}^* \left[ -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r} \right] \psi_{\rm prueba} \right\} dr d\theta d\phi\\
+# &=& 4\pi \int_{0}^{r=\infty} r^2 \left[ \psi_{\rm prueba}^* \left( \color{red}{ -\frac{1}{2}  \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \psi_{\rm prueba}} \color{blue}{-\frac{1 }{r}\psi_{\rm prueba}} \right)  \right] dr \\
+# \end{eqnarray*}
 # 
 # A la parte en $\color{red}{rojo}$ le llamaremos A, y a la parte en $\color{blue}{azul}$ le llamaremos B.
 
