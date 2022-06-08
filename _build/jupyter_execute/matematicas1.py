@@ -167,7 +167,7 @@ plt.show()
 
 
 from OptMultiple import MultipleChoice
-question = "¿Cuál de las expansión en serie de Taylor es más parecida a la función? e"
+question = "¿Cuál de las expansión en serie de Taylor es más parecida a la función?"
 answers = [
     "La serie truncada hasta la potencia de grado 6.",
     "La serie truncada hasta la potencia de grado 9.",
@@ -207,7 +207,7 @@ MultipleChoice(
 # \end{equation}
 # 
 
-# **Haga la expansión en series de Fourier de la $f(x)=x$ en el intervalo $x \varepsilon [-10,10]$ con $n=10$**
+# **Haga la expansión en series de Fourier de la $f(x)=x$ en el intervalo $x \in [-10,10]$ con $n=10$**
 
 # In[7]:
 
@@ -242,7 +242,7 @@ plt.plot(x,x)
 plt.show()
 
 
-# **Realice la expansión en series de Fourier de la función escalón en el intervalo $x \varepsilon [-10,10]$ con $n=10$**
+# **Realice la expansión en series de Fourier de la función escalón en el intervalo $x \in [-10,10]$ con $n=10$**
 # 
 # \begin{equation}
 # f(x) = \left\{
