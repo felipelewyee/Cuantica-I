@@ -3,7 +3,7 @@
 
 # # Álgebra simbólica
 
-# Sympy es una librería de álgebra simbólica. Se importa así:
+# `Sympy` es una librería de álgebra simbólica. Se importa así:
 
 # In[1]:
 

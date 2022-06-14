@@ -17,25 +17,32 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Descomentar estas líneas si está en modo online
-
-#!pip install pyscf
-
-import pyscf
-from pyscf import scf
-from pyscf import mp
-import numpy as np
+from OptMultiple import MultipleChoice
+question = "¿Cuál de las expansión en serie de Taylor es más parecida a la función?"
+answers = [
+    "La serie truncada hasta la potencia de grado 6.$$E=0$$",
+    "La serie truncada hasta la potencia de grado 9.",
+    "La serie truncada hasta la potencia de grado 12."
+]
+explanation = (
+    "La serie truncada hasta la potencia de grado 12. " 
+    "Entre más términos se sumen más parecida será la serie truncada a la función, "
+    "y la igualdad se dará cuando no se trunque ningún término \(E\)."
+)
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_900559/708205819.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      3[0m [0;31m#!pip install pyscf[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      4[0m [0;34m[0m[0m
-[0;32m----> 5[0;31m [0;32mimport[0m [0mpyscf[0m[0;34m[0m[0m
-[0m[1;32m      6[0m [0;32mfrom[0m [0mpyscf[0m [0;32mimport[0m [0mscf[0m[0;34m[0m[0m
-[1;32m      7[0m [0;32mfrom[0m [0mpyscf[0m [0;32mimport[0m [0mmp[0m[0;34m[0m[0m
+Traceback [0;36m(most recent call last)[0m:
 
-[0;31mModuleNotFoundError[0m: No module named 'pyscf'
-ModuleNotFoundError: No module named 'pyscf'
+  File [1;32m"/home/jebarrios/anaconda3/envs/QCI/lib/python3.7/site-packages/IPython/core/interactiveshell.py"[0m, line [1;32m3552[0m, in [1;35mrun_code[0m
+    exec(code_obj, self.user_global_ns, self.user_ns)
+
+[0;36m  File [0;32m"/tmp/ipykernel_897829/1953277121.py"[0;36m, line [0;32m1[0;36m, in [0;35m<module>[0;36m[0m
+[0;31m    from OptMultiple import MultipleChoice[0m
+
+[0;36m  File [0;32m"/home/jebarrios/TQMex Dropbox/Jose Eduardo Barrios Vargas/FQ-UNAM/2_github/Cuantica-I/OptMultiple.py"[0;36m, line [0;32m30[0m
+[0;31m    s += "<p><span class="math notranslate nohighlight">%s</span></p>" % self.question[0m
+[0m                             ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
+
+SyntaxError: invalid syntax (OptMultiple.py, line 30)
 

@@ -27,15 +27,15 @@ class MultipleChoice:
         #s+= '::before'
         s+= 'Cuestionamiento'
         s+= '</p>'
-        s += "<p>%s</p>" % self.question
-        s += "<form>"
+        s += '<p><span class="math notranslate nohighlight">%s</span></p>' % self.question
+        s += '<form>'
         for ans in self.answers:
-            s += f'<input type="radio" name="answer" value="{ans}">{ans}<br>'
-        s += "</form>"
-        answer = "La respuesta correcta es: <br>"
-        answer += self.answers[self.correct_answer]
+            s += f'<input type="radio" name="answer" value="{ans}"><span class="math notranslate nohighlight">{ans}</span><br>'
+        s += '</form>'
+        answer = 'La respuesta correcta es: <br>'
+        answer += f"<b>"+self.answers[self.correct_answer]+f"</b>"
         if self.explanation is not None:
-            answer += f"<br><i>" + self.explanation + "</i>"
+            answer += f'<br><span class="math notranslate nohighlight">' + self.explanation + f'</span>'
         s += dedent(
 """
 <details class="toggle-details">
@@ -47,7 +47,7 @@ class MultipleChoice:
 <span class="toggle-details__summary-text">Mostrar respuesta</span>
 </summary>
 <div class="cell_output docutils container">
-<div>{0}</div>
+<div><span class="math notranslate nohighlight">{0}</span></div>
 </div></details>
 """
         )
