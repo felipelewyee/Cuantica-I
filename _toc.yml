@@ -6,16 +6,15 @@ parts:
   chapters:
   - file: Tutorial-Basico
   - file: Tutorial-Avanzado
-  - file: matematicas1
-  - file: matematicas2
+  - file: Series
 - caption: Sistemas Sencillos
   numbered: true
   chapters:
   - file: Caja
+  - file: Tunel-Region-Infinita
+  - file: Tunel-Region-Finita
     sections:
-      - file: CajaEjercicios
-  - file: Tunel_Region_Infinita
-  - file: Tunel_Region_Finita
+      - file: CajaConTope
   - file: Anillo
   - file: Esfera
   - file: Rotor
@@ -28,7 +27,10 @@ parts:
 - caption: "Métodos Aproximados"
   numbered: true
   chapters:
-  - file: Variacional_Lineal
+  - file: Principio-Variacional
+    sections:
+      - file: Algebra-Simbolica
+  - file: Variacional-Lineal
   - file: PerturbacionesSinDegeneracion
   - file: Huckel
 - caption: Sistemas de Muchos Electrones
@@ -39,7 +41,3 @@ parts:
   - file: Moller-Plesset
   - file: DFT
   - file: Dimerizacion
-- caption: Anexos
-  numbered: true
-  chapters:
-  - file: CajaConTope
