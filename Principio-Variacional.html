@@ -1,0 +1,774 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>13. Principio Variacional &#8212; Cuántica I</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="13.3. Álgebra simbólica" href="Algebra-Simbolica.html" />
+    <link rel="prev" title="12. Orbitales Atómicos" href="Orbitales.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Cuántica I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    La Química Cuántica a tu alcance
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Basico.html">
+   1. Tutorial Básico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Avanzado.html">
+   2. Tutorial Avanzado
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Series.html">
+   3. Expansión en series
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Sistemas Sencillos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Caja.html">
+   4. Partícula en la caja
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tunel-Region-Infinita.html">
+   5. Penetración
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Tunel-Region-Finita.html">
+   6. Efecto Túnel
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CajaConTope.html">
+     6.3. Efecto Túnel en la Caja
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Anillo.html">
+   7. Partícula en el anillo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Esfera.html">
+   8. Partícula en la esfera
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rotor.html">
+   9. Rotor Rígido
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Oscilador.html">
+   10. Oscilador Armónico Cuántico
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Átomo de Hidrógeno
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Radial.html">
+   11. Solución Radial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Orbitales.html">
+   12. Orbitales Atómicos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Métodos Aproximados
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   13. Principio Variacional
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Algebra-Simbolica.html">
+     13.3. Álgebra simbólica
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Variacional-Lineal.html">
+   14. Método variacional lineal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="PerturbacionesSinDegeneracion.html">
+   15. Teoría de perturbaciones (niveles de energía no degenerados)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Huckel.html">
+   16. Método de Hückel
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Sistemas de Muchos Electrones
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software.html">
+   17. Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Hartree-Fock.html">
+   18. Hartree-Fock-Roothan (HF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Moller-Plesset.html">
+   19. Möller-Plesset (MPn)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="DFT.html">
+   20. Teoría de funcionales de la densidad (DFT)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Dimerizacion.html">
+   21. Dimerización de
+   <span class="math notranslate nohighlight">
+    \(NO_2\)
+   </span>
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/Principio-Variacional.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Principio-Variacional.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Colab"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="headerbtn__text-container">Colab</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="initThebeSBT()"
+  class="headerbtn headerbtn-launch-thebe"
+  data-toggle="tooltip"
+data-placement="left"
+title="Launch Thebe"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="headerbtn__text-container">Live Code</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/Principio-Variacional.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atomo-de-hidrogeno">
+   13.1. Átomo de hidrógeno
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   13.2. Referencias
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Principio Variacional</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#atomo-de-hidrogeno">
+   13.1. Átomo de hidrógeno
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   13.2. Referencias
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="principio-variacional">
+<h1><span class="section-number">13. </span>Principio Variacional<a class="headerlink" href="#principio-variacional" title="Permalink to this headline">#</a></h1>
+<div class="note admonition">
+<p class="admonition-title">Principio Variacional</p>
+<p>Si se usa una función de prueba normalizada que satisfaga las condiciones de frontera del sistema, el valor esperado del Hamiltoniano es un límite superior a la energía, es decir,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+    E_{\rm prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 \sin \theta \left( \psi_{\rm prueba}^* \hat{H} \psi_{\rm prueba} \right) dr d\theta d\phi \leq E_{\rm exacta} \&gt;\&gt;.
+\end{eqnarray*}\]</div>
+<p>Esto significa que uno puede proponer una función de prueba que satisfaga las condiciones del sistema, y el valor esperado de la energía siempre estará por arriba del valor exacto, y sólo será igual si la función de prueba es igual a la función de onda exacta del sistema.</p>
+</div>
+<section id="atomo-de-hidrogeno">
+<h2><span class="section-number">13.1. </span>Átomo de hidrógeno<a class="headerlink" href="#atomo-de-hidrogeno" title="Permalink to this headline">#</a></h2>
+<p>La parte radial del Hamiltoniano del átomo de hidrógeno es</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+H = -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r} \&gt;\&gt;.
+\end{equation*}\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>El Hamiltoniano del átomo de hidrógeno contiene una parte radial y una parte angular, sin embargo, estas son separables y la energía sólo depende de la parte radial.</p>
+</aside>
+<p>Considere la función de prueba con <span class="math notranslate nohighlight">\(\alpha&gt;0\)</span></p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+\psi_{\rm prueba} = \left( \frac{2\alpha}{\pi} \right)^{3/4} e^{-\alpha r^2}  \&gt;\&gt;,
+\end{equation*}\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note que la función de prueba propuesta no es la función de onda exacta</p>
+</aside>
+<p>calcule la energía correspondiente al átomo de hidrógeno usando la función de prueba,</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+E_{\rm prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 \sin \theta \left( \psi_{\rm prueba}^* \hat{H} \psi_{\rm prueba} \right) dr d\theta d\phi \&gt;\&gt;.
+\end{eqnarray*}\]</div>
+<p><strong>Paso 0.</strong> Importe sympy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importe sympy</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Paso 1.</strong> Identifique las variables y declárelas como símbolos. En este caso: <span class="math notranslate nohighlight">\(r\)</span> y <span class="math notranslate nohighlight">\(alpha\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declare las variables r y alpha como símbolos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;r&quot;</span><span class="p">)</span>
+<span class="n">alpha</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">,</span><span class="n">positive</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">)</span> <span class="c1">#positive=True indica que alpha solo puede ser positivo.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Paso 2.</strong> Declare la función de prueba, <span class="math notranslate nohighlight">\(\psi_{\rm prueba}\)</span>, con las variables anteriores.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declare la función de prueba</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">alpha</span><span class="o">/</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">sym</span><span class="o">.</span><span class="n">S</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>               2
+ 3/4  3/4  -α⋅r 
+2   ⋅α   ⋅ℯ     
+────────────────
+       3/4      
+      π         
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Paso 3.</strong> Opcional. Identifique si hay partes de la ecuación que pueda agrupar o distribuir con operaciones simples, como multiplicación y expréselas por separado.</p>
+<p>En este caso</p>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{eqnarray*}
+E_{\rm prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 \sin \theta \bigg( \psi_{\rm prueba}^* \hat{H} \psi_{\rm prueba} \bigg) dr d\theta d\phi\\
+&amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 \sin \theta \left\{ \psi_{\rm prueba}^* \left[ -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1}{r} \right] \psi_{\rm prueba} \right\} dr d\theta d\phi\\
+&amp;=&amp; 4\pi \int_{0}^{r=\infty} r^2 \left[ \psi_{\rm prueba}^* \left( \color{red}{ -\frac{1}{2}  \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \psi_{\rm prueba}} \color{blue}{-\frac{1 }{r}\psi_{\rm prueba}} \right)  \right] dr \\
+\end{eqnarray*}\]</div>
+<p>Sugerimos que a la parte en <span class="math notranslate nohighlight">\(\color{red}{rojo}\)</span> le llamemos A, y a la parte en <span class="math notranslate nohighlight">\(\color{blue}{azul}\)</span> le llamemos B. Esto es opcional pero hará más fácil escribir la integral.</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Recuerde que puede hacer derivadas con la función <code class="docutils literal notranslate"><span class="pre">sym.diff()</span></code></p>
+</aside>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declare A (rojo) y B (azul)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Primera parte (en rojo)</span>
+<span class="n">d_psi</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">psi</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+<span class="n">dd_psi</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">d_psi</span><span class="p">,</span><span class="n">r</span><span class="p">)</span>
+<span class="n">A</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="n">sym</span><span class="o">.</span><span class="n">S</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">dd_psi</span>
+
+<span class="c1"># Primera parte (en azul)</span>
+<span class="n">B</span><span class="o">=-</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">r</span><span class="p">)</span><span class="o">*</span><span class="n">psi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Paso 4.</strong> Exprese la función a integrar y resuelva la integral con <code class="docutils literal notranslate"><span class="pre">sp.integrate()</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Declare la función e integre para obtener la energía</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="o">=</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">psi</span><span class="o">*</span><span class="p">(</span><span class="n">A</span><span class="o">+</span><span class="n">B</span><span class="p">)</span>
+<span class="n">E</span><span class="o">=</span><span class="n">sym</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">sym</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">f</span><span class="p">,(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">sym</span><span class="o">.</span><span class="n">oo</span><span class="p">))</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">E</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2⋅√2⋅√α   3⋅α
+- ─────── + ───
+     √π      2 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="note admonition"><p class="admonition-title">Cuestionamiento</p><p><span class="math notranslate nohighlight">¿Cómo difiere la energía obtenida con la función de prueba respecto a la energía exacta del átomo de hidrógeno?</span></p><form><input type="radio" name="answer" value="La energía de la función de prueba es mayor que la exacta."><span class="math notranslate nohighlight">La energía de la función de prueba es mayor que la exacta.</span><br><input type="radio" name="answer" value="La energía de la función de prueba es igual a la exacta."><span class="math notranslate nohighlight">La energía de la función de prueba es igual a la exacta.</span><br><input type="radio" name="answer" value="La energía de la función de prueba es menor que la exacta."><span class="math notranslate nohighlight">La energía de la función de prueba es menor que la exacta.</span><br></form>
+<details class="toggle-details">
+<summary class="toggle-details__summary">
+<svg xmlns="http://www.w3.org/2000/svg" class="tb-icon toggle-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+<span class="toggle-details__summary-text">Mostrar respuesta</span>
+</summary>
+<div class="cell_output docutils container">
+<div><span class="math notranslate nohighlight">La respuesta correcta es: <br><b>La energía de la función de prueba es mayor que la exacta.</b><br><span class="math notranslate nohighlight">Dado que la función de prueba no es la exacta, por el principio variacional se cumple que $E_{m prueba} > E_{m exacta}$. Note que para cualquier $alpha>0$, la energía obtenida de prueba obtenida es más positiva que la energía exacta del átomo de hidrógeno de -0.5 Hartree.</span></span></div>
+</div></details>
+</div)</div></div>
+</div>
+<p>¿Cómo podría obtener el valor de <span class="math notranslate nohighlight">\(\alpha\)</span> que de la energía más cercana a la exacta para la función de prueba propuesta?</p>
+<p><strong>Idea.</strong> Recuerde máximos y mínimos de Cálculo I.</p>
+</section>
+<section id="referencias">
+<h2><span class="section-number">13.2. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<p>Página oficial de sympy
+<a class="reference external" href="http://www.sympy.org">www.sympy.org</a></p>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "felipelewyee/Cuantica-I",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="Orbitales.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">12. </span>Orbitales Atómicos</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Algebra-Simbolica.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">13.3. </span>Álgebra simbólica</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By M. en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
