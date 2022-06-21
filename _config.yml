@@ -16,6 +16,9 @@ latex:
   latex_documents:
     targetname: book.tex
 
+execute:
+  timeout: 100
+
 parse:
   myst_enable_extensions:
     - "amsmath"
