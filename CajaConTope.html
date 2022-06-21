@@ -781,7 +781,7 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_728163/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_24413/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
   return np.tanh(arg1)**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
@@ -978,14 +978,11 @@ x_{IV} \in [a,L]
         <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_IV</span><span class="p">,</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">*</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">/</span><span class="n">norm2</span><span class="p">)</span>
 
         <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zero&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zero
-E: 4.03702980948585 Probabilidad de [-a,a]: 0.009171376328832647
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 4.03702980948585 Probabilidad de [-a,a]: 0.009171376328832647
 </pre></div>
 </div>
 <img alt="_images/CajaConTope_36_1.png" src="_images/CajaConTope_36_1.png" />
@@ -1098,9 +1095,9 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_728163/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_24413/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
-/tmp/ipykernel_728163/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
+/tmp/ipykernel_24413/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
@@ -1215,14 +1212,11 @@ F &amp;= C \left(\frac{ e^{k_2a} - e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}
         <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_IV</span><span class="p">,</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">*</span><span class="n">psi_IV</span><span class="p">(</span><span class="n">x_IV</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span>
 
         <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Zero&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Zero
-E: 4.098118934645123 Probabilidad de [-a,a]: 0.06152438345572405
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E: 4.098118934645123 Probabilidad de [-a,a]: 0.06152438345572405
 </pre></div>
 </div>
 <img alt="_images/CajaConTope_46_1.png" src="_images/CajaConTope_46_1.png" />
@@ -1244,13 +1238,21 @@ E: 4.098118934645123 Probabilidad de [-a,a]: 0.06152438345572405
 <img alt="_images/CajaConTope_46_9.png" src="_images/CajaConTope_46_9.png" />
 </div>
 </div>
-<div class="warning admonition">
-<p class="admonition-title">Pregunta</p>
-<p>Con base en lo visto, responda con verdadero o falso respecto al sistema cuántico.</p>
-<ol class="simple">
-<li><p>Si la partícula tiene energía menor que V, la probabilidad de encontrarla en el intervalo [-a,a]. (Cierto/Falso)</p></li>
-<li><p>Si la partícula tiene energía menor que V, es imposible que pase de un lado al otro lado de la caja. (Cierto/Falso)</p></li>
-</ol>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="note admonition"><p class="admonition-title">Cuestionamiento</p><p><span class="math notranslate nohighlight">Si la partícula tiene energía menor que V, la probabilidad de encontrarla en el intervalo [-a,a] es cero.</span></p><form><input type="radio" name="answer" value="Cierto"><span class="math notranslate nohighlight">Cierto</span><br><input type="radio" name="answer" value="Falso"><span class="math notranslate nohighlight">Falso</span><br></form>
+<details class="toggle-details">
+<summary class="toggle-details__summary">
+<svg xmlns="http://www.w3.org/2000/svg" class="tb-icon toggle-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+<span class="toggle-details__summary-text">Mostrar respuesta</span>
+</summary>
+<div class="cell_output docutils container">
+<div><span class="math notranslate nohighlight">La respuesta correcta es: <br><b>Falso</b><br><span class="math notranslate nohighlight">La probabilidad es distinta de cero por el efecto túnel, como se ha visto en estos ejercicios.</span></span></div>
+</div></details>
+</div)</div></div>
 </div>
 </section>
 </section>

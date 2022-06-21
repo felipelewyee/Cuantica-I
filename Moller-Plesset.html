@@ -456,12 +456,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   19.1. Referencias
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -473,6 +497,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#referencias">
+   19.1. Referencias
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -798,7 +835,7 @@ E_{MP1} = E_{nuc} + E_0^{(0)} + E_0^{(1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_MP1 = -1.1267344779324064
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_MP1 = -1.1267344779324078
 </pre></div>
 </div>
 </div>
@@ -853,8 +890,8 @@ E_{corr} = E_{MP2} - E_{HF}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_MP2 = -1.1441309213453612
-E_corr = -0.017396954228794614
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_MP2 = -1.1441309213453625
+E_corr = -0.017396954228795503
 </pre></div>
 </div>
 </div>
@@ -900,6 +937,12 @@ E_{corr} = E_{MPn} - E_{HF} = E_0^{(2)} + ... + E_0^{(n)}
 </div>
 </div>
 </div>
+<section id="referencias">
+<h2><span class="section-number">19.1. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>C. Møller y M.S. Plesset, Note on an Approximation Treatment for Many-Electron Systems, Phys. Rev. 46, 618 (1934).</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

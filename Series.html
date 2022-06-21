@@ -543,36 +543,36 @@ title="Print to PDF"
 <section id="serie-de-taylor">
 <h2><span class="section-number">3.1. </span>Serie de Taylor<a class="headerlink" href="#serie-de-taylor" title="Permalink to this headline">#</a></h2>
 <p>Sea una función f(x) continua e infinitamente diferenciable, esta puede expresarse en torno a <span class="math notranslate nohighlight">\(a\)</span> mediante una serie de potencias</p>
-<div class="amsmath math notranslate nohighlight" id="equation-04226922-0a6a-4e08-a817-445cf1169789">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-04226922-0a6a-4e08-a817-445cf1169789" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 f(x) = \sum_{n=0}^\infty c_n (x-a)^n 
-\end{equation}\]</div>
+\end{equation*}\]</div>
 <p>donde <span class="math notranslate nohighlight">\(c_n\)</span> es un coeficiente que no depende de <span class="math notranslate nohighlight">\(x\)</span> y que se determinará a continuación.</p>
 <p>La m-ésima derivada de <span class="math notranslate nohighlight">\(f(x)\)</span> es:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e0ec29bb-2547-4915-9ad1-2b77d8c08681">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-e0ec29bb-2547-4915-9ad1-2b77d8c08681" title="Permalink to this equation">#</a></span>\[\begin{equation}
-f^{(m)}(x) = \sum_{n=m}^\infty c_n\,m!\, (x-a)^{n-m} \&gt;\&gt;. \nonumber
-\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+f^{(m)}(x) = \sum_{n=m}^\infty c_n\,m!\, (x-a)^{n-m} \&gt;\&gt;. 
+\end{equation*}\]</div>
 <p>Realizando el cambio de índice <span class="math notranslate nohighlight">\(p=n-m\)</span> tenemos la expresión:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a2c34a24-1e59-48d8-a508-d1cdbab4a560">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-a2c34a24-1e59-48d8-a508-d1cdbab4a560" title="Permalink to this equation">#</a></span>\[\begin{equation}
-f^{(m)}(x) = \sum_{p=0}^\infty c_{p+m}\,m!\, (x-a)^{p} \&gt;\&gt;. \nonumber
-\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+f^{(m)}(x) = \sum_{p=0}^\infty c_{p+m}\,m!\, (x-a)^{p} \&gt;\&gt;. 
+\end{equation*}\]</div>
 <p>Al evaluar en <span class="math notranslate nohighlight">\(x=a\)</span> se obtiene</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5a858c1d-a822-4786-ab2d-3743914cf9d3">
-<span class="eqno">(3.4)<a class="headerlink" href="#equation-5a858c1d-a822-4786-ab2d-3743914cf9d3" title="Permalink to this equation">#</a></span>\[\begin{equation}
-f^{(m)}(a) = \sum_{p=0}^\infty c_{p+m}\,m!\, (a-a)^{p} = c_m\,m! \&gt;\&gt;.\nonumber
-\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+f^{(m)}(a) = \sum_{p=0}^\infty c_{p+m}\,m!\, (a-a)^{p} = c_m\,m! \&gt;\&gt;.
+\end{equation*}\]</div>
 <p>El único término que sobrevive es el que tiene potencia cero, <span class="math notranslate nohighlight">\(p=0\)</span>, despejando <span class="math notranslate nohighlight">\(c_m\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d8ae6325-6ca4-4f45-86fe-e842777405cd">
-<span class="eqno">(3.5)<a class="headerlink" href="#equation-d8ae6325-6ca4-4f45-86fe-e842777405cd" title="Permalink to this equation">#</a></span>\[\begin{equation}
-c_m = \frac{f^{(m)}(a)}{m!} \&gt;\&gt;. \nonumber
-\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+c_m = \frac{f^{(m)}(a)}{m!} \&gt;\&gt;. 
+\end{equation*}\]</div>
 <p>Sustituyendo en la serie</p>
-<div class="amsmath math notranslate nohighlight" id="equation-712be692-9d41-4b2a-b824-a83923bb72b8">
-<span class="eqno">(3.6)<a class="headerlink" href="#equation-712be692-9d41-4b2a-b824-a83923bb72b8" title="Permalink to this equation">#</a></span>\[\begin{equation}
-f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n \nonumber
-\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
+f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n 
+\end{equation*}\]</div>
 <div class="important admonition">
 <p class="admonition-title">Aprendizaje de código</p>
 <p><strong>A continuación realizaremos la expansión en series de Taylor en torno a <span class="math notranslate nohighlight">\(x=0\)</span> de <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \in [0,10]\)</span> truncada hasta la potencia de grado 6.</strong></p>
@@ -596,8 +596,8 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n \nonumber
 </pre></div>
 </div>
 <p>Sumamos los términos de la serie de Taylor acorde a la ecuación</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cd48d11d-0ae3-4a25-afa5-556b3e367b4b">
-<span class="eqno">(3.7)<a class="headerlink" href="#equation-cd48d11d-0ae3-4a25-afa5-556b3e367b4b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-90970308-7218-4ea6-a20d-138c7a155255">
+<span class="eqno">(3.1)<a class="headerlink" href="#equation-90970308-7218-4ea6-a20d-138c7a155255" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 \end{equation}\]</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="mi">0</span>
@@ -668,21 +668,21 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 <section id="serie-de-fourier">
 <h2><span class="section-number">3.2. </span>Serie de Fourier<a class="headerlink" href="#serie-de-fourier" title="Permalink to this headline">#</a></h2>
 <p>Una función periódica se puede aproximar por</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1a029102-11cf-417b-b816-6c95d4d74140">
-<span class="eqno">(3.8)<a class="headerlink" href="#equation-1a029102-11cf-417b-b816-6c95d4d74140" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-887fecc5-e54f-4743-86eb-676b4214d223">
+<span class="eqno">(3.2)<a class="headerlink" href="#equation-887fecc5-e54f-4743-86eb-676b4214d223" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x)=\frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n \cos \left( \frac{2n\pi}{T}x \right) + b_n \sin \left( \frac{2n\pi}{T}x \right) \right]
 \end{equation}\]</div>
 <p>donde</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9c820b7-81c9-4c26-8209-e62ada3b6064">
-<span class="eqno">(3.9)<a class="headerlink" href="#equation-d9c820b7-81c9-4c26-8209-e62ada3b6064" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-329fd439-79cb-4cb2-8f61-56c14c0f144d">
+<span class="eqno">(3.3)<a class="headerlink" href="#equation-329fd439-79cb-4cb2-8f61-56c14c0f144d" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a_0 = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) dx
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-912b9fe8-e399-45ba-8bb9-2c727c7e7f16">
-<span class="eqno">(3.10)<a class="headerlink" href="#equation-912b9fe8-e399-45ba-8bb9-2c727c7e7f16" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9afaba56-7b96-40dc-ac28-2edec6c4c3ad">
+<span class="eqno">(3.4)<a class="headerlink" href="#equation-9afaba56-7b96-40dc-ac28-2edec6c4c3ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
 a_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) \cos \left( \frac{2n\pi}{T}x \right) dx
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-077260e0-364b-4fc4-ba87-ad7bd4728ca4">
-<span class="eqno">(3.11)<a class="headerlink" href="#equation-077260e0-364b-4fc4-ba87-ad7bd4728ca4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1a4927f8-3080-42d7-b2d5-a03310796f70">
+<span class="eqno">(3.5)<a class="headerlink" href="#equation-1a4927f8-3080-42d7-b2d5-a03310796f70" title="Permalink to this equation">#</a></span>\[\begin{equation}
 b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) \sin \left( \frac{2n\pi}{T}x \right) dx
 \end{equation}\]</div>
 <p><strong>Haga la expansión en series de Fourier de la <span class="math notranslate nohighlight">\(f(x)=x\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \in [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
@@ -725,8 +725,8 @@ b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) \sin \left( \frac{2n\pi}{T}x \ri
 </div>
 </div>
 <p><strong>Realice la expansión en series de Fourier de la función escalón en el intervalo <span class="math notranslate nohighlight">\(x \in [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-c8e9e9b1-e04c-49a4-ae44-3838a28bdf41">
-<span class="eqno">(3.12)<a class="headerlink" href="#equation-c8e9e9b1-e04c-49a4-ae44-3838a28bdf41" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-46926fe6-812d-4059-9e84-e644adabca0e">
+<span class="eqno">(3.6)<a class="headerlink" href="#equation-46926fe6-812d-4059-9e84-e644adabca0e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 f(x) = \left\{
   \begin{array}{ll}
   0      &amp; \mathrm{si\ } x &lt; 0\\
@@ -776,9 +776,9 @@ f(x) = \left\{
 <section id="referencias">
 <h2><span class="section-number">3.3. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>Gersting, J. L. Technical Calculus with Analytic Geometry, Dover ed.; Dover: New York, 1992.</p></li>
-<li><p>Jackson, J. D. Mathematics for Quantum Mechanics: An Introductory Survey of Operators, Eigenvalues, and Linear Vector Spaces, Dover ed.; Dover books on mathematics; Dover: Mineola, N.Y, 2006.</p></li>
-<li><p>Tolstov, G. P. Fourier Series, Nachdr.; Dover books on mathematics; Dover: New York, 2009.</p></li>
+<li><p>G.P. Tolstov, Fourier Series (Dover ed., 1992).</p></li>
+<li><p>J.D. Jackson, Mathematics for Quantum Mechanics: An Introductory Survey of Operators, Eigenvalues, and Linear Vector Spaces (Dover ed., 2006).</p></li>
+<li><p>J.L. Gersting, Technical Calculus with Analytic Geometry (Dover ed., 2009).-</p></li>
 </ul>
 </section>
 </section>
