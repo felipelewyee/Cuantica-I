@@ -25,7 +25,7 @@ class MultipleChoice:
         s = '<div class="note admonition">'
         s+= '<p class="admonition-title">'
         #s+= '::before'
-        s+= 'Cuestionamiento'
+        s+= 'Pregunta'
         s+= '</p>'
         s += '<p><span class="math notranslate nohighlight">%s</span></p>' % self.question
         s += '<form>'
