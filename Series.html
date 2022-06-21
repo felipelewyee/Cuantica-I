@@ -596,10 +596,10 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 </pre></div>
 </div>
 <p>Sumamos los términos de la serie de Taylor acorde a la ecuación</p>
-<div class="amsmath math notranslate nohighlight" id="equation-90970308-7218-4ea6-a20d-138c7a155255">
-<span class="eqno">(3.1)<a class="headerlink" href="#equation-90970308-7218-4ea6-a20d-138c7a155255" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
-\end{equation}\]</div>
+\end{equation*}\]</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span><span class="mi">0</span>
 <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">7</span><span class="p">):</span>
     <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="o">+</span><span class="n">derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="n">n</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="n">n</span> \<span class="n">nonumber</span>
@@ -668,23 +668,23 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 <section id="serie-de-fourier">
 <h2><span class="section-number">3.2. </span>Serie de Fourier<a class="headerlink" href="#serie-de-fourier" title="Permalink to this headline">#</a></h2>
 <p>Una función periódica se puede aproximar por</p>
-<div class="amsmath math notranslate nohighlight" id="equation-887fecc5-e54f-4743-86eb-676b4214d223">
-<span class="eqno">(3.2)<a class="headerlink" href="#equation-887fecc5-e54f-4743-86eb-676b4214d223" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 f(x)=\frac{a_0}{2} + \sum_{n=1}^{\infty} \left[ a_n \cos \left( \frac{2n\pi}{T}x \right) + b_n \sin \left( \frac{2n\pi}{T}x \right) \right]
-\end{equation}\]</div>
+\end{equation*}\]</div>
 <p>donde</p>
-<div class="amsmath math notranslate nohighlight" id="equation-329fd439-79cb-4cb2-8f61-56c14c0f144d">
-<span class="eqno">(3.3)<a class="headerlink" href="#equation-329fd439-79cb-4cb2-8f61-56c14c0f144d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 a_0 = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) dx
-\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-9afaba56-7b96-40dc-ac28-2edec6c4c3ad">
-<span class="eqno">(3.4)<a class="headerlink" href="#equation-9afaba56-7b96-40dc-ac28-2edec6c4c3ad" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\end{equation*}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 a_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) \cos \left( \frac{2n\pi}{T}x \right) dx
-\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-1a4927f8-3080-42d7-b2d5-a03310796f70">
-<span class="eqno">(3.5)<a class="headerlink" href="#equation-1a4927f8-3080-42d7-b2d5-a03310796f70" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\end{equation*}\]</div>
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) \sin \left( \frac{2n\pi}{T}x \right) dx
-\end{equation}\]</div>
+\end{equation*}\]</div>
 <p><strong>Haga la expansión en series de Fourier de la <span class="math notranslate nohighlight">\(f(x)=x\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \in [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -725,15 +725,15 @@ b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) \sin \left( \frac{2n\pi}{T}x \ri
 </div>
 </div>
 <p><strong>Realice la expansión en series de Fourier de la función escalón en el intervalo <span class="math notranslate nohighlight">\(x \in [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
-<div class="amsmath math notranslate nohighlight" id="equation-46926fe6-812d-4059-9e84-e644adabca0e">
-<span class="eqno">(3.6)<a class="headerlink" href="#equation-46926fe6-812d-4059-9e84-e644adabca0e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight">
+\[\begin{equation*}
 f(x) = \left\{
   \begin{array}{ll}
   0      &amp; \mathrm{si\ } x &lt; 0\\
   1 &amp; \mathrm{si\ } x&gt;0 \\
   \end{array}
   \right.
-\end{equation}\]</div>
+\end{equation*}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Serie de Fourier</span>
