@@ -752,7 +752,7 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 </div>
 </div>
 </div>
-<p>Para encontrar los valores de E que hacen que f(E) se vuelva cero, cree un conjunto de puntos de E con muchos puntos entre 0 y V, puede usar la instrucción</p>
+<p>Para obtener los valores de E que hacen que f(E) se vuelva cero, cree un conjunto de puntos de E con muchos puntos entre 0 y V, puede usar la instrucción</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E_dominio</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -781,7 +781,7 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_24413/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_778584/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
   return np.tanh(arg1)**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
@@ -791,7 +791,7 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">E</span> <span class="o">=</span> <span class="n">newton</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x0</span><span class="o">=</span><span class="n">E_i</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Para cada valor de energía de su primer guess, utilice el método de Newton para encontrar la raíz más cercana y guárdela en una lista si la diferencia con la última raíz es mayor a 0.1. Este será su <code class="docutils literal notranslate"><span class="pre">segundo</span> <span class="pre">guess</span></code>.</p>
+<p>Para cada valor de energía de su primer guess, utilice el método de Newton para obtener la raíz más cercana y guárdela en una lista si la diferencia con la última raíz es mayor a 0.1. Este será su <code class="docutils literal notranslate"><span class="pre">segundo</span> <span class="pre">guess</span></code>.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_segundoguess</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -847,7 +847,7 @@ k_2 = \frac{2m(V-E)}{\hbar^2}
 </div>
 </div>
 </div>
-<p>Hasta aquí ya somos capaces de encontrar las energías permitidas. Falta normalizar la función de onda y graficarla.</p>
+<p>Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la función de onda y graficarla.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Análisis de las constantes <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span></p>
 <p>Por la continuidad de la zona II y III, con <span class="math notranslate nohighlight">\(B=Atan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=D\)</span>, se tiene</p>
@@ -1095,15 +1095,15 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_24413/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_778584/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
-/tmp/ipykernel_24413/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
+/tmp/ipykernel_778584/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Hasta aquí ya somos capaces de encontrar las energías permitidas. Falta normalizar la función de onda y graficarla.</p>
+<p>Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la función de onda y graficarla.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Análisis de las constantes <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span></p>
 <p>Por la continuidad de la zona II y III, con <span class="math notranslate nohighlight">\(B=Atan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=-D\)</span>, se tiene</p>
@@ -1240,7 +1240,7 @@ F &amp;= C \left(\frac{ e^{k_2a} - e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}
 </div>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div class="note admonition"><p class="admonition-title">Cuestionamiento</p><p><span class="math notranslate nohighlight">Si la partícula tiene energía menor que V, la probabilidad de encontrarla en el intervalo [-a,a] es cero.</span></p><form><input type="radio" name="answer" value="Cierto"><span class="math notranslate nohighlight">Cierto</span><br><input type="radio" name="answer" value="Falso"><span class="math notranslate nohighlight">Falso</span><br></form>
+<div class="output text_html"><div class="note admonition"><p class="admonition-title">Pregunta</p><p><span class="math notranslate nohighlight">Si la partícula tiene energía menor que V, la probabilidad de encontrarla en el intervalo [-a,a] es cero.</span></p><form><input type="radio" name="answer" value="Cierto"><span class="math notranslate nohighlight">Cierto</span><br><input type="radio" name="answer" value="Falso"><span class="math notranslate nohighlight">Falso</span><br></form>
 <details class="toggle-details">
 <summary class="toggle-details__summary">
 <svg xmlns="http://www.w3.org/2000/svg" class="tb-icon toggle-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
