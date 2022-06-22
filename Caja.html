@@ -559,24 +559,24 @@ title="Print to PDF"
 \[\begin{split}
 V(x) = \left\{
   \begin{array}{lll}
-  \infty      &amp; \mathrm{si\ } x &lt; 0 &amp; \text{I}\\
-  0 &amp; \mathrm{si\ } 0 \le x \le L &amp; \text{II} \\
-  \infty     &amp; \mathrm{si\ } x &gt; L &amp; \text{III}
+  \infty      &amp; \mathrm{si\ } x &lt; 0 &amp; \text{\rm I}\\
+  0 &amp; \mathrm{si\ } 0 \le x \le L &amp; \text{\rm II} \\
+  \infty     &amp; \mathrm{si\ } x &gt; L &amp; \text{\rm III}
   \end{array}
   \right.
 \end{split}\]</div>
-<p>Esto significa que la partícula está confinada a un intervalo en <span class="math notranslate nohighlight">\(x \epsilon [0,L]\)</span>.</p>
-<p>La función de onda se puede dividir por regiones. Es imposible que la partícula se encuentre en la región <span class="math notranslate nohighlight">\(\text{I}\)</span> y en la región <span class="math notranslate nohighlight">\(\text{III}\)</span>, ya que el potencial es infinito, por lo tanto:</p>
+<p>Esto significa que la partícula está confinada a un intervalo en <span class="math notranslate nohighlight">\(x \in [0,L]\)</span>.</p>
+<p>La función de onda se puede dividir por regiones. Es imposible que la partícula se encuentre en la región <span class="math notranslate nohighlight">\(\text{\rm I}\)</span> y en la región <span class="math notranslate nohighlight">\(\text{\rm III}\)</span>, ya que el potencial es infinito, por lo tanto:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \psi(x) = 0 \left\{
   \begin{array}{lll}
-  \mathrm{si\ } x &lt; 0 &amp; \text{I}\\
-  \mathrm{si\ } x &gt; L &amp; \text{III}
+  \mathrm{si\ } x &lt; 0 &amp; \text{\rm I}\\
+  \mathrm{si\ } x &gt; L &amp; \text{\rm III}
   \end{array}
   \right.
 \end{split}\]</div>
-<p>Para determinar la función de onda en la región <span class="math notranslate nohighlight">\(\text{II}\)</span> hay que escribir la de Schrödinger</p>
+<p>Para determinar la función de onda en la región <span class="math notranslate nohighlight">\(\text{\rm II}\)</span> hay que escribir la de Schrödinger</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} \right)\psi(x) = E \psi(x)
@@ -589,17 +589,17 @@ V(x) = \left\{
 <p>posteriormente hay que recurrir a las condiciones a la frontera.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Condiciones a la frontera</p>
-<p>La función de onda debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, <span class="math notranslate nohighlight">\(\psi_{I}(0) = \psi_{II}(0) = 0\)</span>. Esto implica que <span class="math notranslate nohighlight">\(A=0\)</span>, ya que</p>
+<p>La función de onda debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, <span class="math notranslate nohighlight">\(\psi_{\rm I}(0) = \psi_{\rm II}(0) = 0\)</span>. Esto implica que <span class="math notranslate nohighlight">\(A=0\)</span>, ya que</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\psi_{II}(0) = 0 = A\cos(0) + B\sin(0) = A
+\psi_{\rm II}(0) = 0 = A\cos(0) + B\sin(0) = A
 \end{equation*}\]</div>
-<p>Por la continuidad con la región III también se cumple <span class="math notranslate nohighlight">\(\psi_{II}(L) = \psi_{III}(L) = 0\)</span>, es decir</p>
+<p>Por la continuidad con la región III también se cumple <span class="math notranslate nohighlight">\(\psi_{\rm II}(L) = \psi_{\rm III}(L) = 0\)</span>, es decir</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\psi_{II}(L) = 0 = B\sin(kL)
+\psi_{\rm II}(L) = 0 = B\sin(kL)
 \end{equation*}\]</div>
-<p>Ya obtuvimos que <span class="math notranslate nohighlight">\(A\)</span> vale cero, sin embargo, <span class="math notranslate nohighlight">\(B\)</span> no puede ser cero porque <span class="math notranslate nohighlight">\(\psi_{II}\)</span> se anularía. La única forma de que se cumpla la <code class="docutils literal notranslate"><span class="pre">condición</span> <span class="pre">a</span> <span class="pre">la</span> <span class="pre">frontera</span></code> expresada en la ecuación anterior es que <span class="math notranslate nohighlight">\(kL\)</span> sea un <code class="docutils literal notranslate"><span class="pre">múltiplo</span></code> de <span class="math notranslate nohighlight">\(\pi\)</span>, es decir <span class="math notranslate nohighlight">\(kL = n \pi\)</span>, o lo que es lo mismo</p>
+<p>Ya obtuvimos que <span class="math notranslate nohighlight">\(A\)</span> vale cero, sin embargo, <span class="math notranslate nohighlight">\(B\)</span> no puede ser cero porque <span class="math notranslate nohighlight">\(\psi_{\rm II}\)</span> se anularía. La única forma de que se cumpla la <code class="docutils literal notranslate"><span class="pre">condición</span> <span class="pre">a</span> <span class="pre">la</span> <span class="pre">frontera</span></code> expresada en la ecuación anterior es que <span class="math notranslate nohighlight">\(kL\)</span> sea un <code class="docutils literal notranslate"><span class="pre">múltiplo</span></code> de <span class="math notranslate nohighlight">\(\pi\)</span>, es decir <span class="math notranslate nohighlight">\(kL = n \pi\)</span>, o lo que es lo mismo</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
   k=\frac{n\pi}{L};\&gt;\&gt;\&gt;\&gt;\&gt; n=1,2,3,\hdots
@@ -608,7 +608,7 @@ V(x) = \left\{
 <p>Hemos obtenido que</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\psi_{II} = B \sin \left( \frac{n \pi x}{L}\right)
+\psi_{\rm II} = B \sin \left( \frac{n \pi x}{L}\right)
 \end{equation*}\]</div>
 </div>
 <p>Para determinar el valor de B hay que normalizar la función de onda, resultando que:</p>
