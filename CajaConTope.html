@@ -551,11 +551,11 @@ title="Print to PDF"
 \[\begin{split}
 V(x) = \left\{
   \begin{array}{lll}
-  \infty      &amp; \mathrm{si\ } x &lt; -L &amp; I \\
-  0      &amp; \mathrm{si\ } -L \le x &lt; -a &amp; II\\
-  V &amp; \mathrm{si\ } -a \le x \le a &amp; III \\
-  0      &amp; \mathrm{si\ } a &lt; x \le L &amp; IV\\
-  \infty     &amp; \mathrm{si\ } x &gt; L &amp; V
+  \infty      &amp; \mathrm{si\ } x &lt; -L &amp; \text{I} \\
+  0      &amp; \mathrm{si\ } -L \le x &lt; -a &amp; \text{II}\\
+  V &amp; \mathrm{si\ } -a \le x \le a &amp; \text{III} \\
+  0      &amp; \mathrm{si\ } a &lt; x \le L &amp; \text{IV}\\
+  \infty     &amp; \mathrm{si\ } x &gt; L &amp; \text{V}
   \end{array}
   \right.
 \end{split}\]</div>
@@ -724,12 +724,12 @@ k_1\frac{1 + \tan(k_1 a)\tan(k_1 L)}{\tan(k_1 a) - \tan(k_1 L)} = k_2 \tanh(k_2a
 <p>Las energías permitidas se obtienen al resolver la ecuación</p>
 <div class="math notranslate nohighlight">
 \[
-\sqrt{\frac{E}{V-E}} = tanh \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right)
+\sqrt{\frac{E}{V-E}} = \tanh \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right)
 \]</div>
 <p>En esta ecuación no es trivial despear E, pero la igualdad sólo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos <span class="math notranslate nohighlight">\(f(E)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{V-E}
+f(E) = \tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{V-E}
 \]</div>
 <p>Cuando se tenga el <span class="math notranslate nohighlight">\(E\)</span> correcto se cumplirá <span class="math notranslate nohighlight">\(f(E) = 0\)</span>, así que sólo tenemos que buscar los ceros (o raíces) de la función.</p>
 <p><strong>Defina la función <span class="math notranslate nohighlight">\(f(E)\)</span></strong></p>
@@ -781,7 +781,7 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_828807/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_830043/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
   return np.tanh(arg1)**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
@@ -1095,16 +1095,16 @@ f(E) = \left( \tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_828807/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_830043/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
-/tmp/ipykernel_828807/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
+/tmp/ipykernel_830043/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
 </div>
 </div>
 <p>Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la función de onda y graficarla.</p>
-<div class="dropdown admonition">
+<div class="admonition-inserto-matematico-analisis-de-las-constantes-a-b-c-d-f-y-g admonition">
 <p class="admonition-title">Inserto matemático: Análisis de las constantes <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span></p>
 <p>Por la continuidad de la zona II y III, con <span class="math notranslate nohighlight">\(B=A\tan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=-D\)</span>, se tiene</p>
 <div class="math notranslate nohighlight">
