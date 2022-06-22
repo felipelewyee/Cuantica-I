@@ -998,11 +998,11 @@ N = 4.242640687119285
 \]</div>
 <p>La integral de su cuadrado será</p>
 <div class="amsmath math notranslate nohighlight">
-\[\begin{align*}
-N^2 &amp;= \int \bigg( \psi^* \psi \bigg)\,d\textbf{r}  = \int\limits_{0}^\infty \int\limits_{0}^{2\pi} \int\limits_{0}^\pi\bigg(\psi^* \psi\, r^2 \sin\theta \bigg) dr d\phi d\theta \\
-&amp;= \int\limits_{0}^{\pi} \sin \theta d\theta \int\limits_{0}^{2\pi} d\phi \int\limits_{0}^\infty e^{-2r^2} r^2 dr \\
-&amp;= \left(2\pi\right)\left(2\right)\left(\frac{1}{8}\sqrt{\frac{\pi}{2}}\right) = \left(\frac{\pi}{2}\right)^{3/2}
-\end{align*}\]</div>
+\[\begin{eqnarray*}
+N^2 &amp;=&amp; \int \bigg( \psi^* \psi \bigg)\,d\textbf{r}  = \int\limits_{0}^\pi \int\limits_{0}^{2\pi} \int\limits_{0}^\infty \bigg(\psi^* \psi\, r^2 \sin\theta \bigg) dr d\phi d\theta \\
+&amp;=&amp; \int\limits_{0}^{\pi} \sin \theta d\theta \int\limits_{0}^{2\pi} d\phi \int\limits_{0}^\infty e^{-2r^2} r^2 dr \\
+&amp;=&amp; \left(2\pi\right)\left(2\right)\left(\frac{1}{8}\sqrt{\frac{\pi}{2}}\right) = \left(\frac{\pi}{2}\right)^{3/2}
+\end{eqnarray*}\]</div>
 <p>El siguiente código evalúa la integral y la guarda en la variable “norm2”.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">norm2</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">tplquad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>

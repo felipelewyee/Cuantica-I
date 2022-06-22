@@ -499,7 +499,7 @@ V(x) = \left\{
 <p>De manera clásica, la partícula no podría pasar del lado izquierdo (región I) al lado derecho (región II) de la caja, porque no tiene suficiente energía. Por esta razón, no podríamos encontrar a la partícula en la región II. ¿Qué pasará cuánticamente?</p>
 </div>
 <p>Para resolver el sistema hay que planear el Hamiltoniano por regiones y resolver una función de onda para cada región.</p>
-<div class="dropdown admonition">
+<div class="admonition-inserto-matematico-hamiltoniano-por-regiones admonition">
 <p class="admonition-title">Inserto matemático: Hamiltoniano por regiones</p>
 <table class="colwidths-auto table">
 <thead>
@@ -512,13 +512,13 @@ V(x) = \left\{
 <tbody>
 <tr class="row-even"><td class="text-align:center"><p>I</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_I(x) = Ae^{ik_1x} + Be^{-ik_1x}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_I(x) = Ae^{ikx} + Be^{-ikx}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>II</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(x) = C e^{-k_2x} + De^{k_2x}\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_2^2 = \frac{2m(V-E)}{\hbar^2}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(x) = C e^{-\kappa x} + De^{\kappa x}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\kappa ^2 = \frac{2m(V-E)}{\hbar^2}\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -526,14 +526,18 @@ V(x) = \left\{
 <p>Se obtienen las funciones de onda</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_I(x) = Ae^{ik_1x} + Be^{-ik_1x}
+\psi_I(x) = Ae^{ikx} + Be^{-ikx}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\psi_{II}(x) = C e^{-k_2x} + De^{k_2x}
+\psi_{II}(x) = C e^{-\kappa x} + De^{\kappa x}
 \]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note la diferencia entre la letra <code class="docutils literal notranslate"><span class="pre">k</span></code> y la letra griega kappa <code class="docutils literal notranslate"><span class="pre">$\kappa$</span></code>.</p>
+</aside>
 <p>Los coeficientes pueden obtenerse a partir de la condición de continuidad de la función de onda en <span class="math notranslate nohighlight">\(x=0\)</span></p>
-<div class="dropdown admonition">
+<div class="admonition-inserto-matematico-condiciones-de-continuidad admonition">
 <p class="admonition-title">Inserto matemático: Condiciones de continuidad</p>
 <table class="colwidths-auto table">
 <thead>
@@ -553,7 +557,7 @@ V(x) = \left\{
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>I y II</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frac{\psi_{I}}{dx}(0) = \frac{\psi_{II}}{dx}(0)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(ik_1 (A - B) = - k_2 C\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(ik (A - B) = - \kappa C\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -561,11 +565,11 @@ V(x) = \left\{
 <p>Se obtiene</p>
 <div class="math notranslate nohighlight">
 \[
-B = -\left(\frac{k_2 + ik_1}{k_2 - ik_1}\right) A
+B = -\left(\frac{\kappa + ik}{\kappa - ik}\right) A
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-C = \frac{2ik_1}{ik_1 - k_2} A
+C = \frac{2ik}{ik - \kappa} A
 \]</div>
 <p><strong>Importe numpy y pyplot de matplotlib.</strong></p>
 <div class="cell docutils container">
@@ -601,26 +605,26 @@ C = \frac{2ik_1}{ik_1 - k_2} A
 </div>
 </div>
 </div>
-<p>Defina <span class="math notranslate nohighlight">\(k_1\)</span> y <span class="math notranslate nohighlight">\(k_2\)</span>, recuerde que</p>
+<p>Defina <span class="math notranslate nohighlight">\(k\)</span> y <span class="math notranslate nohighlight">\(\kappa\)</span>, recuerde que</p>
 <div class="math notranslate nohighlight">
 \[
-k_1 = \frac{\sqrt{2mE}}{\hbar}
+k = \frac{\sqrt{2mE}}{\hbar}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-k_2 = \frac{\sqrt{2m(V-E)}}{\hbar}
+\kappa = \frac{\sqrt{2m(V-E)}}{\hbar}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># k1 y k2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># k y kappa</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span>
-<span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">E</span><span class="p">))</span><span class="o">/</span><span class="n">hbar</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span>
+<span class="n">kappa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">E</span><span class="p">))</span><span class="o">/</span><span class="n">hbar</span>
 </pre></div>
 </div>
 </div>
@@ -649,8 +653,8 @@ A=1
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="p">((</span><span class="n">k2</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">k2</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="p">))</span><span class="o">*</span><span class="n">A</span>
-<span class="n">C</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">-</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">A</span>
+<span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="p">((</span><span class="n">kappa</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">kappa</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">A</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="n">kappa</span><span class="p">)</span><span class="o">*</span><span class="n">A</span>
 </pre></div>
 </div>
 </div>
@@ -674,11 +678,11 @@ A=1
 <p>Genere la función de onda para la región I y para la región II. Recuerde</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_I = A e^{ik_1 x} + B e^{-ik_1 x}
+\psi_I = A e^{ik x} + B e^{-ik x}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\psi_{II} = C e^{-k_2 x}
+\psi_{II} = C e^{-\kappa x}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -689,8 +693,8 @@ A=1
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_I</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span>
-<span class="n">psi_II</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_I</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">psi_II</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">kappa</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -711,7 +715,7 @@ A=1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1544a75e44f0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14a73376c490&gt;]
 </pre></div>
 </div>
 <img alt="_images/Tunel-Region-Infinita_22_1.png" src="_images/Tunel-Region-Infinita_22_1.png" />
@@ -720,7 +724,7 @@ A=1
 <p>Note que la partícula puede ser encontrada dentro de la región clásicamente prohibida, esto se conoce como penetración.</p>
 <div class="note admonition">
 <p class="admonition-title">Concepto: Longitud de decaimiento</p>
-<p>La longitud de decaimiento, <span class="math notranslate nohighlight">\(\frac{1}{k_2}\)</span> es la distancia dentro de la barrera a la cual la función de onda ha decaído a  <span class="math notranslate nohighlight">\(\frac{1}{e}\)</span>.</p>
+<p>La longitud de decaimiento, <span class="math notranslate nohighlight">\(\frac{1}{\kappa}\)</span> es la distancia dentro de la barrera a la cual la función de onda ha decaído a  <span class="math notranslate nohighlight">\(\frac{1}{e}\)</span>.</p>
 </div>
 <p><strong>Calcule la longitud de decaimiento de este sistema.</strong></p>
 </section>
