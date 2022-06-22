@@ -585,7 +585,7 @@ V(x) = \left\{
 <tbody>
 <tr class="row-even"><td class="text-align:center"><p>II</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\right) \psi_{II}(x) = E \psi_{II}(x)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(x) = A sin(k_1 x) + Bcos(k_1x)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(x) = A \sin(k_1 x) + \Bcos(k_1x)\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>III</p></td>
@@ -595,7 +595,7 @@ V(x) = \left\{
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>IV</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\left( -\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\right) \psi_{IV}(x) = E \psi_{IV}(x)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{IV}(x) = F sin(k_1 x) + G cos(k_1x)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{IV}(x) = F \sin(k_1 x) + G \cos(k_1x)\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
 </tr>
 </tbody>
@@ -658,23 +658,23 @@ V(x) = \left\{
 <tbody>
 <tr class="row-even"><td class="text-align:center"><p>I y II</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(-L) = 0\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(B = A tan(k_1 L)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(B = A \tan(k_1 L)\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>II y III</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{II}(-a) = \psi_{III}(-a)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-A sin(k_1 a) + Bcos(k_1 a) = C e^{-k_2a} + D e^{k_2a}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(-A \sin(k_1 a) + B\cos(k_1 a) = C e^{-k_2a} + D e^{k_2a}\)</span></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>II y III</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frac{d\psi_{II}}{dx}(-a) = \frac{d\psi_{III}}{dx}(-a)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1(A cos(k_1 a) + Bsin(k_1 a)) = k_2 (C e^{-k_2a} - D e^{k_2a})\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k_1(A \cos(k_1 a) + B\sin(k_1 a)) = k_2 (C e^{-k_2a} - D e^{k_2a})\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p>III y IV</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{III}(a) = \psi_{IV}(a)\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(C e^{k_2a} + D e^{-k_2a} = F sin(k_1 a) + G cos(k_1 a)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(C e^{k_2a} + D e^{-k_2a} = F \sin(k_1 a) + G \cos(k_1 a)\)</span></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p>IV y V</p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{V}(L) = 0\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G = -F tan(k_1 L)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G = -F \tan(k_1 L)\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -702,22 +702,22 @@ C e^{-k_2 x} + De^{k_2x} &amp;= C e^{k_2 x} + De^{-k_2x}\\
 <p>Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la función de onda entre las zonas II y III se obtiene</p>
 <div class="math notranslate nohighlight">
 \[
-k_1\frac{A cos(k_1 a) + Bsin(k_1 a)}{-A sin(k_1 a) + Bcos(k_1 a)} = k_2 \frac{C e^{-k_2a} - D e^{k_2a}}{C e^{-k_2a} + D e^{k_2a}}
+k_1\frac{A \cos(k_1 a) + B\sin(k_1 a)}{-A \sin(k_1 a) + B\cos(k_1 a)} = k_2 \frac{C e^{-k_2a} - D e^{k_2a}}{C e^{-k_2a} + D e^{k_2a}}
 \]</div>
-<p>Sustituyendo la condición de simetría par (<span class="math notranslate nohighlight">\(C=D\)</span>) y la continuidad entre las zonas I y II (<span class="math notranslate nohighlight">\(B = A tan(k_1L)\)</span>)</p>
+<p>Sustituyendo la condición de simetría par (<span class="math notranslate nohighlight">\(C=D\)</span>) y la continuidad entre las zonas I y II (<span class="math notranslate nohighlight">\(B = A \tan(k_1L)\)</span>)</p>
 <div class="math notranslate nohighlight">
 \[
-k_1\frac{cos(k_1 a) + sin(k_1 a)tan(k_1 L)}{- sin(k_1 a) + cos(k_1 a)tan(k_1 L)} = - k_2 tanh(k_2a)
+k_1\frac{\cos(k_1 a) + \sin(k_1 a)\tan(k_1 L)}{- \sin(k_1 a) + \cos(k_1 a)\tan(k_1 L)} = - k_2 \tanh(k_2a)
 \]</div>
 <p>Simplificando</p>
 <div class="math notranslate nohighlight">
 \[
-k_1\frac{1 + tan(k_1 a)tan(k_1 L)}{tan(k_1 a) - tan(k_1 L)} = k_2 tanh(k_2a)
+k_1\frac{1 + \tan(k_1 a)\tan(k_1 L)}{\tan(k_1 a) - \tan(k_1 L)} = k_2 \tanh(k_2a)
 \]</div>
-<p>Aplicamos la identidad trigonométrica <span class="math notranslate nohighlight">\(\frac{tan(\theta) - tan(\phi)}{1 + tan(\theta)tan(\phi)} = tan(\theta - \phi)\)</span></p>
+<p>Aplicamos la identidad trigonométrica <span class="math notranslate nohighlight">\(\frac{\tan(\theta) - \tan(\phi)}{1 + \tan(\theta)\tan(\phi)} = \tan(\theta - \phi)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-\frac{k_1}{k_2} = tanh(k_2a) tan(k_1(a-L))
+\frac{k_1}{k_2} = \tanh(k_2a) \tan(k_1(a-L))
 \]</div>
 <p>El siguiente paso es sustituir los valores de <span class="math notranslate nohighlight">\(k_1\)</span> y <span class="math notranslate nohighlight">\(k_2\)</span>.</p>
 </div>
@@ -781,7 +781,7 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_800771/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_823191/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
   return np.tanh(arg1)**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
@@ -850,24 +850,24 @@ k_2 = \frac{2m(V-E)}{\hbar^2}
 <p>Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la función de onda y graficarla.</p>
 <div class="admonition-inserto-matematico-analisis-de-las-constantes-a-b-c-d-f-y-g admonition">
 <p class="admonition-title">Inserto matemático: Análisis de las constantes <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span></p>
-<p>Por la continuidad de la zona II y III, con <span class="math notranslate nohighlight">\(B=Atan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=D\)</span>, se tiene</p>
+<p>Por la continuidad de la zona II y III, con <span class="math notranslate nohighlight">\(B=A\tan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=D\)</span>, se tiene</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
 \psi_{I}(-a) &amp;= \psi_{III}(-a)\\
--A sin(k_1 a) + Bcos(k_1a) &amp;= C e^{-k_2a} + De^{k_2a}\\
-A \left( -sin(k_1 a) + tan(k_1L)cos(k_1a) \right) &amp;= C \left( e^{-k_2a} + e^{k_2a} \right) \\
-A &amp;= C \left(\frac{e^{-k_2a} + e^{k_2a}}{-sin(k_1 a) + tan(k_1L)cos(k_1a)}\right)
+-A \sin(k_1 a) + B\cos(k_1a) &amp;= C e^{-k_2a} + De^{k_2a}\\
+A \left( -\sin(k_1 a) + \tan(k_1L)\cos(k_1a) \right) &amp;= C \left( e^{-k_2a} + e^{k_2a} \right) \\
+A &amp;= C \left(\frac{e^{-k_2a} + e^{k_2a}}{-\sin(k_1 a) + \tan(k_1L)\cos(k_1a)}\right)
 \end{align}
 \end{split}\]</div>
-<p>De la misma manera, la continuidad de la zona III y IV con <span class="math notranslate nohighlight">\(G=-F tan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=D\)</span> nos dice</p>
+<p>De la misma manera, la continuidad de la zona III y IV con <span class="math notranslate nohighlight">\(G=-F \tan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=D\)</span> nos dice</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
 \psi_{III}(a) &amp;= \psi_{IV}(a)\\
-C e^{k_2a} + De^{-k_2a} &amp;= F sin(k_1 a) + Gcos(k_1a)\\
-C \left( e^{k_2a} + e^{-k_2a} \right) &amp;= F \left( sin(k_1 a) - tan(k_1L) cos(k_1a) \right)\\
-F &amp;= C \left(\frac{ e^{k_2a} + e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}\right)
+C e^{k_2a} + De^{-k_2a} &amp;= F \sin(k_1 a) + G\cos(k_1a)\\
+C \left( e^{k_2a} + e^{-k_2a} \right) &amp;= F \left( \sin(k_1 a) - \tan(k_1L) \cos(k_1a) \right)\\
+F &amp;= C \left(\frac{ e^{k_2a} + e^{-k_2a} }{\sin(k_1 a) - \tan(k_1L) \cos(k_1a)}\right)
 \end{align}
 \end{split}\]</div>
 <p>En este punto tenemos las siguientes relaciones entre los coeficientes</p>
@@ -879,19 +879,19 @@ F &amp;= C \left(\frac{ e^{k_2a} + e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(B = A tan(k_1 L)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(B = A \tan(k_1 L)\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(C\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(A = C \left(\frac{e^{k_2a} + e^{-k_2a}}{-sin(k_1 a) + tan(k_1L)cos(k_1a)}\right)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(A = C \left(\frac{e^{k_2a} + e^{-k_2a}}{-\sin(k_1 a) + \tan(k_1L)\cos(k_1a)}\right)\)</span></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(C\)</span> y <span class="math notranslate nohighlight">\(D\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(C = D\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G = -F tan(k_1 L)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G = -F \tan(k_1 L)\)</span></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(C\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(F = C \left(\frac{ e^{k_2a} + e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}\right)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(F = C \left(\frac{ e^{k_2a} + e^{-k_2a} }{\sin(k_1 a) - \tan(k_1L) \cos(k_1a)}\right)\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -900,7 +900,7 @@ F &amp;= C \left(\frac{ e^{k_2a} + e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}
 <p>Defina funciones para</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{II}(x) = \frac{e^{-k_2a}+e^{k_2a}}{-sin(k_1a)+tan(k_1L)cos(k_1a)} sin(k_1x)+tan(k_1L)cos(k_1x)
+\psi_{II}(x) = \frac{e^{-k_2a}+e^{k_2a}}{-\sin(k_1a)+\tan(k_1L)\cos(k_1a)} \sin(k_1x)+\tan(k_1L)\cos(k_1x)
 \]</div>
 <div class="math notranslate nohighlight">
 \[
@@ -908,7 +908,7 @@ F &amp;= C \left(\frac{ e^{k_2a} + e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\psi_{IV}(x) = \frac{e^{k_2a}+e^{-k_2a}}{sin(k_1a)-tan(k_1L)cos(k_1a)}(sin(k_1x)-tan(k_1L)cos(k_1x))
+\psi_{IV}(x) = \frac{e^{k_2a}+e^{-k_2a}}{\sin(k_1a)-\tan(k_1L)\cos(k_1a)}(\sin(k_1x)-\tan(k_1L)\cos(k_1x))
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1018,7 +1018,7 @@ x_{IV} \in [a,L]
 C e^{-k_2 x} + De^{k_2x} &amp;= -C e^{k_2 x} - De^{-k_2x}\\
 \end{align}
 \end{split}\]</div>
-<p>La ecuación se cumple si <span class="math notranslate nohighlight">\(C = -D\)</span>, por tanto</p>
+<p>La ecuación se cumple si <span class="math notranslate nohighlight">\(C = -D\)</span>, por \tanto</p>
 <div class="math notranslate nohighlight">
 \[
 \psi_{III}(x) = C \left(e^{k_2 x} - e^{-k_2x} \right)
@@ -1026,34 +1026,34 @@ C e^{-k_2 x} + De^{k_2x} &amp;= -C e^{k_2 x} - De^{-k_2x}\\
 <p>Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la función de onda entre las zonas II y III se obtiene</p>
 <div class="math notranslate nohighlight">
 \[
-k_1\frac{A cos(k_1 a) + Bsin(k_1 a)}{-A sin(k_1 a) + Bcos(k_1 a)} = k_2 \frac{C e^{-k_2a} - D e^{k_2a}}{C e^{-k_2a} + D e^{k_2a}}
+k_1\frac{A \cos(k_1 a) + B\sin(k_1 a)}{-A \sin(k_1 a) + B\cos(k_1 a)} = k_2 \frac{C e^{-k_2a} - D e^{k_2a}}{C e^{-k_2a} + D e^{k_2a}}
 \]</div>
-<p>Sustituyendo la condición de simetría par (<span class="math notranslate nohighlight">\(C=-D\)</span>) y la continuidad entre las zonas I y II (<span class="math notranslate nohighlight">\(B = A tan(k_1L)\)</span>)</p>
+<p>Sustituyendo la condición de simetría par (<span class="math notranslate nohighlight">\(C=-D\)</span>) y la continuidad entre las zonas I y II (<span class="math notranslate nohighlight">\(B = A \tan(k_1L)\)</span>)</p>
 <div class="math notranslate nohighlight">
 \[
-k_1\frac{cos(k_1 a) + sin(k_1 a)tan(k_1 L)}{- sin(k_1 a) + cos(k_1 a)tan(k_1 L)} = - k_2 tanh^{-1}(k_2a)
+k_1\frac{\cos(k_1 a) + \sin(k_1 a)\tan(k_1 L)}{- \sin(k_1 a) + \cos(k_1 a)\tan(k_1 L)} = - k_2 \tanh^{-1}(k_2a)
 \]</div>
 <p>Simplificando</p>
 <div class="math notranslate nohighlight">
 \[
-k_1\frac{1 + tan(k_1 a)tan(k_1 L)}{tan(k_1 a) - tan(k_1 L)} = k_2 tanh^{-1}(k_2a)
+k_1\frac{1 + \tan(k_1 a)\tan(k_1 L)}{\tan(k_1 a) - \tan(k_1 L)} = k_2 \tanh^{-1}(k_2a)
 \]</div>
-<p>Aplicamos la identidad trigonométrica <span class="math notranslate nohighlight">\(\frac{tan(\theta) - tan(\phi)}{1 + tan(\theta)tan(\phi)} = tan(\theta - \phi)\)</span></p>
+<p>Aplicamos la identidad trigonométrica <span class="math notranslate nohighlight">\(\frac{\tan(\theta) - \tan(\phi)}{1 + \tan(\theta)\tan(\phi)} = \tan(\theta - \phi)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-\frac{k_1}{k_2} = tanh^{-1}(k_2a) tan(k_1(a-L))
+\frac{k_1}{k_2} = \tanh^{-1}(k_2a) \tan(k_1(a-L))
 \]</div>
 <p>El siguiente paso es sustituir los valores de <span class="math notranslate nohighlight">\(k_1\)</span> y <span class="math notranslate nohighlight">\(k_2\)</span>.</p>
 </div>
 <p>Al considerar esta condición en las ecuaciones de continuidad, se obtiene la siguiente ecuación</p>
 <div class="math notranslate nohighlight">
 \[
-tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
+\tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
 \]</div>
 <p>En esta ecuación no es trivial despear E, pero la igualdad solo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos <span class="math notranslate nohighlight">\(f(E)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2 tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{V-E}
+f(E) = \left( \tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2 \tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{V-E}
 \]</div>
 <p>Cuando se tenga el <span class="math notranslate nohighlight">\(E\)</span> correcto se cumplirá <span class="math notranslate nohighlight">\(f(E) = 0\)</span>, así que solo tenemos que buscar los ceros (o raíces) de la función.</p>
 <p><strong>Defina la función <span class="math notranslate nohighlight">\(f(E)\)</span></strong></p>
@@ -1095,9 +1095,9 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_800771/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_823191/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
-/tmp/ipykernel_800771/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
+/tmp/ipykernel_823191/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
@@ -1106,24 +1106,24 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2
 <p>Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la función de onda y graficarla.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Análisis de las constantes <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span></p>
-<p>Por la continuidad de la zona II y III, con <span class="math notranslate nohighlight">\(B=Atan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=-D\)</span>, se tiene</p>
+<p>Por la continuidad de la zona II y III, con <span class="math notranslate nohighlight">\(B=A\tan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=-D\)</span>, se tiene</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
 \psi_{I}(-a) &amp;= \psi_{III}(-a)\\
--A sin(k_1 a) + Bcos(k_1a) &amp;= C e^{-k_2a} + De^{k_2a}\\
-A \left( -sin(k_1 a) + tan(k_1L)cos(k_1a) \right) &amp;= C \left( e^{-k_2a} - e^{k_2a} \right) \\
-A &amp;= C \left(\frac{e^{-k_2a} - e^{k_2a}}{-sin(k_1 a) + tan(k_1L)cos(k_1a)}\right)
+-A \sin(k_1 a) + B\cos(k_1a) &amp;= C e^{-k_2a} + De^{k_2a}\\
+A \left( -\sin(k_1 a) + \tan(k_1L)\cos(k_1a) \right) &amp;= C \left( e^{-k_2a} - e^{k_2a} \right) \\
+A &amp;= C \left(\frac{e^{-k_2a} - e^{k_2a}}{-\sin(k_1 a) + \tan(k_1L)\cos(k_1a)}\right)
 \end{align}
 \end{split}\]</div>
-<p>De la misma manera, la continuidad de la zona III y IV con <span class="math notranslate nohighlight">\(G=-F tan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=-D\)</span> nos dice</p>
+<p>De la misma manera, la continuidad de la zona III y IV con <span class="math notranslate nohighlight">\(G=-F \tan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=-D\)</span> nos dice</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align}
 \psi_{III}(a) &amp;= \psi_{IV}(a)\\
-C e^{k_2a} + De^{-k_2a} &amp;= F sin(k_1 a) + Gcos(k_1a)\\
-C \left( e^{k_2a} - e^{-k_2a} \right) &amp;= F \left( sin(k_1 a) - tan(k_1L) cos(k_1a) \right)\\
-F &amp;= C \left(\frac{ e^{k_2a} - e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}\right)
+C e^{k_2a} + De^{-k_2a} &amp;= F \sin(k_1 a) + G\cos(k_1a)\\
+C \left( e^{k_2a} - e^{-k_2a} \right) &amp;= F \left( \sin(k_1 a) - \tan(k_1L) \cos(k_1a) \right)\\
+F &amp;= C \left(\frac{ e^{k_2a} - e^{-k_2a} }{\sin(k_1 a) - \tan(k_1L) \cos(k_1a)}\right)
 \end{align}
 \end{split}\]</div>
 <p>En este punto tenemos las siguientes relaciones entre los coeficientes</p>
@@ -1135,19 +1135,19 @@ F &amp;= C \left(\frac{ e^{k_2a} - e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(B\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(B = A tan(k_1 L)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(B = A \tan(k_1 L)\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\(C\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(A = C \left(\frac{e^{k_2a} - e^{-k_2a}}{-sin(k_1 a) + tan(k_1L)cos(k_1a)}\right)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(A = C \left(\frac{e^{k_2a} - e^{-k_2a}}{-\sin(k_1 a) + \tan(k_1L)\cos(k_1a)}\right)\)</span></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(C\)</span> y <span class="math notranslate nohighlight">\(D\)</span></p></td>
 <td class="text-align:center"><p><span class="math notranslate nohighlight">\(C = - D\)</span></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G = -F tan(k_1 L)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(G = -F \tan(k_1 L)\)</span></p></td>
 </tr>
 <tr class="row-even"><td class="text-align:center"><p><span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(C\)</span></p></td>
-<td class="text-align:center"><p><span class="math notranslate nohighlight">\(F = C \left(\frac{ e^{k_2a} - e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}\right)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(F = C \left(\frac{ e^{k_2a} - e^{-k_2a} }{\sin(k_1 a) - \tan(k_1L) \cos(k_1a)}\right)\)</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -1156,7 +1156,7 @@ F &amp;= C \left(\frac{ e^{k_2a} - e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}
 <p>Defina funciones para:</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{II}(x) = \frac{e^{-k_2a}-e^{k_2a}}{-sin(k_1a)+tan(k_1L)cos(k_1a)}(sin(k_1x)+tan(k_1L)np.cos(k_1x))
+\psi_{II}(x) = \frac{e^{-k_2a}-e^{k_2a}}{-\sin(k_1a)+\tan(k_1L)\cos(k_1a)}(\sin(k_1x)+\tan(k_1L)\cos(k_1x))
 \]</div>
 <div class="math notranslate nohighlight">
 \[
@@ -1164,7 +1164,7 @@ F &amp;= C \left(\frac{ e^{k_2a} - e^{-k_2a} }{sin(k_1 a) - tan(k_1L) cos(k_1a)}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\psi_{IV}(x) = \frac{e^{k_2a}-e^{-k_2a}}{sin(k_1a)-tan(k_1L)cos(k_1a)}(sin(k_1x)-tan(k_1L)cos(k_1x))
+\psi_{IV}(x) = \frac{e^{k_2a}-e^{-k_2a}}{\sin(k_1a)-\tan(k_1L)\cos(k_1a)}(\sin(k_1x)-\tan(k_1L)\cos(k_1x))
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
