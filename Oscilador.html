@@ -751,15 +751,13 @@ N_n = \left(\frac{\alpha}{2^n n! \pi^{1/2}} \right)^{1/2}
 </div>
 </div>
 </div>
+<div class="math notranslate nohighlight">
+\[\newcommand{\expval}[1]{\left\langle{#1}\right\rangle}\]</div>
 <p><strong>Calcule el valor esperado de la posición, es decir, realice la integral</strong></p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\int_{-\infty}^{\infty} \psi^*_0 x \psi_0 dx
+\expval{x} = \int_{-\infty}^{\infty} \psi^* x \psi dx
 \end{equation*}\]</div>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>Note que hemos colocado explícitamente <span class="math notranslate nohighlight">\(\psi_0\)</span> ya que estamos analizando el estado basal del oscilador armónico cuántico que corresponde a <span class="math notranslate nohighlight">\(n=0\)</span>.</p>
-</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Realice la integral</span>
@@ -785,7 +783,7 @@ N_n = \left(\frac{\alpha}{2^n n! \pi^{1/2}} \right)^{1/2}
 <p><strong>Calcule el valor esperado del cuadrado de la posición, es decir, realice la integral</strong></p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
-\int_{-\infty}^{\infty} \psi^*_0 x^2 \psi_0 dx
+\expval{x^2} = \int_{-\infty}^{\infty} \psi^* x^2 \psi dx
 \end{equation*}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -813,9 +811,16 @@ N_n = \left(\frac{\alpha}{2^n n! \pi^{1/2}} \right)^{1/2}
 <p class="admonition-title">Pregunta</p>
 <p>Considere los siguientes hechos:</p>
 <ul class="simple">
-<li><p>La raíz de la desviación cuadrática media de la propiedad <span class="math notranslate nohighlight">\(i\)</span> (<span class="math notranslate nohighlight">\(\Delta i\)</span>) es la raíz de la diferencia entre el cuadrado del valor esperado de <span class="math notranslate nohighlight">\(i\)</span> y el valor esperado de <span class="math notranslate nohighlight">\(i^2\)</span>.</p></li>
+<li><p>La raíz de la desviación cuadrática media de la posición está dada por la raíz cuadrada de la diferencia entre el valor esperado de <span class="math notranslate nohighlight">\(x^2\)</span> y el cuadrado del valor esperado de <span class="math notranslate nohighlight">\(x\)</span>, es decir:</p></li>
+</ul>
+<div class="amsmath math notranslate nohighlight" id="equation-5f79b73e-eb5a-45d5-ac38-7dbb7d24702b">
+<span class="eqno">(10.1)<a class="headerlink" href="#equation-5f79b73e-eb5a-45d5-ac38-7dbb7d24702b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+    \Delta x = \sqrt{\expval{x^2} - \expval{x}^2}
+\end{equation}\]</div>
+<ul class="simple">
 <li><p>Para este sistema, la desviación cuadrática media del momento lineal (<span class="math notranslate nohighlight">\(\Delta p_x\)</span>) es distinta de cero.
-¿Por qué el valor esperado de <span class="math notranslate nohighlight">\(x^2\)</span> no puede ser cero? <strong>Ayuda.</strong> Revise el principio de incertidumbre.</p></li>
+¿Por qué <span class="math notranslate nohighlight">\(\expval{x^2}\)</span> no puede ser cero?
+<strong>Ayuda.</strong> Revise el principio de incertidumbre y el producto <span class="math notranslate nohighlight">\(\Delta x \Delta p_x\)</span>.</p></li>
 </ul>
 </div>
 </section>
