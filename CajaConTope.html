@@ -571,7 +571,7 @@ V(x) = \left\{
 \left( -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x) \right) \psi(x) = E \psi(x)
 \]</div>
 <p>Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por regiones.</p>
-<div class="dropdown admonition">
+<div class="admonition-inserto-matematico-hamiltoniano-por-regiones admonition">
 <p class="admonition-title">Inserto matemático: Hamiltoniano por regiones</p>
 <p>Si analizamos la ecuación de Schrödiger por regiones se tiene los siguientes Hamiltonianos y sus respectivas funciones de onda solución:</p>
 <table class="colwidths-auto table">
@@ -646,7 +646,7 @@ V(x) = \left\{
 </div>
 </div>
 <p>La función de onda y su derivada deben de ser continuas, por lo que podemos igualar la función de onda en el punto donde se unen las regiones, y obtener nuevas ecuaciones.</p>
-<div class="dropdown admonition">
+<div class="admonition-inserto-matematico-condiciones-de-frontera admonition">
 <p class="admonition-title">Inserto matemático: Condiciones de Frontera</p>
 <table class="colwidths-auto table">
 <thead>
@@ -781,7 +781,7 @@ f(E) = tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) tan^2 \left(\sqrt{\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_22281/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_25067/383531475.py:6: RuntimeWarning: divide by zero encountered in double_scalars
   return np.tanh(arg1)**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
@@ -848,7 +848,7 @@ k_2 = \frac{2m(V-E)}{\hbar^2}
 </div>
 </div>
 <p>Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la función de onda y graficarla.</p>
-<div class="dropdown admonition">
+<div class="admonition-inserto-matematico-analisis-de-las-constantes-a-b-c-d-f-y-g admonition">
 <p class="admonition-title">Inserto matemático: Análisis de las constantes <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span>, <span class="math notranslate nohighlight">\(D\)</span>, <span class="math notranslate nohighlight">\(F\)</span> y <span class="math notranslate nohighlight">\(G\)</span></p>
 <p>Por la continuidad de la zona II y III, con <span class="math notranslate nohighlight">\(B=Atan(k_1 L)\)</span> y <span class="math notranslate nohighlight">\(C=D\)</span>, se tiene</p>
 <div class="math notranslate nohighlight">
@@ -1095,9 +1095,9 @@ f(E) = \left( tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_22281/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_25067/2773694175.py:5: RuntimeWarning: divide by zero encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
-/tmp/ipykernel_22281/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
+/tmp/ipykernel_25067/2773694175.py:5: RuntimeWarning: invalid value encountered in double_scalars
   return (1/np.tanh(arg1))**2*np.tan(arg2)**2 - E/(V-E)
 </pre></div>
 </div>
