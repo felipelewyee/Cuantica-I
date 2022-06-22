@@ -538,7 +538,7 @@ title="Print to PDF"
 <p>Si se usa una función de prueba normalizada que satisfaga las condiciones de frontera del sistema, el valor esperado del Hamiltoniano es un límite superior a la energía, es decir,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{eqnarray*}
-    E_{\rm prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 \sin \theta \left( \psi_{\rm prueba}^* \hat{H} \psi_{\rm prueba} \right) dr d\theta d\phi \leq E_{\rm exacta} \&gt;\&gt;.
+    E_{\rm prueba} &amp;=&amp; \int_{0}^{\phi=2\pi} \int_{0}^{\theta=\pi} \int_{0}^{r=\infty} r^2 \sin \theta \left( \psi_{\rm prueba}^* \hat{H} \psi_{\rm prueba} \right) dr d\theta d\phi \leq E_{\rm exacta} \&gt;\&gt;.
 \end{eqnarray*}\]</div>
 <p>Esto significa que se puede proponer una función de prueba que satisfaga las condiciones del sistema, y el valor esperado de la energía siempre estará por arriba del valor exacto, y sólo será igual si la función de prueba corresponde a la función de onda exacta del sistema.</p>
 </div>
@@ -569,7 +569,7 @@ H = -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1
 <p>calcule la energía correspondiente al átomo de hidrógeno usando la función de prueba,</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{eqnarray*}
-E_{\rm prueba} &amp;=&amp; \int_{0}^{r=\infty} \int_{0}^{\theta=\pi} \int_{0}^{\phi=2\pi} r^2 \sin \theta \left( \psi_{\rm prueba}^* \hat{H} \psi_{\rm prueba} \right) dr d\theta d\phi \&gt;\&gt;.
+E_{\rm prueba} &amp;=&amp; \int_{0}^{\phi=2\pi} \int_{0}^{\theta=\pi} \int_{0}^{r=\infty} r^2 \sin \theta \left( \psi_{\rm prueba}^* \hat{H} \psi_{\rm prueba} \right) dr d\theta d\phi \&gt;\&gt;.
 \end{eqnarray*}\]</div>
 <p><strong>Paso 0.</strong> Importe sympy.</p>
 <div class="cell docutils container">
