@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Principio-Variacional.html">
-   13. Principio Variacional
+   13. Método Variacional
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -411,11 +411,11 @@ H = -\frac{\hbar^2}{2m_1} \nabla^2_1 -\frac{\hbar^2}{2m_2} \nabla^2_2
 \]</div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>La <code class="docutils literal notranslate"><span class="pre">masa</span> <span class="pre">reducida</span></code> tiene masa <span class="math notranslate nohighlight">\(\mu\)</span> y coordenadas <span class="math notranslate nohighlight">\(r\)</span>, el <code class="docutils literal notranslate"><span class="pre">centro</span> <span class="pre">de</span> <span class="pre">masa</span></code> tiene masa <span class="math notranslate nohighlight">\(m_T\)</span> y coordenadas <span class="math notranslate nohighlight">\(R_{cm}\)</span>.</p>
+<p>La <code class="docutils literal notranslate"><span class="pre">masa</span> <span class="pre">reducida</span></code> tiene masa <span class="math notranslate nohighlight">\(\mu\)</span> y coordenadas <span class="math notranslate nohighlight">\(r\)</span>, el <code class="docutils literal notranslate"><span class="pre">centro</span> <span class="pre">de</span> <span class="pre">masa</span></code> tiene masa <span class="math notranslate nohighlight">\(m_T\)</span> y coordenadas <span class="math notranslate nohighlight">\(R_{\rm cm}\)</span>.</p>
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Sistema de masa reducida</p>
-<p>Este sistema es equivalente al de una partícula de masa reducida (<span class="math notranslate nohighlight">\(\mu\)</span>) girando en torno al centro de masa de ambas partículas ({\rm cm}). La masa total del sistema está dada por la suma de las masas de las partículas</p>
+<p>Este sistema es equivalente al de una partícula de masa reducida (<span class="math notranslate nohighlight">\(\mu\)</span>) girando en torno al centro de masa de ambas partículas (<span class="math notranslate nohighlight">\({\rm cm}\)</span>). La masa total del sistema está dada por la suma de las masas de las partículas</p>
 <div class="math notranslate nohighlight">
 \[
 m_T = m_1 + m_2
@@ -428,7 +428,7 @@ m_T = m_1 + m_2
 <p>El centro de masa del sistema se calcula mediante</p>
 <div class="math notranslate nohighlight">
 \[
-R_{cm} = \left( \frac{m_1}{m_T} \right) r_1 + \left( \frac{m_2}{m_T} \right) r_2
+R_{\rm cm} = \left( \frac{m_1}{m_T} \right) r_1 + \left( \frac{m_2}{m_T} \right) r_2
 \]</div>
 <p>y el Hamiltoniano se calcula con la energía cinética de la masa reducida y del centro de masa, es decir</p>
 <div class="math notranslate nohighlight">
@@ -448,17 +448,17 @@ H = -\frac{\hbar^2}{2m_T} \nabla^2_{\rm cm} - \frac{\hbar^2}{2\mu} \nabla^2_{\mu
 <p>Al sustituir en la ecuación de Schrödinger se obtiene</p>
 <div class="math notranslate nohighlight">
 \[
-\left(-\frac{\hbar^2}{2m_T} \nabla^2_{cm} - \frac{\hbar^2}{2\mu} \nabla^2_{\mu}\right) \psi_{cm}\psi_{\mu} = E \psi_{cm}\psi_{\mu}
+\left(-\frac{\hbar^2}{2m_T} \nabla^2_{\rm cm} - \frac{\hbar^2}{2\mu} \nabla^2_{\mu}\right) \psi_{\rm cm}\psi_{\mu} = E \psi_{cm}\psi_{\mu}
 \]</div>
-<p>Si consideramos que la energía está dada por <span class="math notranslate nohighlight">\(E_T = E_{cm} + E_{r}\)</span> y distribuimos, resulta</p>
+<p>Si consideramos que la energía está dada por <span class="math notranslate nohighlight">\(E_T = E_{\rm cm} + E_{r}\)</span> y distribuimos, resulta</p>
 <div class="math notranslate nohighlight">
 \[
--\psi_{\mu} \frac{\hbar^2}{2m_T} \nabla^2_{cm} \psi_{cm} - \psi_{cm}\frac{\hbar^2}{2\mu} \nabla^2_{\mu} \psi_{\mu} = \psi_{\mu} E_{cm} \psi_{cm} +  \psi_{cm} E_{\mu} \psi_{\mu}
+-\psi_{\mu} \frac{\hbar^2}{2m_T} \nabla^2_{\rm cm} \psi_{\rm cm} - \psi_{\rm cm}\frac{\hbar^2}{2\mu} \nabla^2_{\mu} \psi_{\mu} = \psi_{\mu} E_{\rm cm} \psi_{\rm cm} +  \psi_{\rm cm} E_{\mu} \psi_{\mu}
 \]</div>
 <p>Si multiplicamos ambos lados de la ecuación anterior por <span class="math notranslate nohighlight">\(\frac{1}{\psi_{\mu}\psi_{cm}}\)</span>, resulta</p>
 <div class="math notranslate nohighlight">
 \[
--\frac{1}{\psi_{cm}} \left( \frac{\hbar^2}{2m_T} \nabla^2_{cm} \psi_{cm} - E_{cm} \psi_{cm} \right) = \frac{1}{\psi_{\mu}} \left( \frac{\hbar^2}{2\mu} \nabla^2_{\mu} \psi_{\mu} + E_{\mu} \psi_{\mu} \right)
+-\frac{1}{\psi_{\rm cm}} \left( \frac{\hbar^2}{2m_T} \nabla^2_{\rm cm} \psi_{\rm cm} - E_{\rm cm} \psi_{\rm cm} \right) = \frac{1}{\psi_{\mu}} \left( \frac{\hbar^2}{2\mu} \nabla^2_{\mu} \psi_{\mu} + E_{\mu} \psi_{\mu} \right)
 \]</div>
 <p>ya que el lado izquierdo solo depende de las coordenadas del centro de masa, y el lado derecho solo depende de las coordenadas de la masa reducida, ambos lados deben ser igual a una constante. Si elegimos esta constante como cero, y despejamos lo que está dentro de cada paréntesis se obtienen dos ecuaciones independientes.</p>
 </div>
@@ -466,12 +466,12 @@ H = -\frac{\hbar^2}{2m_T} \nabla^2_{\rm cm} - \frac{\hbar^2}{2\mu} \nabla^2_{\mu
 <p>La primera ecuación corresponde al movimiento del <code class="docutils literal notranslate"><span class="pre">centro</span> <span class="pre">de</span> <span class="pre">masa</span> <span class="pre">del</span> <span class="pre">sistema</span></code> y la hemos estudiado previamente en el movimiento de la <code class="docutils literal notranslate"><span class="pre">partícula</span> <span class="pre">libre</span></code></p>
 <div class="math notranslate nohighlight">
 \[
--\frac{\hbar^2}{2m_T} \nabla^2_{cm} \psi_{cm} = E_{cm} \psi_{cm}
+-\frac{\hbar^2}{2m_T} \nabla^2_{\rm cm} \psi_{\rm cm} = E_{\rm cm} \psi_{\rm cm}
 \]</div>
 <p>esta ecuación tiene como soluciones</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{cm} = A e^{ikx} + B e^{-ikx}
+\psi_{\rm cm} = A e^{ikx} + B e^{-ikx}
 \]</div>
 <p>con <span class="math notranslate nohighlight">\(k^2=2m_TE/\hbar^2\)</span>, y simplemente nos dice que el sistema en conjunto se mueve libremente por el espacio.</p>
 <p>La segunda ecuación corresponde a la <code class="docutils literal notranslate"><span class="pre">masa</span> <span class="pre">reducida</span></code>, y la hemos estudiado en la <code class="docutils literal notranslate"><span class="pre">partícula</span> <span class="pre">en</span> <span class="pre">la</span> <span class="pre">esfera</span></code></p>
