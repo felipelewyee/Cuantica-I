@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4. Partícula en la caja &#8212; Cuántica I</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,38 +18,41 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="5. Penetración" href="Tunel-Region-Infinita.html" />
@@ -63,21 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -86,10 +73,9 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -107,15 +93,14 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
-                    La Química Cuántica a tu alcance
-                </a>
-            </li>
-        </ul>
-        <p aria-level="2" class="caption" role="heading">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   La Química Cuántica a tu alcance
+  </a>
+ </li>
+</ul>
+<p class="caption">
  <span class="caption-text">
   Python
  </span>
@@ -137,7 +122,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Sistemas Sencillos
  </span>
@@ -191,7 +176,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Átomo de Hidrógeno
  </span>
@@ -208,7 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Métodos Aproximados
  </span>
@@ -247,7 +232,7 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
 </ul>
-<p aria-level="2" class="caption" role="heading">
+<p class="caption">
  <span class="caption-text">
   Sistemas de Muchos Electrones
  </span>
@@ -284,17 +269,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -302,182 +282,86 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/Caja.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Caja.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Colab"
->
-  
-
-<span class="headerbtn__icon-container">
-  
-    <img src="_static/images/logo_colab.png">
-  </span>
-<span class="headerbtn__text-container">Colab</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="initThebeSBT()"
-  class="headerbtn headerbtn-launch-thebe"
-  data-toggle="tooltip"
-data-placement="left"
-title="Launch Thebe"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="headerbtn__text-container">Live Code</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="_sources/Caja.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Caja.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/Caja.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Caja.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#caja-1d">
    4.1. Caja 1D
@@ -495,11 +379,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Partícula en la caja</h1>
@@ -533,26 +418,25 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="particula-en-la-caja">
-<h1><span class="section-number">4. </span>Partícula en la caja<a class="headerlink" href="#particula-en-la-caja" title="Permalink to this headline">#</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="particula-en-la-caja">
+<h1><span class="section-number">4. </span>Partícula en la caja<a class="headerlink" href="#particula-en-la-caja" title="Permalink to this headline">¶</a></h1>
 <p>A continuación estudiaremos sistemas sencillos que nos permiten entender como surge la cuantización. Además, nos permitirán familiarizarnos con los pasos para resolver los problemas de química cuántica. Podemos resumir estos como:</p>
 <ol class="simple">
 <li><p>Identificar las interacciones y restricciones del sistema.</p></li>
 <li><p>Escribir el Hamiltoniano (<span class="math notranslate nohighlight">\(\mathcal{H}\)</span>) y la ecuación de Schrödinger (<span class="math notranslate nohighlight">\(\mathcal{H}\psi = E \psi\)</span>).</p></li>
-<li><p>Determinar la función de onda (<span class="math notranslate nohighlight">\(\psi\)</span>).</p></li>
+<li><p>Determinar las eigenfunciones (<span class="math notranslate nohighlight">\(\psi\)</span>).</p></li>
 <li><p>Estudiar las condiciones de cuantización.</p></li>
 </ol>
-<section id="caja-1d">
-<h2><span class="section-number">4.1. </span>Caja 1D<a class="headerlink" href="#caja-1d" title="Permalink to this headline">#</a></h2>
+<div class="section" id="caja-1d">
+<h2><span class="section-number">4.1. </span>Caja 1D<a class="headerlink" href="#caja-1d" title="Permalink to this headline">¶</a></h2>
 <p>La versión 1D de este sistema consiste en una partícula que se mueve en el espacio con un potencial definido en tres regiones</p>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Note que la caja 1D es de hecho una <code class="docutils literal notranslate"><span class="pre">recta</span></code>.</p>
-</aside>
+</div>
 <a class="reference internal image-reference" href="_images/caja1d.png"><img alt="Figura de la caja 1D" src="_images/caja1d.png" style="width: 300px;" /></a>
 <p>es decir</p>
 <div class="math notranslate nohighlight">
@@ -566,7 +450,7 @@ V(x) = \left\{
   \right.
 \end{split}\]</div>
 <p>Esto significa que la partícula está confinada a un intervalo en <span class="math notranslate nohighlight">\(x \in [0,L]\)</span>.</p>
-<p>La función de onda se puede dividir por regiones. Es imposible que la partícula se encuentre en la región <span class="math notranslate nohighlight">\(\text{\rm I}\)</span> y en la región <span class="math notranslate nohighlight">\(\text{\rm III}\)</span>, ya que el potencial es infinito, por lo tanto:</p>
+<p>La eigenfunción se puede dividir por regiones. Es imposible que la partícula se encuentre en la región <span class="math notranslate nohighlight">\({\rm I}\)</span> y en la región <span class="math notranslate nohighlight">\({\rm III}\)</span>, ya que el potencial es infinito, por lo tanto:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \psi(x) = 0 \left\{
@@ -576,7 +460,7 @@ V(x) = \left\{
   \end{array}
   \right.
 \end{split}\]</div>
-<p>Para determinar la función de onda en la región <span class="math notranslate nohighlight">\(\text{II}\)</span> hay que escribir la de Schrödinger</p>
+<p>Para determinar la eigenfunción en la región <span class="math notranslate nohighlight">\(\text{II}\)</span> hay que escribir la de Schrödinger</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} \right)\psi(x) = E \psi(x)
@@ -589,7 +473,7 @@ V(x) = \left\{
 <p>posteriormente hay que recurrir a las condiciones a la frontera.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Condiciones a la frontera</p>
-<p>La función de onda debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, <span class="math notranslate nohighlight">\(\psi_{\rm I}(0) = \psi_{\rm II}(0) = 0\)</span>. Esto implica que <span class="math notranslate nohighlight">\(A=0\)</span>, ya que</p>
+<p>La eigenfunción debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, <span class="math notranslate nohighlight">\(\psi_{\rm I}(0) = \psi_{\rm II}(0) = 0\)</span>. Esto implica que <span class="math notranslate nohighlight">\(A=0\)</span>, ya que</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \psi_{\rm II}(0) = 0 = A\cos(0) + B\sin(0) = A
@@ -611,7 +495,7 @@ V(x) = \left\{
 \psi_{\rm II} = B \sin \left( \frac{n \pi x}{L}\right)
 \end{equation*}\]</div>
 </div>
-<p>Para determinar el valor de B hay que normalizar la función de onda, resultando que:</p>
+<p>Para determinar el valor de B hay que normalizar la eigenfunción, resultando que en la región <span class="math notranslate nohighlight">\({\rm II}\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \psi_n(x)=\left(\frac{2}{L}\right)^{1/2}\sin\left(\frac{n\pi x}{L}\right)
@@ -642,10 +526,10 @@ V(x) = \left\{
 </div>
 </div>
 <p>Considere un electrón dentro de una caja de longitud 4 Angstroms. Defina las siguientes constantes</p>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Considerar <span class="math notranslate nohighlight">\(\hbar=1\)</span>, y <span class="math notranslate nohighlight">\(m_e=1\)</span> se llama <code class="docutils literal notranslate"><span class="pre">unidades</span> <span class="pre">atómicas</span></code>.</p>
-</aside>
+</div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hbar</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">L</span> <span class="o">=</span> <span class="mi">4</span>
@@ -667,15 +551,15 @@ V(x) = \left\{
 </div>
 </div>
 </div>
-<p><strong>Grafique la función de onda (<span class="math notranslate nohighlight">\(\psi\)</span>) y su cuadrado (<span class="math notranslate nohighlight">\(\psi^2\)</span>) para n=1 y L=4.0 A</strong></p>
+<p><strong>Grafique la eigenfunción (<span class="math notranslate nohighlight">\(\psi\)</span>) y su cuadrado (<span class="math notranslate nohighlight">\(\psi^2\)</span>) para n=1 y L=4.0 A</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ol class="simple">
 <li><p>Declare la variable n asígnele su valor.</p></li>
 <li><p>Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 100.</p></li>
-<li><p>Evalúe la función de onda en el dominio</p></li>
+<li><p>Evalúe la eigenfunción en el dominio</p></li>
 <li><p>Calcule el cuadrado de la función de onda en el dominio</p></li>
-<li><p>Grafique la función de onda y su cuadrado usando matplotlib y pyplot.</p></li>
+<li><p>Grafique la eigenfunción y su cuadrado usando matplotlib y pyplot.</p></li>
 </ol>
 </div>
 <div class="cell docutils container">
@@ -709,13 +593,13 @@ V(x) = \left\{
 <img alt="_images/Caja_12_0.png" src="_images/Caja_12_0.png" />
 </div>
 </div>
-<p><strong>Grafique la función de onda (<span class="math notranslate nohighlight">\(\psi\)</span>) y su cuadrado (<span class="math notranslate nohighlight">\(\psi^2\)</span>) para n=1,2,3,4 para L=4.0 A</strong></p>
+<p><strong>Grafique la eigenfunción (<span class="math notranslate nohighlight">\(\psi\)</span>) y su cuadrado (<span class="math notranslate nohighlight">\(\psi^2\)</span>) para n=1,2,3,4 para L=4.0 A</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ol class="simple">
 <li><p>Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 100.</p></li>
 <li><p>Evalúe las 4 funciones de onda en el dominio</p></li>
-<li><p>Calcule el cuadrado de las 4 funciones de onda en el dominio</p></li>
+<li><p>Calcule el cuadrado de las 4 eigenfunciones en el dominio</p></li>
 <li><p>Grafique las funciones y su cuadrado usando matplotlib y pyplot.</p></li>
 </ol>
 </div>
@@ -787,7 +671,7 @@ V(x) = \left\{
 </div>
 <div class="note admonition">
 <p class="admonition-title">Pregunta</p>
-<p>Encuentre un patrón entre el número cuántico <span class="math notranslate nohighlight">\(n\)</span>, el número de nodos de la función de onda, y el número de máximos del cuadrado de la función de onda</p>
+<p>Encuentre un patrón entre el número cuántico <span class="math notranslate nohighlight">\(n\)</span>, el número de nodos de la eigenfunción, y el número de máximos del cuadrado de la función de onda</p>
 </div>
 <p>Como estamos haciendo una secuencia de gráficas donde aumentamos n de uno en uno, podemos hacerlo con un ciclo for. <strong>Repita la gráfica de la función de onda con <span class="math notranslate nohighlight">\(n=1,2,3,4\)</span> utilizando un ciclo for</strong>.</p>
 <div class="cell docutils container">
@@ -835,7 +719,7 @@ E = \frac{\hbar^2 \pi^2 n^2}{2mL^2}
 </div>
 <p>Para trazar líneas horizontales desde <code class="docutils literal notranslate"><span class="pre">inicio</span></code> hasta <code class="docutils literal notranslate"><span class="pre">fin</span></code> del eje X en <code class="docutils literal notranslate"><span class="pre">valor</span></code> del eje Y.</p>
 </div>
-<p>Alternativamente, también puede graficar <span class="math notranslate nohighlight">\(n\)</span> vs <span class="math notranslate nohighlight">\(E/\frac{\hbar^2 \pi^2}{2mL^2}\)</span></p>
+<p>Alternativamente, también puede graficar <span class="math notranslate nohighlight">\(n\)</span> vs <span class="math notranslate nohighlight">\(E\bigg/\frac{\hbar^2 \pi^2}{2mL^2}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para gráfica</span>
@@ -931,14 +815,30 @@ psi_1psi_3 4.163336342344337e-17
 </div>
 </div>
 </div>
-</section>
-<section id="caja-2d">
-<h2><span class="section-number">4.2. </span>Caja 2D<a class="headerlink" href="#caja-2d" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="note admonition"><p class="admonition-title">Pregunta</p><p><span class="math notranslate nohighlight">La energía del estado base de una partícula en una caja es cero.</span></p><form><input type="radio" name="answer" value="Falso"><span class="math notranslate nohighlight">Falso</span><br><input type="radio" name="answer" value="Cierto"><span class="math notranslate nohighlight">Cierto</span><br></form>
+<details class="toggle-details">
+<summary class="toggle-details__summary">
+<svg xmlns="http://www.w3.org/2000/svg" class="tb-icon toggle-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+<span class="toggle-details__summary-text">Mostrar respuesta</span>
+</summary>
+<div class="cell_output docutils container">
+<div><span class="math notranslate nohighlight">La respuesta correcta es: <br><b>Falso</b><br><span class="math notranslate nohighlight">Dado que si \(E=0\) entonces \(\psi =0\) y dicha solución no cumple que su cuadrado sea una densidad de probabilidad.</span></span></div>
+</div></details>
+</div)</div></div>
+</div>
+</div>
+<div class="section" id="caja-2d">
+<h2><span class="section-number">4.2. </span>Caja 2D<a class="headerlink" href="#caja-2d" title="Permalink to this headline">¶</a></h2>
 <p>El problema se  puede plantear como una partícula en una caja de 2-Dimensiones. En este caso, la partícula se confina en <span class="math notranslate nohighlight">\(x \in [0,L_x]\)</span> y <span class="math notranslate nohighlight">\(y \in [0,L_y]\)</span>.</p>
-<aside class="margin sidebar">
+<div class="margin sidebar">
 <p class="sidebar-title"></p>
 <p>Note que la caja 2D es de hecho un <code class="docutils literal notranslate"><span class="pre">rectángulo</span></code> ¿Cómo será la caja 3D?.</p>
-</aside>
+</div>
 <a class="reference internal image-reference" href="_images/caja2d.png"><img alt="Figura de la caja 2D" src="_images/caja2d.png" style="width: 300px;" /></a>
 <p>La ecuación de Schrödinger a resolver es</p>
 <div class="amsmath math notranslate nohighlight">
@@ -981,7 +881,7 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Caja_32_0.png" src="_images/Caja_32_0.png" />
+<img alt="_images/Caja_34_0.png" src="_images/Caja_34_0.png" />
 </div>
 </div>
 <p><strong>Declare los valores de Lx=4, Ly=4, nx=1 y ny=1</strong></p>
@@ -1083,8 +983,8 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Caja_41_0.png" src="_images/Caja_41_0.png" />
-<img alt="_images/Caja_41_1.png" src="_images/Caja_41_1.png" />
+<img alt="_images/Caja_43_0.png" src="_images/Caja_43_0.png" />
+<img alt="_images/Caja_43_1.png" src="_images/Caja_43_1.png" />
 </div>
 </div>
 <p><strong>Obtenga la gráfica de <span class="math notranslate nohighlight">\(\psi_{3,3}\)</span> y <span class="math notranslate nohighlight">\(|\psi_{3,3}|^2\)</span> con <span class="math notranslate nohighlight">\(L_x = L_y = 4.0\)</span></strong></p>
@@ -1134,37 +1034,21 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Caja_44_0.png" src="_images/Caja_44_0.png" />
-<img alt="_images/Caja_44_1.png" src="_images/Caja_44_1.png" />
+<img alt="_images/Caja_46_0.png" src="_images/Caja_46_0.png" />
+<img alt="_images/Caja_46_1.png" src="_images/Caja_46_1.png" />
 </div>
 </div>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><div class="note admonition"><p class="admonition-title">Pregunta</p><p><span class="math notranslate nohighlight">La energía del estado base de una partícula en una caja es cero.</span></p><form><input type="radio" name="answer" value="Falso"><span class="math notranslate nohighlight">Falso</span><br><input type="radio" name="answer" value="Cierto"><span class="math notranslate nohighlight">Cierto</span><br></form>
-<details class="toggle-details">
-<summary class="toggle-details__summary">
-<svg xmlns="http://www.w3.org/2000/svg" class="tb-icon toggle-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
-<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-<polyline points="9 6 15 12 9 18"></polyline>
-</svg>
-<span class="toggle-details__summary-text">Mostrar respuesta</span>
-</summary>
-<div class="cell_output docutils container">
-<div><span class="math notranslate nohighlight">La respuesta correcta es: <br><b>Falso</b><br><span class="math notranslate nohighlight">Dado que si E=0 entonces ψ=0 y dicha solución no cumple que su cuadrado sea una densidad de probabilidad.</span></span></div>
-</div></details>
-</div)</div></div>
 </div>
-</section>
-<section id="referencias">
-<h2><span class="section-number">4.3. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+<div class="section" id="referencias">
+<h2><span class="section-number">4.3. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>F.L. Pilar, Elementary Quantum Chemistry (Dover ed., 2001).</p></li>
 <li><p>G.L. Breneman, The Two-Dimensional Particle in a Box, J. Chem. Educ. 67, 866 (1990).</p></li>
 <li><p>T. Kippeny, L.A. Swafford, y S.J. Rosenthal,  Semiconductor Nanocrystals: A Powerful Visual Aid for Introducing the Particle in a Box, J. Chem. Educ. 79, 1094 (2002).</p></li>
 <li><p>B.D. Anderson, Alternative Compounds for the Particle in a Box Experiment, J. Chem. Educ. 74, 985 (1997).</p></li>
 </ul>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -1188,11 +1072,9 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="Series.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1208,28 +1090,24 @@ E = \frac{h^2 }{8m} \left(\frac{n_x^2}{L_x^2} + \frac{n_y^2}{L_y^2} \right)
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By M. en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      By M. en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>
