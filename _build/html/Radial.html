@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Principio-Variacional.html">
-   13. Principio Variacional
+   13. Método Variacional
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -403,7 +403,7 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="solucion-radial">
 <h1><span class="section-number">11. </span>Solución Radial<a class="headerlink" href="#solucion-radial" title="Permalink to this headline">¶</a></h1>
-<p>El sistema consta de un electrón girando en torno a un núcleo (protón) con radio no fijo.</p>
+<p>El sistema consta de un electrón y un núcleo (protón) con una interacción inversamente proporcional a la distancia entre ellos.</p>
 <p>El Hamiltoniano de este sistema contiene la energía cinética del electrón, la energía cinética del núcleo y la interacción coulómbica núcleo-electrón.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -411,7 +411,7 @@ H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi
 \]</div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>Para <code class="docutils literal notranslate"><span class="pre">átomos</span> <span class="pre">hidrogenoides</span></code> en general, podemos considerar la carga del núcleo, Z, en el término del <code class="docutils literal notranslate"><span class="pre">potencial</span></code> y escribir <span class="math notranslate nohighlight">\(\frac{Ze^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}\)</span>.</p>
+<p>En los <code class="docutils literal notranslate"><span class="pre">átomos</span> <span class="pre">hidrogenoides</span></code> consideramos la carga del núcleo, <span class="math notranslate nohighlight">\(Ze\)</span>, en el término del <code class="docutils literal notranslate"><span class="pre">potencial</span></code> y escribir <span class="math notranslate nohighlight">\(\frac{Ze^2}{4\pi\varepsilon_0|\vec{r}_N-\vec{r}_e|}\)</span>.</p>
 </div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
@@ -424,13 +424,13 @@ H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi
 \]</div>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Cambio a sistema de masa reducida</p>
-<p>El problema se puede simplificar al utilizar coordenadas de masa reducida. La <code class="docutils literal notranslate"><span class="pre">masa</span> <span class="pre">reducida</span></code> tiene masa <span class="math notranslate nohighlight">\(\mu\)</span> y coordenadas <span class="math notranslate nohighlight">\(r\)</span>, el <code class="docutils literal notranslate"><span class="pre">centro</span> <span class="pre">de</span> <span class="pre">masa</span></code> tiene masa <span class="math notranslate nohighlight">\(m_T\)</span> y coordenadas <span class="math notranslate nohighlight">\(R_{cm}\)</span>. Para ver como hacer este cambio, vea <a class="reference internal" href="Rotor.html"><span class="doc">Rotor Rígido</span></a>.</p>
+<p>El problema se puede simplificar al utilizar coordenadas de masa reducida. La <code class="docutils literal notranslate"><span class="pre">masa</span> <span class="pre">reducida</span></code> tiene masa <span class="math notranslate nohighlight">\(\mu\)</span> y coordenadas <span class="math notranslate nohighlight">\(r\)</span>, el <code class="docutils literal notranslate"><span class="pre">centro</span> <span class="pre">de</span> <span class="pre">masa</span></code> tiene masa <span class="math notranslate nohighlight">\(m_T\)</span> y coordenadas <span class="math notranslate nohighlight">\(R_{\rm cm}\)</span>. Para ver como hacer este cambio, vea <a class="reference internal" href="Rotor.html"><span class="doc">Rotor Rígido</span></a>.</p>
 <p>La nueva ecuación de Schrödinger es</p>
 <div class="math notranslate nohighlight">
 \[
-\left(-\frac{\hbar^2}{2m_T}\nabla^2_{cm}-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0r}\right) \Psi = E \Psi
+\left(-\frac{\hbar^2}{2m_T}\nabla^2_{\cm cm}-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0r}\right) \Psi = E \Psi
 \]</div>
-<p>La función de onda <span class="math notranslate nohighlight">\(\Psi\)</span> de la ecuación anterior depende de las coordenadas del centro de masa, <span class="math notranslate nohighlight">\(R_{cm}\)</span> y de las coordenadas de la masa reducida, <span class="math notranslate nohighlight">\(r\)</span>. Se propone una solución por separación de variables, tal que <span class="math notranslate nohighlight">\(\Psi(R,r) = \Phi(R_{cm}) \psi(r)\)</span>. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones</p>
+<p>La función de onda <span class="math notranslate nohighlight">\(\Psi\)</span> de la ecuación anterior depende de las coordenadas del centro de masa, <span class="math notranslate nohighlight">\(R_{\rm cm}\)</span> y de las coordenadas de la masa reducida, <span class="math notranslate nohighlight">\(r\)</span>. Se propone una solución por separación de variables, tal que <span class="math notranslate nohighlight">\(\Psi(R,r) = \Phi(R_{\rm cm}) \psi(r)\)</span>. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones</p>
 <div class="math notranslate nohighlight">
 \[
 \left(-\frac{\hbar^2}{2m_T}\nabla^2_{cm}\right) \Phi = E_{cm} \Phi
@@ -440,7 +440,7 @@ H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi
 \left(-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0r}\right) \psi = E \psi
 \]</div>
 <p>La primera ecuación corresponde al movimiento de una partícula libre.</p>
-<p>Para resolver la segunda ecuación cambiamos a coordenadas polares, recordando que</p>
+<p>Para resolver la segunda ecuación cambiamos a coordenadas esféricas, recordando que (vea <a class="reference internal" href="Esfera.html"><span class="doc">Partícula en la esfera</span></a>)</p>
 <div class="math notranslate nohighlight">
 \[
 \nabla^2_{\mu}=\left(\frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) = \left( \frac{1}{r} \frac{\partial^2}{\partial r^2} r + \frac{1}{r^2} \Lambda^2 \right) 
@@ -453,7 +453,7 @@ H=-\frac{\hbar^2}{2m_N}\nabla^2_N-\frac{\hbar^2}{2m_e}\nabla^2_e-\frac{e^2}{4\pi
 </div>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Separación de variables</p>
-<p>Se propone que la función de onda <span class="math notranslate nohighlight">\(\psi\)</span> puede ser separada en una parte radial y una parte angular, es decir</p>
+<p>Se propone que la eigenfunción <span class="math notranslate nohighlight">\(\psi\)</span> puede ser separada en una parte radial y una parte angular, es decir</p>
 <div class="math notranslate nohighlight">
 \[
 \psi=R(r)Y(\theta,\phi)
@@ -587,7 +587,7 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 <img alt="_images/Radial_10_1.png" src="_images/Radial_10_1.png" />
 </div>
 </div>
-<p><strong>Realice la gráfica de <span class="math notranslate nohighlight">\(R^2(r)\)</span> (el cuadrado de la parte radial de la función de onda) para los orbitales 1s (n=1, l=0),2s (n=2, l=0),3s (n=3, l=0) y 4s (n=4, l=0), y de <span class="math notranslate nohighlight">\(r^2R^2\)</span>.</strong></p>
+<p><strong>Realice la gráfica de <span class="math notranslate nohighlight">\(R^2(r)\)</span> (el cuadrado de la parte radial de la función de onda) para los orbitales 1s (<span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>),2s (<span class="math notranslate nohighlight">\(n=2\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>),3s (<span class="math notranslate nohighlight">\(n=3\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>) y 4s (<span class="math notranslate nohighlight">\(n=4\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>), y de <span class="math notranslate nohighlight">\(r^2R^2\)</span>.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
@@ -635,15 +635,107 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 <img alt="_images/Radial_13_1.png" src="_images/Radial_13_1.png" />
 </div>
 </div>
-<p><strong>Responda las siguientes preguntas</strong></p>
-<p>¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 1s?</p>
-<p><strong>Respuesta</strong></p>
-<p>¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 2s?</p>
-<p><strong>Respuesta</strong></p>
-<p>¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 3s?</p>
-<p><strong>Respuesta</strong></p>
-<p>¿Encuentra algún patrón respecto al número de máximos?</p>
-<p><strong>Realice la gráfica del cuadrado de la parte radial de la función de onda para los orbitales 3s (n=3, l=0),3p (n=3, l=1) y 3d (n=3, l=2), y de <span class="math notranslate nohighlight">\(r^2R^2\)</span>.</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="note admonition"><p class="admonition-title">Pregunta</p><p><span class="math notranslate nohighlight">¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 1s?</span></p><form><input type="radio" name="answer" value="Uno"><span class="math notranslate nohighlight">Uno</span><br><input type="radio" name="answer" value="Dos"><span class="math notranslate nohighlight">Dos</span><br><input type="radio" name="answer" value="Tres"><span class="math notranslate nohighlight">Tres</span><br><input type="radio" name="answer" value="Diverge en cero"><span class="math notranslate nohighlight">Diverge en cero</span><br></form>
+<details class="toggle-details">
+<summary class="toggle-details__summary">
+<svg xmlns="http://www.w3.org/2000/svg" class="tb-icon toggle-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+<span class="toggle-details__summary-text">Mostrar respuesta</span>
+</summary>
+<div class="cell_output docutils container">
+<div><span class="math notranslate nohighlight">La respuesta correcta es: <br><b>Diverge en cero</b><br><span class="math notranslate nohighlight">La parte radial de la eigenfunción es \(R_{n=1,l=0}^2(r)\).</span></span></div>
+</div></details>
+</div)</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="note admonition"><p class="admonition-title">Pregunta</p><p><span class="math notranslate nohighlight">¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 2s?</span></p><form><input type="radio" name="answer" value="Uno"><span class="math notranslate nohighlight">Uno</span><br><input type="radio" name="answer" value="Dos"><span class="math notranslate nohighlight">Dos</span><br><input type="radio" name="answer" value="Tres"><span class="math notranslate nohighlight">Tres</span><br><input type="radio" name="answer" value="Diverge en cero"><span class="math notranslate nohighlight">Diverge en cero</span><br></form>
+<details class="toggle-details">
+<summary class="toggle-details__summary">
+<svg xmlns="http://www.w3.org/2000/svg" class="tb-icon toggle-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+<span class="toggle-details__summary-text">Mostrar respuesta</span>
+</summary>
+<div class="cell_output docutils container">
+<div><span class="math notranslate nohighlight">La respuesta correcta es: <br><b>Diverge en cero</b><br><span class="math notranslate nohighlight">La parte radial de la eigenfunción es \(R_{n=2,l=0}^2(r)\).</span></span></div>
+</div></details>
+</div)</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="note admonition"><p class="admonition-title">Pregunta</p><p><span class="math notranslate nohighlight">¿Cuántos máximos tiene el cuadrado de la parte radial del orbital 3s?</span></p><form><input type="radio" name="answer" value="Uno"><span class="math notranslate nohighlight">Uno</span><br><input type="radio" name="answer" value="Dos"><span class="math notranslate nohighlight">Dos</span><br><input type="radio" name="answer" value="Tres"><span class="math notranslate nohighlight">Tres</span><br><input type="radio" name="answer" value="Diverge en cero"><span class="math notranslate nohighlight">Diverge en cero</span><br></form>
+<details class="toggle-details">
+<summary class="toggle-details__summary">
+<svg xmlns="http://www.w3.org/2000/svg" class="tb-icon toggle-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+<span class="toggle-details__summary-text">Mostrar respuesta</span>
+</summary>
+<div class="cell_output docutils container">
+<div><span class="math notranslate nohighlight">La respuesta correcta es: <br><b>Diverge en cero</b><br><span class="math notranslate nohighlight">La parte radial de la eigenfunción es \(R_{n=3,l=0}^2(r)\).</span></span></div>
+</div></details>
+</div)</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="note admonition"><p class="admonition-title">Pregunta</p><p><span class="math notranslate nohighlight">¿Cuántos máximos tiene el cuadrado de la función de distribución radial del orbital 1s?</span></p><form><input type="radio" name="answer" value="Uno"><span class="math notranslate nohighlight">Uno</span><br><input type="radio" name="answer" value="Dos"><span class="math notranslate nohighlight">Dos</span><br><input type="radio" name="answer" value="Tres"><span class="math notranslate nohighlight">Tres</span><br><input type="radio" name="answer" value="Diverge en cero"><span class="math notranslate nohighlight">Diverge en cero</span><br></form>
+<details class="toggle-details">
+<summary class="toggle-details__summary">
+<svg xmlns="http://www.w3.org/2000/svg" class="tb-icon toggle-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+<span class="toggle-details__summary-text">Mostrar respuesta</span>
+</summary>
+<div class="cell_output docutils container">
+<div><span class="math notranslate nohighlight">La respuesta correcta es: <br><b>Uno</b><br><span class="math notranslate nohighlight">La función de distribución radial de la eigenfunción es \(r^2 R_{n=1,l=0}^2(r)\).</span></span></div>
+</div></details>
+</div)</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="note admonition"><p class="admonition-title">Pregunta</p><p><span class="math notranslate nohighlight">¿Cuántos máximos tiene el cuadrado de la función de distribución radial del orbital 2s?</span></p><form><input type="radio" name="answer" value="Uno"><span class="math notranslate nohighlight">Uno</span><br><input type="radio" name="answer" value="Dos"><span class="math notranslate nohighlight">Dos</span><br><input type="radio" name="answer" value="Tres"><span class="math notranslate nohighlight">Tres</span><br><input type="radio" name="answer" value="Diverge en cero"><span class="math notranslate nohighlight">Diverge en cero</span><br></form>
+<details class="toggle-details">
+<summary class="toggle-details__summary">
+<svg xmlns="http://www.w3.org/2000/svg" class="tb-icon toggle-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+<span class="toggle-details__summary-text">Mostrar respuesta</span>
+</summary>
+<div class="cell_output docutils container">
+<div><span class="math notranslate nohighlight">La respuesta correcta es: <br><b>Dos</b><br><span class="math notranslate nohighlight">La función de distribución radial de la eigenfunción es \(r^2 R_{n=2,l=0}^2(r)\).</span></span></div>
+</div></details>
+</div)</div></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="note admonition"><p class="admonition-title">Pregunta</p><p><span class="math notranslate nohighlight">¿Cuántos máximos tiene el cuadrado de la función de distribución radial del orbital 3s?</span></p><form><input type="radio" name="answer" value="Uno"><span class="math notranslate nohighlight">Uno</span><br><input type="radio" name="answer" value="Dos"><span class="math notranslate nohighlight">Dos</span><br><input type="radio" name="answer" value="Tres"><span class="math notranslate nohighlight">Tres</span><br><input type="radio" name="answer" value="Diverge en cero"><span class="math notranslate nohighlight">Diverge en cero</span><br></form>
+<details class="toggle-details">
+<summary class="toggle-details__summary">
+<svg xmlns="http://www.w3.org/2000/svg" class="tb-icon toggle-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+<span class="toggle-details__summary-text">Mostrar respuesta</span>
+</summary>
+<div class="cell_output docutils container">
+<div><span class="math notranslate nohighlight">La respuesta correcta es: <br><b>Tres</b><br><span class="math notranslate nohighlight">La función de distribución radial de la eigenfunción es \(r^2 R_{n=3,l=0}^2(r)\).</span></span></div>
+</div></details>
+</div)</div></div>
+</div>
+<div class="note admonition">
+<p class="admonition-title">Pregunta</p>
+<p>¿Encuentra algún patrón entre el número de máximos de la función de distribución radial con el número cuántico <span class="math notranslate nohighlight">\(n\)</span> del orbital?</p>
+</div>
+<p><strong>Realice la gráfica del cuadrado de la parte radial de la función de onda para los orbitales 3s (<span class="math notranslate nohighlight">\(n=3\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>),3p (<span class="math notranslate nohighlight">\(n=3\)</span>, <span class="math notranslate nohighlight">\(l=1\)</span>) y 3d (<span class="math notranslate nohighlight">\(n=3\)</span>, <span class="math notranslate nohighlight">\(l=2\)</span>), y de <span class="math notranslate nohighlight">\(r^2R^2\)</span>.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
@@ -689,12 +781,26 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/Radial_17_0.png" src="_images/Radial_17_0.png" />
-<img alt="_images/Radial_17_1.png" src="_images/Radial_17_1.png" />
+<img alt="_images/Radial_24_0.png" src="_images/Radial_24_0.png" />
+<img alt="_images/Radial_24_1.png" src="_images/Radial_24_1.png" />
 </div>
 </div>
-<p>¿Cuál de los orbitales (3s/3p/3d) tiene el máximo del cuadrado de la parte radial más cerca del origen? Es decir, ¿Cuál de estos orbitales (3s/3p/3d) es más penetrante?</p>
-<p><strong>Respuesta</strong></p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output text_html"><div class="note admonition"><p class="admonition-title">Pregunta</p><p><span class="math notranslate nohighlight">¿Cuál de los orbitales (3s/3p/3d) tiene el máximo del cuadrado de la parte radial más cerca del origen? Es decir, ¿Cuál de estos orbitales (3s/3p/3d) es más penetrante?</span></p><form><input type="radio" name="answer" value="3s"><span class="math notranslate nohighlight">3s</span><br><input type="radio" name="answer" value="3p"><span class="math notranslate nohighlight">3p</span><br><input type="radio" name="answer" value="3d"><span class="math notranslate nohighlight">3d</span><br></form>
+<details class="toggle-details">
+<summary class="toggle-details__summary">
+<svg xmlns="http://www.w3.org/2000/svg" class="tb-icon toggle-chevron-right" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+<polyline points="9 6 15 12 9 18"></polyline>
+</svg>
+<span class="toggle-details__summary-text">Mostrar respuesta</span>
+</summary>
+<div class="cell_output docutils container">
+<div><span class="math notranslate nohighlight">La respuesta correcta es: <br><b>3s</b><br><span class="math notranslate nohighlight">El cuadrado de la parte radial del 3s diverge en cero. Note que el máximo de la función de distribución radial de 3d es más cercano al origen.</span></span></div>
+</div></details>
+</div)</div></div>
+</div>
 <div class="section" id="referencias">
 <h2><span class="section-number">11.1. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">

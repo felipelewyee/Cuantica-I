@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>13. Principio Variacional &#8212; Cuántica I</title>
+    <title>13. Método Variacional &#8212; Cuántica I</title>
     
   <link href="_static/css/theme.css" rel="stylesheet">
   <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
-   13. Principio Variacional
+   13. Método Variacional
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -382,7 +382,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Principio Variacional</h1>
+                <h1>Método Variacional</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -411,11 +411,15 @@ const thebe_selector_output = ".output, .cell_output"
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="principio-variacional">
-<h1><span class="section-number">13. </span>Principio Variacional<a class="headerlink" href="#principio-variacional" title="Permalink to this headline">¶</a></h1>
+  <div class="tex2jax_ignore mathjax_ignore section" id="metodo-variacional">
+<h1><span class="section-number">13. </span>Método Variacional<a class="headerlink" href="#metodo-variacional" title="Permalink to this headline">¶</a></h1>
 <div class="seealso admonition">
 <p class="admonition-title">Ver Antes</p>
 <p>Antes de resolver estos ejercicios, puede resultarle de utilidad revisar el Notebook de <a class="reference internal" href="Algebra-Simbolica.html"><span class="doc std std-doc">Álgebra simbólica</span></a>.</p>
+</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>La expresión del valor esperado de la energía mostrada considera el sistema de una partícula en tres dimensiones.</p>
 </div>
 <div class="note admonition">
 <p class="admonition-title">Principio Variacional</p>
@@ -425,10 +429,6 @@ const thebe_selector_output = ".output, .cell_output"
     E_{\rm prueba} &amp;=&amp; \int_{0}^{\phi=2\pi} \int_{0}^{\theta=\pi} \int_{0}^{r=\infty} r^2 \sin \theta \left( \psi_{\rm prueba}^* \hat{H} \psi_{\rm prueba} \right) dr d\theta d\phi \geq E_{\rm exacta} \&gt;\&gt;.
 \end{eqnarray*}\]</div>
 <p>Esto significa que se puede proponer una función de prueba que satisfaga las condiciones del sistema, y el valor esperado de la energía siempre estará por arriba del valor exacto, y sólo será igual si la función de prueba corresponde a la función de onda exacta del sistema.</p>
-</div>
-<div class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>La expresión de energía mostrada considera el valor esperado de la energía de una partícula en tres dimensiones.</p>
 </div>
 <div class="section" id="atomo-de-hidrogeno">
 <h2><span class="section-number">13.1. </span>Átomo de hidrógeno<a class="headerlink" href="#atomo-de-hidrogeno" title="Permalink to this headline">¶</a></h2>
@@ -448,7 +448,7 @@ H = -\frac{1}{2} \left( \frac{1}{r^2}\frac{d}{dr}r^2\frac{d}{dr} \right)-\frac{1
 \end{equation*}\]</div>
 <div class="margin sidebar">
 <p class="sidebar-title"></p>
-<p>Note que la función de prueba propuesta no es la función de onda exacta</p>
+<p>Note que la función de prueba propuesta no es la eigenfunción del estado base.</p>
 </div>
 <p>calcule la energía correspondiente al átomo de hidrógeno usando la función de prueba,</p>
 <div class="amsmath math notranslate nohighlight">
@@ -582,12 +582,15 @@ E_{\rm prueba} &amp;=&amp; \int_{0}^{\phi=2\pi} \int_{0}^{\theta=\pi} \int_{0}^{
 <span class="toggle-details__summary-text">Mostrar respuesta</span>
 </summary>
 <div class="cell_output docutils container">
-<div><span class="math notranslate nohighlight">La respuesta correcta es: <br><b>La energía de la función de prueba es mayor que la exacta.</b><br><span class="math notranslate nohighlight">Dado que la función de prueba no es la exacta, por el principio variacional se cumple que \[ E_\mathrm{prueba} > E_\mathrm{exacta} \]Note que para cualquier [lpha>0\], la energía de prueba obtenida es más positiva que la energía exacta del átomo de hidrógeno de \[-0.5\] Hartree.</span></span></div>
+<div><span class="math notranslate nohighlight">La respuesta correcta es: <br><b>La energía de la función de prueba es mayor que la exacta.</b><br><span class="math notranslate nohighlight">Dado que la función de prueba no es la exacta, por el principio variacional se cumple que \( E_{\mathrm{prueba}} > E_{\mathrm{exacta}} \).Note que para cualquier \(\alpha>0\), la energía de prueba obtenida es más positiva que la energía exacta del átomo de hidrógeno de \(-0.5\) Hartree.</span></span></div>
 </div></details>
 </div)</div></div>
 </div>
+<div class="note admonition">
+<p class="admonition-title">Pregunta</p>
 <p>¿Cómo podría obtener el valor de <span class="math notranslate nohighlight">\(\alpha\)</span> que de la energía más cercana a la exacta para la función de prueba propuesta?</p>
 <p><strong>Idea.</strong> Recuerde máximos y mínimos de Cálculo I.</p>
+</div>
 </div>
 <div class="section" id="referencias">
 <h2><span class="section-number">13.2. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">¶</a></h2>

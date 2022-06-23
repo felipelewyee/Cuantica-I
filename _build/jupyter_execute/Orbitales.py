@@ -107,7 +107,7 @@ THETA,PHI = np.meshgrid(theta,phi)
 
 # Seleccione un valor de $l$ y $m_l$ 
 # ```{note}
-# se recomienda $l=1$ y $ml=1$ para empezar, pero puede probar con otros
+# se recomienda $l=1$ y $m_l=1$ para empezar, pero puede probar con otros
 # ```
 
 # In[5]:
@@ -180,7 +180,7 @@ ax.set_title("$Y^2$"+" l="+str(l)+" ml="+str(ml))
 plt.show()
 
 
-# Recordemos que la función de onda es el producto de una parte radial y una parte angular $\psi_{n,l,m_l}=R_{n,l}(r)Y_l^{m_l}(\theta,\phi)$
+# Recordemos que la eigenfunción es el producto de una parte radial y una parte angular $\psi_{n,l,m_l}=R_{n,l}(r)Y_l^{m_l}(\theta,\phi)$
 # 
 # Nombraremos a los orbitales p como:
 # 
@@ -251,6 +251,8 @@ plt.show()
 # |$2p_x$|$N_2 r \sin\theta \cos\phi e^{-r/2}$|
 # |$2p_y$|$N_2 r \sin\theta \sin\phi e^{-r/2}$|
 # |$2p_z$|$N_2 r \cos\theta e^{-r/2}$|
+# 
+# donde $N_1$ y $N_2$ son factores de normalización.
 # 
 
 # ## Referencias

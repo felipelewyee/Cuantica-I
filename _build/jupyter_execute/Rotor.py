@@ -12,13 +12,13 @@
 # $$
 # 
 # ```{margin}
-# La `masa reducida` tiene masa $\mu$ y coordenadas $r$, el `centro de masa` tiene masa $m_T$ y coordenadas $R_{cm}$.
+# La `masa reducida` tiene masa $\mu$ y coordenadas $r$, el `centro de masa` tiene masa $m_T$ y coordenadas $R_{\rm cm}$.
 # ```
 # 
 # ```{admonition} Inserto matemático: Sistema de masa reducida
 # :class: dropdown
 # 
-# Este sistema es equivalente al de una partícula de masa reducida ($\mu$) girando en torno al centro de masa de ambas partículas ({\rm cm}). La masa total del sistema está dada por la suma de las masas de las partículas
+# Este sistema es equivalente al de una partícula de masa reducida ($\mu$) girando en torno al centro de masa de ambas partículas (${\rm cm}$). La masa total del sistema está dada por la suma de las masas de las partículas
 # 
 # $$
 # m_T = m_1 + m_2
@@ -33,7 +33,7 @@
 # El centro de masa del sistema se calcula mediante
 # 
 # $$
-# R_{cm} = \left( \frac{m_1}{m_T} \right) r_1 + \left( \frac{m_2}{m_T} \right) r_2
+# R_{\rm cm} = \left( \frac{m_1}{m_T} \right) r_1 + \left( \frac{m_2}{m_T} \right) r_2
 # $$
 # 
 # y el Hamiltoniano se calcula con la energía cinética de la masa reducida y del centro de masa, es decir
@@ -57,19 +57,19 @@
 # Al sustituir en la ecuación de Schrödinger se obtiene
 # 
 # $$
-# \left(-\frac{\hbar^2}{2m_T} \nabla^2_{cm} - \frac{\hbar^2}{2\mu} \nabla^2_{\mu}\right) \psi_{cm}\psi_{\mu} = E \psi_{cm}\psi_{\mu}
+# \left(-\frac{\hbar^2}{2m_T} \nabla^2_{\rm cm} - \frac{\hbar^2}{2\mu} \nabla^2_{\mu}\right) \psi_{\rm cm}\psi_{\mu} = E \psi_{cm}\psi_{\mu}
 # $$
 # 
-# Si consideramos que la energía está dada por $E_T = E_{cm} + E_{r}$ y distribuimos, resulta
+# Si consideramos que la energía está dada por $E_T = E_{\rm cm} + E_{r}$ y distribuimos, resulta
 # 
 # $$
-# -\psi_{\mu} \frac{\hbar^2}{2m_T} \nabla^2_{cm} \psi_{cm} - \psi_{cm}\frac{\hbar^2}{2\mu} \nabla^2_{\mu} \psi_{\mu} = \psi_{\mu} E_{cm} \psi_{cm} +  \psi_{cm} E_{\mu} \psi_{\mu}
+# -\psi_{\mu} \frac{\hbar^2}{2m_T} \nabla^2_{\rm cm} \psi_{\rm cm} - \psi_{\rm cm}\frac{\hbar^2}{2\mu} \nabla^2_{\mu} \psi_{\mu} = \psi_{\mu} E_{\rm cm} \psi_{\rm cm} +  \psi_{\rm cm} E_{\mu} \psi_{\mu}
 # $$
 # 
 # Si multiplicamos ambos lados de la ecuación anterior por $\frac{1}{\psi_{\mu}\psi_{cm}}$, resulta
 # 
 # $$
-# -\frac{1}{\psi_{cm}} \left( \frac{\hbar^2}{2m_T} \nabla^2_{cm} \psi_{cm} - E_{cm} \psi_{cm} \right) = \frac{1}{\psi_{\mu}} \left( \frac{\hbar^2}{2\mu} \nabla^2_{\mu} \psi_{\mu} + E_{\mu} \psi_{\mu} \right)
+# -\frac{1}{\psi_{\rm cm}} \left( \frac{\hbar^2}{2m_T} \nabla^2_{\rm cm} \psi_{\rm cm} - E_{\rm cm} \psi_{\rm cm} \right) = \frac{1}{\psi_{\mu}} \left( \frac{\hbar^2}{2\mu} \nabla^2_{\mu} \psi_{\mu} + E_{\mu} \psi_{\mu} \right)
 # $$
 # 
 # ya que el lado izquierdo solo depende de las coordenadas del centro de masa, y el lado derecho solo depende de las coordenadas de la masa reducida, ambos lados deben ser igual a una constante. Si elegimos esta constante como cero, y despejamos lo que está dentro de cada paréntesis se obtienen dos ecuaciones independientes.
@@ -80,13 +80,13 @@
 # La primera ecuación corresponde al movimiento del `centro de masa del sistema` y la hemos estudiado previamente en el movimiento de la `partícula libre`
 # 
 # $$
-# -\frac{\hbar^2}{2m_T} \nabla^2_{cm} \psi_{cm} = E_{cm} \psi_{cm}
+# -\frac{\hbar^2}{2m_T} \nabla^2_{\rm cm} \psi_{\rm cm} = E_{\rm cm} \psi_{\rm cm}
 # $$
 # 
 # esta ecuación tiene como soluciones
 # 
 # $$
-# \psi_{cm} = A e^{ikx} + B e^{-ikx}
+# \psi_{\rm cm} = A e^{ikx} + B e^{-ikx}
 # $$
 # 
 # con $k^2=2m_TE/\hbar^2$, y simplemente nos dice que el sistema en conjunto se mueve libremente por el espacio.
@@ -98,6 +98,12 @@
 # $$
 # 
 # sabemos por tanto que su solución son los armónico esféricos $Y_l^{m_l}(\theta,\phi)$ con $E = \frac{l(l+1)\hbar^2}{2\mu |r|^2}$.
+
+# In[ ]:
+
+
+
+
 
 # ## Referencias
 

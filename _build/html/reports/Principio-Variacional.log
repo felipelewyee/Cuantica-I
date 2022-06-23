@@ -17,26 +17,19 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Descomentar estas líneas si está en modo online
+```{admonition} Pregunta
+:class: note
 
-#!pip install pyscf
-#!pip install geomeTRIC
+¿Cómo podría obtener el valor de $\alpha$ que de la energía más cercana a la exacta para la función de prueba propuesta?
 
-import pyscf
-from pyscf import scf
-from pyscf import dft
-from pyscf.geomopt.geometric_solver import optimize
+**Idea.** Recuerde máximos y mínimos de Cálculo I.
+```
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1868112/2850189669.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      4[0m [0;31m#!pip install geomeTRIC[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m [0;34m[0m[0m
-[0;32m----> 6[0;31m [0;32mimport[0m [0mpyscf[0m[0;34m[0m[0m
-[0m[1;32m      7[0m [0;32mfrom[0m [0mpyscf[0m [0;32mimport[0m [0mscf[0m[0;34m[0m[0m
-[1;32m      8[0m [0;32mfrom[0m [0mpyscf[0m [0;32mimport[0m [0mdft[0m[0;34m[0m[0m
+[0;36m  File [0;32m"/tmp/ipykernel_1866967/3439634180.py"[0;36m, line [0;32m1[0m
+[0;31m    ```{admonition} Pregunta[0m
+[0m    ^[0m
+[0;31mSyntaxError[0m[0;31m:[0m invalid syntax
 
-[0;31mModuleNotFoundError[0m: No module named 'pyscf'
-ModuleNotFoundError: No module named 'pyscf'
+SyntaxError: invalid syntax (3439634180.py, line 1)
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Principio Variacional
+# # Método Variacional
 
 # ````{admonition} Ver Antes
 # :class: seealso
@@ -9,6 +9,10 @@
 # Antes de resolver estos ejercicios, puede resultarle de utilidad revisar el Notebook de [](Algebra-Simbolica.ipynb).
 # ````
 
+# ```{margin}
+# La expresión del valor esperado de la energía mostrada considera el sistema de una partícula en tres dimensiones.
+# ```
+# 
 # ````{admonition} Principio Variacional
 # :class: Note
 # 
@@ -20,10 +24,6 @@
 # 
 # Esto significa que se puede proponer una función de prueba que satisfaga las condiciones del sistema, y el valor esperado de la energía siempre estará por arriba del valor exacto, y sólo será igual si la función de prueba corresponde a la función de onda exacta del sistema.
 # ````
-# 
-# ```{margin}
-# La expresión de energía mostrada considera el valor esperado de la energía de una partícula en tres dimensiones.
-# ```
 
 # ## Átomo de hidrógeno
 
@@ -41,7 +41,7 @@
 # \psi_{\rm prueba} = \left( \frac{2\alpha}{\pi} \right)^{3/4} e^{-\alpha r^2}  \>\>,
 # \end{equation*}
 # ```{margin}
-# Note que la función de prueba propuesta no es la función de onda exacta
+# Note que la función de prueba propuesta no es la eigenfunción del estado base.
 # ```
 # 
 # calcule la energía correspondiente al átomo de hidrógeno usando la función de prueba,
@@ -159,16 +159,22 @@ answers = [
     "La energía de la función de prueba es menor que la exacta.",
 ]
 explanation = (
-    "Dado que la función de prueba no es la exacta, por el principio variacional se cumple que \[ E_\mathrm{prueba} > E_\mathrm{exacta} \]Note que para cualquier [\alpha>0\], la energía de prueba obtenida es más positiva que la energía exacta del átomo de hidrógeno de \[-0.5\] Hartree."
+    "Dado que la función de prueba no es la exacta, por el principio variacional se cumple que \( E_{\mathrm{prueba}} > E_{\mathrm{exacta}} \)." 
+    "Note que para cualquier \(\\alpha>0\), la energía de prueba obtenida es más positiva que la energía exacta del átomo de hidrógeno de \(-0.5\) Hartree."
 )
 MultipleChoice(
     question, answers, correct_answer=0, explanation=explanation
 )
 
 
+# ```{admonition} Pregunta
+# :class: note
+# 
 # ¿Cómo podría obtener el valor de $\alpha$ que de la energía más cercana a la exacta para la función de prueba propuesta?
 # 
 # **Idea.** Recuerde máximos y mínimos de Cálculo I.
+# 
+# ```
 
 # ## Referencias
 
