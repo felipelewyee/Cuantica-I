@@ -1,0 +1,687 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5. Penetración &#8212; Cuántica I</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6. Efecto Túnel" href="Tunel-Region-Finita.html" />
+    <link rel="prev" title="4. Partícula en la caja" href="Caja.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Cuántica I</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   La Química Cuántica a tu alcance
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Basico.html">
+   1. Tutorial Básico
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Tutorial-Avanzado.html">
+   2. Tutorial Avanzado
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Series.html">
+   3. Expansión en series
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas Sencillos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Caja.html">
+   4. Partícula en la caja
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   5. Penetración
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Tunel-Region-Finita.html">
+   6. Efecto Túnel
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="CajaConTope.html">
+     6.3. Efecto Túnel en la Caja
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Anillo.html">
+   7. Partícula en el anillo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Esfera.html">
+   8. Partícula en la esfera
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Rotor.html">
+   9. Rotor Rígido
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Oscilador.html">
+   10. Oscilador Armónico Cuántico
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Átomo de Hidrógeno
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Radial.html">
+   11. Solución Radial
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Orbitales.html">
+   12. Orbitales Atómicos
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Métodos Aproximados
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Principio-Variacional.html">
+   13. Principio Variacional
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Algebra-Simbolica.html">
+     13.3. Álgebra simbólica
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Variacional-Lineal.html">
+   14. Método variacional lineal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="PerturbacionesSinDegeneracion.html">
+   15. Teoría de perturbaciones (niveles de energía no degenerados)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Huckel.html">
+   16. Método de Hückel
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Sistemas de Muchos Electrones
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Software.html">
+   17. Software
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Hartree-Fock.html">
+   18. Hartree-Fock-Roothan (HF)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Moller-Plesset.html">
+   19. Möller-Plesset (MPn)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="DFT.html">
+   20. Teoría de funcionales de la densidad (DFT)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Dimerizacion.html">
+   21. Dimerización de
+   <span class="math notranslate nohighlight">
+    \(NO_2\)
+   </span>
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/Tunel-Region-Infinita.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/felipelewyee/Cuantica-I/master?urlpath=tree/Tunel-Region-Infinita.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/felipelewyee/Cuantica-I/blob/master/Tunel-Region-Infinita.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Penetración</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="penetracion">
+<h1><span class="section-number">5. </span>Penetración<a class="headerlink" href="#penetracion" title="Permalink to this headline">¶</a></h1>
+<p>Considere una partícula moviéndose hacia una barrera de potencial de longitud infinita de valor V en <span class="math notranslate nohighlight">\(x=0\)</span>. Antes de <span class="math notranslate nohighlight">\(x=0\)</span> el potencial vale cero, y después vale <span class="math notranslate nohighlight">\(V\)</span>, es decir:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+V(x) = \left\{
+  \begin{array}{lll}
+  0      &amp; \mathrm{si\ } x &lt; 0 &amp; \text{I}\\
+  V &amp; \mathrm{si\ } 0 \le x &lt; \infty &amp; \text{II} \\
+  \end{array}
+  \right.
+\end{split}\]</div>
+<a class="reference internal image-reference" href="_images/tunel-barrera-infinita.png"><img alt="Figura de tunel de barrera infinita" src="_images/tunel-barrera-infinita.png" style="width: 300px;" /></a>
+<p>En este sistema consideraremos el caso en el que la partícula tiene menor energía, <span class="math notranslate nohighlight">\(E\)</span>, que el potencial, <span class="math notranslate nohighlight">\(V\)</span>, es decir, <span class="math notranslate nohighlight">\(E &lt; V\)</span>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Para pensar</p>
+<p>De manera clásica, la partícula no podría pasar del lado izquierdo (región I) al lado derecho (región II) de la caja, porque no tiene suficiente energía. Por esta razón, no podríamos encontrar a la partícula en la región II. ¿Qué pasará cuánticamente?</p>
+</div>
+<p>Para resolver el sistema hay que planear el Hamiltoniano por regiones y resolver una función de onda para cada región.</p>
+<div class="admonition-inserto-matematico-hamiltoniano-por-regiones admonition">
+<p class="admonition-title">Inserto matemático: Hamiltoniano por regiones</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Región</p></th>
+<th class="text-align:center head"><p>Hamiltoniano</p></th>
+<th class="text-align:center head"><p>Función de onda</p></th>
+<th class="text-align:center head"><p>Constantes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>I</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{\rm I}(x) = Ae^{ikx} + Be^{-ikx}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(k^2 = \frac{2mE}{\hbar^2}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>II</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{\rm II}(x) = C e^{-\kappa x} + De^{\kappa x}\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\kappa ^2 = \frac{2m(V-E)}{\hbar^2}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Se obtienen las funciones de onda</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_I(x) = Ae^{ikx} + Be^{-ikx}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\psi_{\rm II}(x) = C e^{-\kappa x} + De^{\kappa x}
+\]</div>
+<div class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note la diferencia entre la letra <code class="docutils literal notranslate"><span class="pre">k</span></code> y la letra griega <span class="math notranslate nohighlight">\(\kappa\)</span>.</p>
+</div>
+<p>Los coeficientes pueden obtenerse a partir de la condición de continuidad de la función de onda en <span class="math notranslate nohighlight">\(x=0\)</span></p>
+<div class="admonition-inserto-matematico-condiciones-de-continuidad admonition">
+<p class="admonition-title">Inserto matemático: Condiciones de continuidad</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p>Regiones</p></th>
+<th class="text-align:center head"><p>Condición</p></th>
+<th class="text-align:center head"><p>Ecuación</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>II</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{\rm II}(\infty) = 0\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(D = 0\)</span></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>I y II</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\psi_{\rm I}(0) = \psi_{\rm II}(0)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(A + B = C\)</span></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>I y II</p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(\frac{\psi_{\rm I}}{dx}(0) = \frac{\psi_{\rm II}}{dx}(0)\)</span></p></td>
+<td class="text-align:center"><p><span class="math notranslate nohighlight">\(ik (A - B) = - \kappa C\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Se obtiene</p>
+<div class="math notranslate nohighlight">
+\[
+B = -\left(\frac{\kappa + ik}{\kappa - ik}\right) A
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+C = \frac{2ik}{ik - \kappa} A
+\]</div>
+<p><strong>Importe numpy y pyplot de matplotlib.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importe librerías</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>De valores a las constantes del sistema</strong>. Considere <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(\hbar=1\)</span>. Asigne algún valor a la energía y al potencial, respetando que <span class="math notranslate nohighlight">\(V &gt; E\)</span>, observe que en este caso la energía no está cuantizada, por lo que puede tomar cualquier valor. A manera de ejemplo, considere <span class="math notranslate nohighlight">\(E=1\)</span> y <span class="math notranslate nohighlight">\(V=10\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Valores de m,hbar,E,V</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">hbar</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defina <span class="math notranslate nohighlight">\(k\)</span> y <span class="math notranslate nohighlight">\(\kappa\)</span>, recuerde que</p>
+<div class="math notranslate nohighlight">
+\[
+k = \frac{\sqrt{2mE}}{\hbar}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\kappa = \frac{\sqrt{2m(V-E)}}{\hbar}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># k y kappa</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span>
+<span class="n">kappa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">E</span><span class="p">))</span><span class="o">/</span><span class="n">hbar</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defina las constantes</p>
+<div class="math notranslate nohighlight">
+\[
+B = -\left(\frac{k_2 + ik_1}{k_2 - ik_1}\right) A
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+C = \frac{2ik_1}{ik_1 - k_2} A
+\]</div>
+<p>Por conveniencia, defina</p>
+<div class="math notranslate nohighlight">
+\[
+A=1
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A, B, C</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">B</span> <span class="o">=</span> <span class="o">-</span><span class="p">((</span><span class="n">kappa</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">kappa</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="p">))</span><span class="o">*</span><span class="n">A</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">-</span><span class="n">kappa</span><span class="p">)</span><span class="o">*</span><span class="n">A</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Defina el dominio de <span class="math notranslate nohighlight">\(x\)</span> para la región I y para la región II, recuerde que ambos se separan en <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># x1 y x2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Genere la función de onda para la región I y para la región II. Recuerde</p>
+<div class="math notranslate nohighlight">
+\[
+\psi_{\rm I} = A e^{ik x} + B e^{-ik x}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\psi_{\rm II} = C e^{-\kappa x}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># psi_I y psi_II</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_I</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">psi_II</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">kappa</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Grafique <span class="math notranslate nohighlight">\(|\psi_{\rm I}|^2\)</span> y <span class="math notranslate nohighlight">\(|\psi_{\rm II}|^2\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_I</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_II</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fb31c4147f0&gt;]
+</pre></div>
+</div>
+<img alt="_images/Tunel-Region-Infinita_22_1.png" src="_images/Tunel-Region-Infinita_22_1.png" />
+</div>
+</div>
+<p>Note que la partícula puede ser encontrada dentro de la región clásicamente prohibida, esto se conoce como penetración.</p>
+<div class="note admonition">
+<p class="admonition-title">Concepto: Longitud de decaimiento</p>
+<p>La longitud de decaimiento, <span class="math notranslate nohighlight">\(\kappa^{-1}\)</span> es la distancia dentro de la barrera a la cual la función de onda ha decaído a  <span class="math notranslate nohighlight">\(e^{-1}\)</span>.</p>
+</div>
+<p><strong>Calcule la longitud de decaimiento de este sistema.</strong></p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "felipelewyee/Cuantica-I",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="Caja.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title"><span class="section-number">4. </span>Partícula en la caja</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="Tunel-Region-Finita.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Efecto Túnel</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            
+        </div>
+    </div>
+    <footer class="footer">
+  <p>
+    
+      By M. en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
+    
+        &copy; Copyright 2021.<br/>
+  </p>
+</footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
