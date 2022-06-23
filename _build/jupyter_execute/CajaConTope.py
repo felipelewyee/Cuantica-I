@@ -25,34 +25,34 @@
 #   \right.
 # $$
 
-# Es decir, el potencial vale infinito en las zonas I y V, cero en las zonas II y IV (de $-L$ a $-a$ y de $+a$ a $+L$) y vale $V$ en la zona III al centro de la caja (de $-a$ a $+a$).
+# Es decir, el potencial vale infinito en las zonas ${\rm I}$ y ${\rm V}$, cero en las zonas ${\rm II}$ y ${\rm IV}$ (de $-L$ a $-a$ y de $+a$ a $+L$) y vale $V$ en la zona ${\rm III}$ al centro de la caja (de $-a$ a $+a$).
 # 
 # Particularmente estudiaremos el caso en el que la partícula tiene una energía menor al tope de potencial, $E<V$.
 # 
 # ```{admonition} Para pensar
 # :class: tip
-# De manera clásica, la partícula no podría pasar del lado izquierdo (región II) al lado derecho (región IV) de la caja y viceversa porque no tiene suficiente energía para atravesar la región III. Por la misma razón, la probabilidad de encontrar a la partícula en la región III es cero. ¿Qué pasará cuánticamente?
+# De manera clásica, la partícula no podría pasar del lado izquierdo (región ${\rm II}$) al lado derecho (región ${\rm IV}$) de la caja y viceversa porque no tiene suficiente energía para atravesar la región ${\rm III}$. Por la misma razón, la probabilidad de encontrar a la partícula en la región ${\rm III}$ es cero. ¿Qué pasará cuánticamente?
 # ```
 # 
-# La función de onda se obtiene resolviendo la ecuación de Schrödinger
+# La eigenfunción se obtiene resolviendo la ecuación de Schrödinger
 # 
 # $$
 # \left( -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x) \right) \psi(x) = E \psi(x)
 # $$
 # 
-# Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por regiones.
+# Como se vio antes, la eigenfunción vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por regiones.
 
 # ```{admonition} Inserto matemático: Hamiltoniano por regiones
 # 
-# Si analizamos la ecuación de Schrödiger por regiones se tiene los siguientes Hamiltonianos y sus respectivas funciones de onda solución:
+# Si analizamos la ecuación de Schrödiger por regiones se tienen los siguientes Hamiltonianos y sus respectivas eigenfunciones solución:
 # 
-# | Región      | Hamiltoniano | Función de onda | Constantes |
+# | Región      | Hamiltoniano | Eigenfunción | Constantes |
 # |:----------------:|:---------:|:--------:|:--------:|
-# | II | $\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\right) \psi_{\rm II}(x) = E \psi_{\rm II}(x)$ | $\psi_{\rm II}(x) = A \sin(k_1 x) + B\cos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
-# | III | $\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V \right) \psi_{\rm III}(x)= E \psi_{\rm III}(x)$ | $\psi_{\rm III}(x) = C e^{k_2 x} + De^{-k_2x}$ | $k_2^2 = \frac{2m(V-E)}{\hbar^2}$ |
-# | IV | $\left( -\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\right) \psi_{\rm IV}(x) = E \psi_{\rm IV}(x)$ | $\psi_{\rm IV}(x) = F \sin(k_1 x) + G \cos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
+# | ${\rm II}$ | $\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\right) \psi_{\rm II}(x) = E \psi_{\rm II}(x)$ | $\psi_{\rm II}(x) = A \sin(k_1 x) + B\cos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
+# | ${\rm III}$ | $\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V \right) \psi_{\rm III}(x)= E \psi_{\rm III}(x)$ | $\psi_{\rm III}(x) = C e^{k_2 x} + De^{-k_2x}$ | $k_2^2 = \frac{2m(V-E)}{\hbar^2}$ |
+# | ${\rm IV}$ | $\left( -\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\right) \psi_{\rm IV}(x) = E \psi_{\rm IV}(x)$ | $\psi_{\rm IV}(x) = F \sin(k_1 x) + G \cos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
 # 
-# Note que en la región I y V el potencial es infinito, por lo que $\psi_{\rm I} = \psi_{\rm V} = 0$.
+# Note que en la región ${\rm I}$ y ${\rm V}$ el potencial es infinito, por lo que $\psi_{\rm I} = \psi_{\rm V} = 0$.
 # 
 # ```
 
@@ -95,17 +95,17 @@ a = 0.2
 L = 1.2
 
 
-# La función de onda y su derivada deben de ser continuas, por lo que podemos igualar la función de onda en el punto donde se unen las regiones, y obtener nuevas ecuaciones.
+# La eigenfunción y su derivada deben de ser continuas, por lo que podemos igualar la eigenfunción en el punto donde se unen las regiones, y obtener nuevas ecuaciones.
 # 
 # ```{admonition} Inserto matemático: Condiciones de Frontera
 # 
 # | Regiones | Condición | Ecuación |
 # |:---: |:---: | :---:    |
-# | I y II | $\psi_{\rm II}(-L) = 0$ | $B = A \tan(k_1 L)$ |
-# | II y III | $\psi_{\rm II}(-a) = \psi_{\rm III}(-a)$ | $-A \sin(k_1 a) + B\cos(k_1 a) = C e^{-k_2a} + D e^{k_2a}$ |
-# |II y III | $\frac{d\psi_{\rm II}}{dx}(-a) = \frac{d\psi_{\rm III}}{dx}(-a)$ | $k_1(A \cos(k_1 a) + B\sin(k_1 a)) = k_2 (C e^{-k_2a} - D e^{k_2a})$|
-# | III y IV | $\psi_{\rm III}(a) = \psi_{\rm IV}(a)$ | $C e^{k_2a} + D e^{-k_2a} = F \sin(k_1 a) + G \cos(k_1 a)$|
-# | IV y V | $\psi_{\rm V}(L) = 0$ | $G = -F \tan(k_1 L)$|
+# | ${\rm I}$ y ${\rm II}$ | $\psi_{\rm II}(-L) = 0$ | $B = A \tan(k_1 L)$ |
+# | ${\rm II}$ y ${\rm III}$ | $\psi_{\rm II}(-a) = \psi_{\rm III}(-a)$ | $-A \sin(k_1 a) + B\cos(k_1 a) = C e^{-k_2a} + D e^{k_2a}$ |
+# | ${\rm II}$ y ${\rm III}$ | $\frac{d\psi_{\rm II}}{dx}(-a) = \frac{d\psi_{\rm III}}{dx}(-a)$ | $k_1(A \cos(k_1 a) + B\sin(k_1 a)) = k_2 (C e^{-k_2a} - D e^{k_2a})$|
+# | ${\rm III}$ y ${\rm IV}$ | $\psi_{\rm III}(a) = \psi_{\rm IV}(a)$ | $C e^{k_2a} + D e^{-k_2a} = F \sin(k_1 a) + G \cos(k_1 a)$|
+# | ${\rm IV}$ y ${\rm V}$ | $\psi_{\rm V}(L) = 0$ | $G = -F \tan(k_1 L)$|
 # ```
 # 
 # A partir de aquí podemos ayudarnos de la simetría del problema.
@@ -117,7 +117,7 @@ L = 1.2
 # ```{admonition} Inserto matemático: Simetría par
 # :class: dropdown
 # 
-# Al imponer la simetría en la región III
+# Al imponer la simetría en la región ${\rm III}$
 # 
 # $$
 # \begin{align}
@@ -132,7 +132,7 @@ L = 1.2
 # \psi_{\rm III}(x) = C \left(e^{k_2 x} + e^{-k_2x} \right)
 # $$
 # 
-# Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la función de onda entre las zonas II y III se obtiene
+# Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la eigenfunción entre las zonas ${\rm II}$ y ${\rm III}$ se obtiene
 # 
 # $$
 # k_1\frac{A \cos(k_1 a) + B\sin(k_1 a)}{-A \sin(k_1 a) + B\cos(k_1 a)} = k_2 \frac{C e^{-k_2a} - D e^{k_2a}}{C e^{-k_2a} + D e^{k_2a}}
@@ -165,7 +165,7 @@ L = 1.2
 # \sqrt{\frac{E}{V-E}} = \tanh \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right)
 # $$
 # 
-# En esta ecuación no es trivial despear E, pero la igualdad sólo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos $f(E)$
+# En esta ecuación no es trivial despejar $E$, pero la igualdad sólo se cumplirá con la $E$ correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos $f(E)$
 # 
 # $$
 # f(E) = \tanh^2 \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{V-E}
@@ -192,7 +192,7 @@ def f(E):
     return np.tanh(arg1)**2*np.tan(arg2)**2 - E/(V-E)
 
 
-# Para obtener los valores de E que hacen que f(E) se vuelva cero, cree un conjunto de puntos de E con muchos puntos entre 0 y V, puede usar la instrucción
+# Para obtener los valores de $E$ que hacen que $f(E)$ se vuelva cero, cree un conjunto de puntos de $E$ con muchos puntos entre $0$ y $V$, puede usar la instrucción
 # ```
 # E_dominio = np.linspace(0,V,10000)
 # ```
@@ -209,7 +209,7 @@ def f(E):
 E_dominio = np.linspace(0,V,10000)
 
 
-# **Para cada uno de estos puntos evalúe si f(E) es menos a $10^{-2}$**, si la condición se cumple el valor de E es un buen candidato para ser una raíz de f(E). Haga una lista con los valores de E que cumplieron el criterio, este será su `primer guess`.
+# **Para cada uno de estos puntos evalúe si $f(E)$ es menor a $10^{-2}$**, si la condición se cumple el valor de $E$ es un buen candidato para ser una raíz de $f(E)$. Haga una lista con los valores de E que cumplieron el criterio, este será su `primer guess`.
 
 # In[9]:
 
@@ -220,7 +220,8 @@ for E_i in E_dominio:
         E_primerguess.append(E_i)
 
 
-# Python tiene funciones especiales para buscar raíces partiendo de cierto punto. La siguiente línea busca la raíz de f(E) más cercana a un punto E_i
+# Python tiene funciones especiales para buscar raíces partiendo de cierto punto. La siguiente línea busca la raíz de $f(E)$ más cercana a un punto $E_i$
+# 
 # ```
 # E = newton(f,x0=E_i)
 # ```
@@ -274,11 +275,11 @@ def k1(E): return np.sqrt(2*m*E/hbar**2)
 def k2(E): return np.sqrt(2*m*(V-E)/hbar**2)
 
 
-# Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la función de onda y graficarla.
+# Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la eigenfunción y graficarla.
 # 
 # ```{admonition} Inserto matemático: Análisis de las constantes $A$, $B$, $C$, $D$, $F$ y $G$
 # 
-# Por la continuidad de la zona II y III, con $B=A\tan(k_1 L)$ y $C=D$, se tiene
+# Por la continuidad de la zona ${\rm II}$ y ${\rm III}$, con $B=A\tan(k_1 L)$ y $C=D$, se tiene
 # 
 # $$
 # \begin{align}
@@ -289,7 +290,7 @@ def k2(E): return np.sqrt(2*m*(V-E)/hbar**2)
 # \end{align}
 # $$
 # 
-# De la misma manera, la continuidad de la zona III y IV con $G=-F \tan(k_1 L)$ y $C=D$ nos dice
+# De la misma manera, la continuidad de la zona ${\rm III}$ y ${\rm IV}$ con $G=-F \tan(k_1 L)$ y $C=D$ nos dice
 # 
 # $$
 # \begin{align}
@@ -418,13 +419,13 @@ for E in E_segundoguess:
 # \psi_{\rm III}(x) = C \left(e^{k_2 x} - e^{-k_2x} \right)
 # $$
 # 
-# Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la función de onda entre las zonas II y III se obtiene
+# Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la función de onda entre las zonas ${\rm II}$ y ${\rm III}$ se obtiene
 # 
 # $$
 # k_1\frac{A \cos(k_1 a) + B\sin(k_1 a)}{-A \sin(k_1 a) + B\cos(k_1 a)} = k_2 \frac{C e^{-k_2a} - D e^{k_2a}}{C e^{-k_2a} + D e^{k_2a}}
 # $$
 # 
-# Sustituyendo la condición de simetría par ($C=-D$) y la continuidad entre las zonas I y II ($B = A \tan(k_1L)$)
+# Sustituyendo la condición de simetría par ($C=-D$) y la continuidad entre las zonas ${\rm I}$ y ${\rm II}$ ($B = A \tan(k_1L)$)
 # 
 # $$
 # k_1\frac{\cos(k_1 a) + \sin(k_1 a)\tan(k_1 L)}{- \sin(k_1 a) + \cos(k_1 a)\tan(k_1 L)} = - k_2 \tanh^{-1}(k_2a)
@@ -452,7 +453,7 @@ for E in E_segundoguess:
 # \tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \tan \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) = \sqrt{\frac{E}{V-E}}
 # $$
 # 
-# En esta ecuación no es trivial despear E, pero la igualdad solo se cumplirá con la E correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos $f(E)$
+# En esta ecuación no es trivial despear E, pero la igualdad solo se cumplirá con la $E$ correcta. Una forma más simple es elevar al cuadrado y pasar todo a la derecha, tal que definamos $f(E)$
 # 
 # $$
 # f(E) = \left( \tanh^{-1} \left(\sqrt{\frac{2m(V-E)}{\hbar^2}} a \right) \right)^2 \tan^2 \left(\sqrt{\frac{2mE}{\hbar^2}}(a-L) \right) - \frac{E}{V-E}
@@ -475,8 +476,8 @@ def f(E):
 # Obtenga su guess de valores de energía
 # 
 # ```{tip}
-# - Genere un conjunto de 1000 puntos de E de 0 a V
-# - Seleccione aquellos para los que f(E) es menor que $10^{-2}$
+# - Genere un conjunto de 1000 puntos de $E$ de $0$ a V
+# - Seleccione aquellos para los que $f(E)$ es menor que $10^{-2}$
 # - Utilice el método de Newton para obtener valores únicos de energía
 # ```
 
@@ -501,7 +502,7 @@ for E in E_primerguess:
 # 
 # ```{admonition} Inserto matemático: Análisis de las constantes $A$, $B$, $C$, $D$, $F$ y $G$
 # 
-# Por la continuidad de la zona II y III, con $B=A\tan(k_1 L)$ y $C=-D$, se tiene
+# Por la continuidad de la zona ${\rm II}$ y ${\rm III}$, con $B=A\tan(k_1 L)$ y $C=-D$, se tiene
 # 
 # $$
 # \begin{align}
@@ -512,7 +513,7 @@ for E in E_primerguess:
 # \end{align}
 # $$
 # 
-# De la misma manera, la continuidad de la zona III y IV con $G=-F \tan(k_1 L)$ y $C=-D$ nos dice
+# De la misma manera, la continuidad de la zona ${\rm III}$ y ${\rm IV}$ con $G=-F \tan(k_1 L)$ y $C=-D$ nos dice
 # 
 # $$
 # \begin{align}

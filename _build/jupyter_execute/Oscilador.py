@@ -109,7 +109,7 @@ alpha = np.power(m*k/(hbar**2),1/4)
 x = np.linspace(-5,5,1000)
 
 
-# **Grafique la función de onda del oscilador Harmónico cuántico y su cuadrado para $n=0,2,4$.**
+# **Grafique la eigenfunción del oscilador Harmónico cuántico y su cuadrado para $n=0,2,4$.**
 # 
 # Compare con Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005, p.62.
 
@@ -143,7 +143,7 @@ plt.title("$\psi^2$")
 plt.show()
 
 
-# **Grafique la función de onda del oscilador Harmónico cuántico para $n=1,3,5$.**
+# **Grafique la eigenfunción del oscilador Harmónico cuántico para $n=1,3,5$.**
 # 
 # Compare con Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005, p.62.
 

@@ -18,7 +18,7 @@
 # ```{admonition} Inserto matemático: Sistema de masa reducida
 # :class: dropdown
 # 
-# Este sistema es equivalente al de una partícula de masa reducida ($\mu$) girando en torno al centro de masa de ambas partículas (cm). La masa total del sistema está dada por la suma de las masas de las partículas
+# Este sistema es equivalente al de una partícula de masa reducida ($\mu$) girando en torno al centro de masa de ambas partículas ({\rm cm}). La masa total del sistema está dada por la suma de las masas de las partículas
 # 
 # $$
 # m_T = m_1 + m_2
@@ -39,16 +39,16 @@
 # y el Hamiltoniano se calcula con la energía cinética de la masa reducida y del centro de masa, es decir
 # 
 # $$
-# H = -\frac{\hbar^2}{2m_T} \nabla^2_{cm} - \frac{\hbar^2}{2\mu} \nabla^2_{\mu}
+# H = -\frac{\hbar^2}{2m_T} \nabla^2_{\rm cm} - \frac{\hbar^2}{2\mu} \nabla^2_{\mu}
 # $$
 # 
 # La ecuación de Schrödinger a resolver es
 # 
 # $$
-# \left(-\frac{\hbar^2}{2m_T} \nabla^2_{cm} - \frac{\hbar^2}{2\mu} \nabla^2_{\mu}\right) \psi = E \psi
+# \left(-\frac{\hbar^2}{2m_T} \nabla^2_{\rm cm} - \frac{\hbar^2}{2\mu} \nabla^2_{\mu}\right) \psi = E \psi
 # $$
 # 
-# Se propone que la función de onda se puede separar en el producto de una función de onda del centro de masa y una función de onda de la partícula de masa reducida
+# Se propone que la eigenfunción se puede separar en el producto de una eigenfunción del centro de masa y una eigenfunción de la partícula de masa reducida
 # 
 # $$
 # \psi=\psi_{cm}\psi_{\mu}
