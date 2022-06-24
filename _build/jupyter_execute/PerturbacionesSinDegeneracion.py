@@ -6,10 +6,10 @@
 # El objetivo es determinar una solución aproximada a la ecuación de Schrödinger para un Hamiltoniano $\hat{H}$. La suposición importante en la teoría de perturbaciones es que $\hat{H}$ es un poco diferente de un Hamiltoniano $\hat{H}^{(0)}$ del cual conocemos su solución; es decir, conocemos sus eigenfunciones y eigenvalores. Esto es 
 # 
 # $$
-# \hat{H}^{(0)} \Psi_n^{(0)} = E_n^{(0)}  \Psi_n^{(0)}
+# \hat{H}^{(0)} \psi_n^{(0)} = E_n^{(0)}  \psi_n^{(0)}
 # $$
 # 
-# donde tanto $E_n^{(0)}$ y $\Psi_n^{(0)}$ son conocidos. La diferencia entre $\hat{H}$ y $\hat{H}^{(0)}$ se llama la perturbación y la denotamos por $\hat{H}'$, esto es
+# donde tanto $E_n^{(0)}$ y $\psi_n^{(0)}$ son conocidos. La diferencia entre $\hat{H}$ y $\hat{H}^{(0)}$ se llama la perturbación y la denotamos por $\hat{H}'$, esto es
 # 
 # $$
 # \hat{H}' = \hat{H}-\hat{H}^{(0)}
@@ -17,11 +17,11 @@
 # 
 # El método presentado en este notebook tiene la suposición los niveles de energía $\big\{ E_n^{(0)}\big\}$ no están degenerados.
 # 
-# Proponemos una solución en serie aproximada a los eigenvalores ($E_n$) y eigenfunciones ($\Psi_n$) de $\hat{H}$ en términos de $E_n^{(0)}$ y $\Psi_n^{(0)}$ y correcciones a dichos valores. De tal forma que tenemos,
+# Proponemos una solución en serie aproximada a los eigenvalores ($E_n$) y las eigenfunciones ($\psi_n$) de $\hat{H}$ en términos de $E_n^{(0)}$ y $\psi_n^{(0)}$ y correcciones a dichos valores. De tal forma que tenemos,
 # 
 # $$
 # E_n &=& E_n^{(0)}+ E_n^{(1)} + E_n^{(2)} +\ldots \\
-# \Psi_n &=& \Psi_n^{(0)}+\Psi^{(1)}+\Psi^{(2)}+\ldots
+# \Psi_n &=& \psi_n^{(0)}+\psi^{(1)}+\psi^{(2)}+\ldots
 # $$
 # 
 # ```{admonition} Inserto matemático: Correcciones
@@ -30,10 +30,10 @@
 # Con el fin de escribir las expresiones para las diferentes correcciones introducimos la notación para los elementos de matriz de la perturbación, ($\hat{H}'$),
 # 
 # $$
-# \hat{H}'_{m,n} = \langle \Psi_m^{(0)} | \hat{H}' | \Psi_n^{(0)} \rangle = \int \big( \Psi_m^{(0)} \big)^* \hat{H}' \Psi_n ^{(0)} \,dq
+# \hat{H}'_{m,n} = \langle \psi_m^{(0)} | \hat{H}' | \psi_n^{(0)} \rangle = \int \big( \psi_m^{(0)} \big)^* \hat{H}' \psi_n ^{(0)} \,dq
 # $$
 # 
-# donde $\Psi_n^{(0)}(q)$ son la eigenfunciones que conocemos de $\hat{H}^{(0)}$ y hemos denoatdo por $q$ a las coordenadas de las que dependen.
+# donde $\psi_n^{(0)}(q)$ son la eigenfunciones que conocemos de $\hat{H}^{(0)}$ y hemos denoatdo por $q$ a las coordenadas de las que dependen.
 # 
 # En términos de los elementos de matriz de $\hat{H}'$ tenemos,
 # 
@@ -50,7 +50,7 @@
 # 
 # ---
 
-# ## Ejemplo-Oscilador anarmónico
+# ## Ejemplo - Oscilador anarmónico
 # En Hamiltoniano del oscilador anarmónico de una partícula en una dimensión es:
 # 
 # $$
@@ -64,7 +64,7 @@
 # $$
 # 
 # $$
-# \Psi_n^{(0)} (x) = \frac{1}{\sqrt{2^n n !}} \bigg( \frac{\alpha}{\pi} \bigg)^{1/4} e^{-\alpha x^2/2 } H_n\bigg( \alpha^{1/2}\,x \bigg)
+# \psi_n^{(0)} (x) = \frac{1}{\sqrt{2^n n !}} \bigg( \frac{\alpha}{\pi} \bigg)^{1/4} e^{-\alpha x^2/2 } H_n\bigg( \alpha^{1/2}\,x \bigg)
 # $$
 # 
 # donde  $\alpha = 2\pi\nu m /\hbar$ y 
@@ -75,7 +75,20 @@
 # 
 # Realicemos numéricamente el cálculo de los elementos de matriz. 
 
+# **Importe las siguientes librerías**
+# 
+# - pylab
+# - scipy.special
+# 
+# De la librería `scipy.special` ocuparemos las funciones `factorial` y `eval_hermite`
+
 # In[1]:
+
+
+# Librerías
+
+
+# In[2]:
 
 
 from pylab import *
@@ -83,7 +96,28 @@ from scipy.special import factorial
 from scipy.special import eval_hermite as Hn
 
 
-# In[2]:
+# **Defina los valores de los parámetros y constantes a usar.** 
+# 
+# Tomemos de ejemplo los valores de la molécula de CO.
+# 
+# 
+# |Parámetro|Valor|
+# |-------- |--------|
+# |     $k$|$1902.5\,{\rm N/m}$           |
+# |   $\mu$|$1.1391 \times10^{-26}\,{\rm kg}$|
+# |   $\nu$|$\displaystyle \frac{1}{2\pi}\sqrt{\frac{k}{m}}$|
+# |$\alpha$|$2\pi\nu m/\hbar $|
+# 
+# 
+
+# In[3]:
+
+
+# Defina los valores y constantes en el Hamiltoniano del oscilador armónico 
+# e imprima los valores de ν y el valor del E = hν/2
+
+
+# In[4]:
 
 
 π = pi
@@ -113,22 +147,46 @@ print ("E0^(0) = {0:.3f} [eV]".format(E00/e))
 # por la carga elemental para obtener las unidades de eV.
 
 
-# La longitud (1/α)^{1/2} es característica de las eigenfunciones 
-# por lo que es un buen parámetro para determinar el intervalo de 
-# los valores de x.
+# **Defina las eigenfunciones del oscilador armónico.**
 
-x   = linspace(-10/sqrt(α),10/sqrt(α),10000)
+# In[5]:
+
+
+# Define como función de python las eigenfunciones del oscilador armónico
+
+
+# In[6]:
+
 
 # Definimos la función que nos devuelva la eigenfunción 
 # del oscilador armónico
 def funcΨ0n(n,x):
     return ( 1/sqrt(2**n*factorial(n)) )*( (α/π)**(0.25) )*exp(-α*x*x/2)*Hn(n,sqrt(α)*x)
 
+
+# **Verifica la normalización de las eigenfunciones**
+# 
+# ```{margin}
+# La integral numérica de una función puede realizarse con la función `numpy.trapz`.
+# ```
+
+# In[7]:
+
+
+# Define un intervalo donde evaluar la función y la integral
+# La integral numérica de una función puede realizarse con 
+# la función numpy.trapz
+
+
+# In[8]:
+
+
+# La longitud (1/α)^{1/2} es característica de las eigenfunciones 
+# por lo que es un buen parámetro para determinar el intervalo de 
+# los valores de x.
+
+x   = linspace(-10/sqrt(α),10/sqrt(α),10000)
 Ψ0n = funcΨ0n(n,x)
-
-
-# In[3]:
-
 
 # Podemos verificar que las eigenfunciones están normalizadas utilizando la regla del trapecio
 # Notemos que las eigenfunciones son reales por lo que Ψ*(x) = Ψ(x)
@@ -137,20 +195,24 @@ Integral = trapz(Ψ2,x)
 print ("Integral: {0:.3f}".format(Integral))
 
 
-# **Procedemos a evaluar los elementos de matriz**
+# **Evalúa los elementos de matriz de $H'=cx^3+dx^4$** 
+# 
+# Utiliza que $c=600\,{\rm J}/{\rm m}^3$ y $d=1\times 10^{-4}\alpha k^2/4$
 
-# In[4]:
+# In[9]:
+
+
+# Define H' y define una función para evaluar 
+# los elementos de matriz dado un m y n
+
+
+# In[10]:
 
 
 # Definimos la perturbación H'
 c  = 600; d = 1e-4*(α*k*k)/4
 
 Hp = c*x**3 + d*x**4
-
-# Construimos los elementos de matriz de H'_{m,n}
-# Notemos que numéricamente la matriz
-# tiene un tamaño finito
-m_max = 20
 
 # Definimos la función que evalúa
 def ElementoMatriz(m,n,x):
@@ -159,15 +221,27 @@ def ElementoMatriz(m,n,x):
     Int = trapz( Ψm0*Hp*Ψn0,x )
     return Int
 
+
+# **Visualiza los elementos de matriz**
+# 
+# ```{margin}
+# Los valores de los elementos de una matriz pueden graficarse usando `matplotlib.pyplot.imshow`.
+# ```
+# 
+
+# In[11]:
+
+
+# Construimos los elementos de matriz de H'_{m,n}
+# Notemos que numéricamente la matriz
+# tiene un tamaño finito
+m_max = 20
+
 matrizHp = zeros((m_max,m_max))
 
 for m in range(m_max):
-    for mm in range(m_max):
-        matrizHp[(m,mm)] = ElementoMatriz(m,mm,x)
-
-
-# In[5]:
-
+    for n in range(m_max):
+        matrizHp[(m,n)] = ElementoMatriz(m,n,x)
 
 # Las matrices se pueden visualizar utilizando un mapa de colores
 plotM = imshow(matrizHp/e,cmap="Greys");
@@ -178,7 +252,7 @@ plt.colorbar(label="$H'_{mn} [eV]$");
 
 # ---
 
-# ### Ejercicio 1.
+# ### Ejercicio 1. Corrección a primer orden (analítico vs numérico)
 # La corrección a primer orden de la energía de la energía del estado base es,
 # 
 # $$
@@ -187,7 +261,7 @@ plt.colorbar(label="$H'_{mn} [eV]$");
 # 
 # ¿Podría verificarla numéricamente?
 
-# In[6]:
+# In[12]:
 
 
 # Solución
@@ -210,10 +284,10 @@ print ("    En ≈ {0:.3e} [eV]".format(E00/e + E01numerico/e))
 # ¿La energía es mayor o menor a la del oscilador armónico?
 
 
-# ### Ejercicio 2.
+# ### Ejercicio 2. Correcciones a primer orden (niveles excitados)
 # Podría calcular la corrección a primer orden del primer nivel excitado del oscilador armónico.
 
-# In[7]:
+# In[13]:
 
 
 # Solución
@@ -232,10 +306,10 @@ print ("    En ≈ {0:.3e} [eV]".format(E10/e + E11numerico/e))
 # ¿La energía es mayor o menor a la del oscilador armónico?
 
 
-# ### Ejercicio 3.
+# ### Ejercicio 3. Correcciones a primer orden (primeros 5 niveles)
 # Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la primera corrección a la energía.
 
-# In[8]:
+# In[14]:
 
 
 # Solución
@@ -247,7 +321,7 @@ En0         = array( [ eigenEn0(n) for n in range(5) ] )
 Enapprox    = En0 + En1numerico
 
 
-# In[9]:
+# In[15]:
 
 
 for n in range(5):
@@ -268,7 +342,7 @@ ylabel("$E [eV]$")
 # E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 # $$
 
-# In[10]:
+# In[16]:
 
 
 # Previamente realizamos el gráfico de los elementos de matriz
@@ -280,7 +354,7 @@ plt.colorbar(label="$H'_{mn} [eV]$");
 # lo cual es típico en la teoría de perturbaciones
 
 
-# In[11]:
+# In[17]:
 
 
 # Sin embargo, los términos a sumar son los elementos de matriz 
@@ -290,33 +364,80 @@ plt.colorbar(label="$H'_{mn} [eV]$");
 n   = 0
 E00 = eigenEn0(0) 
 # Dado que las eigenfunciones son reales no tenemos que tomar el conjugado
-Sumandos = array( [ matrizHp[(m,n)]*matrizHp[(m,n)]/( eigenEn0(n)-eigenEn0(m) )                     for m in range(m_max) if m != n ] )
+SegundoOrden = array( [ matrizHp[(m,n)]*matrizHp[(m,n)]/( eigenEn0(n)-eigenEn0(m) )                     for m in range(m_max) if m != n ] )
 
 
-# In[12]:
+# In[18]:
 
 
-# Grafiquemos los sumandos
-plot(range(1,m_max),Sumandos/e,'o-');
+# Grafiquemos los SegundoOrden
+plot(range(1,m_max),SegundoOrden/e,'o-');
 xticks([1,2,3,4,5,6,7]);
 ylabel("$E$ [eV]")
-xlabel("m")
+xlabel("m");
 
 #Podemos notar en este caso que la mayor corrección al estado base proviene del nivel n = 2
 
 
-# In[13]:
+# In[19]:
 
 
 # Notamos que los sumandos siempre son negativos para el estado base
-print (" Máximo valor de los sumandos: {0:.3e}".format( max(Sumandos)/e ))
+print (" Máximo valor de los sumandos: {0:.3e} eV".format( max(SegundoOrden)/e ))
+# Por lo que las correcciones de segundo orden disminuirán con respecto a 
+# las de primer orden.
 
 
-# ### Ejercicio 4.
+# ### Ejercicio 4. Correcciones primer orden vs segundo orden
 # Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la segunda corrección a la energía. ¿Es muy diferente al resultado de la corrección a primer orden?
 
-# In[14]:
+# In[20]:
 
 
 # Solución
+
+
+# In[21]:
+
+
+def SumaSegundoOrden(n,m_max=20):
+    SegundoOrden = array( [ matrizHp[(m,n)]*matrizHp[(m,n)]/( eigenEn0(n)-eigenEn0(m) )                         for m in range(m_max) if m != n ] )
+    En2 = SegundoOrden.sum()
+    return En2
+
+
+En1numerico = array( [ matrizHp[n,n] for n in range(5) ] )
+
+En2numerico = array( [ SumaSegundoOrden(n) for n in range(5) ] )
+
+En0         = array( [ eigenEn0(n) for n in range(5) ] )
+
+
+Enapprox1 = En0 + En1numerico
+Enapprox2 = En0 + En1numerico + En2numerico
+
+
+plot( [0,1],[En0[0]/e,En0[0]/e],c='k',label='(0)' )
+plot( [0,1],[Enapprox1[0]/e,Enapprox1[0]/e],c='r',label='1er' )
+plot( [0,1],[Enapprox2[0]/e,Enapprox2[0]/e],c='b',label='2d0' )
+text(-0.5,En0[0]/e,"n={0}".format(n))
+text( 1.1,Enapprox1[0]/e,"n={0}".format(n),color='r')
+text( 1.5,Enapprox2[0]/e,"n={0}".format(n),color='b')
+for n in range(1,5):
+    plot( [0,1],[En0[n]/e,En0[n]/e],c='k' )
+    plot( [0,1],[Enapprox1[n]/e,Enapprox1[n]/e],c='r' )
+    plot( [0,1],[Enapprox2[n]/e,Enapprox2[n]/e],c='b' )
+    text(-0.5,En0[n]/e,"n={0}".format(n))
+    text( 1.1,Enapprox1[n]/e,"n={0}".format(n),color='r')
+    text( 1.5,Enapprox2[n]/e,"n={0}".format(n),color='b')
+xlim(-1,3)
+xticks([])
+ylabel("$E [eV]$");
+legend(loc=0);
+
+
+# In[ ]:
+
+
+
 

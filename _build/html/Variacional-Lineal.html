@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Principio-Variacional.html">
-   13. Método Variacional
+   13. Método variacional
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -438,27 +438,27 @@ const thebe_selector_output = ".output, .cell_output"
 \[
 H\psi = E \psi
 \]</div>
-<p>al expresar la función de onda como una combinación lineal de funciones <span class="math notranslate nohighlight">\(\{\phi_i\}\)</span>. Cuando las funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> forman un conjunto completo, la combinación lineal es exacta, sin embargo, en la práctica se usan solo algunas funciones, por lo que la función de onda resultante es aproximada, es decir</p>
+<p>al expresar la eigenfunción como una combinación lineal de funciones <span class="math notranslate nohighlight">\(\{\phi_i\}\)</span>. Cuando las funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> forman un conjunto completo, la combinación lineal es exacta, sin embargo, en la práctica se usan solo algunas funciones, por lo que la función de onda resultante es aproximada, es decir</p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{prueba} = \sum_{i=1} c_i \phi_i  
+\psi_{\rm prueba} = \sum_{i=1} c_i \phi_i  
 \]</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Al sustituir la expansión de la función de onda en la ecuación de Schrödinger, se obtiene la ecuación</p>
+<p>Al sustituir la expansión de la eigenfunción en la ecuación de Schrödinger, se obtiene la ecuación</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{H} \mathcal{C} = \mathcal{S} \mathcal{C} \mathcal{\varepsilon}
 \]</div>
 <p>En general se realizan los siguientes pasos:</p>
 <ol class="simple">
-<li><p>Se seleccionan las funciones <span class="math notranslate nohighlight">\(\psi_i\)</span> que se usarán para expandir la función de onda, es común elegir funciones exponenciales o gaussianas.</p></li>
+<li><p>Se seleccionan las funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> que se usarán para expandir la eigenfunción, es común elegir funciones exponenciales o gaussianas.</p></li>
 <li><p>Se evalúan las matrices <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>, y <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>.</p></li>
 <li><p>Se resuelve el problema de valores propios <span class="math notranslate nohighlight">\(\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}\)</span>.</p></li>
-<li><p>Se construye la función de onda utilizando los coeficientes obtenidos.</p></li>
+<li><p>Se construye la eigenfunción utilizando los coeficientes obtenidos.</p></li>
 </ol>
 </div>
-<p>Una consecuencia de este método es que sin importar las funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> que se usen, siempre que cumplan con las restricciones del problema, la solución de prueba siempre tiene una energía mayor o igual a la solución exacta. Por lo tanto, podemos construir varias funciones de prueba y tomar la que de la energía más baja.</p>
+<p>Una consecuencia de este método es que sin importar las funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> que se usen, siempre que cumplan con las condiciones de frontera del problema, la función de prueba siempre tiene una energía mayor o igual a la solución exacta. Por lo tanto, podemos construir varias funciones de prueba y tomar la que de la energía más baja.</p>
 <p>Para ejemplificar este procedimiento, resolveremos el <code class="docutils literal notranslate"><span class="pre">átomo</span> <span class="pre">de</span> <span class="pre">hidrógeno</span></code> utilizando el método variacional lineal.</p>
 <p><strong>Importe las siguientes librerías</strong></p>
 <ul class="simple">
@@ -482,10 +482,10 @@ H\psi = E \psi
 </div>
 <div class="section" id="atomo-de-hidrogeno-con-dos-gausianas">
 <h2><span class="section-number">14.1. </span>Átomo de hidrógeno con dos gausianas<a class="headerlink" href="#atomo-de-hidrogeno-con-dos-gausianas" title="Permalink to this headline">¶</a></h2>
-<p><strong>Paso 1.</strong> Seleccionar funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> para construir <span class="math notranslate nohighlight">\(\psi_{prueba}\)</span></p>
+<p><strong>Paso 1.</strong> Seleccionar funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> para construir <span class="math notranslate nohighlight">\(\psi_{\rm prueba}\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{prueba} = \sum_{i=1} c_i \phi_i  
+\psi_{\rm prueba} = \sum_{i=1}^2 c_i \phi_i  
 \]</div>
 <p>Para este ejemplo tomaremos dos funciones gaussianas:</p>
 <div class="math notranslate nohighlight">
@@ -640,7 +640,7 @@ S_{21} &amp; S_{22}
 </div>
 </div>
 </div>
-<p><strong>Paso 4.</strong> Sustituir los coeficientes en <span class="math notranslate nohighlight">\(\psi_{prueba} = \sum_{i=1} c_i \phi_i\)</span> para construir la función de onda.</p>
+<p><strong>Paso 4.</strong> Sustituir los coeficientes en <span class="math notranslate nohighlight">\(\psi_{\rm prueba} = \displaystyle \sum_{i=1}^2 c_i \phi_i\)</span> para construir la función de onda.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Genere función de prueba</span>
@@ -663,7 +663,7 @@ S_{21} &amp; S_{22}
 <p>Adicionalmente, se puede comprobar que se cumple la condición de normalización. <strong>Evalúe la integral</strong></p>
 <div class="math notranslate nohighlight">
 \[
-4\pi \int_0^{\infty} r^2 |\psi_{prueba}|^2 dr= 1
+4\pi \int_0^{\infty} r^2 |\psi_{\rm prueba}|^2 dr= 1
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -700,7 +700,7 @@ S_{21} &amp; S_{22}
 </div>
 </div>
 </div>
-<p><strong>Genere la gráfica de las dos funciones <span class="math notranslate nohighlight">\(\psi_1\)</span> y <span class="math notranslate nohighlight">\(\psi_2\)</span>, así como la <span class="math notranslate nohighlight">\(\psi_{prueba}\)</span> y la solución exacta para el átomo de hidrógeno (1s)</strong></p>
+<p><strong>Genere la gráfica de las dos funciones <span class="math notranslate nohighlight">\(\psi_1\)</span> y <span class="math notranslate nohighlight">\(\psi_2\)</span>, así como la <span class="math notranslate nohighlight">\(\psi_{\rm prueba}\)</span> y la solución exacta para el átomo de hidrógeno (1s)</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Recuerde</p>
@@ -726,7 +726,7 @@ S_{21} &amp; S_{22}
 <span class="n">lam_psi_2g_1</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_2g_1</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
 <span class="n">lam_psi_2g_2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_2g_2</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
 
-<span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
 <span class="n">psi_s</span> <span class="o">=</span> <span class="n">lam_s</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
 <span class="n">psi_2g1</span> <span class="o">=</span> <span class="n">lam_psi_2g</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
 <span class="n">psi_2g_1</span> <span class="o">=</span> <span class="n">lam_psi_2g_1</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
@@ -748,10 +748,10 @@ S_{21} &amp; S_{22}
 </div>
 <div class="section" id="atomo-de-hidrogeno-con-tres-gausianas">
 <h2><span class="section-number">14.2. </span>Átomo de hidrógeno con tres gausianas<a class="headerlink" href="#atomo-de-hidrogeno-con-tres-gausianas" title="Permalink to this headline">¶</a></h2>
-<p><strong>Paso 1.</strong> Seleccionar funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> para construir <span class="math notranslate nohighlight">\(\psi_{prueba}\)</span></p>
+<p><strong>Paso 1.</strong> Seleccionar funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> para construir <span class="math notranslate nohighlight">\(\psi_{\rm prueba}\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-\psi_{prueba} = \sum_{i=1} c_i \phi_i  
+\psi_{\rm prueba} = \sum_{i=1} c_i \phi_i  
 \]</div>
 <p>Para este ejemplo <strong>declare tres funciones gaussianas</strong></p>
 <div class="math notranslate nohighlight">
@@ -930,7 +930,7 @@ S_{31} &amp; S_{32} &amp; S_{33} \\
 </div>
 </div>
 </div>
-<p><strong>Paso 4.</strong> Sustituir los coeficientes en <span class="math notranslate nohighlight">\(\psi_{prueba} = \sum_{i=1} c_i \phi_i\)</span> para construir la función de onda.</p>
+<p><strong>Paso 4.</strong> Sustituir los coeficientes en <span class="math notranslate nohighlight">\(\psi_{\rm prueba} =\displaystyle  \sum_{i=1}^3 c_i \phi_i\)</span> para construir la función de onda.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Genere la función de onda</span>
@@ -1004,7 +1004,7 @@ S_{31} &amp; S_{32} &amp; S_{33} \\
 <span class="n">lam_psi_3g_2</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_3g_2</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
 <span class="n">lam_psi_3g_3</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_3g_3</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
 
-<span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
 <span class="n">psi_s</span> <span class="o">=</span> <span class="n">lam_s</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
 <span class="n">psi_3g1</span> <span class="o">=</span> <span class="n">lam_psi_3g</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
 <span class="n">psi_3g_1</span> <span class="o">=</span> <span class="n">lam_psi_3g_1</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
@@ -1038,7 +1038,7 @@ S_{31} &amp; S_{32} &amp; S_{33} \\
 <span class="n">lam_psi_2g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_2g</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
 <span class="n">lam_psi_3g</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">lambdify</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">psi_3g</span><span class="p">,</span><span class="n">modules</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;numpy&#39;</span><span class="p">])</span>
 
-<span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">7</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
 <span class="n">psi_s</span> <span class="o">=</span> <span class="n">lam_s</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
 <span class="n">psi_2g1</span> <span class="o">=</span> <span class="n">lam_psi_2g</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>
 <span class="n">psi_3g1</span> <span class="o">=</span> <span class="n">lam_psi_3g</span><span class="p">(</span><span class="n">r1</span><span class="p">)</span>

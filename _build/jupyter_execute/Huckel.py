@@ -3,25 +3,28 @@
 
 # # Método de Hückel
 
-# El método de Hückel fue propuesto por Erich Hückel en 1930 y permite modelar de una forma muy aproximada a sistemas $\pi$ conjugados. Se establece un Hamiltoniano para los electrones $\pi$.
+# El método de Hückel fue propuesto por Erich Hückel en 1930 y permite modelar de una forma muy aproximada a sistemas $\pi$ conjugados, el cual establece un Hamiltoniano para los electrones $\pi$.
 # 
 # ```{admonition} Descripción del Hamiltoniano de electrones $\pi$
 # :class: dropdown
 # $$
-# H_\pi = \sum_{i=1}^{n_\pi}h^{eff}(i)
+# H_\pi = \sum_{i=1}^{n_\pi}h^{\rm eff}(i)
 # $$
 # 
-# donde a $h^{eff}(i)$ se le conoce como Hamiltoniano efectivo, y representa las interacciones promediadas del i-ésimo electrón $\pi$ con los núcleos y los otros electrones. Se debe cumplir la ecuación
+# donde a $h^{\rm eff}(i)$ se le conoce como Hamiltoniano efectivo, y representa las interacciones promediadas del i-ésimo electrón $\pi$ con los núcleos y los otros electrones. Se debe cumplir la ecuación
 # 
 # $$
-# h^{eff}(i) \phi_i = \varepsilon_i \phi_i
+# h^{\rm eff}(i) \phi_i = \varepsilon_i \phi_i
 # $$
 # 
 # donde $\phi_i$ son los orbitales moleculares de Hückel. Aplicaremos la combinación lineal de orbitales atómicos
 # 
 # $$
-# \phi_i(x) = \sum_{\mu} C_{\mu i} \mu (x)
+# \phi_i(\vec{r}) = \sum_{\mu} C_{\mu i} \, \mu (\vec{r}-\vec{r}_i)
 # $$
+# 
+# donde $ \mu (\vec{r}-\vec{r}_i)$ es un orbital atómico $\mu$ centrado en la posición del núcleo $i$ ($\vec{r}_i$).
+# 
 # ```
 # 
 # Determinaremos los coeficientes que minimicen la energía, resolviendo la ecuación del método variacional lineal
@@ -53,8 +56,8 @@ from matplotlib import pyplot as plt
 # El método de Hückel implica las siguientes aproximaciones
 # 
 # 1. El traslape entre el mismo orbital es uno, y entre orbitales distintos es cero.
-# 2. Los elementos diagonales, $h^{eff}_{ii}$ valen $\alpha$
-# 3. Los elementos $h^{eff}_{ij}$ valen $\beta$ si el i-ésimo átomo y el j-ésimo átomo son vecinos, y cero si no lo son.
+# 2. Los elementos diagonales, $h^{\rm eff}_{ii}$ valen $\alpha$
+# 3. Los elementos $h^{\rm eff}_{ij}$ valen $\beta$ si el i-ésimo átomo y el j-ésimo átomo son vecinos, y cero si no lo son.
 # 
 # El valor de $\alpha$ y $\beta$ es negativo.
 

@@ -9,14 +9,14 @@
 # H\psi = E \psi
 # $$
 # 
-# al expresar la función de onda como una combinación lineal de funciones $\{\phi_i\}$. Cuando las funciones $\phi_i$ forman un conjunto completo, la combinación lineal es exacta, sin embargo, en la práctica se usan solo algunas funciones, por lo que la función de onda resultante es aproximada, es decir
+# al expresar la eigenfunción como una combinación lineal de funciones $\{\phi_i\}$. Cuando las funciones $\phi_i$ forman un conjunto completo, la combinación lineal es exacta, sin embargo, en la práctica se usan solo algunas funciones, por lo que la función de onda resultante es aproximada, es decir
 # 
 # $$
-# \psi_{prueba} = \sum_{i=1} c_i \phi_i  
+# \psi_{\rm prueba} = \sum_{i=1} c_i \phi_i  
 # $$
 # 
 # ```{important}
-# Al sustituir la expansión de la función de onda en la ecuación de Schrödinger, se obtiene la ecuación
+# Al sustituir la expansión de la eigenfunción en la ecuación de Schrödinger, se obtiene la ecuación
 # 
 # $$
 # \mathcal{H} \mathcal{C} = \mathcal{S} \mathcal{C} \mathcal{\varepsilon}
@@ -24,13 +24,13 @@
 # 
 # En general se realizan los siguientes pasos:
 # 
-# 1. Se seleccionan las funciones $\psi_i$ que se usarán para expandir la función de onda, es común elegir funciones exponenciales o gaussianas.
+# 1. Se seleccionan las funciones $\phi_i$ que se usarán para expandir la eigenfunción, es común elegir funciones exponenciales o gaussianas.
 # 2. Se evalúan las matrices $\mathcal{H}$, y $\mathcal{S}$.
 # 3. Se resuelve el problema de valores propios $\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}$.
-# 4. Se construye la función de onda utilizando los coeficientes obtenidos.
+# 4. Se construye la eigenfunción utilizando los coeficientes obtenidos.
 # ```
 # 
-# Una consecuencia de este método es que sin importar las funciones $\phi_i$ que se usen, siempre que cumplan con las restricciones del problema, la solución de prueba siempre tiene una energía mayor o igual a la solución exacta. Por lo tanto, podemos construir varias funciones de prueba y tomar la que de la energía más baja.
+# Una consecuencia de este método es que sin importar las funciones $\phi_i$ que se usen, siempre que cumplan con las condiciones de frontera del problema, la función de prueba siempre tiene una energía mayor o igual a la solución exacta. Por lo tanto, podemos construir varias funciones de prueba y tomar la que de la energía más baja.
 # 
 # Para ejemplificar este procedimiento, resolveremos el `átomo de hidrógeno` utilizando el método variacional lineal.
 
@@ -54,10 +54,10 @@ import sympy as sp
 
 # ## Átomo de hidrógeno con dos gausianas
 
-# **Paso 1.** Seleccionar funciones $\phi_i$ para construir $\psi_{prueba}$
+# **Paso 1.** Seleccionar funciones $\phi_i$ para construir $\psi_{\rm prueba}$
 # 
 # $$
-# \psi_{prueba} = \sum_{i=1} c_i \phi_i  
+# \psi_{\rm prueba} = \sum_{i=1}^2 c_i \phi_i  
 # $$
 
 # Para este ejemplo tomaremos dos funciones gaussianas:
@@ -190,7 +190,7 @@ print(E)
 print(C)
 
 
-# **Paso 4.** Sustituir los coeficientes en $\psi_{prueba} = \sum_{i=1} c_i \phi_i$ para construir la función de onda.
+# **Paso 4.** Sustituir los coeficientes en $\psi_{\rm prueba} = \displaystyle \sum_{i=1}^2 c_i \phi_i$ para construir la función de onda.
 
 # In[11]:
 
@@ -208,7 +208,7 @@ psi_p
 # Adicionalmente, se puede comprobar que se cumple la condición de normalización. **Evalúe la integral**
 # 
 # $$
-# 4\pi \int_0^{\infty} r^2 |\psi_{prueba}|^2 dr= 1
+# 4\pi \int_0^{\infty} r^2 |\psi_{\rm prueba}|^2 dr= 1
 # $$
 
 # In[13]:
@@ -239,7 +239,7 @@ psi_2g_1 = phi_1
 psi_2g_2 = phi_2
 
 
-# **Genere la gráfica de las dos funciones $\psi_1$ y $\psi_2$, así como la $\psi_{prueba}$ y la solución exacta para el átomo de hidrógeno (1s)**
+# **Genere la gráfica de las dos funciones $\psi_1$ y $\psi_2$, así como la $\psi_{\rm prueba}$ y la solución exacta para el átomo de hidrógeno (1s)**
 # 
 # ```{tip}
 # Recuerde
@@ -266,7 +266,7 @@ lam_psi_2g = sp.lambdify(r,psi_2g,modules=['numpy'])
 lam_psi_2g_1 = sp.lambdify(r,psi_2g_1,modules=['numpy'])
 lam_psi_2g_2 = sp.lambdify(r,psi_2g_2,modules=['numpy'])
 
-r1 = np.linspace(-7,7,100)
+r1 = np.linspace(-7,7,101)
 psi_s = lam_s(r1)
 psi_2g1 = lam_psi_2g(r1)
 psi_2g_1 = lam_psi_2g_1(r1)
@@ -282,10 +282,10 @@ plt.show()
 
 # ## Átomo de hidrógeno con tres gausianas
 
-# **Paso 1.** Seleccionar funciones $\phi_i$ para construir $\psi_{prueba}$
+# **Paso 1.** Seleccionar funciones $\phi_i$ para construir $\psi_{\rm prueba}$
 # 
 # $$
-# \psi_{prueba} = \sum_{i=1} c_i \phi_i  
+# \psi_{\rm prueba} = \sum_{i=1} c_i \phi_i  
 # $$
 # 
 # Para este ejemplo **declare tres funciones gaussianas**
@@ -434,7 +434,7 @@ print(E)
 print(C)
 
 
-# **Paso 4.** Sustituir los coeficientes en $\psi_{prueba} = \sum_{i=1} c_i \phi_i$ para construir la función de onda.
+# **Paso 4.** Sustituir los coeficientes en $\psi_{\rm prueba} =\displaystyle  \sum_{i=1}^3 c_i \phi_i$ para construir la función de onda.
 
 # In[27]:
 
@@ -500,7 +500,7 @@ lam_psi_3g_1 = sp.lambdify(r,psi_3g_1,modules=['numpy'])
 lam_psi_3g_2 = sp.lambdify(r,psi_3g_2,modules=['numpy'])
 lam_psi_3g_3 = sp.lambdify(r,psi_3g_3,modules=['numpy'])
 
-r1 = np.linspace(-7,7,100)
+r1 = np.linspace(-7,7,101)
 psi_s = lam_s(r1)
 psi_3g1 = lam_psi_3g(r1)
 psi_3g_1 = lam_psi_3g_1(r1)
@@ -530,7 +530,7 @@ lam_s = sp.lambdify(r,s,modules=['numpy'])
 lam_psi_2g = sp.lambdify(r,psi_2g,modules=['numpy'])
 lam_psi_3g = sp.lambdify(r,psi_3g,modules=['numpy'])
 
-r1 = np.linspace(-7,7,100)
+r1 = np.linspace(-7,7,101)
 psi_s = lam_s(r1)
 psi_2g1 = lam_psi_2g(r1)
 psi_3g1 = lam_psi_3g(r1)

@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Principio-Variacional.html">
-   13. Método Variacional
+   13. Método variacional
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -423,23 +423,24 @@ const thebe_selector_output = ".output, .cell_output"
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="metodo-de-huckel">
 <h1><span class="section-number">16. </span>Método de Hückel<a class="headerlink" href="#metodo-de-huckel" title="Permalink to this headline">¶</a></h1>
-<p>El método de Hückel fue propuesto por Erich Hückel en 1930 y permite modelar de una forma muy aproximada a sistemas <span class="math notranslate nohighlight">\(\pi\)</span> conjugados. Se establece un Hamiltoniano para los electrones <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<p>El método de Hückel fue propuesto por Erich Hückel en 1930 y permite modelar de una forma muy aproximada a sistemas <span class="math notranslate nohighlight">\(\pi\)</span> conjugados, el cual establece un Hamiltoniano para los electrones <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Descripción del Hamiltoniano de electrones <span class="math notranslate nohighlight">\(\pi\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-H_\pi = \sum_{i=1}^{n_\pi}h^{eff}(i)
+H_\pi = \sum_{i=1}^{n_\pi}h^{\rm eff}(i)
 \]</div>
-<p>donde a <span class="math notranslate nohighlight">\(h^{eff}(i)\)</span> se le conoce como Hamiltoniano efectivo, y representa las interacciones promediadas del i-ésimo electrón <span class="math notranslate nohighlight">\(\pi\)</span> con los núcleos y los otros electrones. Se debe cumplir la ecuación</p>
+<p>donde a <span class="math notranslate nohighlight">\(h^{\rm eff}(i)\)</span> se le conoce como Hamiltoniano efectivo, y representa las interacciones promediadas del i-ésimo electrón <span class="math notranslate nohighlight">\(\pi\)</span> con los núcleos y los otros electrones. Se debe cumplir la ecuación</p>
 <div class="math notranslate nohighlight">
 \[
-h^{eff}(i) \phi_i = \varepsilon_i \phi_i
+h^{\rm eff}(i) \phi_i = \varepsilon_i \phi_i
 \]</div>
 <p>donde <span class="math notranslate nohighlight">\(\phi_i\)</span> son los orbitales moleculares de Hückel. Aplicaremos la combinación lineal de orbitales atómicos</p>
 <div class="math notranslate nohighlight">
 \[
-\phi_i(x) = \sum_{\mu} C_{\mu i} \mu (x)
+\phi_i(\vec{r}) = \sum_{\mu} C_{\mu i} \, \mu (\vec{r}-\vec{r}_i)
 \]</div>
+<p>donde <span class="math notranslate nohighlight">\( \mu (\vec{r}-\vec{r}_i)\)</span> es un orbital atómico <span class="math notranslate nohighlight">\(\mu\)</span> centrado en la posición del núcleo <span class="math notranslate nohighlight">\(i\)</span> (<span class="math notranslate nohighlight">\(\vec{r}_i\)</span>).</p>
 </div>
 <p>Determinaremos los coeficientes que minimicen la energía, resolviendo la ecuación del método variacional lineal</p>
 <div class="math notranslate nohighlight">
@@ -471,8 +472,8 @@ H_{\pi}C = SC\varepsilon
 <p>El método de Hückel implica las siguientes aproximaciones</p>
 <ol class="simple">
 <li><p>El traslape entre el mismo orbital es uno, y entre orbitales distintos es cero.</p></li>
-<li><p>Los elementos diagonales, <span class="math notranslate nohighlight">\(h^{eff}_{ii}\)</span> valen <span class="math notranslate nohighlight">\(\alpha\)</span></p></li>
-<li><p>Los elementos <span class="math notranslate nohighlight">\(h^{eff}_{ij}\)</span> valen <span class="math notranslate nohighlight">\(\beta\)</span> si el i-ésimo átomo y el j-ésimo átomo son vecinos, y cero si no lo son.</p></li>
+<li><p>Los elementos diagonales, <span class="math notranslate nohighlight">\(h^{\rm eff}_{ii}\)</span> valen <span class="math notranslate nohighlight">\(\alpha\)</span></p></li>
+<li><p>Los elementos <span class="math notranslate nohighlight">\(h^{\rm eff}_{ij}\)</span> valen <span class="math notranslate nohighlight">\(\beta\)</span> si el i-ésimo átomo y el j-ésimo átomo son vecinos, y cero si no lo son.</p></li>
 </ol>
 <p>El valor de <span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span> es negativo.</p>
 <div class="section" id="butadieno">

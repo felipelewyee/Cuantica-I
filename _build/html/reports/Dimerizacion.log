@@ -30,13 +30,18 @@ from pyscf.geomopt.geometric_solver import optimize
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1868112/2850189669.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      4[0m [0;31m#!pip install geomeTRIC[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      5[0m [0;34m[0m[0m
-[0;32m----> 6[0;31m [0;32mimport[0m [0mpyscf[0m[0;34m[0m[0m
-[0m[1;32m      7[0m [0;32mfrom[0m [0mpyscf[0m [0;32mimport[0m [0mscf[0m[0;34m[0m[0m
+[0;32m/tmp/ipykernel_1892472/2850189669.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      7[0m [0;32mfrom[0m [0mpyscf[0m [0;32mimport[0m [0mscf[0m[0;34m[0m[0m
 [1;32m      8[0m [0;32mfrom[0m [0mpyscf[0m [0;32mimport[0m [0mdft[0m[0;34m[0m[0m
+[0;32m----> 9[0;31m [0;32mfrom[0m [0mpyscf[0m[0;34m.[0m[0mgeomopt[0m[0;34m.[0m[0mgeometric_solver[0m [0;32mimport[0m [0moptimize[0m[0;34m[0m[0m
+[0m
+[0;32m~/anaconda3/envs/QCI/lib/python3.7/site-packages/pyscf/geomopt/geometric_solver.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     21[0m [0;32mimport[0m [0mtempfile[0m[0;34m[0m[0m
+[1;32m     22[0m [0;32mimport[0m [0mnumpy[0m[0;34m[0m[0m
+[0;32m---> 23[0;31m [0;32mimport[0m [0mgeometric[0m[0;34m[0m[0m
+[0m[1;32m     24[0m [0;32mimport[0m [0mgeometric[0m[0;34m.[0m[0mmolecule[0m[0;34m[0m[0m
+[1;32m     25[0m [0;31m#from geometric import molecule[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'pyscf'
-ModuleNotFoundError: No module named 'pyscf'
+[0;31mModuleNotFoundError[0m: No module named 'geometric'
+ModuleNotFoundError: No module named 'geometric'
 

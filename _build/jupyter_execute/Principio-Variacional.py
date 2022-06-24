@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Método Variacional
+# # Método variacional
 
 # ````{admonition} Ver Antes
 # :class: seealso

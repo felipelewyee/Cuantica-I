@@ -80,13 +80,13 @@ from pyscf.geomopt.geometric_solver import optimize
 # n2o4 = rhf.kernel()
 # ~~~
 
-# In[17]:
+# In[3]:
 
 
 # Optimice Geometría y obtenga la energia N2O4 HF/6-31G
 
 
-# In[18]:
+# In[4]:
 
 
 N2O4 = pyscf.gto.Mole(atom="""
@@ -134,13 +134,13 @@ n2o4 = rhf.kernel()
 # no2 = uhf.kernel()
 # ~~~
 
-# In[19]:
+# In[5]:
 
 
 # Optimice Geometría y obtenga la energia NO2 HF/6-31G
 
 
-# In[20]:
+# In[6]:
 
 
 NO2 = pyscf.gto.Mole(atom="""
@@ -161,13 +161,13 @@ no2 = uhf.kernel()
 
 # **Pregunta a.** Calcule el $\Delta U$ de la reacción $N_2O_4$ &harr; $2NO_2$ según HF.
 
-# In[21]:
+# In[7]:
 
 
 # Obtenga la energía de reacción (2E_{NO2} - E_{N2O4}). Recuerde convertur Hartree->kcal/mol.
 
 
-# In[22]:
+# In[8]:
 
 
 (2*no2-n2o4)*2625.5
@@ -176,13 +176,13 @@ no2 = uhf.kernel()
 # **Pregunta 3.** Calcule la energía de la molécula optimizada de $N_2O_4$ con DFT B3LYP y la base 6-31G.
 # - **Ayuda.** Reutilice el código de la pregunta 1, pero recuerde que va a usar DFT y requiere especificar un funcional.
 
-# In[23]:
+# In[9]:
 
 
 # Optimice Geometría y obtenga la energia N2O4 B3LYP/6-31G
 
 
-# In[24]:
+# In[10]:
 
 
 N2O4 = pyscf.gto.Mole(atom="""
@@ -207,13 +207,13 @@ n2o4 = rks.kernel()
 
 # **Pregunta 4.** Calcule la energía de la molécula optimizada de $NO_2$ con DFT B3LYP y la base 6-31G.
 
-# In[25]:
+# In[11]:
 
 
 # Optimice Geometría y obtenga la energia NO2 B3LYP/6-31G
 
 
-# In[26]:
+# In[12]:
 
 
 NO2 = pyscf.gto.Mole(atom="""
@@ -235,13 +235,13 @@ no2 = uks.kernel()
 
 # **Pregunta b.** Calcule el $\Delta U$ de la reacción $N_2O_4$ &harr; $2NO_2$ según DFT B3LYP.
 
-# In[27]:
+# In[13]:
 
 
 # Obtenga la energía de reacción (2E_{NO2} - E_{N2O4}). Recuerde convertur Hartree->kcal/mol.
 
 
-# In[28]:
+# In[14]:
 
 
 (2*no2-n2o4)*2625.5

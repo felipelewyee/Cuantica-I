@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Principio-Variacional.html">
-   13. Método Variacional
+   13. Método variacional
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -433,20 +433,6 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
 <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">mp</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1868198</span><span class="o">/</span><span class="mf">708205819.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#!pip install pyscf</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">pyscf</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">mp</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pyscf&#39;
 </pre></div>
 </div>
 </div>
@@ -733,7 +719,7 @@ E_{MP1} = E_{nuc} + E_0^{(0)} + E_0^{(1)}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_MP1 = -1.1267344779324069
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_MP1 = -1.1267344779324082
 </pre></div>
 </div>
 </div>
@@ -788,8 +774,8 @@ E_{corr} = E_{MP2} - E_{HF}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_MP2 = -1.1441309213453617
-E_corr = -0.01739695422879506
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E_MP2 = -1.144130921345363
+E_corr = -0.017396954228795503
 </pre></div>
 </div>
 </div>
@@ -828,7 +814,9 @@ E_{corr} = E_{MPn} - E_{HF} = E_0^{(2)} + ... + E_0^{(n)}
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -1.12673396711657
-E(MP2) = -1.14413041052952  E_corr = -0.0173964434129548
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E(MP2) = -1.14413041052952  E_corr = -0.0173964434129548
 </pre></div>
 </div>
 </div>

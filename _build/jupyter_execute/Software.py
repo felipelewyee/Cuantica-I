@@ -19,6 +19,7 @@
 # - ADF (https://www.scm.com)
 # - GAMESS (http://www.msg.chem.iastate.edu/gamess)
 # - Quantum Espresso (https://www.quantum-espresso.org)
+# - GPAW (https://wiki.fysik.dtu.dk/gpaw)
 # ```
 
 # ## Aprendiendo a usar PySCF
