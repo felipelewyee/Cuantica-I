@@ -472,7 +472,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="math notranslate nohighlight">
 \[\begin{split}
 E_n &amp;=&amp; E_n^{(0)}+ E_n^{(1)} + E_n^{(2)} +\ldots \\
-\Psi_n &amp;=&amp; \psi_n^{(0)}+\psi^{(1)}+\psi^{(2)}+\ldots
+\psi_n &amp;=&amp; \psi_n^{(0)}+\psi^{(1)}+\psi^{(2)}+\ldots
 \end{split}\]</div>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Correcciones</p>
@@ -490,7 +490,7 @@ E_n \approx E_n^{(0)} +H'_{n,n} + \sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}
 <p>y</p>
 <div class="math notranslate nohighlight">
 \[
-\Psi_n \approx \Psi_n^{(0)} + \sum_{m\neq n} \frac{\hat{H}'_{m,n}}{E_n^{(0)}-E_m^{(0)}} \Psi_m^{(0)}
+\psi_n \approx \psi_n^{(0)} + \sum_{m\neq n} \frac{\hat{H}'_{m,n}}{E_n^{(0)}-E_m^{(0)}} \psi_m^{(0)}
 \]</div>
 </div>
 <hr class="docutils" />
@@ -725,10 +725,17 @@ E0^(0) = 0.135 [eV]
 <p>La corrección a primer orden de la energía de la energía del estado base es,</p>
 <div class="math notranslate nohighlight">
 \[
-E_0^{(1)} = \frac{3d}{4\alpha²} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
+E_0^{(1)} = \frac{3d}{4\alpha^2} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
 \]</div>
-<p>¿Podría verificarla numéricamente?</p>
+<p><strong>¿Podría verificarla numéricamente?</strong></p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compare la expresión analítica con la corrección a primer orden</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
 
@@ -763,8 +770,15 @@ E0^(0) = 1.345e-01 [eV]
 </div>
 <div class="section" id="ejercicio-2-correcciones-a-primer-orden-niveles-excitados">
 <h3><span class="section-number">15.1.2. </span>Ejercicio 2. Correcciones a primer orden (niveles excitados)<a class="headerlink" href="#ejercicio-2-correcciones-a-primer-orden-niveles-excitados" title="Permalink to this headline">¶</a></h3>
-<p>Podría calcular la corrección a primer orden del primer nivel excitado del oscilador armónico.</p>
+<p>¿Podría calcular la corrección a primer orden del primer nivel excitado del oscilador armónico?</p>
 <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcule las correcciones a primer orden de n&gt;0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
 
@@ -825,7 +839,7 @@ E1^(0) = 4.035e-01 [eV]
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$E [eV]$&#39;)
 </pre></div>
 </div>
-<img alt="_images/PerturbacionesSinDegeneracion_27_1.png" src="_images/PerturbacionesSinDegeneracion_27_1.png" />
+<img alt="_images/PerturbacionesSinDegeneracion_29_1.png" src="_images/PerturbacionesSinDegeneracion_29_1.png" />
 </div>
 </div>
 </div>
@@ -849,7 +863,7 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/PerturbacionesSinDegeneracion_29_0.png" src="_images/PerturbacionesSinDegeneracion_29_0.png" />
+<img alt="_images/PerturbacionesSinDegeneracion_31_0.png" src="_images/PerturbacionesSinDegeneracion_31_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -880,7 +894,7 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/PerturbacionesSinDegeneracion_31_0.png" src="_images/PerturbacionesSinDegeneracion_31_0.png" />
+<img alt="_images/PerturbacionesSinDegeneracion_33_0.png" src="_images/PerturbacionesSinDegeneracion_33_0.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -950,7 +964,7 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/PerturbacionesSinDegeneracion_35_0.png" src="_images/PerturbacionesSinDegeneracion_35_0.png" />
+<img alt="_images/PerturbacionesSinDegeneracion_37_0.png" src="_images/PerturbacionesSinDegeneracion_37_0.png" />
 </div>
 </div>
 </div>
