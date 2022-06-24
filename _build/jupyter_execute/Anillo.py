@@ -104,7 +104,9 @@ plt.show()
 
 # ## Referencias
 
+# - B.D. Anderson, Cyclic Polyynes as Examples of the Quantum Mechanical Particle on a Ring, J. Chem. Educ. 89, 724 (2012).
+# - M.A.R.B. Castanho, Teaching Molecular Applications of the Particle-in-a-Ring Model Using Azulene, J. Chem. Educ. 79, 1092 (2002).
+# - A. Vincent, An Alternative Derivation of the Energy Levels of the “Particle on a Ring” System, J. Chem. Educ. 73, 1001 (1996).
+# - M.D. Ellison, The Particle inside a Ring: A Two-Dimensional Quantum  Problem Visualized by Scanning Tunneling Microscopy, J. Chem. Educ. 85, 1282 (2008).
 # - P. W. Atkins, y R. Friedman, Molecular Quantum Mechanics (Oxford University Press, 2005).
-# - J.D. McGervey, Quantum Mechanics: Concepts and Applications (Academic Press, 2017).
-# - I.N. Levine, D.H. Busch, y H. Shull, Quantum chemistry (Pearson Prentice Hall Upper Saddle River, NJ, 2009).
 # - D.A. McQuarrie y J.D. Simon, Physical Chemistry: A Molecular Approach (University Science Books, 1997).

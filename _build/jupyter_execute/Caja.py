@@ -96,8 +96,8 @@
 #   E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2} = \frac{\hbar^2 \pi^2 n^2}{2mL^2}; \>\>\>\>\> n=1,2,3,\cdots
 # \end{equation*}
 # 
-# ```{admonition} Estado base y estados excitados.
-# class: note
+# ```{admonition} Estado base y estados excitados
+# :class: note
 # 
 # El estado base del sistema se define como el estado de mínima energía, mientras que los estados de mayor energía se denominan estados excitados. El estado base de la partícula en la caja corresponde a $n = 1$, y los estados excitados corresponden a $n = 2,3,\cdots$.
 # ```
@@ -588,7 +588,8 @@ plt.show()
 
 # ## Referencias
 
-# - F.L. Pilar, Elementary Quantum Chemistry (Dover ed., 2001).
 # - G.L. Breneman, The Two-Dimensional Particle in a Box, J. Chem. Educ. 67, 866 (1990).
+# - P.L. Lang y M.H. Towns, Visualization of Wavefunctions using Mathematica, J. Chem. Educ. 75, 506 (1998).
 # - T. Kippeny, L.A. Swafford, y S.J. Rosenthal,  Semiconductor Nanocrystals: A Powerful Visual Aid for Introducing the Particle in a Box, J. Chem. Educ. 79, 1094 (2002).
 # -  B.D. Anderson, Alternative Compounds for the Particle in a Box Experiment, J. Chem. Educ. 74, 985 (1997).
+# - F.L. Pilar, Elementary Quantum Chemistry (Dover ed., 2001).

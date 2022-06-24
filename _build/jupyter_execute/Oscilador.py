@@ -263,4 +263,6 @@ integrate.quad(lambda x: N_n*eval_hermite(n,alpha*x)*np.exp(-alpha**2*x**2/2) * 
 
 # ## Referencias
 
-# - P. W. Atkins, y R. Friedman, Molecular Quantum Mechanics (Oxford University Press, 2005).
+#  - T.J. Zielinski, Exploring the Harmonic Oscillator Wave Functions, J. Chem. Educ. 84, 1232 (2007).
+#  - J.J. Bruce y B.D. Anderson, Investigating the harmonic oscillator using Mathematica, J. Chem. Educ. 70, A122 (1993).
+#  - P. W. Atkins, y R. Friedman, Molecular Quantum Mechanics (Oxford University Press, 2005).

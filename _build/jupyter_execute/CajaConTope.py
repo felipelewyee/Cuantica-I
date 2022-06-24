@@ -619,3 +619,8 @@ MultipleChoice(
     question, answers, correct_answer=1, explanation=explanation
 )
 
+
+# # Referencias
+
+# - V.W.D. Cruzeiro, X. Gao, y V.D. Kleiman, Implementing New Educational Platforms in the Classroom: An Interactive Approach to the Particle in a Box Problem, J. Chem. Educ. 96, 1663 (2019).
+# - J.P. Lowe y K. Peterson, Quantum Chemistry (Academic Press, 2006).

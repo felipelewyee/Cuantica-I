@@ -120,7 +120,7 @@ plt.show()
 
 # ## Referencias
 
+# - A.J.C. Varandas y L.J.A. Martins, On the stability of a hydrogen-like atom: The particle in a spherical box revisited, J. Chem. Educ. 63, 485 (1986).
 # - P. W. Atkins, y R. Friedman, Molecular Quantum Mechanics (Oxford University Press, 2005).
-# - J.D. McGervey, Quantum Mechanics: Concepts and Applications (Academic Press, 2017).
 # - I.N. Levine, D.H. Busch, y H. Shull, Quantum chemistry (Pearson Prentice Hall Upper Saddle River, NJ, 2009).
 # - D.A. McQuarrie y J.D. Simon, Physical Chemistry: A Molecular Approach (University Science Books, 1997).

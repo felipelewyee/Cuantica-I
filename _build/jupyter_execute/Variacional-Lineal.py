@@ -544,8 +544,9 @@ plt.show()
 
 # ## Referencias
 
+# - J.F. Pérez-Torres, Dilemma of the “Best Wavefunction”: Comparing Results of the STONG Procedure versus the Linear Variational Method, J. Chem. Educ. 96, 704 (2019).
+# - V.W.D. Cruzeiro, A. Roitberg, y N.C. Polfer, Interactively Applying the Variational Method to the Dihydrogen Molecule: Exploring Bonding and Antibonding, J. Chem. Educ. 93, 1578 (2016).
 # - P. W. Atkins, y R. Friedman, Molecular Quantum Mechanics (Oxford University Press, 2005).
 # - F.L. Pilar, Elementary Quantum Chemistry (Dover ed., 2001).
-# - J.D. McGervey, Quantum Mechanics: Concepts and Applications (Academic Press, 2017).
 # - I.N. Levine, D.H. Busch, y H. Shull, Quantum chemistry (Pearson Prentice Hall Upper Saddle River, NJ, 2009).
 # - D.A. McQuarrie y J.D. Simon, Physical Chemistry: A Molecular Approach (University Science Books, 1997).
