@@ -40,7 +40,7 @@
 #   \right.
 # $$
 # 
-# Para determinar la función de onda en la región $\text{II}$ hay que escribir la de Schrödinger
+# Para determinar la función de onda en la región $\text{II}$ hay que escribir la ecuación de Schrödinger
 # 
 # \begin{equation*}
 # \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} \right)\psi(x) = E \psi(x)
@@ -96,10 +96,10 @@
 #   E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2} = \frac{\hbar^2 \pi^2 n^2}{2mL^2}; \>\>\>\>\> n=1,2,3,\cdots
 # \end{equation*}
 # 
-# ```{admonition} Estado basal y estados excitados.
+# ```{admonition} Estado base y estados excitados.
 # class: note
 # 
-# El estado basal del sistema se define como el estado de mínima energía, mientras que los estados de mayor energía se denominan estados excitados. El estado base de la partícula en la caja corresponde a $n = 1$, mientras que los estados excitados corresponden a $n = 2,3,\cdots$.
+# El estado base del sistema se define como el estado de mínima energía, mientras que los estados de mayor energía se denominan estados excitados. El estado base de la partícula en la caja corresponde a $n = 1$, y los estados excitados corresponden a $n = 2,3,\cdots$.
 # ```
 
 # **Importe las siguientes librerías**
@@ -284,7 +284,7 @@ for n in range(1,5):
 # E = \frac{\hbar^2 \pi^2 n^2}{2mL^2}
 # \end{equation*}
 # 
-# Con $n=1,2,3\cdots
+# Con $n=1,2,3\cdots$
 # 
 # Utilice la instrucción
 # ```
