@@ -48,7 +48,7 @@
 # \left(-\frac{\hbar^2}{2m_T} \nabla^2_{\rm cm} - \frac{\hbar^2}{2\mu} \nabla^2_{\mu}\right) \psi = E \psi
 # $$
 # 
-# Se propone que la eigenfunción se puede separar en el producto de una eigenfunción del centro de masa y una eigenfunción de la partícula de masa reducida
+# Se propone que la función de onda se puede separar en el producto de una función de onda del centro de masa y una función de onda de la partícula de masa reducida
 # 
 # $$
 # \psi=\psi_{cm}\psi_{\mu}

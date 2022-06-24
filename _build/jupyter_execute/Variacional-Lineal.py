@@ -9,14 +9,14 @@
 # H\psi = E \psi
 # $$
 # 
-# al expresar la eigenfunción como una combinación lineal de funciones $\{\phi_i\}$. Cuando las funciones $\phi_i$ forman un conjunto completo, la combinación lineal es exacta, sin embargo, en la práctica se usan solo algunas funciones, por lo que la función de onda resultante es aproximada, es decir
+# al expresar la función de onda como una combinación lineal de funciones $\{\phi_i\}$. Cuando las funciones $\phi_i$ forman un conjunto completo, la combinación lineal es exacta, sin embargo, en la práctica se usan solo algunas funciones, por lo que la función de onda resultante es aproximada, es decir
 # 
 # $$
 # \psi_{\rm prueba} = \sum_{i=1} c_i \phi_i  
 # $$
 # 
 # ```{important}
-# Al sustituir la expansión de la eigenfunción en la ecuación de Schrödinger, se obtiene la ecuación
+# Al sustituir la expansión de la función de onda en la ecuación de Schrödinger, se obtiene la ecuación
 # 
 # $$
 # \mathcal{H} \mathcal{C} = \mathcal{S} \mathcal{C} \mathcal{\varepsilon}
@@ -24,10 +24,10 @@
 # 
 # En general se realizan los siguientes pasos:
 # 
-# 1. Se seleccionan las funciones $\phi_i$ que se usarán para expandir la eigenfunción, es común elegir funciones exponenciales o gaussianas.
+# 1. Se seleccionan las funciones $\phi_i$ que se usarán para expandir la función de onda, es común elegir funciones exponenciales o gaussianas.
 # 2. Se evalúan las matrices $\mathcal{H}$, y $\mathcal{S}$.
 # 3. Se resuelve el problema de valores propios $\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}$.
-# 4. Se construye la eigenfunción utilizando los coeficientes obtenidos.
+# 4. Se construye la función de onda utilizando los coeficientes obtenidos.
 # ```
 # 
 # Una consecuencia de este método es que sin importar las funciones $\phi_i$ que se usen, siempre que cumplan con las condiciones de frontera del problema, la función de prueba siempre tiene una energía mayor o igual a la solución exacta. Por lo tanto, podemos construir varias funciones de prueba y tomar la que de la energía más baja.

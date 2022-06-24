@@ -180,7 +180,7 @@ ax.set_title("$Y^2$"+" l="+str(l)+" ml="+str(ml))
 plt.show()
 
 
-# Recordemos que la eigenfunción es el producto de una parte radial y una parte angular $\psi_{n,l,m_l}=R_{n,l}(r)Y_l^{m_l}(\theta,\phi)$
+# Recordemos que la función de onda es el producto de una parte radial y una parte angular $\psi_{n,l,m_l}=R_{n,l}(r)Y_l^{m_l}(\theta,\phi)$
 # 
 # Nombraremos a los orbitales p como:
 # 

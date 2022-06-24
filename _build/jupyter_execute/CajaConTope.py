@@ -34,19 +34,19 @@
 # De manera clásica, la partícula no podría pasar del lado izquierdo (región ${\rm II}$) al lado derecho (región ${\rm IV}$) de la caja y viceversa porque no tiene suficiente energía para atravesar la región ${\rm III}$. Por la misma razón, la probabilidad de encontrar a la partícula en la región ${\rm III}$ es cero. ¿Qué pasará cuánticamente?
 # ```
 # 
-# La eigenfunción se obtiene resolviendo la ecuación de Schrödinger
+# La función de onda se obtiene resolviendo la ecuación de Schrödinger
 # 
 # $$
 # \left( -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x) \right) \psi(x) = E \psi(x)
 # $$
 # 
-# Como se vio antes, la eigenfunción vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por regiones.
+# Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por regiones.
 
 # ```{admonition} Inserto matemático: Hamiltoniano por regiones
 # 
-# Si analizamos la ecuación de Schrödiger por regiones se tienen los siguientes Hamiltonianos y sus respectivas eigenfunciones solución:
+# Si analizamos la ecuación de Schrödiger por regiones se tienen los siguientes Hamiltonianos y sus respectivas soluciones:
 # 
-# | Región      | Hamiltoniano | Eigenfunción | Constantes |
+# | Región      | Hamiltoniano | Función de Onda | Constantes |
 # |:----------------:|:---------:|:--------:|:--------:|
 # | ${\rm II}$ | $\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\right) \psi_{\rm II}(x) = E \psi_{\rm II}(x)$ | $\psi_{\rm II}(x) = A \sin(k_1 x) + B\cos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
 # | ${\rm III}$ | $\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V \right) \psi_{\rm III}(x)= E \psi_{\rm III}(x)$ | $\psi_{\rm III}(x) = C e^{k_2 x} + De^{-k_2x}$ | $k_2^2 = \frac{2m(V-E)}{\hbar^2}$ |
@@ -95,7 +95,7 @@ a = 0.2
 L = 1.2
 
 
-# La eigenfunción y su derivada deben de ser continuas, por lo que podemos igualar la eigenfunción en el punto donde se unen las regiones, y obtener nuevas ecuaciones.
+# La función de onda y su derivada deben de ser continuas, por lo que podemos igualar la función de onda en el punto donde se unen las regiones, y obtener nuevas ecuaciones.
 # 
 # ```{admonition} Inserto matemático: Condiciones de Frontera
 # 
@@ -132,7 +132,7 @@ L = 1.2
 # \psi_{\rm III}(x) = C \left(e^{k_2 x} + e^{-k_2x} \right)
 # $$
 # 
-# Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la eigenfunción entre las zonas ${\rm II}$ y ${\rm III}$ se obtiene
+# Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la función de onda entre las zonas ${\rm II}$ y ${\rm III}$ se obtiene
 # 
 # $$
 # k_1\frac{A \cos(k_1 a) + B\sin(k_1 a)}{-A \sin(k_1 a) + B\cos(k_1 a)} = k_2 \frac{C e^{-k_2a} - D e^{k_2a}}{C e^{-k_2a} + D e^{k_2a}}
@@ -275,7 +275,7 @@ def k1(E): return np.sqrt(2*m*E/hbar**2)
 def k2(E): return np.sqrt(2*m*(V-E)/hbar**2)
 
 
-# Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la eigenfunción y graficarla.
+# Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la función de onda y graficarla.
 # 
 # ```{admonition} Inserto matemático: Análisis de las constantes $A$, $B$, $C$, $D$, $F$ y $G$
 # 

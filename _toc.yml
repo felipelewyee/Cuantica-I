@@ -27,7 +27,7 @@ parts:
 - caption: "Métodos Aproximados"
   numbered: true
   chapters:
-  - file: Principio-Variacional
+  - file: Metodo-Variacional
     sections:
       - file: Algebra-Simbolica
   - file: Variacional-Lineal

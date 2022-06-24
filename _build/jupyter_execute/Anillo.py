@@ -42,7 +42,7 @@
 # ```{admonition} Inserto matemático: Condiciones a la frontera
 # :class: dropdown
 # 
-# Debido a que la eigenfunción debe ser contínua, y a que la partícula se mueve en un anillo, debe de cumplirse la condición cíclica $\psi(\phi) = \psi(\phi+2\pi)$, es decir que al dar una vuelta, la eigenfunción debe terminar en el mismo punto donde comenzó. Sustituyendo la eigenfunción en la condición cíclica se obtiene
+# Debido a que la función de onda debe ser contínua, y a que la partícula se mueve en un anillo, debe de cumplirse la condición cíclica $\psi(\phi) = \psi(\phi+2\pi)$, es decir que al dar una vuelta, la función de onda debe terminar en el mismo punto donde comenzó. Sustituyendo la función de onda en la condición cíclica se obtiene
 # 
 # $$
 # Ae^{im_l\phi} + Be^{-im_l\phi} = Ae^{im_l\phi}e^{im_l2\pi} + Be^{-im_l\phi}e^{-im_l2\pi}

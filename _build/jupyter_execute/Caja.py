@@ -6,16 +6,12 @@
 # A continuación estudiaremos sistemas sencillos que nos permiten entender como surge la cuantización. Además, nos permitirán familiarizarnos con los pasos para resolver los problemas de química cuántica. Podemos resumir estos como:
 # 1. Identificar las interacciones y restricciones del sistema.
 # 2. Escribir el Hamiltoniano ($\mathcal{H}$) y la ecuación de Schrödinger ($\mathcal{H}\psi = E \psi$).
-# 3. Determinar las eigenfunciones ($\psi$).
+# 3. Determinar las función de onda ($\psi$).
 # 4. Estudiar las condiciones de cuantización.
 
 # ## Caja 1D
 
 # La versión 1D de este sistema consiste en una partícula que se mueve en el espacio con un potencial definido en tres regiones
-# 
-# ```{margin}
-# Note que la caja 1D es de hecho una `recta`.
-# ```
 # 
 # <img src="images/caja1d.png" alt="Figura de la caja 1D" width="300"/>
 # 
@@ -33,7 +29,7 @@
 # 
 # Esto significa que la partícula está confinada a un intervalo en $x \in [0,L]$.
 # 
-# La eigenfunción se puede dividir por regiones. Es imposible que la partícula se encuentre en la región ${\rm I}$ y en la región ${\rm III}$, ya que el potencial es infinito, por lo tanto:
+# La función de onda se puede dividir por regiones. Es imposible que la partícula se encuentre en la región ${\rm I}$ y en la región ${\rm III}$, ya que el potencial es infinito, por lo tanto:
 # 
 # $$
 # \psi(x) = 0 \left\{
@@ -44,7 +40,7 @@
 #   \right.
 # $$
 # 
-# Para determinar la eigenfunción en la región $\text{II}$ hay que escribir la de Schrödinger
+# Para determinar la función de onda en la región $\text{II}$ hay que escribir la de Schrödinger
 # 
 # \begin{equation*}
 # \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} \right)\psi(x) = E \psi(x)
@@ -61,7 +57,7 @@
 # ```{admonition} Inserto matemático: Condiciones a la frontera
 # :class: dropdown
 # 
-# La eigenfunción debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, $\psi_{\rm I}(0) = \psi_{\rm II}(0) = 0$. Esto implica que $A=0$, ya que
+# La función de onda debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, $\psi_{\rm I}(0) = \psi_{\rm II}(0) = 0$. Esto implica que $A=0$, ya que
 # 
 # \begin{equation*}
 # \psi_{\rm II}(0) = 0 = A\cos(0) + B\sin(0) = A
@@ -88,7 +84,7 @@
 # \end{equation*}
 # ```
 # 
-# Para determinar el valor de B hay que normalizar la eigenfunción, resultando que en la región ${\rm II}$:
+# Para determinar el valor de B hay que normalizar la función de onda, resultando que en la región ${\rm II}$:
 # 
 # \begin{equation*}
 # \psi_n(x)=\left(\frac{2}{L}\right)^{1/2}\sin\left(\frac{n\pi x}{L}\right)
@@ -99,6 +95,12 @@
 # \begin{equation*}
 #   E = \frac{\hbar^2 k^2}{2m} = \frac{h^2 n^2}{8mL^2} = \frac{\hbar^2 \pi^2 n^2}{2mL^2}; \>\>\>\>\> n=1,2,3,\cdots
 # \end{equation*}
+# 
+# ```{admonition} Estado basal y estados excitados.
+# class: note
+# 
+# El estado basal del sistema se define como el estado de mínima energía, mientras que los estados de mayor energía se denominan estados excitados. El estado base de la partícula en la caja corresponde a $n = 1$, mientras que los estados excitados corresponden a $n = 2,3,\cdots$.
+# ```
 
 # **Importe las siguientes librerías**
 # - numpy
@@ -141,14 +143,14 @@ m = 1
 L = 4
 
 
-# **Grafique la eigenfunción ($\psi$) y su cuadrado ($\psi^2$) para n=1 y L=4.0 A**
+# **Grafique la función de onda ($\psi$) y su cuadrado ($\psi^2$) para n=1 y L=4.0 A**
 # 
 # ```{tip}
 # 1. Declare la variable n asígnele su valor.
 # 2. Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 100.
-# 3. Evalúe la eigenfunción en el dominio
+# 3. Evalúe la función de onda en el dominio
 # 4. Calcule el cuadrado de la función de onda en el dominio
-# 5. Grafique la eigenfunción y su cuadrado usando matplotlib y pyplot.
+# 5. Grafique la función de onda y su cuadrado usando matplotlib y pyplot.
 # ```
 
 # In[5]:
@@ -177,11 +179,11 @@ plt.axhline(y=0, color='k')
 plt.show()
 
 
-# **Grafique la eigenfunción ($\psi$) y su cuadrado ($\psi^2$) para n=1,2,3,4 para L=4.0 A**
+# **Grafique la función de onda ($\psi$) y su cuadrado ($\psi^2$) para n=1,2,3,4 para L=4.0 A**
 # ```{tip}
 # 1. Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 100.
 # 2. Evalúe las 4 funciones de onda en el dominio
-# 3. Calcule el cuadrado de las 4 eigenfunciones en el dominio
+# 3. Calcule el cuadrado de las 4 función de onda en el dominio
 # 4. Grafique las funciones y su cuadrado usando matplotlib y pyplot.
 # ```
 
@@ -246,7 +248,7 @@ plt.show()
 # ```{admonition} Pregunta
 # :class: note
 # 
-# Encuentre un patrón entre el número cuántico $n$, el número de nodos de la eigenfunción, y el número de máximos del cuadrado de la función de onda
+# Encuentre un patrón entre el número cuántico $n$, el número de nodos de la función de onda, y el número de máximos del cuadrado de la función de onda
 # ```
 
 # Como estamos haciendo una secuencia de gráficas donde aumentamos n de uno en uno, podemos hacerlo con un ciclo for. **Repita la gráfica de la función de onda con $n=1,2,3,4$ utilizando un ciclo for**.
@@ -399,10 +401,6 @@ MultipleChoice(
 # ## Caja 2D
 
 # El problema se  puede plantear como una partícula en una caja de 2-Dimensiones. En este caso, la partícula se confina en $x \in [0,L_x]$ y $y \in [0,L_y]$.
-# 
-# ```{margin}
-# Note que la caja 2D es de hecho un `rectángulo` ¿Cómo será la caja 3D?.
-# ```
 # 
 # <img src="images/caja2d.png" alt="Figura de la caja 2D" width="300"/>
 # 

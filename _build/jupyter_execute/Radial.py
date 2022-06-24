@@ -65,7 +65,7 @@
 # ```{admonition} Inserto matemático: Separación de variables
 # :class: dropdown
 # 
-# Se propone que la eigenfunción $\psi$ puede ser separada en una parte radial y una parte angular, es decir
+# Se propone que la función de onda $\psi$ puede ser separada en una parte radial y una parte angular, es decir
 # 
 # $$
 # \psi=R(r)Y(\theta,\phi)
@@ -256,7 +256,7 @@ answers = [
     "Diverge en cero"
 ]
 explanation = (
-    "La parte radial de la eigenfunción es \(R_{n=1,l=0}^2(r)\)."
+    "La parte radial de la función de onda es \(R_{n=1,l=0}^2(r)\)."
 )
 MultipleChoice(
     question, answers, correct_answer=3, explanation=explanation
@@ -274,7 +274,7 @@ answers = [
     "Diverge en cero"
 ]
 explanation = (
-    "La parte radial de la eigenfunción es \(R_{n=2,l=0}^2(r)\)."
+    "La parte radial de la función de onda es \(R_{n=2,l=0}^2(r)\)."
 )
 MultipleChoice(
     question, answers, correct_answer=3, explanation=explanation
@@ -292,7 +292,7 @@ answers = [
     "Diverge en cero"
 ]
 explanation = (
-    "La parte radial de la eigenfunción es \(R_{n=3,l=0}^2(r)\)."
+    "La parte radial de la función de onda es \(R_{n=3,l=0}^2(r)\)."
 )
 MultipleChoice(
     question, answers, correct_answer=3, explanation=explanation
@@ -310,7 +310,7 @@ answers = [
     "Diverge en cero"
 ]
 explanation = (
-    "La función de distribución radial de la eigenfunción es \(r^2 R_{n=1,l=0}^2(r)\)."
+    "La función de distribución radial de la función de onda es \(r^2 R_{n=1,l=0}^2(r)\)."
 )
 MultipleChoice(
     question, answers, correct_answer=0, explanation=explanation
@@ -328,7 +328,7 @@ answers = [
     "Diverge en cero"
 ]
 explanation = (
-    "La función de distribución radial de la eigenfunción es \(r^2 R_{n=2,l=0}^2(r)\)."
+    "La función de distribución radial de la función de onda es \(r^2 R_{n=2,l=0}^2(r)\)."
 )
 MultipleChoice(
     question, answers, correct_answer=1, explanation=explanation
@@ -346,7 +346,7 @@ answers = [
     "Diverge en cero"
 ]
 explanation = (
-    "La función de distribución radial de la eigenfunción es \(r^2 R_{n=3,l=0}^2(r)\)."
+    "La función de distribución radial de la función de onda es \(r^2 R_{n=3,l=0}^2(r)\)."
 )
 MultipleChoice(
     question, answers, correct_answer=2, explanation=explanation
