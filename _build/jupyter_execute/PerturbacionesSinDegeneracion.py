@@ -21,7 +21,7 @@
 # 
 # $$
 # E_n &=& E_n^{(0)}+ E_n^{(1)} + E_n^{(2)} +\ldots \\
-# \Psi_n &=& \psi_n^{(0)}+\psi^{(1)}+\psi^{(2)}+\ldots
+# \psi_n &=& \psi_n^{(0)}+\psi^{(1)}+\psi^{(2)}+\ldots
 # $$
 # 
 # ```{admonition} Inserto matemático: Correcciones
@@ -44,7 +44,7 @@
 # y
 # 
 # $$
-# \Psi_n \approx \Psi_n^{(0)} + \sum_{m\neq n} \frac{\hat{H}'_{m,n}}{E_n^{(0)}-E_m^{(0)}} \Psi_m^{(0)}
+# \psi_n \approx \psi_n^{(0)} + \sum_{m\neq n} \frac{\hat{H}'_{m,n}}{E_n^{(0)}-E_m^{(0)}} \psi_m^{(0)}
 # $$
 # ```
 # 
@@ -256,12 +256,18 @@ plt.colorbar(label="$H'_{mn} [eV]$");
 # La corrección a primer orden de la energía de la energía del estado base es,
 # 
 # $$
-# E_0^{(1)} = \frac{3d}{4\alpha²} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
+# E_0^{(1)} = \frac{3d}{4\alpha^2} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
 # $$
 # 
-# ¿Podría verificarla numéricamente?
+# **¿Podría verificarla numéricamente?**
 
 # In[12]:
+
+
+# Compare la expresión analítica con la corrección a primer orden
+
+
+# In[13]:
 
 
 # Solución
@@ -285,9 +291,16 @@ print ("    En ≈ {0:.3e} [eV]".format(E00/e + E01numerico/e))
 
 
 # ### Ejercicio 2. Correcciones a primer orden (niveles excitados)
-# Podría calcular la corrección a primer orden del primer nivel excitado del oscilador armónico.
+# 
+# ¿Podría calcular la corrección a primer orden del primer nivel excitado del oscilador armónico?
 
-# In[13]:
+# In[14]:
+
+
+# Calcule las correcciones a primer orden de n>0
+
+
+# In[15]:
 
 
 # Solución
@@ -309,7 +322,7 @@ print ("    En ≈ {0:.3e} [eV]".format(E10/e + E11numerico/e))
 # ### Ejercicio 3. Correcciones a primer orden (primeros 5 niveles)
 # Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la primera corrección a la energía.
 
-# In[14]:
+# In[16]:
 
 
 # Solución
@@ -321,7 +334,7 @@ En0         = array( [ eigenEn0(n) for n in range(5) ] )
 Enapprox    = En0 + En1numerico
 
 
-# In[15]:
+# In[17]:
 
 
 for n in range(5):
@@ -342,7 +355,7 @@ ylabel("$E [eV]$")
 # E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 # $$
 
-# In[16]:
+# In[18]:
 
 
 # Previamente realizamos el gráfico de los elementos de matriz
@@ -354,7 +367,7 @@ plt.colorbar(label="$H'_{mn} [eV]$");
 # lo cual es típico en la teoría de perturbaciones
 
 
-# In[17]:
+# In[19]:
 
 
 # Sin embargo, los términos a sumar son los elementos de matriz 
@@ -367,7 +380,7 @@ E00 = eigenEn0(0)
 SegundoOrden = array( [ matrizHp[(m,n)]*matrizHp[(m,n)]/( eigenEn0(n)-eigenEn0(m) )                     for m in range(m_max) if m != n ] )
 
 
-# In[18]:
+# In[20]:
 
 
 # Grafiquemos los SegundoOrden
@@ -379,7 +392,7 @@ xlabel("m");
 #Podemos notar en este caso que la mayor corrección al estado base proviene del nivel n = 2
 
 
-# In[19]:
+# In[21]:
 
 
 # Notamos que los sumandos siempre son negativos para el estado base
@@ -391,13 +404,13 @@ print (" Máximo valor de los sumandos: {0:.3e} eV".format( max(SegundoOrden)/e 
 # ### Ejercicio 4. Correcciones primer orden vs segundo orden
 # Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la segunda corrección a la energía. ¿Es muy diferente al resultado de la corrección a primer orden?
 
-# In[20]:
+# In[22]:
 
 
 # Solución
 
 
-# In[21]:
+# In[23]:
 
 
 def SumaSegundoOrden(n,m_max=20):
@@ -434,10 +447,4 @@ xlim(-1,3)
 xticks([])
 ylabel("$E [eV]$");
 legend(loc=0);
-
-
-# In[ ]:
-
-
-
 
