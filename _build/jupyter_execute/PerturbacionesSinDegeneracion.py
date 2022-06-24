@@ -252,7 +252,7 @@ plt.colorbar(label="$H'_{mn} [eV]$");
 
 # ---
 
-# ### Ejercicio 1. Corrección a primer orden (analítico vs numérico)
+# ### Corrección a primer orden (analítico vs numérico)
 # La corrección a primer orden de la energía de la energía del estado base es,
 # 
 # $$
@@ -290,7 +290,7 @@ print ("    En ≈ {0:.3e} [eV]".format(E00/e + E01numerico/e))
 # ¿La energía es mayor o menor a la del oscilador armónico?
 
 
-# ### Ejercicio 2. Correcciones a primer orden (niveles excitados)
+# ### Correcciones a primer orden (niveles excitados)
 # 
 # ¿Podría calcular la corrección a primer orden del primer nivel excitado del oscilador armónico?
 
@@ -319,7 +319,7 @@ print ("    En ≈ {0:.3e} [eV]".format(E10/e + E11numerico/e))
 # ¿La energía es mayor o menor a la del oscilador armónico?
 
 
-# ### Ejercicio 3. Correcciones a primer orden (primeros 5 niveles)
+# ###  Correcciones a primer orden (primeros 5 niveles)
 # Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la primera corrección a la energía.
 
 # In[16]:
@@ -401,7 +401,7 @@ print (" Máximo valor de los sumandos: {0:.3e} eV".format( max(SegundoOrden)/e 
 # las de primer orden.
 
 
-# ### Ejercicio 4. Correcciones primer orden vs segundo orden
+# ### Correcciones primer orden vs segundo orden
 # Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la segunda corrección a la energía. ¿Es muy diferente al resultado de la corrección a primer orden?
 
 # In[22]:
