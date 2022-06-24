@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="18. Software" href="Software.html" />
+    <link rel="next" title="19. Software" href="Software.html" />
     <link rel="prev" title="16. Teoría de perturbaciones (niveles de energía no degenerados)" href="PerturbacionesSinDegeneracion.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -255,27 +255,27 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Software.html">
-   18. Software
+   19. Software
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Hartree-Fock.html">
-   19. Hartree-Fock-Roothan (HF)
+   20. Hartree-Fock-Roothan (HF)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Moller-Plesset.html">
-   20. Möller-Plesset (MPn)
+   21. Möller-Plesset (MPn)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="DFT.html">
-   21. Teoría de funcionales de la densidad (DFT)
+   22. Teoría de funcionales de la densidad (DFT)
   </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="Dimerizacion.html">
-   22. Dimerización de
+   23. Dimerización de
    <span class="math notranslate nohighlight">
     \(NO_2\)
    </span>
@@ -478,19 +478,26 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#butadieno">
-   17.1. Butadieno
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   17. Método de Hückel
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#butadieno">
+     17.1. Butadieno
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#benceno">
+     17.2. Benceno
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#benceno">
-   17.2. Benceno
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   17.3. Referencias
+   18. Referencias
   </a>
  </li>
 </ul>
@@ -512,19 +519,26 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#butadieno">
-   17.1. Butadieno
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   17. Método de Hückel
   </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#butadieno">
+     17.1. Butadieno
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#benceno">
+     17.2. Benceno
+    </a>
+   </li>
+  </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#benceno">
-   17.2. Benceno
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
+ <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#referencias">
-   17.3. Referencias
+   18. Referencias
   </a>
  </li>
 </ul>
@@ -714,17 +728,29 @@ HC = C\varepsilon
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⎡⎛                 ⎡⎡   -1   ⎤⎤⎞  ⎛                 ⎡⎡  1   ⎤⎤⎞  ⎛                 ⎡⎡   -1   ⎤⎤⎞  ⎛                 ⎡⎡  1   ⎤⎤⎞⎤
-⎢⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟  ⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟⎥
-⎢⎜                 ⎢⎢ 1   √5 ⎥⎥⎟  ⎜                 ⎢⎢1   √5⎥⎥⎟  ⎜                 ⎢⎢ 1   √5 ⎥⎥⎟  ⎜                 ⎢⎢1   √5⎥⎥⎟⎥
-⎢⎜                 ⎢⎢ ─ - ── ⎥⎥⎟  ⎜                 ⎢⎢─ + ──⎥⎥⎟  ⎜                 ⎢⎢ ─ + ── ⎥⎥⎟  ⎜                 ⎢⎢─ - ──⎥⎥⎟⎥
-⎢⎜    β   √5⋅β     ⎢⎢ 2   2  ⎥⎥⎟  ⎜    β   √5⋅β     ⎢⎢2   2 ⎥⎥⎟  ⎜    √5⋅β   β     ⎢⎢ 2   2  ⎥⎥⎟  ⎜    √5⋅β   β     ⎢⎢2   2 ⎥⎥⎟⎥
-⎢⎜α - ─ + ────, 1, ⎢⎢        ⎥⎥⎟, ⎜α + ─ + ────, 1, ⎢⎢      ⎥⎥⎟, ⎜α - ──── - ─, 1, ⎢⎢        ⎥⎥⎟, ⎜α - ──── + ─, 1, ⎢⎢      ⎥⎥⎟⎥
-⎢⎜    2    2       ⎢⎢  1   √5⎥⎥⎟  ⎜    2    2       ⎢⎢1   √5⎥⎥⎟  ⎜     2     2     ⎢⎢  √5   1⎥⎥⎟  ⎜     2     2     ⎢⎢1   √5⎥⎥⎟⎥
-⎢⎜                 ⎢⎢- ─ + ──⎥⎥⎟  ⎜                 ⎢⎢─ + ──⎥⎥⎟  ⎜                 ⎢⎢- ── - ─⎥⎥⎟  ⎜                 ⎢⎢─ - ──⎥⎥⎟⎥
-⎢⎜                 ⎢⎢  2   2 ⎥⎥⎟  ⎜                 ⎢⎢2   2 ⎥⎥⎟  ⎜                 ⎢⎢  2    2⎥⎥⎟  ⎜                 ⎢⎢2   2 ⎥⎥⎟⎥
-⎢⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟  ⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟⎥
-⎣⎝                 ⎣⎣   1    ⎦⎦⎠  ⎝                 ⎣⎣  1   ⎦⎦⎠  ⎝                 ⎣⎣   1    ⎦⎦⎠  ⎝                 ⎣⎣  1   ⎦⎦⎠⎦
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⎡⎛                 ⎡⎡   -1   ⎤⎤⎞  ⎛                 ⎡⎡  1   ⎤⎤⎞  ⎛                 ⎡⎡   -1   ⎤⎤⎞  ⎛ 
+⎢⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟  ⎜                 ⎢⎢        ⎥⎥⎟  ⎜ 
+⎢⎜                 ⎢⎢ 1   √5 ⎥⎥⎟  ⎜                 ⎢⎢1   √5⎥⎥⎟  ⎜                 ⎢⎢ 1   √5 ⎥⎥⎟  ⎜ 
+⎢⎜                 ⎢⎢ ─ - ── ⎥⎥⎟  ⎜                 ⎢⎢─ + ──⎥⎥⎟  ⎜                 ⎢⎢ ─ + ── ⎥⎥⎟  ⎜ 
+⎢⎜    β   √5⋅β     ⎢⎢ 2   2  ⎥⎥⎟  ⎜    β   √5⋅β     ⎢⎢2   2 ⎥⎥⎟  ⎜    √5⋅β   β     ⎢⎢ 2   2  ⎥⎥⎟  ⎜ 
+⎢⎜α - ─ + ────, 1, ⎢⎢        ⎥⎥⎟, ⎜α + ─ + ────, 1, ⎢⎢      ⎥⎥⎟, ⎜α - ──── - ─, 1, ⎢⎢        ⎥⎥⎟, ⎜α
+⎢⎜    2    2       ⎢⎢  1   √5⎥⎥⎟  ⎜    2    2       ⎢⎢1   √5⎥⎥⎟  ⎜     2     2     ⎢⎢  √5   1⎥⎥⎟  ⎜ 
+⎢⎜                 ⎢⎢- ─ + ──⎥⎥⎟  ⎜                 ⎢⎢─ + ──⎥⎥⎟  ⎜                 ⎢⎢- ── - ─⎥⎥⎟  ⎜ 
+⎢⎜                 ⎢⎢  2   2 ⎥⎥⎟  ⎜                 ⎢⎢2   2 ⎥⎥⎟  ⎜                 ⎢⎢  2    2⎥⎥⎟  ⎜ 
+⎢⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟  ⎜                 ⎢⎢        ⎥⎥⎟  ⎜ 
+⎣⎝                 ⎣⎣   1    ⎦⎦⎠  ⎝                 ⎣⎣  1   ⎦⎦⎠  ⎝                 ⎣⎣   1    ⎦⎦⎠  ⎝ 
+
+                ⎡⎡  1   ⎤⎤⎞⎤
+                ⎢⎢      ⎥⎥⎟⎥
+                ⎢⎢1   √5⎥⎥⎟⎥
+                ⎢⎢─ - ──⎥⎥⎟⎥
+   √5⋅β   β     ⎢⎢2   2 ⎥⎥⎟⎥
+ - ──── + ─, 1, ⎢⎢      ⎥⎥⎟⎥
+    2     2     ⎢⎢1   √5⎥⎥⎟⎥
+                ⎢⎢─ - ──⎥⎥⎟⎥
+                ⎢⎢2   2 ⎥⎥⎟⎥
+                ⎢⎢      ⎥⎥⎟⎥
+                ⎣⎣  1   ⎦⎦⎠⎦
 </pre></div>
 </div>
 </div>
@@ -900,7 +926,7 @@ HC = C\varepsilon
 </div>
 </div>
 </div>
-<p><strong>Extra</strong>. Dibuje a mano una representación esquemática del diagrama de orbitales moleculares según las energías que obtuvo. Las energías son</p>
+<p><strong>Extra</strong>. Dibuje una representación esquemática del diagrama de orbitales moleculares según las energías que obtuvo. Las energías son</p>
 <div class="math notranslate nohighlight">
 \[\varepsilon_1 = \alpha - 2\beta\]</div>
 <div class="math notranslate nohighlight">
@@ -943,12 +969,16 @@ HC = C\varepsilon
 <a class="reference internal image-reference" href="_images/benceno-hmo5.png"><img alt="benceno-hmo5" src="_images/benceno-hmo5.png" style="width: 80px;" /></a>
 <a class="reference internal image-reference" href="_images/benceno-hmo6.png"><img alt="benceno-hmo6" src="_images/benceno-hmo6.png" style="width: 120px;" /></a>
 </section>
-<section id="referencias">
-<h2><span class="section-number">17.3. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="referencias">
+<h1><span class="section-number">18. </span>Referencias<a class="headerlink" href="#referencias" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
+<li><p>E.F. Healy, Huckel Calculations using Mathematica, J. Chem. Educ. 72, A120 (1995).</p></li>
+<li><p>R.M. Hanson, Huckel Determinant Solver, J. Chem. Educ. 79, 1379 (2002).</p></li>
+<li><p>L.J. Schaad y B.A. Hess, Huckel theory and aromatically, J. Chem. Educ. 51, 640 (1974).</p></li>
+<li><p>Z. Chen, Graphical Representation of Hückel Molecular Orbitals, J. Chem. Educ. 97, 448 (2020).</p></li>
 <li><p>P. W. Atkins, y R. Friedman, Molecular Quantum Mechanics (Oxford University Press, 2005).</p></li>
 </ul>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -988,7 +1018,7 @@ HC = C\varepsilon
     <a class='right-next' id="next-link" href="Software.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">18. </span>Software</p>
+        <p class="prev-next-title"><span class="section-number">19. </span>Software</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
