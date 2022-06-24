@@ -201,7 +201,7 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="Principio-Variacional.html">
-   13. Método Variacional
+   13. Método variacional
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -500,19 +500,6 @@ E[\rho] = T_s[\rho] + U[\rho] + V_{nuc}[\rho] + E_{xc}[\rho]
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1868093</span><span class="o">/</span><span class="mf">3930383958.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#!pip install pyscf</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">pyscf</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pyscf&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <p>Para ejemplificar el uso de estos funcionales, declare la molécula de agua.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">h2o</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
@@ -576,10 +563,10 @@ E_c^{LDA} = \int \varepsilon_c^{VWN} dr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -75.1870745487914
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -75.1870745487912
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-75.1870745487914
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-75.18707454879124
 </pre></div>
 </div>
 </div>
@@ -633,10 +620,10 @@ E_{xc}^{GGA} = -\int \varepsilon_{xc}^{GGA} (\rho,\nabla \rho) dr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -76.3277295533262
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -76.3277295533263
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.32772955332621
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.32772955332628
 </pre></div>
 </div>
 </div>
@@ -676,10 +663,10 @@ E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -76.4172180433965
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -76.4172180433963
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.41721804339647
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.41721804339632
 </pre></div>
 </div>
 </div>
@@ -717,10 +704,10 @@ E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -76.3784002868615
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -76.3784002868614
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.3784002868615
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.37840028686145
 </pre></div>
 </div>
 </div>
