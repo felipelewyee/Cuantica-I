@@ -543,7 +543,7 @@ title="Print to PDF"
 <ol class="simple">
 <li><p>Identificar las interacciones y restricciones del sistema.</p></li>
 <li><p>Escribir el Hamiltoniano (<span class="math notranslate nohighlight">\(\mathcal{H}\)</span>) y la ecuación de Schrödinger (<span class="math notranslate nohighlight">\(\mathcal{H}\psi = E \psi\)</span>).</p></li>
-<li><p>Determinar las función de onda (<span class="math notranslate nohighlight">\(\psi\)</span>).</p></li>
+<li><p>Determinar las eigenfunciones (<span class="math notranslate nohighlight">\(\psi\)</span>).</p></li>
 <li><p>Estudiar las condiciones de cuantización.</p></li>
 </ol>
 <section id="caja-1d">
@@ -562,7 +562,7 @@ V(x) = \left\{
   \right.
 \end{split}\]</div>
 <p>Esto significa que la partícula está confinada a un intervalo en <span class="math notranslate nohighlight">\(x \in [0,L]\)</span>.</p>
-<p>La función de onda se puede dividir por regiones. Es imposible que la partícula se encuentre en la región <span class="math notranslate nohighlight">\({\rm I}\)</span> y en la región <span class="math notranslate nohighlight">\({\rm III}\)</span>, ya que el potencial es infinito, por lo tanto:</p>
+<p>La eigenfunción se puede dividir por regiones. Es imposible que la partícula se encuentre en la región <span class="math notranslate nohighlight">\({\rm I}\)</span> y en la región <span class="math notranslate nohighlight">\({\rm III}\)</span>, ya que el potencial es infinito, por lo tanto:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \psi(x) = 0 \left\{
@@ -572,7 +572,7 @@ V(x) = \left\{
   \end{array}
   \right.
 \end{split}\]</div>
-<p>Para determinar la función de onda en la región <span class="math notranslate nohighlight">\(\text{II}\)</span> hay que escribir la ecuación de Schrödinger</p>
+<p>Para determinar la eigenfunción en la región <span class="math notranslate nohighlight">\(\text{II}\)</span> hay que escribir la ecuación de Schrödinger</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \left(- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} \right)\psi(x) = E \psi(x)
@@ -585,7 +585,7 @@ V(x) = \left\{
 <p>posteriormente hay que recurrir a las condiciones a la frontera.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Condiciones a la frontera</p>
-<p>La función de onda debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, <span class="math notranslate nohighlight">\(\psi_{\rm I}(0) = \psi_{\rm II}(0) = 0\)</span>. Esto implica que <span class="math notranslate nohighlight">\(A=0\)</span>, ya que</p>
+<p>La eigenfunción debe ser continua, esto significa que la región I y la región II deben unirse en el mismo punto, es decir, <span class="math notranslate nohighlight">\(\psi_{\rm I}(0) = \psi_{\rm II}(0) = 0\)</span>. Esto implica que <span class="math notranslate nohighlight">\(A=0\)</span>, ya que</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \psi_{\rm II}(0) = 0 = A\cos(0) + B\sin(0) = A
@@ -607,7 +607,7 @@ V(x) = \left\{
 \psi_{\rm II} = B \sin \left( \frac{n \pi x}{L}\right)
 \end{equation*}\]</div>
 </div>
-<p>Para determinar el valor de B hay que normalizar la función de onda, resultando que en la región <span class="math notranslate nohighlight">\({\rm II}\)</span>:</p>
+<p>Para determinar el valor de B hay que normalizar la eigenfunción, resultando que en la región <span class="math notranslate nohighlight">\({\rm II}\)</span>:</p>
 <div class="amsmath math notranslate nohighlight">
 \[\begin{equation*}
 \psi_n(x)=\left(\frac{2}{L}\right)^{1/2}\sin\left(\frac{n\pi x}{L}\right)
@@ -667,15 +667,15 @@ V(x) = \left\{
 </div>
 </div>
 </div>
-<p><strong>Grafique la función de onda (<span class="math notranslate nohighlight">\(\psi\)</span>) y su cuadrado (<span class="math notranslate nohighlight">\(\psi^2\)</span>) para n=1 y L=4.0 A</strong></p>
+<p><strong>Grafique la eigenfunción (<span class="math notranslate nohighlight">\(\psi\)</span>) y su cuadrado (<span class="math notranslate nohighlight">\(\psi^2\)</span>) para n=1 y L=4.0 A</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ol class="simple">
 <li><p>Declare la variable n asígnele su valor.</p></li>
 <li><p>Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 100.</p></li>
-<li><p>Evalúe la función de onda en el dominio</p></li>
-<li><p>Calcule el cuadrado de la función de onda en el dominio</p></li>
-<li><p>Grafique la función de onda y su cuadrado usando matplotlib y pyplot.</p></li>
+<li><p>Evalúe la eigenfunción en el dominio</p></li>
+<li><p>Calcule el cuadrado de la eigenfunción en el dominio</p></li>
+<li><p>Grafique la eigenfunción y su cuadrado usando matplotlib y pyplot.</p></li>
 </ol>
 </div>
 <div class="cell docutils container">
@@ -709,13 +709,13 @@ V(x) = \left\{
 <img alt="_images/Caja_12_0.png" src="_images/Caja_12_0.png" />
 </div>
 </div>
-<p><strong>Grafique la función de onda (<span class="math notranslate nohighlight">\(\psi\)</span>) y su cuadrado (<span class="math notranslate nohighlight">\(\psi^2\)</span>) para n=1,2,3,4 para L=4.0 A</strong></p>
+<p><strong>Grafique la eigenfunción (<span class="math notranslate nohighlight">\(\psi\)</span>) y su cuadrado (<span class="math notranslate nohighlight">\(\psi^2\)</span>) para n=1,2,3,4 para L=4.0 A</strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <ol class="simple">
 <li><p>Cree el dominio de x de 0 a L con numpy.linspace, utilice una cantidad de puntos, por ejemplo 100.</p></li>
-<li><p>Evalúe las 4 funciones de onda en el dominio</p></li>
-<li><p>Calcule el cuadrado de las 4 función de onda en el dominio</p></li>
+<li><p>Evalúe las 4 eigenfunciones en el dominio.</p></li>
+<li><p>Calcule el cuadrado de las 4 eigenfunciones en el dominio.</p></li>
 <li><p>Grafique las funciones y su cuadrado usando matplotlib y pyplot.</p></li>
 </ol>
 </div>
@@ -787,9 +787,9 @@ V(x) = \left\{
 </div>
 <div class="note admonition">
 <p class="admonition-title">Pregunta</p>
-<p>Encuentre un patrón entre el número cuántico <span class="math notranslate nohighlight">\(n\)</span>, el número de nodos de la función de onda, y el número de máximos del cuadrado de la función de onda</p>
+<p>Encuentre un patrón entre el número cuántico <span class="math notranslate nohighlight">\(n\)</span>, el número de nodos de la eigenfunción, y el número de máximos del cuadrado de la eigenfunción.</p>
 </div>
-<p>Como estamos haciendo una secuencia de gráficas donde aumentamos n de uno en uno, podemos hacerlo con un ciclo for. <strong>Repita la gráfica de la función de onda con <span class="math notranslate nohighlight">\(n=1,2,3,4\)</span> utilizando un ciclo for</strong>.</p>
+<p>Como estamos haciendo una secuencia de gráficas donde aumentamos n de uno en uno, podemos hacerlo con un ciclo for. <strong>Repita la gráfica de las eigenfunciones con <span class="math notranslate nohighlight">\(n=1,2,3,4\)</span> utilizando un ciclo for</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inserte código para 4 gráficas en las que solo cambia el valor de n, use un for</span>

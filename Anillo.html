@@ -550,7 +550,7 @@ E = \frac{\hbar^2 m_l^2}{2mr^2}
 \]</div>
 <div class="dropdown admonition">
 <p class="admonition-title">Inserto matemático: Condiciones a la frontera</p>
-<p>Debido a que la función de onda debe ser contínua, y a que la partícula se mueve en un anillo, debe de cumplirse la condición cíclica <span class="math notranslate nohighlight">\(\psi(\phi) = \psi(\phi+2\pi)\)</span>, es decir que al dar una vuelta, la función de onda debe terminar en el mismo punto donde comenzó. Sustituyendo la función de onda en la condición cíclica se obtiene</p>
+<p>Debido a que la eigenfunción debe ser contínua, y a que la partícula se mueve en un anillo, debe de cumplirse la condición cíclica <span class="math notranslate nohighlight">\(\psi(\phi) = \psi(\phi+2\pi)\)</span>, es decir que al dar una vuelta, la eigenfunción debe terminar en el mismo punto donde comenzó. Sustituyendo la eigenfunción en la condición cíclica se obtiene</p>
 <div class="math notranslate nohighlight">
 \[
 Ae^{im_l\phi} + Be^{-im_l\phi} = Ae^{im_l\phi}e^{im_l2\pi} + Be^{-im_l\phi}e^{-im_l2\pi}
@@ -562,7 +562,7 @@ Ae^{im_l\phi} + Be^{-im_l\phi} = Ae^{im_l\phi}e^{im_l2\pi} + Be^{-im_l\phi}e^{-i
 \[
 \psi = \left( \frac{1}{2\pi} \right)^{1/2} e^{i m_l \phi} = \left( \frac{1}{2\pi} \right)^{1/2} \cos(m_l \phi) + i \left( \frac{1}{2\pi} \right)^{1/2} \sin(m_l \phi)
 \]</div>
-<p><strong>Grafique la función de onda y su cuadrado para <span class="math notranslate nohighlight">\(m_l=1\)</span></strong></p>
+<p><strong>Grafique la eigenfunción y su cuadrado para <span class="math notranslate nohighlight">\(m_l=1\)</span></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
@@ -586,7 +586,7 @@ Ae^{im_l\phi} + Be^{-im_l\phi} = Ae^{im_l\phi}e^{im_l2\pi} + Be^{-im_l\phi}e^{-i
 <span class="n">psi_r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ml</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span>
 <span class="n">psi_i</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ml</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span>
 
-<span class="c1">#Gráfica de la función de onda</span>
+<span class="c1">#Gráfica de la eigenfunción</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
@@ -596,7 +596,7 @@ Ae^{im_l\phi} + Be^{-im_l\phi} = Ae^{im_l\phi}e^{im_l2\pi} + Be^{-im_l\phi}e^{-i
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-<span class="c1">#Gráfica del cuadrado de la función de onda</span>
+<span class="c1">#Gráfica del cuadrado de la eigenfunción</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
