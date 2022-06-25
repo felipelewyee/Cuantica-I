@@ -23,17 +23,17 @@
 # De manera clásica, la partícula no podría pasar del lado izquierdo (región I) al lado derecho (región II) de la caja, porque no tiene suficiente energía. Por esta razón, no podríamos encontrar a la partícula en la región II. ¿Qué pasará cuánticamente?
 # ```
 # 
-# Para resolver el sistema hay que planear el Hamiltoniano por regiones y resolver una función de onda para cada región.
+# Para resolver el sistema hay que planear el Hamiltoniano por regiones y resolver una eigenfunción para cada región.
 # 
 # ```{admonition} Inserto matemático: Hamiltoniano por regiones
 # 
-# | Región      | Hamiltoniano | Función de Onda | Constantes |
+# | Región      | Hamiltoniano | Eigenfunción | Constantes |
 # |:----------------:|:---------:|:--------:|:--------:|
 # | I | $- \frac{\hbar^2}{2m} \frac{d^2}{dx^2}$ | $\psi_{\rm I}(x) = Ae^{ikx} + Be^{-ikx}$ | $k^2 = \frac{2mE}{\hbar^2}$ |
 # | II| $- \frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V$ | $\psi_{\rm II}(x) = C e^{-\kappa x} + De^{\kappa x}$ | $\kappa ^2 = \frac{2m(V-E)}{\hbar^2}$ |
 # ```
 # 
-# Se obtienen la funció de onda por regiones
+# Se obtienen la eigenfunción por regiones
 # 
 # $$
 # \psi_I(x) = Ae^{ikx} + Be^{-ikx}
@@ -47,7 +47,7 @@
 # Note la diferencia entre la letra `k` y la letra griega $\kappa$.
 # ```
 # 
-# Los coeficientes pueden obtenerse a partir de la condición de continuidad de la función de onda en $x=0$
+# Los coeficientes pueden obtenerse a partir de la condición de continuidad de la eigenfunción en $x=0$
 # 
 # ```{admonition} Inserto matemático: Condiciones de continuidad
 # 
@@ -168,7 +168,7 @@ x1 = np.linspace(-2,0,100)
 x2 = np.linspace(0,2,100)
 
 
-# Genere la función de onda para la región I y para la región II. Recuerde
+# Genere la eigenfunción para la región I y para la región II. Recuerde
 # 
 # $$
 # \psi_{\rm I} = A e^{ik x} + B e^{-ik x}
@@ -211,7 +211,7 @@ plt.plot(x2,abs(psi_II)**2)
 # ```{admonition} Concepto: Longitud de decaimiento
 # :class: note
 # 
-# La longitud de decaimiento, $\kappa^{-1}$ es la distancia dentro de la barrera a la cual la función de onda ha decaído a  $e^{-1}$.
+# La longitud de decaimiento, $\kappa^{-1}$ es la distancia dentro de la barrera a la cual la eigenfunción ha decaído a  $e^{-1}$.
 # ```
 
 # **Calcule la longitud de decaimiento de este sistema.**

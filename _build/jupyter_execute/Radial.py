@@ -37,7 +37,7 @@
 # \left(-\frac{\hbar^2}{2m_T}\nabla^2_{\cm cm}-\frac{\hbar^2}{2\mu}\nabla^2_{\mu}-\frac{e^2}{4\pi\varepsilon_0r}\right) \Psi = E \Psi
 # $$
 # 
-# La función de onda $\Psi$ de la ecuación anterior depende de las coordenadas del centro de masa, $R_{\rm cm}$ y de las coordenadas de la masa reducida, $r$. Se propone una solución por separación de variables, tal que $\Psi(R,r) = \Phi(R_{\rm cm}) \psi(r)$. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones
+# La eigenfunción $\Psi$ de la ecuación anterior depende de las coordenadas del centro de masa, $R_{\rm cm}$ y de las coordenadas de la masa reducida, $r$. Se propone una solución por separación de variables, tal que $\Psi(R,r) = \Phi(R_{\rm cm}) \psi(r)$. Al sustituir en la ecuación de Schrodinger se obtienen 2 ecuaciones
 # 
 # $$
 # \left(-\frac{\hbar^2}{2m_T}\nabla^2_{cm}\right) \Phi = E_{cm} \Phi
@@ -65,7 +65,7 @@
 # ```{admonition} Inserto matemático: Separación de variables
 # :class: dropdown
 # 
-# Se propone que la función de onda $\psi$ puede ser separada en una parte radial y una parte angular, es decir
+# Se propone que la eigenfunción $\psi$ puede ser separada en una parte radial y una parte angular, es decir
 # 
 # $$
 # \psi=R(r)Y(\theta,\phi)
@@ -196,7 +196,7 @@ plt.title("Función de distribución radial")
 plt.show()
 
 
-# **Realice la gráfica de $R^2(r)$ (el cuadrado de la parte radial de la función de onda) para los orbitales 1s ($n=1$, $l=0$),2s ($n=2$, $l=0$),3s ($n=3$, $l=0$) y 4s ($n=4$, $l=0$), y de $r^2R^2$.**
+# **Realice la gráfica de $R^2(r)$ (el cuadrado de la parte radial de la eigenfunción) para los orbitales 1s ($n=1$, $l=0$),2s ($n=2$, $l=0$),3s ($n=3$, $l=0$) y 4s ($n=4$, $l=0$), y de $r^2R^2$.**
 
 # In[7]:
 
@@ -256,7 +256,7 @@ answers = [
     "Diverge en cero"
 ]
 explanation = (
-    "La parte radial de la función de onda es \(R_{n=1,l=0}^2(r)\)."
+    "La parte radial de la eigenfunción es \(R_{n=1,l=0}^2(r)\)."
 )
 MultipleChoice(
     question, answers, correct_answer=3, explanation=explanation
@@ -274,7 +274,7 @@ answers = [
     "Diverge en cero"
 ]
 explanation = (
-    "La parte radial de la función de onda es \(R_{n=2,l=0}^2(r)\)."
+    "La parte radial de la eigenfunción es \(R_{n=2,l=0}^2(r)\)."
 )
 MultipleChoice(
     question, answers, correct_answer=3, explanation=explanation
@@ -292,7 +292,7 @@ answers = [
     "Diverge en cero"
 ]
 explanation = (
-    "La parte radial de la función de onda es \(R_{n=3,l=0}^2(r)\)."
+    "La parte radial de la eigenfunción es \(R_{n=3,l=0}^2(r)\)."
 )
 MultipleChoice(
     question, answers, correct_answer=3, explanation=explanation
@@ -310,7 +310,7 @@ answers = [
     "Diverge en cero"
 ]
 explanation = (
-    "La función de distribución radial de la función de onda es \(r^2 R_{n=1,l=0}^2(r)\)."
+    "La función de distribución radial de la eigenfunción es \(r^2 R_{n=1,l=0}^2(r)\)."
 )
 MultipleChoice(
     question, answers, correct_answer=0, explanation=explanation
@@ -328,7 +328,7 @@ answers = [
     "Diverge en cero"
 ]
 explanation = (
-    "La función de distribución radial de la función de onda es \(r^2 R_{n=2,l=0}^2(r)\)."
+    "La función de distribución radial de la eigenfunción es \(r^2 R_{n=2,l=0}^2(r)\)."
 )
 MultipleChoice(
     question, answers, correct_answer=1, explanation=explanation
@@ -346,7 +346,7 @@ answers = [
     "Diverge en cero"
 ]
 explanation = (
-    "La función de distribución radial de la función de onda es \(r^2 R_{n=3,l=0}^2(r)\)."
+    "La función de distribución radial de la eigenfunción es \(r^2 R_{n=3,l=0}^2(r)\)."
 )
 MultipleChoice(
     question, answers, correct_answer=2, explanation=explanation
@@ -359,7 +359,7 @@ MultipleChoice(
 # ¿Encuentra algún patrón entre el número de máximos de la función de distribución radial con el número cuántico $n$ del orbital?
 # ```
 
-# **Realice la gráfica del cuadrado de la parte radial de la función de onda para los orbitales 3s ($n=3$, $l=0$),3p ($n=3$, $l=1$) y 3d ($n=3$, $l=2$), y de $r^2R^2$.**
+# **Realice la gráfica del cuadrado de la parte radial de la eigenfunción para los orbitales 3s ($n=3$, $l=0$),3p ($n=3$, $l=1$) y 3d ($n=3$, $l=2$), y de $r^2R^2$.**
 
 # In[16]:
 

@@ -42,7 +42,7 @@
 # ```{admonition} Inserto matemático: Condiciones a la frontera
 # :class: dropdown
 # 
-# Debido a que la función de onda debe ser contínua, y a que la partícula se mueve en un anillo, debe de cumplirse la condición cíclica $\psi(\phi) = \psi(\phi+2\pi)$, es decir que al dar una vuelta, la función de onda debe terminar en el mismo punto donde comenzó. Sustituyendo la función de onda en la condición cíclica se obtiene
+# Debido a que la eigenfunción debe ser contínua, y a que la partícula se mueve en un anillo, debe de cumplirse la condición cíclica $\psi(\phi) = \psi(\phi+2\pi)$, es decir que al dar una vuelta, la eigenfunción debe terminar en el mismo punto donde comenzó. Sustituyendo la eigenfunción en la condición cíclica se obtiene
 # 
 # $$
 # Ae^{im_l\phi} + Be^{-im_l\phi} = Ae^{im_l\phi}e^{im_l2\pi} + Be^{-im_l\phi}e^{-im_l2\pi}
@@ -57,7 +57,7 @@
 # \psi = \left( \frac{1}{2\pi} \right)^{1/2} e^{i m_l \phi} = \left( \frac{1}{2\pi} \right)^{1/2} \cos(m_l \phi) + i \left( \frac{1}{2\pi} \right)^{1/2} \sin(m_l \phi)
 # $$
 
-# **Grafique la función de onda y su cuadrado para $m_l=1$**
+# **Grafique la eigenfunción y su cuadrado para $m_l=1$**
 
 # In[1]:
 
@@ -82,7 +82,7 @@ r=1.0
 psi_r = np.sqrt(1/(2*np.pi))*np.cos(ml*phi)
 psi_i = np.sqrt(1/(2*np.pi))*np.sin(ml*phi)
 
-#Gráfica de la función de onda
+#Gráfica de la eigenfunción
 ax = plt.axes(projection='3d')
 x = r * np.sin(phi)
 y = r * np.cos(phi)
@@ -92,7 +92,7 @@ ax.plot(x, y, psi_i, label='$Im(\psi)$')
 ax.legend()
 plt.show()
 
-#Gráfica del cuadrado de la función de onda
+#Gráfica del cuadrado de la eigenfunción
 ax = plt.axes(projection='3d')
 x = r * np.sin(phi)
 y = r * np.cos(phi)

@@ -32,19 +32,19 @@
 # De manera clásica, la partícula no podría pasar del lado izquierdo (región ${\rm II}$) al lado derecho (región ${\rm IV}$) de la caja y viceversa porque no tiene suficiente energía para atravesar la región ${\rm III}$. Por la misma razón, la probabilidad de encontrar a la partícula en la región ${\rm III}$ es cero. ¿Qué pasará cuánticamente?
 # ```
 # 
-# La función de onda se obtiene resolviendo la ecuación de Schrödinger
+# La eigenfunción se obtiene resolviendo la ecuación de Schrödinger
 # 
 # $$
 # \left( -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}+V(x) \right) \psi(x) = E \psi(x)
 # $$
 # 
-# Como se vio antes, la función de onda vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por regiones.
+# Como se vio antes, la eigenfunción vale cero afuera de la caja. Por lo que se puede plantear la ecuación de Schrödinger por regiones.
 
 # ```{admonition} Inserto matemático: Hamiltoniano por regiones
 # 
 # Si analizamos la ecuación de Schrödiger por regiones se tienen los siguientes Hamiltonianos y sus respectivas soluciones:
 # 
-# | Región      | Hamiltoniano | Función de Onda | Constantes |
+# | Región      | Hamiltoniano | Eigenfunción | Constantes |
 # |:----------------:|:---------:|:--------:|:--------:|
 # | ${\rm II}$ | $\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2}\right) \psi_{\rm II}(x) = E \psi_{\rm II}(x)$ | $\psi_{\rm II}(x) = A \sin(k_1 x) + B\cos(k_1x)$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
 # | ${\rm III}$ | $\left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + V \right) \psi_{\rm III}(x)= E \psi_{\rm III}(x)$ | $\psi_{\rm III}(x) = C e^{k_2 x} + De^{-k_2x}$ | $k_2^2 = \frac{2m(V-E)}{\hbar^2}$ |
@@ -93,7 +93,7 @@ a = 0.2
 L = 1.2
 
 
-# La función de onda y su derivada deben de ser continuas, por lo que podemos igualar la función de onda en el punto donde se unen las regiones, y obtener nuevas ecuaciones.
+# La eigenfunción y su derivada deben de ser continuas, por lo que podemos igualar la eigenfunción en el punto donde se unen las regiones, y obtener nuevas ecuaciones.
 # 
 # ```{admonition} Inserto matemático: Condiciones de Frontera
 # 
@@ -130,7 +130,7 @@ L = 1.2
 # \psi_{\rm III}(x) = C \left(e^{k_2 x} + e^{-k_2x} \right)
 # $$
 # 
-# Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la función de onda entre las zonas ${\rm II}$ y ${\rm III}$ se obtiene
+# Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la eigenfunción entre las zonas ${\rm II}$ y ${\rm III}$ se obtiene
 # 
 # $$
 # k_1\frac{A \cos(k_1 a) + B\sin(k_1 a)}{-A \sin(k_1 a) + B\cos(k_1 a)} = k_2 \frac{C e^{-k_2a} - D e^{k_2a}}{C e^{-k_2a} + D e^{k_2a}}
@@ -273,7 +273,7 @@ def k1(E): return np.sqrt(2*m*E/hbar**2)
 def k2(E): return np.sqrt(2*m*(V-E)/hbar**2)
 
 
-# Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la función de onda y graficarla.
+# Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la eigenfunción y graficarla.
 # 
 # ```{admonition} Inserto matemático: Análisis de las constantes $A$, $B$, $C$, $D$, $F$ y $G$
 # 
@@ -309,7 +309,7 @@ def k2(E): return np.sqrt(2*m*(V-E)/hbar**2)
 # | $F$ y $G$ | $G = -F \tan(k_1 L)$ |
 # | $F$ y $C$ | $F = C \left(\frac{ e^{k_2a} + e^{-k_2a} }{\sin(k_1 a) - \tan(k_1L) \cos(k_1a)}\right)$|
 # 
-# Note que es posible poner todo en función de $C$. Además note que $A = -F$ y $B = G$. El valor de $C$ debe ser aquel que haga que la función de onda este normalizada. Aunque es posible obtener una función analítica, aquí tomaremos un camino numérico.
+# Note que es posible poner todo en función de $C$. Además note que $A = -F$ y $B = G$. El valor de $C$ debe ser aquel que haga que la eigenfunción este normalizada. Aunque es posible obtener una función analítica, aquí tomaremos un camino numérico.
 # ```
 # 
 # Defina funciones para
@@ -340,7 +340,7 @@ def psi_III(x): return np.exp(k2(E)*x)+np.exp(-k2(E)*x)
 def psi_IV(x): return (np.exp(k2(E)*a)+np.exp(-k2(E)*a))/(np.sin(k1(E)*a)-np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)-np.tan(k1(E)*L)*np.cos(k1(E)*x))
 
 
-# Cree tres dominios de 1000 puntos para la función de onda, tal que
+# Cree tres dominios de 1000 puntos para la eigenfunción, tal que
 # 
 # $$
 # x_{\rm II} \in [-L,-a]
@@ -368,7 +368,7 @@ x_III = np.linspace(-a,a,10000)
 x_IV = np.linspace(a,L,10000)
 
 
-# Utilice las energías del segundo guess para graficar las funciones de onda. Recuerde respetar la normalización.
+# Utilice las energías del segundo guess para graficar las eigenfunciones. Recuerde respetar la normalización.
 
 # In[19]:
 
@@ -417,7 +417,7 @@ for E in E_segundoguess:
 # \psi_{\rm III}(x) = C \left(e^{k_2 x} - e^{-k_2x} \right)
 # $$
 # 
-# Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la función de onda entre las zonas ${\rm II}$ y ${\rm III}$ se obtiene
+# Si dividimos la ecuación de continuidad de la derivada entre la ecuación de continuidad de la eigenfunción entre las zonas ${\rm II}$ y ${\rm III}$ se obtiene
 # 
 # $$
 # k_1\frac{A \cos(k_1 a) + B\sin(k_1 a)}{-A \sin(k_1 a) + B\cos(k_1 a)} = k_2 \frac{C e^{-k_2a} - D e^{k_2a}}{C e^{-k_2a} + D e^{k_2a}}
@@ -496,7 +496,7 @@ for E in E_primerguess:
         E_segundoguess.append(E_i)
 
 
-# Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la función de onda y graficarla.
+# Hasta aquí ya somos capaces de obtener las energías permitidas. Falta normalizar la eigenfunción y graficarla.
 # 
 # ```{admonition} Inserto matemático: Análisis de las constantes $A$, $B$, $C$, $D$, $F$ y $G$
 # 
@@ -532,7 +532,7 @@ for E in E_primerguess:
 # | $F$ y $G$ | $G = -F \tan(k_1 L)$ |
 # | $F$ y $C$ | $F = C \left(\frac{ e^{k_2a} - e^{-k_2a} }{\sin(k_1 a) - \tan(k_1L) \cos(k_1a)}\right)$|
 # 
-# Note que es posible poner todo en función de $C$. Además note que $A = E$ y $B = -F$. El valor de $C$ debe ser aquel que haga que la función de onda este normalizada. Aunque es posible obtener una función analítica, aquí tomaremos un camino numérico.
+# Note que es posible poner todo en función de $C$. Además note que $A = E$ y $B = -F$. El valor de $C$ debe ser aquel que haga que la eigenfunción esté normalizada. Aunque es posible obtener una función analítica, aquí tomaremos un camino numérico.
 # ```
 # 
 # Defina funciones para:
@@ -563,7 +563,7 @@ def psi_III(x): return np.exp(k2(E)*x)-np.exp(-k2(E)*x)
 def psi_IV(x): return (np.exp(k2(E)*a)-np.exp(-k2(E)*a))/(np.sin(k1(E)*a)-np.tan(k1(E)*L)*np.cos(k1(E)*a))*(np.sin(k1(E)*x)-np.tan(k1(E)*L)*np.cos(k1(E)*x))
 
 
-# Realice las gráficas de la función de onda
+# Realice las gráficas de la eigenfunción
 
 # In[24]:
 

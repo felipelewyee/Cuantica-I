@@ -554,24 +554,24 @@ title="Print to PDF"
 \[
 H\psi = E \psi
 \]</div>
-<p>al expresar la función de onda como una combinación lineal de funciones <span class="math notranslate nohighlight">\(\{\phi_i\}\)</span>. Cuando las funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> forman un conjunto completo, la combinación lineal es exacta, sin embargo, en la práctica se usan solo algunas funciones, por lo que la función de onda resultante es aproximada, es decir</p>
+<p>al expresar la eigenfunción como una combinación lineal de funciones <span class="math notranslate nohighlight">\(\{\phi_i\}\)</span>. Cuando las funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> forman un conjunto completo, la combinación lineal es exacta, sin embargo, en la práctica se usan solo algunas funciones, por lo que la función de onda resultante es aproximada, es decir</p>
 <div class="math notranslate nohighlight">
 \[
 \psi_{\rm prueba} = \sum_{i=1} c_i \phi_i  
 \]</div>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>Al sustituir la expansión de la función de onda en la ecuación de Schrödinger, se obtiene la ecuación</p>
+<p>Al sustituir la expansión de la eigenfunción en la ecuación de Schrödinger, se obtiene la ecuación</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{H} \mathcal{C} = \mathcal{S} \mathcal{C} \mathcal{\varepsilon}
 \]</div>
 <p>En general se realizan los siguientes pasos:</p>
 <ol class="simple">
-<li><p>Se seleccionan las funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> que se usarán para expandir la función de onda, es común elegir funciones exponenciales o gaussianas.</p></li>
+<li><p>Se seleccionan las funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> que se usarán para expandir la eigenfunción, es común elegir funciones exponenciales o gaussianas.</p></li>
 <li><p>Se evalúan las matrices <span class="math notranslate nohighlight">\(\mathcal{H}\)</span>, y <span class="math notranslate nohighlight">\(\mathcal{S}\)</span>.</p></li>
 <li><p>Se resuelve el problema de valores propios <span class="math notranslate nohighlight">\(\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}\)</span>.</p></li>
-<li><p>Se construye la función de onda utilizando los coeficientes obtenidos.</p></li>
+<li><p>Se construye la eigenfunción utilizando los coeficientes obtenidos.</p></li>
 </ol>
 </div>
 <p>Una consecuencia de este método es que sin importar las funciones <span class="math notranslate nohighlight">\(\phi_i\)</span> que se usen, siempre que cumplan con las condiciones de frontera del problema, la función de prueba siempre tiene una energía mayor o igual a la solución exacta. Por lo tanto, podemos construir varias funciones de prueba y tomar la que de la energía más baja.</p>
@@ -634,9 +634,7 @@ H\psi = E \psi
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>phi_1
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                       2
+                                       2
                   -0.75  -1.309756377⋅r 
 2.05904286572975⋅π     ⋅ℯ               
 phi_2
@@ -728,7 +726,7 @@ S_{21} &amp; S_{22}
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">E</span><span class="p">,</span><span class="n">C</span> <span class="o">=</span> <span class="n">LA</span><span class="o">.</span><span class="n">eigh</span><span class="p">(</span><span class="n">H</span><span class="p">,</span><span class="n">S</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>la cual resuelve directamente el problema <span class="math notranslate nohighlight">\(\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}\)</span>. La columna de <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> con la energía más baja nos indica los coeficientes de la combinación lineal de la función de onda.</p>
+<p>la cual resuelve directamente el problema <span class="math notranslate nohighlight">\(\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}\)</span>. La columna de <span class="math notranslate nohighlight">\(\mathcal{C}\)</span> con la energía más baja nos indica los coeficientes de la combinación lineal de la eigenfunción.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resuelva HC = SCe</span>
@@ -801,7 +799,7 @@ S_{21} &amp; S_{22}
 \[\displaystyle 1.0\]</div>
 </div>
 </div>
-<p><strong>Almacene la función de prueba, así como cada una de las gausianas que la componen para comparar con la función de onda exacta</strong>.</p>
+<p><strong>Almacene la función de prueba, así como cada una de las gausianas que la componen para comparar con la solución exacta</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Código</span>
@@ -1048,10 +1046,10 @@ S_{31} &amp; S_{32} &amp; S_{33} \\
 </div>
 </div>
 </div>
-<p><strong>Paso 4.</strong> Sustituir los coeficientes en <span class="math notranslate nohighlight">\(\psi_{\rm prueba} =\displaystyle  \sum_{i=1}^3 c_i \phi_i\)</span> para construir la función de onda.</p>
+<p><strong>Paso 4.</strong> Sustituir los coeficientes en <span class="math notranslate nohighlight">\(\psi_{\rm prueba} =\displaystyle  \sum_{i=1}^3 c_i \phi_i\)</span> para construir la función de prueba.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Genere la función de onda</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Genere la función de prueba</span>
 </pre></div>
 </div>
 </div>
@@ -1146,7 +1144,7 @@ S_{31} &amp; S_{32} &amp; S_{33} \\
 </section>
 <section id="atomo-de-hidrogeno-dos-gaussianas-vs-tres-gaussianas">
 <h2><span class="section-number">14.3. </span>Átomo de hidrógeno dos gaussianas vs tres gaussianas<a class="headerlink" href="#atomo-de-hidrogeno-dos-gaussianas-vs-tres-gaussianas" title="Permalink to this headline">#</a></h2>
-<p>En la gráfica se compara la función de onda aproximada por el método variacional lineal con dos gausianas y con tres gausianas contra la solución exacta del átomo de hidrógeno del orbital 1s.</p>
+<p>En la gráfica se compara la eigenfunción aproximada por el método variacional lineal con dos gausianas y con tres gausianas contra la solución exacta del átomo de hidrógeno del orbital 1s.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>

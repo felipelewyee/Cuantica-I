@@ -9,14 +9,14 @@
 # H\psi = E \psi
 # $$
 # 
-# al expresar la función de onda como una combinación lineal de funciones $\{\phi_i\}$. Cuando las funciones $\phi_i$ forman un conjunto completo, la combinación lineal es exacta, sin embargo, en la práctica se usan solo algunas funciones, por lo que la función de onda resultante es aproximada, es decir
+# al expresar la eigenfunción como una combinación lineal de funciones $\{\phi_i\}$. Cuando las funciones $\phi_i$ forman un conjunto completo, la combinación lineal es exacta, sin embargo, en la práctica se usan solo algunas funciones, por lo que la función de onda resultante es aproximada, es decir
 # 
 # $$
 # \psi_{\rm prueba} = \sum_{i=1} c_i \phi_i  
 # $$
 # 
 # ```{important}
-# Al sustituir la expansión de la función de onda en la ecuación de Schrödinger, se obtiene la ecuación
+# Al sustituir la expansión de la eigenfunción en la ecuación de Schrödinger, se obtiene la ecuación
 # 
 # $$
 # \mathcal{H} \mathcal{C} = \mathcal{S} \mathcal{C} \mathcal{\varepsilon}
@@ -24,10 +24,10 @@
 # 
 # En general se realizan los siguientes pasos:
 # 
-# 1. Se seleccionan las funciones $\phi_i$ que se usarán para expandir la función de onda, es común elegir funciones exponenciales o gaussianas.
+# 1. Se seleccionan las funciones $\phi_i$ que se usarán para expandir la eigenfunción, es común elegir funciones exponenciales o gaussianas.
 # 2. Se evalúan las matrices $\mathcal{H}$, y $\mathcal{S}$.
 # 3. Se resuelve el problema de valores propios $\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}$.
-# 4. Se construye la función de onda utilizando los coeficientes obtenidos.
+# 4. Se construye la eigenfunción utilizando los coeficientes obtenidos.
 # ```
 # 
 # Una consecuencia de este método es que sin importar las funciones $\phi_i$ que se usen, siempre que cumplan con las condiciones de frontera del problema, la función de prueba siempre tiene una energía mayor o igual a la solución exacta. Por lo tanto, podemos construir varias funciones de prueba y tomar la que de la energía más baja.
@@ -168,7 +168,7 @@ S
 # ~~~python
 # E,C = LA.eigh(H,S)
 # ~~~
-# la cual resuelve directamente el problema $\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}$. La columna de $\mathcal{C}$ con la energía más baja nos indica los coeficientes de la combinación lineal de la función de onda.
+# la cual resuelve directamente el problema $\mathcal{H}\mathcal{C} = \mathcal{S}\mathcal{C} \mathcal{\epsilon}$. La columna de $\mathcal{C}$ con la energía más baja nos indica los coeficientes de la combinación lineal de la eigenfunción.
 
 # In[9]:
 
@@ -223,7 +223,7 @@ psi_p
 4*sp.pi*sp.integrate(psi_p*psi_p*r**2,(r,0,sp.oo))
 
 
-# **Almacene la función de prueba, así como cada una de las gausianas que la componen para comparar con la función de onda exacta**.
+# **Almacene la función de prueba, así como cada una de las gausianas que la componen para comparar con la solución exacta**.
 
 # In[15]:
 
@@ -434,12 +434,12 @@ print(E)
 print(C)
 
 
-# **Paso 4.** Sustituir los coeficientes en $\psi_{\rm prueba} =\displaystyle  \sum_{i=1}^3 c_i \phi_i$ para construir la función de onda.
+# **Paso 4.** Sustituir los coeficientes en $\psi_{\rm prueba} =\displaystyle  \sum_{i=1}^3 c_i \phi_i$ para construir la función de prueba.
 
 # In[27]:
 
 
-# Genere la función de onda
+# Genere la función de prueba
 
 
 # In[28]:
@@ -518,7 +518,7 @@ plt.show()
 
 # ## Átomo de hidrógeno dos gaussianas vs tres gaussianas
 
-# En la gráfica se compara la función de onda aproximada por el método variacional lineal con dos gausianas y con tres gausianas contra la solución exacta del átomo de hidrógeno del orbital 1s. 
+# En la gráfica se compara la eigenfunción aproximada por el método variacional lineal con dos gausianas y con tres gausianas contra la solución exacta del átomo de hidrógeno del orbital 1s. 
 
 # In[35]:
 

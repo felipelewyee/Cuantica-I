@@ -40,7 +40,7 @@
 # | ${\rm III}$ | $- \frac{\hbar^2}{2m} \frac{d^2}{dx^2}$ | $\psi_{\rm III}(x) = Fe^{ik_1x} + Ge^{-ik_1x}$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
 # ```
 # 
-# Los coeficientes pueden obtenerse a partir de la condición de continuidad de la función de onda en $x=0$ y $x=L$
+# Los coeficientes pueden obtenerse a partir de la condición de continuidad de la eigenfunción en $x=0$ y $x=L$
 # ```{admonition} Inserto matemático: Condiciones de continuidad
 # 
 # | Regiones | Condición | Ecuación |
@@ -67,7 +67,7 @@
 # 
 # ```
 # 
-# El coeficiente de transmisión se puede calcular al dividir el cuadrado del coeficiente de la parte de la función que representa el paso de partículas a la región ${\rm III}$ (coeficiente $F$), entre el cuadrado del coeficiente de la parte de la función de onda que representa a la partícula dirigiéndose hacia la región ${\rm I}$ (coeficiente $A$).
+# El coeficiente de transmisión se puede calcular al dividir el cuadrado del coeficiente de la parte de la función que representa el paso de partículas a la región ${\rm III}$ (coeficiente $F$), entre el cuadrado del coeficiente de la parte de la eigenfunción que representa a la partícula dirigiéndose hacia la región ${\rm I}$ (coeficiente $A$).
 # 
 # $$
 # T = \frac{|F|^2}{|A|^2} = \frac{16(E/V)(1-E/V)}{16(E/V)(1-E/V) + (e^{k_2L} - e^{-k_2L})^2}
@@ -129,7 +129,7 @@ k1 = np.sqrt(2*m*E/hbar**2)
 k2 = np.sqrt(2*m*(V-E)/hbar**2)
 
 
-# A continuación graficaremos el cuadrado de la función de onda. Para ello, primero defina las siguientes constantes.
+# A continuación graficaremos el cuadrado de la eigenfunción. Para ello, primero defina las siguientes constantes.
 # 
 # $$
 # C = \frac{F}{2} \left( 1 - \frac{i k_1}{k_2} \right) e^{ik_1L + k_2L}
@@ -186,7 +186,7 @@ x2 = np.linspace(0,L,100)
 x3 = np.linspace(L,10,100)
 
 
-# Defina la función de onda en las tres regiones según
+# Defina la eigenfunción en las tres regiones según
 # 
 # $$
 # \psi(x) = \left\{
@@ -212,7 +212,7 @@ psi_II = C*np.exp(-k2*x2) + D*np.exp(k2*x2)
 psi_III = F*np.exp(1j*k1*x3)
 
 
-# Grafique el cuadrado de la función de onda.
+# Grafique el cuadrado de la eigenfunción.
 
 # In[13]:
 
@@ -284,7 +284,7 @@ for V in [2,4,8,16]:
 # | ${\rm III}$ | $- \frac{\hbar^2}{2m} \frac{d^2}{dx^2}$ | $\psi_{III}(x) = Fe^{ik_1x} + Ge^{-ik_1x}$ | $k_1^2 = \frac{2mE}{\hbar^2}$ |
 # ```
 # 
-# Los coeficientes pueden obtenerse a partir de la condición de continuidad de la función de onda en $x=0$ y $x=L$
+# Los coeficientes pueden obtenerse a partir de la condición de continuidad de la eigenfunción en $x=0$ y $x=L$
 # ```{admonition} Inserto matemático: Condiciones de continuidad
 # 
 # | Regiones | Condición | Ecuación |
@@ -310,7 +310,7 @@ for V in [2,4,8,16]:
 # $$
 # ```
 # 
-# El coeficiente de transmisión se puede calcular al dividir el cuadrado del coeficiente de la parte de la función que representa el paso de partículas a la región ${\rm III}$ (coeficiente $F$), entre el cuadrado del coeficiente de la parte de la función de onda que representa a la partícula dirigiéndose hacia la región ${\rm I}$ (coeficiente $A$).
+# El coeficiente de transmisión se puede calcular al dividir el cuadrado del coeficiente de la parte de la función que representa el paso de partículas a la región ${\rm III}$ (coeficiente $F$), entre el cuadrado del coeficiente de la parte de la eigenfunción que representa a la partícula dirigiéndose hacia la región ${\rm I}$ (coeficiente $A$).
 # 
 # $$
 # T = \frac{4(E/V)(E/V-1)}{4(E/V)(E/V-1) + \sin^2(k_2L)}

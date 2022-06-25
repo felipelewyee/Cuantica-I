@@ -27,7 +27,7 @@
 # \left(-\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + \frac{1}{2} kx^2 \right) \psi = E \psi
 # $$
 # 
-# esta es una ecuación cuyas soluciones a la energía y la función de onda son
+# esta es una ecuación cuyas soluciones a la energía y las eigenfunciones son
 # 
 # $$
 # E_n = \left(n + \frac{1}{2}\right) h \nu
@@ -57,7 +57,7 @@
 # |3|$8x^3 - 12 x$|
 # |4|$16x^4 - 48 x^2 +12$|
 
-# ## Gráficas de la función de onda
+# ## Gráficas de las eigenfunciones
 
 # **Importe las librerías numpy, math, pyplot de matplotlib y eval_hermite de scipy.special** 
 
@@ -109,7 +109,7 @@ alpha = np.power(m*k/(hbar**2),1/4)
 x = np.linspace(-5,5,1000)
 
 
-# **Grafique la función de onda del oscilador Harmónico cuántico y su cuadrado para $n=0,2,4$.**
+# **Grafique la eigenfunción del oscilador Harmónico cuántico y su cuadrado para $n=0,2,4$.**
 # 
 # Compare con Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005, p.62.
 
@@ -143,7 +143,7 @@ plt.title("$\psi^2$")
 plt.show()
 
 
-# **Grafique la función de onda del oscilador Harmónico cuántico para $n=1,3,5$.**
+# **Grafique la eigenfunción del oscilador Harmónico cuántico para $n=1,3,5$.**
 # 
 # Compare con Atkins, P. W.; Friedman, R. Molecular Quantum Mechanics, 4th ed.; Oxford University Press: New York, 2005, p.62.
 
