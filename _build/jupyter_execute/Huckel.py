@@ -321,7 +321,7 @@ H
 sp.pprint(H.eigenvects(simplify=True))
 
 
-# **Extra**. Dibuje a mano una representación esquemática del diagrama de orbitales moleculares según las energías que obtuvo. Las energías son
+# **Extra**. Dibuje una representación esquemática del diagrama de orbitales moleculares según las energías que obtuvo. Las energías son
 # 
 # $$\varepsilon_1 = \alpha - 2\beta$$
 # $$\varepsilon_2 = \alpha - \beta$$
@@ -364,4 +364,8 @@ plt.show()
 
 # ## Referencias
 # 
+# - E.F. Healy, Huckel Calculations using Mathematica, J. Chem. Educ. 72, A120 (1995).
+# - R.M. Hanson, Huckel Determinant Solver, J. Chem. Educ. 79, 1379 (2002).
+# - L.J. Schaad y B.A. Hess, Huckel theory and aromatically, J. Chem. Educ. 51, 640 (1974).
+# - Z. Chen, Graphical Representation of Hückel Molecular Orbitals, J. Chem. Educ. 97, 448 (2020).
 # - P. W. Atkins, y R. Friedman, Molecular Quantum Mechanics (Oxford University Press, 2005).

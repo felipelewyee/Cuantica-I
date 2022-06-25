@@ -3,9 +3,7 @@
 
 # # Efecto Túnel en la Caja
 
-# ## Autoría
-# 
-# `````{tip}
+# `````{admonition} Autoría
 # Esta es una contribución del **Dr. Carlos Amador Bedolla**, del departamento de Física y Química Teórica de la Facultad de Química, UNAM.
 # `````
 

@@ -216,6 +216,6 @@ plt.plot(x2,abs(psi_II)**2)
 
 # **Calcule la longitud de decaimiento de este sistema.**
 
-# # Referencias
+# ## Referencias
 
 # - P. W. Atkins, y R. Friedman, Molecular Quantum Mechanics (Oxford University Press, 2005).
