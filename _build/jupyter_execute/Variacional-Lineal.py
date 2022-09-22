@@ -81,8 +81,6 @@ import sympy as sp
 # In[4]:
 
 
-
-
 r = sp.Symbol("r")
 phi_1 = (2*1.309756377/sp.pi)**(3/4)*sp.exp(-1.309756377*r**2)
 phi_2 = (2*0.233135974/sp.pi)**(3/4)*sp.exp(-0.233135974*r**2)

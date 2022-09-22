@@ -377,7 +377,8 @@ plt.colorbar(label="$H'_{mn} [eV]$");
 n   = 0
 E00 = eigenEn0(0) 
 # Dado que las eigenfunciones son reales no tenemos que tomar el conjugado
-SegundoOrden = array( [ matrizHp[(m,n)]*matrizHp[(m,n)]/( eigenEn0(n)-eigenEn0(m) )                     for m in range(m_max) if m != n ] )
+SegundoOrden = array( [ matrizHp[(m,n)]*matrizHp[(m,n)]/( eigenEn0(n)-eigenEn0(m) ) \
+                    for m in range(m_max) if m != n ] )
 
 
 # In[20]:
@@ -414,7 +415,8 @@ print (" Máximo valor de los sumandos: {0:.3e} eV".format( max(SegundoOrden)/e 
 
 
 def SumaSegundoOrden(n,m_max=20):
-    SegundoOrden = array( [ matrizHp[(m,n)]*matrizHp[(m,n)]/( eigenEn0(n)-eigenEn0(m) )                         for m in range(m_max) if m != n ] )
+    SegundoOrden = array( [ matrizHp[(m,n)]*matrizHp[(m,n)]/( eigenEn0(n)-eigenEn0(m) ) \
+                        for m in range(m_max) if m != n ] )
     En2 = SegundoOrden.sum()
     return En2
 
