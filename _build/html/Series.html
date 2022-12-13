@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/logoFacultadQuimica.jpg" class="logo" alt="logo">
+      <img src="_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Cuántica I</h1>
@@ -616,7 +616,7 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 <p><strong>Haga la expansión en series de Taylor en torno a <span class="math notranslate nohighlight">\(x=0\)</span> de <span class="math notranslate nohighlight">\(f(x)=e^{x}\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \in [0,10]\)</span> truncada hasta la potencia de grado 7 y compárela con la función original.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Serie de Taylor de f(x)=e^x con x \in [0,10] usando 6 términos
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Serie de Taylor de f(x)=e^x con x \in [0,10] usando 6 términos</span>
 </pre></div>
 </div>
 </div>
@@ -634,7 +634,7 @@ f(x) = \sum_{n=0}^\infty \frac{f^{(n)}(a)}{n!} (x-a)^n
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Series de Taylor de f(x)=e^x con x \in [0,10] usando 6, 9 y 12 términos
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Series de Taylor de f(x)=e^x con x \in [0,10] usando 6, 9 y 12 términos</span>
 </pre></div>
 </div>
 </div>
@@ -688,35 +688,35 @@ b_n = \frac{2}{T} \int\limits_{-T/2}^{T/2} f(x) \sin \left( \frac{2n\pi}{T}x \ri
 <p><strong>Haga la expansión en series de Fourier de la <span class="math notranslate nohighlight">\(f(x)=x\)</span> en el intervalo <span class="math notranslate nohighlight">\(x \in [-10,10]\)</span> con <span class="math notranslate nohighlight">\(n=10\)</span></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Serie de Fourier
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Serie de Fourier</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from scipy import integrate
-from matplotlib import pyplot as plt
-import numpy as np
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-a=-10.0
-b=10.0
+<span class="n">a</span><span class="o">=-</span><span class="mf">10.0</span>
+<span class="n">b</span><span class="o">=</span><span class="mf">10.0</span>
 
-T=b-a
+<span class="n">T</span><span class="o">=</span><span class="n">b</span><span class="o">-</span><span class="n">a</span>
 
-x=np.linspace(a,b,100)
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 
-a_0 = 2.0/T*integrate.quad(lambda x: x,a,b)[0]
-y = a_0/2.0*x**0.0
+<span class="n">a_0</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">a_0</span><span class="o">/</span><span class="mf">2.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mf">0.0</span>
 
-for n in range(1,11):
-    a_n = 2.0/T*integrate.quad(lambda x: x*np.cos(2*n*np.pi/T*x),a,b)[0]
-    b_n = 2.0/T*integrate.quad(lambda x: x*np.sin(2*n*np.pi/T*x),a,b)[0]
-    y=y+a_n*np.cos(2*n*np.pi/T*x)+b_n*np.sin(2*n*np.pi/T*x)
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="n">a_n</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">b_n</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="o">+</span><span class="n">a_n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">b_n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
     
-plt.plot(x,y,color=&#39;r&#39;)
-plt.plot(x,x)
-plt.show()
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -736,35 +736,35 @@ f(x) = \left\{
 \end{equation*}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Serie de Fourier
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Serie de Fourier</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from scipy import integrate
-from matplotlib import pyplot as plt
-import numpy as np
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-a=-10.0
-b=10.0
+<span class="n">a</span><span class="o">=-</span><span class="mf">10.0</span>
+<span class="n">b</span><span class="o">=</span><span class="mf">10.0</span>
 
-T=b-a
+<span class="n">T</span><span class="o">=</span><span class="n">b</span><span class="o">-</span><span class="n">a</span>
 
-x=np.linspace(-10,10,100)
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 
-a_0 = 2.0/T*integrate.quad(lambda x: np.piecewise(x,x&gt;=0,[1,0]),a,b)[0]
-y = a_0/2.0*x**0.0
+<span class="n">a_0</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">piecewise</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]),</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">a_0</span><span class="o">/</span><span class="mf">2.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mf">0.0</span>
 
-for n in range(1,11):
-    a_n = 2.0/T*integrate.quad(lambda x: np.piecewise(x,x&gt;=0,[1,0])*np.cos(2*n*np.pi/T*x),a,b)[0]
-    b_n = 2.0/T*integrate.quad(lambda x: np.piecewise(x,x&gt;=0,[1,0])*np.sin(2*n*np.pi/T*x),a,b)[0]
-    y=y+a_n*np.cos(2*n*np.pi/T*x)+b_n*np.sin(2*n*np.pi/T*x)
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="n">a_n</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">piecewise</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">b_n</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">piecewise</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">x</span><span class="p">),</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="o">+</span><span class="n">a_n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">b_n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">T</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
     
-plt.plot(x,y,color=&#39;r&#39;)
-plt.plot(x,np.piecewise(x,x&gt;=0,[1,0]))
-plt.show()
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">piecewise</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">x</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">,[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -835,9 +835,9 @@ plt.show()
   
     <div class="extra_footer">
       <div>
-<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logo_unam.png?raw=true" alt="logo_UNAM">
-<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logoFacultadQuimica.jpg?raw=true" alt="logo_FQ">
-    © D.R. UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2022<br>Universidad Nacional Autónoma de México<br>Facultad de Química<br>Prohibida la reproducción total o parcial por cualquier medio, sin la autorización escrita del titular de los derechos patrimoniales.<br>Impreso y hecho en México<br>Publicación aprobada por el Comité Editorial de la Facultad de Química.
+<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logo_unam.png?raw=true" alt="logo_UNAM", style="width: 5%">
+<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logoFacultadQuimica.jpg?raw=true" alt="logo_FQ", style="width: 5%">
+    <br>© D.R. UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2022<br>Universidad Nacional Autónoma de México<br>Facultad de Química<br>Prohibida la reproducción total o parcial por cualquier medio, sin la autorización escrita del titular de los derechos patrimoniales.<br>Impreso y hecho en México<br>Publicación aprobada por el Comité Editorial de la Facultad de Química.
 </div>
 
     </div>

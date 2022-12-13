@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/logoFacultadQuimica.jpg" class="logo" alt="logo">
+      <img src="_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Cuántica I</h1>
@@ -628,17 +628,17 @@ L_{k} (r) = e^r \frac{d^k}{dr^k} \left(r^k e^{-r}\right)
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Librerías
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Librerías</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from matplotlib import pyplot as plt
-import numpy as np
-from scipy.misc import derivative
-from scipy.special import laguerre
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.misc</span> <span class="kn">import</span> <span class="n">derivative</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">laguerre</span>
 </pre></div>
 </div>
 </div>
@@ -646,21 +646,21 @@ from scipy.special import laguerre
 <p><strong>Defina una función que reciba valores de <span class="math notranslate nohighlight">\(n\)</span> y <span class="math notranslate nohighlight">\(l\)</span> y regresen la función <span class="math notranslate nohighlight">\(R(r)\)</span></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># def R(r)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># def R(r)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def R_func(r,n,l):
-    N = (2/(n*a0))**(3/2)*np.sqrt((np.math.factorial(n-l-1))/(2*n*((np.math.factorial(n+l)))**3))
-    L = laguerre(n+l)
-    L = L/np.abs(L[n+l])
-    assoc_L = derivative(L,2*r/(n*a0),n=2*l+1,order=2*l+3)
-    R = -N*(2*r/(n*a0))**l*np.exp(-r/(n*a0))*assoc_L
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">):</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">)))</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">laguerre</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">L</span> <span class="o">=</span> <span class="n">L</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="n">l</span><span class="p">])</span>
+    <span class="n">assoc_L</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">),</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">l</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="o">-</span><span class="n">N</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">**</span><span class="n">l</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">r</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">a0</span><span class="p">))</span><span class="o">*</span><span class="n">assoc_L</span>
     
-    return R
+    <span class="k">return</span> <span class="n">R</span>
 </pre></div>
 </div>
 </div>
@@ -668,33 +668,33 @@ from scipy.special import laguerre
 <p><strong>Grafique el cuadrado de la función de densidad de probabilidad del orbital 1s, <span class="math notranslate nohighlight">\(R^2_{n=1,l=0}\)</span>, y su función de distribución radial <span class="math notranslate nohighlight">\(r^2R^2_{n=1,l=0}\)</span></strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Gráfica
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>r=np.linspace(0,25,100)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 
-a0=1.0
+<span class="n">a0</span><span class="o">=</span><span class="mf">1.0</span>
 
-n = 1
-l = 0
+<span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
 
-R = R_func(r,n,l)
+<span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
 
-plt.plot(r,R**2,label=n)
-plt.xlabel(&quot;$r$&quot;)
-plt.ylabel(&quot;$R^2$&quot;)
-plt.title(&quot;Función de densidad de probabilidad&quot;)
-plt.show()
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$R^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Función de densidad de probabilidad&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-plt.plot(r,4*np.pi*r**2*R**2,label=n)
-plt.xlabel(&quot;$r$&quot;)
-plt.ylabel(&quot;$r^2R^2$&quot;)
-plt.title(&quot;Función de distribución radial&quot;)
-plt.show()
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$r^2R^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Función de distribución radial&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -706,43 +706,43 @@ plt.show()
 <p><strong>Realice la gráfica de <span class="math notranslate nohighlight">\(R^2(r)\)</span> (el cuadrado de la parte radial de la eigenfunción) para los orbitales 1s (<span class="math notranslate nohighlight">\(n=1\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>),2s (<span class="math notranslate nohighlight">\(n=2\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>),3s (<span class="math notranslate nohighlight">\(n=3\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>) y 4s (<span class="math notranslate nohighlight">\(n=4\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>), y de <span class="math notranslate nohighlight">\(r^2R^2\)</span>.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Gráfica
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Cambiar aqui para ajustar limites del eje X
-r=np.linspace(0,25,100)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Cambiar aqui para ajustar limites del eje X</span>
+<span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 
-#Cambiar aqui para usar s,p,d,etc
-l=0
-#Cambiar aquí para elegir limites de los numeros cuanticos n
-n_min=1
-n_max=4
+<span class="c1">#Cambiar aqui para usar s,p,d,etc</span>
+<span class="n">l</span><span class="o">=</span><span class="mi">0</span>
+<span class="c1">#Cambiar aquí para elegir limites de los numeros cuanticos n</span>
+<span class="n">n_min</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">n_max</span><span class="o">=</span><span class="mi">4</span>
 
-for n in range(n_min,n_max+1):
-    R = R_func(r,n,l)
-    plt.plot(r,R**2,label=n)
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span><span class="n">n_max</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
 
-plt.legend()
-#Cambiar aqui los titulos de los ejes
-plt.xlabel(&quot;$r$&quot;)
-plt.ylabel(&quot;$R^2$&quot;)
-plt.title(&quot;$R^2(r)$ 1s, 2s ,3s y 4s&quot;)
-plt.show()
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="c1">#Cambiar aqui los titulos de los ejes</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$R^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$R^2(r)$ 1s, 2s ,3s y 4s&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-for n in range(n_min,n_max+1):
-    R = R_func(r,n,l)
-    plt.plot(r,r**2*R**2,label=n)
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_min</span><span class="p">,</span><span class="n">n_max</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">n</span><span class="p">)</span>
 
-plt.legend()
-#Cambiar aqui los titulos de los ejes
-plt.xlabel(&quot;$r$&quot;)
-plt.ylabel(&quot;$r^2R^2$&quot;)
-plt.title(&quot;$r^2R^2(r)$ 1s, 2s ,3s y 4s&quot;)
-plt.show()
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="c1">#Cambiar aqui los titulos de los ejes</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$r^2R^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$r^2R^2(r)$ 1s, 2s ,3s y 4s&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -854,45 +854,45 @@ plt.show()
 <p><strong>Realice la gráfica del cuadrado de la parte radial de la eigenfunción para los orbitales 3s (<span class="math notranslate nohighlight">\(n=3\)</span>, <span class="math notranslate nohighlight">\(l=0\)</span>),3p (<span class="math notranslate nohighlight">\(n=3\)</span>, <span class="math notranslate nohighlight">\(l=1\)</span>) y 3d (<span class="math notranslate nohighlight">\(n=3\)</span>, <span class="math notranslate nohighlight">\(l=2\)</span>), y de <span class="math notranslate nohighlight">\(r^2R^2\)</span>.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Gráfica
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Cambiar aqui para ajustar eje X
-r=np.linspace(0,25,100)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Cambiar aqui para ajustar eje X</span>
+<span class="n">r</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 
-a0=1.0
+<span class="n">a0</span><span class="o">=</span><span class="mf">1.0</span>
 
-#Cambiar aqui para elegir n
-n=3
-#Cambiar aquí para elegir numeros cuanticos l
-lmin=0
-lmax=2
+<span class="c1">#Cambiar aqui para elegir n</span>
+<span class="n">n</span><span class="o">=</span><span class="mi">3</span>
+<span class="c1">#Cambiar aquí para elegir numeros cuanticos l</span>
+<span class="n">lmin</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">lmax</span><span class="o">=</span><span class="mi">2</span>
 
-for l in range(lmin,lmax+1):
-    R = R_func(r,n,l)
-    plt.plot(r,R**2,label=l)
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lmin</span><span class="p">,</span><span class="n">lmax</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">)</span>
 
-plt.legend()
-#Cambiar aqui los titulos de los ejes
-plt.xlabel(&quot;$r$&quot;)
-plt.ylabel(&quot;$R$&quot;)
-plt.title(&quot;$R^2(r)$ 3s, 3p ,3d&quot;)
-plt.show()
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="c1">#Cambiar aqui los titulos de los ejes</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$R$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$R^2(r)$ 3s, 3p ,3d&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 
-for l in range(lmin,lmax+1):
-    R = R_func(r,n,l)
-    plt.plot(r,4*np.pi*r**2.0*R**2.0,label=l)
+<span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lmin</span><span class="p">,</span><span class="n">lmax</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="n">R_func</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="o">*</span><span class="n">R</span><span class="o">**</span><span class="mf">2.0</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="n">l</span><span class="p">)</span>
 
-plt.legend()
-#Cambiar aqui los titulos de los ejes
-plt.xlabel(&quot;$r$&quot;)
-plt.ylabel(&quot;$r^2R^2$&quot;)
-plt.title(&quot;$r^2R^2$ 3s, 3p ,3d&quot;)
-plt.show()
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="c1">#Cambiar aqui los titulos de los ejes</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;$r$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$r^2R^2$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;$r^2R^2$ 3s, 3p ,3d&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -980,9 +980,9 @@ plt.show()
   
     <div class="extra_footer">
       <div>
-<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logo_unam.png?raw=true" alt="logo_UNAM">
-<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logoFacultadQuimica.jpg?raw=true" alt="logo_FQ">
-    © D.R. UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2022<br>Universidad Nacional Autónoma de México<br>Facultad de Química<br>Prohibida la reproducción total o parcial por cualquier medio, sin la autorización escrita del titular de los derechos patrimoniales.<br>Impreso y hecho en México<br>Publicación aprobada por el Comité Editorial de la Facultad de Química.
+<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logo_unam.png?raw=true" alt="logo_UNAM", style="width: 5%">
+<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logoFacultadQuimica.jpg?raw=true" alt="logo_FQ", style="width: 5%">
+    <br>© D.R. UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2022<br>Universidad Nacional Autónoma de México<br>Facultad de Química<br>Prohibida la reproducción total o parcial por cualquier medio, sin la autorización escrita del titular de los derechos patrimoniales.<br>Impreso y hecho en México<br>Publicación aprobada por el Comité Editorial de la Facultad de Química.
 </div>
 
     </div>

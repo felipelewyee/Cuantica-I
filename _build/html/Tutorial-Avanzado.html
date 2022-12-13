@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/logoFacultadQuimica.jpg" class="logo" alt="logo">
+      <img src="_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Cuántica I</h1>
@@ -543,16 +543,16 @@ title="Print to PDF"
 <p>Utilizaremos las librerías numpy, matplotlib y scipy que aprendió a utilizar en el Tutorial Básico, <strong>impórtelas en el siguiente recuadro</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Importe librerías
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importe librerías</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import numpy as np
-from matplotlib import pyplot as plt
-import scipy
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">scipy</span>
 </pre></div>
 </div>
 </div>
@@ -578,16 +578,16 @@ import scipy
 <p><strong>Cree la siguiente lista [8,25,32,41] y guárdela en la variable “lista”. Imprima la lista completa, así como el primer elemento del vector.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Cree una lista
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Cree una lista</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>lista = [8,25,32,41]
-print(lista)
-print(lista[0])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">41</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lista</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -618,17 +618,17 @@ print(lista[0])
 <p><strong>Cree dos vectores como arreglos de numpy, uno que contenga los elementos “1,8,6”, y otro que contenga “5,2,7”, e imprima su suma</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Suma de dos vectores
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Suma de dos vectores</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>v1 = np.array([1,8,6])
-v2 = np.array([5,2,7])
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">v1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="n">v2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">])</span>
 
-print(v1+v2)
+<span class="nb">print</span><span class="p">(</span><span class="n">v1</span><span class="o">+</span><span class="n">v2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -648,7 +648,7 @@ print(v1+v2)
 <p><strong>Genere la matriz de ceros anterior, e imprímala.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Cree matriz
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Cree matriz</span>
 </pre></div>
 </div>
 </div>
@@ -664,15 +664,15 @@ print(v1+v2)
 <p><strong>Prueba usar numpy para definir una matriz de ceros de 5x5, e imprímala.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Cree matriz de ceros con numpy
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Cree matriz de ceros con numpy</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>matriz = np.zeros((5,5))
-print(matriz)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">matriz</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -707,23 +707,23 @@ print(matriz)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Llene una matriz de 3x3
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Llene una matriz de 3x3</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>matriz1 = np.zeros((3,3))
-matriz1[0][0]=1.0
-matriz1[0][1]=2.0
-matriz1[0][2]=3.0
-matriz1[1][0]=4.0
-matriz1[1][1]=5.0
-matriz1[1][2]=6.0
-matriz1[2][0]=7.0
-matriz1[2][1]=8.0
-matriz1[2][2]=9.0
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriz1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="n">matriz1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">1.0</span>
+<span class="n">matriz1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mf">2.0</span>
+<span class="n">matriz1</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mf">3.0</span>
+<span class="n">matriz1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">4.0</span>
+<span class="n">matriz1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mf">5.0</span>
+<span class="n">matriz1</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mf">6.0</span>
+<span class="n">matriz1</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mf">7.0</span>
+<span class="n">matriz1</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mf">8.0</span>
+<span class="n">matriz1</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span><span class="o">=</span><span class="mf">9.0</span>
 </pre></div>
 </div>
 </div>
@@ -743,7 +743,7 @@ matriz1[2][2]=9.0
 <p><strong>Prueba la instrucción anterior e imprime las dos matrices (matriz1 y matriz2) en el siguiente recuadro.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Matriz de 3x3 con for
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Matriz de 3x3 con for</span>
 </pre></div>
 </div>
 </div>
@@ -758,7 +758,7 @@ matriz1[2][2]=9.0
 <p><strong>Multiplique las dos matrices anteriores e imprima el resultado.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Matriz3 = Matriz1 x Matriz2
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Matriz3 = Matriz1 x Matriz2</span>
 </pre></div>
 </div>
 </div>
@@ -786,14 +786,14 @@ M v = \lambda v
 </aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Valores y vectores propios
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Valores y vectores propios</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>val,vec=np.linalg.eig(matriz1)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">val</span><span class="p">,</span><span class="n">vec</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">matriz1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -812,7 +812,7 @@ M v = \lambda v
 <p><strong>Genere el dominio tal que <span class="math notranslate nohighlight">\(x\in[-3,3]\)</span>, utilice 50 puntos, guárdelo en la variable x e imprímalo.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cree dominio de x
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cree dominio de x</span>
 </pre></div>
 </div>
 </div>
@@ -831,7 +831,7 @@ y = \sin(x)
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Evalúe función
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Evalúe función</span>
 </pre></div>
 </div>
 </div>
@@ -850,22 +850,22 @@ y = \sin(x)
 </aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Genere gráfica
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Genere gráfica</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from matplotlib import pyplot as plt
-import numpy as np
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-x=np.linspace(-3,3,50)
-y=np.sin(x)
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">y</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 
-plt.scatter(x,y)
-#plt.plot(x,y)
-plt.show()
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="c1">#plt.plot(x,y)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -876,21 +876,21 @@ plt.show()
 <p>Las instrucciones anteriores son los pasos básicos para generar una gráfica. <strong>En el siguiente recuadro genere la gráfica de las funciones <span class="math notranslate nohighlight">\(y_1=e^{-|x|}\)</span> y <span class="math notranslate nohighlight">\(y_2=e^{-|x|^2}\)</span> con 100 puntos desde -3 hasta 3.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Gráfica
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x  = np.linspace(-3,3,100)
-y1 = np.exp(-np.abs(x))
-y2 = np.exp(-np.abs(x)**2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-plt.scatter(x,y1)
-plt.scatter(x,y2)
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
 
-plt.show()
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -920,15 +920,15 @@ plt.show()
 <p><strong>Pruebe a realizar la integral.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Integre y = x**2 de -3 a 3
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Integre y = x**2 de -3 a 3</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import scipy.integrate as integrate
-integrate.quad(lambda x: x**2,-3,3)[0]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.integrate</span> <span class="k">as</span> <span class="nn">integrate</span>
+<span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -960,20 +960,20 @@ N = \sqrt{N^2} = \sqrt{\int_{x_1}^{x_2} |\psi_{\rm original}|^2 dx}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Normalice función de onda
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Normalice función de onda</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>norm2 = integrate.quad(lambda x: x*x,-3,3)[0]
-print(&quot;N**2 =&quot;,norm2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norm2</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N**2 =&quot;</span><span class="p">,</span><span class="n">norm2</span><span class="p">)</span>
 
-norm = np.sqrt(norm2)
-print(&quot;N =&quot;,norm)
+<span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N =&quot;</span><span class="p">,</span><span class="n">norm</span><span class="p">)</span>
 
-integrate.quad(lambda x: (x/norm)*(x/norm),-3,3)[0]
+<span class="n">integrate</span><span class="o">.</span><span class="n">quad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">norm</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">/</span><span class="n">norm</span><span class="p">),</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -1014,16 +1014,16 @@ N^2 &amp;=&amp; \int \bigg( \psi^* \psi \bigg)\,d\textbf{r}  = \int\limits_{0}^\
 </aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Determine el cuadrado de la norma de la función de onda
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Determine el cuadrado de la norma de la función de onda</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>norm2 = integrate.tplquad(lambda theta,phi,r: r**2.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)[0]
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norm2</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">tplquad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
-print(&quot;N**2 =&quot;,norm2)
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N**2 =&quot;</span><span class="p">,</span><span class="n">norm2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1036,14 +1036,14 @@ print(&quot;N**2 =&quot;,norm2)
 <p><strong>Compruebe que numéricamente esto es <span class="math notranslate nohighlight">\(\left(\frac{\pi}{2}\right)^{3/2}\)</span>.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Evalúe (pi/2)^(3/2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Evalúe (pi/2)^(3/2)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>print((np.pi/2)**(3/2))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1056,15 +1056,15 @@ print(&quot;N**2 =&quot;,norm2)
 <p>Evalúe la norma</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Constante de normalización
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Constante de normalización</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>norm = np.sqrt(norm2)
-print(&quot;N =&quot;,norm)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N =&quot;</span><span class="p">,</span><span class="n">norm</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1087,15 +1087,15 @@ print(&quot;N =&quot;,norm)
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Comprobación
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Comprobación</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>norm = integrate.tplquad(lambda theta,phi,r: 1/norm**2*r**2.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)[0]
-print(norm)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norm</span> <span class="o">=</span> <span class="n">integrate</span><span class="o">.</span><span class="n">tplquad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">r</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">norm</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">norm</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1113,21 +1113,21 @@ print(norm)
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Normalice
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Normalice</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>norm2=integrate.tplquad(lambda theta,phi,r: r**4.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)[0]
-print(&quot;N**2 =&quot;,norm2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norm2</span><span class="o">=</span><span class="n">integrate</span><span class="o">.</span><span class="n">tplquad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">r</span><span class="p">:</span> <span class="n">r</span><span class="o">**</span><span class="mf">4.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N**2 =&quot;</span><span class="p">,</span><span class="n">norm2</span><span class="p">)</span>
 
-norm = np.sqrt(norm2)
-print(&quot;N =&quot;,norm)
+<span class="n">norm</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">norm2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;N =&quot;</span><span class="p">,</span><span class="n">norm</span><span class="p">)</span>
 
-norm=integrate.tplquad(lambda theta,phi,r: 1/norm**2*r**4.0*np.sin(theta)*np.exp(-2.0*r**2.0), 0, np.inf, lambda r: 0, lambda theta: 2*np.pi,lambda r, theta: 0, lambda r, theta: np.pi)[0]
-print(norm)
+<span class="n">norm</span><span class="o">=</span><span class="n">integrate</span><span class="o">.</span><span class="n">tplquad</span><span class="p">(</span><span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span><span class="n">phi</span><span class="p">,</span><span class="n">r</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">norm</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">4.0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mf">2.0</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">norm</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1196,9 +1196,9 @@ N = 1.2151238341878892
   
     <div class="extra_footer">
       <div>
-<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logo_unam.png?raw=true" alt="logo_UNAM">
-<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logoFacultadQuimica.jpg?raw=true" alt="logo_FQ">
-    © D.R. UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2022<br>Universidad Nacional Autónoma de México<br>Facultad de Química<br>Prohibida la reproducción total o parcial por cualquier medio, sin la autorización escrita del titular de los derechos patrimoniales.<br>Impreso y hecho en México<br>Publicación aprobada por el Comité Editorial de la Facultad de Química.
+<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logo_unam.png?raw=true" alt="logo_UNAM", style="width: 5%">
+<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logoFacultadQuimica.jpg?raw=true" alt="logo_FQ", style="width: 5%">
+    <br>© D.R. UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2022<br>Universidad Nacional Autónoma de México<br>Facultad de Química<br>Prohibida la reproducción total o parcial por cualquier medio, sin la autorización escrita del titular de los derechos patrimoniales.<br>Impreso y hecho en México<br>Publicación aprobada por el Comité Editorial de la Facultad de Química.
 </div>
 
     </div>

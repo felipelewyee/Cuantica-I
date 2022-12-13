@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/logoFacultadQuimica.jpg" class="logo" alt="logo">
+      <img src="_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Cuántica I</h1>
@@ -649,15 +649,15 @@ T = \frac{|F|^2}{|A|^2} = \frac{16(E/V)(1-E/V)}{16(E/V)(1-E/V) + (e^{k_2L} - e^{
 <p><strong>Importe numpy y pyplot de matplotlib.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Importe librerías
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importe librerías</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import numpy as np
-from matplotlib import pyplot as plt
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </pre></div>
 </div>
 </div>
@@ -665,18 +665,18 @@ from matplotlib import pyplot as plt
 <p><strong>De valores a las constantes del sistema</strong>. Considere <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(\hbar=1\)</span> y <span class="math notranslate nohighlight">\(L=1\)</span>. Asigne un valor de energía y potencial respetando la relación <span class="math notranslate nohighlight">\(E &lt; V\)</span>, por ejemplo, <span class="math notranslate nohighlight">\(E=1\)</span>, <span class="math notranslate nohighlight">\(V=10\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># m, hbar, L, E, V
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># m, hbar, L, E, V</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>m = 1
-hbar = 1
-L = 1
-E = 1
-V = 10
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">hbar</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </div>
@@ -692,15 +692,15 @@ k_2 = \sqrt{\frac{2m(V-E)}{\hbar^2}}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#k1 y k2
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#k1 y k2</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>k1 = np.sqrt(2*m*E/hbar**2)
-k2 = np.sqrt(2*m*(V-E)/hbar**2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">E</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -729,19 +729,19 @@ F = 1
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># A, B, C, D, F
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A, B, C, D, F</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>F = 1
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="o">=</span> <span class="mi">1</span>
 
-C = F/2*(1 - 1j*k1/k2)*np.exp(1j*k1*L+k2*L)
-D = F/2*(1 + 1j*k1/k2)*np.exp(1j*k1*L-k2*L)
-A = 1/2*((1 + 1j*k1/k2)*C + (1 - 1j*k1/k2)*D)
-B = C + D - A
+<span class="n">C</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="o">+</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">L</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">D</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">C</span> <span class="o">+</span> <span class="n">D</span> <span class="o">-</span> <span class="n">A</span>
 </pre></div>
 </div>
 </div>
@@ -749,16 +749,16 @@ B = C + D - A
 <p>Defina un dominio para <span class="math notranslate nohighlight">\(x\)</span>. Sugerencia: Use numpy.linspace</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Dominio de x
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dominio de x</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x1 = np.linspace(-10,0,100)
-x2 = np.linspace(0,L,100)
-x3 = np.linspace(L,10,100)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -776,16 +776,16 @@ x3 = np.linspace(L,10,100)
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># psi_I, psi_II y psi_III
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># psi_I, psi_II y psi_III</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>psi_I = A*np.exp(1j*k1*x1) + B*np.exp(-1j*k1*x1)
-psi_II = C*np.exp(-k2*x2) + D*np.exp(k2*x2)
-psi_III = F*np.exp(1j*k1*x3)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_I</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">psi_II</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span> <span class="o">+</span> <span class="n">D</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
+<span class="n">psi_III</span> <span class="o">=</span> <span class="n">F</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -793,21 +793,21 @@ psi_III = F*np.exp(1j*k1*x3)
 <p>Grafique el cuadrado de la eigenfunción.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Gráfica
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>plt.plot(x1,abs(psi_I)**2)
-plt.plot(x2,abs(psi_II)**2)
-plt.plot(x3,abs(psi_III)**2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_I</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_II</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_III</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1473845307f0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14be382cf5e0&gt;]
 </pre></div>
 </div>
 <img alt="_images/Tunel-Region-Finita_22_1.png" src="_images/Tunel-Region-Finita_22_1.png" />
@@ -829,20 +829,20 @@ T = \frac{16(E/V)(1-E/V)}{16(E/V)(1-E/V) + (e^{k_2L} - e^{-k_2L})^2}
 <p>4 Grafique T vs E/V</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Gráficas
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráficas</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for V in [2,4,8,16]:
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">V</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">]:</span>
     
-    E = np.linspace(0,V,100,endpoint=False)
-    k2 = np.sqrt(2*m*(V-E)/hbar**2)
-    T = 16*(E/V)*(1-E/V)/(16*(E/V)*(1-E/V) + (np.exp(k2*L) - np.exp(-k2*L))**2)
-    plt.plot(E/V,T,label=&quot;V = &quot;+str(V))
-    plt.legend()
+    <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">V</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="n">endpoint</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">V</span><span class="o">-</span><span class="n">E</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="mi">16</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">16</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;V = &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">V</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -942,18 +942,18 @@ T = \frac{4(E/V)(E/V-1)}{4(E/V)(E/V-1) + \sin^2(k_2L)}
 <p><strong>De valores a las constantes del sistema</strong>. Considere <span class="math notranslate nohighlight">\(m=1\)</span>, <span class="math notranslate nohighlight">\(\hbar=1\)</span> y <span class="math notranslate nohighlight">\(L=1\)</span>. Asigne un valor de energía y potencial respetando la relación <span class="math notranslate nohighlight">\(E &gt; V\)</span>, por ejemplo, <span class="math notranslate nohighlight">\(E=40\)</span>, <span class="math notranslate nohighlight">\(V=10\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># m, hbar, L, E, V
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># m, hbar, L, E, V</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>m = 1
-hbar = 1
-L = 1
-E = 40
-V = 10
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">hbar</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">L</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">E</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 </div>
 </div>
@@ -969,15 +969,15 @@ k_2 = \sqrt{\frac{2m(E-V)}{\hbar^2}}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#k1 y k2
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#k1 y k2</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>k1 = np.sqrt(2*m*E/hbar**2)
-k2 = np.sqrt(2*m*(E-V)/hbar**2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">E</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">-</span><span class="n">V</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1006,19 +1006,19 @@ F = 1
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># A, B, C, D, F
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A, B, C, D, F</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>F = 1
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">F</span> <span class="o">=</span> <span class="mi">1</span>
 
-C = F/2*(1 + k1/k2)*np.exp(1j*(k1-k2)*L)
-D = F/2*(1 - k1/k2)*np.exp(1j*(k1+k2)*L)
-A = 1/2*((1 + k2/k1)*C + (1 - k2/k1)*D)
-B = C + D - A
+<span class="n">C</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">k1</span><span class="o">-</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="n">D</span> <span class="o">=</span> <span class="n">F</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">k1</span><span class="o">/</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">k1</span><span class="o">+</span><span class="n">k2</span><span class="p">)</span><span class="o">*</span><span class="n">L</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">k2</span><span class="o">/</span><span class="n">k1</span><span class="p">)</span><span class="o">*</span><span class="n">C</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">k2</span><span class="o">/</span><span class="n">k1</span><span class="p">)</span><span class="o">*</span><span class="n">D</span><span class="p">)</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">C</span> <span class="o">+</span> <span class="n">D</span> <span class="o">-</span> <span class="n">A</span>
 </pre></div>
 </div>
 </div>
@@ -1026,16 +1026,16 @@ B = C + D - A
 <p>Defina un dominio para <span class="math notranslate nohighlight">\(x\)</span>. Sugerencia: Use numpy.linspace</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Dominio de x
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dominio de x</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>x1 = np.linspace(-2,0,100)
-x2 = np.linspace(0,L,100)
-x3 = np.linspace(L,2,100)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">L</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">L</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1053,16 +1053,16 @@ x3 = np.linspace(L,2,100)
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># psi_I, psi_II y psi_III
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># psi_I, psi_II y psi_III</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>psi_I = A*np.exp(1j*k1*x1) + B*np.exp(-1j*k1*x1)
-psi_II = C*np.exp(1j*k2*x2) + D*np.exp(-1j*k2*x2)
-psi_III = F*np.exp(1j*k1*x3)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_I</span> <span class="o">=</span> <span class="n">A</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x1</span><span class="p">)</span>
+<span class="n">psi_II</span> <span class="o">=</span> <span class="n">C</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span> <span class="o">+</span> <span class="n">D</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k2</span><span class="o">*</span><span class="n">x2</span><span class="p">)</span>
+<span class="n">psi_III</span> <span class="o">=</span> <span class="n">F</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">k1</span><span class="o">*</span><span class="n">x3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1070,21 +1070,21 @@ psi_III = F*np.exp(1j*k1*x3)
 <p>Grafique el cuadrado de la eigenfunción.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Grafica
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafica</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>plt.plot(x1,abs(psi_I)**2)
-plt.plot(x2,abs(psi_II)**2)
-plt.plot(x3,abs(psi_III)**2)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_I</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_II</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x3</span><span class="p">,</span><span class="nb">abs</span><span class="p">(</span><span class="n">psi_III</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14737580f5b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x14be29694c70&gt;]
 </pre></div>
 </div>
 <img alt="_images/Tunel-Region-Finita_45_1.png" src="_images/Tunel-Region-Finita_45_1.png" />
@@ -1097,20 +1097,20 @@ plt.plot(x3,abs(psi_III)**2)
 <p>4 Grafique T vs E/V</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Gráfica
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for V in [2,4,8,16]:
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">V</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">16</span><span class="p">]:</span>
     
-    E = np.linspace(V+0.1,4*V,100)
-    k2 = np.sqrt(2*m*(E-V)/hbar**2)
-    T = 4*(E/V)*(E/V-1)/(4*(E/V)*(E/V-1) + (np.sin(k2*L))**2)
-    plt.plot(E/V,T,label=&quot;V = &quot;+str(V))
-    plt.legend()
+    <span class="n">E</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">V</span><span class="o">+</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">V</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">k2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">-</span><span class="n">V</span><span class="p">)</span><span class="o">/</span><span class="n">hbar</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">k2</span><span class="o">*</span><span class="n">L</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">E</span><span class="o">/</span><span class="n">V</span><span class="p">,</span><span class="n">T</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;V = &quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">V</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -1179,9 +1179,9 @@ plt.plot(x3,abs(psi_III)**2)
   
     <div class="extra_footer">
       <div>
-<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logo_unam.png?raw=true" alt="logo_UNAM">
-<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logoFacultadQuimica.jpg?raw=true" alt="logo_FQ">
-    © D.R. UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2022<br>Universidad Nacional Autónoma de México<br>Facultad de Química<br>Prohibida la reproducción total o parcial por cualquier medio, sin la autorización escrita del titular de los derechos patrimoniales.<br>Impreso y hecho en México<br>Publicación aprobada por el Comité Editorial de la Facultad de Química.
+<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logo_unam.png?raw=true" alt="logo_UNAM", style="width: 5%">
+<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logoFacultadQuimica.jpg?raw=true" alt="logo_FQ", style="width: 5%">
+    <br>© D.R. UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2022<br>Universidad Nacional Autónoma de México<br>Facultad de Química<br>Prohibida la reproducción total o parcial por cualquier medio, sin la autorización escrita del titular de los derechos patrimoniales.<br>Impreso y hecho en México<br>Publicación aprobada por el Comité Editorial de la Facultad de Química.
 </div>
 
     </div>

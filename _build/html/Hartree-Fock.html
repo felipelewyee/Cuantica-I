@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/logoFacultadQuimica.jpg" class="logo" alt="logo">
+      <img src="_static/logo.png" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Cuántica I</h1>
@@ -554,15 +554,15 @@ title="Print to PDF"
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Descomentar estas líneas si está en modo online
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descomentar estas líneas si está en modo online</span>
 
-#!pip install pyscf
+<span class="c1">#!pip install pyscf</span>
 
-import pyscf
-import numpy as np
-from scipy.linalg import eigh
-import sympy as sp
-sp.init_printing()
+<span class="kn">import</span> <span class="nn">pyscf</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.linalg</span> <span class="kn">import</span> <span class="n">eigh</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">init_printing</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -570,11 +570,11 @@ sp.init_printing()
 <p><strong>Paso 1.</strong> Especificar molécula: Coordenadas de los núcleos <span style="color:red"><span class="math notranslate nohighlight">\(\{R_A\}\)</span></span>, Carga de los núcleos <span style="color:red"><span class="math notranslate nohighlight">\(\{Z_A\}\)</span></span>, Número de electrones <span style="color:red"><span class="math notranslate nohighlight">\((N)\)</span></span>, y funciones base <span style="color:red"><span class="math notranslate nohighlight">\(\{\phi_i\}\)</span></span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>H2 = pyscf.gto.Mole(atom = &quot;&quot;&quot;
-    H 0.0000  0.0000 0.0000
-    H 0.0000  0.0000 0.7414 
-    &quot;&quot;&quot;,basis = &quot;STO-3G&quot;)
-H2 = H2.build()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H2</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    H 0.0000  0.0000 0.0000</span>
+<span class="s2">    H 0.0000  0.0000 0.7414 </span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">,</span><span class="n">basis</span> <span class="o">=</span> <span class="s2">&quot;STO-3G&quot;</span><span class="p">)</span>
+<span class="n">H2</span> <span class="o">=</span> <span class="n">H2</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -602,24 +602,24 @@ H_{ij} = T_{ij} + V_{ij}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>S = H2.intor(&#39;int1e_ovlp&#39;)
-print(&quot;----------------Matriz S----------------&quot;)
-sp.pprint(sp.Matrix(S))
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">H2</span><span class="o">.</span><span class="n">intor</span><span class="p">(</span><span class="s1">&#39;int1e_ovlp&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------Matriz S----------------&quot;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
 
-T = H2.intor(&#39;int1e_kin&#39;)
-V = H2.intor(&#39;int1e_nuc&#39;)
-H=T+V
-print(&quot;----------------Matriz H----------------&quot;)
-sp.pprint(sp.Matrix(H))
+<span class="n">T</span> <span class="o">=</span> <span class="n">H2</span><span class="o">.</span><span class="n">intor</span><span class="p">(</span><span class="s1">&#39;int1e_kin&#39;</span><span class="p">)</span>
+<span class="n">V</span> <span class="o">=</span> <span class="n">H2</span><span class="o">.</span><span class="n">intor</span><span class="p">(</span><span class="s1">&#39;int1e_nuc&#39;</span><span class="p">)</span>
+<span class="n">H</span><span class="o">=</span><span class="n">T</span><span class="o">+</span><span class="n">V</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------Matriz H----------------&quot;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">H</span><span class="p">))</span>
 
-I = H2.intor(&#39;int2e&#39;)
-#print(&quot;Integrales (ij|kl):&quot;)
-#print(I)
+<span class="n">I</span> <span class="o">=</span> <span class="n">H2</span><span class="o">.</span><span class="n">intor</span><span class="p">(</span><span class="s1">&#39;int2e&#39;</span><span class="p">)</span>
+<span class="c1">#print(&quot;Integrales (ij|kl):&quot;)</span>
+<span class="c1">#print(I)</span>
 
-nbf = S.shape[0]
-ndocc = int(H2.nelectron/2)
-#print(nbf)
-#print(ndocc)
+<span class="n">nbf</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">ndocc</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">H2</span><span class="o">.</span><span class="n">nelectron</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="c1">#print(nbf)</span>
+<span class="c1">#print(ndocc)</span>
 </pre></div>
 </div>
 </div>
@@ -639,8 +639,8 @@ ndocc = int(H2.nelectron/2)
 <p><strong>Paso 3.</strong> Proponer una matriz C.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>C = np.zeros((nbf,nbf))
-print(C)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">C</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nbf</span><span class="p">,</span><span class="n">nbf</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -674,66 +674,66 @@ K_{\mu \nu} = \sum_{\lambda \sigma} P_{\lambda \sigma} (\mu \lambda | \sigma \nu
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>E_old = -1.0
-converged=False
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_old</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.0</span>
+<span class="n">converged</span><span class="o">=</span><span class="kc">False</span>
 
-while(not converged):
-    print(&quot;---------------------------------ITERACION---------------------------------&quot;)  
+<span class="k">while</span><span class="p">(</span><span class="ow">not</span> <span class="n">converged</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;---------------------------------ITERACION---------------------------------&quot;</span><span class="p">)</span>  
 
-    print(&quot;------------Matriz C Entrada------------&quot;)
-    sp.pprint(sp.Matrix(C))    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;------------Matriz C Entrada------------&quot;</span><span class="p">)</span>
+    <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">C</span><span class="p">))</span>    
     
-    #Paso 4. Calcular P, J y K
-    P = np.zeros((nbf,nbf))
-    for i in range(nbf):
-        for j in range(nbf):
-            for k in range(ndocc):
-                    P[i][j] = P[i][j] + C[i][k]*C[j][k]
-    print(&quot;----------------Matriz P----------------&quot;)
-    sp.pprint(sp.Matrix(P))
+    <span class="c1">#Paso 4. Calcular P, J y K</span>
+    <span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nbf</span><span class="p">,</span><span class="n">nbf</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ndocc</span><span class="p">):</span>
+                    <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">P</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">C</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------Matriz P----------------&quot;</span><span class="p">)</span>
+    <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">P</span><span class="p">))</span>
                     
-    J = np.zeros((nbf,nbf))
-    for i in range(nbf):
-        for j in range(nbf):
-            for k in range(nbf):
-                for l in range(nbf):
-                    J[i][j] = J[i][j] + P[k][l]*I[i][j][l][k]
-    print(&quot;----------------Matriz J----------------&quot;)
-    sp.pprint(sp.Matrix(J))
+    <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nbf</span><span class="p">,</span><span class="n">nbf</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+                    <span class="n">J</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">P</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">l</span><span class="p">]</span><span class="o">*</span><span class="n">I</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">][</span><span class="n">l</span><span class="p">][</span><span class="n">k</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------Matriz J----------------&quot;</span><span class="p">)</span>
+    <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">J</span><span class="p">))</span>
                     
-    K = np.zeros((nbf,nbf))
-    for i in range(nbf):
-        for j in range(nbf):
-            for k in range(nbf):
-                for l in range(nbf):
-                    K[i][j] = K[i][j] + P[k][l]*I[i][l][k][j]         
-    print(&quot;----------------Matriz K----------------&quot;)
-    sp.pprint(sp.Matrix(K))                    
+    <span class="n">K</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">nbf</span><span class="p">,</span><span class="n">nbf</span><span class="p">))</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+                <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+                    <span class="n">K</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">K</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">P</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">l</span><span class="p">]</span><span class="o">*</span><span class="n">I</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">l</span><span class="p">][</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span>         
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------Matriz K----------------&quot;</span><span class="p">)</span>
+    <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">K</span><span class="p">))</span>                    
 
-    #Paso 5. Calcular F = H + 2J - K
-    F = H + 2*J - K
-    print(&quot;----------------Matriz F----------------&quot;)
-    sp.pprint(sp.Matrix(F))
+    <span class="c1">#Paso 5. Calcular F = H + 2J - K</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="n">H</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">J</span> <span class="o">-</span> <span class="n">K</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;----------------Matriz F----------------&quot;</span><span class="p">)</span>
+    <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">F</span><span class="p">))</span>
     
-    #Paso 6. Resolver FC=SCE
-    E,C = eigh(F, S, eigvals_only=False)
-    print(&quot;-------------Matriz C Salida-------------&quot;)
-    sp.pprint(sp.Matrix(C))
+    <span class="c1">#Paso 6. Resolver FC=SCE</span>
+    <span class="n">E</span><span class="p">,</span><span class="n">C</span> <span class="o">=</span> <span class="n">eigh</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">eigvals_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;-------------Matriz C Salida-------------&quot;</span><span class="p">)</span>
+    <span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">sp</span><span class="o">.</span><span class="n">Matrix</span><span class="p">(</span><span class="n">C</span><span class="p">))</span>
     
-    #Paso 7. Calcular E=sum_i sum_j P_ji (H_ij+F_ij)
-    E_elec = 0.0
-    for i in range(nbf):
-        for j in range(nbf):
-            E_elec = E_elec + P[j][i]*(H[i][j] + F[i][j])
+    <span class="c1">#Paso 7. Calcular E=sum_i sum_j P_ji (H_ij+F_ij)</span>
+    <span class="n">E_elec</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nbf</span><span class="p">):</span>
+            <span class="n">E_elec</span> <span class="o">=</span> <span class="n">E_elec</span> <span class="o">+</span> <span class="n">P</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">H</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">+</span> <span class="n">F</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
 
     
-    print(&quot;Energia Electronica: &quot;,E_elec)
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energia Electronica: &quot;</span><span class="p">,</span><span class="n">E_elec</span><span class="p">)</span>
 
-    #Paso 8. ¿$E_i=E_{i-1}$?, Si: acabe. No: volver a paso 4.
-    if(abs(E_old - E_elec)&lt; 0.0000001):
-        converged = True
-    else:
-        E_old = E_elec
+    <span class="c1">#Paso 8. ¿$E_i=E_{i-1}$?, Si: acabe. No: volver a paso 4.</span>
+    <span class="k">if</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">E_old</span> <span class="o">-</span> <span class="n">E_elec</span><span class="p">)</span><span class="o">&lt;</span> <span class="mf">0.0000001</span><span class="p">):</span>
+        <span class="n">converged</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">E_old</span> <span class="o">=</span> <span class="n">E_elec</span>
 </pre></div>
 </div>
 </div>
@@ -831,10 +831,10 @@ E_{Tot} = E_{elec} + E_{nuc}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>E_nuc = H2.energy_nuc()
-print(&quot;Energia nuclear: &quot;, E_nuc)
-E_T = E_elec + E_nuc
-print(&quot;Energia Total: &quot;, E_T)
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">E_nuc</span> <span class="o">=</span> <span class="n">H2</span><span class="o">.</span><span class="n">energy_nuc</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energia nuclear: &quot;</span><span class="p">,</span> <span class="n">E_nuc</span><span class="p">)</span>
+<span class="n">E_T</span> <span class="o">=</span> <span class="n">E_elec</span> <span class="o">+</span> <span class="n">E_nuc</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Energia Total: &quot;</span><span class="p">,</span> <span class="n">E_T</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -871,26 +871,26 @@ Energia Total:  -1.116684387085341
 </table>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from pyscf import scf
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">scf</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>H2 = pyscf.gto.Mole(atom = &quot;&quot;&quot;
-    H 0.0000  0.0000 0.0000
-    H 0.0000  0.0000 0.7414 
-    &quot;&quot;&quot;,basis = &quot;STO-3G&quot;)
-H2 = H2.build()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H2</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">    H 0.0000  0.0000 0.0000</span>
+<span class="s2">    H 0.0000  0.0000 0.7414 </span>
+<span class="s2">    &quot;&quot;&quot;</span><span class="p">,</span><span class="n">basis</span> <span class="o">=</span> <span class="s2">&quot;STO-3G&quot;</span><span class="p">)</span>
+<span class="n">H2</span> <span class="o">=</span> <span class="n">H2</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>rhf = scf.RHF(H2)
-rhf.kernel()
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rhf</span> <span class="o">=</span> <span class="n">scf</span><span class="o">.</span><span class="n">RHF</span><span class="p">(</span><span class="n">H2</span><span class="p">)</span>
+<span class="n">rhf</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -966,9 +966,9 @@ rhf.kernel()
   
     <div class="extra_footer">
       <div>
-<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logo_unam.png?raw=true" alt="logo_UNAM">
-<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logoFacultadQuimica.jpg?raw=true" alt="logo_FQ">
-    © D.R. UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2022<br>Universidad Nacional Autónoma de México<br>Facultad de Química<br>Prohibida la reproducción total o parcial por cualquier medio, sin la autorización escrita del titular de los derechos patrimoniales.<br>Impreso y hecho en México<br>Publicación aprobada por el Comité Editorial de la Facultad de Química.
+<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logo_unam.png?raw=true" alt="logo_UNAM", style="width: 5%">
+<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logoFacultadQuimica.jpg?raw=true" alt="logo_FQ", style="width: 5%">
+    <br>© D.R. UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2022<br>Universidad Nacional Autónoma de México<br>Facultad de Química<br>Prohibida la reproducción total o parcial por cualquier medio, sin la autorización escrita del titular de los derechos patrimoniales.<br>Impreso y hecho en México<br>Publicación aprobada por el Comité Editorial de la Facultad de Química.
 </div>
 
     </div>
