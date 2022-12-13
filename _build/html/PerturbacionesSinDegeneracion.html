@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="_static/logoFacultadQuimica.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Cuántica I</h1>
@@ -640,16 +640,16 @@ E_n^{(0)} = \bigg(n+\frac{1}{2}\bigg) h\nu
 <p>De la librería <code class="docutils literal notranslate"><span class="pre">scipy.special</span></code> ocuparemos las funciones <code class="docutils literal notranslate"><span class="pre">factorial</span></code> y <code class="docutils literal notranslate"><span class="pre">eval_hermite</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Librerías</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Librerías
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">factorial</span>
-<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">eval_hermite</span> <span class="k">as</span> <span class="n">Hn</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>from pylab import *
+from scipy.special import factorial
+from scipy.special import eval_hermite as Hn
 </pre></div>
 </div>
 </div>
@@ -679,39 +679,39 @@ E_n^{(0)} = \bigg(n+\frac{1}{2}\bigg) h\nu
 </table>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defina los valores y constantes en el Hamiltoniano del oscilador armónico </span>
-<span class="c1"># e imprima los valores de ν y el valor del E = hν/2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Defina los valores y constantes en el Hamiltoniano del oscilador armónico 
+# e imprima los valores de ν y el valor del E = hν/2
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">π</span> <span class="o">=</span> <span class="n">pi</span>
-<span class="n">k</span> <span class="o">=</span> <span class="mf">1902.5</span>             <span class="c1"># [ N·m^{-1}]  constante de fuerza del CO</span>
-<span class="n">m</span> <span class="o">=</span> <span class="mf">1.1391e-26</span>         <span class="c1"># [kg] masa reducida de C-O</span>
-<span class="n">ħ</span> <span class="o">=</span> <span class="mf">1.0545718e-34</span>      <span class="c1"># [J·s] </span>
-<span class="n">h</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">ħ</span>
-<span class="n">e</span> <span class="o">=</span> <span class="mf">1.602e-19</span>
-<span class="n">ν</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">k</span><span class="o">/</span><span class="n">m</span> <span class="p">)</span><span class="o">/</span><span class="n">π</span>
-<span class="n">α</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">π</span><span class="o">*</span><span class="n">ν</span><span class="o">*</span><span class="n">m</span><span class="o">/</span><span class="n">ħ</span>          <span class="c1"># [m^{-2}]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>π = pi
+k = 1902.5             # [ N·m^{-1}]  constante de fuerza del CO
+m = 1.1391e-26         # [kg] masa reducida de C-O
+ħ = 1.0545718e-34      # [J·s] 
+h = 2*pi*ħ
+e = 1.602e-19
+ν = 0.5*sqrt( k/m )/π
+α = 2*π*ν*m/ħ          # [m^{-2}]
 
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;    ν  = </span><span class="si">{0:.3e}</span><span class="s2"> [Hz]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ν</span><span class="p">))</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;√(1/α) = </span><span class="si">{0:.3e}</span><span class="s2"> [m]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">α</span><span class="p">)))</span>
+print (&quot;    ν  = {0:.3e} [Hz]&quot;.format(ν))
+print (&quot;√(1/α) = {0:.3e} [m]&quot;.format(1/sqrt(α)))
 
-<span class="c1"># n -&gt; nivel de energía</span>
-<span class="n">n</span>   <span class="o">=</span> <span class="mi">0</span>
+# n -&gt; nivel de energía
+n   = 0
 
-<span class="c1"># Definimos una función que nos dé la eigenenergía del </span>
-<span class="c1"># oscilado armónico</span>
-<span class="k">def</span> <span class="nf">eigenEn0</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mf">0.5</span><span class="p">)</span> <span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">ν</span>
+# Definimos una función que nos dé la eigenenergía del 
+# oscilado armónico
+def eigenEn0(n):
+    return (n+0.5) *h*ν
 
-<span class="n">E00</span> <span class="o">=</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+E00 = eigenEn0(0)
 
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;E0^(0) = </span><span class="si">{0:.3f}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E00</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
-<span class="c1"># Notemos que al imprimir el valor de E00 dividimos</span>
-<span class="c1"># por la carga elemental para obtener las unidades de eV.</span>
+print (&quot;E0^(0) = {0:.3f} [eV]&quot;.format(E00/e))
+# Notemos que al imprimir el valor de E00 dividimos
+# por la carga elemental para obtener las unidades de eV.
 </pre></div>
 </div>
 </div>
@@ -726,17 +726,17 @@ E0^(0) = 0.135 [eV]
 <p><strong>Defina las eigenfunciones del oscilador armónico.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define como función de python las eigenfunciones del oscilador armónico</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Define como función de python las eigenfunciones del oscilador armónico
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definimos la función que nos devuelva la eigenfunción </span>
-<span class="c1"># del oscilador armónico</span>
-<span class="k">def</span> <span class="nf">funcΨ0n</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">(</span> <span class="mi">1</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="n">n</span><span class="o">*</span><span class="n">factorial</span><span class="p">(</span><span class="n">n</span><span class="p">))</span> <span class="p">)</span><span class="o">*</span><span class="p">(</span> <span class="p">(</span><span class="n">α</span><span class="o">/</span><span class="n">π</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span> <span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">α</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">Hn</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">sqrt</span><span class="p">(</span><span class="n">α</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Definimos la función que nos devuelva la eigenfunción 
+# del oscilador armónico
+def funcΨ0n(n,x):
+    return ( 1/sqrt(2**n*factorial(n)) )*( (α/π)**(0.25) )*exp(-α*x*x/2)*Hn(n,sqrt(α)*x)
 </pre></div>
 </div>
 </div>
@@ -748,27 +748,27 @@ E0^(0) = 0.135 [eV]
 </aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define un intervalo donde evaluar la función y la integral</span>
-<span class="c1"># La integral numérica de una función puede realizarse con </span>
-<span class="c1"># la función numpy.trapz</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Define un intervalo donde evaluar la función y la integral
+# La integral numérica de una función puede realizarse con 
+# la función numpy.trapz
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># La longitud (1/α)^{1/2} es característica de las eigenfunciones </span>
-<span class="c1"># por lo que es un buen parámetro para determinar el intervalo de </span>
-<span class="c1"># los valores de x.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># La longitud (1/α)^{1/2} es característica de las eigenfunciones 
+# por lo que es un buen parámetro para determinar el intervalo de 
+# los valores de x.
 
-<span class="n">x</span>   <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">α</span><span class="p">),</span><span class="mi">10</span><span class="o">/</span><span class="n">sqrt</span><span class="p">(</span><span class="n">α</span><span class="p">),</span><span class="mi">10000</span><span class="p">)</span>
-<span class="n">Ψ0n</span> <span class="o">=</span> <span class="n">funcΨ0n</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+x   = linspace(-10/sqrt(α),10/sqrt(α),10000)
+Ψ0n = funcΨ0n(n,x)
 
-<span class="c1"># Podemos verificar que las eigenfunciones están normalizadas utilizando la regla del trapecio</span>
-<span class="c1"># Notemos que las eigenfunciones son reales por lo que Ψ*(x) = Ψ(x)</span>
-<span class="n">Ψ2</span>       <span class="o">=</span> <span class="n">Ψ0n</span><span class="o">*</span><span class="n">Ψ0n</span>
-<span class="n">Integral</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span><span class="n">Ψ2</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Integral: </span><span class="si">{0:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Integral</span><span class="p">))</span>
+# Podemos verificar que las eigenfunciones están normalizadas utilizando la regla del trapecio
+# Notemos que las eigenfunciones son reales por lo que Ψ*(x) = Ψ(x)
+Ψ2       = Ψ0n*Ψ0n
+Integral = trapz(Ψ2,x)
+print (&quot;Integral: {0:.3f}&quot;.format(Integral))
 </pre></div>
 </div>
 </div>
@@ -782,25 +782,25 @@ E0^(0) = 0.135 [eV]
 <p>Utiliza que <span class="math notranslate nohighlight">\(c=600\,{\rm J}/{\rm m}^3\)</span> y <span class="math notranslate nohighlight">\(d=1\times 10^{-4}\alpha k^2/4\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define H&#39; y define una función para evaluar </span>
-<span class="c1"># los elementos de matriz dado un m y n</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Define H&#39; y define una función para evaluar 
+# los elementos de matriz dado un m y n
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definimos la perturbación H&#39;</span>
-<span class="n">c</span>  <span class="o">=</span> <span class="mi">600</span><span class="p">;</span> <span class="n">d</span> <span class="o">=</span> <span class="mf">1e-4</span><span class="o">*</span><span class="p">(</span><span class="n">α</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">k</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Definimos la perturbación H&#39;
+c  = 600; d = 1e-4*(α*k*k)/4
 
-<span class="n">Hp</span> <span class="o">=</span> <span class="n">c</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="n">d</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">4</span>
+Hp = c*x**3 + d*x**4
 
-<span class="c1"># Definimos la función que evalúa</span>
-<span class="k">def</span> <span class="nf">ElementoMatriz</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">Ψm0</span> <span class="o">=</span> <span class="n">funcΨ0n</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">Ψn0</span> <span class="o">=</span> <span class="n">funcΨ0n</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">Int</span> <span class="o">=</span> <span class="n">trapz</span><span class="p">(</span> <span class="n">Ψm0</span><span class="o">*</span><span class="n">Hp</span><span class="o">*</span><span class="n">Ψn0</span><span class="p">,</span><span class="n">x</span> <span class="p">)</span>
-    <span class="k">return</span> <span class="n">Int</span>
+# Definimos la función que evalúa
+def ElementoMatriz(m,n,x):
+    Ψm0 = funcΨ0n(m,x)
+    Ψn0 = funcΨ0n(n,x)
+    Int = trapz( Ψm0*Hp*Ψn0,x )
+    return Int
 </pre></div>
 </div>
 </div>
@@ -812,22 +812,22 @@ E0^(0) = 0.135 [eV]
 </aside>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Construimos los elementos de matriz de H&#39;_{m,n}</span>
-<span class="c1"># Notemos que numéricamente la matriz</span>
-<span class="c1"># tiene un tamaño finito</span>
-<span class="n">m_max</span> <span class="o">=</span> <span class="mi">20</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Construimos los elementos de matriz de H&#39;_{m,n}
+# Notemos que numéricamente la matriz
+# tiene un tamaño finito
+m_max = 20
 
-<span class="n">matrizHp</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">((</span><span class="n">m_max</span><span class="p">,</span><span class="n">m_max</span><span class="p">))</span>
+matrizHp = zeros((m_max,m_max))
 
-<span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_max</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_max</span><span class="p">):</span>
-        <span class="n">matrizHp</span><span class="p">[(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)]</span> <span class="o">=</span> <span class="n">ElementoMatriz</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+for m in range(m_max):
+    for n in range(m_max):
+        matrizHp[(m,n)] = ElementoMatriz(m,n,x)
 
-<span class="c1"># Las matrices se pueden visualizar utilizando un mapa de colores</span>
-<span class="n">plotM</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">matrizHp</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greys&quot;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$H&#39;_</span><span class="si">{mn}</span><span class="s2"> [eV]$&quot;</span><span class="p">);</span>
-<span class="c1"># Notamos como los valores distinto de cero están cerca de la diagonal</span>
-<span class="c1"># lo cual es típico en la teoría de perturbaciones</span>
+# Las matrices se pueden visualizar utilizando un mapa de colores
+plotM = imshow(matrizHp/e,cmap=&quot;Greys&quot;);
+plt.colorbar(label=&quot;$H&#39;_{mn} [eV]$&quot;);
+# Notamos como los valores distinto de cero están cerca de la diagonal
+# lo cual es típico en la teoría de perturbaciones
 </pre></div>
 </div>
 </div>
@@ -846,31 +846,31 @@ E_0^{(1)} = \frac{3d}{4\alpha^2} = \frac{3dh^2}{64\pi^4 \nu^2 m^2}
 <p><strong>¿Podría verificarla numéricamente?</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Compare la expresión analítica con la corrección a primer orden</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Compare la expresión analítica con la corrección a primer orden
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Solución
 
-<span class="c1"># De acuerdo con la expresión analítica</span>
-<span class="n">E01analitico</span> <span class="o">=</span> <span class="mi">3</span><span class="o">*</span><span class="n">d</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="n">α</span><span class="o">/</span><span class="n">α</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;E0^(1) = </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E01analitico</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
+# De acuerdo con la expresión analítica
+E01analitico = 3*d/4/α/α
+print (&quot;E0^(1) = {0:.3e} [eV]&quot;.format(E01analitico/e))
 
-<span class="c1"># De la teoría de perturbaciones tenemos que</span>
-<span class="c1"># E0^(1) = H&#39;_{0,0}</span>
-<span class="n">E01numerico</span> <span class="o">=</span> <span class="n">matrizHp</span><span class="p">[(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)]</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;E0^(1) = </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E01numerico</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
+# De la teoría de perturbaciones tenemos que
+# E0^(1) = H&#39;_{0,0}
+E01numerico = matrizHp[(0,0)]
+print (&quot;E0^(1) = {0:.3e} [eV]&quot;.format(E01numerico/e))
 
-<span class="n">E00</span> <span class="o">=</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+E00 = eigenEn0(0)
 
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;E0^(0) = </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E00</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
+print (&quot;E0^(0) = {0:.3e} [eV]&quot;.format(E00/e))
 
-<span class="c1"># Por tanto la aproximación a primer orden en la energía es:</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;    En ≈ </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E00</span><span class="o">/</span><span class="n">e</span> <span class="o">+</span> <span class="n">E01numerico</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
-<span class="c1"># ¿La energía es mayor o menor a la del oscilador armónico?</span>
+# Por tanto la aproximación a primer orden en la energía es:
+print (&quot;    En ≈ {0:.3e} [eV]&quot;.format(E00/e + E01numerico/e))
+# ¿La energía es mayor o menor a la del oscilador armónico?
 </pre></div>
 </div>
 </div>
@@ -889,27 +889,27 @@ E0^(0) = 1.345e-01 [eV]
 <p>¿Podría calcular la corrección a primer orden del primer nivel excitado del oscilador armónico?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcule las correcciones a primer orden de n&gt;0</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Calcule las correcciones a primer orden de n&gt;0
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Solución
 
-<span class="c1"># De la teoría de perturbaciones tenemos que</span>
-<span class="c1"># E1^(1) = H&#39;_{1,1}</span>
-<span class="n">E11numerico</span> <span class="o">=</span> <span class="n">matrizHp</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)]</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;E1^(1) = </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E11numerico</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
+# De la teoría de perturbaciones tenemos que
+# E1^(1) = H&#39;_{1,1}
+E11numerico = matrizHp[(1,1)]
+print (&quot;E1^(1) = {0:.3e} [eV]&quot;.format(E11numerico/e))
 
-<span class="n">E10</span> <span class="o">=</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+E10 = eigenEn0(1)
 
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;E1^(0) = </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E10</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
+print (&quot;E1^(0) = {0:.3e} [eV]&quot;.format(E10/e))
 
-<span class="c1"># Por tanto la aproximación a primer orden en la energía es:</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;    En ≈ </span><span class="si">{0:.3e}</span><span class="s2"> [eV]&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">E10</span><span class="o">/</span><span class="n">e</span> <span class="o">+</span> <span class="n">E11numerico</span><span class="o">/</span><span class="n">e</span><span class="p">))</span>
-<span class="c1"># ¿La energía es mayor o menor a la del oscilador armónico?</span>
+# Por tanto la aproximación a primer orden en la energía es:
+print (&quot;    En ≈ {0:.3e} [eV]&quot;.format(E10/e + E11numerico/e))
+# ¿La energía es mayor o menor a la del oscilador armónico?
 </pre></div>
 </div>
 </div>
@@ -927,27 +927,27 @@ E1^(0) = 4.035e-01 [eV]
 <p>Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la primera corrección a la energía.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Solución
 
-<span class="n">En1numerico</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="n">matrizHp</span><span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+En1numerico = array( [ matrizHp[n,n] for n in range(5) ] )
 
-<span class="n">En0</span>         <span class="o">=</span> <span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+En0         = array( [ eigenEn0(n) for n in range(5) ] )
 
-<span class="n">Enapprox</span>    <span class="o">=</span> <span class="n">En0</span> <span class="o">+</span> <span class="n">En1numerico</span>
+Enapprox    = En0 + En1numerico
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="n">En0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">En0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span> <span class="p">)</span>
-    <span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="n">Enapprox</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">Enapprox</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span> <span class="p">)</span>
-    <span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="n">En0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;n=</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-    <span class="n">text</span><span class="p">(</span> <span class="mf">1.1</span><span class="p">,</span><span class="n">Enapprox</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;n=</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">xticks</span><span class="p">([])</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$E [eV]$&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>for n in range(5):
+    plot( [0,1],[En0[n]/e,En0[n]/e],c=&#39;k&#39; )
+    plot( [0,1],[Enapprox[n]/e,Enapprox[n]/e],c=&#39;r&#39; )
+    text(-0.5,En0[n]/e,&quot;n={0}&quot;.format(n))
+    text( 1.1,Enapprox[n]/e,&quot;n={0}&quot;.format(n),color=&#39;r&#39;)
+xlim(-2,3)
+xticks([])
+ylabel(&quot;$E [eV]$&quot;)
 </pre></div>
 </div>
 </div>
@@ -968,13 +968,13 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Previamente realizamos el gráfico de los elementos de matriz</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Previamente realizamos el gráfico de los elementos de matriz
 
-<span class="c1"># Las matrices se pueden visualizar utilizando un mapa de colores</span>
-<span class="n">plotM</span> <span class="o">=</span> <span class="n">imshow</span><span class="p">(</span><span class="n">matrizHp</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;Greys&quot;</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;$H&#39;_</span><span class="si">{mn}</span><span class="s2"> [eV]$&quot;</span><span class="p">);</span>
-<span class="c1"># Notamos como los valores distinto de cero están cerca de la diagonal</span>
-<span class="c1"># lo cual es típico en la teoría de perturbaciones</span>
+# Las matrices se pueden visualizar utilizando un mapa de colores
+plotM = imshow(matrizHp/e,cmap=&quot;Greys&quot;);
+plt.colorbar(label=&quot;$H&#39;_{mn} [eV]$&quot;);
+# Notamos como los valores distinto de cero están cerca de la diagonal
+# lo cual es típico en la teoría de perturbaciones
 </pre></div>
 </div>
 </div>
@@ -984,28 +984,28 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sin embargo, los términos a sumar son los elementos de matriz </span>
-<span class="c1"># al cuadrado divididos por la diferencia de energía del nivel a corregir.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Sin embargo, los términos a sumar son los elementos de matriz 
+# al cuadrado divididos por la diferencia de energía del nivel a corregir.
 
-<span class="c1"># Analicemos los términos de la suma cuando n = 0, es decir el estado base</span>
-<span class="n">n</span>   <span class="o">=</span> <span class="mi">0</span>
-<span class="n">E00</span> <span class="o">=</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> 
-<span class="c1"># Dado que las eigenfunciones son reales no tenemos que tomar el conjugado</span>
-<span class="n">SegundoOrden</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="n">matrizHp</span><span class="p">[(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)]</span><span class="o">*</span><span class="n">matrizHp</span><span class="p">[(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)]</span><span class="o">/</span><span class="p">(</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">-</span><span class="n">eigenEn0</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="p">)</span> \
-                    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_max</span><span class="p">)</span> <span class="k">if</span> <span class="n">m</span> <span class="o">!=</span> <span class="n">n</span> <span class="p">]</span> <span class="p">)</span>
+# Analicemos los términos de la suma cuando n = 0, es decir el estado base
+n   = 0
+E00 = eigenEn0(0) 
+# Dado que las eigenfunciones son reales no tenemos que tomar el conjugado
+SegundoOrden = array( [ matrizHp[(m,n)]*matrizHp[(m,n)]/( eigenEn0(n)-eigenEn0(m) ) \
+                    for m in range(m_max) if m != n ] )
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Grafiquemos los SegundoOrden</span>
-<span class="n">plot</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">m_max</span><span class="p">),</span><span class="n">SegundoOrden</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s1">&#39;o-&#39;</span><span class="p">);</span>
-<span class="n">xticks</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">]);</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$E$ [eV]&quot;</span><span class="p">)</span>
-<span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;m&quot;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Grafiquemos los SegundoOrden
+plot(range(1,m_max),SegundoOrden/e,&#39;o-&#39;);
+xticks([1,2,3,4,5,6,7]);
+ylabel(&quot;$E$ [eV]&quot;)
+xlabel(&quot;m&quot;);
 
-<span class="c1">#Podemos notar en este caso que la mayor corrección al estado base proviene del nivel n = 2</span>
+#Podemos notar en este caso que la mayor corrección al estado base proviene del nivel n = 2
 </pre></div>
 </div>
 </div>
@@ -1015,10 +1015,10 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Notamos que los sumandos siempre son negativos para el estado base</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot; Máximo valor de los sumandos: </span><span class="si">{0:.3e}</span><span class="s2"> eV&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span> <span class="nb">max</span><span class="p">(</span><span class="n">SegundoOrden</span><span class="p">)</span><span class="o">/</span><span class="n">e</span> <span class="p">))</span>
-<span class="c1"># Por lo que las correcciones de segundo orden disminuirán con respecto a </span>
-<span class="c1"># las de primer orden.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Notamos que los sumandos siempre son negativos para el estado base
+print (&quot; Máximo valor de los sumandos: {0:.3e} eV&quot;.format( max(SegundoOrden)/e ))
+# Por lo que las correcciones de segundo orden disminuirán con respecto a 
+# las de primer orden.
 </pre></div>
 </div>
 </div>
@@ -1034,48 +1034,48 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
 <p>Realiza un gráfico de los primeros 5 niveles de energía del oscilador armónico y los niveles con la segunda corrección a la energía. ¿Es muy diferente al resultado de la corrección a primer orden?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Solución</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Solución
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">SumaSegundoOrden</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">m_max</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
-    <span class="n">SegundoOrden</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="n">matrizHp</span><span class="p">[(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)]</span><span class="o">*</span><span class="n">matrizHp</span><span class="p">[(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)]</span><span class="o">/</span><span class="p">(</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">-</span><span class="n">eigenEn0</span><span class="p">(</span><span class="n">m</span><span class="p">)</span> <span class="p">)</span> \
-                        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m_max</span><span class="p">)</span> <span class="k">if</span> <span class="n">m</span> <span class="o">!=</span> <span class="n">n</span> <span class="p">]</span> <span class="p">)</span>
-    <span class="n">En2</span> <span class="o">=</span> <span class="n">SegundoOrden</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">En2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>def SumaSegundoOrden(n,m_max=20):
+    SegundoOrden = array( [ matrizHp[(m,n)]*matrizHp[(m,n)]/( eigenEn0(n)-eigenEn0(m) ) \
+                        for m in range(m_max) if m != n ] )
+    En2 = SegundoOrden.sum()
+    return En2
 
 
-<span class="n">En1numerico</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="n">matrizHp</span><span class="p">[</span><span class="n">n</span><span class="p">,</span><span class="n">n</span><span class="p">]</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+En1numerico = array( [ matrizHp[n,n] for n in range(5) ] )
 
-<span class="n">En2numerico</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="n">SumaSegundoOrden</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
+En2numerico = array( [ SumaSegundoOrden(n) for n in range(5) ] )
 
-<span class="n">En0</span>         <span class="o">=</span> <span class="n">array</span><span class="p">(</span> <span class="p">[</span> <span class="n">eigenEn0</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="p">]</span> <span class="p">)</span>
-
-
-<span class="n">Enapprox1</span> <span class="o">=</span> <span class="n">En0</span> <span class="o">+</span> <span class="n">En1numerico</span>
-<span class="n">Enapprox2</span> <span class="o">=</span> <span class="n">En0</span> <span class="o">+</span> <span class="n">En1numerico</span> <span class="o">+</span> <span class="n">En2numerico</span>
+En0         = array( [ eigenEn0(n) for n in range(5) ] )
 
 
-<span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="n">En0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">En0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;(0)&#39;</span> <span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="n">Enapprox1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">Enapprox1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;1er&#39;</span> <span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="n">Enapprox2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">Enapprox2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;2d0&#39;</span> <span class="p">)</span>
-<span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="n">En0</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;n=</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-<span class="n">text</span><span class="p">(</span> <span class="mf">1.1</span><span class="p">,</span><span class="n">Enapprox1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;n=</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">text</span><span class="p">(</span> <span class="mf">1.5</span><span class="p">,</span><span class="n">Enapprox2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;n=</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
-    <span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="n">En0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">En0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span> <span class="p">)</span>
-    <span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="n">Enapprox1</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">Enapprox1</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;r&#39;</span> <span class="p">)</span>
-    <span class="n">plot</span><span class="p">(</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="n">Enapprox2</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="n">Enapprox2</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">],</span><span class="n">c</span><span class="o">=</span><span class="s1">&#39;b&#39;</span> <span class="p">)</span>
-    <span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="n">En0</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;n=</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
-    <span class="n">text</span><span class="p">(</span> <span class="mf">1.1</span><span class="p">,</span><span class="n">Enapprox1</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;n=</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-    <span class="n">text</span><span class="p">(</span> <span class="mf">1.5</span><span class="p">,</span><span class="n">Enapprox2</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">/</span><span class="n">e</span><span class="p">,</span><span class="s2">&quot;n=</span><span class="si">{0}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">xticks</span><span class="p">([])</span>
-<span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;$E [eV]$&quot;</span><span class="p">);</span>
-<span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">0</span><span class="p">);</span>
+Enapprox1 = En0 + En1numerico
+Enapprox2 = En0 + En1numerico + En2numerico
+
+
+plot( [0,1],[En0[0]/e,En0[0]/e],c=&#39;k&#39;,label=&#39;(0)&#39; )
+plot( [0,1],[Enapprox1[0]/e,Enapprox1[0]/e],c=&#39;r&#39;,label=&#39;1er&#39; )
+plot( [0,1],[Enapprox2[0]/e,Enapprox2[0]/e],c=&#39;b&#39;,label=&#39;2d0&#39; )
+text(-0.5,En0[0]/e,&quot;n={0}&quot;.format(n))
+text( 1.1,Enapprox1[0]/e,&quot;n={0}&quot;.format(n),color=&#39;r&#39;)
+text( 1.5,Enapprox2[0]/e,&quot;n={0}&quot;.format(n),color=&#39;b&#39;)
+for n in range(1,5):
+    plot( [0,1],[En0[n]/e,En0[n]/e],c=&#39;k&#39; )
+    plot( [0,1],[Enapprox1[n]/e,Enapprox1[n]/e],c=&#39;r&#39; )
+    plot( [0,1],[Enapprox2[n]/e,Enapprox2[n]/e],c=&#39;b&#39; )
+    text(-0.5,En0[n]/e,&quot;n={0}&quot;.format(n))
+    text( 1.1,Enapprox1[n]/e,&quot;n={0}&quot;.format(n),color=&#39;r&#39;)
+    text( 1.5,Enapprox2[n]/e,&quot;n={0}&quot;.format(n),color=&#39;b&#39;)
+xlim(-1,3)
+xticks([])
+ylabel(&quot;$E [eV]$&quot;);
+legend(loc=0);
 </pre></div>
 </div>
 </div>
@@ -1137,7 +1137,14 @@ E_n ^{(2)}=\sum_{m \neq n } \frac{|H'_{m,n}|^2}{E_n^{(0)}-E_m^{(0)}}
   
     By M. en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
   
-      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <div>
+<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logo.png?raw=true" alt="logo_FQ">
+<img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="logo_FQ">
+    © D.R. UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2022<br>Universidad Nacional Autónoma de México<br>Facultad de Química<br>Prohibida la reproducción total o parcial por cualquier medio, sin la autorización escrita del titular de los derechos patrimoniales.<br>Impreso y hecho en México<br>Publicación aprobada por el Comité Editorial de la Facultad de Química.
+</div>
+
+    </div>
 </p>
         </footer>
     </div>

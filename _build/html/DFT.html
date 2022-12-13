@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="_static/logoFacultadQuimica.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Cuántica I</h1>
@@ -600,19 +600,19 @@ E[\rho] = T_s[\rho] + U[\rho] + V_{nuc}[\rho] + E_{xc}[\rho]
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Importe PySCF</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#Importe PySCF
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Descomentar estas líneas si está en modo online</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Descomentar estas líneas si está en modo online
 
-<span class="c1">#!pip install pyscf</span>
+#!pip install pyscf
 
-<span class="kn">import</span> <span class="nn">pyscf</span>
-<span class="kn">from</span> <span class="nn">pyscf</span> <span class="kn">import</span> <span class="n">dft</span>
+import pyscf
+from pyscf import dft
 </pre></div>
 </div>
 </div>
@@ -628,19 +628,19 @@ E[\rho] = T_s[\rho] + U[\rho] + V_{nuc}[\rho] + E_{xc}[\rho]
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># h2o</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># h2o
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">h2o</span> <span class="o">=</span> <span class="n">pyscf</span><span class="o">.</span><span class="n">gto</span><span class="o">.</span><span class="n">Mole</span><span class="p">(</span><span class="n">atom</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    O    0.0000    0.0000    0.1173</span>
-<span class="s2">    H    0.0000    0.7572   -0.4692</span>
-<span class="s2">    H    0.0000   -0.7572   -0.4692 </span>
-<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span><span class="n">basis</span><span class="o">=</span><span class="s2">&quot;6-311G&quot;</span><span class="p">)</span>
-<span class="n">h2o</span> <span class="o">=</span> <span class="n">h2o</span><span class="o">.</span><span class="n">build</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>h2o = pyscf.gto.Mole(atom=&quot;&quot;&quot;
+    O    0.0000    0.0000    0.1173
+    H    0.0000    0.7572   -0.4692
+    H    0.0000   -0.7572   -0.4692 
+&quot;&quot;&quot;,basis=&quot;6-311G&quot;)
+h2o = h2o.build()
 </pre></div>
 </div>
 </div>
@@ -665,16 +665,16 @@ E_c^{LDA} = \int \varepsilon_c^{VWN} dr
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># LDA</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># LDA
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rks</span> <span class="o">=</span> <span class="n">dft</span><span class="o">.</span><span class="n">RKS</span><span class="p">(</span><span class="n">h2o</span><span class="p">)</span>
-<span class="n">rks</span><span class="o">.</span><span class="n">xc</span> <span class="o">=</span> <span class="s2">&quot;LDA&quot;</span>
-<span class="n">rks</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>rks = dft.RKS(h2o)
+rks.xc = &quot;LDA&quot;
+rks.kernel()
 </pre></div>
 </div>
 </div>
@@ -682,7 +682,7 @@ E_c^{LDA} = \int \varepsilon_c^{VWN} dr
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -75.1870745487913
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-75.18707454879126
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-75.18707454879132
 </pre></div>
 </div>
 </div>
@@ -722,16 +722,16 @@ E_{xc}^{GGA} = -\int \varepsilon_{xc}^{GGA} (\rho,\nabla \rho) dr
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># PBE</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># PBE
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rks</span> <span class="o">=</span> <span class="n">dft</span><span class="o">.</span><span class="n">RKS</span><span class="p">(</span><span class="n">h2o</span><span class="p">)</span>
-<span class="n">rks</span><span class="o">.</span><span class="n">xc</span> <span class="o">=</span> <span class="s2">&quot;PBE&quot;</span>
-<span class="n">rks</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>rks = dft.RKS(h2o)
+rks.xc = &quot;PBE&quot;
+rks.kernel()
 </pre></div>
 </div>
 </div>
@@ -739,7 +739,7 @@ E_{xc}^{GGA} = -\int \varepsilon_{xc}^{GGA} (\rho,\nabla \rho) dr
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -76.3277295533262
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.32772955332622
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.32772955332621
 </pre></div>
 </div>
 </div>
@@ -765,24 +765,24 @@ E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># TPSS</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># TPSS
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rks</span> <span class="o">=</span> <span class="n">dft</span><span class="o">.</span><span class="n">RKS</span><span class="p">(</span><span class="n">h2o</span><span class="p">)</span>
-<span class="n">rks</span><span class="o">.</span><span class="n">xc</span> <span class="o">=</span> <span class="s2">&quot;TPSS&quot;</span>
-<span class="n">rks</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>rks = dft.RKS(h2o)
+rks.xc = &quot;TPSS&quot;
+rks.kernel()
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -76.4172180433964
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -76.4172180433965
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.41721804339645
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.41721804339649
 </pre></div>
 </div>
 </div>
@@ -806,16 +806,16 @@ E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#M062X</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>#M062X
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rks</span> <span class="o">=</span> <span class="n">dft</span><span class="o">.</span><span class="n">RKS</span><span class="p">(</span><span class="n">h2o</span><span class="p">)</span>
-<span class="n">rks</span><span class="o">.</span><span class="n">xc</span> <span class="o">=</span> <span class="s2">&quot;M062X&quot;</span>
-<span class="n">rks</span><span class="o">.</span><span class="n">kernel</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>rks = dft.RKS(h2o)
+rks.xc = &quot;M062X&quot;
+rks.kernel()
 </pre></div>
 </div>
 </div>
@@ -823,7 +823,7 @@ E_{xc}^{meta-GGA} = -\int \varepsilon_{xc}^{meta-GGA} (\rho,\nabla \rho,\nabla^2
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>converged SCF energy = -76.3784002868614
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.37840028686145
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-76.37840028686139
 </pre></div>
 </div>
 </div>
@@ -892,7 +892,14 @@ P. W. Atkins, y R. Friedman, Molecular Quantum Mechanics (Oxford University Pres
   
     By M. en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
   
-      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <div>
+<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logo.png?raw=true" alt="logo_FQ">
+<img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="logo_FQ">
+    © D.R. UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2022<br>Universidad Nacional Autónoma de México<br>Facultad de Química<br>Prohibida la reproducción total o parcial por cualquier medio, sin la autorización escrita del titular de los derechos patrimoniales.<br>Impreso y hecho en México<br>Publicación aprobada por el Comité Editorial de la Facultad de Química.
+</div>
+
+    </div>
 </p>
         </footer>
     </div>

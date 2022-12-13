@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="_static/logo.png" class="logo" alt="logo">
+      <img src="_static/logoFacultadQuimica.jpg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Cuántica I</h1>
@@ -571,16 +571,16 @@ H_{\pi}C = SC\varepsilon
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Librerías</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Librerías
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>import numpy as np
+import sympy as sp
+from matplotlib import pyplot as plt
 </pre></div>
 </div>
 </div>
@@ -599,15 +599,15 @@ H_{\pi}C = SC\varepsilon
 <p><strong>Defina los símbolos <span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span> con sympy.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defina alpha y beta</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Defina alpha y beta
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">)</span>
-<span class="n">beta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;beta&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>alpha = sp.Symbol(&quot;alpha&quot;)
+beta = sp.Symbol(&quot;beta&quot;)
 </pre></div>
 </div>
 </div>
@@ -625,14 +625,14 @@ S_{ij} = \left\{
 <p>Note que <span class="math notranslate nohighlight">\(S\)</span> es la matriz identidad.</p>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>S = sp.zeros(4)
 
-<span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">S</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">S</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">S</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+S[0,0] = 1
+S[1,1] = 1
+S[2,2] = 1
+S[3,3] = 1
 
-<span class="n">S</span>
+S
 </pre></div>
 </div>
 </div>
@@ -654,28 +654,28 @@ H_{ij} = \left\{
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Matriz H</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Matriz H
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>H = sp.zeros(4)
 
-<span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span>
+H[0,0] = alpha
+H[1,1] = alpha
+H[2,2] = alpha
+H[3,3] = alpha
 
-<span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
+H[0,1] = beta
+H[1,0] = beta
+H[1,2] = beta
+H[2,1] = beta
+H[2,3] = beta
+H[3,2] = beta
 
-<span class="n">H</span>
+H
 </pre></div>
 </div>
 </div>
@@ -702,41 +702,29 @@ HC = C\varepsilon
 <p>El primer número es el valor propio (energía orbital), el segundo número su repetición (degeneración) y el tercer número son los coeficientes no normalizados (orbital molecular).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Valores y vectores propios de H</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Valores y vectores propios de H
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">eigenvects</span><span class="p">(</span><span class="n">simplify</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sp.pprint(H.eigenvects(simplify=True))
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⎡⎛                 ⎡⎡   -1   ⎤⎤⎞  ⎛                 ⎡⎡  1   ⎤⎤⎞  ⎛                 ⎡⎡   -1  
-⎢⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟  ⎜                 ⎢⎢       
-⎢⎜                 ⎢⎢ 1   √5 ⎥⎥⎟  ⎜                 ⎢⎢1   √5⎥⎥⎟  ⎜                 ⎢⎢ 1   √5
-⎢⎜                 ⎢⎢ ─ - ── ⎥⎥⎟  ⎜                 ⎢⎢─ + ──⎥⎥⎟  ⎜                 ⎢⎢ ─ + ──
-⎢⎜    β   √5⋅β     ⎢⎢ 2   2  ⎥⎥⎟  ⎜    β   √5⋅β     ⎢⎢2   2 ⎥⎥⎟  ⎜    √5⋅β   β     ⎢⎢ 2   2 
-⎢⎜α - ─ + ────, 1, ⎢⎢        ⎥⎥⎟, ⎜α + ─ + ────, 1, ⎢⎢      ⎥⎥⎟, ⎜α - ──── - ─, 1, ⎢⎢       
-⎢⎜    2    2       ⎢⎢  1   √5⎥⎥⎟  ⎜    2    2       ⎢⎢1   √5⎥⎥⎟  ⎜     2     2     ⎢⎢  √5   
-⎢⎜                 ⎢⎢- ─ + ──⎥⎥⎟  ⎜                 ⎢⎢─ + ──⎥⎥⎟  ⎜                 ⎢⎢- ── - 
-⎢⎜                 ⎢⎢  2   2 ⎥⎥⎟  ⎜                 ⎢⎢2   2 ⎥⎥⎟  ⎜                 ⎢⎢  2    
-⎢⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟  ⎜                 ⎢⎢       
-⎣⎝                 ⎣⎣   1    ⎦⎦⎠  ⎝                 ⎣⎣  1   ⎦⎦⎠  ⎝                 ⎣⎣   1   
-
- ⎤⎤⎞  ⎛                 ⎡⎡  1   ⎤⎤⎞⎤
- ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟⎥
- ⎥⎥⎟  ⎜                 ⎢⎢1   √5⎥⎥⎟⎥
- ⎥⎥⎟  ⎜                 ⎢⎢─ - ──⎥⎥⎟⎥
- ⎥⎥⎟  ⎜    √5⋅β   β     ⎢⎢2   2 ⎥⎥⎟⎥
- ⎥⎥⎟, ⎜α - ──── + ─, 1, ⎢⎢      ⎥⎥⎟⎥
-1⎥⎥⎟  ⎜     2     2     ⎢⎢1   √5⎥⎥⎟⎥
-─⎥⎥⎟  ⎜                 ⎢⎢─ - ──⎥⎥⎟⎥
-2⎥⎥⎟  ⎜                 ⎢⎢2   2 ⎥⎥⎟⎥
- ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟⎥
- ⎦⎦⎠  ⎝                 ⎣⎣  1   ⎦⎦⎠⎦
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⎡⎛                 ⎡⎡   -1   ⎤⎤⎞  ⎛                 ⎡⎡  1   ⎤⎤⎞  ⎛                 ⎡⎡   -1   ⎤⎤⎞  ⎛                 ⎡⎡  1   ⎤⎤⎞⎤
+⎢⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟  ⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟⎥
+⎢⎜                 ⎢⎢ 1   √5 ⎥⎥⎟  ⎜                 ⎢⎢1   √5⎥⎥⎟  ⎜                 ⎢⎢ 1   √5 ⎥⎥⎟  ⎜                 ⎢⎢1   √5⎥⎥⎟⎥
+⎢⎜                 ⎢⎢ ─ - ── ⎥⎥⎟  ⎜                 ⎢⎢─ + ──⎥⎥⎟  ⎜                 ⎢⎢ ─ + ── ⎥⎥⎟  ⎜                 ⎢⎢─ - ──⎥⎥⎟⎥
+⎢⎜    β   √5⋅β     ⎢⎢ 2   2  ⎥⎥⎟  ⎜    β   √5⋅β     ⎢⎢2   2 ⎥⎥⎟  ⎜    √5⋅β   β     ⎢⎢ 2   2  ⎥⎥⎟  ⎜    √5⋅β   β     ⎢⎢2   2 ⎥⎥⎟⎥
+⎢⎜α - ─ + ────, 1, ⎢⎢        ⎥⎥⎟, ⎜α + ─ + ────, 1, ⎢⎢      ⎥⎥⎟, ⎜α - ──── - ─, 1, ⎢⎢        ⎥⎥⎟, ⎜α - ──── + ─, 1, ⎢⎢      ⎥⎥⎟⎥
+⎢⎜    2    2       ⎢⎢  1   √5⎥⎥⎟  ⎜    2    2       ⎢⎢1   √5⎥⎥⎟  ⎜     2     2     ⎢⎢  √5   1⎥⎥⎟  ⎜     2     2     ⎢⎢1   √5⎥⎥⎟⎥
+⎢⎜                 ⎢⎢- ─ + ──⎥⎥⎟  ⎜                 ⎢⎢─ + ──⎥⎥⎟  ⎜                 ⎢⎢- ── - ─⎥⎥⎟  ⎜                 ⎢⎢─ - ──⎥⎥⎟⎥
+⎢⎜                 ⎢⎢  2   2 ⎥⎥⎟  ⎜                 ⎢⎢2   2 ⎥⎥⎟  ⎜                 ⎢⎢  2    2⎥⎥⎟  ⎜                 ⎢⎢2   2 ⎥⎥⎟⎥
+⎢⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟  ⎜                 ⎢⎢        ⎥⎥⎟  ⎜                 ⎢⎢      ⎥⎥⎟⎥
+⎣⎝                 ⎣⎣   1    ⎦⎦⎠  ⎝                 ⎣⎣  1   ⎦⎦⎠  ⎝                 ⎣⎣   1    ⎦⎦⎠  ⎝                 ⎣⎣  1   ⎦⎦⎠⎦
 </pre></div>
 </div>
 </div>
@@ -752,17 +740,17 @@ HC = C\varepsilon
 \[\varepsilon_4 = \alpha + \left(\frac{-1-\sqrt{5}}{2} \right)\beta\]</div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<span class="n">beta</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>alpha = -1
+beta = -1
 
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">alpha</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">beta</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\varepsilon_1 = \alpha + \left(\frac{-1-\sqrt</span><span class="si">{5}</span><span class="s1">}</span><span class="si">{2}</span><span class="s1">\right)\beta$&#39;</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">alpha</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">beta</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\varepsilon_1 = \alpha + \left(\frac{1-\sqrt</span><span class="si">{5}</span><span class="s1">}</span><span class="si">{2}</span><span class="s1">\right)\beta$&#39;</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">alpha</span> <span class="o">+</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">beta</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\varepsilon_1 = \alpha + \left(\frac{-1+\sqrt</span><span class="si">{5}</span><span class="s1">}</span><span class="si">{2}</span><span class="s1">\right)\beta$&#39;</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">alpha</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">beta</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\varepsilon_1 = \alpha + \left(\frac{1+\sqrt</span><span class="si">{5}</span><span class="s1">}</span><span class="si">{2}</span><span class="s1">\right)\beta$&#39;</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+plt.hlines(alpha + (-1-np.sqrt(5))/2*beta,1,2,label=r&#39;$\varepsilon_1 = \alpha + \left(\frac{-1-\sqrt{5}}{2}\right)\beta$&#39;,colors=&#39;y&#39;)
+plt.hlines(alpha + (1-np.sqrt(5))/2*beta,1,2,label=r&#39;$\varepsilon_1 = \alpha + \left(\frac{1-\sqrt{5}}{2}\right)\beta$&#39;,colors=&#39;r&#39;)
+plt.hlines(alpha + (-1+np.sqrt(5))/2*beta,1,2,label=r&#39;$\varepsilon_1 = \alpha + \left(\frac{-1+\sqrt{5}}{2}\right)\beta$&#39;,colors=&#39;b&#39;)
+plt.hlines(alpha + (1+np.sqrt(5))/2*beta,1,2,label=r&#39;$\varepsilon_1 = \alpha + \left(\frac{1+\sqrt{5}}{2}\right)\beta$&#39;,colors=&#39;g&#39;)
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+plt.xlim(0,4)
+plt.legend()
+plt.show()
 </pre></div>
 </div>
 </div>
@@ -778,15 +766,15 @@ HC = C\varepsilon
 <p><strong>Defina los símbolos <span class="math notranslate nohighlight">\(\alpha\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span> con sympy.</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defina alpha y beta</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Defina alpha y beta
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;alpha&quot;</span><span class="p">)</span>
-<span class="n">beta</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">Symbol</span><span class="p">(</span><span class="s2">&quot;beta&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>alpha = sp.Symbol(&quot;alpha&quot;)
+beta = sp.Symbol(&quot;beta&quot;)
 </pre></div>
 </div>
 </div>
@@ -803,16 +791,16 @@ S_{ij} = \left\{
 \end{split}\]</div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">S</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>S = sp.zeros(6)
 
-<span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">S</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">S</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">S</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">S</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">S</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+S[0,0] = 1
+S[1,1] = 1
+S[2,2] = 1
+S[3,3] = 1
+S[4,4] = 1
+S[5,5] = 1
 
-<span class="n">S</span>
+S
 </pre></div>
 </div>
 </div>
@@ -834,36 +822,36 @@ H_{ij} = \left\{
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Matriz H</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Matriz H
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">H</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>H = sp.zeros(6)
 
-<span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">alpha</span>
+H[0,0] = alpha
+H[1,1] = alpha
+H[2,2] = alpha
+H[3,3] = alpha
+H[4,4] = alpha
+H[5,5] = alpha
 
-<span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
-<span class="n">H</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">beta</span>
+H[0,1] = beta
+H[0,5] = beta
+H[1,0] = beta
+H[1,2] = beta
+H[2,1] = beta
+H[2,3] = beta
+H[3,2] = beta
+H[3,4] = beta
+H[4,3] = beta
+H[4,5] = beta
+H[5,4] = beta
+H[5,0] = beta
 
-<span class="n">H</span>
+H
 </pre></div>
 </div>
 </div>
@@ -885,41 +873,29 @@ HC = C\varepsilon
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Valores y vectores propios de H</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Valores y vectores propios de H
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">eigenvects</span><span class="p">(</span><span class="n">simplify</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>sp.pprint(H.eigenvects(simplify=True))
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⎡⎛            ⎡⎡-1⎤⎤⎞  ⎛          ⎡⎡-1⎤  ⎡-1⎤⎤⎞  ⎛          ⎡⎡-1⎤  ⎡1 ⎤⎤⎞  ⎛            ⎡⎡1⎤
-⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜            ⎢⎢ ⎥
-⎢⎜            ⎢⎢1 ⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢0 ⎥⎥⎟  ⎜          ⎢⎢-1⎥  ⎢0 ⎥⎥⎟  ⎜            ⎢⎢1⎥
-⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜            ⎢⎢ ⎥
-⎢⎜            ⎢⎢-1⎥⎥⎟  ⎜          ⎢⎢0 ⎥  ⎢1 ⎥⎥⎟  ⎜          ⎢⎢0 ⎥  ⎢-1⎥⎥⎟  ⎜            ⎢⎢1⎥
-⎢⎜α - 2⋅β, 1, ⎢⎢  ⎥⎥⎟, ⎜α - β, 2, ⎢⎢  ⎥, ⎢  ⎥⎥⎟, ⎜α + β, 2, ⎢⎢  ⎥, ⎢  ⎥⎥⎟, ⎜α + 2⋅β, 1, ⎢⎢ ⎥
-⎢⎜            ⎢⎢1 ⎥⎥⎟  ⎜          ⎢⎢-1⎥  ⎢-1⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢-1⎥⎥⎟  ⎜            ⎢⎢1⎥
-⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜            ⎢⎢ ⎥
-⎢⎜            ⎢⎢-1⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢0 ⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢0 ⎥⎥⎟  ⎜            ⎢⎢1⎥
-⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜            ⎢⎢ ⎥
-⎣⎝            ⎣⎣1 ⎦⎦⎠  ⎝          ⎣⎣0 ⎦  ⎣1 ⎦⎦⎠  ⎝          ⎣⎣0 ⎦  ⎣1 ⎦⎦⎠  ⎝            ⎣⎣1⎦
-
-⎤⎞⎤
-⎥⎟⎥
-⎥⎟⎥
-⎥⎟⎥
-⎥⎟⎥
-⎥⎟⎥
-⎥⎟⎥
-⎥⎟⎥
-⎥⎟⎥
-⎥⎟⎥
-⎦⎠⎦
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⎡⎛            ⎡⎡-1⎤⎤⎞  ⎛          ⎡⎡-1⎤  ⎡-1⎤⎤⎞  ⎛          ⎡⎡-1⎤  ⎡1 ⎤⎤⎞  ⎛            ⎡⎡1⎤⎤⎞⎤
+⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜            ⎢⎢ ⎥⎥⎟⎥
+⎢⎜            ⎢⎢1 ⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢0 ⎥⎥⎟  ⎜          ⎢⎢-1⎥  ⎢0 ⎥⎥⎟  ⎜            ⎢⎢1⎥⎥⎟⎥
+⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜            ⎢⎢ ⎥⎥⎟⎥
+⎢⎜            ⎢⎢-1⎥⎥⎟  ⎜          ⎢⎢0 ⎥  ⎢1 ⎥⎥⎟  ⎜          ⎢⎢0 ⎥  ⎢-1⎥⎥⎟  ⎜            ⎢⎢1⎥⎥⎟⎥
+⎢⎜α - 2⋅β, 1, ⎢⎢  ⎥⎥⎟, ⎜α - β, 2, ⎢⎢  ⎥, ⎢  ⎥⎥⎟, ⎜α + β, 2, ⎢⎢  ⎥, ⎢  ⎥⎥⎟, ⎜α + 2⋅β, 1, ⎢⎢ ⎥⎥⎟⎥
+⎢⎜            ⎢⎢1 ⎥⎥⎟  ⎜          ⎢⎢-1⎥  ⎢-1⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢-1⎥⎥⎟  ⎜            ⎢⎢1⎥⎥⎟⎥
+⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜            ⎢⎢ ⎥⎥⎟⎥
+⎢⎜            ⎢⎢-1⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢0 ⎥⎥⎟  ⎜          ⎢⎢1 ⎥  ⎢0 ⎥⎥⎟  ⎜            ⎢⎢1⎥⎥⎟⎥
+⎢⎜            ⎢⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜          ⎢⎢  ⎥  ⎢  ⎥⎥⎟  ⎜            ⎢⎢ ⎥⎥⎟⎥
+⎣⎝            ⎣⎣1 ⎦⎦⎠  ⎝          ⎣⎣0 ⎦  ⎣1 ⎦⎦⎠  ⎝          ⎣⎣0 ⎦  ⎣1 ⎦⎦⎠  ⎝            ⎣⎣1⎦⎦⎠⎦
 </pre></div>
 </div>
 </div>
@@ -940,19 +916,19 @@ HC = C\varepsilon
 <p>Note que hay degeneración.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<span class="n">beta</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>alpha = -1
+beta = -1
 
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">alpha</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">beta</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\varepsilon_1 = \alpha - 2\beta$&#39;</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">alpha</span> <span class="o">-</span> <span class="n">beta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\varepsilon_2 = \alpha - \beta$&#39;</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">alpha</span> <span class="o">-</span> <span class="n">beta</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\varepsilon_3 = \alpha - \beta$&#39;</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">alpha</span> <span class="o">+</span> <span class="n">beta</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\varepsilon_4 = \alpha + \beta$&#39;</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">alpha</span> <span class="o">+</span> <span class="n">beta</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\varepsilon_5 = \alpha + \beta$&#39;</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">alpha</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">beta</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\varepsilon_6  = \alpha + 2\beta$&#39;</span><span class="p">,</span><span class="n">colors</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+plt.hlines(alpha - 2*beta,1,2,label=r&#39;$\varepsilon_1 = \alpha - 2\beta$&#39;,colors=&#39;g&#39;)
+plt.hlines(alpha - beta,0,1,label=r&#39;$\varepsilon_2 = \alpha - \beta$&#39;,colors=&#39;b&#39;)
+plt.hlines(alpha - beta,2,3,label=r&#39;$\varepsilon_3 = \alpha - \beta$&#39;,colors=&#39;b&#39;)
+plt.hlines(alpha + beta,0,1,label=r&#39;$\varepsilon_4 = \alpha + \beta$&#39;,colors=&#39;r&#39;)
+plt.hlines(alpha + beta,2,3,label=r&#39;$\varepsilon_5 = \alpha + \beta$&#39;,colors=&#39;r&#39;)
+plt.hlines(alpha + 2*beta,1,2,label=r&#39;$\varepsilon_6  = \alpha + 2\beta$&#39;,colors=&#39;y&#39;)
 
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+plt.xlim(0,4)
+plt.legend()
+plt.show()
 </pre></div>
 </div>
 </div>
@@ -1029,7 +1005,14 @@ HC = C\varepsilon
   
     By M. en C. Juan Felipe Huan Lew Yee, Dr. José Eduardo Barrios Vargas, Dr. Jorge Martín del Campo Ramírez. Departamento de Física y Química Teórica, Facultad de Química, Universidad Nacional Autónoma de México<br/>
   
-      &copy; Copyright 2022.<br/>
+    <div class="extra_footer">
+      <div>
+<img src="https://github.com/felipelewyee/Cuantica-I/blob/master/logo.png?raw=true" alt="logo_FQ">
+<img src="https://licensebuttons.net/l/by-nc-sa/3.0/88x31.png" alt="logo_FQ">
+    © D.R. UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO 2022<br>Universidad Nacional Autónoma de México<br>Facultad de Química<br>Prohibida la reproducción total o parcial por cualquier medio, sin la autorización escrita del titular de los derechos patrimoniales.<br>Impreso y hecho en México<br>Publicación aprobada por el Comité Editorial de la Facultad de Química.
+</div>
+
+    </div>
 </p>
         </footer>
     </div>
